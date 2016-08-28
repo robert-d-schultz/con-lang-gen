@@ -1,0 +1,6 @@
+[
+NumberSystem [],
+NumberSystem [SG,PL],
+NumberSystem [SG,DU,PL],
+NumberSystem [SG,DU,TRI,PL],
+NumberSystem [SG,PA,PL]]

@@ -1,0 +1,3 @@
+[
+SpecificitySystem [],
+SpecificitySystem [SPEC,NSPEC]]

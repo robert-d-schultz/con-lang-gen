@@ -1,0 +1,5 @@
+[
+AnimacySystem [],
+AnimacySystem [AN,INAN],
+AnimacySystem [HUM,NHUM],
+AnimacySystem [HUM,ZO,INAN]]

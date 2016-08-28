@@ -1,0 +1,18 @@
+General Overview
+----------------
+
+A phoneme inventory will be generated. The generation process will include patterns from real language’s inventories. There will be separate consonant and vowel system generators.
+
+This phoneme inventory will be referenced by the list of phonological rules that will be generated next. The phonological rules will outline which phones are connected to which phoneme. Certain phonemes will change sound under certain conditions.
+
+Phonotactics rules will also be generated. Positions of phonemes in syllables and words will be restricted as well as what consonant clusters or diphthongs may appear.
+
+A grammar system will be generated. The generation process will select grammatical categories and decides how they will be expressed. Inflection systems – declensions and conjugations – will be one way for grammatical categories to be expressed. Inflection systems will have a agglutination variation. Determiners/articles/particles will be another way for grammatical categories to be expressed.
+
+The phoneme inventory along with the phonotactics rules will be used to generate syllables. The syllables will be used to fill out the inflection, agglutination, or particle systems.
+
+The syllable generator will then be used to generate root words. Root words will include nouns, verbs, and adjectives.
+
+All of the above structures will then be parsed by a output function into a text output. This output will include a consonant inventory table, vowel system chart, list of phonemes (with examples), list of phonological and phonotactics rules (with examples), [inflection tables/list of affixes/list of particles], and a dictionary.
+
+See doc for more reading material.

@@ -1,0 +1,10 @@
+close,front unrounded
+near-close,front rounded
+close-mid,near-front unrounded
+mid,near-front rounded
+open-mid,central unrounded
+near-open,central rounded
+open,near-back unrounded
+,near-back rounded
+,back unrounded
+,back rounded
