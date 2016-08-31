@@ -1,10 +1,8 @@
 -- Data types for phonemes
-module PhonemeType
-( MaybeImpossible(..)
-, MaybeBlank(..)
-, MaybeUnspecified(..)
-, ConsonantFeaturesContour(..)
-, ConsonantFeatures(..)
+module PhonemeType2
+( MaybeContour(..)
+, MaybeImpossible(..)
+, Consonant(..)
 , Place (..)
 , ActiveArticulator(..)
 , PassiveArticulator(..)
@@ -20,35 +18,29 @@ module PhonemeType
 , Initiator(..)
 , Direction(..)
 , Phonation(..)
-, VowelFeaturesContour(..)
-, VowelFeatures(..)
+, Vowel(..)
 , Height(..)
 , Backness(..)
 , Roundedness(..)
-, PhonemeInventory(..)
+, ConsonantPhonemeInventory(..)
+, VowelPhonemeInventory(..)
 ) where
 
 import Prelude
 
+data MaybeContour a b = NoContour a | Contour a b deriving (Eq, Show, Read)
 data MaybeImpossible a = Possible a | Impossible deriving (Eq, Show, Read)
-data MaybeBlank a = Filled a | Blank deriving (Eq, Show, Read)
-data MaybeUnspecified a = Specified a | Unspecified deriving (Eq, Show, Read)
 
-data ConsonantFeaturesContour = ConsonantFeaturesContour
-    { firstCContour :: ConsonantFeatures
-    , secondCContour :: MaybeBlank (MaybeUnspecified ConsonantFeatures)
-    } deriving (Eq, Show, Read)
-
-data ConsonantFeatures = ConsonantFeatures
-    { place :: MaybeUnspecified Place
-    , manner :: MaybeUnspecified Manner
-    , airstream :: MaybeUnspecified Airstream
-    , phonation :: MaybeUnspecified Phonation
+data Consonant = Consonant
+    { place :: MaybeContour Place Place
+    , manner :: MaybeContour Manner Manner
+    , airstream :: MaybeContour Airstream Airstream
+    , phonation :: MaybeContour Phonation Phonation
     } deriving (Eq, Show, Read)
 
 data Place = Place
-    { active :: MaybeUnspecified ActiveArticulator
-    , passive :: MaybeUnspecified PassiveArticulator
+    { active :: ActiveArticulator
+    , passive :: PassiveArticulator
     } deriving (Eq, Show, Read)
 
 data ActiveArticulator = LOWERLIP | TONGUEBLADE | TONGUETIP | TONGUEUNDER | TONGUEBODY | TONGUEROOT | LARYNX  deriving (Eq, Show, Read, Enum, Bounded)
@@ -56,13 +48,13 @@ data ActiveArticulator = LOWERLIP | TONGUEBLADE | TONGUETIP | TONGUEUNDER | TONG
 data PassiveArticulator = UPPERLIP | UPPERTEETH | TEETHRIDGE | RIDGE | BACKRIDGE | HARDPALATE | SOFTPALATE | UVULA | PHARYNX | EPIGLOTTIS | GLOTTIS deriving (Eq, Show, Read, Enum, Bounded)
 
 data Manner = Manner
-    { stricture :: MaybeUnspecified Stricture
-    , trill :: MaybeImpossible (MaybeUnspecified Trill)
-    , mannerLength :: MaybeUnspecified Length
-    , laterality :: MaybeImpossible (MaybeUnspecified Laterality)
-    , silibance :: MaybeImpossible (MaybeUnspecified Silibance)
-    , airescape :: MaybeUnspecified AirEscape
-    , vot :: MaybeImpossible (MaybeUnspecified VOT)
+    { stricture :: Stricture
+    , trill :: MaybeImpossible Trill
+    , mannerLength :: Length
+    , laterality :: MaybeImpossible Laterality
+    , silibance :: MaybeImpossible Silibance
+    , airescape :: AirEscape
+    , vot :: MaybeImpossible VOT
 --    , release :: Release
     } deriving (Eq, Show, Read)
 
@@ -83,8 +75,8 @@ data VOT = POSITIVE | ZERO | NEGATIVE deriving (Eq, Show, Read, Enum, Bounded)
 --data Release = NOAUDIBLE | LATERAL | NASAL deriving (Eq, Show, Read, Enum, Bounded)
 
 data Airstream = Airstream
-    { initiator :: MaybeUnspecified Initiator
-    , direction :: MaybeUnspecified Direction
+    { initiator :: Initiator
+    , direction :: Direction
     } deriving (Eq, Show, Read)
 
 data Initiator = LINGUAL | GLOTTIC | PULMONIC deriving (Eq, Show, Read, Enum, Bounded)
@@ -93,20 +85,15 @@ data Direction = INGRESSIVE | EGRESSIVE deriving (Eq, Show, Read, Enum, Bounded)
 
 data Phonation = VOICELESS | BREATHY | SLACK | MODAL | STIFF | CREAKY | CLOSURE deriving (Eq, Show, Read, Enum, Bounded)
 
-
-data VowelFeaturesContour = VowelFeaturesContour
-    { firstVContour :: VowelFeatures
-    , secondVContour :: MaybeBlank (MaybeUnspecified VowelFeatures)
-    } deriving (Eq, Show, Read)
-
-data VowelFeatures = VowelFeatures
-    { height :: MaybeUnspecified Height
-    , backness :: MaybeUnspecified Backness
-    , roundedness :: MaybeUnspecified Roundedness
-    , length2 :: MaybeUnspecified Length
-    , airescape2 :: MaybeUnspecified AirEscape
-    , airstream2 :: MaybeUnspecified Airstream
-    , phonation2 :: MaybeUnspecified Phonation
+--Vowel specific
+data Vowel = VowelFeaturesContour
+    { height :: MaybeContour Height Height
+    , backness :: MaybeContour Backness Backness
+    , roundedness :: MaybeContour Roundedness Roundedness
+    , vowelLength :: Length
+    , airescape2 :: AirEscape
+    , airstream2 :: Airstream
+    , phonation2 :: MaybeContour Phonation Phonation
     } deriving (Eq, Show, Read)
 
 data Height = CLOSE | NEARCLOSE | CLOSEMID | MID | OPENMID | NEAROPEN | OPEN deriving (Eq, Show, Read, Enum, Bounded)
@@ -115,4 +102,5 @@ data Backness = BACK | NEARBACK | CENTRAL | NEARFRONT | FRONT deriving (Eq, Show
 
 data Roundedness = UNROUNDED | ROUNDED deriving (Eq, Show, Read, Enum, Bounded)
 
-data PhonemeInventory = PhonemeInventory [ConsonantFeaturesContour] deriving (Eq, Show, Read)
+data ConsonantPhonemeInventory = ConsonantPhonemeInventory [Consonant] deriving (Eq, Show, Read)
+data VowelPhonemeInventory = VowelPhonemeInventory [Vowel] deriving (Eq, Show, Read)

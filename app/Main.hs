@@ -1,6 +1,9 @@
 module Main where
 
-import Lib
+import PhonologyGen
+import qualified Data.Random.Sample as Sampler
 
 main :: IO ()
-main = someFunc
+main = do
+  inventory <- Sampler.sample (makeConsonantPhonemeInventory 5)
+  print inventory

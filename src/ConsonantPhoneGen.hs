@@ -1,23 +1,17 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 module ConsonantPhoneGen
-(randomValue
+( randomValue
+, generateConsonant
 ) where
 
 -- Import
 import Prelude
 import Data.RVar
---import Control.Monad
---import Data.Random hiding (sample)
---import qualified Data.Random.Sample as Sampler
---import Data.Random.Extras hiding (shuffle)
---import Data.Random.Source.IO
---import Data.Functor
---import Data.List
---import Control.Applicative
--- System.IO
+import Data.Random hiding (sample)
+import Data.Random.Extras hiding (shuffle)
 
 -- Data structures
-import PhonemeType
+import PhonemeType2
 
 -- Picks a random value of an Enum data type
 randomValue :: forall t. (Bounded t, Enum t) => RVar t
@@ -26,33 +20,33 @@ randomValue = toEnum <$> (uniform (fromEnum (minBound :: t)) (fromEnum (maxBound
 
 -- Generates a completely random consonant
 -- Ignores consonant contours, for the moment
-generateConsonant :: RVar ConsonantFeaturesContour
+generateConsonant :: RVar Consonant
 generateConsonant = do
-    let possiblePlaces = [Place (Specified LOWERLIP) (Specified UPPERLIP)
-                        , Place (Specified LOWERLIP) (Specified UPPERTEETH)
-                        , Place (Specified TONGUEBLADE) (Specified UPPERLIP)
-                        , Place (Specified TONGUEBLADE) (Specified UPPERTEETH)
-                        , Place (Specified TONGUEBLADE) (Specified TEETHRIDGE)
-                        , Place (Specified TONGUEBLADE) (Specified RIDGE)
-                        , Place (Specified TONGUEBLADE) (Specified BACKRIDGE)
-                        , Place (Specified TONGUETIP) (Specified UPPERTEETH)
-                        , Place (Specified TONGUETIP) (Specified RIDGE)
-                        , Place (Specified TONGUETIP) (Specified BACKRIDGE)
-                        , Place (Specified TONGUEUNDER) (Specified HARDPALATE)
-                        , Place (Specified TONGUEBODY) (Specified BACKRIDGE)
-                        , Place (Specified TONGUEBODY) (Specified HARDPALATE)
-                        , Place (Specified TONGUEBODY) (Specified SOFTPALATE)
-                        , Place (Specified TONGUEBODY) (Specified UVULA)
-                        , Place (Specified TONGUEROOT) (Specified PHARYNX)
-                        , Place (Specified LARYNX) (Specified PHARYNX)
-                        , Place (Specified LARYNX) (Specified EPIGLOTTIS)
-                        , Place (Specified LARYNX) (Specified GLOTTIS)
+    let possiblePlaces = [Place LOWERLIP UPPERLIP
+                        , Place LOWERLIP UPPERTEETH
+                        , Place TONGUEBLADE UPPERLIP
+                        , Place TONGUEBLADE UPPERTEETH
+                        , Place TONGUEBLADE TEETHRIDGE
+                        , Place TONGUEBLADE RIDGE
+                        , Place TONGUEBLADE BACKRIDGE
+                        , Place TONGUETIP UPPERTEETH
+                        , Place TONGUETIP RIDGE
+                        , Place TONGUETIP BACKRIDGE
+                        , Place TONGUEUNDER HARDPALATE
+                        , Place TONGUEBODY BACKRIDGE
+                        , Place TONGUEBODY HARDPALATE
+                        , Place TONGUEBODY SOFTPALATE
+                        , Place TONGUEBODY UVULA
+                        , Place TONGUEROOT PHARYNX
+                        , Place LARYNX PHARYNX
+                        , Place LARYNX EPIGLOTTIS
+                        , Place LARYNX GLOTTIS
                         ]
     place1 <- choice possiblePlaces
 
     initiatorG <- randomValue :: RVar Initiator
     directionG <- randomValue :: RVar Direction
-    let airstream1 = Airstream (Specified initiatorG) (Specified directionG)
+    let airstream1 = Airstream initiatorG directionG
 
     phonationG <- randomValue :: RVar Phonation
 
@@ -62,32 +56,30 @@ generateConsonant = do
 
     r1 <- randomValue :: RVar Trill
     let trillG
-            | (elem (passive (place1)) [Specified GLOTTIS, Specified BACKRIDGE, Specified HARDPALATE, Specified SOFTPALATE]) = Impossible
-            | otherwise = Possible (Specified r1)
+            | (elem (passive (place1)) [GLOTTIS, BACKRIDGE, HARDPALATE, SOFTPALATE]) = Impossible
+            | otherwise = Possible (r1)
 
 
     r2 <- randomValue :: RVar Laterality
     let lateralityG
-            | (strictureG /= OCCLUSION) && (elem (active place1) [Specified TONGUEBLADE, Specified TONGUETIP, Specified TONGUEUNDER, Specified TONGUEBODY]) = Possible (Specified r2)
+            | (strictureG /= OCCLUSION) && (elem (active place1) [TONGUEBLADE, TONGUETIP, TONGUEUNDER, TONGUEBODY]) = Possible (r2)
             | otherwise = Impossible
 
     r3 <- randomValue :: RVar Silibance
     let silibanceG
-            | (strictureG == TURBULENT) && (lateralityG /= (Possible (Specified LATERAL))) && (trillG /= (Possible (Specified TRILLED))) = Possible (Specified r3)
+            | (strictureG == TURBULENT) && (lateralityG /= (Possible (LATERAL))) && (trillG /= (Possible (TRILLED))) = Possible (r3)
             | otherwise = Impossible
 
     r4 <- choice [ZERO, NEGATIVE]
     r5 <- choice [ZERO, POSITIVE]
     let votG
-            | (elem strictureG [OCCLUSION, TURBULENT]) && (trillG /= (Possible (Specified TRILLED))) && (phonationG == MODAL) = Possible (Specified r4)
-            | (elem strictureG [OCCLUSION, TURBULENT]) && (trillG /= (Possible (Specified TRILLED))) && (phonationG /= MODAL) = Possible (Specified r5)
+            | (elem strictureG [OCCLUSION, TURBULENT]) && (trillG /= (Possible (TRILLED))) && (phonationG == MODAL) = Possible (r4)
+            | (elem strictureG [OCCLUSION, TURBULENT]) && (trillG /= (Possible (TRILLED))) && (phonationG /= MODAL) = Possible (r5)
             | otherwise = Impossible
 
-    let manner1 = Manner (Specified strictureG) trillG (Specified lengthG) lateralityG silibanceG (Specified airescapeG) votG
+    let manner1 = Manner strictureG trillG lengthG lateralityG silibanceG airescapeG votG
 
-    let cfeat1 = ConsonantFeatures (Specified place1) (Specified manner1) (Specified airstream1) (Specified phonationG)
-
-    return (ConsonantFeaturesContour cfeat1 Blank)
+    return $ Consonant (NoContour place1) (NoContour manner1) (NoContour airstream1) (NoContour phonationG)
 
 {-
 generateVowel :: VowelFeaturesContour

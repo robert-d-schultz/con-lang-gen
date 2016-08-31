@@ -1,29 +1,24 @@
 module PhonologyGen
-(makePhonemeInventory
+(makeConsonantPhonemeInventory
 ) where
 
--- Import libraries
-import Prelude hiding (Word)
---import System.Random
---import Control.Monad
---import Data.Random hiding (sample)
---import qualified Data.Random.Sample as Sampler
---import Data.Random.Extras hiding (shuffle)
---import Data.Functor
---import Data.List
---import Control.Applicative
---import System.IO
+-- Import
+import Prelude
 import Data.RVar
+import ConsonantPhoneGen
 
 -- Data structures
-import PhonemeType
-import ConsonantPhoneGen
+import PhonemeType2
 
 -- Load from files
 
-
 -- Make phoneme inventory (doesn't check for duplicates yet)
-makePhonemeInventory :: Num -> PhonemeInventory -> RVar PhonemeInventory
-makePhonemeInventory numConsonants [] = [generateConsonant]
-makePhonemeInventory numConsonants inventory = makePhonemeInventory (numConsonants-1) (generateConsonant:inventory)
-makePhonemeInventory 0 inventory = inventory
+makeConsonantPhonemeInventory :: Int -> RVar ConsonantPhonemeInventory
+makeConsonantPhonemeInventory num = fmap ConsonantPhonemeInventory (makeConsonantList num (return []))
+
+makeConsonantList:: Int -> RVar [Consonant] -> RVar [Consonant]
+makeConsonantList 0 cons = cons
+makeConsonantList num cons = makeConsonantList (num-1) (addToInventory generateConsonant cons)
+
+addToInventory :: RVar Consonant -> RVar [Consonant] -> RVar [Consonant]
+addToInventory newCon oldCons = (:) <$> newCon <*> oldCons
