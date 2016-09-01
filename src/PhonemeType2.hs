@@ -28,10 +28,10 @@ module PhonemeType2
 
 import Prelude
 
-data MaybeContour a b = NoContour a | Contour a b deriving (Eq, Show, Read)
+data MaybeContour a b = NoContour b | Contour a b deriving (Eq, Show, Read)
 data MaybeImpossible a = Possible a | Impossible deriving (Eq, Show, Read)
 
-data Consonant = Consonant
+data Consonant =  Consonant
     { place :: MaybeContour Place Place
     , manner :: MaybeContour Manner Manner
     , airstream :: MaybeContour Airstream Airstream
