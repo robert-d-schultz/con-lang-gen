@@ -1,0 +1,395 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-05 21:56:03.128633 UTC
+
+interface conla_4HxSYcynNloL3TkunNPLrN:XBar 7103
+  interface hash: 2e7e0031061af3ab6cb01221f5f99365
+  ABI hash: 6875abb690cfbe3923c5cf9180e8208c
+  export-list hash: d9cf8d38ccbdfff2dabe9062327ee9e3
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 962af636f8e927040c7daa9c21457292
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  XBar.loadInputData
+  XBar.makeTenseP
+  XBar.parseTenseP
+module dependencies: XBarType
+package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      flexible-defaults-0.0.1.2@flexi_70LqvhG3vbS8bRvV8pHtMk
+                      ghc-prim-0.4.0.0 integer-gmp-1.0.0.0
+                      monad-loops-0.4.3@monad_LQiHRUYhFhYBU7nOOWDOrb
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L
+                      random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW
+                      random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr
+                      rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG
+                      syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE template-haskell-2.10.0.0
+                      th-extras-0.0.0.4@thext_LRY1RUMy7ShLl2tqhMyHdO
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source
+         syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE:Data.Generics.Instances
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+import  -/  base-4.8.2.0:Control.Monad 480c5067477275068c9b98be08410df9
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Read b423b4506a014855edbd329b567629f3
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
+import  -/  XBarType f5b0618eab0ab35313e6fd1a50718931
+  exports: 2c3b48fb886918acb83c2895b6db82d0
+  Adj bcf4cd022e6552bbf49a7e6597d3eca4
+  Adj 1cf95d74cf8034e3cd8743015f534f02
+  AdjBar 32b2b052f97ff50938e5bd2a53ab9d0d
+  AdjBar1 422330987eb0e0273f379eb803f1a5c9
+  AdjBar2 99d450e239dd903bff7dd4bb0f529f39
+  AdjBar3 0ffacb887bf6bd6562847ddae763da50
+  AdjBar4 a67989e9b013c2342533bd1a63e990bc
+  AdjP dd1e624456cfa4cd5d2e01964277b470
+  AdjP 32b2b052f97ff50938e5bd2a53ab9d0d
+  Adv 1e352e4b8352dd1048ddd26b6fdb9763
+  Adv b210e39e480af28620788baa98bef96d
+  AdvBar 46048fbbbb0ed1f1750783d7c682322f
+  AdvBar a84521cf9655e5e74dadfb60f7ad7a69
+  AdvP deea186ca283241e0ad763d78d8cf061
+  AdvP 32b2b052f97ff50938e5bd2a53ab9d0d
+  Comp c2213b237e5c8256871abedeafe6ada1
+  Comp fe8691e5b20e4567836977d90780b734
+  CompBar de9be0a947a3bc0fc89298bf023c8ac4
+  CompBar 4f001468d2fe904a7b1340d4f2618392
+  CompP 9e92025be5109d4d5dc577b815436aea
+  CompP 4f001468d2fe904a7b1340d4f2618392
+  Det 396d710c1f3ab00e4ebf8ec1d1632cc6
+  Det fba6555ac73fc085c25046551f89172e
+  DetBar 4491e06d718fb9b7a4baa8c1238de23b
+  DetBar 32b2b052f97ff50938e5bd2a53ab9d0d
+  DetP fcc3b7bd80f096a2177c4d1ec14af9d5
+  DetP 32b2b052f97ff50938e5bd2a53ab9d0d
+  NoOpt 64b6e351cc0f19106bc8177bda996b94
+  Noun cc96cf05db3f84401988d5d38c087e45
+  Noun 62d6653cd93b793cf6a9d8cc4709bbae
+  NounBar 32b2b052f97ff50938e5bd2a53ab9d0d
+  NounBar1 841466ce725ef22c4f6e956a59a04d91
+  NounBar2 90d349486b3967412b8acf16bcc157f1
+  NounBar3 590de068c699cf123d8a03d332766d3a
+  NounP be61103d392d55f7b4872135414e6906
+  NounP 32b2b052f97ff50938e5bd2a53ab9d0d
+  Prep 323c490cbf1faef7f66a838d0bf25bac
+  Prep 9d4833a771312a804ba6134bfb562299
+  PrepBar 32b2b052f97ff50938e5bd2a53ab9d0d
+  PrepBar1 a712be8cf3ccd86678e2e4ff205c65d2
+  PrepBar2 2638b635080e504e398f11dd41b8df65
+  PrepP 638da9cf5726ec706fbd31fc76ec263a
+  PrepP 32b2b052f97ff50938e5bd2a53ab9d0d
+  Tense c5eb7fd2300024c0edc90af6566ed3e6
+  Tense 7b127aff7a37e546247befcacb7c8e9e
+  TenseBar 6ef60738f849ee36fceaa796c444bf8e
+  TenseBar 4f001468d2fe904a7b1340d4f2618392
+  TenseP 4bda6e3c2cc129fd31adeeef8dc0a70e
+  TenseP 4f001468d2fe904a7b1340d4f2618392
+  Verb 34fb4576005271c3d61ca1fe16b4028f
+  Verb 5b5bb35beb8c49aeda693fec96ba7d0c
+  VerbBar 4f001468d2fe904a7b1340d4f2618392
+  VerbBar1 f06ce834a3ef3d8fd8ef54d8f3dbfdd8
+  VerbBar2 353db73c41f631b11e7b2bdf092d2c3d
+  VerbBar3 d487ae2ece8e1a8fb8047658e144c288
+  VerbBar4 65dffe850b206ab730720cb7793879b1
+  VerbBar5 2fc8197a0ce429475bc27b83e7b388bb
+  VerbP 3f564495b230f0c164088806e2332bfb
+  VerbP 4f001468d2fe904a7b1340d4f2618392
+  YesOpt 27c7d26f8b2997f25c90732c6c444382
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
+import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
+3b98953913f6a08047d77978b7beedec
+  $wmakeVerbBar ::
+    XBar.InputData -> GHC.Prim.Int# -> Data.RVar.RVar XBarType.VerbBar
+  {- Arity: 2, Strictness: <L,U(U,U,U,U,U,U,U)><L,U>, Inline: [0] -}
+9e8c2e5b7d615e9961ebbfef1ce28a24
+  $wparseDetP ::
+    XBarType.Optional XBarType.Det -> XBarType.NounP -> GHC.Base.String
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(1*U)>,
+     Inline: [0],
+     Unfolding: (\ ww :: XBarType.Optional XBarType.Det
+                   ww1 :: XBarType.NounP ->
+                 case ww of wild {
+                   XBarType.YesOpt det
+                   -> case det of wild1 { XBarType.Det str ->
+                      GHC.Base.++
+                        @ GHC.Types.Char
+                        str
+                        (GHC.CString.unpackAppendCString#
+                           " "#
+                           (case ww1 of wild2 { XBarType.NounP nounbar ->
+                            XBar.parseNounBar nounbar })) }
+                   XBarType.NoOpt
+                   -> case ww1 of wild1 { XBarType.NounP nounbar ->
+                      XBar.parseNounBar nounbar } }) -}
+3eeaf0cac040089c46cd762ac20faea8
+  $wparseTenseP ::
+    XBarType.Optional XBarType.Det
+    -> XBarType.NounP -> XBarType.TenseBar -> [GHC.Types.Char]
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,1*U><L,1*U(1*U)><L,1*U(1*U(1*U),1*U(1*U))>,
+     Inline: [0],
+     Unfolding: (\ ww :: XBarType.Optional XBarType.Det
+                   ww1 :: XBarType.NounP
+                   ww2 :: XBarType.TenseBar ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   (XBar.$wparseDetP ww ww1)
+                   (GHC.CString.unpackAppendCString#
+                      " "#
+                      (case ww2 of wild { XBarType.TenseBar tense verbp ->
+                       case tense of wild1 { XBarType.Tense str ->
+                       GHC.Base.++
+                         @ GHC.Types.Char
+                         str
+                         (GHC.CString.unpackAppendCString#
+                            " "#
+                            (case verbp of wild2 { XBarType.VerbP verbbar ->
+                             XBar.parseVerbBar verbbar })) } }))) -}
+f8e446897ddba08c8d4379855d6aae65
+  data InputData
+    = InputData {iNoun :: [XBarType.Noun],
+                 iVerb :: [XBarType.Verb],
+                 iAdj :: [XBarType.Adj],
+                 iAdv :: [XBarType.Adv],
+                 iPrep :: [XBarType.Prep],
+                 iDet :: [XBarType.Det],
+                 iComp :: [XBarType.Comp]}
+b919b8ac245e482177517acde25f0eda
+  iAdj :: XBar.InputData -> [XBarType.Adj]
+  RecSel XBar.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLLL),1*U(A,A,1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: XBar.InputData ->
+                 case ds of wild { XBar.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds3 }) -}
+65a519d7a39963c881cd3b1abe2c0889
+  iAdv :: XBar.InputData -> [XBarType.Adv]
+  RecSel XBar.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLLL),1*U(A,A,A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: XBar.InputData ->
+                 case ds of wild { XBar.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds4 }) -}
+c5a4686995e66b7472b9957255f73f68
+  iComp :: XBar.InputData -> [XBarType.Comp]
+  RecSel XBar.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLS),1*U(A,A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: XBar.InputData ->
+                 case ds of wild { XBar.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds7 }) -}
+fa1af0d6afe0cfe3ed4454ec1967e4ad
+  iDet :: XBar.InputData -> [XBarType.Det]
+  RecSel XBar.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLSL),1*U(A,A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: XBar.InputData ->
+                 case ds of wild { XBar.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds6 }) -}
+d0dc74405d804207ff30010d110b14f4
+  iNoun :: XBar.InputData -> [XBarType.Noun]
+  RecSel XBar.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLLL),1*U(1*U,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: XBar.InputData ->
+                 case ds of wild { XBar.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds1 }) -}
+a8be1d2bcf14350b1c216b809cd2beee
+  iPrep :: XBar.InputData -> [XBarType.Prep]
+  RecSel XBar.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSLL),1*U(A,A,A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: XBar.InputData ->
+                 case ds of wild { XBar.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds5 }) -}
+126da3ca33820d5489f0cc3afd64dcb2
+  iVerb :: XBar.InputData -> [XBarType.Verb]
+  RecSel XBar.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLLL),1*U(A,1*U,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: XBar.InputData ->
+                 case ds of wild { XBar.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds2 }) -}
+77720e27af4cd0ddd06146218adbf64e
+  loadInputData :: GHC.Types.IO XBar.InputData
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                XBar.loadInputData1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <XBar.InputData>_R)) -}
+7171be16f4ad6d7916c66071fe971a81
+  loadInputData1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, XBar.InputData #)
+  {- Arity: 1, Strictness: <L,U> -}
+34d2b4cab879cda07f70c9c892e39255
+  makeDetP ::
+    XBar.InputData -> GHC.Types.Int -> Data.RVar.RVar XBarType.DetP
+  {- Arity: 2, Strictness: <L,U(U,A,U,U,U,U,A)><L,1*U(U)> -}
+9a62732d71452e31473399480b558371
+  makeTenseP ::
+    XBar.InputData -> GHC.Types.Int -> Data.RVar.RVar XBarType.TenseP
+  {- Arity: 2, Strictness: <L,U(U,U,U,U,U,U,U)><L,1*U(U)>,
+     Unfolding: (\ idata :: XBar.InputData n :: GHC.Types.Int ->
+                 let {
+                   i :: GHC.Types.Int
+                   = case n of wild { GHC.Types.I# x ->
+                     GHC.Types.I# (GHC.Prim.-# x 1) }
+                 } in
+                 let {
+                   m1 :: Data.RVar.RVarT Data.Functor.Identity.Identity XBarType.DetP
+                   = XBar.makeDetP idata i
+                 } in
+                 let {
+                   m2 :: Data.RVar.RVarT
+                           Data.Functor.Identity.Identity XBarType.VerbBar
+                   = case i of wild { GHC.Types.I# x ->
+                     XBar.$wmakeVerbBar idata (GHC.Prim.-# (GHC.Prim.-# x 1) 1) }
+                 } in
+                 (\ @ b1
+                    eta :: XBarType.TenseP -> b1
+                    eta1 :: forall a11.
+                            Control.Monad.Prompt.Lift
+                              Data.Random.Source.Internal.Prim.Prim
+                              Data.Functor.Identity.Identity
+                              a11
+                            -> (a11 -> b1) -> b1 ->
+                  m1
+                    `cast`
+                  (Trans
+                       (Trans
+                            (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                            (Control.Monad.Prompt.NTCo:PromptT[0]
+                                 <Data.Random.Source.Internal.Prim.Prim>_R
+                                 <Data.Functor.Identity.Identity>_R) <XBarType.DetP>_N)
+                       (Control.Monad.Prompt.NTCo:Prompt[0]
+                            <Control.Monad.Prompt.Lift
+                               Data.Random.Source.Internal.Prim.Prim
+                               Data.Functor.Identity.Identity>_R
+                            <XBarType.DetP>_R))
+                    @ b1
+                    (\ x :: XBarType.DetP ->
+                     case x of x1 { XBarType.DetP ipv ->
+                     XBar.makeTenseP_m1
+                       `cast`
+                     (Trans
+                          (Trans
+                               (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                               (Control.Monad.Prompt.NTCo:PromptT[0]
+                                    <Data.Random.Source.Internal.Prim.Prim>_R
+                                    <Data.Functor.Identity.Identity>_R) <XBarType.Tense>_N)
+                          (Control.Monad.Prompt.NTCo:Prompt[0]
+                               <Control.Monad.Prompt.Lift
+                                  Data.Random.Source.Internal.Prim.Prim
+                                  Data.Functor.Identity.Identity>_R
+                               <XBarType.Tense>_R))
+                       @ b1
+                       (\ x2 :: XBarType.Tense ->
+                        case x2 of x3 { XBarType.Tense ipv1 ->
+                        m2
+                          `cast`
+                        (Trans
+                             (Trans
+                                  (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                  (Control.Monad.Prompt.NTCo:PromptT[0]
+                                       <Data.Random.Source.Internal.Prim.Prim>_R
+                                       <Data.Functor.Identity.Identity>_R) <XBarType.VerbBar>_N)
+                             (Control.Monad.Prompt.NTCo:Prompt[0]
+                                  <Control.Monad.Prompt.Lift
+                                     Data.Random.Source.Internal.Prim.Prim
+                                     Data.Functor.Identity.Identity>_R
+                                  <XBarType.VerbBar>_R))
+                          @ b1
+                          (\ x4 :: XBarType.VerbBar ->
+                           case x4 of x5 { DEFAULT ->
+                           eta
+                             (XBarType.TenseP x1 (XBarType.TenseBar x3 (XBarType.VerbP x5))) })
+                          eta1 })
+                       eta1 })
+                    eta1)
+                   `cast`
+                 (Trans
+                      (Sym (Control.Monad.Prompt.NTCo:Prompt[0]
+                                <Control.Monad.Prompt.Lift
+                                   Data.Random.Source.Internal.Prim.Prim
+                                   Data.Functor.Identity.Identity>_R
+                                <XBarType.TenseP>_R))
+                      (Trans
+                           (Sym (Control.Monad.Prompt.NTCo:PromptT[0]
+                                     <Data.Random.Source.Internal.Prim.Prim>_R
+                                     <Data.Functor.Identity.Identity>_R))
+                           (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <XBarType.TenseP>_N))) -}
+7032b1bb9119da2285ece4806eeffcc6
+  makeTenseP1 :: [XBarType.Tense]
+  {- Unfolding: (GHC.Types.:
+                   @ XBarType.Tense
+                   XBar.makeTenseP2
+                   (GHC.Types.[] @ XBarType.Tense)) -}
+d935fdef6c6f1766b20a8f076e12541c
+  makeTenseP2 :: XBarType.Tense
+  {- Unfolding: (XBarType.Tense XBar.makeTenseP3) -}
+86d3a04f2f8fd65d259caa95d2a54f99
+  makeTenseP3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "-ed"#) -}
+e2b707f6f9841eca9c1162af14e596e6
+  makeTenseP_m1 ::
+    Data.RVar.RVarT Data.Functor.Identity.Identity XBarType.Tense
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ XBarType.Tense
+                   XBar.makeTenseP1) -}
+f1902baee61a57c71fc6ebe1f06ff23f
+  parseNounBar :: XBarType.NounBar -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+31b738c1232e143e64007a1a6a48d6d8
+  parseTenseP :: XBarType.TenseP -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(S(S(SL))L),U(1*U(1*U(1*U,1*U(1*U))),1*U(1*U(1*U),1*U(1*U)))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: XBarType.TenseP ->
+                 case w of ww { XBarType.TenseP ww1 ww2 ->
+                 case ww1 of ww3 { XBarType.DetP ww4 ->
+                 case ww4 of ww5 { XBarType.DetBar ww6 ww7 ->
+                 XBar.$wparseTenseP ww6 ww7 ww2 } } }) -}
+677d25ac813cb38cee3a2624d33fc512
+  parseVerbBar :: XBarType.VerbBar -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

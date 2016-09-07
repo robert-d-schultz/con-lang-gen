@@ -1,0 +1,28 @@
+Configuring random-extras-0.19...
+Building random-extras-0.19...
+Preprocessing library random-extras-0.19...
+[1 of 5] Compiling Data.Random.Show.Unsafe ( Data/Random/Show/Unsafe.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Show/Unsafe.o )
+
+Data/Random/Show/Unsafe.hs:23:10: Warning:
+    Orphan instance: instance Show a => Show (RVar a)
+    To avoid this
+        move the instance declaration to the module of the class or of the type, or
+        wrap the type with a newtype and declare the instance on the new type.
+[2 of 5] Compiling Data.Random.Extras ( Data/Random/Extras.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Extras.o )
+[3 of 5] Compiling Data.Random.Dovetail ( Data/Random/Dovetail.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Dovetail.o )
+
+Data/Random/Dovetail.hs:42:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[4 of 5] Compiling Data.Random.Distribution.Uniform.Exclusive ( Data/Random/Distribution/Uniform/Exclusive.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Distribution/Uniform/Exclusive.o )
+[5 of 5] Compiling Data.Random.Shuffle.Weighted ( Data/Random/Shuffle/Weighted.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Shuffle/Weighted.o )
+
+Data/Random/Shuffle/Weighted.hs:49:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+In-place registering random-extras-0.19...
+Installing library in
+/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/random-extras-0.19-11jAc932BDRD7ydjCrRr4L
+Registering random-extras-0.19...

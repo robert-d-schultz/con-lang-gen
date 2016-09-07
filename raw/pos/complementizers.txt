@@ -1,0 +1,5 @@
+[
+Comp "\"that\"",
+Comp "\"for\"",
+Comp "\"if\"",
+Comp "\"whether\""]

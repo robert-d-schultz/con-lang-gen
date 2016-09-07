@@ -1,0 +1,22 @@
+Configuring safecopy-0.9.1...
+Building safecopy-0.9.1...
+Preprocessing library safecopy-0.9.1...
+[1 of 5] Compiling Data.SafeCopy.SafeCopy ( src/Data/SafeCopy/SafeCopy.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/SafeCopy/SafeCopy.o )
+[2 of 5] Compiling Data.SafeCopy.Derive ( src/Data/SafeCopy/Derive.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/SafeCopy/Derive.o )
+[3 of 5] Compiling Data.SafeCopy.Internal ( src/Data/SafeCopy/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/SafeCopy/Internal.o )
+[4 of 5] Compiling Data.SafeCopy.Instances ( src/Data/SafeCopy/Instances.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/SafeCopy/Instances.o )
+
+src/Data/SafeCopy/Instances.hs:428:15: Warning:
+    In the use of type constructor or class ‘Typeable1’
+    (imported from Data.Typeable, but defined in Data.Typeable.Internal):
+    Deprecated: "renamed to 'Typeable'"
+
+src/Data/SafeCopy/Instances.hs:431:15: Warning:
+    In the use of type constructor or class ‘Typeable2’
+    (imported from Data.Typeable, but defined in Data.Typeable.Internal):
+    Deprecated: "renamed to 'Typeable'"
+[5 of 5] Compiling Data.SafeCopy    ( src/Data/SafeCopy.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/SafeCopy.o )
+In-place registering safecopy-0.9.1...
+Installing library in
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/safecopy-0.9.1-4vFW8OvlSQQDkEUX2XZ9Gn
+Registering safecopy-0.9.1...

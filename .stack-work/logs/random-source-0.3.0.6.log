@@ -1,0 +1,104 @@
+Configuring random-source-0.3.0.6...
+Building random-source-0.3.0.6...
+Preprocessing library random-source-0.3.0.6...
+[ 1 of 11] Compiling Data.Random.Source.Internal.Prim ( src/Data/Random/Source/Internal/Prim.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Source/Internal/Prim.o )
+[ 2 of 11] Compiling Data.Random.Internal.Words ( src/Data/Random/Internal/Words.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Internal/Words.o )
+[ 3 of 11] Compiling Data.Random.Internal.Source ( src/Data/Random/Internal/Source.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Internal/Source.o )
+[ 4 of 11] Compiling Data.Random.Source.Internal.TH ( src/Data/Random/Source/Internal/TH.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Source/Internal/TH.o )
+
+src/Data/Random/Source/Internal/TH.hs:85:1: Warning:
+    Defined but not used: ‘requireMethod’
+
+src/Data/Random/Source/Internal/TH.hs:93:1: Warning:
+    Defined but not used: ‘score’
+
+src/Data/Random/Source/Internal/TH.hs:104:1: Warning:
+    Defined but not used: ‘inline’
+
+src/Data/Random/Source/Internal/TH.hs:107:1: Warning:
+    Defined but not used: ‘noinline’
+
+src/Data/Random/Source/Internal/TH.hs:110:1: Warning:
+    Defined but not used: ‘replaceMethodName’
+[ 5 of 11] Compiling Data.Random.Source.PureMT ( src/Data/Random/Source/PureMT.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Source/PureMT.o )
+[ 6 of 11] Compiling Data.Random.Source.Std ( src/Data/Random/Source/Std.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Source/Std.o )
+[ 7 of 11] Compiling Data.Random.Source.StdGen ( src/Data/Random/Source/StdGen.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Source/StdGen.o )
+
+src/Data/Random/Source/StdGen.hs:90:1: Warning:
+    RULE left-hand side too complicated to desugar
+      Optimised lhs: let {
+                       $dApplicative_aMkA :: Applicative m
+                       [LclId, Str=DmdType]
+                       $dApplicative_aMkA = GHC.Base.$p1Monad @ m $dMonad_aL3t } in
+                     let {
+                       $dFunctor_aMkB :: Functor m
+                       [LclId, Str=DmdType]
+                       $dFunctor_aMkB =
+                         GHC.Base.$p1Applicative @ m $dApplicative_aMkA } in
+                     getRandomPrimFromRandomGenState
+                       @ StdGen
+                       @ (StateT StdGen m)
+                       @ a
+                       $dRandomGen_aL3x
+                       (Control.Monad.State.Class.$fMonadStatesStateT0
+                          @ StdGen
+                          @ m
+                          (transformers-0.4.2.0:Control.Monad.Trans.State.Lazy.$fMonadStateT
+                             @ StdGen
+                             @ m
+                             (transformers-0.4.2.0:Control.Monad.Trans.State.Lazy.$fApplicativeStateT
+                                @ StdGen
+                                @ m
+                                (transformers-0.4.2.0:Control.Monad.Trans.State.Lazy.$fFunctorStateT
+                                   @ StdGen @ m $dFunctor_aMkB)
+                                $dFunctor_aMkB
+                                $dMonad_aL3t)
+                             $dMonad_aL3t)
+                          $dMonad_aL3t)
+      Orig lhs: let {
+                  $dApplicative_aMkA :: Applicative m
+                  [LclId, Str=DmdType]
+                  $dApplicative_aMkA = GHC.Base.$p1Monad @ m $dMonad_aL3t } in
+                let {
+                  $dFunctor_aMkB :: Functor m
+                  [LclId, Str=DmdType]
+                  $dFunctor_aMkB =
+                    GHC.Base.$p1Applicative @ m $dApplicative_aMkA } in
+                let {
+                  $dFunctor_aMkE :: Functor (StateT StdGen m)
+                  [LclId, Str=DmdType]
+                  $dFunctor_aMkE =
+                    transformers-0.4.2.0:Control.Monad.Trans.State.Lazy.$fFunctorStateT
+                      @ StdGen @ m $dFunctor_aMkB } in
+                let {
+                  $dApplicative_aMkD :: Applicative (StateT StdGen m)
+                  [LclId, Str=DmdType]
+                  $dApplicative_aMkD =
+                    transformers-0.4.2.0:Control.Monad.Trans.State.Lazy.$fApplicativeStateT
+                      @ StdGen @ m $dFunctor_aMkE $dFunctor_aMkB $dMonad_aL3t } in
+                let {
+                  $dMonad_aMkC :: Monad (StateT StdGen m)
+                  [LclId, Str=DmdType]
+                  $dMonad_aMkC =
+                    transformers-0.4.2.0:Control.Monad.Trans.State.Lazy.$fMonadStateT
+                      @ StdGen @ m $dApplicative_aMkD $dMonad_aL3t } in
+                let {
+                  $dMonadState_aL3y :: MonadState StdGen (StateT StdGen m)
+                  [LclId, Str=DmdType]
+                  $dMonadState_aL3y =
+                    Control.Monad.State.Class.$fMonadStatesStateT0
+                      @ StdGen @ m $dMonad_aMkC $dMonad_aL3t } in
+                let {
+                  $dRandomGen_aL3x :: RandomGen StdGen
+                  [LclId, Str=DmdType]
+                  $dRandomGen_aL3x = System.Random.$fRandomGenStdGen } in
+                getRandomPrimFromRandomGenState
+                  @ StdGen @ (StateT StdGen m) @ a $dRandomGen_aL3x $dMonadState_aL3y
+[ 8 of 11] Compiling Data.Random.Source ( src/Data/Random/Source.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Source.o )
+[ 9 of 11] Compiling Data.Random.Source.DevRandom ( src/Data/Random/Source/DevRandom.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Source/DevRandom.o )
+[10 of 11] Compiling Data.Random.Source.IO ( src/Data/Random/Source/IO.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Source/IO.o )
+[11 of 11] Compiling Data.Random.Source.MWC ( src/Data/Random/Source/MWC.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Random/Source/MWC.o )
+In-place registering random-source-0.3.0.6...
+Installing library in
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/random-source-0.3.0.6-2sxt9MoqACW6I0STyXc5JW
+Registering random-source-0.3.0.6...

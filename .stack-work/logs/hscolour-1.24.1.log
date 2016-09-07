@@ -1,0 +1,144 @@
+Configuring hscolour-1.24.1...
+Building hscolour-1.24.1...
+Preprocessing library hscolour-1.24.1...
+[ 1 of 16] Compiling Language.Haskell.HsColour.General ( Language/Haskell/HsColour/General.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/General.o )
+[ 2 of 16] Compiling Language.Haskell.HsColour.Classify ( Language/Haskell/HsColour/Classify.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/Classify.o )
+
+Language/Haskell/HsColour/Classify.hs:52:18: Warning: Tab character
+
+Language/Haskell/HsColour/Classify.hs:56:50: Warning: Tab character
+
+Language/Haskell/HsColour/Classify.hs:100:39: Warning:
+    Tab character
+[ 3 of 16] Compiling Language.Haskell.HsColour.Anchors ( Language/Haskell/HsColour/Anchors.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/Anchors.o )
+
+Language/Haskell/HsColour/Anchors.hs:73:1: Warning: Tab character
+
+Language/Haskell/HsColour/Anchors.hs:74:1: Warning: Tab character
+
+Language/Haskell/HsColour/Anchors.hs:74:34: Warning: Tab character
+
+Language/Haskell/HsColour/Anchors.hs:103:30: Warning: Tab character
+
+Language/Haskell/HsColour/Anchors.hs:108:41: Warning: Tab character
+[ 4 of 16] Compiling Language.Haskell.HsColour.ColourHighlight ( Language/Haskell/HsColour/ColourHighlight.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/ColourHighlight.o )
+[ 5 of 16] Compiling Language.Haskell.HsColour.Output ( Language/Haskell/HsColour/Output.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/Output.o )
+[ 6 of 16] Compiling Language.Haskell.HsColour.ANSI ( Language/Haskell/HsColour/ANSI.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/ANSI.o )
+
+Language/Haskell/HsColour/ANSI.hs:62:10: Warning:
+    No explicit implementation for
+      ‘toEnum’
+    In the instance declaration for ‘Enum Highlight’
+[ 7 of 16] Compiling Language.Haskell.HsColour.Options ( Language/Haskell/HsColour/Options.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/Options.o )
+
+Language/Haskell/HsColour/Options.hs:11:9: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:12:12: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:13:16: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:14:18: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:15:13: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:16:17: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:17:17: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:18:19: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:19:20: Warning: Tab character
+[ 8 of 16] Compiling Language.Haskell.HsColour.Colourise ( Language/Haskell/HsColour/Colourise.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/Colourise.o )
+[ 9 of 16] Compiling Language.Haskell.HsColour.TTY ( Language/Haskell/HsColour/TTY.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/TTY.o )
+[10 of 16] Compiling Language.Haskell.HsColour.HTML ( Language/Haskell/HsColour/HTML.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/HTML.o )
+[11 of 16] Compiling Language.Haskell.HsColour.CSS ( Language/Haskell/HsColour/CSS.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/CSS.o )
+[12 of 16] Compiling Language.Haskell.HsColour.ACSS ( Language/Haskell/HsColour/ACSS.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/ACSS.o )
+[13 of 16] Compiling Language.Haskell.HsColour.InlineCSS ( Language/Haskell/HsColour/InlineCSS.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/InlineCSS.o )
+
+Language/Haskell/HsColour/InlineCSS.hs:12:24: Warning:
+    Tab character
+[14 of 16] Compiling Language.Haskell.HsColour.LaTeX ( Language/Haskell/HsColour/LaTeX.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/LaTeX.o )
+[15 of 16] Compiling Language.Haskell.HsColour.MIRC ( Language/Haskell/HsColour/MIRC.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour/MIRC.o )
+[16 of 16] Compiling Language.Haskell.HsColour ( Language/Haskell/HsColour.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Language/Haskell/HsColour.o )
+
+Language/Haskell/HsColour.hs:37:19: Warning: Tab character
+
+Language/Haskell/HsColour.hs:92:55: Warning: Tab character
+
+Language/Haskell/HsColour.hs:94:55: Warning: Tab character
+In-place registering hscolour-1.24.1...
+Preprocessing executable 'HsColour' for hscolour-1.24.1...
+[ 1 of 17] Compiling Language.Haskell.HsColour.Output ( Language/Haskell/HsColour/Output.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/Output.o )
+[ 2 of 17] Compiling Language.Haskell.HsColour.General ( Language/Haskell/HsColour/General.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/General.o )
+[ 3 of 17] Compiling Language.Haskell.HsColour.ColourHighlight ( Language/Haskell/HsColour/ColourHighlight.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/ColourHighlight.o )
+[ 4 of 17] Compiling Language.Haskell.HsColour.Classify ( Language/Haskell/HsColour/Classify.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/Classify.o )
+
+Language/Haskell/HsColour/Classify.hs:52:18: Warning: Tab character
+
+Language/Haskell/HsColour/Classify.hs:56:50: Warning: Tab character
+
+Language/Haskell/HsColour/Classify.hs:100:39: Warning:
+    Tab character
+[ 5 of 17] Compiling Language.Haskell.HsColour.Anchors ( Language/Haskell/HsColour/Anchors.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/Anchors.o )
+
+Language/Haskell/HsColour/Anchors.hs:73:1: Warning: Tab character
+
+Language/Haskell/HsColour/Anchors.hs:74:1: Warning: Tab character
+
+Language/Haskell/HsColour/Anchors.hs:74:34: Warning: Tab character
+
+Language/Haskell/HsColour/Anchors.hs:103:30: Warning: Tab character
+
+Language/Haskell/HsColour/Anchors.hs:108:41: Warning: Tab character
+[ 6 of 17] Compiling Language.Haskell.HsColour.ANSI ( Language/Haskell/HsColour/ANSI.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/ANSI.o )
+
+Language/Haskell/HsColour/ANSI.hs:62:10: Warning:
+    No explicit implementation for
+      ‘toEnum’
+    In the instance declaration for ‘Enum Highlight’
+[ 7 of 17] Compiling Language.Haskell.HsColour.Options ( Language/Haskell/HsColour/Options.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/Options.o )
+
+Language/Haskell/HsColour/Options.hs:11:9: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:12:12: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:13:16: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:14:18: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:15:13: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:16:17: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:17:17: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:18:19: Warning: Tab character
+
+Language/Haskell/HsColour/Options.hs:19:20: Warning: Tab character
+[ 8 of 17] Compiling Language.Haskell.HsColour.Colourise ( Language/Haskell/HsColour/Colourise.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/Colourise.o )
+[ 9 of 17] Compiling Language.Haskell.HsColour.HTML ( Language/Haskell/HsColour/HTML.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/HTML.o )
+[10 of 17] Compiling Language.Haskell.HsColour.CSS ( Language/Haskell/HsColour/CSS.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/CSS.o )
+[11 of 17] Compiling Language.Haskell.HsColour.ACSS ( Language/Haskell/HsColour/ACSS.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/ACSS.o )
+[12 of 17] Compiling Language.Haskell.HsColour.InlineCSS ( Language/Haskell/HsColour/InlineCSS.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/InlineCSS.o )
+
+Language/Haskell/HsColour/InlineCSS.hs:12:24: Warning:
+    Tab character
+[13 of 17] Compiling Language.Haskell.HsColour.LaTeX ( Language/Haskell/HsColour/LaTeX.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/LaTeX.o )
+[14 of 17] Compiling Language.Haskell.HsColour.MIRC ( Language/Haskell/HsColour/MIRC.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/MIRC.o )
+[15 of 17] Compiling Language.Haskell.HsColour.TTY ( Language/Haskell/HsColour/TTY.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour/TTY.o )
+[16 of 17] Compiling Language.Haskell.HsColour ( Language/Haskell/HsColour.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Language/Haskell/HsColour.o )
+
+Language/Haskell/HsColour.hs:37:19: Warning: Tab character
+
+Language/Haskell/HsColour.hs:92:55: Warning: Tab character
+
+Language/Haskell/HsColour.hs:94:55: Warning: Tab character
+[17 of 17] Compiling Main             ( HsColour.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour-tmp/Main.o )
+
+HsColour.hs:71:1: Warning: Tab character
+Linking .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/HsColour/HsColour ...
+Installing library in
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/hscolour-1.24.1-2YySv0wbYbFBnmx1wDmKZO
+Installing executable(s) in
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-6.14/7.10.3/bin
+Registering hscolour-1.24.1...

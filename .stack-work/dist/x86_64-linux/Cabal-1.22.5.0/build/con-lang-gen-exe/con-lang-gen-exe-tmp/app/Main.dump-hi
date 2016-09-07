@@ -1,0 +1,131 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-05 02:29:37.80146 UTC
+
+interface main@main:Main 7103
+  interface hash: b9b04ed1802a2af0226f7eca7962c3bf
+  ABI hash: 69fa2ed09606c85df12959dcb462550d
+  export-list hash: fa8cb59c6627a737b6242839157bef41
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 6052577fbb991595f3e20337ed81343b
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+module dependencies:
+package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
+                      MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      con-lang-gen-0.0.0.1@conla_4HxSYcynNloL3TkunNPLrN
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      erf-2.0.0.0@erf_6l78BnvLL4b2mWYp3HJJxX
+                      flexible-defaults-0.0.1.2@flexi_70LqvhG3vbS8bRvV8pHtMk
+                      ghc-prim-0.4.0.0 integer-gmp-1.0.0.0
+                      math-functions-0.1.7.0@mathf_BN6S7j0ar3LC4TsnYu0us5
+                      mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI
+                      monad-loops-0.4.3@monad_LQiHRUYhFhYBU7nOOWDOrb
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk
+                      old-locale-1.0.0.7@oldlo_7h2Gx6mVPJ5Gheca8j9Mpe
+                      old-time-1.1.0.3@oldti_JVjJvknZJ0JKghfag2Jw2L
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L
+                      random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL
+                      random-shuffle-0.0.4@rando_9kOz9tEn1526ShtWz8x59X
+                      random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr
+                      rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG
+                      stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD
+                      syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE template-haskell-2.10.0.0
+                      th-extras-0.0.0.4@thext_LRY1RUMy7ShLl2tqhMyHdO
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
+orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
+         base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.IO
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.MWC
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.PureMT
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.StdGen
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE:Data.Generics.Instances
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk:System.Random.MWC
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Primitive
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  con-lang-gen-0.0.0.1@conla_4HxSYcynNloL3TkunNPLrN:XBar 3c7a16661d62d19056cbdc672f4eb929
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.DevRandom 963c128bf511fdaf9c0579c60c659d60
+import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
+import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
+8925ade5f233421efb5ae90668c9aba5
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+0e295257ae4eb74279c722b5e46475a1
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case XBar.loadInputData1 s of ds1 { (#,#) ipv ipv1 ->
+                 case (Data.RVar.runRVar
+                         @ XBarType.CompP
+                         @ Data.Random.Source.DevRandom.DevRandom
+                         @ GHC.Types.IO
+                         Data.Random.Source.DevRandom.$fRandomSourceIODevRandom
+                         (XBar.makeCompP ipv1)
+                         Data.Random.Source.DevRandom.DevRandom)
+                        `cast`
+                      (GHC.Types.NTCo:IO[0] <XBarType.CompP>_R)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (XBarType.$fShowCompP_$cshow ipv3)
+                   GHC.Types.True
+                   ipv2 } }) -}
+48270b7b5d2a31e740b21c84e8165e86
+  main2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
