@@ -1,17 +1,16 @@
 -- Data types for allophones (potentially anything though)
 module RuleType
-(
-PhonologicalRule(..)
+( PhonologicalRule(..)
 , PhoneChange(..)
 ) where
 
 import Prelude hiding (Word)
 import Data.List
-import PhonemeType2
+import PhonemeType
 
 data ConVowel a b = C a | V b
 
-data Boundary a b c d = Phoneme a | Syllable b | Morpheme c | Word d
+--data Boundary a b c d = Phoneme a | Syllable b | Morpheme c | Word d
 
 data PhonologicalRule = PhonologicalRule
     { change :: PhoneChange

@@ -17,7 +17,7 @@ version = Version [0,0,0,1] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/bin"
-libdir     = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/con-lang-gen-0.0.0.1-4HxSYcynNloL3TkunNPLrN"
+libdir     = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/con-lang-gen-0.0.0.1-1eA9qWUPH9nBowcXqqaV8r"
 datadir    = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/share/x86_64-linux-ghc-7.10.3/con-lang-gen-0.0.0.1"
 libexecdir = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/libexec"
 sysconfdir = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-6.14/7.10.3/etc"

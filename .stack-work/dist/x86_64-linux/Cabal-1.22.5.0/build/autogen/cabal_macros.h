@@ -7,6 +7,13 @@
   (major1) == 4 && (major2) <  8 || \
   (major1) == 4 && (major2) == 8 && (minor) <= 2)
 
+/* package containers-0.5.6.2 */
+#define VERSION_containers "0.5.6.2"
+#define MIN_VERSION_containers(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  5 || \
+  (major1) == 0 && (major2) == 5 && (minor) <= 6)
+
 /* package random-extras-0.19 */
 #define VERSION_random_extras "0.19"
 #define MIN_VERSION_random_extras(major1,major2,minor) (\
@@ -34,6 +41,13 @@
   (major1) <  0 || \
   (major1) == 0 && (major2) <  2 || \
   (major1) == 0 && (major2) == 2 && (minor) <= 0)
+
+/* package tuple-0.3.0.2 */
+#define VERSION_tuple "0.3.0.2"
+#define MIN_VERSION_tuple(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  3 || \
+  (major1) == 0 && (major2) == 3 && (minor) <= 0)
 
 /* tool cpphs-1.20.1 */
 #define TOOL_VERSION_cpphs "1.20.1"
@@ -112,5 +126,5 @@
   (major1) == 2 && (major2) <  26 || \
   (major1) == 2 && (major2) == 26 && (minor) <= 0)
 
-#define CURRENT_PACKAGE_KEY "conla_4HxSYcynNloL3TkunNPLrN"
+#define CURRENT_PACKAGE_KEY "conla_1eA9qWUPH9nBowcXqqaV8r"
 
