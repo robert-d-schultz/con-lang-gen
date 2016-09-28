@@ -56,12 +56,12 @@
   (major1) == 1 && (major2) <  20 || \
   (major1) == 1 && (major2) == 20 && (minor) <= 1)
 
-/* tool gcc-6.2.1 */
-#define TOOL_VERSION_gcc "6.2.1"
+/* tool gcc-6.1.1 */
+#define TOOL_VERSION_gcc "6.1.1"
 #define MIN_TOOL_VERSION_gcc(major1,major2,minor) (\
   (major1) <  6 || \
-  (major1) == 6 && (major2) <  2 || \
-  (major1) == 6 && (major2) == 2 && (minor) <= 1)
+  (major1) == 6 && (major2) <  1 || \
+  (major1) == 6 && (major2) == 1 && (minor) <= 1)
 
 /* tool ghc-7.10.3 */
 #define TOOL_VERSION_ghc "7.10.3"

@@ -1,6 +1,7 @@
 module GrammarType
 ( Declension(..)
 , AgglSystem(..)
+, Template(..)
 , Maybe(..)
 , GrammarSystem(..)
 , Gender(..)
@@ -19,6 +20,8 @@ import OtherData
 data Declension = Declension [(Syllable, (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))] deriving (Show)
 
 data AgglSystem = AgglSystem (Maybe [(Syllable, Gender)]) (Maybe [(Syllable, Animacy)]) (Maybe [(Syllable, Case)]) (Maybe [(Syllable, Number)]) (Maybe [(Syllable, Honorific)]) (Maybe [(Syllable, Definiteness)]) (Maybe [(Syllable, Specificity)]) deriving (Show)
+
+data Template = Template (Int, Int, Int, Int, Int, Int, Int) deriving (Show) -- 0 = unassigned, 1 = C1, 2 = V, 3 = C2
 
 data GrammarSystem = GrammarSystem
     { gSys :: Maybe [Gender]

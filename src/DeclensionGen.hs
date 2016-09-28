@@ -31,6 +31,15 @@ makeDeclension gramSys syllList consList vowsList = output where
   -- number of combinations of features
   numCombo = length $ makeCombos gramSys
 
+  -- number of consonants
+  numCons = length consList
+
+  -- number of vowels
+  numVow = length vowsList
+
+  -- number of syllables
+  numSyll = length syllList
+
   output = case num of 0 -> case0
                        1 -> case1
                        2 -> case2
@@ -74,7 +83,9 @@ makeDeclension gramSys syllList consList vowsList = output where
     | otherwise = []
 
   -- 2 grammatical features
-  case2 = join $ choice [ makeRndDeclension gramSys syllList ] ++ vc2S ++ c1vS ++ c1c2S ++ c1S ++ vS ++ c2S
+  case2 = join $ choice $ [ makeRndDeclension gramSys syllList ] ++ vc2S ++ c1vS ++ c1c2S ++ c1S ++ vS ++ c2S
+  -- Need to find all the pairs of C1-VC2 where length C1 >= first category and length VC2 >= second category, or the reverse
+  -- Need to find all the pairs of X-Y where length X >
 
                   --vary C1 for one, V for the other, hold C2 constant
                   --vary C2 for one, C1 for the other, hold V constant
@@ -88,6 +99,44 @@ makeDeclension gramSys syllList consList vowsList = output where
   -- 4 or more grammatical features
   case4 = join $ choice [ makeRndDeclension gramSys syllList
                         ]
+  -- make all possible templates (actually below only does many to one mapping so no Number -> C1+V)
+  tempList = makeAllTemplates gramSys
+  tempNum = map (numTemplate gramSys) tempList
+  tempListNum = zip tempNum tempList
+  -- filter out all templates that result in needed consonants being larger than actual number of consonants
+  -- filter out template that result in needed vowels being larger than actual number of vowels
+  -- filter out templates that result in more syllables than what we have
+  tempListNumFilt = filter (\((x,y,z),_) -> x <= numCons && y <= numVow && z <= numCons && (x*y*z) <= numSyll) tempListNum
+
+
+  subsequencesOfSize :: Int -> [a] -> [[a]]
+  subsequencesOfSize n xs = let l = length xs
+                            in if n>l then [] else subsequencesBySize xs !! (l-n)
+   where
+     subsequencesBySize [] = [[[]]]
+     subsequencesBySize (x:xs) = let next = subsequencesBySize xs
+                               in zipWith (++) ([]:next) (map (map (x:)) next ++ [[]])
+
+  fooBar :: (Int, Int, Int) -> [MaybeConsonant] -> [Vowel] -> [Syllable] -> [[Syllable]]
+  fooBar (c1Int, vInt, c2Int) cons vows syllList = output where
+    subc1 = subsequencesOfSize c1Int cons
+    subv = subsequencesOfSize vInt vows
+    subc2 = subsequencesOfSize c2Int cons
+    co = (,,) <$> subc1 <*> subv <*> subc2
+    listListSyll = (zipWith3 Syllable (map fst3 co) (map mid3 co) (map lst3 co))
+    output = filter (\x -> and (flip . map (elem syllList)) x) listListSyll
+
+  fst3 :: (a,b,c) -> a
+  fst3 (a,b,c) = c
+
+  mid3 :: (a,b,c) -> b
+  mid3 (a,b,c) = b
+
+  lst3 :: (a,b,c) -> c
+  lst3 (a,b,c) = c
+
+  -- can i pick (1-Up to number of) consonants, (1-Up to number of vowels) vowels, and (1 - Up to number of) consonants that form (1 - up to number of syllables)
+  -- find (length c1 needed) consonants, (length v needed) vowels, and (length c2 needed) consonants that all form syllables that are in syllList
 
 -- Random syllable for each combo
 makeRndDeclension :: GrammarSystem -> [Syllable] -> RVar Declension
@@ -169,3 +218,26 @@ findC2Syllables syllC2 = filter (\x -> getC2 x == syllC2)
 
 -- filter all possible syllables based on V
 findVSyllables syllV = filter (\x -> getV x == syllV)
+
+-- Template stuff below
+-- Makes all possible templates
+-- like all categories assigned to C1, or 1/7 assigned to C1 and 2/7 assigned to V and 4/7 assigned to C3
+makeAllTemplates :: GrammarSystem -> [Template]
+makeAllTemplates (GrammarSystem g a c n h d s) = Template <$> allTemplates where
+
+  assign cat
+    | isNothing cat = [0]
+    | otherwise = [1,2,3]
+
+  allTemplates = (,,,,,,) <$> assign g <*> assign a <*> assign c <*> assign n <*> assign h <*> assign d <*> assign s
+
+-- Given a template, how many seperate phonemes are needed per place (C1, V, C2)
+numTemplate :: GrammarSystem -> Template -> (Int, Int, Int)
+numTemplate (GrammarSystem g a c n h d s) (Template (gInt, aInt, cInt, nInt, hInt, dInt, sInt)) = (c1Int, vInt, c2Int) where
+  ints = [maybe 1 length g, maybe 1 length a, maybe 1 length c, maybe 1 length n, maybe 1 length h, maybe 1 length d, maybe 1 length s]
+  c1 = map (\x -> if x /= 1 then 0; else x) [gInt, aInt, cInt, nInt, hInt, dInt, sInt]
+  c1Int = product $ zipWith (*) c1 ints
+  v = map (\x -> if x /= 2 then 0; else x) [gInt, aInt, cInt, nInt, hInt, dInt, sInt]
+  vInt = product $ zipWith (*) v ints
+  c2 = map (\x -> if x /= 3 then 0; else x) [gInt, aInt, cInt, nInt, hInt, dInt, sInt]
+  c2Int = product $ zipWith (*) c2 ints
