@@ -24,18 +24,18 @@ import GrammarType
 import PhonologyType
 
 -- Program
--- Load from files 
+-- Load from files
 data InputData = InputData
-    { 
+    {
       inputGender :: [GenderSystem]
     , inputAnimacy :: [AnimacySystem]
     , inputCase :: [CaseSystem]
     , inputNumber :: [NumberSystem]
-    , inputHonorific :: [HonorificSystem]    
+    , inputHonorific :: [HonorificSystem]
     , inputDefiniteness :: [DefinitenessSystem]
-    , inputSpecificity :: [SpecificitySystem]        
+    , inputSpecificity :: [SpecificitySystem]
     }
-    
+
 loadInputData2 :: IO InputData
 loadInputData2 =
     InputData
@@ -46,7 +46,7 @@ loadInputData2 =
         <*> readFeature "grammar/syntactic/honorific.txt"
         <*> readFeature "grammar/syntactic/definiteness.txt"
         <*> readFeature "grammar/syntactic/specificity.txt"
-        
+
 readFeature :: Read a => FilePath -> IO a
 readFeature = fmap read . readFile
 --readFeature = fmap (map GenderSystem . read) . readFile
@@ -69,34 +69,34 @@ pickGenderSystem inputD =
 
 -- Animacy system
 pickAnimacySystem :: InputData -> RVar AnimacySystem
-pickAnimacySystem inputD = 
+pickAnimacySystem inputD =
     choice (inputAnimacy inputD)
 
 -- Case system
 pickCaseSystem :: InputData -> RVar CaseSystem
-pickCaseSystem inputD = 
+pickCaseSystem inputD =
     choice (inputCase inputD)
 
 -- Number system
 pickNumberSystem :: InputData -> RVar NumberSystem
-pickNumberSystem inputD = 
+pickNumberSystem inputD =
     choice (inputNumber inputD)
 
 -- Respect system
 pickHonorificSystem :: InputData -> RVar HonorificSystem
-pickHonorificSystem inputD = 
+pickHonorificSystem inputD =
     choice (inputHonorific inputD)
 
 -- Definiteness system
 pickDefinitenessSystem :: InputData -> RVar DefinitenessSystem
-pickDefinitenessSystem inputD = 
+pickDefinitenessSystem inputD =
     choice (inputDefiniteness inputD)
 
 -- Specificity system
 pickSpecificitySystem :: InputData -> RVar SpecificitySystem
-pickSpecificitySystem inputD = 
+pickSpecificitySystem inputD =
     choice (inputSpecificity inputD)
-    
+
 -- Make declension
 makeDeclensionPattern :: MorphosyntacticSystem -> PhonemeInventory -> RVar DeclensionPattern
 makeDeclensionPattern morph phonemes = do
@@ -105,18 +105,18 @@ makeDeclensionPattern morph phonemes = do
 
     --number of overall dimensions
     let lengths = [length a, length b, length c, length d, length e, length f, length g]
-    let num = length (filter (> 0) lengths) 
+    let num = length (filter (> 0) lengths)
 
     --pick number of "similar" dimensions
     let patterns = patternsGet num
-    pat <- (choice patterns >>= choice)       
+    pat <- (choice patterns >>= choice)
     nums <- sample 3 [0..6]
     let guide = (makeGuide nums [] pat)
     assignPhoneme guide morph phonemes
 
     where
         patternsGet a
-            | a > 3 = 
+            | a > 3 =
                     [[totalRandom]
                     , [v, c, c2]
                     , [vc, cv, cc]
@@ -127,16 +127,16 @@ makeDeclensionPattern morph phonemes = do
                     , [vc, cv, cc]
                     , [cvc]
                     ]
-            | a == 2 = 
+            | a == 2 =
                     [[totalRandom]
                     , [v, c, c2]
                     , [vc, cv, cc]
                     ]
-            | a == 1 = 
+            | a == 1 =
                     [[totalRandom]
                     , [v, c, c2]
                     ]
-            | a == 0 = 
+            | a == 0 =
                     [[totalRandom]
                     ]
         cvc = [1,2,3]
@@ -147,16 +147,16 @@ makeDeclensionPattern morph phonemes = do
         c = [1]
         c2 = [3]
         totalRandom = []
-            
+
 makeGuide :: [Int] -> [Int] -> [Int] -> [Int]
 makeGuide _ guide [] = guide
 makeGuide [] guide _ = guide
-makeGuide nums [] pat = 
+makeGuide nums [] pat =
     makeGuide nums [0,0,0,0,0,0,0] pat
-makeGuide nums guide pat = 
+makeGuide nums guide pat =
     makeGuide (tail nums) ((fst divided) ++ (head pat):[] ++ tail (snd divided)) (tail pat)
     where divided = (splitAt (nums!!0) guide)
-  
+
 assignPhoneme :: [Int] -> MorphosyntacticSystem -> PhonemeInventory -> RVar DeclensionPattern
 assignPhoneme guide morph phonemes = do
     let VCSet phonemesV phonemesC = phonemes
@@ -168,7 +168,7 @@ assignPhoneme guide morph phonemes = do
     l <- doHonorific (guide!!4) e phonemes
     m <- doDefiniteness (guide!!5) f phonemes
     n <- doSpecificity (guide!!6) g phonemes
-    return (h,i,j,k,l,m,n) 
+    return (h,i,j,k,l,m,n)
 
 doGender :: Int -> [Gender] -> PhonemeInventory -> RVar (Int,[(Gender,Phoneme)])
 doGender num genderSystem phonemes = do
@@ -193,7 +193,7 @@ doCase num caseSystem phonemes = do
         pickedPhonemes _ = sample (length caseSystem) phonemesC
     pnmes <- (pickedPhonemes num)
     return (num,zip caseSystem pnmes)
-    
+
 doNumber :: Int -> [Number] -> PhonemeInventory -> RVar (Int,[(Number,Phoneme)])
 doNumber num numberSystem phonemes = do
     let VCSet phonemesV phonemesC = phonemes
@@ -201,7 +201,7 @@ doNumber num numberSystem phonemes = do
         pickedPhonemes _ = sample (length numberSystem) phonemesC
     pnmes <- (pickedPhonemes num)
     return (num,zip numberSystem pnmes)
-    
+
 doHonorific :: Int -> [Honorific] -> PhonemeInventory -> RVar (Int,[(Honorific,Phoneme)])
 doHonorific num honorificSystem phonemes = do
     let VCSet phonemesV phonemesC = phonemes
@@ -217,7 +217,7 @@ doDefiniteness num definitenessSystem phonemes = do
         pickedPhonemes _ = sample (length definitenessSystem) phonemesC
     pnmes <- (pickedPhonemes num)
     return (num,zip definitenessSystem pnmes)
-    
+
 doSpecificity :: Int -> [Specificity] -> PhonemeInventory -> RVar (Int,[(Specificity,Phoneme)])
 doSpecificity num specificitySystem phonemes = do
     let VCSet phonemesV phonemesC = phonemes
@@ -273,7 +273,7 @@ foobar1 key _ ((_,_),(_,_),(_,_),(_,_),(_,_),(_,_),(1,b)) = do
 foobar1 key phonemes ((_,_),(_,_),(_,_),(_,_),(_,_),(_,_),(_,_)) = do
     foobar <- choice phonemes
     return $ foobar
-    
+
 foobar2 :: Key -> [Phoneme] -> DeclensionPattern -> RVar Phoneme
 foobar2 key _ ((2,b),(_,_),(_,_),(_,_),(_,_),(_,_),(_,_)) = do
     let (gen, _, _, _, _, _, _) = key
@@ -299,7 +299,7 @@ foobar2 key _ ((_,_),(_,_),(_,_),(_,_),(_,_),(_,_),(2,b)) = do
 foobar2 key phonemes ((_,_),(_,_),(_,_),(_,_),(_,_),(_,_),(_,_)) = do
     foobar <- choice phonemes
     return $ foobar
-    
+
 foobar3 :: Key -> [Phoneme] -> DeclensionPattern -> RVar Phoneme
 foobar3 key _ ((3,b),(_,_),(_,_),(_,_),(_,_),(_,_),(_,_)) = do
     let (gen, _, _, _, _, _, _) = key

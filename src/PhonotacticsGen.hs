@@ -1,16 +1,18 @@
 module PhonotacticsGen
-( splitC
-, splitV
+( makeConPhonotactics
+, makeVowPhonotactics
 ) where
 
+-- Import
 import Prelude
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
-import PhonemeInventoryGen
-import PhonemeType
 import Data.Tuple.Sequence
 import qualified Data.Set as Set
+
+import PhonemeInventoryGen
+import PhonemeType
 
 -- Generates phonotactic rules to be used by the word generator, inflection generator
 
@@ -21,15 +23,25 @@ import qualified Data.Set as Set
 --allowedType :: [SyllType]
 
 -- Split consonants into two groups, onset and coda
-splitC :: [MaybeConsonant] -> RVar ([MaybeConsonant], [MaybeConsonant])
-splitC cons = do
+makeConPhonotactics :: [MaybeConsonant] -> RVar ([MaybeConsonant], [MaybeConsonant])
+makeConPhonotactics cons = do
   let consB =  cons ++ [Blank]
-  foo <- uniform 0 (length consB)
-  let (onset, rest) = splitAt foo consB
-  bar <- uniform 0 (length onset)
-  foobar <- sample bar onset
-  let coda = rest ++ foobar
-  return (onset, coda)
+  n1 <- uniform 0 (length consB)
+  let (onset, codaOnly) = splitAt n1 consB
+  t <- onsetCoda n1 onset
+  let coda = codaOnly ++ t
+  return (cleanTactics onset, cleanTactics coda)
+
+onsetCoda :: Int -> [MaybeConsonant] -> RVar [MaybeConsonant]
+onsetCoda 0 onset = return []
+onsetCoda n onset = do
+  n2 <- uniform 0 n
+  sample n2 onset
+
+cleanTactics :: [MaybeConsonant] -> [MaybeConsonant]
+cleanTactics cons
+  | null cons = [Blank]
+  | otherwise = cons
 
 -- Split vowels into X groups, onset, nucleus, coda, and alone
 -- Check the result of splitC for each of these
@@ -42,69 +54,54 @@ splitC cons = do
 -- I think using sets would be the best course of action...
 
 
-splitV :: ([MaybeConsonant], [MaybeConsonant]) -> [Vowel] -> RVar ([Vowel], [Vowel], [Vowel], [Vowel])
-splitV (onsetC, codaC) vows = output where
+makeVowPhonotactics :: ([MaybeConsonant], [MaybeConsonant]) -> [Vowel] -> RVar ([Vowel], [Vowel], [Vowel], [Vowel])
+makeVowPhonotactics (onsetC, codaC) vows = output where
   nucleus
-    | null onsetC || null codaC                       = return []
-    | otherwise                                       = getNucleus vows
+    | onsetC == [Blank] || codaC == [Blank] = return []
+    | otherwise                  = do
+      n3 <- uniform 1 (length vows)
+      sample n3 vows
 
   onset
-    | Blank `notElem` onsetC                          = return []
-    | otherwise                                       = getOnset vows
+    | Blank `elem` onsetC = do
+      n1 <- uniform 1 (length vows)
+      sample n1 vows
+    | otherwise  = return []
 
   coda
-    | Blank `notElem` codaC                           = return []
-    | otherwise                                       = getCoda vows
+    | Blank `elem` codaC = do
+      n2 <- uniform 1 (length vows)
+      sample n2 vows
+    | otherwise = return []
 
   alone
-    | Blank `notElem` codaC || Blank `notElem` onsetC = return []
-    | otherwise                                       = getAlone vows
+    | (Blank `elem` codaC) && (Blank `elem` onsetC) = do
+      n4 <- uniform 1 (length vows)
+      sample n4 vows
+    | otherwise = return []
 
-  output = check vows (nucleus,onset,coda,alone)
+  output = do
+    n <- nucleus
+    o <- onset
+    c <- coda
+    a <- alone
+    let sup = Set.fromList vows
+    let sub = Set.unions [Set.fromList n, Set.fromList o, Set.fromList c, Set.fromList a]
+    let dif = Set.toList (Set.difference sup sub)
 
-check :: [Vowel] -> (RVar [Vowel],RVar [Vowel],RVar [Vowel],RVar [Vowel]) -> RVar ([Vowel],[Vowel],[Vowel],[Vowel])
-check vows (nucleus,onset,coda,alone) = do
-  n <- nucleus
-  o <- onset
-  c <- coda
-  a <- alone
-  let sup = Set.fromList vows
-  let sub = Set.unions [Set.fromList n, Set.fromList o, Set.fromList c, Set.fromList a]
-  let dif = Set.toList (Set.difference sub sup)
+    return (nEmpty n dif,oEmpty o dif,cEmpty c dif,aEmpty a dif)
 
-  return (nEmpty n dif,oEmpty o dif,cEmpty c dif,aEmpty a dif)
+  nEmpty [] _  = []
+  nEmpty nb dif = nb ++ dif
 
-nEmpty [] _  = []
-nEmpty nb dif = nb ++ dif
+  oEmpty [] _  = []
+  oEmpty ob dif = ob ++ dif
 
-oEmpty [] _  = []
-oEmpty ob dif = ob ++ dif
+  cEmpty [] _ = []
+  cEmpty cb dif = cb ++ dif
 
-cEmpty [] _ = []
-cEmpty cb dif = cb ++ dif
-
-aEmpty [] _ = []
-aEmpty ab dif = ab ++ dif
-
-getOnset :: [Vowel] -> RVar [Vowel]
-getOnset vows = do
-  n1 <- uniform 0 (length vows)
-  sample n1 vows
-
-getCoda :: [Vowel] -> RVar [Vowel]
-getCoda vows = do
-  n2 <- uniform 0 (length vows)
-  sample n2 vows
-
-getNucleus :: [Vowel] -> RVar [Vowel]
-getNucleus vows = do
-  n3 <- uniform 0 (length vows)
-  sample n3 vows
-
-getAlone :: [Vowel] -> RVar [Vowel]
-getAlone vows = do
-  n4 <- uniform 0 (length vows)
-  sample n4 vows
+  aEmpty [] _ = []
+  aEmpty ab dif = ab ++ dif
 
 
 -- * Allowed/disallowed consonant clusters

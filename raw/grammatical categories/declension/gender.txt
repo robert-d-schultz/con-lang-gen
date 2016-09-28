@@ -1,5 +1,4 @@
 [
-GenderSystem [],
-GenderSystem [M,F],
-GenderSystem [M,F,N],
-GenderSystem [COM,N]]
+[M,F],
+[M,F,N],
+[COM,N]]

@@ -1,0 +1,62 @@
+Consonant inventory: d̠͡ɮ̠, ɲ, ɱ, ʎ̝̊, n̪̊, d̪͡z̪, ɟ, ʑ, k͡ʟ̝̊, n̠̊, ʟ̝̠̊, ʀ, s, ɻ̠, ʈ, l̪, n̪, ʜ, ɹ̊, ʙ, and ʙ̥
+
+Vowel inventory: ʌ̈, ɶ, ɔ, ɯ̞, and ɛ
+
+Syllable structure is: CV(C).
+The following consonant(s) are allowed syllable-initial: /d̠͡ɮ̠/, /ɲ/, /ɱ/, /ʎ̝̊/, /n̪̊/.
+The following consonant(s) are allowed syllable-final: /d̪͡z̪/, /ɟ/, /ʑ/, /k͡ʟ̝̊/, /n̠̊/, /ʟ̝̠̊/, /ʀ/, /s/, /ɻ̠/, /ʈ/, /l̪/, /n̪/, /ʜ/, /ɹ̊/, /ʙ/, /ʙ̥/, /ɲ/, /ɱ/.
+
+The following vowels are allowed interconsonantal: /ɶ/, /ʌ̈/, /ɯ̞/.
+The following vowels are allowed syllable-final: /ʌ̈/, /ɛ/, /ɯ̞/, /ɶ/, /ɔ/.
+
+GrammarSystem {gSys = Nothing, aSys = Nothing, cSys = Nothing, nSys = Nothing, hSys = Nothing, dSys = Nothing, sSys = Just [SPEC,NSPEC]}
+Declension [(Syllable {getC1 = Consonant {place = DENTAL, manner = NASAL, voice = VOICELESS, csymbol = "n\810\778"}, getV = Vowel {height = OPEN, backness = BACK, roundedness = UNROUNDED, vsymbol = "\630"}, getC2 = Consonant {place = UVULAR, manner = TRILL, voice = VOICED, csymbol = "\640"}},(Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Just NSPEC)),(Syllable {getC1 = Consonant {place = DENTAL, manner = NASAL, voice = VOICELESS, csymbol = "n\810\778"}, getV = Vowel {height = OPENMID, backness = NEARFRONT, roundedness = UNROUNDED, vsymbol = "\652\776"}, getC2 = Consonant {place = UVULAR, manner = TRILL, voice = VOICED, csymbol = "\640"}},(Nothing,Nothing,Nothing,Nothing,Nothing,Nothing,Just SPEC))]/ɱʌ̈n̠̊.ʎ̝̊ɶ/
+/ʎ̝̊ʌ̈ɱ.ʎ̝̊ɯ̞ʑ.ʎ̝̊ɶn̠̊/
+/ɱʌ̈ʙ̥.ɱɶɱ.ʎ̝̊ɯ̞ʜ/
+/ɲʌ̈n̪.ɱʌ̈ʙ.d̠͡ɮ̠ɯ̞ɟ/
+/ɲɯ̞ɟ/
+/ɲʌ̈.d̠͡ɮ̠ɶʙ.ɱɶɻ̠/
+/ɲɶʙ.n̪̊ɯ̞ʙ̥/
+/ɲʌ̈ʜ.n̪̊ɶk͡ʟ̝̊.d̠͡ɮ̠ʌ̈n̠̊/
+/ʎ̝̊ʌ̈ʙ.ɲɶ/
+/n̪̊ɯ̞ʙ.n̪̊ʌ̈ɱ.n̪̊ɶɟ.n̪̊ɯ̞/
+/ɲʌ̈/
+/ɱɶk͡ʟ̝̊.ɲɶʟ̝̠̊.n̪̊ʌ̈ʙ.ʎ̝̊ʌ̈n̪/
+/ɲɶ/
+/d̠͡ɮ̠ɶd̪͡z̪.d̠͡ɮ̠ɯ̞n̪.d̠͡ɮ̠ʌ̈.n̪̊ɶɹ̊/
+/ɲɶl̪.ʎ̝̊ɯ̞ʜ.ɱʌ̈ʜ/
+/d̠͡ɮ̠ʌ̈n̠̊.ʎ̝̊ɶʈ.ɱɯ̞n̠̊.n̪̊ɶʟ̝̠̊/
+/ʎ̝̊ɯ̞ʙ̥.n̪̊ɯ̞ʈ.ɲʌ̈ʈ/
+/ɱɶɲ.ɲʌ̈ʟ̝̠̊.ɱɶd̪͡z̪/
+/n̪̊ʌ̈ʑ/
+/ɱɯ̞.ɲɶɲ.d̠͡ɮ̠ʌ̈k͡ʟ̝̊.ɲɶ/
+/ʎ̝̊ɯ̞s.n̪̊ɶn̠̊.n̪̊ɯ̞ɹ̊.d̠͡ɮ̠ɯ̞n̪/
+/n̪̊ɶʑ.ʎ̝̊ʌ̈ʟ̝̠̊.ʎ̝̊ɶd̪͡z̪/
+/ɲʌ̈s.d̠͡ɮ̠ɶʙ̥.d̠͡ɮ̠ɶʑ/
+/n̪̊ɯ̞ʑ.d̠͡ɮ̠ʌ̈ɱ/
+/ɱɯ̞ʟ̝̠̊/
+/ʎ̝̊ʌ̈ɹ̊.n̪̊ʌ̈ɻ̠.ɲʌ̈.ʎ̝̊ɶd̪͡z̪/
+/ɲɯ̞ɟ.ɲɯ̞/
+/d̠͡ɮ̠ɛ.d̠͡ɮ̠ɯ̞ʜ/
+/ɲɶ.ʎ̝̊ʌ̈l̪.ɱɛ.ɱʌ̈ɻ̠/
+/ɱɯ̞ɹ̊.ʎ̝̊ʌ̈ʜ.ɲɯ̞ɻ̠.ɱɯ̞/
+/ʎ̝̊ɶn̠̊.ʎ̝̊ɯ̞/
+/n̪̊ʌ̈l̪.n̪̊ɯ̞ʀ.ɱɶʜ/
+/ɲɶ.ʎ̝̊ɯ̞ʟ̝̠̊.n̪̊ɯ̞ʀ.n̪̊ɯ̞s/
+/ʎ̝̊ɶɟ/
+/d̠͡ɮ̠ɶɹ̊.n̪̊ɶɻ̠.d̠͡ɮ̠ɶʙ/
+/ɱɯ̞ʈ/
+/ʎ̝̊ɯ̞ɲ.ʎ̝̊ʌ̈ʀ.ʎ̝̊ɶ/
+/ɲɯ̞ʀ/
+/ʎ̝̊ɔ.d̠͡ɮ̠ʌ̈n̠̊.ɲɶn̠̊/
+/d̠͡ɮ̠ʌ̈s.ɱɯ̞ʙ/
+/d̠͡ɮ̠ɶɹ̊.n̪̊ʌ̈ɻ̠/
+/ʎ̝̊ʌ̈/
+/n̪̊ɯ̞/
+/d̠͡ɮ̠ɯ̞ʙ̥.ɱʌ̈l̪/
+/d̠͡ɮ̠ʌ̈ʀ.d̠͡ɮ̠ɶs.ʎ̝̊ɯ̞s.ɲʌ̈/
+/n̪̊ɯ̞n̠̊.ʎ̝̊ʌ̈s.d̠͡ɮ̠ɯ̞ʙ̥/
+/n̪̊ʌ̈d̪͡z̪.ɲɯ̞ʜ.d̠͡ɮ̠ɶd̪͡z̪/
+/d̠͡ɮ̠ɛ/
+/n̪̊ʌ̈ʟ̝̠̊/
+/n̪̊ʌ̈ʑ.ɲʌ̈ʟ̝̠̊.ʎ̝̊ʌ̈ʑ/

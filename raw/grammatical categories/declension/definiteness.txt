@@ -1,3 +1,2 @@
 [
-DefinitenessSystem [],
-DefinitenessSystem [DEF,INDF]]
+[DEF,INDF]]

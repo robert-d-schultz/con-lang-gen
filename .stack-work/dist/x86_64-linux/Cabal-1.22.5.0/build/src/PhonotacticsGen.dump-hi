@@ -1,19 +1,19 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-18 06:24:38.803851 UTC
+2016-09-24 20:40:09.199924 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen 7103
-  interface hash: 02bd41e5e6f6db374207958411293a1e
-  ABI hash: ca3502d42e4e16f2adb80162f84f8fa0
-  export-list hash: 83eccf9d5574765259c9ebc3ebf585e2
+  interface hash: f66159cbf2f7cfa8c348d695f07ad085
+  ABI hash: 3161bd3b293595ac2e49b76ca89047ec
+  export-list hash: 09c66478cd924912531c964a5f38d806
   orphan hash: fe48ecd7cd2d48d4180b6321e152208a
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  PhonotacticsGen.splitC
-  PhonotacticsGen.splitV
+  PhonotacticsGen.makeConPhonotactics
+  PhonotacticsGen.makeVowPhonotactics
 module dependencies: PhonemeInventoryGen PhonemeType
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
@@ -85,8 +85,8 @@ import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  PhonemeInventoryGen 9859a5d0767fcc6e3262432420ae523a
-  exports: f079e07c9a9fb52beb1241ad3609ea04
+import  -/  PhonemeInventoryGen 6dea7946c11c44f58a6494423af32d95
+  exports: a48589ab3dfb3d6be8da2a80c0d9cecf
 import  -/  PhonemeType ae499e04429789f68b804baafd2bc506
   exports: 3ba39fd360b81c89e4deec0e37d35fd4
   Blank 166226366c396ae718303a1d9dfdadeb
@@ -168,8 +168,8 @@ import  -/  tuple-0.3.0.2@tuple_0P5GlwXwirn97NAX2TWlIC:Data.Tuple.Sequence e58e5
     -> [PhonemeType.Vowel]
     -> Data.Set.Base.Set PhonemeType.Vowel
   {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
-d71b3089031d31718533959d6a6214ff
-  $wsplitV ::
+f629efa0b48ea36d0995fd5986e958ed
+  $wmakeVowPhonotactics ::
     [PhonemeType.MaybeConsonant]
     -> [PhonemeType.MaybeConsonant]
     -> [PhonemeType.Vowel]
@@ -179,14 +179,14 @@ d71b3089031d31718533959d6a6214ff
           [PhonemeType.Vowel],
           [PhonemeType.Vowel])
   {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0] -}
-46a5a633d7f392902fae355d0eee4a83
-  splitC ::
+aaa7d1648f2beecab626c5d299772db4
+  makeConPhonotactics ::
     [PhonemeType.MaybeConsonant]
     -> Data.RVar.RVar
          ([PhonemeType.MaybeConsonant], [PhonemeType.MaybeConsonant])
   {- Arity: 1, Strictness: <L,1*U> -}
-f572e37cca91f0deb85a605e238cebc0
-  splitV ::
+3c239a44ce91324791dec9ca58dcf5be
+  makeVowPhonotactics ::
     ([PhonemeType.MaybeConsonant], [PhonemeType.MaybeConsonant])
     -> [PhonemeType.Vowel]
     -> Data.RVar.RVar
@@ -200,7 +200,7 @@ f572e37cca91f0deb85a605e238cebc0
                          [PhonemeType.MaybeConsonant])
                    w1 :: [PhonemeType.Vowel] ->
                  case w of ww { (,) ww1 ww2 ->
-                 PhonotacticsGen.$wsplitV ww1 ww2 w1 }) -}
+                 PhonotacticsGen.$wmakeVowPhonotactics ww1 ww2 w1 }) -}
 "SPEC/PhonotacticsGen fromList @ Vowel" [ALWAYS] forall $dOrd :: GHC.Classes.Ord
                                                                    PhonemeType.Vowel
   Data.Set.Base.fromList @ PhonemeType.Vowel $dOrd

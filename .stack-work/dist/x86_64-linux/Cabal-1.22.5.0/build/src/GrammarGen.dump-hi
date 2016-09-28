@@ -1,0 +1,664 @@
+
+==================== FINAL INTERFACE ====================
+2016-09-28 03:36:48.722733 UTC
+
+interface conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 7103
+  interface hash: bda4a2e073ed334e39fcac86d8f57b14
+  ABI hash: 27cbb6c36866c92976b7881df2e7949c
+  export-list hash: 99866e90013855e3a6486be2b606dc63
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 962af636f8e927040c7daa9c21457292
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  GrammarGen.loadInputData2
+  GrammarGen.makeGrammarSystem
+module dependencies: GrammarType OtherData PhonemeInventoryGen
+                     PhonemeType PhonotacticsGen
+package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
+                      MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
+                      OneTuple-0.2.1@OneTu_7qUmBkRamgQ0H9fFgZmi5H
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      erf-2.0.0.0@erf_6l78BnvLL4b2mWYp3HJJxX
+                      flexible-defaults-0.0.1.2@flexi_70LqvhG3vbS8bRvV8pHtMk
+                      ghc-prim-0.4.0.0 integer-gmp-1.0.0.0
+                      math-functions-0.1.7.0@mathf_BN6S7j0ar3LC4TsnYu0us5
+                      mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI
+                      monad-loops-0.4.3@monad_LQiHRUYhFhYBU7nOOWDOrb
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk
+                      old-locale-1.0.0.7@oldlo_7h2Gx6mVPJ5Gheca8j9Mpe
+                      old-time-1.1.0.3@oldti_JVjJvknZJ0JKghfag2Jw2L
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L
+                      random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL
+                      random-shuffle-0.0.4@rando_9kOz9tEn1526ShtWz8x59X
+                      random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr
+                      rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG
+                      stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD
+                      syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE template-haskell-2.10.0.0
+                      th-extras-0.0.0.4@thext_LRY1RUMy7ShLl2tqhMyHdO
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      tuple-0.3.0.2@tuple_0P5GlwXwirn97NAX2TWlIC
+                      vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
+orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
+         base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.IO
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.MWC
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.PureMT
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.StdGen
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE:Data.Generics.Instances
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk:System.Random.MWC
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Primitive
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
+import  -/  base-4.8.2.0:Control.Monad 480c5067477275068c9b98be08410df9
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.Read b423b4506a014855edbd329b567629f3
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
+import  -/  GrammarType d41c9ff1a4a196bc7fb7fc2109d827ba
+  exports: 2f1e30d8523478220718ffc652cbd1c0
+  Animacy 139c2ca991f21d8f2e5bf34c2a3359ca
+  Case cf12fb2514df090f443d91dc740e2284
+  Definiteness 0beb087cff99593226a9b8c5fd83dd7e
+  Gender 313f54c997d1c2a7547cc74ee46f34a6
+  GrammarSystem df926e0cdd7922a38e385334258b37f0
+  GrammarSystem 3d4b6c2c5775c66a007d34fe0ec6258f
+  Honorific 33ab5b5c9687d44421ffb5723e773fed
+  Number 7c6bccd0de5888f1bb886fc04db2be0f
+  Specificity e521f63828d45d62f01915f44b5b0dc6
+import  -/  OtherData f086edab5429a445c5a03de742c12a46
+  exports: 9eafbe3cd8a957307681d0a6605eb9fd
+import  -/  PhonemeInventoryGen 6dea7946c11c44f58a6494423af32d95
+  exports: a48589ab3dfb3d6be8da2a80c0d9cecf
+import  -/  PhonemeType ae499e04429789f68b804baafd2bc506
+  exports: 3ba39fd360b81c89e4deec0e37d35fd4
+import  -/  PhonotacticsGen 3161bd3b293595ac2e49b76ca89047ec
+  exports: 09c66478cd924912531c964a5f38d806
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
+import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
+import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
+8842c66cb10e9b1a447b7557c138c622
+  data InputData
+    = InputData {inputGender :: [[GrammarType.Gender]],
+                 inputAnimacy :: [[GrammarType.Animacy]],
+                 inputCase :: [[GrammarType.Case]],
+                 inputNumber :: [[GrammarType.Number]],
+                 inputHonorific :: [[GrammarType.Honorific]],
+                 inputDefiniteness :: [[GrammarType.Definiteness]],
+                 inputSpecificity :: [[GrammarType.Specificity]]}
+    Promotable
+3dbc7fc3f7f2c2e9b3ce16ccf5bda8fa
+  inputAnimacy :: GrammarGen.InputData -> [[GrammarType.Animacy]]
+  RecSel GrammarGen.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLLL),1*U(A,1*U,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GrammarGen.InputData ->
+                 case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds2 }) -}
+4274a5f7a88dbfc2575feebbebc4557e
+  inputCase :: GrammarGen.InputData -> [[GrammarType.Case]]
+  RecSel GrammarGen.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLLL),1*U(A,A,1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GrammarGen.InputData ->
+                 case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds3 }) -}
+e72c687081385be273c604d6feb27ae1
+  inputDefiniteness ::
+    GrammarGen.InputData -> [[GrammarType.Definiteness]]
+  RecSel GrammarGen.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLSL),1*U(A,A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GrammarGen.InputData ->
+                 case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds6 }) -}
+82c81903a5f616beda07b8fffacddd24
+  inputGender :: GrammarGen.InputData -> [[GrammarType.Gender]]
+  RecSel GrammarGen.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLLL),1*U(1*U,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GrammarGen.InputData ->
+                 case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds1 }) -}
+65dfb217b8bfbefac1583dffb52abeba
+  inputHonorific :: GrammarGen.InputData -> [[GrammarType.Honorific]]
+  RecSel GrammarGen.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSLL),1*U(A,A,A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GrammarGen.InputData ->
+                 case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds5 }) -}
+6253dcfa2b9e9cc15a67735cc4295f4c
+  inputNumber :: GrammarGen.InputData -> [[GrammarType.Number]]
+  RecSel GrammarGen.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLLL),1*U(A,A,A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GrammarGen.InputData ->
+                 case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds4 }) -}
+83568638f4663267c1b48476d8718ac7
+  inputSpecificity ::
+    GrammarGen.InputData -> [[GrammarType.Specificity]]
+  RecSel GrammarGen.InputData
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLS),1*U(A,A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GrammarGen.InputData ->
+                 case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                 ds7 }) -}
+7583ed4c4cda2acb3fe2ce22e9ebdc94
+  loadInputData1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GrammarGen.InputData #)
+  {- Arity: 1, Strictness: <L,U> -}
+63376acc22b818da4e9c0ee1ea9f08c2
+  loadInputData2 :: GHC.Types.IO GrammarGen.InputData
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                GrammarGen.loadInputData1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <GrammarGen.InputData>_R)) -}
+3239cb51bd97db5cd609db8525eb28fa
+  makeGrammarSystem ::
+    GrammarGen.InputData -> Data.RVar.RVar GrammarType.GrammarSystem
+  {- Arity: 1, Strictness: <L,U(1*U,1*U,1*U,1*U,1*U,1*U,1*U)>,
+     Unfolding: (\ inputD :: GrammarGen.InputData ->
+                 let {
+                   eta :: Data.RVar.RVarT
+                            Data.Functor.Identity.Identity [GrammarType.Gender]
+                   = case inputD of wild { GrammarGen.InputData ds ds1 ds2 ds3 ds4 ds5 ds6 ->
+                     Data.Random.Extras.choice @ [GrammarType.Gender] ds }
+                 } in
+                 let {
+                   eta1 :: Data.RVar.RVarT
+                             Data.Functor.Identity.Identity [GrammarType.Animacy]
+                   = case inputD of wild { GrammarGen.InputData ds ds1 ds2 ds3 ds4 ds5 ds6 ->
+                     Data.Random.Extras.choice @ [GrammarType.Animacy] ds1 }
+                 } in
+                 let {
+                   eta2 :: Data.RVar.RVarT
+                             Data.Functor.Identity.Identity [GrammarType.Case]
+                   = case inputD of wild { GrammarGen.InputData ds ds1 ds2 ds3 ds4 ds5 ds6 ->
+                     Data.Random.Extras.choice @ [GrammarType.Case] ds2 }
+                 } in
+                 let {
+                   eta3 :: Data.RVar.RVarT
+                             Data.Functor.Identity.Identity [GrammarType.Number]
+                   = case inputD of wild { GrammarGen.InputData ds ds1 ds2 ds3 ds4 ds5 ds6 ->
+                     Data.Random.Extras.choice @ [GrammarType.Number] ds3 }
+                 } in
+                 let {
+                   eta4 :: Data.RVar.RVarT
+                             Data.Functor.Identity.Identity [GrammarType.Honorific]
+                   = case inputD of wild { GrammarGen.InputData ds ds1 ds2 ds3 ds4 ds5 ds6 ->
+                     Data.Random.Extras.choice @ [GrammarType.Honorific] ds4 }
+                 } in
+                 let {
+                   eta5 :: Data.RVar.RVarT
+                             Data.Functor.Identity.Identity [GrammarType.Definiteness]
+                   = case inputD of wild { GrammarGen.InputData ds ds1 ds2 ds3 ds4 ds5 ds6 ->
+                     Data.Random.Extras.choice @ [GrammarType.Definiteness] ds5 }
+                 } in
+                 let {
+                   eta6 :: Data.RVar.RVarT
+                             Data.Functor.Identity.Identity [GrammarType.Specificity]
+                   = case inputD of wild { GrammarGen.InputData ds ds1 ds2 ds3 ds4 ds5 ds6 ->
+                     Data.Random.Extras.choice @ [GrammarType.Specificity] ds6 }
+                 } in
+                 (\ @ b1
+                    eta7 :: GrammarType.GrammarSystem -> b1
+                    eta8 :: forall a17.
+                            Control.Monad.Prompt.Lift
+                              Data.Random.Source.Internal.Prim.Prim
+                              Data.Functor.Identity.Identity
+                              a17
+                            -> (a17 -> b1) -> b1 ->
+                  let {
+                    lvl49 :: b1
+                    = GrammarGen.makeGrammarSystem11
+                        `cast`
+                      (Trans
+                           (Trans
+                                (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                (Control.Monad.Prompt.NTCo:PromptT[0]
+                                     <Data.Random.Source.Internal.Prim.Prim>_R
+                                     <Data.Functor.Identity.Identity>_R) <GHC.Base.Maybe
+                                                                            [GrammarType.Gender]>_N)
+                           (Control.Monad.Prompt.NTCo:Prompt[0]
+                                <Control.Monad.Prompt.Lift
+                                   Data.Random.Source.Internal.Prim.Prim
+                                   Data.Functor.Identity.Identity>_R
+                                <GHC.Base.Maybe [GrammarType.Gender]>_R))
+                        @ b1
+                        (\ x :: GHC.Base.Maybe [GrammarType.Gender] ->
+                         case x of x1 { DEFAULT ->
+                         let {
+                           lvl50 :: b1
+                           = GrammarGen.makeGrammarSystem9
+                               `cast`
+                             (Trans
+                                  (Trans
+                                       (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                       (Control.Monad.Prompt.NTCo:PromptT[0]
+                                            <Data.Random.Source.Internal.Prim.Prim>_R
+                                            <Data.Functor.Identity.Identity>_R) <GHC.Base.Maybe
+                                                                                   [GrammarType.Animacy]>_N)
+                                  (Control.Monad.Prompt.NTCo:Prompt[0]
+                                       <Control.Monad.Prompt.Lift
+                                          Data.Random.Source.Internal.Prim.Prim
+                                          Data.Functor.Identity.Identity>_R
+                                       <GHC.Base.Maybe [GrammarType.Animacy]>_R))
+                               @ b1
+                               (\ x2 :: GHC.Base.Maybe [GrammarType.Animacy] ->
+                                case x2 of x3 { DEFAULT ->
+                                let {
+                                  lvl51 :: b1
+                                  = GrammarGen.makeGrammarSystem7
+                                      `cast`
+                                    (Trans
+                                         (Trans
+                                              (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                              (Control.Monad.Prompt.NTCo:PromptT[0]
+                                                   <Data.Random.Source.Internal.Prim.Prim>_R
+                                                   <Data.Functor.Identity.Identity>_R) <GHC.Base.Maybe
+                                                                                          [GrammarType.Case]>_N)
+                                         (Control.Monad.Prompt.NTCo:Prompt[0]
+                                              <Control.Monad.Prompt.Lift
+                                                 Data.Random.Source.Internal.Prim.Prim
+                                                 Data.Functor.Identity.Identity>_R
+                                              <GHC.Base.Maybe [GrammarType.Case]>_R))
+                                      @ b1
+                                      (\ x4 :: GHC.Base.Maybe [GrammarType.Case] ->
+                                       case x4 of x5 { DEFAULT ->
+                                       let {
+                                         lvl52 :: b1
+                                         = GrammarGen.makeGrammarSystem5
+                                             `cast`
+                                           (Trans
+                                                (Trans
+                                                     (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                     (Control.Monad.Prompt.NTCo:PromptT[0]
+                                                          <Data.Random.Source.Internal.Prim.Prim>_R
+                                                          <Data.Functor.Identity.Identity>_R) <GHC.Base.Maybe
+                                                                                                 [GrammarType.Number]>_N)
+                                                (Control.Monad.Prompt.NTCo:Prompt[0]
+                                                     <Control.Monad.Prompt.Lift
+                                                        Data.Random.Source.Internal.Prim.Prim
+                                                        Data.Functor.Identity.Identity>_R
+                                                     <GHC.Base.Maybe [GrammarType.Number]>_R))
+                                             @ b1
+                                             (\ x6 :: GHC.Base.Maybe [GrammarType.Number] ->
+                                              case x6 of x7 { DEFAULT ->
+                                              let {
+                                                lvl53 :: b1
+                                                = GrammarGen.makeGrammarSystem3
+                                                    `cast`
+                                                  (Trans
+                                                       (Trans
+                                                            (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                            (Control.Monad.Prompt.NTCo:PromptT[0]
+                                                                 <Data.Random.Source.Internal.Prim.Prim>_R
+                                                                 <Data.Functor.Identity.Identity>_R) <GHC.Base.Maybe
+                                                                                                        [GrammarType.Honorific]>_N)
+                                                       (Control.Monad.Prompt.NTCo:Prompt[0]
+                                                            <Control.Monad.Prompt.Lift
+                                                               Data.Random.Source.Internal.Prim.Prim
+                                                               Data.Functor.Identity.Identity>_R
+                                                            <GHC.Base.Maybe
+                                                               [GrammarType.Honorific]>_R))
+                                                    @ b1
+                                                    (\ x8 :: GHC.Base.Maybe
+                                                               [GrammarType.Honorific] ->
+                                                     case x8 of x9 { DEFAULT ->
+                                                     let {
+                                                       lvl54 :: b1
+                                                       = GrammarGen.makeGrammarSystem1
+                                                           `cast`
+                                                         (Trans
+                                                              (Trans
+                                                                   (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                                   (Control.Monad.Prompt.NTCo:PromptT[0]
+                                                                        <Data.Random.Source.Internal.Prim.Prim>_R
+                                                                        <Data.Functor.Identity.Identity>_R) <GHC.Base.Maybe
+                                                                                                               [GrammarType.Definiteness]>_N)
+                                                              (Control.Monad.Prompt.NTCo:Prompt[0]
+                                                                   <Control.Monad.Prompt.Lift
+                                                                      Data.Random.Source.Internal.Prim.Prim
+                                                                      Data.Functor.Identity.Identity>_R
+                                                                   <GHC.Base.Maybe
+                                                                      [GrammarType.Definiteness]>_R))
+                                                           @ b1
+                                                           (\ x10 :: GHC.Base.Maybe
+                                                                       [GrammarType.Definiteness] ->
+                                                            case x10 of x11 { DEFAULT ->
+                                                            let {
+                                                              eta9 :: GHC.Base.Maybe
+                                                                        [GrammarType.Specificity]
+                                                                      -> b1
+                                                                {- Arity: 1, Strictness: <S,1*U>,
+                                                                   Unfolding: InlineRule (1,
+                                                                                          True,
+                                                                                          False)
+                                                                              (\ x12 :: GHC.Base.Maybe
+                                                                                          [GrammarType.Specificity] ->
+                                                                               case x12 of x13 { DEFAULT ->
+                                                                               eta7
+                                                                                 (GrammarType.GrammarSystem
+                                                                                    x1
+                                                                                    x3
+                                                                                    x5
+                                                                                    x7
+                                                                                    x9
+                                                                                    x11
+                                                                                    x13) }) -}
+                                                              = \ x12 :: GHC.Base.Maybe
+                                                                           [GrammarType.Specificity] ->
+                                                                case x12 of x13 { DEFAULT ->
+                                                                eta7
+                                                                  (GrammarType.GrammarSystem
+                                                                     x1
+                                                                     x3
+                                                                     x5
+                                                                     x7
+                                                                     x9
+                                                                     x11
+                                                                     x13) }
+                                                            } in
+                                                            eta6
+                                                              `cast`
+                                                            (Trans
+                                                                 (Trans
+                                                                      (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                                      (Control.Monad.Prompt.NTCo:PromptT[0]
+                                                                           <Data.Random.Source.Internal.Prim.Prim>_R
+                                                                           <Data.Functor.Identity.Identity>_R) <[GrammarType.Specificity]>_N)
+                                                                 (Control.Monad.Prompt.NTCo:Prompt[0]
+                                                                      <Control.Monad.Prompt.Lift
+                                                                         Data.Random.Source.Internal.Prim.Prim
+                                                                         Data.Functor.Identity.Identity>_R
+                                                                      <[GrammarType.Specificity]>_R))
+                                                              @ b1
+                                                              (\ x12 :: [GrammarType.Specificity] ->
+                                                               case x12 of x13 { DEFAULT ->
+                                                               (Data.Random.Extras.choice
+                                                                  @ (GHC.Base.Maybe
+                                                                       [GrammarType.Specificity])
+                                                                  (GHC.Types.:
+                                                                     @ (GHC.Base.Maybe
+                                                                          [GrammarType.Specificity])
+                                                                     (GHC.Base.Just
+                                                                        @ [GrammarType.Specificity]
+                                                                        x13)
+                                                                     (GHC.Types.[]
+                                                                        @ (GHC.Base.Maybe
+                                                                             [GrammarType.Specificity]))))
+                                                                 `cast`
+                                                               (Trans
+                                                                    (Trans
+                                                                         (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                                         (Control.Monad.Prompt.NTCo:PromptT[0]
+                                                                              <Data.Random.Source.Internal.Prim.Prim>_R
+                                                                              <Data.Functor.Identity.Identity>_R) <GHC.Base.Maybe
+                                                                                                                     [GrammarType.Specificity]>_N)
+                                                                    (Control.Monad.Prompt.NTCo:Prompt[0]
+                                                                         <Control.Monad.Prompt.Lift
+                                                                            Data.Random.Source.Internal.Prim.Prim
+                                                                            Data.Functor.Identity.Identity>_R
+                                                                         <GHC.Base.Maybe
+                                                                            [GrammarType.Specificity]>_R))
+                                                                 @ b1
+                                                                 eta9
+                                                                 eta8 })
+                                                              eta8 })
+                                                           eta8
+                                                     } in
+                                                     eta5
+                                                       `cast`
+                                                     (Trans
+                                                          (Trans
+                                                               (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                               (Control.Monad.Prompt.NTCo:PromptT[0]
+                                                                    <Data.Random.Source.Internal.Prim.Prim>_R
+                                                                    <Data.Functor.Identity.Identity>_R) <[GrammarType.Definiteness]>_N)
+                                                          (Control.Monad.Prompt.NTCo:Prompt[0]
+                                                               <Control.Monad.Prompt.Lift
+                                                                  Data.Random.Source.Internal.Prim.Prim
+                                                                  Data.Functor.Identity.Identity>_R
+                                                               <[GrammarType.Definiteness]>_R))
+                                                       @ b1
+                                                       (\ x10 :: [GrammarType.Definiteness] ->
+                                                        case x10 of x11 { DEFAULT -> lvl54 })
+                                                       eta8 })
+                                                    eta8
+                                              } in
+                                              eta4
+                                                `cast`
+                                              (Trans
+                                                   (Trans
+                                                        (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                        (Control.Monad.Prompt.NTCo:PromptT[0]
+                                                             <Data.Random.Source.Internal.Prim.Prim>_R
+                                                             <Data.Functor.Identity.Identity>_R) <[GrammarType.Honorific]>_N)
+                                                   (Control.Monad.Prompt.NTCo:Prompt[0]
+                                                        <Control.Monad.Prompt.Lift
+                                                           Data.Random.Source.Internal.Prim.Prim
+                                                           Data.Functor.Identity.Identity>_R
+                                                        <[GrammarType.Honorific]>_R))
+                                                @ b1
+                                                (\ x8 :: [GrammarType.Honorific] ->
+                                                 case x8 of x9 { DEFAULT -> lvl53 })
+                                                eta8 })
+                                             eta8
+                                       } in
+                                       eta3
+                                         `cast`
+                                       (Trans
+                                            (Trans
+                                                 (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                 (Control.Monad.Prompt.NTCo:PromptT[0]
+                                                      <Data.Random.Source.Internal.Prim.Prim>_R
+                                                      <Data.Functor.Identity.Identity>_R) <[GrammarType.Number]>_N)
+                                            (Control.Monad.Prompt.NTCo:Prompt[0]
+                                                 <Control.Monad.Prompt.Lift
+                                                    Data.Random.Source.Internal.Prim.Prim
+                                                    Data.Functor.Identity.Identity>_R
+                                                 <[GrammarType.Number]>_R))
+                                         @ b1
+                                         (\ x6 :: [GrammarType.Number] ->
+                                          case x6 of x7 { DEFAULT -> lvl52 })
+                                         eta8 })
+                                      eta8
+                                } in
+                                eta2
+                                  `cast`
+                                (Trans
+                                     (Trans
+                                          (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                          (Control.Monad.Prompt.NTCo:PromptT[0]
+                                               <Data.Random.Source.Internal.Prim.Prim>_R
+                                               <Data.Functor.Identity.Identity>_R) <[GrammarType.Case]>_N)
+                                     (Control.Monad.Prompt.NTCo:Prompt[0]
+                                          <Control.Monad.Prompt.Lift
+                                             Data.Random.Source.Internal.Prim.Prim
+                                             Data.Functor.Identity.Identity>_R
+                                          <[GrammarType.Case]>_R))
+                                  @ b1
+                                  (\ x4 :: [GrammarType.Case] -> case x4 of x5 { DEFAULT -> lvl51 })
+                                  eta8 })
+                               eta8
+                         } in
+                         eta1
+                           `cast`
+                         (Trans
+                              (Trans
+                                   (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                   (Control.Monad.Prompt.NTCo:PromptT[0]
+                                        <Data.Random.Source.Internal.Prim.Prim>_R
+                                        <Data.Functor.Identity.Identity>_R) <[GrammarType.Animacy]>_N)
+                              (Control.Monad.Prompt.NTCo:Prompt[0]
+                                   <Control.Monad.Prompt.Lift
+                                      Data.Random.Source.Internal.Prim.Prim
+                                      Data.Functor.Identity.Identity>_R
+                                   <[GrammarType.Animacy]>_R))
+                           @ b1
+                           (\ x2 :: [GrammarType.Animacy] ->
+                            case x2 of x3 { DEFAULT -> lvl50 })
+                           eta8 })
+                        eta8
+                  } in
+                  eta
+                    `cast`
+                  (Trans
+                       (Trans
+                            (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                            (Control.Monad.Prompt.NTCo:PromptT[0]
+                                 <Data.Random.Source.Internal.Prim.Prim>_R
+                                 <Data.Functor.Identity.Identity>_R) <[GrammarType.Gender]>_N)
+                       (Control.Monad.Prompt.NTCo:Prompt[0]
+                            <Control.Monad.Prompt.Lift
+                               Data.Random.Source.Internal.Prim.Prim
+                               Data.Functor.Identity.Identity>_R
+                            <[GrammarType.Gender]>_R))
+                    @ b1
+                    (\ x :: [GrammarType.Gender] -> case x of x1 { DEFAULT -> lvl49 })
+                    eta8)
+                   `cast`
+                 (Trans
+                      (Sym (Control.Monad.Prompt.NTCo:Prompt[0]
+                                <Control.Monad.Prompt.Lift
+                                   Data.Random.Source.Internal.Prim.Prim
+                                   Data.Functor.Identity.Identity>_R
+                                <GrammarType.GrammarSystem>_R))
+                      (Trans
+                           (Sym (Control.Monad.Prompt.NTCo:PromptT[0]
+                                     <Data.Random.Source.Internal.Prim.Prim>_R
+                                     <Data.Functor.Identity.Identity>_R))
+                           (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <GrammarType.GrammarSystem>_N))) -}
+b1e4b70754b40b858c4dd33902048341
+  makeGrammarSystem1 ::
+    Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Definiteness])
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ (GHC.Base.Maybe [GrammarType.Definiteness])
+                   GrammarGen.makeGrammarSystem2) -}
+b7cc9f45f30f57845af0729fcca641db
+  makeGrammarSystem10 :: [GHC.Base.Maybe [GrammarType.Animacy]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GrammarType.Animacy])
+                   (GHC.Base.Nothing @ [GrammarType.Animacy])
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Animacy]))) -}
+b417d2a8e3afb890e4bd99be7dfa7e4d
+  makeGrammarSystem11 ::
+    Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Gender])
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ (GHC.Base.Maybe [GrammarType.Gender])
+                   GrammarGen.makeGrammarSystem12) -}
+0d023839b0dfc635c5abdd3273046e26
+  makeGrammarSystem12 :: [GHC.Base.Maybe [GrammarType.Gender]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GrammarType.Gender])
+                   (GHC.Base.Nothing @ [GrammarType.Gender])
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Gender]))) -}
+ce5b9f17afd7da6dcdcae5edf418cf17
+  makeGrammarSystem2 :: [GHC.Base.Maybe [GrammarType.Definiteness]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GrammarType.Definiteness])
+                   (GHC.Base.Nothing @ [GrammarType.Definiteness])
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Definiteness]))) -}
+8b79038f366f160cf4d1b9badf5e0b78
+  makeGrammarSystem3 ::
+    Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Honorific])
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ (GHC.Base.Maybe [GrammarType.Honorific])
+                   GrammarGen.makeGrammarSystem4) -}
+7e51d916ea63fba099bdb99d219448e7
+  makeGrammarSystem4 :: [GHC.Base.Maybe [GrammarType.Honorific]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GrammarType.Honorific])
+                   (GHC.Base.Nothing @ [GrammarType.Honorific])
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Honorific]))) -}
+ea2dec00be44588ea4d24414837cd893
+  makeGrammarSystem5 ::
+    Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Number])
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ (GHC.Base.Maybe [GrammarType.Number])
+                   GrammarGen.makeGrammarSystem6) -}
+3237d5a2ed38bad547f84469eba6dcc5
+  makeGrammarSystem6 :: [GHC.Base.Maybe [GrammarType.Number]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GrammarType.Number])
+                   (GHC.Base.Nothing @ [GrammarType.Number])
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Number]))) -}
+9c3bcb4efc5c284912fb0c27c3ae7098
+  makeGrammarSystem7 ::
+    Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Case])
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ (GHC.Base.Maybe [GrammarType.Case])
+                   GrammarGen.makeGrammarSystem8) -}
+b7db5df8f67bf0c05b5dbc7d119f1664
+  makeGrammarSystem8 :: [GHC.Base.Maybe [GrammarType.Case]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.Maybe [GrammarType.Case])
+                   (GHC.Base.Nothing @ [GrammarType.Case])
+                   (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Case]))) -}
+75145b10984a17cb89eb3cb6232e3e1c
+  makeGrammarSystem9 ::
+    Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Animacy])
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ (GHC.Base.Maybe [GrammarType.Animacy])
+                   GrammarGen.makeGrammarSystem10) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
