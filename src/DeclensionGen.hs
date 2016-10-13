@@ -1,5 +1,9 @@
 module DeclensionGen
 ( makeDeclension
+, makeSeedTemplate
+, makeTriDeclension
+, numTemplate
+, subsequencesOfSize
 ) where
 
 import Prelude hiding (Word)
@@ -24,21 +28,10 @@ makeDeclension gramSys syllList consList vowsList = output where
 
   -- number of expressed features
   num = length (filter id [isJust g, isJust a, isJust c, isJust n, isJust h, isJust d, isJust s])
-
   -- number of individual expressed features
   numInd = maybe 0 length g + maybe 0 length a + maybe 0 length c + maybe 0 length n + maybe 0 length h + maybe 0 length d + maybe 0 length s
-
   -- number of combinations of features
   numCombo = length $ makeCombos gramSys
-
-  -- number of consonants
-  numCons = length consList
-
-  -- number of vowels
-  numVow = length vowsList
-
-  -- number of syllables
-  numSyll = length syllList
 
   output = case num of 0 -> case0
                        1 -> case1
@@ -83,60 +76,166 @@ makeDeclension gramSys syllList consList vowsList = output where
     | otherwise = []
 
   -- 2 grammatical features
-  case2 = join $ choice $ [ makeRndDeclension gramSys syllList ] ++ vc2S ++ c1vS ++ c1c2S ++ c1S ++ vS ++ c2S
-  -- Need to find all the pairs of C1-VC2 where length C1 >= first category and length VC2 >= second category, or the reverse
-  -- Need to find all the pairs of X-Y where length X >
-
-                  --vary C1 for one, V for the other, hold C2 constant
-                  --vary C2 for one, C1 for the other, hold V constant
-                  --vary V for one, C2 for the other, hold C1 constant
-                  --etc.
+  case2 = join $ choice [ ]
 
   -- Exactly 3 grammatical features
-  case3 = join $ choice [ makeRndDeclension gramSys syllList
+  case3 = join $ choice [
                         ]
 
   -- 4 or more grammatical features
-  case4 = join $ choice [ makeRndDeclension gramSys syllList
+  case4 = join $ choice [
                         ]
+
+
+
+
+-- Slow down explaination
+-- Given the grammar system, find all possible templates <- up to 2187
+-- Given the template, find all possible "seeds" which are just a syllable-generating set of phonemes <- ridiculously large number
+-- The number of seeds can be so large because I use subsequencesOfSize three times (one for each C V C) and then make the combinations
+-- Solution: Implement recursion and randomess; make a random template, make a random seed, repeat if it isn't valid, come back with a false after 1000 iterations or something
+
+makeSeedTemplate :: GrammarSystem -> [MaybeConsonant] -> [Vowel] -> [Syllable] -> RVar (([MaybeConsonant],[Vowel],[MaybeConsonant]), Template)
+makeSeedTemplate gramSys consList vowsList syllList = output where
+  -- number of consonants
+  numCons = length consList
+  -- number of vowels
+  numVow = length vowsList
+  -- number of syllables
+  numSyll = length syllList
+
   -- make all possible templates (actually below only does many to one mapping so no Number -> C1+V)
   tempList = makeAllTemplates gramSys
-  tempNum = map (numTemplate gramSys) tempList
-  tempListNum = zip tempNum tempList
-  -- filter out all templates that result in needed consonants being larger than actual number of consonants
-  -- filter out template that result in needed vowels being larger than actual number of vowels
-  -- filter out templates that result in more syllables than what we have
-  tempListNumFilt = filter (\((x,y,z),_) -> x <= numCons && y <= numVow && z <= numCons && (x*y*z) <= numSyll) tempListNum
+  -- filter out all templates that result in needing more consonants/vowels/syllables than actual number of consonants/vowels/syllable
+  tempListFilt = filter (\x -> fst3 (numTemplate gramSys x) <= numCons &&
+                                     mid3 (numTemplate gramSys x) <= numVow &&
+                                     lst3 (numTemplate gramSys x) <= numCons &&
+                                     fst3 (numTemplate gramSys x) * mid3 (numTemplate gramSys x) * lst3 (numTemplate gramSys x) <= numSyll) tempList
+  -- retrieve the number of phonemes per syllable place
+  tempNum = map (numTemplate gramSys) tempListFilt
+  -- find the possible seeds given the number of phonemes per syllable place
+  seedList = map (getPossibleSeeds consList vowsList syllList) tempNum
+  -- package the seeds and the template
+  tempSeedList = zip seedList tempListFilt
+  -- filter out blanks
+  tempSeedListFilt = filter (\(x,_) -> not (null x)) tempSeedList
+  output = do
+    -- choose a seeds-template config
+    (seeds, template) <- choice tempSeedListFilt
+    -- choose a seed
+    seed <- choice seeds
+    return (seed, template)
+
+-- should return valid phoneme "seeds" which will be mapped to grammatical categories...
+getPossibleSeeds :: [MaybeConsonant] -> [Vowel] -> [Syllable] -> (Int, Int, Int) -> [([MaybeConsonant],[Vowel],[MaybeConsonant])]
+getPossibleSeeds cons vows syllList (c1Int, vInt, c2Int) = output where
+  --list of all i length combos of consonants
+  subc1 = subsequencesOfSize c1Int cons
+  --list of all j length combos of vowels
+  subv = subsequencesOfSize vInt vows
+  --list of all k length combos of consonants
+  subc2 = subsequencesOfSize c2Int cons
+  --all combinations of the above (list of lists) [([],[],[])]
+  allSeeds = (,,) <$> subc1 <*> subv <*> subc2
+  --filter out all seeds that generate impossible syllables
+  filtSeeds = filter (\x -> all (`elem` syllList) (Syllable <$> fst3 x <*> mid3 x <*> lst3 x)) allSeeds
+  output = filtSeeds
+
+-- Declension with one/many to one mapping. Can be anything as long as one grammatical category is mapped to a single syllable place
+makeTriDeclension :: GrammarSystem -> ([MaybeConsonant],[Vowel],[MaybeConsonant]) -> Template -> Declension
+makeTriDeclension gramSys (con1s, vows, con2s) temp = output where
+
+  (g, a, c, n, h, d, s) = cleanGrammarSys gramSys
+  (gNum, aNum, cNum, nNum, hNum, dNum, sNum) = (length g, length a, length c, length n, length h, length d, length s)
+  (Template (gInt, aInt, cInt, nInt, hInt, dInt, sInt)) = temp
+
+  -- this gets the combos
+  combos = makeCombos gramSys
+  -- c1's first
+  -- make a new list of combos using only the c1 grammatical categories
+  c1NewCombos = (,,,,,,) <$> c1g <*> c1a <*> c1c <*> c1n <*> c1h <*> c1d <*> c1s
+  c1g | gInt /= 1 = [Nothing] | otherwise = g
+  c1a | aInt /= 1 = [Nothing] | otherwise = a
+  c1c | cInt /= 1 = [Nothing] | otherwise = c
+  c1n | nInt /= 1 = [Nothing] | otherwise = n
+  c1h | hInt /= 1 = [Nothing] | otherwise = h
+  c1d | dInt /= 1 = [Nothing] | otherwise = d
+  c1s | sInt /= 1 = [Nothing] | otherwise = s
+
+  -- assign each new combo a con1s
+  testcombos = zip con1s c1NewCombos
+
+  -- then match the new combos to the orginal combo list somehow
+  declc1 = fooBar combos testcombos []
+
+  fooBar :: [(Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity)]
+         -> [(MaybeConsonant, (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+         -> [(MaybeConsonant, (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+         -> [(MaybeConsonant, (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+  fooBar [] _ declc1 = declc1
+  fooBar combos testcombos declc1 = fooBar (tail combos) testcombos (output:declc1) where
+    match = filter (\(_,x) -> theFilter (head combos) x) testcombos
+    output = (fst $ head match, head combos)
+
+  -- v's second
+  -- make a new list of combos using only the v grammatical categories
+  vNewCombos = (,,,,,,) <$> vg <*> va <*> vc <*> vn <*> vh <*> vd <*> vs
+  vg | gInt /= 2 = [Nothing] | otherwise = g
+  va | aInt /= 2 = [Nothing] | otherwise = a
+  vc | cInt /= 2 = [Nothing] | otherwise = c
+  vn | nInt /= 2 = [Nothing] | otherwise = n
+  vh | hInt /= 2 = [Nothing] | otherwise = h
+  vd | dInt /= 2 = [Nothing] | otherwise = d
+  vs | sInt /= 2 = [Nothing] | otherwise = s
+
+  -- assign each new combo a con1s
+  testcombos2 = zip vows vNewCombos
+
+  -- then match the new combos to the orginal combo list somehow
+  declv = fooBar2 declc1 testcombos2 []
+
+  fooBar2 :: [(MaybeConsonant, (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+         -> [(Vowel, (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+         -> [((MaybeConsonant, Vowel), (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+         -> [((MaybeConsonant, Vowel), (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+  fooBar2 [] _ declv = declv
+  fooBar2 declc1 testcombos declv = fooBar2 (tail declc1) testcombos (output:declv) where
+    match = filter (\(_,x) -> theFilter (snd $ head declc1) x) testcombos
+    output = ((fst $ head declc1, fst $ head match), snd $ head declc1)
+
+  -- c2's third
+  -- make a new list of combos using only the c2 grammatical categories
+  c2NewCombos = (,,,,,,) <$> c2g <*> c2a <*> c2c <*> c2n <*> c2h <*> c2d <*> c2s
+  c2g | gInt /= 3 = [Nothing] | otherwise = g
+  c2a | aInt /= 3 = [Nothing] | otherwise = a
+  c2c | cInt /= 3 = [Nothing] | otherwise = c
+  c2n | nInt /= 3 = [Nothing] | otherwise = n
+  c2h | hInt /= 3 = [Nothing] | otherwise = h
+  c2d | dInt /= 3 = [Nothing] | otherwise = d
+  c2s | sInt /= 3 = [Nothing] | otherwise = s
+
+  -- assign each new combo a con1s
+  testcombos3 = zip con2s c2NewCombos
+
+  -- then match the new combos to the orginal combo list somehow
+  output = Declension (fooBar3 declv testcombos3 [])
+
+  fooBar3 :: [((MaybeConsonant, Vowel), (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+         -> [(MaybeConsonant, (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+         -> [(Syllable, (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+         -> [(Syllable, (Maybe Gender, Maybe Animacy, Maybe Case, Maybe Number, Maybe Honorific, Maybe Definiteness, Maybe Specificity))]
+  fooBar3 [] _ declc2 = declc2
+  fooBar3 declv testcombos declc2 = fooBar3 (tail declv) testcombos (output:declc2) where
+    match = filter (\(_,x) -> theFilter (snd $ head declv) x) testcombos
+    output = (uncurry Syllable (fst $ head declv) (fst $ head match), snd $ head declv)
 
 
-  subsequencesOfSize :: Int -> [a] -> [[a]]
-  subsequencesOfSize n xs = let l = length xs
-                            in if n>l then [] else subsequencesBySize xs !! (l-n)
-   where
-     subsequencesBySize [] = [[[]]]
-     subsequencesBySize (x:xs) = let next = subsequencesBySize xs
-                               in zipWith (++) ([]:next) (map (map (x:)) next ++ [[]])
+-- filter used for trideclensions
+theFilter maincombo testcombo = result where
+  (g1, a1, c1, n1, h1, d1, s1) = maincombo
+  (g2, a2, c2, n2, h2, d2, s2) = testcombo
+  result= and [g1 == g2 || isNothing g2 , a1 == a2 || isNothing a2, c1 == c2 || isNothing c2, n1 == n2 || isNothing n2, h1 == h2 || isNothing h2, d1 == d2 || isNothing d2, s1 == s2 || isNothing s2]
 
-  fooBar :: (Int, Int, Int) -> [MaybeConsonant] -> [Vowel] -> [Syllable] -> [[Syllable]]
-  fooBar (c1Int, vInt, c2Int) cons vows syllList = output where
-    subc1 = subsequencesOfSize c1Int cons
-    subv = subsequencesOfSize vInt vows
-    subc2 = subsequencesOfSize c2Int cons
-    co = (,,) <$> subc1 <*> subv <*> subc2
-    listListSyll = (zipWith3 Syllable (map fst3 co) (map mid3 co) (map lst3 co))
-    output = filter (\x -> and (flip . map (elem syllList)) x) listListSyll
-
-  fst3 :: (a,b,c) -> a
-  fst3 (a,b,c) = c
-
-  mid3 :: (a,b,c) -> b
-  mid3 (a,b,c) = b
-
-  lst3 :: (a,b,c) -> c
-  lst3 (a,b,c) = c
-
-  -- can i pick (1-Up to number of) consonants, (1-Up to number of vowels) vowels, and (1 - Up to number of) consonants that form (1 - up to number of syllables)
-  -- find (length c1 needed) consonants, (length v needed) vowels, and (length c2 needed) consonants that all form syllables that are in syllList
 
 -- Random syllable for each combo
 makeRndDeclension :: GrammarSystem -> [Syllable] -> RVar Declension
@@ -160,19 +259,6 @@ makeCase1Declension gramSys possible = Declension <$> output where
   selected = join $ sample (length combos) <$> final
   -- zip the combos and syllables
   output = zip <$> selected <*> return combos
-
--- have to filter by one thing and then filter again - i think
-makeCase2Declension :: GrammarSystem -> [[Syllable]] -> RVar Declension
-makeCase2Declension gramSys possible = Declension <$> output where
-  -- get the combos
-  combos = makeCombos gramSys
-  -- pick the final C1/V/C2/C1V/VC2/C1C2
-  final = choice possible
-  -- select the final syllables
-  selected = join $ sample (length combos) <$> final
-  -- zip the combos and syllables
-  output = zip <$> selected <*> return combos
-
 
 -- Combo stuff below
 -- Cleans the grammar sys
@@ -235,9 +321,28 @@ makeAllTemplates (GrammarSystem g a c n h d s) = Template <$> allTemplates where
 numTemplate :: GrammarSystem -> Template -> (Int, Int, Int)
 numTemplate (GrammarSystem g a c n h d s) (Template (gInt, aInt, cInt, nInt, hInt, dInt, sInt)) = (c1Int, vInt, c2Int) where
   ints = [maybe 1 length g, maybe 1 length a, maybe 1 length c, maybe 1 length n, maybe 1 length h, maybe 1 length d, maybe 1 length s]
-  c1 = map (\x -> if x /= 1 then 0; else x) [gInt, aInt, cInt, nInt, hInt, dInt, sInt]
-  c1Int = product $ zipWith (*) c1 ints
-  v = map (\x -> if x /= 2 then 0; else x) [gInt, aInt, cInt, nInt, hInt, dInt, sInt]
-  vInt = product $ zipWith (*) v ints
-  c2 = map (\x -> if x /= 3 then 0; else x) [gInt, aInt, cInt, nInt, hInt, dInt, sInt]
-  c2Int = product $ zipWith (*) c2 ints
+  c1 = map (\x -> if x /= 1 then 0; else 1) [gInt, aInt, cInt, nInt, hInt, dInt, sInt]
+  c1Int = product $ filter (/=0) $ zipWith (*) c1 ints
+  v = map (\x -> if x /= 2 then 0; else 1) [gInt, aInt, cInt, nInt, hInt, dInt, sInt]
+  vInt = product $ filter (/=0) $ zipWith (*) v ints
+  c2 = map (\x -> if x /= 3 then 0; else 1) [gInt, aInt, cInt, nInt, hInt, dInt, sInt]
+  c2Int = product $ filter (/=0) $ zipWith (*) c2 ints
+
+
+-- Other utility functions below (should probably be moved to another .hs)
+fst3 :: (a,b,c) -> a
+fst3 (a,b,c) = a
+
+mid3 :: (a,b,c) -> b
+mid3 (a,b,c) = b
+
+lst3 :: (a,b,c) -> c
+lst3 (a,b,c) = c
+
+subsequencesOfSize :: Int -> [a] -> [[a]]
+subsequencesOfSize n xs = let l = length xs
+                          in if n>l then [] else subsequencesBySize xs !! (l-n)
+ where
+   subsequencesBySize [] = [[[]]]
+   subsequencesBySize (x:xs) = let next = subsequencesBySize xs
+                             in zipWith (++) ([]:next) (map (map (x:)) next ++ [[]])

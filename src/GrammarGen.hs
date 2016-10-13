@@ -82,7 +82,7 @@ makeHonorificSystem inputD = do
 makeDefinitenessSystem :: InputData -> RVar (Maybe [Definiteness])
 makeDefinitenessSystem inputD = do
   a <- choice $ inputDefiniteness inputD
-  choice [Nothing]--, Just a]
+  choice [Just a]
 
 makeSpecificitySystem ::  InputData -> RVar (Maybe [Specificity])
 makeSpecificitySystem inputD = do

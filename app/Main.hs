@@ -13,20 +13,24 @@ import DeclensionGen
 
 main :: IO ()
 main = do
-  inventoryC <- sampleRVar (makeConInventory 21)
-  inventoryV <- sampleRVar (makeVowInventory 5)
+  inventoryC <- sampleRVar (makeConInventory 12)
+  inventoryV <- sampleRVar (makeVowInventory 4)
   phonotacticC <- sampleRVar (makeConPhonotactics inventoryC)
   phonotacticV <- sampleRVar (makeVowPhonotactics phonotacticC inventoryV)
   let syllList = makeAllSyllables phonotacticC phonotacticV
   wrds <- sampleRVar (makeDictionary 50 syllList)
   ldata <- loadInputData2
   grammarSys <- sampleRVar (makeGrammarSystem ldata)
-  declension <- sampleRVar (makeDeclension grammarSys syllList inventoryC inventoryV)
+  (declensionSeed, declensionTemplate) <- sampleRVar (makeSeedTemplate grammarSys inventoryC inventoryV syllList)
+  --let declension = (makeTriDeclension grammarSys declensionSeed declensionTemplate)
 
   writeFile "dictionary.txt" $ parseConPhonemeInventory inventoryC
                                  ++ parseVowPhonemeInventory inventoryV
                                  ++ parseConPhonotactics phonotacticC
                                  ++ parseVowPhonotactics phonotacticV
                                  ++ show grammarSys ++ "\n"
-                                 ++ show declension ++ "\n"
+                                 ++ show declensionSeed ++ "\n"
+                                 ++ show declensionTemplate ++ "\n"
+                                 ++ show (numTemplate grammarSys declensionTemplate) ++ "\n"
+                                 -- ++ show declension ++ "\n"
                                  ++ parseDictionary wrds

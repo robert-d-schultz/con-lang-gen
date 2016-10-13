@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-28 03:36:47.494943 UTC
+2016-09-29 21:48:35.53193 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:GrammarType 7103
-  interface hash: 3610550f0d7e6057d558fb899c1fd4f4
-  ABI hash: d41c9ff1a4a196bc7fb7fc2109d827ba
-  export-list hash: 2f1e30d8523478220718ffc652cbd1c0
+  interface hash: 402b04376e7be915da480ac0b44a952e
+  ABI hash: 16cf7ac066df27772a912e93359efd44
+  export-list hash: 3cb48b094f7236093c0b56e6cb0611b9
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -13,6 +13,7 @@ interface conla_1eA9qWUPH9nBowcXqqaV8r:GrammarType 7103
   where
 exports:
   GHC.Base.Maybe{GHC.Base.Just GHC.Base.Nothing}
+  GrammarType.AgglSystem{GrammarType.AgglSystem}
   GrammarType.Animacy{GrammarType.AN GrammarType.HUM GrammarType.INAN GrammarType.NHUM GrammarType.ZO}
   GrammarType.Case{GrammarType.ABL GrammarType.ACC GrammarType.DAT GrammarType.ERG GrammarType.GEN GrammarType.INS GrammarType.LOC GrammarType.NOM GrammarType.PREP GrammarType.VOC}
   GrammarType.Declension{GrammarType.Declension}
@@ -22,6 +23,7 @@ exports:
   GrammarType.Honorific{GrammarType.FAM GrammarType.FORM}
   GrammarType.Number{GrammarType.DU GrammarType.PA GrammarType.PL GrammarType.SG GrammarType.TRI}
   GrammarType.Specificity{GrammarType.NSPEC GrammarType.SPEC}
+  GrammarType.Template{GrammarType.Template}
 module dependencies: OtherData PhonemeType
 package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
                       integer-gmp-1.0.0.0
@@ -37,7 +39,7 @@ import  -/  OtherData f086edab5429a445c5a03de742c12a46
   exports: 9eafbe3cd8a957307681d0a6605eb9fd
   Syllable e49f00d6d0b10b3393e432ef706386f1
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fEqAnimacy :: GHC.Classes.Eq GrammarType.Animacy
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -45,7 +47,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                   @ GrammarType.Animacy
                   GrammarType.$fEqAnimacy_$c==
                   GrammarType.$fEqAnimacy_$c/= -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fEqAnimacy_$c/= ::
     GrammarType.Animacy -> GrammarType.Animacy -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -67,7 +69,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                    -> case b of wild1 {
                         DEFAULT -> GHC.Types.True
                         GrammarType.INAN -> GHC.Types.False } }) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fEqAnimacy_$c== ::
     GrammarType.Animacy -> GrammarType.Animacy -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -90,7 +92,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                    -> case ds1 of wild1 {
                         DEFAULT -> GHC.Types.False
                         GrammarType.INAN -> GHC.Types.True } }) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fEqCase :: GHC.Classes.Eq GrammarType.Case
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -98,7 +100,7 @@ cf12fb2514df090f443d91dc740e2284
                   @ GrammarType.Case
                   GrammarType.$fEqCase_$c==
                   GrammarType.$fEqCase_$c/= -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fEqCase_$c/= ::
     GrammarType.Case -> GrammarType.Case -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -135,7 +137,7 @@ cf12fb2514df090f443d91dc740e2284
                    -> case b of wild1 {
                         DEFAULT -> GHC.Types.True
                         GrammarType.VOC -> GHC.Types.False } }) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fEqCase_$c== ::
     GrammarType.Case -> GrammarType.Case -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -213,7 +215,7 @@ cf12fb2514df090f443d91dc740e2284
                    -> case ds1 of wild1 {
                         GrammarType.DEF -> GHC.Types.False
                         GrammarType.INDF -> GHC.Types.True } }) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fEqGender :: GHC.Classes.Eq GrammarType.Gender
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -221,7 +223,7 @@ cf12fb2514df090f443d91dc740e2284
                   @ GrammarType.Gender
                   GrammarType.$fEqGender_$c==
                   GrammarType.$fEqGender_$c/= -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fEqGender_$c/= ::
     GrammarType.Gender -> GrammarType.Gender -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -239,7 +241,7 @@ cf12fb2514df090f443d91dc740e2284
                    GrammarType.N
                    -> case b of wild1 {
                         DEFAULT -> GHC.Types.True GrammarType.N -> GHC.Types.False } }) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fEqGender_$c== ::
     GrammarType.Gender -> GrammarType.Gender -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -295,7 +297,7 @@ cf12fb2514df090f443d91dc740e2284
                    -> case ds1 of wild1 {
                         GrammarType.FAM -> GHC.Types.False
                         GrammarType.FORM -> GHC.Types.True } }) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fEqNumber :: GHC.Classes.Eq GrammarType.Number
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -303,7 +305,7 @@ cf12fb2514df090f443d91dc740e2284
                   @ GrammarType.Number
                   GrammarType.$fEqNumber_$c==
                   GrammarType.$fEqNumber_$c/= -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fEqNumber_$c/= ::
     GrammarType.Number -> GrammarType.Number -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -324,7 +326,7 @@ cf12fb2514df090f443d91dc740e2284
                    GrammarType.PL
                    -> case b of wild1 {
                         DEFAULT -> GHC.Types.True GrammarType.PL -> GHC.Types.False } }) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fEqNumber_$c== ::
     GrammarType.Number -> GrammarType.Number -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -385,7 +387,7 @@ e521f63828d45d62f01915f44b5b0dc6
                    -> case ds1 of wild1 {
                         GrammarType.SPEC -> GHC.Types.False
                         GrammarType.NSPEC -> GHC.Types.True } }) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy :: GHC.Read.Read GrammarType.Animacy
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -395,7 +397,7 @@ e521f63828d45d62f01915f44b5b0dc6
                   GrammarType.$fReadAnimacy_$sreadListDefault
                   GrammarType.$fReadAnimacy_$creadPrec
                   GrammarType.$fReadAnimacy_$creadListPrec -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -415,7 +417,7 @@ e521f63828d45d62f01915f44b5b0dc6
                              <GrammarType.Animacy>_R))
                    @ b
                    eta1) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy10 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -430,7 +432,7 @@ e521f63828d45d62f01915f44b5b0dc6
 45556e487223299805d23bbb1e364956
   $fReadAnimacy11 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "INAN"#) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy12 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)
@@ -444,7 +446,7 @@ e521f63828d45d62f01915f44b5b0dc6
                                       <GrammarType.Animacy>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Animacy>_R))))) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy13 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -459,7 +461,7 @@ e521f63828d45d62f01915f44b5b0dc6
 8c97dd1d0fa57b6964d9da29e7786bcd
   $fReadAnimacy14 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "ZO"#) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy15 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)
@@ -473,7 +475,7 @@ e521f63828d45d62f01915f44b5b0dc6
                                       <GrammarType.Animacy>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Animacy>_R))))) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy16 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -488,7 +490,7 @@ e521f63828d45d62f01915f44b5b0dc6
 18c4dcb08d369ef80af1d3bfeab68a4f
   $fReadAnimacy17 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "NHUM"#) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy18 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)
@@ -502,7 +504,7 @@ e521f63828d45d62f01915f44b5b0dc6
                                       <GrammarType.Animacy>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Animacy>_R))))) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy19 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -514,7 +516,7 @@ e521f63828d45d62f01915f44b5b0dc6
                    @ b
                    eta :: GrammarType.Animacy -> Text.ParserCombinators.ReadP.P b ->
                  eta GrammarType.HUM) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP GrammarType.Animacy
@@ -532,7 +534,7 @@ e521f63828d45d62f01915f44b5b0dc6
 6008f76d33f11717ef894d7f166847fd
   $fReadAnimacy20 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "HUM"#) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy21 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)
@@ -546,7 +548,7 @@ e521f63828d45d62f01915f44b5b0dc6
                                       <GrammarType.Animacy>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Animacy>_R))))) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy22 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -561,7 +563,7 @@ e521f63828d45d62f01915f44b5b0dc6
 a705e959a87d7481d0be8036ea7d105b
   $fReadAnimacy23 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "AN"#) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -578,7 +580,7 @@ a705e959a87d7481d0be8036ea7d105b
                    eta
                    @ b
                    eta1) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy4 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)]
@@ -588,7 +590,7 @@ a705e959a87d7481d0be8036ea7d105b
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)
                    GrammarType.$fReadAnimacy21
                    GrammarType.$fReadAnimacy5) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy5 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)]
@@ -598,7 +600,7 @@ a705e959a87d7481d0be8036ea7d105b
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)
                    GrammarType.$fReadAnimacy18
                    GrammarType.$fReadAnimacy6) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy6 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)]
@@ -608,7 +610,7 @@ a705e959a87d7481d0be8036ea7d105b
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)
                    GrammarType.$fReadAnimacy15
                    GrammarType.$fReadAnimacy7) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy7 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)]
@@ -618,7 +620,7 @@ a705e959a87d7481d0be8036ea7d105b
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)
                    GrammarType.$fReadAnimacy12
                    GrammarType.$fReadAnimacy8) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy8 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)]
@@ -630,7 +632,7 @@ a705e959a87d7481d0be8036ea7d105b
                    (GHC.Types.[]
                       @ (GHC.Base.String,
                          Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy))) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy9 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy)
@@ -644,7 +646,7 @@ a705e959a87d7481d0be8036ea7d105b
                                       <GrammarType.Animacy>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Animacy>_R))))) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [GrammarType.Animacy]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -657,7 +659,7 @@ a705e959a87d7481d0be8036ea7d105b
                                     <[GrammarType.Animacy]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                <[GrammarType.Animacy]>_R))) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Animacy
   {- Arity: 1,
@@ -666,7 +668,7 @@ a705e959a87d7481d0be8036ea7d105b
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                           <GrammarType.Animacy>_R)) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy_$s$dmreadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS GrammarType.Animacy
@@ -677,7 +679,7 @@ a705e959a87d7481d0be8036ea7d105b
                    @ GrammarType.Animacy
                    GrammarType.$fReadAnimacy_$creadPrec
                    eta) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fReadAnimacy_$sreadListDefault ::
     Text.ParserCombinators.ReadP.ReadS [GrammarType.Animacy]
   {- Arity: 1,
@@ -695,7 +697,7 @@ a705e959a87d7481d0be8036ea7d105b
                       @ [GrammarType.Animacy]
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ [GrammarType.Animacy]))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase :: GHC.Read.Read GrammarType.Case
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -705,7 +707,7 @@ cf12fb2514df090f443d91dc740e2284
                   GrammarType.$fReadCase_$sreadListDefault
                   GrammarType.$fReadCase_$creadPrec
                   GrammarType.$fReadCase_$creadListPrec -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -724,7 +726,7 @@ cf12fb2514df090f443d91dc740e2284
                              <GrammarType.Case>_R))
                    @ b
                    eta1) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase10 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -734,7 +736,7 @@ cf12fb2514df090f443d91dc740e2284
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
                    GrammarType.$fReadCase23
                    GrammarType.$fReadCase11) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase11 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -744,7 +746,7 @@ cf12fb2514df090f443d91dc740e2284
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
                    GrammarType.$fReadCase20
                    GrammarType.$fReadCase12) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase12 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -754,7 +756,7 @@ cf12fb2514df090f443d91dc740e2284
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
                    GrammarType.$fReadCase17
                    GrammarType.$fReadCase13) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase13 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -766,7 +768,7 @@ cf12fb2514df090f443d91dc740e2284
                    (GHC.Types.[]
                       @ (GHC.Base.String,
                          Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase14 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -780,7 +782,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase15 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -795,7 +797,7 @@ cf12fb2514df090f443d91dc740e2284
 ebf640fde0d3ce7f269f44a34fa98bbc
   $fReadCase16 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "VOC"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase17 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -809,7 +811,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase18 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -824,7 +826,7 @@ cf12fb2514df090f443d91dc740e2284
 965923a779073c2bdf92c2728de37f0b
   $fReadCase19 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "INS"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP GrammarType.Case
@@ -839,7 +841,7 @@ cf12fb2514df090f443d91dc740e2284
                                        <GrammarType.Case>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                   <GrammarType.Case>_R)))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase20 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -853,7 +855,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase21 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -868,7 +870,7 @@ cf12fb2514df090f443d91dc740e2284
 bbbf96c148fe3460aea0812bd56cbde8
   $fReadCase22 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "ABL"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase23 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -882,7 +884,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase24 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -897,7 +899,7 @@ cf12fb2514df090f443d91dc740e2284
 3cac0d67ab18ead191e484154cf7b0b9
   $fReadCase25 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "PREP"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase26 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -911,7 +913,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase27 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -926,7 +928,7 @@ cf12fb2514df090f443d91dc740e2284
 744c12f21fa1f5051df09fbb66b7aa58
   $fReadCase28 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "LOC"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase29 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -940,7 +942,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -957,7 +959,7 @@ cf12fb2514df090f443d91dc740e2284
                    eta
                    @ b
                    eta1) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase30 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -972,7 +974,7 @@ cf12fb2514df090f443d91dc740e2284
 0ad42b2944a8da26751c0de1c37f4f0f
   $fReadCase31 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "DAT"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase32 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -986,7 +988,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase33 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1001,7 +1003,7 @@ cf12fb2514df090f443d91dc740e2284
 66c64ff3c6bfaaea2b4b8cbcba985326
   $fReadCase34 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "GEN"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase35 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -1015,7 +1017,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase36 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1030,7 +1032,7 @@ cf12fb2514df090f443d91dc740e2284
 50921aba3555deee23682cff25fa392b
   $fReadCase37 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "ERG"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase38 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -1044,7 +1046,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase39 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1056,7 +1058,7 @@ cf12fb2514df090f443d91dc740e2284
                    @ b
                    eta :: GrammarType.Case -> Text.ParserCombinators.ReadP.P b ->
                  eta GrammarType.ACC) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase4 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -1069,7 +1071,7 @@ cf12fb2514df090f443d91dc740e2284
 b514d11e9d650a466e1a31de0a3b4588
   $fReadCase40 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "ACC"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase41 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
@@ -1083,7 +1085,7 @@ cf12fb2514df090f443d91dc740e2284
                                       <GrammarType.Case>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Case>_R))))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase42 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1098,7 +1100,7 @@ cf12fb2514df090f443d91dc740e2284
 92d594ca72a3cc35a45e30301f17ca77
   $fReadCase43 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "NOM"#) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase5 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -1108,7 +1110,7 @@ cf12fb2514df090f443d91dc740e2284
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
                    GrammarType.$fReadCase38
                    GrammarType.$fReadCase6) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase6 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -1118,7 +1120,7 @@ cf12fb2514df090f443d91dc740e2284
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
                    GrammarType.$fReadCase35
                    GrammarType.$fReadCase7) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase7 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -1128,7 +1130,7 @@ cf12fb2514df090f443d91dc740e2284
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
                    GrammarType.$fReadCase32
                    GrammarType.$fReadCase8) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase8 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -1138,7 +1140,7 @@ cf12fb2514df090f443d91dc740e2284
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
                    GrammarType.$fReadCase29
                    GrammarType.$fReadCase9) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase9 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)]
@@ -1148,7 +1150,7 @@ cf12fb2514df090f443d91dc740e2284
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case)
                    GrammarType.$fReadCase26
                    GrammarType.$fReadCase10) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [GrammarType.Case]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -1161,7 +1163,7 @@ cf12fb2514df090f443d91dc740e2284
                                     <[GrammarType.Case]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                <[GrammarType.Case]>_R))) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Case
   {- Arity: 1,
@@ -1170,7 +1172,7 @@ cf12fb2514df090f443d91dc740e2284
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                           <GrammarType.Case>_R)) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase_$s$dmreadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS GrammarType.Case
@@ -1181,7 +1183,7 @@ cf12fb2514df090f443d91dc740e2284
                    @ GrammarType.Case
                    GrammarType.$fReadCase_$creadPrec
                    eta) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fReadCase_$sreadListDefault ::
     Text.ParserCombinators.ReadP.ReadS [GrammarType.Case]
   {- Arity: 1,
@@ -1395,7 +1397,7 @@ be133089acc051c4cb1b081c8f8c651f
                       @ [GrammarType.Definiteness]
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ [GrammarType.Definiteness]))) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender :: GHC.Read.Read GrammarType.Gender
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -1405,7 +1407,7 @@ be133089acc051c4cb1b081c8f8c651f
                   GrammarType.$fReadGender_$sreadListDefault
                   GrammarType.$fReadGender_$creadPrec
                   GrammarType.$fReadGender_$creadListPrec -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1427,7 +1429,7 @@ be133089acc051c4cb1b081c8f8c651f
 0b454bfe3a2f21ad584306e9d7267fc0
   $fReadGender10 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "N"#) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender11 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)
@@ -1441,7 +1443,7 @@ be133089acc051c4cb1b081c8f8c651f
                                       <GrammarType.Gender>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Gender>_R))))) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender12 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1456,7 +1458,7 @@ be133089acc051c4cb1b081c8f8c651f
 19d645799982dc049bfddf5766f3be31
   $fReadGender13 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "COM"#) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender14 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)
@@ -1470,7 +1472,7 @@ be133089acc051c4cb1b081c8f8c651f
                                       <GrammarType.Gender>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Gender>_R))))) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender15 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1485,7 +1487,7 @@ be133089acc051c4cb1b081c8f8c651f
 56a1fa15a76f1243a7a8d82ac2abb5cb
   $fReadGender16 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "F"#) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender17 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)
@@ -1499,7 +1501,7 @@ be133089acc051c4cb1b081c8f8c651f
                                       <GrammarType.Gender>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Gender>_R))))) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender18 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1514,7 +1516,7 @@ be133089acc051c4cb1b081c8f8c651f
 1f972f90342e74ee5ffa30139101e811
   $fReadGender19 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "M"#) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP GrammarType.Gender
@@ -1529,7 +1531,7 @@ be133089acc051c4cb1b081c8f8c651f
                                        <GrammarType.Gender>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                   <GrammarType.Gender>_R)))) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1546,7 +1548,7 @@ be133089acc051c4cb1b081c8f8c651f
                    eta
                    @ b
                    eta1) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender4 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)]
@@ -1556,7 +1558,7 @@ be133089acc051c4cb1b081c8f8c651f
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)
                    GrammarType.$fReadGender17
                    GrammarType.$fReadGender5) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender5 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)]
@@ -1566,7 +1568,7 @@ be133089acc051c4cb1b081c8f8c651f
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)
                    GrammarType.$fReadGender14
                    GrammarType.$fReadGender6) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender6 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)]
@@ -1576,7 +1578,7 @@ be133089acc051c4cb1b081c8f8c651f
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)
                    GrammarType.$fReadGender11
                    GrammarType.$fReadGender7) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender7 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)]
@@ -1588,7 +1590,7 @@ be133089acc051c4cb1b081c8f8c651f
                    (GHC.Types.[]
                       @ (GHC.Base.String,
                          Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender))) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender8 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender)
@@ -1602,7 +1604,7 @@ be133089acc051c4cb1b081c8f8c651f
                                       <GrammarType.Gender>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Gender>_R))))) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender9 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1614,7 +1616,7 @@ be133089acc051c4cb1b081c8f8c651f
                    @ b
                    eta :: GrammarType.Gender -> Text.ParserCombinators.ReadP.P b ->
                  eta GrammarType.N) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [GrammarType.Gender]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -1627,7 +1629,7 @@ be133089acc051c4cb1b081c8f8c651f
                                     <[GrammarType.Gender]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                <[GrammarType.Gender]>_R))) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Gender
   {- Arity: 1,
@@ -1636,7 +1638,7 @@ be133089acc051c4cb1b081c8f8c651f
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                           <GrammarType.Gender>_R)) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender_$s$dmreadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS GrammarType.Gender
@@ -1647,7 +1649,7 @@ be133089acc051c4cb1b081c8f8c651f
                    @ GrammarType.Gender
                    GrammarType.$fReadGender_$creadPrec
                    eta) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fReadGender_$sreadListDefault ::
     Text.ParserCombinators.ReadP.ReadS [GrammarType.Gender]
   {- Arity: 1,
@@ -1860,7 +1862,7 @@ be133089acc051c4cb1b081c8f8c651f
                       @ [GrammarType.Honorific]
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ [GrammarType.Honorific]))) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber :: GHC.Read.Read GrammarType.Number
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -1870,7 +1872,7 @@ be133089acc051c4cb1b081c8f8c651f
                   GrammarType.$fReadNumber_$sreadListDefault
                   GrammarType.$fReadNumber_$creadPrec
                   GrammarType.$fReadNumber_$creadListPrec -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1889,7 +1891,7 @@ be133089acc051c4cb1b081c8f8c651f
                              <GrammarType.Number>_R))
                    @ b
                    eta1) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber10 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1904,7 +1906,7 @@ be133089acc051c4cb1b081c8f8c651f
 33ec54a0ed518019fba2f151850f9cda
   $fReadNumber11 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "PL"#) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber12 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)
@@ -1918,7 +1920,7 @@ be133089acc051c4cb1b081c8f8c651f
                                       <GrammarType.Number>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Number>_R))))) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber13 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1933,7 +1935,7 @@ be133089acc051c4cb1b081c8f8c651f
 6f3f61089c3b8e051d4793b7a7e18b7f
   $fReadNumber14 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "PA"#) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber15 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)
@@ -1947,7 +1949,7 @@ be133089acc051c4cb1b081c8f8c651f
                                       <GrammarType.Number>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Number>_R))))) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber16 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1962,7 +1964,7 @@ be133089acc051c4cb1b081c8f8c651f
 bfda3d7b43030978cde7fc45d1fc0161
   $fReadNumber17 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "TRI"#) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber18 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)
@@ -1976,7 +1978,7 @@ bfda3d7b43030978cde7fc45d1fc0161
                                       <GrammarType.Number>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Number>_R))))) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber19 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1988,7 +1990,7 @@ bfda3d7b43030978cde7fc45d1fc0161
                    @ b
                    eta :: GrammarType.Number -> Text.ParserCombinators.ReadP.P b ->
                  eta GrammarType.DU) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP GrammarType.Number
@@ -2006,7 +2008,7 @@ bfda3d7b43030978cde7fc45d1fc0161
 afbdde2c1096fc881cf40842c46816c6
   $fReadNumber20 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "DU"#) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber21 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)
@@ -2020,7 +2022,7 @@ afbdde2c1096fc881cf40842c46816c6
                                       <GrammarType.Number>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Number>_R))))) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber22 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -2035,7 +2037,7 @@ afbdde2c1096fc881cf40842c46816c6
 d21f6c1fd2cf4e65520408dfea2d4967
   $fReadNumber23 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "SG"#) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -2052,7 +2054,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                    eta
                    @ b
                    eta1) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber4 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)]
@@ -2062,7 +2064,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)
                    GrammarType.$fReadNumber21
                    GrammarType.$fReadNumber5) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber5 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)]
@@ -2072,7 +2074,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)
                    GrammarType.$fReadNumber18
                    GrammarType.$fReadNumber6) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber6 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)]
@@ -2082,7 +2084,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)
                    GrammarType.$fReadNumber15
                    GrammarType.$fReadNumber7) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber7 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)]
@@ -2092,7 +2094,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)
                    GrammarType.$fReadNumber12
                    GrammarType.$fReadNumber8) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber8 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)]
@@ -2104,7 +2106,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                    (GHC.Types.[]
                       @ (GHC.Base.String,
                          Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number))) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber9 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number)
@@ -2118,7 +2120,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                                       <GrammarType.Number>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                  <GrammarType.Number>_R))))) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [GrammarType.Number]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -2131,7 +2133,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                                     <[GrammarType.Number]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                <[GrammarType.Number]>_R))) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec GrammarType.Number
   {- Arity: 1,
@@ -2140,7 +2142,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                           <GrammarType.Number>_R)) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber_$s$dmreadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS GrammarType.Number
@@ -2151,7 +2153,7 @@ d21f6c1fd2cf4e65520408dfea2d4967
                    @ GrammarType.Number
                    GrammarType.$fReadNumber_$creadPrec
                    eta) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fReadNumber_$sreadListDefault ::
     Text.ParserCombinators.ReadP.ReadS [GrammarType.Number]
   {- Arity: 1,
@@ -2366,7 +2368,458 @@ e521f63828d45d62f01915f44b5b0dc6
                       @ [GrammarType.Specificity]
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ [GrammarType.Specificity]))) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+3b95f85ea6c850398f8231329cc93b7a
+  $fShowAgglSystem :: GHC.Show.Show GrammarType.AgglSystem
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ GrammarType.AgglSystem
+                  GrammarType.$fShowAgglSystem_$cshowsPrec
+                  GrammarType.$fShowAgglSystem_$cshow
+                  GrammarType.$fShowAgglSystem_$cshowList -}
+3b95f85ea6c850398f8231329cc93b7a
+  $fShowAgglSystem1 :: GrammarType.AgglSystem -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ w :: GrammarType.AgglSystem ->
+                 case w of ww { GrammarType.AgglSystem ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 GrammarType.$w$cshowsPrec 0 ww1 ww2 ww3 ww4 ww5 ww6 ww7 }) -}
+2a45f70df8cd89a75de6604b1d17ee70
+  $fShowAgglSystem2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "AgglSystem "#) -}
+202b2f9befc523cb0d0b85f08b5d06f4
+  $fShowAgglSystem3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11) -}
+3b95f85ea6c850398f8231329cc93b7a
+  $fShowAgglSystem_$cshow ::
+    GrammarType.AgglSystem -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U,1*U,1*U,1*U,1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: GrammarType.AgglSystem ->
+                 GrammarType.$fShowAgglSystem_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+3b95f85ea6c850398f8231329cc93b7a
+  $fShowAgglSystem_$cshowList ::
+    [GrammarType.AgglSystem] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ GrammarType.AgglSystem
+                   GrammarType.$fShowAgglSystem1) -}
+3b95f85ea6c850398f8231329cc93b7a
+  $fShowAgglSystem_$cshowsPrec ::
+    GHC.Types.Int -> GrammarType.AgglSystem -> GHC.Show.ShowS
+  {- Arity: 2,
+     Strictness: <S,1*U(U)><S,1*U(1*U,1*U,1*U,1*U,1*U,1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: GHC.Types.Int w1 :: GrammarType.AgglSystem ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { GrammarType.AgglSystem ww3 ww4 ww5 ww6 ww7 ww8 ww9 ->
+                 GrammarType.$w$cshowsPrec ww1 ww3 ww4 ww5 ww6 ww7 ww8 ww9 } }) -}
+6874267149ed04ba31c671c3957462b3
+  $fShowAgglSystem_$s$fShow(,)_$cshowList ::
+    [(OtherData.Syllable, GrammarType.Specificity)] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [(OtherData.Syllable, GrammarType.Specificity)]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (OtherData.Syllable, GrammarType.Specificity)
+                   (GHC.Show.$fShow(,)_$cshowsPrec
+                      @ OtherData.Syllable
+                      @ GrammarType.Specificity
+                      OtherData.$fShowSyllable
+                      GrammarType.$fShowSpecificity
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+a35470af95681484911faf1ed68696b5
+  $fShowAgglSystem_$s$fShow(,)_$cshowList1 ::
+    [(OtherData.Syllable, GrammarType.Definiteness)] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [(OtherData.Syllable, GrammarType.Definiteness)]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (OtherData.Syllable, GrammarType.Definiteness)
+                   (GHC.Show.$fShow(,)_$cshowsPrec
+                      @ OtherData.Syllable
+                      @ GrammarType.Definiteness
+                      OtherData.$fShowSyllable
+                      GrammarType.$fShowDefiniteness
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+1a20fdb9dd301cbbcc5af180fab19073
+  $fShowAgglSystem_$s$fShow(,)_$cshowList2 ::
+    [(OtherData.Syllable, GrammarType.Honorific)] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [(OtherData.Syllable, GrammarType.Honorific)]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (OtherData.Syllable, GrammarType.Honorific)
+                   (GHC.Show.$fShow(,)_$cshowsPrec
+                      @ OtherData.Syllable
+                      @ GrammarType.Honorific
+                      OtherData.$fShowSyllable
+                      GrammarType.$fShowHonorific
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+a405974398834335586cd40c3e17ba8a
+  $fShowAgglSystem_$s$fShow(,)_$cshowList3 ::
+    [(OtherData.Syllable, GrammarType.Number)] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [(OtherData.Syllable, GrammarType.Number)]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (OtherData.Syllable, GrammarType.Number)
+                   (GHC.Show.$fShow(,)_$cshowsPrec
+                      @ OtherData.Syllable
+                      @ GrammarType.Number
+                      OtherData.$fShowSyllable
+                      GrammarType.$fShowNumber
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+9f0edc6d576580964b771a6ecc213630
+  $fShowAgglSystem_$s$fShow(,)_$cshowList4 ::
+    [(OtherData.Syllable, GrammarType.Case)] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [(OtherData.Syllable, GrammarType.Case)]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (OtherData.Syllable, GrammarType.Case)
+                   (GHC.Show.$fShow(,)_$cshowsPrec
+                      @ OtherData.Syllable
+                      @ GrammarType.Case
+                      OtherData.$fShowSyllable
+                      GrammarType.$fShowCase
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+9cf2152d69e9baa475121f08617f0049
+  $fShowAgglSystem_$s$fShow(,)_$cshowList5 ::
+    [(OtherData.Syllable, GrammarType.Animacy)] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [(OtherData.Syllable, GrammarType.Animacy)]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (OtherData.Syllable, GrammarType.Animacy)
+                   (GHC.Show.$fShow(,)_$cshowsPrec
+                      @ OtherData.Syllable
+                      @ GrammarType.Animacy
+                      OtherData.$fShowSyllable
+                      GrammarType.$fShowAnimacy
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+297a639351060b414d25ed87747b92fc
+  $fShowAgglSystem_$s$fShow(,)_$cshowList6 ::
+    [(OtherData.Syllable, GrammarType.Gender)] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [(OtherData.Syllable, GrammarType.Gender)]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (OtherData.Syllable, GrammarType.Gender)
+                   (GHC.Show.$fShow(,)_$cshowsPrec
+                      @ OtherData.Syllable
+                      @ GrammarType.Gender
+                      OtherData.$fShowSyllable
+                      GrammarType.$fShowGender
+                      GHC.Show.shows18)
+                   eta
+                   eta1) -}
+9634b90f5ba4b9f077c462827ebade8e
+  $fShowAgglSystem_$s$fShow[] ::
+    GHC.Show.Show [(OtherData.Syllable, GrammarType.Specificity)]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(OtherData.Syllable, GrammarType.Specificity)]
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList -}
+c612cdc8dfd6f8217a494e5ae34a8753
+  $fShowAgglSystem_$s$fShow[]1 ::
+    GHC.Show.Show [(OtherData.Syllable, GrammarType.Definiteness)]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(OtherData.Syllable, GrammarType.Definiteness)]
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec1
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow1
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList1 -}
+36103cc67609f0c2c436b12dc7a1abce
+  $fShowAgglSystem_$s$fShow[]2 ::
+    GHC.Show.Show [(OtherData.Syllable, GrammarType.Honorific)]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(OtherData.Syllable, GrammarType.Honorific)]
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec2
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow2
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList2 -}
+5c24f1a630b5f0fc49127cbf086f9005
+  $fShowAgglSystem_$s$fShow[]3 ::
+    GHC.Show.Show [(OtherData.Syllable, GrammarType.Number)]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(OtherData.Syllable, GrammarType.Number)]
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec3
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow3
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList3 -}
+9c618b3447dbc4315d20186303f39af4
+  $fShowAgglSystem_$s$fShow[]4 ::
+    GHC.Show.Show [(OtherData.Syllable, GrammarType.Case)]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(OtherData.Syllable, GrammarType.Case)]
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec4
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow4
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList4 -}
+23a5f58d18ef1a95da130641003dc41a
+  $fShowAgglSystem_$s$fShow[]5 ::
+    GHC.Show.Show [(OtherData.Syllable, GrammarType.Animacy)]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(OtherData.Syllable, GrammarType.Animacy)]
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec5
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow5
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList5 -}
+a3741f87e148774c71e055e33de9ed80
+  $fShowAgglSystem_$s$fShow[]6 ::
+    GHC.Show.Show [(OtherData.Syllable, GrammarType.Gender)]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(OtherData.Syllable, GrammarType.Gender)]
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec6
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow6
+                  GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList6 -}
+72a83db18bd0b9ba6a9089aaaa52b702
+  $fShowAgglSystem_$s$fShow[]_$cshow ::
+    [(OtherData.Syllable, GrammarType.Specificity)] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [(OtherData.Syllable, GrammarType.Specificity)] ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+1986828dc05f9d21e33d489dbb15ce53
+  $fShowAgglSystem_$s$fShow[]_$cshow1 ::
+    [(OtherData.Syllable, GrammarType.Definiteness)] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [(OtherData.Syllable, GrammarType.Definiteness)] ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList1
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+0b9404526c8c390e5e52fdf1ea4d05af
+  $fShowAgglSystem_$s$fShow[]_$cshow2 ::
+    [(OtherData.Syllable, GrammarType.Honorific)] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [(OtherData.Syllable, GrammarType.Honorific)] ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList2
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+e5dab47b036ab391d554ea3d0e1a897e
+  $fShowAgglSystem_$s$fShow[]_$cshow3 ::
+    [(OtherData.Syllable, GrammarType.Number)] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [(OtherData.Syllable, GrammarType.Number)] ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList3
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+d73f9e25a5eccbcad8a45f4a015ce20a
+  $fShowAgglSystem_$s$fShow[]_$cshow4 ::
+    [(OtherData.Syllable, GrammarType.Case)] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [(OtherData.Syllable, GrammarType.Case)] ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList4
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+06ea8b825d857ef24871a755a214b493
+  $fShowAgglSystem_$s$fShow[]_$cshow5 ::
+    [(OtherData.Syllable, GrammarType.Animacy)] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [(OtherData.Syllable, GrammarType.Animacy)] ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList5
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+12da7ded7fcbd9ca7222f6e94c38f37f
+  $fShowAgglSystem_$s$fShow[]_$cshow6 ::
+    [(OtherData.Syllable, GrammarType.Gender)] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [(OtherData.Syllable, GrammarType.Gender)] ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList6
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+4a5929b647f2ea4b354a32ce69cf853a
+  $fShowAgglSystem_$s$fShow[]_$cshowList ::
+    [[(OtherData.Syllable, GrammarType.Specificity)]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[(OtherData.Syllable, GrammarType.Specificity)]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [(OtherData.Syllable, GrammarType.Specificity)]
+                   GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList
+                   eta
+                   eta1) -}
+8459edbbd7d3d5ae8135ba0843c9febe
+  $fShowAgglSystem_$s$fShow[]_$cshowList1 ::
+    [[(OtherData.Syllable, GrammarType.Definiteness)]]
+    -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[(OtherData.Syllable, GrammarType.Definiteness)]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [(OtherData.Syllable, GrammarType.Definiteness)]
+                   GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList1
+                   eta
+                   eta1) -}
+6c18d840d54a344cd74a51ae2e377c57
+  $fShowAgglSystem_$s$fShow[]_$cshowList2 ::
+    [[(OtherData.Syllable, GrammarType.Honorific)]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[(OtherData.Syllable, GrammarType.Honorific)]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [(OtherData.Syllable, GrammarType.Honorific)]
+                   GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList2
+                   eta
+                   eta1) -}
+88781a70e48a5a61c4a3ee9c1ecad7fa
+  $fShowAgglSystem_$s$fShow[]_$cshowList3 ::
+    [[(OtherData.Syllable, GrammarType.Number)]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[(OtherData.Syllable, GrammarType.Number)]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [(OtherData.Syllable, GrammarType.Number)]
+                   GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList3
+                   eta
+                   eta1) -}
+632dafee6899f7a4fcaf7f8aa393e9f3
+  $fShowAgglSystem_$s$fShow[]_$cshowList4 ::
+    [[(OtherData.Syllable, GrammarType.Case)]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[(OtherData.Syllable, GrammarType.Case)]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [(OtherData.Syllable, GrammarType.Case)]
+                   GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList4
+                   eta
+                   eta1) -}
+b8a75711e4d5f93835d13e62b5d68142
+  $fShowAgglSystem_$s$fShow[]_$cshowList5 ::
+    [[(OtherData.Syllable, GrammarType.Animacy)]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[(OtherData.Syllable, GrammarType.Animacy)]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [(OtherData.Syllable, GrammarType.Animacy)]
+                   GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList5
+                   eta
+                   eta1) -}
+1da89c4c368c0ff1e19401700b87601f
+  $fShowAgglSystem_$s$fShow[]_$cshowList6 ::
+    [[(OtherData.Syllable, GrammarType.Gender)]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[(OtherData.Syllable, GrammarType.Gender)]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [(OtherData.Syllable, GrammarType.Gender)]
+                   GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList6
+                   eta
+                   eta1) -}
+05427c84f482d1f50118d6dc92a207a6
+  $fShowAgglSystem_$s$fShow[]_$cshowsPrec ::
+    GHC.Types.Int
+    -> [(OtherData.Syllable, GrammarType.Specificity)]
+    -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [(OtherData.Syllable, GrammarType.Specificity)]
+                   eta1 :: GHC.Base.String ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList eta eta1) -}
+dff57d855ae74aa4d49e891f6471dfac
+  $fShowAgglSystem_$s$fShow[]_$cshowsPrec1 ::
+    GHC.Types.Int
+    -> [(OtherData.Syllable, GrammarType.Definiteness)]
+    -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [(OtherData.Syllable, GrammarType.Definiteness)]
+                   eta1 :: GHC.Base.String ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList1 eta eta1) -}
+6e6d0a58f11c7c35ef4fc45fbbb783ac
+  $fShowAgglSystem_$s$fShow[]_$cshowsPrec2 ::
+    GHC.Types.Int
+    -> [(OtherData.Syllable, GrammarType.Honorific)] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [(OtherData.Syllable, GrammarType.Honorific)]
+                   eta1 :: GHC.Base.String ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList2 eta eta1) -}
+4c376e07fd90870d34d34624c4d11c8c
+  $fShowAgglSystem_$s$fShow[]_$cshowsPrec3 ::
+    GHC.Types.Int
+    -> [(OtherData.Syllable, GrammarType.Number)] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [(OtherData.Syllable, GrammarType.Number)]
+                   eta1 :: GHC.Base.String ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList3 eta eta1) -}
+5937ad217490fe0aaee2e6e26ada9eb1
+  $fShowAgglSystem_$s$fShow[]_$cshowsPrec4 ::
+    GHC.Types.Int
+    -> [(OtherData.Syllable, GrammarType.Case)] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [(OtherData.Syllable, GrammarType.Case)]
+                   eta1 :: GHC.Base.String ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList4 eta eta1) -}
+eaa2519118eb38c773b4d2960338e43f
+  $fShowAgglSystem_$s$fShow[]_$cshowsPrec5 ::
+    GHC.Types.Int
+    -> [(OtherData.Syllable, GrammarType.Animacy)] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [(OtherData.Syllable, GrammarType.Animacy)]
+                   eta1 :: GHC.Base.String ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList5 eta eta1) -}
+0f4ae1356807a579f959b412589bfea3
+  $fShowAgglSystem_$s$fShow[]_$cshowsPrec6 ::
+    GHC.Types.Int
+    -> [(OtherData.Syllable, GrammarType.Gender)] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [(OtherData.Syllable, GrammarType.Gender)]
+                   eta1 :: GHC.Base.String ->
+                 GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList6 eta eta1) -}
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fShowAnimacy :: GHC.Show.Show GrammarType.Animacy
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -2375,7 +2828,7 @@ e521f63828d45d62f01915f44b5b0dc6
                   GrammarType.$fShowAnimacy_$cshowsPrec
                   GrammarType.$fShowAnimacy_$cshow
                   GrammarType.$fShowAnimacy_$cshowList -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fShowAnimacy_$cshow :: GrammarType.Animacy -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -2384,13 +2837,13 @@ e521f63828d45d62f01915f44b5b0dc6
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fShowAnimacy_$cshowList :: [GrammarType.Animacy] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ GrammarType.Animacy
-                   GrammarType.$w$cshowsPrec) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+                   GrammarType.$w$cshowsPrec3) -}
+63e8aa6fccd7f7d793a2ff259e8b254c
   $fShowAnimacy_$cshowsPrec ::
     GHC.Types.Int -> GrammarType.Animacy -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
@@ -2398,8 +2851,8 @@ e521f63828d45d62f01915f44b5b0dc6
                 (\ w :: GHC.Types.Int
                    w1 :: GrammarType.Animacy
                    w2 :: GHC.Base.String ->
-                 GrammarType.$w$cshowsPrec w1 w2) -}
-cf12fb2514df090f443d91dc740e2284
+                 GrammarType.$w$cshowsPrec3 w1 w2) -}
+be38d9be75d70fdf500b24ada0c0bd39
   $fShowCase :: GHC.Show.Show GrammarType.Case
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -2408,7 +2861,7 @@ cf12fb2514df090f443d91dc740e2284
                   GrammarType.$fShowCase_$cshowsPrec
                   GrammarType.$fShowCase_$cshow
                   GrammarType.$fShowCase_$cshowList -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fShowCase_$cshow :: GrammarType.Case -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -2417,13 +2870,13 @@ cf12fb2514df090f443d91dc740e2284
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   $fShowCase_$cshowList :: [GrammarType.Case] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ GrammarType.Case
-                   GrammarType.$w$cshowsPrec1) -}
-cf12fb2514df090f443d91dc740e2284
+                   GrammarType.$w$cshowsPrec2) -}
+be38d9be75d70fdf500b24ada0c0bd39
   $fShowCase_$cshowsPrec ::
     GHC.Types.Int -> GrammarType.Case -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
@@ -2431,8 +2884,8 @@ cf12fb2514df090f443d91dc740e2284
                 (\ w :: GHC.Types.Int
                    w1 :: GrammarType.Case
                    w2 :: GHC.Base.String ->
-                 GrammarType.$w$cshowsPrec1 w1 w2) -}
-63367633f56c545b9e4b2ee097a5fc2d
+                 GrammarType.$w$cshowsPrec2 w1 w2) -}
+5f00d1c82f700b2fbfa4ab05bb933efa
   $fShowDeclension :: GHC.Show.Show GrammarType.Declension
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -2441,13 +2894,13 @@ cf12fb2514df090f443d91dc740e2284
                   GrammarType.$fShowDeclension_$cshowsPrec
                   GrammarType.$fShowDeclension_$cshow
                   GrammarType.$fShowDeclension_$cshowList -}
-63367633f56c545b9e4b2ee097a5fc2d
+5f00d1c82f700b2fbfa4ab05bb933efa
   $fShowDeclension1 :: GrammarType.Declension -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ w :: GrammarType.Declension w1 :: GHC.Base.String ->
                  case w of ww { GrammarType.Declension ww1 ->
-                 GrammarType.$w$cshowsPrec2 0 ww1 w1 }) -}
-1d645ba9332101c022218df95db0befa
+                 GrammarType.$w$cshowsPrec5 0 ww1 w1 }) -}
+36719009120405ff536a8f0906225cd4
   $fShowDeclension2 ::
     (OtherData.Syllable,
      (GHC.Base.Maybe GrammarType.Gender,
@@ -2543,7 +2996,7 @@ cf12fb2514df090f443d91dc740e2284
                                   -> GHC.Base.++
                                        @ GHC.Types.Char
                                        GHC.Show.$fShowMaybe1
-                                       (GrammarType.$w$cshowsPrec3
+                                       (GrammarType.$w$cshowsPrec4
                                           b1
                                           (GHC.Types.:
                                              @ GHC.Types.Char
@@ -2551,7 +3004,7 @@ cf12fb2514df090f443d91dc740e2284
                                              a7)) }) })
                             (GHC.Types.[] @ GHC.Show.ShowS)
                             (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w4))) }) }) -}
-b87ffa86f9c8bf558e69037478c71704
+9ed5807088322ba17e67072774a696e3
   $fShowDeclension3 ::
     (OtherData.Syllable,
      (GHC.Base.Maybe GrammarType.Gender,
@@ -2647,7 +3100,7 @@ b87ffa86f9c8bf558e69037478c71704
                                   -> GHC.Base.++
                                        @ GHC.Types.Char
                                        GHC.Show.$fShowMaybe1
-                                       (GrammarType.$w$cshowsPrec3
+                                       (GrammarType.$w$cshowsPrec4
                                           b1
                                           (GHC.Types.:
                                              @ GHC.Types.Char
@@ -2658,7 +3111,7 @@ b87ffa86f9c8bf558e69037478c71704
 e82f2d9d9ae945267d2cfdb53cd8710a
   $fShowDeclension4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Declension "#) -}
-c11ad694d3960e40e2483a5bbf16f839
+d97f81176fc2d147724af8ad41f3c8f8
   $fShowDeclension5 ::
     (OtherData.Syllable,
      (GHC.Base.Maybe GrammarType.Gender,
@@ -2754,7 +3207,7 @@ c11ad694d3960e40e2483a5bbf16f839
                                   -> GHC.Base.++
                                        @ GHC.Types.Char
                                        GHC.Show.$fShowMaybe1
-                                       (GrammarType.$w$cshowsPrec3
+                                       (GrammarType.$w$cshowsPrec4
                                           b1
                                           (GHC.Types.:
                                              @ GHC.Types.Char
@@ -2762,7 +3215,7 @@ c11ad694d3960e40e2483a5bbf16f839
                                              a7)) }) })
                             (GHC.Types.[] @ GHC.Show.ShowS)
                             (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w4))) }) }) -}
-63367633f56c545b9e4b2ee097a5fc2d
+5f00d1c82f700b2fbfa4ab05bb933efa
   $fShowDeclension_$cshow ::
     GrammarType.Declension -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>, Inline: INLINE[0],
@@ -2770,14 +3223,14 @@ c11ad694d3960e40e2483a5bbf16f839
                 (\ w :: GrammarType.Declension ->
                  case w of ww { GrammarType.Declension ww1 ->
                  GrammarType.$w$cshow ww1 }) -}
-63367633f56c545b9e4b2ee097a5fc2d
+5f00d1c82f700b2fbfa4ab05bb933efa
   $fShowDeclension_$cshowList ::
     [GrammarType.Declension] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ GrammarType.Declension
                    GrammarType.$fShowDeclension1) -}
-63367633f56c545b9e4b2ee097a5fc2d
+5f00d1c82f700b2fbfa4ab05bb933efa
   $fShowDeclension_$cshowsPrec ::
     GHC.Types.Int -> GrammarType.Declension -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U)><L,U>,
@@ -2788,7 +3241,7 @@ c11ad694d3960e40e2483a5bbf16f839
                    w2 :: GHC.Base.String ->
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { GrammarType.Declension ww3 ->
-                 GrammarType.$w$cshowsPrec2 ww1 ww3 w2 } }) -}
+                 GrammarType.$w$cshowsPrec5 ww1 ww3 w2 } }) -}
 0beb087cff99593226a9b8c5fd83dd7e
   $fShowDefiniteness :: GHC.Show.Show GrammarType.Definiteness
   DFunId[0]
@@ -2873,7 +3326,7 @@ c11ad694d3960e40e2483a5bbf16f839
                            n
                            GrammarType.$fReadDefiniteness8)
                         eta }) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fShowGender :: GHC.Show.Show GrammarType.Gender
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -2882,7 +3335,7 @@ c11ad694d3960e40e2483a5bbf16f839
                   GrammarType.$fShowGender_$cshowsPrec
                   GrammarType.$fShowGender_$cshow
                   GrammarType.$fShowGender_$cshowList -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fShowGender_$cshow :: GrammarType.Gender -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -2891,13 +3344,13 @@ c11ad694d3960e40e2483a5bbf16f839
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   $fShowGender_$cshowList :: [GrammarType.Gender] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ GrammarType.Gender
-                   GrammarType.$w$cshowsPrec3) -}
-313f54c997d1c2a7547cc74ee46f34a6
+                   GrammarType.$w$cshowsPrec4) -}
+4ec726048e32404154bb5efce362dabf
   $fShowGender_$cshowsPrec ::
     GHC.Types.Int -> GrammarType.Gender -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
@@ -2905,8 +3358,8 @@ c11ad694d3960e40e2483a5bbf16f839
                 (\ w :: GHC.Types.Int
                    w1 :: GrammarType.Gender
                    w2 :: GHC.Base.String ->
-                 GrammarType.$w$cshowsPrec3 w1 w2) -}
-3d4b6c2c5775c66a007d34fe0ec6258f
+                 GrammarType.$w$cshowsPrec4 w1 w2) -}
+2048de4aa3404e3eec7580f311ba697b
   $fShowGrammarSystem :: GHC.Show.Show GrammarType.GrammarSystem
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -2915,13 +3368,13 @@ c11ad694d3960e40e2483a5bbf16f839
                   GrammarType.$fShowGrammarSystem_$cshowsPrec
                   GrammarType.$fShowGrammarSystem_$cshow
                   GrammarType.$fShowGrammarSystem_$cshowList -}
-3d4b6c2c5775c66a007d34fe0ec6258f
+2048de4aa3404e3eec7580f311ba697b
   $fShowGrammarSystem1 :: GrammarType.GrammarSystem -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ w :: GrammarType.GrammarSystem ->
                  case w of ww { GrammarType.GrammarSystem ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
-                 GrammarType.$w$cshowsPrec5 0 ww1 ww2 ww3 ww4 ww5 ww6 ww7 }) -}
-3d4b6c2c5775c66a007d34fe0ec6258f
+                 GrammarType.$w$cshowsPrec6 0 ww1 ww2 ww3 ww4 ww5 ww6 ww7 }) -}
+2048de4aa3404e3eec7580f311ba697b
   $fShowGrammarSystem_$cshow ::
     GrammarType.GrammarSystem -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U,1*U,1*U,1*U,1*U,1*U,1*U)>,
@@ -2931,14 +3384,14 @@ c11ad694d3960e40e2483a5bbf16f839
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-3d4b6c2c5775c66a007d34fe0ec6258f
+2048de4aa3404e3eec7580f311ba697b
   $fShowGrammarSystem_$cshowList ::
     [GrammarType.GrammarSystem] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ GrammarType.GrammarSystem
                    GrammarType.$fShowGrammarSystem1) -}
-3d4b6c2c5775c66a007d34fe0ec6258f
+2048de4aa3404e3eec7580f311ba697b
   $fShowGrammarSystem_$cshowsPrec ::
     GHC.Types.Int -> GrammarType.GrammarSystem -> GHC.Show.ShowS
   {- Arity: 2,
@@ -2948,7 +3401,7 @@ c11ad694d3960e40e2483a5bbf16f839
                 (\ w :: GHC.Types.Int w1 :: GrammarType.GrammarSystem ->
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { GrammarType.GrammarSystem ww3 ww4 ww5 ww6 ww7 ww8 ww9 ->
-                 GrammarType.$w$cshowsPrec5 ww1 ww3 ww4 ww5 ww6 ww7 ww8 ww9 } }) -}
+                 GrammarType.$w$cshowsPrec6 ww1 ww3 ww4 ww5 ww6 ww7 ww8 ww9 } }) -}
 33ab5b5c9687d44421ffb5723e773fed
   $fShowHonorific :: GHC.Show.Show GrammarType.Honorific
   DFunId[0]
@@ -3032,7 +3485,7 @@ c11ad694d3960e40e2483a5bbf16f839
                            n
                            GrammarType.$fReadHonorific8)
                         eta }) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fShowNumber :: GHC.Show.Show GrammarType.Number
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -3041,7 +3494,7 @@ c11ad694d3960e40e2483a5bbf16f839
                   GrammarType.$fShowNumber_$cshowsPrec
                   GrammarType.$fShowNumber_$cshow
                   GrammarType.$fShowNumber_$cshowList -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fShowNumber_$cshow :: GrammarType.Number -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -3050,13 +3503,13 @@ c11ad694d3960e40e2483a5bbf16f839
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   $fShowNumber_$cshowList :: [GrammarType.Number] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ GrammarType.Number
-                   GrammarType.$w$cshowsPrec4) -}
-7c6bccd0de5888f1bb886fc04db2be0f
+                   GrammarType.$w$cshowsPrec1) -}
+2701bde6eab481f373eca6bdacd5e4c9
   $fShowNumber_$cshowsPrec ::
     GHC.Types.Int -> GrammarType.Number -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
@@ -3064,7 +3517,7 @@ c11ad694d3960e40e2483a5bbf16f839
                 (\ w :: GHC.Types.Int
                    w1 :: GrammarType.Number
                    w2 :: GHC.Base.String ->
-                 GrammarType.$w$cshowsPrec4 w1 w2) -}
+                 GrammarType.$w$cshowsPrec1 w1 w2) -}
 e521f63828d45d62f01915f44b5b0dc6
   $fShowSpecificity :: GHC.Show.Show GrammarType.Specificity
   DFunId[0]
@@ -3149,6 +3602,51 @@ e521f63828d45d62f01915f44b5b0dc6
                            n
                            GrammarType.$fReadSpecificity8)
                         eta }) -}
+380c1a625038166ee6edf7d45ad29fba
+  $fShowTemplate :: GHC.Show.Show GrammarType.Template
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ GrammarType.Template
+                  GrammarType.$fShowTemplate_$cshowsPrec
+                  GrammarType.$fShowTemplate_$cshow
+                  GrammarType.$fShowTemplate_$cshowList -}
+380c1a625038166ee6edf7d45ad29fba
+  $fShowTemplate1 :: GrammarType.Template -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: GrammarType.Template w1 :: GHC.Base.String ->
+                 case w of ww { GrammarType.Template ww1 ->
+                 GrammarType.$w$cshowsPrec7 0 ww1 w1 }) -}
+380c1a625038166ee6edf7d45ad29fba
+  $fShowTemplate_$cshow :: GrammarType.Template -> GHC.Base.String
+  {- Arity: 1,
+     Strictness: <S,1*U(1*U(1*U(U),U(U),U(U),U(U),U(U),U(U),U(U)))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: GrammarType.Template ->
+                 GrammarType.$fShowTemplate_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+380c1a625038166ee6edf7d45ad29fba
+  $fShowTemplate_$cshowList ::
+    [GrammarType.Template] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ GrammarType.Template
+                   GrammarType.$fShowTemplate1) -}
+380c1a625038166ee6edf7d45ad29fba
+  $fShowTemplate_$cshowsPrec ::
+    GHC.Types.Int -> GrammarType.Template -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S,1*U(U)><S,1*U(1*U(1*U(U),U(U),U(U),U(U),U(U),U(U),U(U)))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: GrammarType.Template
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { GrammarType.Template ww3 ->
+                 GrammarType.$w$cshowsPrec7 ww1 ww3 w2 } }) -}
 aa831caa58cca564bfb758bd79771b7f
   $s$fShow[] :: GHC.Show.Show [GrammarType.Specificity]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -3167,7 +3665,7 @@ aa831caa58cca564bfb758bd79771b7f
                    GrammarType.$fShowSpecificity1
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-399f6c3d0279ea6eccc8b4e8b8010106
+6e945515e8b3082568e4a12366685e9d
   $s$fShow[]2 :: GHC.Show.Show [GrammarType.Number]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
@@ -3193,7 +3691,7 @@ a6dd283ffe20ddea90f79787f9545777
                    GrammarType.$fShowHonorific1
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-4305ff3eba2d1d86cb13a17e839170e3
+4b9d422681bfdc6ad394211e7e7bba13
   $s$fShow[]5 :: GHC.Show.Show [GrammarType.Gender]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
@@ -3219,7 +3717,7 @@ de385740ef5607a3c5aeb0bcb65e187f
                    GrammarType.$fShowDefiniteness1
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-0a37c0f28cb4b9b74434f135c6b7f83b
+54f5cce9631760d2c4a9255898cd413d
   $s$fShow[]8 :: GHC.Show.Show [GrammarType.Case]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
@@ -3227,7 +3725,7 @@ de385740ef5607a3c5aeb0bcb65e187f
                   GrammarType.$s$fShow[]_$s$fShow[]_$cshowsPrec5
                   GrammarType.$s$fShow[]_$s$fShow[]_$cshow2
                   GrammarType.$s$fShow[]_$s$fShow[]_$cshowList5 -}
-e8c60cae9457a146a8b40d1b166bc3e9
+00fb3285bd2d293dcf29e116d19e120d
   $s$fShow[]9 :: GHC.Show.Show [GrammarType.Animacy]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
@@ -3235,7 +3733,7 @@ e8c60cae9457a146a8b40d1b166bc3e9
                   GrammarType.$s$fShow[]_$s$fShow[]_$cshowsPrec6
                   GrammarType.$s$fShow[]_$s$fShow[]_$cshow3
                   GrammarType.$s$fShow[]_$s$fShow[]_$cshowList6 -}
-bc433a3d336f66c62be36b757b955d35
+f27f06f3b007cf12cec70652a4291a38
   $s$fShow[]_$s$fShow[]_$cshow ::
     [GrammarType.Number] -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
@@ -3244,7 +3742,7 @@ bc433a3d336f66c62be36b757b955d35
                  GrammarType.$fShowNumber_$cshowList
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-99caa6149ea8040fca0538230ae70b08
+d4883670b2765d576455e70c682a1ebf
   $s$fShow[]_$s$fShow[]_$cshow1 ::
     [GrammarType.Gender] -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
@@ -3253,7 +3751,7 @@ bc433a3d336f66c62be36b757b955d35
                  GrammarType.$fShowGender_$cshowList
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-0561a79323b51538504092905b889e1c
+cde8923695b8e84a035bbcc6604fdb3a
   $s$fShow[]_$s$fShow[]_$cshow2 ::
     [GrammarType.Case] -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
@@ -3262,7 +3760,7 @@ bc433a3d336f66c62be36b757b955d35
                  GrammarType.$fShowCase_$cshowList
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-368035d72805ba8f0b6ca3898f185650
+1fa30d0117c50ccd593c760e4b47c308
   $s$fShow[]_$s$fShow[]_$cshow3 ::
     [GrammarType.Animacy] -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
@@ -3282,7 +3780,7 @@ b76652f897d1e558f3f9da82163ae473
                    GrammarType.$fShowSpecificity_$cshowList
                    eta
                    eta1) -}
-832a401cdeefbfef92adadb24ac675b6
+c4735eb879327065f34254abb2ed4cb8
   $s$fShow[]_$s$fShow[]_$cshowList1 ::
     [[GrammarType.Number]] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
@@ -3304,7 +3802,7 @@ f3c583b2df0d9e5b4b0875bcdf00947c
                    GrammarType.$fShowHonorific_$cshowList
                    eta
                    eta1) -}
-665abc0e3d2c08b0fbf8dd9d89a5a4f0
+32220822425ad35de506715864776ee9
   $s$fShow[]_$s$fShow[]_$cshowList3 ::
     [[GrammarType.Gender]] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
@@ -3326,7 +3824,7 @@ f3c583b2df0d9e5b4b0875bcdf00947c
                    GrammarType.$fShowDefiniteness_$cshowList
                    eta
                    eta1) -}
-c8342d7f9505af94d1514145fb9d5dc0
+138174e200c1818e46bdf50b2df8a457
   $s$fShow[]_$s$fShow[]_$cshowList5 ::
     [[GrammarType.Case]] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
@@ -3337,7 +3835,7 @@ c8342d7f9505af94d1514145fb9d5dc0
                    GrammarType.$fShowCase_$cshowList
                    eta
                    eta1) -}
-ad0c457023ba38663782c48f5a3b1d07
+8a4236f0fccfbb53efc86f198925870c
   $s$fShow[]_$s$fShow[]_$cshowList6 ::
     [[GrammarType.Animacy]] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
@@ -3357,7 +3855,7 @@ ad0c457023ba38663782c48f5a3b1d07
                    eta :: [GrammarType.Specificity]
                    eta1 :: GHC.Base.String ->
                  GrammarType.$fShowSpecificity_$cshowList eta eta1) -}
-11eb845f96e750cbb1ec93807cbb49a4
+3059175a35a4780cc8571812a6ce7f86
   $s$fShow[]_$s$fShow[]_$cshowsPrec1 ::
     GHC.Types.Int -> [GrammarType.Number] -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A>,
@@ -3375,7 +3873,7 @@ ad0c457023ba38663782c48f5a3b1d07
                    eta :: [GrammarType.Honorific]
                    eta1 :: GHC.Base.String ->
                  GrammarType.$fShowHonorific_$cshowList eta eta1) -}
-7e98708f119fbbaf60e1601783d84bfd
+306897a9b8ab8c6a05ed6c7c69ac1cea
   $s$fShow[]_$s$fShow[]_$cshowsPrec3 ::
     GHC.Types.Int -> [GrammarType.Gender] -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A>,
@@ -3393,7 +3891,7 @@ d51e639cc4046b8520fb8217967010a1
                    eta :: [GrammarType.Definiteness]
                    eta1 :: GHC.Base.String ->
                  GrammarType.$fShowDefiniteness_$cshowList eta eta1) -}
-e9d6bf87318d482eeed21aa918253e65
+9066b25421f1be8a50d27f484d4c48f3
   $s$fShow[]_$s$fShow[]_$cshowsPrec5 ::
     GHC.Types.Int -> [GrammarType.Case] -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A>,
@@ -3402,7 +3900,7 @@ e9d6bf87318d482eeed21aa918253e65
                    eta :: [GrammarType.Case]
                    eta1 :: GHC.Base.String ->
                  GrammarType.$fShowCase_$cshowList eta eta1) -}
-ae5fe870e48201a3151e73a1a9533a13
+1c76ce3ac7f4fa02c65570180ea7c858
   $s$fShow[]_$s$fShow[]_$cshowsPrec6 ::
     GHC.Types.Int -> [GrammarType.Animacy] -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A>,
@@ -3411,7 +3909,7 @@ ae5fe870e48201a3151e73a1a9533a13
                    eta :: [GrammarType.Animacy]
                    eta1 :: GHC.Base.String ->
                  GrammarType.$fShowAnimacy_$cshowList eta eta1) -}
-1fbfc52e3f268494f3aa93431c343810
+e529e94cce51d5a57171e3e88db9b7e9
   $w$cshow ::
     [(OtherData.Syllable,
       (GHC.Base.Maybe GrammarType.Gender,
@@ -3446,27 +3944,145 @@ ae5fe870e48201a3151e73a1a9533a13
                       GrammarType.$fShowDeclension5
                       ww
                       (GHC.Types.[] @ GHC.Types.Char))) -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+6eccfc433a58f7b5bf9461c3f6164fb5
   $w$cshowsPrec ::
-    GrammarType.Animacy -> GHC.Base.String -> GHC.Base.String
-  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
-     Unfolding: (\ w :: GrammarType.Animacy w1 :: GHC.Base.String ->
-                 case w of wild {
-                   GrammarType.AN
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadAnimacy23 w1
-                   GrammarType.HUM
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadAnimacy20 w1
-                   GrammarType.NHUM
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadAnimacy17 w1
-                   GrammarType.ZO
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadAnimacy14 w1
-                   GrammarType.INAN
-                   -> GHC.Base.++
+    GHC.Prim.Int#
+    -> GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Gender)]
+    -> GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Animacy)]
+    -> GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Case)]
+    -> GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Number)]
+    -> GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Honorific)]
+    -> GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Definiteness)]
+    -> GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Specificity)]
+    -> GHC.Show.ShowS
+  {- Arity: 8,
+     Strictness: <L,U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Gender)]
+                   ww2 :: GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Animacy)]
+                   ww3 :: GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Case)]
+                   ww4 :: GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Number)]
+                   ww5 :: GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Honorific)]
+                   ww6 :: GHC.Base.Maybe
+                            [(OtherData.Syllable, GrammarType.Definiteness)]
+                   ww7 :: GHC.Base.Maybe
+                            [(OtherData.Syllable, GrammarType.Specificity)] ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ [(OtherData.Syllable, GrammarType.Gender)]
+                       GrammarType.$fShowAgglSystem_$s$fShow[]6
+                       GrammarType.$fShowAgglSystem3
+                       ww1
+                 } in
+                 let {
+                   f1 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ [(OtherData.Syllable, GrammarType.Animacy)]
+                       GrammarType.$fShowAgglSystem_$s$fShow[]5
+                       GrammarType.$fShowAgglSystem3
+                       ww2
+                 } in
+                 let {
+                   f2 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ [(OtherData.Syllable, GrammarType.Case)]
+                       GrammarType.$fShowAgglSystem_$s$fShow[]4
+                       GrammarType.$fShowAgglSystem3
+                       ww3
+                 } in
+                 let {
+                   f3 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ [(OtherData.Syllable, GrammarType.Number)]
+                       GrammarType.$fShowAgglSystem_$s$fShow[]3
+                       GrammarType.$fShowAgglSystem3
+                       ww4
+                 } in
+                 let {
+                   f4 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ [(OtherData.Syllable, GrammarType.Honorific)]
+                       GrammarType.$fShowAgglSystem_$s$fShow[]2
+                       GrammarType.$fShowAgglSystem3
+                       ww5
+                 } in
+                 let {
+                   f5 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ [(OtherData.Syllable, GrammarType.Definiteness)]
+                       GrammarType.$fShowAgglSystem_$s$fShow[]1
+                       GrammarType.$fShowAgglSystem3
+                       ww6
+                 } in
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ [(OtherData.Syllable, GrammarType.Specificity)]
+                       GrammarType.$fShowAgglSystem_$s$fShow[]
+                       GrammarType.$fShowAgglSystem3
+                       ww7
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                   = \ x :: GHC.Base.String ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       GrammarType.$fShowAgglSystem2
+                       (f (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.showSpace1
+                             (f1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.showSpace1
+                                   (f2
+                                      (GHC.Types.:
+                                         @ GHC.Types.Char
+                                         GHC.Show.showSpace1
+                                         (f3
+                                            (GHC.Types.:
+                                               @ GHC.Types.Char
+                                               GHC.Show.showSpace1
+                                               (f4
+                                                  (GHC.Types.:
+                                                     @ GHC.Types.Char
+                                                     GHC.Show.showSpace1
+                                                     (f5
+                                                        (GHC.Types.:
+                                                           @ GHC.Types.Char
+                                                           GHC.Show.showSpace1
+                                                           (g x)))))))))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ x :: GHC.Base.String ->
+                      GHC.Types.:
                         @ GHC.Types.Char
-                        GrammarType.$fReadAnimacy11
-                        w1 }) -}
-cf12fb2514df090f443d91dc740e2284
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 x)) }) -}
+2701bde6eab481f373eca6bdacd5e4c9
   $w$cshowsPrec1 ::
+    GrammarType.Number -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: GrammarType.Number w1 :: GHC.Base.String ->
+                 case w of wild {
+                   GrammarType.SG
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber23 w1
+                   GrammarType.DU
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber20 w1
+                   GrammarType.TRI
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber17 w1
+                   GrammarType.PA
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber14 w1
+                   GrammarType.PL
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber11 w1 }) -}
+be38d9be75d70fdf500b24ada0c0bd39
+  $w$cshowsPrec2 ::
     GrammarType.Case -> GHC.Base.String -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
      Unfolding: (\ w :: GrammarType.Case w1 :: GHC.Base.String ->
@@ -3491,8 +4107,41 @@ cf12fb2514df090f443d91dc740e2284
                    -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadCase19 w1
                    GrammarType.VOC
                    -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadCase16 w1 }) -}
-903d451a3da98dde28226c2c21ca0cde
-  $w$cshowsPrec2 ::
+63e8aa6fccd7f7d793a2ff259e8b254c
+  $w$cshowsPrec3 ::
+    GrammarType.Animacy -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: GrammarType.Animacy w1 :: GHC.Base.String ->
+                 case w of wild {
+                   GrammarType.AN
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadAnimacy23 w1
+                   GrammarType.HUM
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadAnimacy20 w1
+                   GrammarType.NHUM
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadAnimacy17 w1
+                   GrammarType.ZO
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadAnimacy14 w1
+                   GrammarType.INAN
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        GrammarType.$fReadAnimacy11
+                        w1 }) -}
+4ec726048e32404154bb5efce362dabf
+  $w$cshowsPrec4 ::
+    GrammarType.Gender -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: GrammarType.Gender w1 :: GHC.Base.String ->
+                 case w of wild {
+                   GrammarType.M
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadGender19 w1
+                   GrammarType.F
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadGender16 w1
+                   GrammarType.COM
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadGender13 w1
+                   GrammarType.N
+                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadGender10 w1 }) -}
+d6fa52a93f4c82c7e5e2396cc7b40dbc
+  $w$cshowsPrec5 ::
     GHC.Prim.Int#
     -> [(OtherData.Syllable,
          (GHC.Base.Maybe GrammarType.Gender,
@@ -3553,38 +4202,8 @@ cf12fb2514df090f443d91dc740e2284
                               GrammarType.$fShowDeclension2
                               ww1
                               (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w))) }) -}
-313f54c997d1c2a7547cc74ee46f34a6
-  $w$cshowsPrec3 ::
-    GrammarType.Gender -> GHC.Base.String -> GHC.Base.String
-  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
-     Unfolding: (\ w :: GrammarType.Gender w1 :: GHC.Base.String ->
-                 case w of wild {
-                   GrammarType.M
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadGender19 w1
-                   GrammarType.F
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadGender16 w1
-                   GrammarType.COM
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadGender13 w1
-                   GrammarType.N
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadGender10 w1 }) -}
-7c6bccd0de5888f1bb886fc04db2be0f
-  $w$cshowsPrec4 ::
-    GrammarType.Number -> GHC.Base.String -> GHC.Base.String
-  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
-     Unfolding: (\ w :: GrammarType.Number w1 :: GHC.Base.String ->
-                 case w of wild {
-                   GrammarType.SG
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber23 w1
-                   GrammarType.DU
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber20 w1
-                   GrammarType.TRI
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber17 w1
-                   GrammarType.PA
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber14 w1
-                   GrammarType.PL
-                   -> GHC.Base.++ @ GHC.Types.Char GrammarType.$fReadNumber11 w1 }) -}
-045721fcd32a8f0b7cf613f76ccafa7a
-  $w$cshowsPrec5 ::
+7a877816f09fb4d8c805a75387037b55
+  $w$cshowsPrec6 ::
     GHC.Prim.Int#
     -> GHC.Base.Maybe [GrammarType.Gender]
     -> GHC.Base.Maybe [GrammarType.Animacy]
@@ -3597,14 +4216,39 @@ cf12fb2514df090f443d91dc740e2284
   {- Arity: 8,
      Strictness: <L,U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U>,
      Inline: [0] -}
-139c2ca991f21d8f2e5bf34c2a3359ca
+588893e789e68f51e1d5dc7234cd812f
+  $w$cshowsPrec7 ::
+    GHC.Prim.Int#
+    -> (GHC.Types.Int,
+        GHC.Types.Int,
+        GHC.Types.Int,
+        GHC.Types.Int,
+        GHC.Types.Int,
+        GHC.Types.Int,
+        GHC.Types.Int)
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 3,
+     Strictness: <L,U><L,1*U(1*U(U),U(U),U(U),U(U),U(U),U(U),U(U))><L,U>,
+     Inline: [0] -}
+3b95f85ea6c850398f8231329cc93b7a
+  data AgglSystem
+    = AgglSystem (GHC.Base.Maybe
+                    [(OtherData.Syllable, GrammarType.Gender)])
+                 (GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Animacy)])
+                 (GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Case)])
+                 (GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Number)])
+                 (GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Honorific)])
+                 (GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Definiteness)])
+                 (GHC.Base.Maybe [(OtherData.Syllable, GrammarType.Specificity)])
+63e8aa6fccd7f7d793a2ff259e8b254c
   data Animacy = AN | HUM | NHUM | ZO | INAN
     Promotable
-cf12fb2514df090f443d91dc740e2284
+be38d9be75d70fdf500b24ada0c0bd39
   data Case
     = NOM | ACC | ERG | GEN | DAT | LOC | PREP | ABL | INS | VOC
     Promotable
-63367633f56c545b9e4b2ee097a5fc2d
+5f00d1c82f700b2fbfa4ab05bb933efa
   data Declension
     = Declension [(OtherData.Syllable,
                    (GHC.Base.Maybe GrammarType.Gender,
@@ -3617,10 +4261,10 @@ cf12fb2514df090f443d91dc740e2284
 0beb087cff99593226a9b8c5fd83dd7e
   data Definiteness = DEF | INDF
     Promotable
-313f54c997d1c2a7547cc74ee46f34a6
+4ec726048e32404154bb5efce362dabf
   data Gender = M | F | COM | N
     Promotable
-3d4b6c2c5775c66a007d34fe0ec6258f
+2048de4aa3404e3eec7580f311ba697b
   data GrammarSystem
     = GrammarSystem {gSys :: GHC.Base.Maybe [GrammarType.Gender],
                      aSys :: GHC.Base.Maybe [GrammarType.Animacy],
@@ -3633,13 +4277,22 @@ cf12fb2514df090f443d91dc740e2284
 33ab5b5c9687d44421ffb5723e773fed
   data Honorific = FAM | FORM
     Promotable
-7c6bccd0de5888f1bb886fc04db2be0f
+2701bde6eab481f373eca6bdacd5e4c9
   data Number = SG | DU | TRI | PA | PL
     Promotable
 e521f63828d45d62f01915f44b5b0dc6
   data Specificity = SPEC | NSPEC
     Promotable
-027bd6019e742dfab017ef24abcb3f32
+380c1a625038166ee6edf7d45ad29fba
+  data Template
+    = Template (GHC.Types.Int,
+                GHC.Types.Int,
+                GHC.Types.Int,
+                GHC.Types.Int,
+                GHC.Types.Int,
+                GHC.Types.Int,
+                GHC.Types.Int)
+d1e630c985f5f5f4f35673143501e5c3
   aSys ::
     GrammarType.GrammarSystem -> GHC.Base.Maybe [GrammarType.Animacy]
   RecSel GrammarType.GrammarSystem
@@ -3649,7 +4302,7 @@ e521f63828d45d62f01915f44b5b0dc6
                 (\ ds :: GrammarType.GrammarSystem ->
                  case ds of wild { GrammarType.GrammarSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds2 }) -}
-1b66ed5965caed7f29aa2330faf7c662
+573270c696e648d5e6468da489693a4e
   cSys ::
     GrammarType.GrammarSystem -> GHC.Base.Maybe [GrammarType.Case]
   RecSel GrammarType.GrammarSystem
@@ -3659,7 +4312,7 @@ e521f63828d45d62f01915f44b5b0dc6
                 (\ ds :: GrammarType.GrammarSystem ->
                  case ds of wild { GrammarType.GrammarSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds3 }) -}
-c73401b250eac2315f5da7e0b4d7cb38
+36cdd9dec98b316986e80e8bfab17160
   dSys ::
     GrammarType.GrammarSystem
     -> GHC.Base.Maybe [GrammarType.Definiteness]
@@ -3670,7 +4323,7 @@ c73401b250eac2315f5da7e0b4d7cb38
                 (\ ds :: GrammarType.GrammarSystem ->
                  case ds of wild { GrammarType.GrammarSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds6 }) -}
-d936a8ecd2e8a694169029834cc7f8d8
+e9929956eacdb984e47efcb879862320
   gSys ::
     GrammarType.GrammarSystem -> GHC.Base.Maybe [GrammarType.Gender]
   RecSel GrammarType.GrammarSystem
@@ -3680,7 +4333,7 @@ d936a8ecd2e8a694169029834cc7f8d8
                 (\ ds :: GrammarType.GrammarSystem ->
                  case ds of wild { GrammarType.GrammarSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds1 }) -}
-e86dd9681d6d39b67e27cd0356a53b8b
+ec9d5292deaf4c93104adf7ac158bf62
   hSys ::
     GrammarType.GrammarSystem -> GHC.Base.Maybe [GrammarType.Honorific]
   RecSel GrammarType.GrammarSystem
@@ -3690,7 +4343,7 @@ e86dd9681d6d39b67e27cd0356a53b8b
                 (\ ds :: GrammarType.GrammarSystem ->
                  case ds of wild { GrammarType.GrammarSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds5 }) -}
-e9f41558815b604aa0132816466ac16f
+603eb65b9c90ddede33b4a7e8a3de4e3
   nSys ::
     GrammarType.GrammarSystem -> GHC.Base.Maybe [GrammarType.Number]
   RecSel GrammarType.GrammarSystem
@@ -3700,7 +4353,7 @@ e9f41558815b604aa0132816466ac16f
                 (\ ds :: GrammarType.GrammarSystem ->
                  case ds of wild { GrammarType.GrammarSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds4 }) -}
-f8a44c314724313846e7d56a86486a80
+dc86ced85045c2bdee986f06ec01e348
   sSys ::
     GrammarType.GrammarSystem
     -> GHC.Base.Maybe [GrammarType.Specificity]
@@ -3737,6 +4390,8 @@ instance GHC.Read.Read [GrammarType.Number]
   = GrammarType.$fReadNumber
 instance GHC.Read.Read [GrammarType.Specificity]
   = GrammarType.$fReadSpecificity
+instance GHC.Show.Show [GrammarType.AgglSystem]
+  = GrammarType.$fShowAgglSystem
 instance GHC.Show.Show [GrammarType.Animacy]
   = GrammarType.$fShowAnimacy
 instance GHC.Show.Show [GrammarType.Case] = GrammarType.$fShowCase
@@ -3754,6 +4409,8 @@ instance GHC.Show.Show [GrammarType.Number]
   = GrammarType.$fShowNumber
 instance GHC.Show.Show [GrammarType.Specificity]
   = GrammarType.$fShowSpecificity
+instance GHC.Show.Show [GrammarType.Template]
+  = GrammarType.$fShowTemplate
 "SPEC/GrammarType $dmreadsPrec @ Animacy" [ALWAYS] forall $dRead :: GHC.Read.Read
                                                                       GrammarType.Animacy
   GHC.Read.$dmreadsPrec @ GrammarType.Animacy $dRead
@@ -3782,6 +4439,108 @@ instance GHC.Show.Show [GrammarType.Specificity]
                                                                           GrammarType.Specificity
   GHC.Read.$dmreadsPrec @ GrammarType.Specificity $dRead
   = GrammarType.$fReadSpecificity_$s$dmreadsPrec
+"SPEC/GrammarType $fShow(,)_$cshowList @ Syllable @ Animacy" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                         OtherData.Syllable
+                                                                             $dShow1 :: GHC.Show.Show
+                                                                                          GrammarType.Animacy
+  GHC.Show.$fShow(,)_$cshowList @ OtherData.Syllable
+                                @ GrammarType.Animacy
+                                $dShow
+                                $dShow1
+  = GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList5
+"SPEC/GrammarType $fShow(,)_$cshowList @ Syllable @ Case" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                      OtherData.Syllable
+                                                                          $dShow1 :: GHC.Show.Show
+                                                                                       GrammarType.Case
+  GHC.Show.$fShow(,)_$cshowList @ OtherData.Syllable
+                                @ GrammarType.Case
+                                $dShow
+                                $dShow1
+  = GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList4
+"SPEC/GrammarType $fShow(,)_$cshowList @ Syllable @ Definiteness" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                              OtherData.Syllable
+                                                                                  $dShow1 :: GHC.Show.Show
+                                                                                               GrammarType.Definiteness
+  GHC.Show.$fShow(,)_$cshowList @ OtherData.Syllable
+                                @ GrammarType.Definiteness
+                                $dShow
+                                $dShow1
+  = GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList1
+"SPEC/GrammarType $fShow(,)_$cshowList @ Syllable @ Gender" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                        OtherData.Syllable
+                                                                            $dShow1 :: GHC.Show.Show
+                                                                                         GrammarType.Gender
+  GHC.Show.$fShow(,)_$cshowList @ OtherData.Syllable
+                                @ GrammarType.Gender
+                                $dShow
+                                $dShow1
+  = GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList6
+"SPEC/GrammarType $fShow(,)_$cshowList @ Syllable @ Honorific" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                           OtherData.Syllable
+                                                                               $dShow1 :: GHC.Show.Show
+                                                                                            GrammarType.Honorific
+  GHC.Show.$fShow(,)_$cshowList @ OtherData.Syllable
+                                @ GrammarType.Honorific
+                                $dShow
+                                $dShow1
+  = GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList2
+"SPEC/GrammarType $fShow(,)_$cshowList @ Syllable @ Number" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                        OtherData.Syllable
+                                                                            $dShow1 :: GHC.Show.Show
+                                                                                         GrammarType.Number
+  GHC.Show.$fShow(,)_$cshowList @ OtherData.Syllable
+                                @ GrammarType.Number
+                                $dShow
+                                $dShow1
+  = GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList3
+"SPEC/GrammarType $fShow(,)_$cshowList @ Syllable @ Specificity" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                             OtherData.Syllable
+                                                                                 $dShow1 :: GHC.Show.Show
+                                                                                              GrammarType.Specificity
+  GHC.Show.$fShow(,)_$cshowList @ OtherData.Syllable
+                                @ GrammarType.Specificity
+                                $dShow
+                                $dShow1
+  = GrammarType.$fShowAgglSystem_$s$fShow(,)_$cshowList
+"SPEC/GrammarType $fShow[] @ (Syllable, Animacy)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                              (OtherData.Syllable,
+                                                                               GrammarType.Animacy)
+  GHC.Show.$fShow[] @ (OtherData.Syllable, GrammarType.Animacy)
+                    $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]5
+"SPEC/GrammarType $fShow[] @ (Syllable, Case)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                           (OtherData.Syllable,
+                                                                            GrammarType.Case)
+  GHC.Show.$fShow[] @ (OtherData.Syllable, GrammarType.Case) $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]4
+"SPEC/GrammarType $fShow[] @ (Syllable, Definiteness)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                   (OtherData.Syllable,
+                                                                                    GrammarType.Definiteness)
+  GHC.Show.$fShow[] @ (OtherData.Syllable, GrammarType.Definiteness)
+                    $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]1
+"SPEC/GrammarType $fShow[] @ (Syllable, Gender)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                             (OtherData.Syllable,
+                                                                              GrammarType.Gender)
+  GHC.Show.$fShow[] @ (OtherData.Syllable, GrammarType.Gender) $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]6
+"SPEC/GrammarType $fShow[] @ (Syllable, Honorific)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                (OtherData.Syllable,
+                                                                                 GrammarType.Honorific)
+  GHC.Show.$fShow[] @ (OtherData.Syllable, GrammarType.Honorific)
+                    $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]2
+"SPEC/GrammarType $fShow[] @ (Syllable, Number)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                             (OtherData.Syllable,
+                                                                              GrammarType.Number)
+  GHC.Show.$fShow[] @ (OtherData.Syllable, GrammarType.Number) $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]3
+"SPEC/GrammarType $fShow[] @ (Syllable, Specificity)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                  (OtherData.Syllable,
+                                                                                   GrammarType.Specificity)
+  GHC.Show.$fShow[] @ (OtherData.Syllable, GrammarType.Specificity)
+                    $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]
 "SPEC/GrammarType $fShow[] @ Animacy" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                   GrammarType.Animacy
   GHC.Show.$fShow[] @ GrammarType.Animacy $dShow
@@ -3810,6 +4569,52 @@ instance GHC.Show.Show [GrammarType.Specificity]
                                                                       GrammarType.Specificity
   GHC.Show.$fShow[] @ GrammarType.Specificity $dShow
   = GrammarType.$s$fShow[]
+"SPEC/GrammarType $fShow[]_$cshow @ (Syllable, Animacy)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                     (OtherData.Syllable,
+                                                                                      GrammarType.Animacy)
+  GHC.Show.$fShow[]_$cshow @ (OtherData.Syllable,
+                              GrammarType.Animacy)
+                           $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow5
+"SPEC/GrammarType $fShow[]_$cshow @ (Syllable, Case)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                  (OtherData.Syllable,
+                                                                                   GrammarType.Case)
+  GHC.Show.$fShow[]_$cshow @ (OtherData.Syllable, GrammarType.Case)
+                           $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow4
+"SPEC/GrammarType $fShow[]_$cshow @ (Syllable, Definiteness)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                          (OtherData.Syllable,
+                                                                                           GrammarType.Definiteness)
+  GHC.Show.$fShow[]_$cshow @ (OtherData.Syllable,
+                              GrammarType.Definiteness)
+                           $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow1
+"SPEC/GrammarType $fShow[]_$cshow @ (Syllable, Gender)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                    (OtherData.Syllable,
+                                                                                     GrammarType.Gender)
+  GHC.Show.$fShow[]_$cshow @ (OtherData.Syllable, GrammarType.Gender)
+                           $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow6
+"SPEC/GrammarType $fShow[]_$cshow @ (Syllable, Honorific)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                       (OtherData.Syllable,
+                                                                                        GrammarType.Honorific)
+  GHC.Show.$fShow[]_$cshow @ (OtherData.Syllable,
+                              GrammarType.Honorific)
+                           $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow2
+"SPEC/GrammarType $fShow[]_$cshow @ (Syllable, Number)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                    (OtherData.Syllable,
+                                                                                     GrammarType.Number)
+  GHC.Show.$fShow[]_$cshow @ (OtherData.Syllable, GrammarType.Number)
+                           $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow3
+"SPEC/GrammarType $fShow[]_$cshow @ (Syllable, Specificity)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                         (OtherData.Syllable,
+                                                                                          GrammarType.Specificity)
+  GHC.Show.$fShow[]_$cshow @ (OtherData.Syllable,
+                              GrammarType.Specificity)
+                           $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshow
 "SPEC/GrammarType $fShow[]_$cshow @ Animacy" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                          GrammarType.Animacy
   GHC.Show.$fShow[]_$cshow @ GrammarType.Animacy $dShow
@@ -3826,6 +4631,55 @@ instance GHC.Show.Show [GrammarType.Specificity]
                                                                         GrammarType.Number
   GHC.Show.$fShow[]_$cshow @ GrammarType.Number $dShow
   = GrammarType.$s$fShow[]_$s$fShow[]_$cshow
+"SPEC/GrammarType $fShow[]_$cshowList @ (Syllable, Animacy)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                         (OtherData.Syllable,
+                                                                                          GrammarType.Animacy)
+  GHC.Show.$fShow[]_$cshowList @ (OtherData.Syllable,
+                                  GrammarType.Animacy)
+                               $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList5
+"SPEC/GrammarType $fShow[]_$cshowList @ (Syllable, Case)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                      (OtherData.Syllable,
+                                                                                       GrammarType.Case)
+  GHC.Show.$fShow[]_$cshowList @ (OtherData.Syllable,
+                                  GrammarType.Case)
+                               $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList4
+"SPEC/GrammarType $fShow[]_$cshowList @ (Syllable, Definiteness)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                              (OtherData.Syllable,
+                                                                                               GrammarType.Definiteness)
+  GHC.Show.$fShow[]_$cshowList @ (OtherData.Syllable,
+                                  GrammarType.Definiteness)
+                               $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList1
+"SPEC/GrammarType $fShow[]_$cshowList @ (Syllable, Gender)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                        (OtherData.Syllable,
+                                                                                         GrammarType.Gender)
+  GHC.Show.$fShow[]_$cshowList @ (OtherData.Syllable,
+                                  GrammarType.Gender)
+                               $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList6
+"SPEC/GrammarType $fShow[]_$cshowList @ (Syllable, Honorific)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                           (OtherData.Syllable,
+                                                                                            GrammarType.Honorific)
+  GHC.Show.$fShow[]_$cshowList @ (OtherData.Syllable,
+                                  GrammarType.Honorific)
+                               $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList2
+"SPEC/GrammarType $fShow[]_$cshowList @ (Syllable, Number)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                        (OtherData.Syllable,
+                                                                                         GrammarType.Number)
+  GHC.Show.$fShow[]_$cshowList @ (OtherData.Syllable,
+                                  GrammarType.Number)
+                               $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList3
+"SPEC/GrammarType $fShow[]_$cshowList @ (Syllable, Specificity)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                             (OtherData.Syllable,
+                                                                                              GrammarType.Specificity)
+  GHC.Show.$fShow[]_$cshowList @ (OtherData.Syllable,
+                                  GrammarType.Specificity)
+                               $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowList
 "SPEC/GrammarType $fShow[]_$cshowList @ Animacy" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                              GrammarType.Animacy
   GHC.Show.$fShow[]_$cshowList @ GrammarType.Animacy $dShow
@@ -3854,6 +4708,55 @@ instance GHC.Show.Show [GrammarType.Specificity]
                                                                                  GrammarType.Specificity
   GHC.Show.$fShow[]_$cshowList @ GrammarType.Specificity $dShow
   = GrammarType.$s$fShow[]_$s$fShow[]_$cshowList
+"SPEC/GrammarType $fShow[]_$cshowsPrec @ (Syllable, Animacy)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                          (OtherData.Syllable,
+                                                                                           GrammarType.Animacy)
+  GHC.Show.$fShow[]_$cshowsPrec @ (OtherData.Syllable,
+                                   GrammarType.Animacy)
+                                $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec5
+"SPEC/GrammarType $fShow[]_$cshowsPrec @ (Syllable, Case)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                       (OtherData.Syllable,
+                                                                                        GrammarType.Case)
+  GHC.Show.$fShow[]_$cshowsPrec @ (OtherData.Syllable,
+                                   GrammarType.Case)
+                                $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec4
+"SPEC/GrammarType $fShow[]_$cshowsPrec @ (Syllable, Definiteness)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                               (OtherData.Syllable,
+                                                                                                GrammarType.Definiteness)
+  GHC.Show.$fShow[]_$cshowsPrec @ (OtherData.Syllable,
+                                   GrammarType.Definiteness)
+                                $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec1
+"SPEC/GrammarType $fShow[]_$cshowsPrec @ (Syllable, Gender)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                         (OtherData.Syllable,
+                                                                                          GrammarType.Gender)
+  GHC.Show.$fShow[]_$cshowsPrec @ (OtherData.Syllable,
+                                   GrammarType.Gender)
+                                $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec6
+"SPEC/GrammarType $fShow[]_$cshowsPrec @ (Syllable, Honorific)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                            (OtherData.Syllable,
+                                                                                             GrammarType.Honorific)
+  GHC.Show.$fShow[]_$cshowsPrec @ (OtherData.Syllable,
+                                   GrammarType.Honorific)
+                                $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec2
+"SPEC/GrammarType $fShow[]_$cshowsPrec @ (Syllable, Number)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                         (OtherData.Syllable,
+                                                                                          GrammarType.Number)
+  GHC.Show.$fShow[]_$cshowsPrec @ (OtherData.Syllable,
+                                   GrammarType.Number)
+                                $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec3
+"SPEC/GrammarType $fShow[]_$cshowsPrec @ (Syllable, Specificity)" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                              (OtherData.Syllable,
+                                                                                               GrammarType.Specificity)
+  GHC.Show.$fShow[]_$cshowsPrec @ (OtherData.Syllable,
+                                   GrammarType.Specificity)
+                                $dShow
+  = GrammarType.$fShowAgglSystem_$s$fShow[]_$cshowsPrec
 "SPEC/GrammarType $fShow[]_$cshowsPrec @ Animacy" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                               GrammarType.Animacy
   GHC.Show.$fShow[]_$cshowsPrec @ GrammarType.Animacy $dShow

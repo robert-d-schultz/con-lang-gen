@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-28 03:36:48.722733 UTC
+2016-09-29 21:48:36.521442 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 7103
-  interface hash: bda4a2e073ed334e39fcac86d8f57b14
-  ABI hash: 27cbb6c36866c92976b7881df2e7949c
+  interface hash: 5d5d3172a68f478134165ee811fcb177
+  ABI hash: 270b5c0ad66b7b6ff083b5a751011c60
   export-list hash: 99866e90013855e3a6486be2b606dc63
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
@@ -90,16 +90,16 @@ import  -/  base-4.8.2.0:GHC.Read b423b4506a014855edbd329b567629f3
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
-import  -/  GrammarType d41c9ff1a4a196bc7fb7fc2109d827ba
-  exports: 2f1e30d8523478220718ffc652cbd1c0
-  Animacy 139c2ca991f21d8f2e5bf34c2a3359ca
-  Case cf12fb2514df090f443d91dc740e2284
+import  -/  GrammarType 16cf7ac066df27772a912e93359efd44
+  exports: 3cb48b094f7236093c0b56e6cb0611b9
+  Animacy 63e8aa6fccd7f7d793a2ff259e8b254c
+  Case be38d9be75d70fdf500b24ada0c0bd39
   Definiteness 0beb087cff99593226a9b8c5fd83dd7e
-  Gender 313f54c997d1c2a7547cc74ee46f34a6
-  GrammarSystem df926e0cdd7922a38e385334258b37f0
-  GrammarSystem 3d4b6c2c5775c66a007d34fe0ec6258f
+  Gender 4ec726048e32404154bb5efce362dabf
+  GrammarSystem a2de46d505c69e652db057f2354e55ac
+  GrammarSystem 2048de4aa3404e3eec7580f311ba697b
   Honorific 33ab5b5c9687d44421ffb5723e773fed
-  Number 7c6bccd0de5888f1bb886fc04db2be0f
+  Number 2701bde6eab481f373eca6bdacd5e4c9
   Specificity e521f63828d45d62f01915f44b5b0dc6
 import  -/  OtherData f086edab5429a445c5a03de742c12a46
   exports: 9eafbe3cd8a957307681d0a6605eb9fd
@@ -113,7 +113,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
 import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
-8842c66cb10e9b1a447b7557c138c622
+9b05905bb483bf4889231e8af825b92b
   data InputData
     = InputData {inputGender :: [[GrammarType.Gender]],
                  inputAnimacy :: [[GrammarType.Animacy]],
@@ -123,7 +123,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                  inputDefiniteness :: [[GrammarType.Definiteness]],
                  inputSpecificity :: [[GrammarType.Specificity]]}
     Promotable
-3dbc7fc3f7f2c2e9b3ce16ccf5bda8fa
+52308cc02c78a854e66c35626f1818ab
   inputAnimacy :: GrammarGen.InputData -> [[GrammarType.Animacy]]
   RecSel GrammarGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -132,7 +132,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                 (\ ds :: GrammarGen.InputData ->
                  case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds2 }) -}
-4274a5f7a88dbfc2575feebbebc4557e
+a748e18e66422fe87dba0475038a96af
   inputCase :: GrammarGen.InputData -> [[GrammarType.Case]]
   RecSel GrammarGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -141,7 +141,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                 (\ ds :: GrammarGen.InputData ->
                  case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds3 }) -}
-e72c687081385be273c604d6feb27ae1
+327c23473690534b20e189ea7969c8e7
   inputDefiniteness ::
     GrammarGen.InputData -> [[GrammarType.Definiteness]]
   RecSel GrammarGen.InputData
@@ -151,7 +151,7 @@ e72c687081385be273c604d6feb27ae1
                 (\ ds :: GrammarGen.InputData ->
                  case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds6 }) -}
-82c81903a5f616beda07b8fffacddd24
+1da3af2cf24a7a3789506186b2e14928
   inputGender :: GrammarGen.InputData -> [[GrammarType.Gender]]
   RecSel GrammarGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -160,7 +160,7 @@ e72c687081385be273c604d6feb27ae1
                 (\ ds :: GrammarGen.InputData ->
                  case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds1 }) -}
-65dfb217b8bfbefac1583dffb52abeba
+c828d309b5a72c516866b9129b3dcf3d
   inputHonorific :: GrammarGen.InputData -> [[GrammarType.Honorific]]
   RecSel GrammarGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -169,7 +169,7 @@ e72c687081385be273c604d6feb27ae1
                 (\ ds :: GrammarGen.InputData ->
                  case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds5 }) -}
-6253dcfa2b9e9cc15a67735cc4295f4c
+8b0e5e2e253dabe7fdbdd64335ec50bf
   inputNumber :: GrammarGen.InputData -> [[GrammarType.Number]]
   RecSel GrammarGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -178,7 +178,7 @@ e72c687081385be273c604d6feb27ae1
                 (\ ds :: GrammarGen.InputData ->
                  case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds4 }) -}
-83568638f4663267c1b48476d8718ac7
+aa99df9baf46592291340c48c95a057b
   inputSpecificity ::
     GrammarGen.InputData -> [[GrammarType.Specificity]]
   RecSel GrammarGen.InputData
@@ -188,19 +188,19 @@ e72c687081385be273c604d6feb27ae1
                 (\ ds :: GrammarGen.InputData ->
                  case ds of wild { GrammarGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
                  ds7 }) -}
-7583ed4c4cda2acb3fe2ce22e9ebdc94
+c99ff2a7b07a5084b08ab3accced301a
   loadInputData1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GrammarGen.InputData #)
   {- Arity: 1, Strictness: <L,U> -}
-63376acc22b818da4e9c0ee1ea9f08c2
+18c3b402e18afc3a693905aa2cb4d161
   loadInputData2 :: GHC.Types.IO GrammarGen.InputData
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 GrammarGen.loadInputData1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <GrammarGen.InputData>_R)) -}
-3239cb51bd97db5cd609db8525eb28fa
+eb1515ca5df49bad4c8d06a552a997e8
   makeGrammarSystem ::
     GrammarGen.InputData -> Data.RVar.RVar GrammarType.GrammarSystem
   {- Arity: 1, Strictness: <L,U(1*U,1*U,1*U,1*U,1*U,1*U,1*U)>,
@@ -582,20 +582,20 @@ b1e4b70754b40b858c4dd33902048341
   {- Unfolding: (Data.Random.Extras.choice
                    @ (GHC.Base.Maybe [GrammarType.Definiteness])
                    GrammarGen.makeGrammarSystem2) -}
-b7cc9f45f30f57845af0729fcca641db
+672e5b8592f11fde5f280fe82cc59747
   makeGrammarSystem10 :: [GHC.Base.Maybe [GrammarType.Animacy]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ (GHC.Base.Maybe [GrammarType.Animacy])
                    (GHC.Base.Nothing @ [GrammarType.Animacy])
                    (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Animacy]))) -}
-b417d2a8e3afb890e4bd99be7dfa7e4d
+0f86c8cf4557bfe7372f44def19d93f8
   makeGrammarSystem11 ::
     Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Gender])
   {- Unfolding: (Data.Random.Extras.choice
                    @ (GHC.Base.Maybe [GrammarType.Gender])
                    GrammarGen.makeGrammarSystem12) -}
-0d023839b0dfc635c5abdd3273046e26
+b72f369b4cd0439e3cd20ef3889cda63
   makeGrammarSystem12 :: [GHC.Base.Maybe [GrammarType.Gender]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
@@ -622,33 +622,33 @@ ce5b9f17afd7da6dcdcae5edf418cf17
                    @ (GHC.Base.Maybe [GrammarType.Honorific])
                    (GHC.Base.Nothing @ [GrammarType.Honorific])
                    (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Honorific]))) -}
-ea2dec00be44588ea4d24414837cd893
+fbdcf5201a26eab6ec4694f3f2d286c4
   makeGrammarSystem5 ::
     Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Number])
   {- Unfolding: (Data.Random.Extras.choice
                    @ (GHC.Base.Maybe [GrammarType.Number])
                    GrammarGen.makeGrammarSystem6) -}
-3237d5a2ed38bad547f84469eba6dcc5
+e582f5e3831c25bce94dd01507245f82
   makeGrammarSystem6 :: [GHC.Base.Maybe [GrammarType.Number]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ (GHC.Base.Maybe [GrammarType.Number])
                    (GHC.Base.Nothing @ [GrammarType.Number])
                    (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Number]))) -}
-9c3bcb4efc5c284912fb0c27c3ae7098
+c83a91b2a692a3dbf1611fa454246297
   makeGrammarSystem7 ::
     Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Case])
   {- Unfolding: (Data.Random.Extras.choice
                    @ (GHC.Base.Maybe [GrammarType.Case])
                    GrammarGen.makeGrammarSystem8) -}
-b7db5df8f67bf0c05b5dbc7d119f1664
+e8e5fed93e44c9e456251d8b42df552e
   makeGrammarSystem8 :: [GHC.Base.Maybe [GrammarType.Case]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ (GHC.Base.Maybe [GrammarType.Case])
                    (GHC.Base.Nothing @ [GrammarType.Case])
                    (GHC.Types.[] @ (GHC.Base.Maybe [GrammarType.Case]))) -}
-75145b10984a17cb89eb3cb6232e3e1c
+acbbc6792249189c4d048b519cc49854
   makeGrammarSystem9 ::
     Data.RVar.RVar (GHC.Base.Maybe [GrammarType.Animacy])
   {- Unfolding: (Data.Random.Extras.choice

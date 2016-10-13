@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-28 03:37:52.650845 UTC
+2016-09-29 21:48:38.871977 UTC
 
 interface main@main:Main 7103
-  interface hash: b410631701696d03bd3f3e8e3aee6162
+  interface hash: 56500e4d1298b134f05c494d3d80c912
   ABI hash: 14222b98c696ade431156d90bd542cdd
   export-list hash: 37f0b07408e5877be3d79bd26fcfb082
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -85,8 +85,8 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:DeclensionGen 996a834325b348e3e3226392ea5f7683
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 27cbb6c36866c92976b7881df2e7949c
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:DeclensionGen 74d8408c51b544e69b9792ad881f5791
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 270b5c0ad66b7b6ff083b5a751011c60
 import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Parse ee5615312a6e4a4034626ef25d3825f5
 import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeInventoryGen 6dea7946c11c44f58a6494423af32d95
 import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen 3161bd3b293595ac2e49b76ca89047ec
