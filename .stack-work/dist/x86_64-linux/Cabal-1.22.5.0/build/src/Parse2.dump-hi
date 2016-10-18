@@ -1,0 +1,410 @@
+
+==================== FINAL INTERFACE ====================
+2016-10-17 20:49:39.449819 UTC
+
+interface conla_1eA9qWUPH9nBowcXqqaV8r:Parse2 7103
+  interface hash: 6d08ded644c291609fc1fc98535ff67f
+  ABI hash: 86fc03865c81a8eed32936a00392527f
+  export-list hash: 053b9df655abad2074a101bf034f041d
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 962af636f8e927040c7daa9c21457292
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Parse2.parseConPhonemeInventory
+  Parse2.parseDictionary
+  Parse2.parseDiphPhonemeInventory
+  Parse2.parseSonHier
+  Parse2.parseVowPhonemeInventory
+module dependencies: OtherData2 PhonemeInventoryGen2 PhonemeType2
+                     PhonotacticsGen2 WordGen2
+package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
+                      MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      erf-2.0.0.0@erf_6l78BnvLL4b2mWYp3HJJxX
+                      flexible-defaults-0.0.1.2@flexi_70LqvhG3vbS8bRvV8pHtMk
+                      ghc-prim-0.4.0.0 integer-gmp-1.0.0.0
+                      math-functions-0.1.7.0@mathf_BN6S7j0ar3LC4TsnYu0us5
+                      mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI
+                      monad-loops-0.4.3@monad_LQiHRUYhFhYBU7nOOWDOrb
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk
+                      old-locale-1.0.0.7@oldlo_7h2Gx6mVPJ5Gheca8j9Mpe
+                      old-time-1.1.0.3@oldti_JVjJvknZJ0JKghfag2Jw2L
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L
+                      random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL
+                      random-shuffle-0.0.4@rando_9kOz9tEn1526ShtWz8x59X
+                      random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr
+                      rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG
+                      stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD
+                      syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE template-haskell-2.10.0.0
+                      th-extras-0.0.0.4@thext_LRY1RUMy7ShLl2tqhMyHdO
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
+orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
+         base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.IO
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.MWC
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.PureMT
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.StdGen
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE:Data.Generics.Instances
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk:System.Random.MWC
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Primitive
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  OtherData2 fe3edb6586aa1c7106aa097b944c9916
+  exports: 64b5421595201c0eb87f9b5449c4ebba
+  SyllWord b0d551006f30e8c900585ad74e83848b
+  SyllWord 7c147c1d12883c4b2a450f11fdd82e21
+  Syllable 99e3568852e35603a726ab0849429f24
+  Syllable 26325dd47864c84829bfa1bf382a9842
+import  -/  PhonemeType2 a9247e25a5379dedeed4d4661db0033f
+  exports: 65413a119a4e8e15b6921e348e21398d
+  Blank 12b665d023ca5147e2dfc42e2b0e8b24
+  Consonant 42b76e6568f52ac453f656afc0b96db7
+  Diphthong 4ed3d8413861709394530a4ca3b3d760
+  Phoneme 3abb4073c17ef07e2eb6d2446d16852f
+  Vowel 423983cba00b3a4daecba49c9b6a2681
+import  -/  WordGen2 e841d8d56b3dcfb07ccc182c3996c2df
+  exports: 25c78977020f59b9d3c0bc9970d40cb7
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+827330a418cb93dd58d1c5d32c66fac7
+  $wparseSyllable ::
+    [PhonemeType2.Phoneme]
+    -> PhonemeType2.Phoneme
+    -> [PhonemeType2.Phoneme]
+    -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,1*U><S,1*U><L,1*U>, Inline: [0] -}
+c05b7a2bcd8713090beece993a7a5f2a
+  $wparseWord :: [OtherData2.Syllable] -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>, Inline: [0],
+     Unfolding: (\ ww :: [OtherData2.Syllable] ->
+                 GHC.CString.unpackAppendCString#
+                   "/"#
+                   (case GHC.Base.map
+                           @ OtherData2.Syllable
+                           @ [GHC.Types.Char]
+                           Parse2.parseSyllable
+                           ww of wild {
+                      [] -> Parse2.parseDictionary3
+                      : x xs1
+                      -> GHC.Base.++
+                           @ GHC.Types.Char
+                           (Data.OldList.intercalate_$spoly_go
+                              @ GHC.Types.Char
+                              x
+                              (Data.OldList.prependToAll
+                                 @ [GHC.Types.Char]
+                                 Parse2.parseDictionary2
+                                 xs1))
+                           Parse2.parseDictionary3 })) -}
+81831f71b3d50c5223f591bc9c2ed005
+  parseConPhonemeInventory ::
+    [PhonemeType2.Phoneme] -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ cons :: [PhonemeType2.Phoneme] ->
+                 GHC.CString.unpackAppendCString#
+                   "Consonant inventory: /"#
+                   (case Parse2.parseConPhonemeInventory_go1 cons of wild {
+                      [] -> case GHC.List.init2 ret_ty [GHC.Types.Char] of {}
+                      : x xs
+                      -> let {
+                           a :: [GHC.Types.Char]
+                           = GHC.CString.unpackAppendCString#
+                               "/, and /"#
+                               (GHC.Base.++
+                                  @ GHC.Types.Char
+                                  (Parse2.parseConPhonemeInventory_go
+                                     wild
+                                     (GHC.List.lastError @ [GHC.Types.Char]))
+                                  Parse2.parseConPhonemeInventory2)
+                         } in
+                         case GHC.List.init1 @ [GHC.Types.Char] x xs of wild1 {
+                           [] -> a
+                           : x1 xs1
+                           -> GHC.Base.++
+                                @ GHC.Types.Char
+                                (Data.OldList.intercalate_$spoly_go
+                                   @ GHC.Types.Char
+                                   x1
+                                   (Data.OldList.prependToAll
+                                      @ [GHC.Types.Char]
+                                      Parse2.parseConPhonemeInventory1
+                                      xs1))
+                                a } })) -}
+1ca32adac796e722cdebad408f95de5e
+  parseConPhonemeInventory1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/, /"#) -}
+3ca9b397318a41526139cd5571dd76c9
+  parseConPhonemeInventory2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/\n\
+                   \\n"#) -}
+8756df563c7e18000a520bcb6d7a8361
+  parseConPhonemeInventory_go ::
+    [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+c17f803d65b6e5a0e539b5853a5fe773
+  parseConPhonemeInventory_go1 ::
+    [PhonemeType2.Phoneme] -> [[GHC.Types.Char]]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+f3e2c430d27509fd454c0fa6d6800efd
+  parseDictionary :: [OtherData2.SyllWord] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ wrds :: [OtherData2.SyllWord] ->
+                 case GHC.Base.map
+                        @ OtherData2.SyllWord
+                        @ [GHC.Types.Char]
+                        Parse2.parseWord
+                        wrds of wild {
+                   [] -> GHC.Types.[] @ GHC.Types.Char
+                   : x xs1
+                   -> Data.OldList.intercalate_$spoly_go
+                        @ GHC.Types.Char
+                        x
+                        (Data.OldList.prependToAll
+                           @ [GHC.Types.Char]
+                           Parse2.parseDictionary1
+                           xs1) }) -}
+c6012e5dfae7073674cb295c2a3fa797
+  parseDictionary1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+627609c19433df25f1aa05a512a44bb8
+  parseDictionary2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "."#) -}
+0f9dec8c37fe920fa01238e286e39be5
+  parseDictionary3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/"#) -}
+1be2d6b26b7d2f271e351d16a5d1664e
+  parseDiphPhonemeInventory ::
+    [PhonemeType2.Phoneme] -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ diphs :: [PhonemeType2.Phoneme] ->
+                 GHC.CString.unpackAppendCString#
+                   "Diphthongs: /"#
+                   (case Parse2.parseDiphPhonemeInventory_go1 diphs of wild {
+                      [] -> case GHC.List.init2 ret_ty [GHC.Types.Char] of {}
+                      : x xs
+                      -> let {
+                           a :: [GHC.Types.Char]
+                           = GHC.CString.unpackAppendCString#
+                               "/, and /"#
+                               (GHC.Base.++
+                                  @ GHC.Types.Char
+                                  (Parse2.parseDiphPhonemeInventory_go
+                                     wild
+                                     (GHC.List.lastError @ [GHC.Types.Char]))
+                                  Parse2.parseConPhonemeInventory2)
+                         } in
+                         case GHC.List.init1 @ [GHC.Types.Char] x xs of wild1 {
+                           [] -> a
+                           : x1 xs1
+                           -> GHC.Base.++
+                                @ GHC.Types.Char
+                                (Data.OldList.intercalate_$spoly_go
+                                   @ GHC.Types.Char
+                                   x1
+                                   (Data.OldList.prependToAll
+                                      @ [GHC.Types.Char]
+                                      Parse2.parseConPhonemeInventory1
+                                      xs1))
+                                a } })) -}
+9f4cfcc4ebfa922f5f805624a2440a9c
+  parseDiphPhonemeInventory_go ::
+    [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+36e734f6735afb3d2fc8d09137669d38
+  parseDiphPhonemeInventory_go1 ::
+    [PhonemeType2.Phoneme] -> [[GHC.Types.Char]]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+ae8be5b28e00af7826925561d9b5b252
+  parsePhoneme :: PhonemeType2.Phoneme -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: PhonemeType2.Phoneme ->
+                 case ds of wild {
+                   PhonemeType2.Consonant ds1 ds2 ds3 ipa -> ipa
+                   PhonemeType2.Vowel ds1 ds2 ds3 ipa -> ipa
+                   PhonemeType2.Diphthong ds1 ds2 ds3 ipa1 ds4 ds5 ds6 ipa2
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                         GHC.Base.foldr @ GHC.Types.Char @ b c n ipa1)
+                        ipa2
+                   PhonemeType2.Blank -> GHC.Types.[] @ GHC.Types.Char }) -}
+2e38439ba3995f5ad65313b348b1c4f7
+  parseSonHier ::
+    [PhonemeType2.Phoneme]
+    -> [[PhonemeType2.Phoneme]] -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,1*U><L,1*U>,
+     Unfolding: (\ vows :: [PhonemeType2.Phoneme]
+                   cons :: [[PhonemeType2.Phoneme]] ->
+                 GHC.CString.unpackAppendCString#
+                   "Sonority hierarchy: \n"#
+                   (let {
+                      a :: [GHC.Types.Char]
+                      = GHC.CString.unpackAppendCString#
+                          "\n"#
+                          (case GHC.Base.map
+                                  @ [PhonemeType2.Phoneme]
+                                  @ [GHC.Types.Char]
+                                  Parse2.parseSonHier3
+                                  cons of wild {
+                             [] -> Parse2.parseSonHier2
+                             : x xs1
+                             -> GHC.Base.++
+                                  @ GHC.Types.Char
+                                  (Data.OldList.intercalate_$spoly_go
+                                     @ GHC.Types.Char
+                                     x
+                                     (Data.OldList.prependToAll
+                                        @ [GHC.Types.Char]
+                                        Parse2.parseDictionary1
+                                        xs1))
+                                  Parse2.parseSonHier2 })
+                    } in
+                    case GHC.Base.map
+                           @ PhonemeType2.Phoneme
+                           @ [GHC.Types.Char]
+                           Parse2.parsePhoneme
+                           vows of wild {
+                      [] -> a
+                      : x xs1
+                      -> GHC.Base.++
+                           @ GHC.Types.Char
+                           (Data.OldList.intercalate_$spoly_go
+                              @ GHC.Types.Char
+                              x
+                              (Data.OldList.prependToAll
+                                 @ [GHC.Types.Char]
+                                 Parse2.parseSonHier1
+                                 xs1))
+                           a })) -}
+a1677558527591f9d81453d964c47051
+  parseSonHier1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+08cd718255f428bec1df61b0b5ac3c73
+  parseSonHier2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "\n\
+                   \\n"#) -}
+0b827224b3873fe312b269045e892a3f
+  parseSonHier3 :: [PhonemeType2.Phoneme] -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ x :: [PhonemeType2.Phoneme] ->
+                 case GHC.Base.map
+                        @ PhonemeType2.Phoneme
+                        @ [GHC.Types.Char]
+                        Parse2.parsePhoneme
+                        x of wild {
+                   [] -> GHC.Types.[] @ GHC.Types.Char
+                   : x1 xs1
+                   -> Data.OldList.intercalate_$spoly_go
+                        @ GHC.Types.Char
+                        x1
+                        (Data.OldList.prependToAll
+                           @ [GHC.Types.Char]
+                           Parse2.parseSonHier1
+                           xs1) }) -}
+e286e3bae03587c1ff5b5d4acb333adb
+  parseSyllable :: OtherData2.Syllable -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(SSL),1*U(1*U,1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: OtherData2.Syllable ->
+                 case w of ww { OtherData2.Syllable ww1 ww2 ww3 ->
+                 Parse2.$wparseSyllable ww1 ww2 ww3 }) -}
+86e873121a4843cf1606277eb1eb1982
+  parseVowPhonemeInventory ::
+    [PhonemeType2.Phoneme] -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ vows :: [PhonemeType2.Phoneme] ->
+                 GHC.CString.unpackAppendCString#
+                   "Vowel inventory: /"#
+                   (case Parse2.parseVowPhonemeInventory_go1 vows of wild {
+                      [] -> case GHC.List.init2 ret_ty [GHC.Types.Char] of {}
+                      : x xs
+                      -> let {
+                           a :: [GHC.Types.Char]
+                           = GHC.CString.unpackAppendCString#
+                               "/, and "#
+                               (GHC.Base.++
+                                  @ GHC.Types.Char
+                                  (Parse2.parseVowPhonemeInventory_go
+                                     wild
+                                     (GHC.List.lastError @ [GHC.Types.Char]))
+                                  Parse2.parseSonHier2)
+                         } in
+                         case GHC.List.init1 @ [GHC.Types.Char] x xs of wild1 {
+                           [] -> a
+                           : x1 xs1
+                           -> GHC.Base.++
+                                @ GHC.Types.Char
+                                (Data.OldList.intercalate_$spoly_go
+                                   @ GHC.Types.Char
+                                   x1
+                                   (Data.OldList.prependToAll
+                                      @ [GHC.Types.Char]
+                                      Parse2.parseConPhonemeInventory1
+                                      xs1))
+                                a } })) -}
+6ba337cd899411cb8b8c07efbadd7c02
+  parseVowPhonemeInventory_go ::
+    [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+449cf70880f7cdcf3f56fbb74707872d
+  parseVowPhonemeInventory_go1 ::
+    [PhonemeType2.Phoneme] -> [[GHC.Types.Char]]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+831032274f110eb22f36502c62f84434
+  parseWord :: OtherData2.SyllWord -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: OtherData2.SyllWord ->
+                 case w of ww { OtherData2.SyllWord ww1 ->
+                 Parse2.$wparseWord ww1 }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

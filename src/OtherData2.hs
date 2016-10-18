@@ -7,9 +7,9 @@ module OtherData2
 import Prelude hiding (Word)
 import PhonemeType2
 
-data Word = Word [Phone] deriving (Eq, Show, Read)
+data Word = Word [Phoneme] deriving (Eq, Show, Read)
 data SyllWord = SyllWord [Syllable] deriving (Eq, Show, Read)
 data Syllable = Syllable
-              { getOnset :: [Phone]
-              , getNucleus :: Phone
-              , getCoda :: [Phone]} deriving (Eq, Show, Read)
+              { getOnset :: [Phoneme]
+              , getNucleus :: Phoneme
+              , getCoda :: [Phoneme]} deriving (Eq, Show, Read)

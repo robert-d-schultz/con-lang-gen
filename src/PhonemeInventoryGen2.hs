@@ -1,12 +1,20 @@
 module PhonemeInventoryGen2
 ( makeConInventory
 , makeVowInventory
+, makeDiphInventory
+, makeConsonants
+, makePlaces
+, makeManners
+, makePhonations
 ) where
 
 -- Import
 import Prelude
 import Data.RVar
 import Data.Random.Extras
+import Data.Random hiding (sample)
+import Data.List
+import Control.Monad
 
 import PhonemeType2
 
@@ -14,17 +22,17 @@ import PhonemeType2
 -- Nothing
 
 -- Phoneme data
-c = [ [Consonant BILABIAL NASAL VOICELESS "m̥",Consonant BILABIAL NASAL VOICED "m",Consonant LABIODENTAL NASAL VOICELESS "ɱ̊",Consonant LABIODENTAL NASAL VOICED "ɱ",Consonant DENTAL NASAL VOICELESS "n̪̊",Consonant DENTAL NASAL VOICED "n̪",Consonant ALVEOLAR NASAL VOICELESS "n̥",Consonant ALVEOLAR NASAL VOICED "n", Consonant PALATOALVEOLAR NASAL VOICELESS "n̠̊",Consonant PALATOALVEOLAR NASAL VOICED "n̠",Consonant RETROFLEX NASAL VOICELESS "ɳ̊",Consonant RETROFLEX NASAL VOICED "ɳ",Consonant ALVEOLOPALATAL NASAL VOICELESS "ɲ̟̊",Consonant ALVEOLOPALATAL NASAL VOICED "ɲ̟",Consonant PALATAL NASAL VOICELESS "ɲ̊",Consonant PALATAL NASAL VOICED "ɲ",Consonant VELAR NASAL VOICELESS "ŋ̊",Consonant VELAR NASAL VOICED "ŋ",Consonant UVULAR NASAL VOICELESS "ɴ̥",Consonant UVULAR NASAL VOICED "ɴ",Consonant PHARYNGEAL NASAL VOICELESS [],Consonant PHARYNGEAL NASAL VOICED [],Consonant GLOTTAL NASAL VOICELESS [],Consonant GLOTTAL NASAL VOICED []]
-    , [Consonant BILABIAL STOP VOICELESS "p",Consonant BILABIAL STOP VOICED "b",Consonant LABIODENTAL STOP VOICELESS "p̪",Consonant LABIODENTAL STOP VOICED "b̪",Consonant DENTAL STOP VOICELESS "t̪",Consonant DENTAL STOP VOICED "d̪",Consonant ALVEOLAR STOP VOICELESS "t",Consonant ALVEOLAR STOP VOICED "d",Consonant PALATOALVEOLAR STOP VOICELESS "t̠",Consonant PALATOALVEOLAR STOP VOICED "d̠",Consonant RETROFLEX STOP VOICELESS "ʈ",Consonant RETROFLEX STOP VOICED "ɖ",Consonant ALVEOLOPALATAL STOP VOICELESS "c̟",Consonant ALVEOLOPALATAL STOP VOICED "ɟ̟",Consonant PALATAL STOP VOICELESS "c",Consonant PALATAL STOP VOICED "ɟ",Consonant VELAR STOP VOICELESS "k",Consonant VELAR STOP VOICED "ɡ",Consonant UVULAR STOP VOICELESS "q",Consonant UVULAR STOP VOICED "ɢ",Consonant PHARYNGEAL STOP VOICELESS "ʡ̥",Consonant PHARYNGEAL STOP VOICED "ʡ",Consonant GLOTTAL STOP VOICELESS "ʔ",Consonant GLOTTAL STOP VOICED []]
-    , [Consonant BILABIAL AFFRICATE VOICELESS "p͡ɸ",Consonant BILABIAL AFFRICATE VOICED "b͡β",Consonant LABIODENTAL AFFRICATE VOICELESS "p̪͡f",Consonant LABIODENTAL AFFRICATE VOICED "b̪͡v",Consonant DENTAL AFFRICATE VOICELESS "t̪͡s̪",Consonant DENTAL AFFRICATE VOICED "d̪͡z̪",Consonant ALVEOLAR AFFRICATE VOICELESS "t͡s",Consonant ALVEOLAR AFFRICATE VOICED "d͡z",Consonant PALATOALVEOLAR AFFRICATE VOICELESS "t̠͡ʃ",Consonant PALATOALVEOLAR AFFRICATE VOICED "d̠͡ʒ",Consonant RETROFLEX AFFRICATE VOICELESS "ʈ͡ʂ",Consonant RETROFLEX AFFRICATE VOICED "ɖ͡ʐ",Consonant ALVEOLOPALATAL AFFRICATE VOICELESS "c̟͡ɕ",Consonant ALVEOLOPALATAL AFFRICATE VOICED "ɟ̟͡ʑ",Consonant PALATAL AFFRICATE VOICELESS "c͡ç",Consonant PALATAL AFFRICATE VOICED "ɟ͡ʝ",Consonant VELAR AFFRICATE VOICELESS "k͡x",Consonant VELAR AFFRICATE VOICED "ɡ͡ɣ",Consonant UVULAR AFFRICATE VOICELESS "q͡χ",Consonant UVULAR AFFRICATE VOICED "ɢ͡ʁ",Consonant PHARYNGEAL AFFRICATE VOICELESS "ʡ̥͡ħ",Consonant PHARYNGEAL AFFRICATE VOICED "ʡ͡ʕ",Consonant GLOTTAL AFFRICATE VOICELESS "ʔ͡h",Consonant GLOTTAL AFFRICATE VOICED []]
-    , [Consonant BILABIAL FRICATIVE VOICELESS "ɸ",Consonant BILABIAL FRICATIVE VOICED "β",Consonant LABIODENTAL FRICATIVE VOICELESS "f",Consonant LABIODENTAL FRICATIVE VOICED "v",Consonant DENTAL FRICATIVE VOICELESS "s̪",Consonant DENTAL FRICATIVE VOICED "z̪",Consonant ALVEOLAR FRICATIVE VOICELESS "s",Consonant ALVEOLAR FRICATIVE VOICED "z",Consonant PALATOALVEOLAR FRICATIVE VOICELESS "ʃ",Consonant PALATOALVEOLAR FRICATIVE VOICED "ʒ",Consonant RETROFLEX FRICATIVE VOICELESS "ʂ",Consonant RETROFLEX FRICATIVE VOICED "ʐ",Consonant ALVEOLOPALATAL FRICATIVE VOICELESS "ɕ",Consonant ALVEOLOPALATAL FRICATIVE VOICED "ʑ",Consonant PALATAL FRICATIVE VOICELESS "ç",Consonant PALATAL FRICATIVE VOICED "ʝ",Consonant VELAR FRICATIVE VOICELESS "x",Consonant VELAR FRICATIVE VOICED "ɣ",Consonant UVULAR FRICATIVE VOICELESS "χ",Consonant UVULAR FRICATIVE VOICED "ʁ",Consonant PHARYNGEAL FRICATIVE VOICELESS "ħ",Consonant PHARYNGEAL FRICATIVE VOICED "ʕ",Consonant GLOTTAL FRICATIVE VOICELESS "h",Consonant GLOTTAL FRICATIVE VOICED "ɦ"]
-    , [Consonant BILABIAL APPROXIMANT VOICELESS "ɸ̝",Consonant BILABIAL APPROXIMANT VOICED "β̞",Consonant LABIODENTAL APPROXIMANT VOICELESS "ʋ̥",Consonant LABIODENTAL APPROXIMANT VOICED "ʋ",Consonant DENTAL APPROXIMANT VOICELESS "ð̞̊ ",Consonant DENTAL APPROXIMANT VOICED "ð̞",Consonant ALVEOLAR APPROXIMANT VOICELESS "ɹ̊",Consonant ALVEOLAR APPROXIMANT VOICED "ɹ",Consonant PALATOALVEOLAR APPROXIMANT VOICELESS "ɹ̠̊",Consonant PALATOALVEOLAR APPROXIMANT VOICED "ɹ̠",Consonant RETROFLEX APPROXIMANT VOICELESS "ɻ̊",Consonant RETROFLEX APPROXIMANT VOICED "ɻ",Consonant ALVEOLOPALATAL APPROXIMANT VOICELESS "ɻ̠̊",Consonant ALVEOLOPALATAL APPROXIMANT VOICED "ɻ̠",Consonant PALATAL APPROXIMANT VOICELESS "j̊",Consonant PALATAL APPROXIMANT VOICED "j",Consonant VELAR APPROXIMANT VOICELESS "ɰ̊",Consonant VELAR APPROXIMANT VOICED "ɰ",Consonant UVULAR APPROXIMANT VOICELESS "ʁ̞̊ ",Consonant UVULAR APPROXIMANT VOICED "ʁ̞",Consonant PHARYNGEAL APPROXIMANT VOICELESS "ħ̞",Consonant PHARYNGEAL APPROXIMANT VOICED "ʕ̞",Consonant GLOTTAL APPROXIMANT VOICELESS "h̞",Consonant GLOTTAL APPROXIMANT VOICED "ɦ̞"]
-    , [Consonant BILABIAL FLAP VOICELESS "ⱱ̟̊",Consonant BILABIAL FLAP VOICED "ⱱ̟",Consonant LABIODENTAL FLAP VOICELESS "ⱱ̥",Consonant LABIODENTAL FLAP VOICED "ⱱ",Consonant DENTAL FLAP VOICELESS "ɾ̪̊ ",Consonant DENTAL FLAP VOICED "ɾ̪",Consonant ALVEOLAR FLAP VOICELESS "ɾ̥",Consonant ALVEOLAR FLAP VOICED "ɾ",Consonant PALATOALVEOLAR FLAP VOICELESS "ɾ̠̊ ",Consonant PALATOALVEOLAR FLAP VOICED "ɾ̠",Consonant RETROFLEX FLAP VOICELESS "ɽ̊",Consonant RETROFLEX FLAP VOICED "ɽ",Consonant ALVEOLOPALATAL FLAP VOICELESS "ɽ̠̊",Consonant ALVEOLOPALATAL FLAP VOICED "ɽ̠",Consonant PALATAL FLAP VOICELESS "c̆",Consonant PALATAL FLAP VOICED "ɟ̆",Consonant VELAR FLAP VOICELESS [],Consonant VELAR FLAP VOICED [],Consonant UVULAR FLAP VOICELESS "q̆",Consonant UVULAR FLAP VOICED "ɢ̆",Consonant PHARYNGEAL FLAP VOICELESS [],Consonant PHARYNGEAL FLAP VOICED "ʡ̮",Consonant GLOTTAL FLAP VOICELESS [],Consonant GLOTTAL FLAP VOICED []]
-    , [Consonant BILABIAL TRILL VOICELESS "ʙ̥",Consonant BILABIAL TRILL VOICED "ʙ",Consonant LABIODENTAL TRILL VOICELESS "ʙ̠̊ ",Consonant LABIODENTAL TRILL VOICED "ʙ̠",Consonant DENTAL TRILL VOICELESS "r̪̊ ",Consonant DENTAL TRILL VOICED "r̪",Consonant ALVEOLAR TRILL VOICELESS "r̥",Consonant ALVEOLAR TRILL VOICED "r",Consonant PALATOALVEOLAR TRILL VOICELESS "r̠̊ ",Consonant PALATOALVEOLAR TRILL VOICED "r̠",Consonant RETROFLEX TRILL VOICELESS "ɽ͡r̥",Consonant RETROFLEX TRILL VOICED "ɽ͡r",Consonant ALVEOLOPALATAL TRILL VOICELESS "ɽ̠̊͡r",Consonant ALVEOLOPALATAL TRILL VOICED "ɽ̠͡r",Consonant PALATAL TRILL VOICELESS "ɽ̠̠̊͡r",Consonant PALATAL TRILL VOICED "ɽ̠̠͡r",Consonant VELAR TRILL VOICELESS [],Consonant VELAR TRILL VOICED [],Consonant UVULAR TRILL VOICELESS "ʀ̥",Consonant UVULAR TRILL VOICED "ʀ",Consonant PHARYNGEAL TRILL VOICELESS "ʜ",Consonant PHARYNGEAL TRILL VOICED "ʢ",Consonant GLOTTAL TRILL VOICELESS [],Consonant GLOTTAL TRILL VOICED []]
-    , [Consonant BILABIAL LAFFRICATE VOICELESS [],Consonant BILABIAL LAFFRICATE VOICED [],Consonant LABIODENTAL LAFFRICATE VOICELESS [],Consonant LABIODENTAL LAFFRICATE VOICED [],Consonant DENTAL LAFFRICATE VOICELESS "t̪͡ɬ̪̊",Consonant DENTAL LAFFRICATE VOICED "d̪͡ɮ̪",Consonant ALVEOLAR LAFFRICATE VOICELESS "t͡ɬ",Consonant ALVEOLAR LAFFRICATE VOICED "d͡ɮ",Consonant PALATOALVEOLAR LAFFRICATE VOICELESS "",Consonant PALATOALVEOLAR LAFFRICATE VOICED "d̠͡ɮ̠",Consonant RETROFLEX LAFFRICATE VOICELESS "ʈ͡ɭ̥˔",Consonant RETROFLEX LAFFRICATE VOICED "ɖ͡ɭ˔",Consonant ALVEOLOPALATAL LAFFRICATE VOICELESS "c̟͡ʎ̟̝̊",Consonant ALVEOLOPALATAL LAFFRICATE VOICED "ɟ̟͡ʎ̟̝",Consonant PALATAL LAFFRICATE VOICELESS "c͡ʎ̝̊",Consonant PALATAL LAFFRICATE VOICED "ɟ͡ʎ̝̊",Consonant VELAR LAFFRICATE VOICELESS "k͡ʟ̝̊",Consonant VELAR LAFFRICATE VOICED "ɡ͡ʟ̝",Consonant UVULAR LAFFRICATE VOICELESS "q͡ʟ̝̠̊",Consonant UVULAR LAFFRICATE VOICED "ɢ͡ʟ̝̠",Consonant PHARYNGEAL LAFFRICATE VOICELESS [],Consonant PHARYNGEAL LAFFRICATE VOICED [],Consonant GLOTTAL LAFFRICATE VOICELESS [],Consonant GLOTTAL LAFFRICATE VOICED []]
-    , [Consonant BILABIAL LFRICATIVE VOICELESS [],Consonant BILABIAL LFRICATIVE VOICED [],Consonant LABIODENTAL LFRICATIVE VOICELESS [],Consonant LABIODENTAL LFRICATIVE VOICED [],Consonant DENTAL LFRICATIVE VOICELESS "ɬ̪̊",Consonant DENTAL LFRICATIVE VOICED "ɮ̪",Consonant ALVEOLAR LFRICATIVE VOICELESS "ɬ",Consonant ALVEOLAR LFRICATIVE VOICED "ɮ",Consonant PALATOALVEOLAR LFRICATIVE VOICELESS "ɬ̠",Consonant PALATOALVEOLAR LFRICATIVE VOICED "ɮ̠",Consonant RETROFLEX LFRICATIVE VOICELESS "ɭ̥˔",Consonant RETROFLEX LFRICATIVE VOICED "ɭ˔",Consonant ALVEOLOPALATAL LFRICATIVE VOICELESS "ʎ̟̝̊",Consonant ALVEOLOPALATAL LFRICATIVE VOICED "ʎ̟̝",Consonant PALATAL LFRICATIVE VOICELESS "ʎ̝̊",Consonant PALATAL LFRICATIVE VOICED "ʎ̝̊",Consonant VELAR LFRICATIVE VOICELESS "ʟ̝̊",Consonant VELAR LFRICATIVE VOICED "ʟ̝",Consonant UVULAR LFRICATIVE VOICELESS "ʟ̝̠̊",Consonant UVULAR LFRICATIVE VOICED "ʟ̝̠",Consonant PHARYNGEAL LFRICATIVE VOICELESS [],Consonant PHARYNGEAL LFRICATIVE VOICED [],Consonant GLOTTAL LFRICATIVE VOICELESS [],Consonant GLOTTAL LFRICATIVE VOICED []]
-    , [Consonant BILABIAL LAPPROXIMANT VOICELESS [],Consonant BILABIAL LAPPROXIMANT VOICED [],Consonant LABIODENTAL LAPPROXIMANT VOICELESS [],Consonant LABIODENTAL LAPPROXIMANT VOICED [],Consonant DENTAL LAPPROXIMANT VOICELESS "l̪̊",Consonant DENTAL LAPPROXIMANT VOICED "l̪",Consonant ALVEOLAR LAPPROXIMANT VOICELESS "l̥",Consonant ALVEOLAR LAPPROXIMANT VOICED "l",Consonant PALATOALVEOLAR LAPPROXIMANT VOICELESS "l̠̊",Consonant PALATOALVEOLAR LAPPROXIMANT VOICED "l̠",Consonant RETROFLEX LAPPROXIMANT VOICELESS "ɭ̥",Consonant RETROFLEX LAPPROXIMANT VOICED "ɭ",Consonant ALVEOLOPALATAL LAPPROXIMANT VOICELESS "ʎ̟̊ ",Consonant ALVEOLOPALATAL LAPPROXIMANT VOICED "ʎ̟",Consonant PALATAL LAPPROXIMANT VOICELESS "ʎ̥",Consonant PALATAL LAPPROXIMANT VOICED "ʎ",Consonant VELAR LAPPROXIMANT VOICELESS "ʟ̥",Consonant VELAR LAPPROXIMANT VOICED "ʟ",Consonant UVULAR LAPPROXIMANT VOICELESS "ʟ̠̊",Consonant UVULAR LAPPROXIMANT VOICED "ʟ̠",Consonant PHARYNGEAL LAPPROXIMANT VOICELESS [],Consonant PHARYNGEAL LAPPROXIMANT VOICED [],Consonant GLOTTAL LAPPROXIMANT VOICELESS [],Consonant GLOTTAL LAPPROXIMANT VOICED []]
-    , [Consonant BILABIAL LFLAP VOICELESS [],Consonant BILABIAL LFLAP VOICED [],Consonant LABIODENTAL LFLAP VOICELESS [],Consonant LABIODENTAL LFLAP VOICED [],Consonant DENTAL LFLAP VOICELESS "ɺ̪̊",Consonant DENTAL LFLAP VOICED "ɺ̪",Consonant ALVEOLAR LFLAP VOICELESS "ɺ̥",Consonant ALVEOLAR LFLAP VOICED "ɺ",Consonant PALATOALVEOLAR LFLAP VOICELESS "ɺ̠̊",Consonant PALATOALVEOLAR LFLAP VOICED "ɺ̠",Consonant RETROFLEX LFLAP VOICELESS "ɺ̢̊",Consonant RETROFLEX LFLAP VOICED "ɺ̢",Consonant ALVEOLOPALATAL LFLAP VOICELESS "ʎ̯̟̊",Consonant ALVEOLOPALATAL LFLAP VOICED "ʎ̯̟",Consonant PALATAL LFLAP VOICELESS "ʎ̯̊",Consonant PALATAL LFLAP VOICED "ʎ̯",Consonant VELAR LFLAP VOICELESS "ʟ̥̆",Consonant VELAR LFLAP VOICED "ʟ̆",Consonant UVULAR LFLAP VOICELESS "ʟ̠̆̊",Consonant UVULAR LFLAP VOICED "ʟ̠̆",Consonant PHARYNGEAL LFLAP VOICELESS [],Consonant PHARYNGEAL LFLAP VOICED [],Consonant GLOTTAL LFLAP VOICELESS [],Consonant GLOTTAL LFLAP VOICED []]
+c = [ [Consonant BILABIAL NASAL VOICELESS "m̥",Consonant BILABIAL NASAL MODAL "m",Consonant LABIODENTAL NASAL VOICELESS "ɱ̊",Consonant LABIODENTAL NASAL MODAL "ɱ",Consonant DENTAL NASAL VOICELESS "n̪̊",Consonant DENTAL NASAL MODAL "n̪",Consonant ALVEOLAR NASAL VOICELESS "n̥",Consonant ALVEOLAR NASAL MODAL "n", Consonant POSTALVEOLAR NASAL VOICELESS "n̠̊",Consonant POSTALVEOLAR NASAL MODAL "n̠",Consonant RETROFLEX NASAL VOICELESS "ɳ̊",Consonant RETROFLEX NASAL MODAL "ɳ",Consonant ALVEOLOPALATAL NASAL VOICELESS "ɲ̟̊",Consonant ALVEOLOPALATAL NASAL MODAL "ɲ̟",Consonant PALATAL NASAL VOICELESS "ɲ̊",Consonant PALATAL NASAL MODAL "ɲ",Consonant VELAR NASAL VOICELESS "ŋ̊",Consonant VELAR NASAL MODAL "ŋ",Consonant UVULAR NASAL VOICELESS "ɴ̥",Consonant UVULAR NASAL MODAL "ɴ",Consonant PHARYNGEAL NASAL VOICELESS [],Consonant PHARYNGEAL NASAL MODAL [],Consonant GLOTTAL NASAL VOICELESS [],Consonant GLOTTAL NASAL MODAL []]
+    , [Consonant BILABIAL STOP VOICELESS "p",Consonant BILABIAL STOP MODAL "b",Consonant LABIODENTAL STOP VOICELESS "p̪",Consonant LABIODENTAL STOP MODAL "b̪",Consonant DENTAL STOP VOICELESS "t̪",Consonant DENTAL STOP MODAL "d̪",Consonant ALVEOLAR STOP VOICELESS "t",Consonant ALVEOLAR STOP MODAL "d",Consonant POSTALVEOLAR STOP VOICELESS "t̠",Consonant POSTALVEOLAR STOP MODAL "d̠",Consonant RETROFLEX STOP VOICELESS "ʈ",Consonant RETROFLEX STOP MODAL "ɖ",Consonant ALVEOLOPALATAL STOP VOICELESS "c̟",Consonant ALVEOLOPALATAL STOP MODAL "ɟ̟",Consonant PALATAL STOP VOICELESS "c",Consonant PALATAL STOP MODAL "ɟ",Consonant VELAR STOP VOICELESS "k",Consonant VELAR STOP MODAL "ɡ",Consonant UVULAR STOP VOICELESS "q",Consonant UVULAR STOP MODAL "ɢ",Consonant EPIGLOTTAL STOP VOICELESS "ʡ̥",Consonant EPIGLOTTAL STOP MODAL "ʡ",Consonant GLOTTAL STOP VOICELESS "ʔ",Consonant GLOTTAL STOP MODAL []]
+    , [Consonant BILABIAL AFFRICATE VOICELESS "p͡ɸ",Consonant BILABIAL AFFRICATE MODAL "b͡β",Consonant LABIODENTAL AFFRICATE VOICELESS "p̪͡f",Consonant LABIODENTAL AFFRICATE MODAL "b̪͡v",Consonant DENTAL AFFRICATE VOICELESS "t̪͡s̪",Consonant DENTAL AFFRICATE MODAL "d̪͡z̪",Consonant ALVEOLAR AFFRICATE VOICELESS "t͡s",Consonant ALVEOLAR AFFRICATE MODAL "d͡z",Consonant POSTALVEOLAR AFFRICATE VOICELESS "t̠͡ʃ",Consonant POSTALVEOLAR AFFRICATE MODAL "d̠͡ʒ",Consonant RETROFLEX AFFRICATE VOICELESS "ʈ͡ʂ",Consonant RETROFLEX AFFRICATE MODAL "ɖ͡ʐ",Consonant ALVEOLOPALATAL AFFRICATE VOICELESS "c̟͡ɕ",Consonant ALVEOLOPALATAL AFFRICATE MODAL "ɟ̟͡ʑ",Consonant PALATAL AFFRICATE VOICELESS "c͡ç",Consonant PALATAL AFFRICATE MODAL "ɟ͡ʝ",Consonant VELAR AFFRICATE VOICELESS "k͡x",Consonant VELAR AFFRICATE MODAL "ɡ͡ɣ",Consonant UVULAR AFFRICATE VOICELESS "q͡χ",Consonant UVULAR AFFRICATE MODAL "ɢ͡ʁ",Consonant PHARYNGEAL AFFRICATE VOICELESS "ʡ̥͡ħ",Consonant PHARYNGEAL AFFRICATE MODAL "ʡ͡ʕ",Consonant GLOTTAL AFFRICATE VOICELESS "ʔ͡h",Consonant GLOTTAL AFFRICATE MODAL []]
+    , [Consonant BILABIAL FRICATIVE VOICELESS "ɸ",Consonant BILABIAL FRICATIVE MODAL "β",Consonant LABIODENTAL FRICATIVE VOICELESS "f",Consonant LABIODENTAL FRICATIVE MODAL "v",Consonant DENTAL FRICATIVE VOICELESS "s̪",Consonant DENTAL FRICATIVE MODAL "z̪",Consonant ALVEOLAR FRICATIVE VOICELESS "s",Consonant ALVEOLAR FRICATIVE MODAL "z",Consonant POSTALVEOLAR FRICATIVE VOICELESS "ʃ",Consonant POSTALVEOLAR FRICATIVE MODAL "ʒ",Consonant RETROFLEX FRICATIVE VOICELESS "ʂ",Consonant RETROFLEX FRICATIVE MODAL "ʐ",Consonant ALVEOLOPALATAL FRICATIVE VOICELESS "ɕ",Consonant ALVEOLOPALATAL FRICATIVE MODAL "ʑ",Consonant PALATAL FRICATIVE VOICELESS "ç",Consonant PALATAL FRICATIVE MODAL "ʝ",Consonant VELAR FRICATIVE VOICELESS "x",Consonant VELAR FRICATIVE MODAL "ɣ",Consonant UVULAR FRICATIVE VOICELESS "χ",Consonant UVULAR FRICATIVE MODAL "ʁ",Consonant PHARYNGEAL FRICATIVE VOICELESS "ħ",Consonant PHARYNGEAL FRICATIVE MODAL "ʕ",Consonant GLOTTAL FRICATIVE VOICELESS "h",Consonant GLOTTAL FRICATIVE MODAL "ɦ"]
+    , [Consonant BILABIAL APPROXIMANT VOICELESS "ɸ̝",Consonant BILABIAL APPROXIMANT MODAL "β̞",Consonant LABIODENTAL APPROXIMANT VOICELESS "ʋ̥",Consonant LABIODENTAL APPROXIMANT MODAL "ʋ",Consonant DENTAL APPROXIMANT VOICELESS "ð̞̊ ",Consonant DENTAL APPROXIMANT MODAL "ð̞",Consonant ALVEOLAR APPROXIMANT VOICELESS "ɹ̊",Consonant ALVEOLAR APPROXIMANT MODAL "ɹ",Consonant POSTALVEOLAR APPROXIMANT VOICELESS "ɹ̠̊",Consonant POSTALVEOLAR APPROXIMANT MODAL "ɹ̠",Consonant RETROFLEX APPROXIMANT VOICELESS "ɻ̊",Consonant RETROFLEX APPROXIMANT MODAL "ɻ",Consonant ALVEOLOPALATAL APPROXIMANT VOICELESS "ɻ̠̊",Consonant ALVEOLOPALATAL APPROXIMANT MODAL "ɻ̠",Consonant PALATAL APPROXIMANT VOICELESS "j̊",Consonant PALATAL APPROXIMANT MODAL "j",Consonant VELAR APPROXIMANT VOICELESS "ɰ̊",Consonant VELAR APPROXIMANT MODAL "ɰ",Consonant UVULAR APPROXIMANT VOICELESS "ʁ̞̊",Consonant UVULAR APPROXIMANT MODAL "ʁ̞",Consonant PHARYNGEAL APPROXIMANT VOICELESS "ħ̞",Consonant PHARYNGEAL APPROXIMANT MODAL "ʕ̞",Consonant GLOTTAL APPROXIMANT VOICELESS "h̞",Consonant GLOTTAL APPROXIMANT MODAL "ɦ̞"]
+    , [Consonant BILABIAL FLAP VOICELESS "ⱱ̟̊",Consonant BILABIAL FLAP MODAL "ⱱ̟",Consonant LABIODENTAL FLAP VOICELESS "ⱱ̥",Consonant LABIODENTAL FLAP MODAL "ⱱ",Consonant DENTAL FLAP VOICELESS "ɾ̪̊ ",Consonant DENTAL FLAP MODAL "ɾ̪",Consonant ALVEOLAR FLAP VOICELESS "ɾ̥",Consonant ALVEOLAR FLAP MODAL "ɾ",Consonant POSTALVEOLAR FLAP VOICELESS "ɾ̠̊ ",Consonant POSTALVEOLAR FLAP MODAL "ɾ̠",Consonant RETROFLEX FLAP VOICELESS "ɽ̊",Consonant RETROFLEX FLAP MODAL "ɽ",Consonant ALVEOLOPALATAL FLAP VOICELESS "ɽ̠̊",Consonant ALVEOLOPALATAL FLAP MODAL "ɽ̠",Consonant PALATAL FLAP VOICELESS "c̆",Consonant PALATAL FLAP MODAL "ɟ̆",Consonant VELAR FLAP VOICELESS [],Consonant VELAR FLAP MODAL [],Consonant UVULAR FLAP VOICELESS "q̆",Consonant UVULAR FLAP MODAL "ɢ̆",Consonant EPIGLOTTAL FLAP VOICELESS [],Consonant EPIGLOTTAL FLAP MODAL "ʡ̮",Consonant GLOTTAL FLAP VOICELESS [],Consonant GLOTTAL FLAP MODAL []]
+    , [Consonant BILABIAL TRILL VOICELESS "ʙ̥",Consonant BILABIAL TRILL MODAL "ʙ",Consonant LABIODENTAL TRILL VOICELESS "ʙ̠̊ ",Consonant LABIODENTAL TRILL MODAL "ʙ̠",Consonant DENTAL TRILL VOICELESS "r̪̊ ",Consonant DENTAL TRILL MODAL "r̪",Consonant ALVEOLAR TRILL VOICELESS "r̥",Consonant ALVEOLAR TRILL MODAL "r",Consonant POSTALVEOLAR TRILL VOICELESS "r̠̊",Consonant POSTALVEOLAR TRILL MODAL "r̠",Consonant RETROFLEX TRILL VOICELESS "ɽ͡r̥",Consonant RETROFLEX TRILL MODAL "ɽ͡r",Consonant ALVEOLOPALATAL TRILL VOICELESS "[]",Consonant ALVEOLOPALATAL TRILL MODAL "[]",Consonant PALATAL TRILL VOICELESS "[]",Consonant PALATAL TRILL MODAL "[]",Consonant VELAR TRILL VOICELESS [],Consonant VELAR TRILL MODAL [],Consonant UVULAR TRILL VOICELESS "ʀ̥",Consonant UVULAR TRILL MODAL "ʀ",Consonant EPIGLOTTAL TRILL VOICELESS "ʜ",Consonant EPIGLOTTAL TRILL MODAL "ʢ",Consonant GLOTTAL TRILL VOICELESS [],Consonant GLOTTAL TRILL MODAL []]
+    , [Consonant BILABIAL LAFFRICATE VOICELESS [],Consonant BILABIAL LAFFRICATE MODAL [],Consonant LABIODENTAL LAFFRICATE VOICELESS [],Consonant LABIODENTAL LAFFRICATE MODAL [],Consonant DENTAL LAFFRICATE VOICELESS "t̪͡ɬ̪̊",Consonant DENTAL LAFFRICATE MODAL "d̪͡ɮ̪",Consonant ALVEOLAR LAFFRICATE VOICELESS "t͡ɬ",Consonant ALVEOLAR LAFFRICATE MODAL "d͡ɮ",Consonant POSTALVEOLAR LAFFRICATE VOICELESS "",Consonant POSTALVEOLAR LAFFRICATE MODAL "d̠͡ɮ̠",Consonant RETROFLEX LAFFRICATE VOICELESS "ʈ͡ɭ̥˔",Consonant RETROFLEX LAFFRICATE MODAL "ɖ͡ɭ˔",Consonant ALVEOLOPALATAL LAFFRICATE VOICELESS "c̟͡ʎ̟̝̊",Consonant ALVEOLOPALATAL LAFFRICATE MODAL "ɟ̟͡ʎ̟̝",Consonant PALATAL LAFFRICATE VOICELESS "c͡ʎ̝̊",Consonant PALATAL LAFFRICATE MODAL "ɟ͡ʎ̝̊",Consonant VELAR LAFFRICATE VOICELESS "k͡ʟ̝̊",Consonant VELAR LAFFRICATE MODAL "ɡ͡ʟ̝",Consonant UVULAR LAFFRICATE VOICELESS "q͡ʟ̝̠̊",Consonant UVULAR LAFFRICATE MODAL "ɢ͡ʟ̝̠",Consonant PHARYNGEAL LAFFRICATE VOICELESS [],Consonant PHARYNGEAL LAFFRICATE MODAL [],Consonant GLOTTAL LAFFRICATE VOICELESS [],Consonant GLOTTAL LAFFRICATE MODAL []]
+    , [Consonant BILABIAL LFRICATIVE VOICELESS [],Consonant BILABIAL LFRICATIVE MODAL [],Consonant LABIODENTAL LFRICATIVE VOICELESS [],Consonant LABIODENTAL LFRICATIVE MODAL [],Consonant DENTAL LFRICATIVE VOICELESS "ɬ̪̊",Consonant DENTAL LFRICATIVE MODAL "ɮ̪",Consonant ALVEOLAR LFRICATIVE VOICELESS "ɬ",Consonant ALVEOLAR LFRICATIVE MODAL "ɮ",Consonant POSTALVEOLAR LFRICATIVE VOICELESS "ɬ̠",Consonant POSTALVEOLAR LFRICATIVE MODAL "ɮ̠",Consonant RETROFLEX LFRICATIVE VOICELESS "ɭ̥˔",Consonant RETROFLEX LFRICATIVE MODAL "ɭ˔",Consonant ALVEOLOPALATAL LFRICATIVE VOICELESS "ʎ̟̝̊",Consonant ALVEOLOPALATAL LFRICATIVE MODAL "ʎ̟̝",Consonant PALATAL LFRICATIVE VOICELESS "ʎ̝̊",Consonant PALATAL LFRICATIVE MODAL "ʎ̝̊",Consonant VELAR LFRICATIVE VOICELESS "ʟ̝̊",Consonant VELAR LFRICATIVE MODAL "ʟ̝",Consonant UVULAR LFRICATIVE VOICELESS "ʟ̝̠̊",Consonant UVULAR LFRICATIVE MODAL "ʟ̝̠",Consonant PHARYNGEAL LFRICATIVE VOICELESS [],Consonant PHARYNGEAL LFRICATIVE MODAL [],Consonant GLOTTAL LFRICATIVE VOICELESS [],Consonant GLOTTAL LFRICATIVE MODAL []]
+    , [Consonant BILABIAL LAPPROXIMANT VOICELESS [],Consonant BILABIAL LAPPROXIMANT MODAL [],Consonant LABIODENTAL LAPPROXIMANT VOICELESS [],Consonant LABIODENTAL LAPPROXIMANT MODAL [],Consonant DENTAL LAPPROXIMANT VOICELESS "l̪̊",Consonant DENTAL LAPPROXIMANT MODAL "l̪",Consonant ALVEOLAR LAPPROXIMANT VOICELESS "l̥",Consonant ALVEOLAR LAPPROXIMANT MODAL "l",Consonant POSTALVEOLAR LAPPROXIMANT VOICELESS "l̠̊",Consonant POSTALVEOLAR LAPPROXIMANT MODAL "l̠",Consonant RETROFLEX LAPPROXIMANT VOICELESS "ɭ̥",Consonant RETROFLEX LAPPROXIMANT MODAL "ɭ",Consonant ALVEOLOPALATAL LAPPROXIMANT VOICELESS "ʎ̟̊ ",Consonant ALVEOLOPALATAL LAPPROXIMANT MODAL "ʎ̟",Consonant PALATAL LAPPROXIMANT VOICELESS "ʎ̥",Consonant PALATAL LAPPROXIMANT MODAL "ʎ",Consonant VELAR LAPPROXIMANT VOICELESS "ʟ̥",Consonant VELAR LAPPROXIMANT MODAL "ʟ",Consonant UVULAR LAPPROXIMANT VOICELESS "ʟ̠̊",Consonant UVULAR LAPPROXIMANT MODAL "ʟ̠",Consonant PHARYNGEAL LAPPROXIMANT VOICELESS [],Consonant PHARYNGEAL LAPPROXIMANT MODAL [],Consonant GLOTTAL LAPPROXIMANT VOICELESS [],Consonant GLOTTAL LAPPROXIMANT MODAL []]
+    , [Consonant BILABIAL LFLAP VOICELESS [],Consonant BILABIAL LFLAP MODAL [],Consonant LABIODENTAL LFLAP VOICELESS [],Consonant LABIODENTAL LFLAP MODAL [],Consonant DENTAL LFLAP VOICELESS "ɺ̪̊",Consonant DENTAL LFLAP MODAL "ɺ̪",Consonant ALVEOLAR LFLAP VOICELESS "ɺ̥",Consonant ALVEOLAR LFLAP MODAL "ɺ",Consonant POSTALVEOLAR LFLAP VOICELESS "ɺ̠̊",Consonant POSTALVEOLAR LFLAP MODAL "ɺ̠",Consonant RETROFLEX LFLAP VOICELESS "ɺ̢̊",Consonant RETROFLEX LFLAP MODAL "ɺ̢",Consonant ALVEOLOPALATAL LFLAP VOICELESS "ʎ̯̟̊",Consonant ALVEOLOPALATAL LFLAP MODAL "ʎ̯̟",Consonant PALATAL LFLAP VOICELESS "ʎ̯̊",Consonant PALATAL LFLAP MODAL "ʎ̯",Consonant VELAR LFLAP VOICELESS "ʟ̥̆",Consonant VELAR LFLAP MODAL "ʟ̆",Consonant UVULAR LFLAP VOICELESS "ʟ̠̆̊",Consonant UVULAR LFLAP MODAL "ʟ̠̆",Consonant PHARYNGEAL LFLAP VOICELESS [],Consonant PHARYNGEAL LFLAP MODAL [],Consonant GLOTTAL LFLAP VOICELESS [],Consonant GLOTTAL LFLAP MODAL []]
     ]
 
 v = [ [Vowel CLOSE BACK UNROUNDED "i",Vowel CLOSE BACK UNROUNDED "y",Vowel CLOSE NEARBACK UNROUNDED "ɪ̝",Vowel CLOSE NEARBACK UNROUNDED "ʏ̝",Vowel CLOSE CENTRAL UNROUNDED "ɨ",Vowel CLOSE CENTRAL UNROUNDED "ʉ",Vowel CLOSE NEARFRONT UNROUNDED "ɯ̟",Vowel CLOSE NEARFRONT UNROUNDED "ʊ̝",Vowel CLOSE FRONT UNROUNDED "ɯ",Vowel CLOSE FRONT UNROUNDED "u"]
@@ -36,20 +44,95 @@ v = [ [Vowel CLOSE BACK UNROUNDED "i",Vowel CLOSE BACK UNROUNDED "y",Vowel CLOSE
     , [Vowel OPEN BACK UNROUNDED "a",Vowel OPEN BACK UNROUNDED "ɶ",Vowel OPEN NEARBACK UNROUNDED "a̠",Vowel OPEN NEARBACK UNROUNDED "ɶ̠",Vowel OPEN CENTRAL UNROUNDED "ä",Vowel OPEN CENTRAL UNROUNDED "ɒ̈",Vowel OPEN NEARFRONT UNROUNDED "ɑ̟",Vowel OPEN NEARFRONT UNROUNDED "ɒ̟",Vowel OPEN FRONT UNROUNDED "ɑ",Vowel OPEN FRONT UNROUNDED "ɒ"]
     ]
 
--- Naive: Pick random phoneme inventory
-makeConInventory :: Int -> RVar [Phone]
-makeConInventory n = sample n $ filter (not . null . csymbol) $ concat c
+-- Naive: Pick purely random inventories
+makeConInventory :: Int -> RVar [Phoneme]
+makeConInventory n =  sample n $ filter (not . null . csymbol) $ concat c
 
-makeVowInventory :: Int -> RVar [Phone]
+makeVowInventory :: Int -> RVar [Phoneme]
 makeVowInventory n = sample n $ filter (not . null . vsymbol) $ concat v
 
--- Minimum: Picks rows and contrasts and stuff
--- Consonants:
--- * pick 2 - 3 places or manners, fill out >75% of the rows/columns
--- * remove 1 - 2 phonemes randomly
--- * voicing...
--- Vowels:
--- *Pick between several presets depending on n
--- *Diphthongs
+makeDiphInventory :: Int -> [Phoneme] -> RVar [Phoneme]
+makeDiphInventory n vs = sample n subseq where
+  subseq = map makeDiph $ filter (uncurry (/=)) ((,) <$> vs <*> vs)
 
--- Great: Realistic inventory output?
+makeDiph :: (Phoneme, Phoneme) -> Phoneme
+makeDiph (Vowel h1 b1 r1 s1, Vowel h2 b2 r2 s2) = Diphthong h1 b1 r1 s1 h2 b2 r2 s2
+
+-- Minimum: Picks rows and contrasts and stuff
+
+makePlaces :: RVar [Place]
+makePlaces = concat <$> sequence [ join $ choice [return [], return [LABIAL], return [BILABIAL, LABIODENTAL]]
+                                 , join $ choice [return [CORONAL], concat <$> sequence [choice [[DENTIALVEOLAR], [DENTAL, ALVEOLAR, POSTALVEOLAR]], return [RETROFLEX]]]
+                                 , join $ choice [return [DORSAL], concat <$> join (sample <$> uniform 2 3 <*> sequence [choice [[PALATAL], [ALVEOLOPALATAL, PALATAL]], return [VELAR], return[UVULAR]])]
+                                 , join $ choice [return [], return [LARYNGEAL], concat <$> sequence [choice [[EPIPHARYNGEAL], [PHARYNGEAL, EPIGLOTTAL]], return [GLOTTAL]]]
+                                 ]
+
+makeManners :: RVar [Manner]
+makeManners = concat <$> sequence [ return [STOP]
+                                  , choice [[], [NASAL]]
+                                  , join $ choice [return [], concat <$> sequence [return [FLAP], choice [[], [LFLAP]]]]
+                                  , join $ choice [return [], concat <$> sequence [return [FRICATIVE], join $ choice [return [], concat <$> sequence [return [AFFRICATE], choice [[], [SAFFRICATE]], choice [[], [LAFFRICATE]]]], choice [[], [SILIBANT]], choice [[], [LFRICATIVE]]]]
+                                  , join $ choice [return [], concat <$> sequence [return [APPROXIMANT], choice [[], [LAPPROXIMANT]]]]
+                                  , choice [[], [TRILL]]
+                                  ]
+
+makePhonations :: RVar [Phonation]
+makePhonations = choice [[MODAL], [VOICELESS, MODAL], [BREATHY, MODAL, CREAKY], [SLACK, MODAL, STIFF], [VOICELESS, MODAL, ASPIRATED], [MODAL, ASPIRATED]]
+
+makeConsonants :: [Place] -> [Manner] -> [Phonation] -> RVar [Phoneme]
+makeConsonants places manners phonations = output where
+  -- Create all possible consonants from picked place, manner, and phonation
+  cons = Consonant <$> places <*> manners <*> phonations <*> [""]
+  -- Filter out impossible combinations
+  filt = filter (\(Consonant p m h _) -> impConsonants p m h) cons
+  -- Add holes...
+  rPlaces = join $ sample <$> uniform 0 (length places - 1) <*> return places
+  rManners = join $ sample <$> uniform 0 (length manners - 1) <*> return manners
+  holed = do
+    rp <- rPlaces
+    rm <- rManners
+    let combos = (,) <$> rp <*> rm
+    return $ filter (\(Consonant p m h _) -> (p,m) `notElem` combos) filt
+  -- Assign IPA symbol
+  output = map assignIPA <$> holed
+
+-- Assigns IPA symbol to consonant
+assignIPA :: Phoneme -> Phoneme
+assignIPA (Consonant p m ASPIRATED s) = Consonant p m ASPIRATED (retrieveSymbol (Consonant p m MODAL s) ++ "\688")
+assignIPA (Consonant p m CREAKY s) = Consonant p m CREAKY (retrieveSymbol (Consonant p m MODAL s) ++ "\816")
+assignIPA (Consonant p m STIFF s) = Consonant p m STIFF (retrieveSymbol (Consonant p m MODAL s) ++ "\812")
+assignIPA (Consonant p m SLACK s) = Consonant p m SLACK (retrieveSymbol (Consonant p m MODAL s) ++ "\805")
+assignIPA (Consonant p m BREATHY s) = Consonant p m BREATHY (retrieveSymbol (Consonant p m MODAL s) ++ "\804")
+assignIPA (Consonant p m h s) = Consonant p m h (retrieveSymbol (Consonant p m h s))
+
+retrieveSymbol :: Phoneme -> String
+retrieveSymbol (Consonant p m h _)
+    | not.null $ searchIPA p m h = csymbol $ head $ searchIPA p m h
+    | (p == LABIAL) && (not . null $ searchIPA BILABIAL m h) = csymbol $ head $ searchIPA BILABIAL m h
+    | ((p == CORONAL) || (p == DENTIALVEOLAR)) && (not . null $ searchIPA ALVEOLAR m h) = csymbol $ head $ searchIPA ALVEOLAR m h
+    | (p == DORSAL) && (not . null $ searchIPA VELAR m h) = csymbol $ head $ searchIPA VELAR m h
+    | (p == DORSAL) && (not . null $ searchIPA UVULAR m h) = csymbol $ head $ searchIPA UVULAR m h
+    | (p == LARYNGEAL) && (not . null $ searchIPA GLOTTAL m h) = csymbol $ head $ searchIPA GLOTTAL m h
+    | (p == LARYNGEAL) && (not . null $ searchIPA EPIGLOTTAL m h) = csymbol $ head $ searchIPA EPIGLOTTAL m h
+    | (p == LARYNGEAL) && (not . null $ searchIPA PHARYNGEAL m h) = csymbol $ head $ searchIPA PHARYNGEAL m h
+    | (p == EPIPHARYNGEAL) && (not . null $ searchIPA EPIGLOTTAL m h) = csymbol $ head $ searchIPA EPIGLOTTAL m h
+    | (p == EPIPHARYNGEAL) && (not . null $ searchIPA PHARYNGEAL m h) = csymbol $ head $ searchIPA PHARYNGEAL m h
+    | (p == EPIGLOTTAL) && (not . null $ searchIPA PHARYNGEAL m h) = csymbol (head $ searchIPA PHARYNGEAL m h) ++ "\799"
+    | (p == PHARYNGEAL) && (not . null $ searchIPA EPIGLOTTAL m h) = csymbol (head $ searchIPA EPIGLOTTAL m h) ++ "\800"
+    | otherwise = "ERROR"
+
+searchIPA :: Place -> Manner -> Phonation -> [Phoneme]
+searchIPA p m h = filt where
+  cons = filter (not . null . csymbol) $ concat c
+  filt = filter (\(Consonant pc mc hc _) -> p == pc && m == mc && h == hc) cons
+
+-- Impossible consonants filter
+impConsonants :: Place -> Manner -> Phonation -> Bool
+impConsonants p m h
+  | p `notElem` [CORONAL, DENTIALVEOLAR, DENTAL, ALVEOLAR, POSTALVEOLAR, RETROFLEX] && m `elem` [SILIBANT, SAFFRICATE] = False
+  | p `elem` [LABIAL, BILABIAL, LABIODENTAL, LARYNGEAL, EPIPHARYNGEAL, PHARYNGEAL, EPIGLOTTAL, GLOTTAL] && m `elem` [LAFFRICATE, LAPPROXIMANT, LFRICATIVE, LFRICATIVE, LFLAP] = False
+  | p `elem` [DORSAL, ALVEOLOPALATAL, PALATAL, VELAR, UVULAR, GLOTTAL] && m `elem` [FLAP, TRILL] = False
+  | p == GLOTTAL && m `elem` [STOP, AFFRICATE] && h /= VOICELESS = False
+  | m /= STOP && h == ASPIRATED = False
+  | p `elem` [LARYNGEAL, EPIPHARYNGEAL, PHARYNGEAL, EPIGLOTTAL, GLOTTAL] && m == NASAL = False
+  | otherwise = True

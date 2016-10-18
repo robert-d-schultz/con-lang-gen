@@ -1,9 +1,9 @@
 -- Data types for phonemes
 module PhonemeType2
-( Phone(..)
+( Phoneme(..)
 , Place (..)
 , Manner(..)
-, Voice(..)
+, Phonation(..)
 , Height(..)
 , Backness(..)
 , Roundedness(..)
@@ -12,10 +12,10 @@ module PhonemeType2
 
 import Prelude
 
-data Phone = Consonant
+data Phoneme = Consonant
            { place :: Place
            , manner :: Manner
-           , voice :: Voice
+           , voice :: Phonation
            , csymbol :: String
            }
            | Vowel
@@ -24,23 +24,46 @@ data Phone = Consonant
            , roundedness :: Roundedness
            , vsymbol :: String
            }
+           | Diphthong
+           { height1 :: Height
+           , backness1 :: Backness
+           , roundedness1 :: Roundedness
+           , vsymbol1 :: String
+           , height2 :: Height
+           , backness2 :: Backness
+           , roundedness2 :: Roundedness
+           , vsymbol2 :: String
+           }
            | Blank deriving (Eq, Ord, Show, Read)
 
-data Place  = BILABIAL
+
+-- Place of articulation
+data Place  = LABIAL
+            | BILABIAL
             | LABIODENTAL
+            | CORONAL
+            | DENTIALVEOLAR
             | DENTAL
             | ALVEOLAR
-            | PALATOALVEOLAR
+            | POSTALVEOLAR
             | RETROFLEX
+            | DORSAL
             | ALVEOLOPALATAL
             | PALATAL
             | VELAR
             | UVULAR
+            | LARYNGEAL
+            | EPIPHARYNGEAL
             | PHARYNGEAL
+            | EPIGLOTTAL
             | GLOTTAL deriving (Eq, Ord, Show, Read, Enum, Bounded)
+
+-- Manner
 data Manner = NASAL
             | STOP
+            | SAFFRICATE
             | AFFRICATE
+            | SILIBANT
             | FRICATIVE
             | APPROXIMANT
             | FLAP
@@ -49,9 +72,19 @@ data Manner = NASAL
             | LFRICATIVE
             | LAPPROXIMANT
             | LFLAP deriving (Eq, Ord, Show, Read, Enum, Bounded)
-data Voice  = VOICELESS
-            | VOICED deriving (Eq, Ord, Show, Read, Enum, Bounded)
 
+-- Phonation
+data Phonation  = VOICELESS
+                | BREATHY
+                | SLACK
+                | MODAL
+                | STIFF
+                | CREAKY
+                | ASPIRATED deriving (Eq, Ord, Show, Read, Enum, Bounded)
+
+
+
+-- Vowel stuff
 data Height      = CLOSE
                  | NEARCLOSE
                  | CLOSEMID
@@ -69,4 +102,4 @@ data Backness    = BACK
 data Roundedness = ROUNDED
                  | UNROUNDED deriving (Eq, Ord, Show, Read, Enum, Bounded)
 
-data PhonemeInventory = PhonemeInventory [Phone] deriving (Eq, Ord, Show, Read)
+data PhonemeInventory = PhonemeInventory [Phoneme] deriving (Eq, Ord, Show, Read)

@@ -15,14 +15,12 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     PhonemeInventoryGen
-                     , PhonemeType
-                     , PhonotacticsGen
-                     , WordGen
-                     , OtherData
-                     , Parse
-                     , GrammarGen
-                     , DeclensionGen
+  exposed-modules:     PhonemeInventoryGen2
+                     , PhonemeType2
+                     , PhonotacticsGen2
+                     , WordGen2
+                     , OtherData2
+                     , Parse2
   build-depends:       base >= 4.7 && < 5
                      , rvar -any
                      , random-fu -any

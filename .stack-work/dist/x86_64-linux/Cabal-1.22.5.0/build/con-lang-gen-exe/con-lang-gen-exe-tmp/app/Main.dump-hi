@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-29 21:48:38.871977 UTC
+2016-10-17 20:49:40.614036 UTC
 
 interface main@main:Main 7103
-  interface hash: 56500e4d1298b134f05c494d3d80c912
-  ABI hash: 14222b98c696ade431156d90bd542cdd
-  export-list hash: 37f0b07408e5877be3d79bd26fcfb082
+  interface hash: 3ea76d3da3006d7682f7ed01adf947f8
+  ABI hash: 4ff5904c238c1bc927a920673c9086fa
+  export-list hash: 111b464f1a40b815073e610af3ba0b57
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 6052577fbb991595f3e20337ed81343b
   sig of: Nothing
@@ -16,7 +16,6 @@ exports:
 module dependencies:
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
-                      OneTuple-0.2.1@OneTu_7qUmBkRamgQ0H9fFgZmi5H
                       array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
                       con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r
                       containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
@@ -45,7 +44,6 @@ package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       th-extras-0.0.0.4@thext_LRY1RUMy7ShLl2tqhMyHdO
                       time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
                       transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
-                      tuple-0.3.0.2@tuple_0P5GlwXwirn97NAX2TWlIC
                       vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
 orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
          base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
@@ -82,15 +80,12 @@ family instance modules: base-4.8.2.0:Control.Applicative
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
-import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:DeclensionGen 74d8408c51b544e69b9792ad881f5791
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 270b5c0ad66b7b6ff083b5a751011c60
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Parse ee5615312a6e4a4034626ef25d3825f5
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeInventoryGen 6dea7946c11c44f58a6494423af32d95
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen 3161bd3b293595ac2e49b76ca89047ec
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:WordGen f90ac4ac75fdd6adf29c176d754bc14b
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Parse2 86fc03865c81a8eed32936a00392527f
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeInventoryGen2 978ac8c52fd686dcd6d99e1005439b28
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen2 d87784e8c6b16bb65eef600d5207f998
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:WordGen2 e841d8d56b3dcfb07ccc182c3996c2df
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
