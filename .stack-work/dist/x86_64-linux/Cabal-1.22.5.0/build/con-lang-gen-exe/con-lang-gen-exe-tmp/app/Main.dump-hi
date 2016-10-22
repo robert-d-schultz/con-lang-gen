@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-17 20:49:40.614036 UTC
+2016-10-20 22:14:26.327527 UTC
 
 interface main@main:Main 7103
-  interface hash: 3ea76d3da3006d7682f7ed01adf947f8
+  interface hash: 95497d9d2e3b3bd92a81cc34fb332c89
   ABI hash: 4ff5904c238c1bc927a920673c9086fa
   export-list hash: 111b464f1a40b815073e610af3ba0b57
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -82,10 +82,10 @@ family instance modules: base-4.8.2.0:Control.Applicative
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Parse2 86fc03865c81a8eed32936a00392527f
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeInventoryGen2 978ac8c52fd686dcd6d99e1005439b28
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen2 d87784e8c6b16bb65eef600d5207f998
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:WordGen2 e841d8d56b3dcfb07ccc182c3996c2df
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Parse2 c6fd87781b11b3f340c23e8174d9ae89
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeInventoryGen2 e5148585c98888d3b6d853c6869a93f1
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen2 1d6a6d3629741d75dc9d1e17e59228ee
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:WordGen2 5b41573a69760a17489c584c8c9b4cff
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130

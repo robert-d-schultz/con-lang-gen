@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-17 20:49:38.059807 UTC
+2016-10-22 02:56:02.433778 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:OtherData2 7103
-  interface hash: 340e0bdb796f76a42daceaa6ea1f6eb8
-  ABI hash: fe3edb6586aa1c7106aa097b944c9916
-  export-list hash: 64b5421595201c0eb87f9b5449c4ebba
+  interface hash: 110a1625103e89af2d3a093a9c6523a0
+  ABI hash: 08f9fdb83c0ec02cbc12c2fe756e9c77
+  export-list hash: b7fb5a9c6a9b7223e3a71462099d5c6f
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -14,7 +14,6 @@ interface conla_1eA9qWUPH9nBowcXqqaV8r:OtherData2 7103
 exports:
   OtherData2.SyllWord{OtherData2.SyllWord}
   OtherData2.Syllable{OtherData2.Syllable OtherData2.getCoda OtherData2.getNucleus OtherData2.getOnset}
-  OtherData2.Word{OtherData2.Word}
 module dependencies: PhonemeType2
 package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
                       integer-gmp-1.0.0.0
@@ -28,11 +27,11 @@ import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:Text.ParserCombinators.ReadPrec 2590e0e0a57a86ac7c62727f4d868dd2
 import  -/  base-4.8.2.0:Text.Read.Lex 724ca44ddd38ddc5f47a501d62736c26
-import  -/  PhonemeType2 a9247e25a5379dedeed4d4661db0033f
-  exports: 65413a119a4e8e15b6921e348e21398d
-  Phoneme 3abb4073c17ef07e2eb6d2446d16852f
+import  -/  PhonemeType2 197339ce6b16abf97787f114b13340ff
+  exports: df9b2faa8257842f4b45d50bfdeb2c0c
+  Phoneme 20569906d69b1b60892d82b112a7f488
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fEqSyllWord :: GHC.Classes.Eq OtherData2.SyllWord
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -40,37 +39,37 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                   @ OtherData2.SyllWord
                   OtherData2.$fEqSyllWord_$c==
                   OtherData2.$fEqSyllWord_$c/= -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fEqSyllWord_$c/= ::
     OtherData2.SyllWord -> OtherData2.SyllWord -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
      Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
      Unfolding: InlineRule (2, True, False)
-                (\ a2 :: OtherData2.SyllWord b :: OtherData2.SyllWord ->
-                 case a2 of wild { OtherData2.SyllWord a3 ->
+                (\ a1 :: OtherData2.SyllWord b :: OtherData2.SyllWord ->
+                 case a1 of wild { OtherData2.SyllWord a2 ->
                  case b of wild1 { OtherData2.SyllWord b1 ->
                  case GHC.Classes.$fEq[]_$c==
                         @ OtherData2.Syllable
                         OtherData2.$fEqSyllable
-                        a3
+                        a2
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fEqSyllWord_$c== ::
     OtherData2.SyllWord -> OtherData2.SyllWord -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
      Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
      Unfolding: InlineRule (2, True, False)
                 (\ ds :: OtherData2.SyllWord ds1 :: OtherData2.SyllWord ->
-                 case ds of wild { OtherData2.SyllWord a2 ->
+                 case ds of wild { OtherData2.SyllWord a1 ->
                  case ds1 of wild1 { OtherData2.SyllWord b1 ->
                  GHC.Classes.$fEq[]_$c==
                    @ OtherData2.Syllable
                    OtherData2.$fEqSyllable
-                   a2
+                   a1
                    b1 } }) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fEqSyllable :: GHC.Classes.Eq OtherData2.Syllable
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -78,17 +77,17 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                   @ OtherData2.Syllable
                   OtherData2.$fEqSyllable_$c==
                   OtherData2.$fEqSyllable_$c/= -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fEqSyllable_$c/= ::
     OtherData2.Syllable -> OtherData2.Syllable -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
      Strictness: <S(SLL),1*U(1*U,1*U,1*U)><S(SLL),1*U(1*U,1*U,1*U)>,
      Unfolding: InlineRule (2, True, False)
-                (\ a2 :: OtherData2.Syllable b :: OtherData2.Syllable ->
-                 case OtherData2.$fEqSyllable_$c== a2 b of wild {
+                (\ a1 :: OtherData2.Syllable b :: OtherData2.Syllable ->
+                 case OtherData2.$fEqSyllable_$c== a1 b of wild {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False }) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fEqSyllable_$c== ::
     OtherData2.Syllable -> OtherData2.Syllable -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -99,45 +98,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                  case w of ww { OtherData2.Syllable ww1 ww2 ww3 ->
                  case w1 of ww4 { OtherData2.Syllable ww5 ww6 ww7 ->
                  OtherData2.$w$c== ww1 ww2 ww3 ww5 ww6 ww7 } }) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fEqWord :: GHC.Classes.Eq OtherData2.Word
-  DFunId[0]
-  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ OtherData2.Word
-                  OtherData2.$fEqWord_$c==
-                  OtherData2.$fEqWord_$c/= -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fEqWord_$c/= ::
-    OtherData2.Word -> OtherData2.Word -> GHC.Types.Bool
-  {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
-     Unfolding: InlineRule (2, True, False)
-                (\ a2 :: OtherData2.Word b :: OtherData2.Word ->
-                 case a2 of wild { OtherData2.Word a3 ->
-                 case b of wild1 { OtherData2.Word b1 ->
-                 case GHC.Classes.$fEq[]_$c==
-                        @ PhonemeType2.Phoneme
-                        PhonemeType2.$fEqPhoneme
-                        a3
-                        b1 of wild2 {
-                   GHC.Types.False -> GHC.Types.True
-                   GHC.Types.True -> GHC.Types.False } } }) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fEqWord_$c== ::
-    OtherData2.Word -> OtherData2.Word -> GHC.Types.Bool
-  {- Arity: 2, HasNoCafRefs,
-     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
-     Unfolding: InlineRule (2, True, False)
-                (\ ds :: OtherData2.Word ds1 :: OtherData2.Word ->
-                 case ds of wild { OtherData2.Word a2 ->
-                 case ds1 of wild1 { OtherData2.Word b1 ->
-                 GHC.Classes.$fEq[]_$c==
-                   @ PhonemeType2.Phoneme
-                   PhonemeType2.$fEqPhoneme
-                   a2
-                   b1 } }) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fReadSyllWord :: GHC.Read.Read OtherData2.SyllWord
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -147,7 +108,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                   OtherData2.$fReadSyllWord_$sreadListDefault
                   OtherData2.$fReadSyllWord_$creadPrec
                   OtherData2.$fReadSyllWord_$creadListPrec -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fReadSyllWord1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -167,7 +128,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                              <OtherData2.SyllWord>_R))
                    @ b
                    eta1) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fReadSyllWord2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP OtherData2.SyllWord
@@ -182,7 +143,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                                        <OtherData2.SyllWord>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                   <OtherData2.SyllWord>_R)))) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fReadSyllWord3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -197,7 +158,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
 501c7f2cbc4f0e934e5de362564a4af4
   $fReadSyllWord4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "SyllWord"#) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fReadSyllWord5 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP OtherData2.Syllable
@@ -212,7 +173,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                                        <OtherData2.Syllable>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                   <OtherData2.Syllable>_R)))) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fReadSyllWord6 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -224,7 +185,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                    @ b
                    w1 :: OtherData2.Syllable -> Text.ParserCombinators.ReadP.P b ->
                  case w of ww { GHC.Types.I# ww1 -> OtherData2.$wa1 ww1 @ b w1 }) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fReadSyllWord_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [OtherData2.SyllWord]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -237,7 +198,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                                     <[OtherData2.SyllWord]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                <[OtherData2.SyllWord]>_R))) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fReadSyllWord_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec OtherData2.SyllWord
   {- Arity: 1,
@@ -246,7 +207,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                           <OtherData2.SyllWord>_R)) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fReadSyllWord_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS OtherData2.SyllWord
@@ -272,7 +233,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                       @ OtherData2.SyllWord
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ OtherData2.SyllWord))) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fReadSyllWord_$sreadListDefault ::
     Text.ParserCombinators.ReadP.ReadS [OtherData2.SyllWord]
   {- Arity: 1,
@@ -290,7 +251,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                       @ [OtherData2.SyllWord]
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ [OtherData2.SyllWord]))) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fReadSyllable :: GHC.Read.Read OtherData2.Syllable
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -300,7 +261,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                   OtherData2.$fReadSyllable_$sreadListDefault
                   OtherData2.$fReadSyllable_$creadPrec
                   OtherData2.$fReadSyllable_$creadListPrec -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fReadSyllable1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -320,7 +281,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                              <OtherData2.Syllable>_R))
                    @ b
                    eta1) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fReadSyllable_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [OtherData2.Syllable]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -333,7 +294,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                                     <[OtherData2.Syllable]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                <[OtherData2.Syllable]>_R))) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fReadSyllable_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec OtherData2.Syllable
   {- Arity: 1,
@@ -342,7 +303,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                           <OtherData2.Syllable>_R)) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fReadSyllable_$s$dmreadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS OtherData2.Syllable
@@ -353,7 +314,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                    @ OtherData2.Syllable
                    OtherData2.$fReadSyllable_$creadPrec
                    eta) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fReadSyllable_$sreadListDefault ::
     Text.ParserCombinators.ReadP.ReadS [OtherData2.Syllable]
   {- Arity: 1,
@@ -371,115 +332,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                       @ [OtherData2.Syllable]
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ [OtherData2.Syllable]))) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fReadWord :: GHC.Read.Read OtherData2.Word
-  DFunId[0]
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ OtherData2.Word
-                  OtherData2.$fReadWord_$s$dmreadsPrec
-                  OtherData2.$fReadWord_$sreadListDefault
-                  OtherData2.$fReadWord_$creadPrec
-                  OtherData2.$fReadWord_$creadListPrec -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fReadWord1 ::
-    Text.ParserCombinators.ReadPrec.Prec
-    -> forall b.
-       ([OtherData2.Word] -> Text.ParserCombinators.ReadP.P b)
-       -> Text.ParserCombinators.ReadP.P b
-  {- Arity: 2, Strictness: <L,A><L,C(U)>,
-     Unfolding: InlineRule (2, True, True)
-                (\ eta :: Text.ParserCombinators.ReadPrec.Prec
-                   @ b
-                   eta1 :: [OtherData2.Word] -> Text.ParserCombinators.ReadP.P b ->
-                 GHC.Read.$wa
-                   @ OtherData2.Word
-                   OtherData2.$fReadWord2
-                     `cast`
-                   (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
-                             <OtherData2.Word>_R))
-                   @ b
-                   eta1) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fReadWord2 ::
-    Text.ParserCombinators.ReadPrec.Prec
-    -> Text.ParserCombinators.ReadP.ReadP OtherData2.Word
-  {- Arity: 1,
-     Unfolding: (GHC.Read.$fReadDouble10
-                   @ OtherData2.Word
-                   OtherData2.$fReadWord3
-                     `cast`
-                   (Trans
-                        (<Text.ParserCombinators.ReadPrec.Prec>_R
-                         ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
-                                       <OtherData2.Word>_R))
-                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
-                                  <OtherData2.Word>_R)))) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fReadWord3 ::
-    Text.ParserCombinators.ReadPrec.Prec
-    -> forall b.
-       (OtherData2.Word -> Text.ParserCombinators.ReadP.P b)
-       -> Text.ParserCombinators.ReadP.P b
-  {- Arity: 2, Strictness: <S,1*U(U)><L,C(U)>, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ w :: Text.ParserCombinators.ReadPrec.Prec
-                   @ b
-                   w1 :: OtherData2.Word -> Text.ParserCombinators.ReadP.P b ->
-                 case w of ww { GHC.Types.I# ww1 -> OtherData2.$wa2 ww1 @ b w1 }) -}
-63b1e7805d69935a2a64956c91e8b333
-  $fReadWord4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Word"#) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fReadWord_$creadListPrec ::
-    Text.ParserCombinators.ReadPrec.ReadPrec [OtherData2.Word]
-  {- Arity: 2, Strictness: <L,A><L,C(U)>,
-     Unfolding: InlineRule (0, True, True)
-                OtherData2.$fReadWord1
-                  `cast`
-                (Trans
-                     (<Text.ParserCombinators.ReadPrec.Prec>_R
-                      ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
-                                    <[OtherData2.Word]>_R))
-                     (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
-                               <[OtherData2.Word]>_R))) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fReadWord_$creadPrec ::
-    Text.ParserCombinators.ReadPrec.ReadPrec OtherData2.Word
-  {- Arity: 1,
-     Unfolding: InlineRule (0, True, True)
-                OtherData2.$fReadWord2
-                  `cast`
-                (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
-                          <OtherData2.Word>_R)) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fReadWord_$s$dmreadsPrec ::
-    GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS OtherData2.Word
-  {- Arity: 1, Strictness: <L,U>,
-     Unfolding: InlineRule (-1, True, False)
-                (\ eta :: GHC.Types.Int ->
-                 Text.ParserCombinators.ReadPrec.readPrec_to_S
-                   @ OtherData2.Word
-                   OtherData2.$fReadWord_$creadPrec
-                   eta) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fReadWord_$sreadListDefault ::
-    Text.ParserCombinators.ReadP.ReadS [OtherData2.Word]
-  {- Arity: 1,
-     Unfolding: InlineRule (0, True, False)
-                (Text.ParserCombinators.ReadP.run
-                   @ [OtherData2.Word]
-                   ((OtherData2.$fReadWord_$creadListPrec
-                       `cast`
-                     (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
-                          <[OtherData2.Word]>_R)
-                       GHC.Read.$fRead(,)7)
-                      `cast`
-                    (Text.ParserCombinators.ReadP.NTCo:ReadP[0] <[OtherData2.Word]>_R)
-                      @ [OtherData2.Word]
-                      (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
-                         @ [OtherData2.Word]))) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fShowSyllWord :: GHC.Show.Show OtherData2.SyllWord
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -488,13 +341,13 @@ f117c6d37e2b33ff13a65b0aee53bddc
                   OtherData2.$fShowSyllWord_$cshowsPrec
                   OtherData2.$fShowSyllWord_$cshow
                   OtherData2.$fShowSyllWord_$cshowList -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fShowSyllWord1 :: OtherData2.SyllWord -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ w :: OtherData2.SyllWord w1 :: GHC.Base.String ->
                  case w of ww { OtherData2.SyllWord ww1 ->
                  OtherData2.$w$cshowsPrec 0 ww1 w1 }) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fShowSyllWord2 :: OtherData2.Syllable -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ w :: OtherData2.Syllable w1 :: GHC.Base.String ->
@@ -503,7 +356,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
 855c4d86b45f310fc3ae41d3ecb8075e
   $fShowSyllWord3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "SyllWord "#) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fShowSyllWord_$cshow :: OtherData2.SyllWord -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -512,14 +365,14 @@ f117c6d37e2b33ff13a65b0aee53bddc
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fShowSyllWord_$cshowList ::
     [OtherData2.SyllWord] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ OtherData2.SyllWord
                    OtherData2.$fShowSyllWord1) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $fShowSyllWord_$cshowsPrec ::
     GHC.Types.Int -> OtherData2.SyllWord -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U)><L,U>,
@@ -531,7 +384,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { OtherData2.SyllWord ww3 ->
                  OtherData2.$w$cshowsPrec ww1 ww3 w2 } }) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fShowSyllable :: GHC.Show.Show OtherData2.Syllable
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -540,7 +393,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                   OtherData2.$fShowSyllable_$cshowsPrec
                   OtherData2.$fShowSyllable_$cshow
                   OtherData2.$fShowSyllable_$cshowList -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fShowSyllable_$cshow :: OtherData2.Syllable -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U,1*U,1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -549,14 +402,14 @@ f117c6d37e2b33ff13a65b0aee53bddc
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fShowSyllable_$cshowList ::
     [OtherData2.Syllable] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ OtherData2.Syllable
                    OtherData2.$fShowSyllWord2) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $fShowSyllable_$cshowsPrec ::
     GHC.Types.Int -> OtherData2.Syllable -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U,1*U,1*U)><L,U>,
@@ -568,52 +421,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { OtherData2.Syllable ww3 ww4 ww5 ->
                  OtherData2.$w$cshowsPrec1 ww1 ww3 ww4 ww5 w2 } }) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fShowWord :: GHC.Show.Show OtherData2.Word
-  DFunId[0]
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ OtherData2.Word
-                  OtherData2.$fShowWord_$cshowsPrec
-                  OtherData2.$fShowWord_$cshow
-                  OtherData2.$fShowWord_$cshowList -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fShowWord1 :: OtherData2.Word -> GHC.Show.ShowS
-  {- Arity: 2,
-     Unfolding: (\ w :: OtherData2.Word w1 :: GHC.Base.String ->
-                 case w of ww { OtherData2.Word ww1 ->
-                 OtherData2.$w$cshowsPrec2 0 ww1 w1 }) -}
-a8131b1b8da5ca462713c4af3101936b
-  $fShowWord2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Word "#) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fShowWord_$cshow :: OtherData2.Word -> GHC.Base.String
-  {- Arity: 1, Strictness: <S,1*U(1*U)>,
-     Unfolding: InlineRule (1, True, False)
-                (\ x :: OtherData2.Word ->
-                 OtherData2.$fShowWord_$cshowsPrec
-                   GHC.Show.shows18
-                   x
-                   (GHC.Types.[] @ GHC.Types.Char)) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fShowWord_$cshowList :: [OtherData2.Word] -> GHC.Show.ShowS
-  {- Arity: 2,
-     Unfolding: (GHC.Show.showList__
-                   @ OtherData2.Word
-                   OtherData2.$fShowWord1) -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $fShowWord_$cshowsPrec ::
-    GHC.Types.Int -> OtherData2.Word -> GHC.Show.ShowS
-  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U)><L,U>,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (3, True, False)
-                (\ w :: GHC.Types.Int
-                   w1 :: OtherData2.Word
-                   w2 :: GHC.Base.String ->
-                 case w of ww { GHC.Types.I# ww1 ->
-                 case w1 of ww2 { OtherData2.Word ww3 ->
-                 OtherData2.$w$cshowsPrec2 ww1 ww3 w2 } }) -}
-553eae0c4ee89d853487aeb9d148e938
+adf902c96b1babc2c5d81abfd8e06b39
   $w$c== ::
     [PhonemeType2.Phoneme]
     -> PhonemeType2.Phoneme
@@ -646,7 +454,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                              PhonemeType2.$fEqPhoneme
                              ww2
                              ww5 } }) -}
-646457245275467725dc79360ae9358a
+eb922588a36198d329101ddf84353abb
   $w$cshowsPrec ::
     GHC.Prim.Int#
     -> [OtherData2.Syllable] -> GHC.Base.String -> GHC.Base.String
@@ -678,7 +486,7 @@ f117c6d37e2b33ff13a65b0aee53bddc
                               OtherData2.$fShowSyllWord2
                               ww1
                               (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w))) }) -}
-c5918816044d5d0409cecd1526975ae3
+1735380b73c27cd4d5199ea49112f081
   $w$cshowsPrec1 ::
     GHC.Prim.Int#
     -> [PhonemeType2.Phoneme]
@@ -688,39 +496,7 @@ c5918816044d5d0409cecd1526975ae3
     -> GHC.Base.String
   {- Arity: 5, Strictness: <L,U><L,1*U><L,1*U><L,1*U><L,U>,
      Inline: [0] -}
-039ea5ba3fb3bc0ee1bf99dffa799493
-  $w$cshowsPrec2 ::
-    GHC.Prim.Int#
-    -> [PhonemeType2.Phoneme] -> GHC.Base.String -> GHC.Base.String
-  {- Arity: 3, Strictness: <L,U><L,1*U><L,U>, Inline: [0],
-     Unfolding: (\ ww :: GHC.Prim.Int#
-                   ww1 :: [PhonemeType2.Phoneme]
-                   w :: GHC.Base.String ->
-                 case GHC.Prim.tagToEnum#
-                        @ GHC.Types.Bool
-                        (GHC.Prim.>=# ww 11) of wild {
-                   GHC.Types.False
-                   -> GHC.Base.++
-                        @ GHC.Types.Char
-                        OtherData2.$fShowWord2
-                        (GHC.Show.showList__
-                           @ PhonemeType2.Phoneme
-                           PhonemeType2.$fShowPhoneme1
-                           ww1
-                           w)
-                   GHC.Types.True
-                   -> GHC.Types.:
-                        @ GHC.Types.Char
-                        GHC.Show.shows9
-                        (GHC.Base.++
-                           @ GHC.Types.Char
-                           OtherData2.$fShowWord2
-                           (GHC.Show.showList__
-                              @ PhonemeType2.Phoneme
-                              PhonemeType2.$fShowPhoneme1
-                              ww1
-                              (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w))) }) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   $wa ::
     GHC.Prim.Int#
     -> forall b.
@@ -753,8 +529,8 @@ c5918816044d5d0409cecd1526975ae3
                             (\ a98 :: Text.Read.Lex.Lexeme ->
                              case a98 of wild {
                                DEFAULT -> Text.ParserCombinators.ReadP.Fail @ b
-                               Text.Read.Lex.Ident a2
-                               -> case GHC.Base.eqString a2 OtherData2.$fReadSyllWord4 of wild1 {
+                               Text.Read.Lex.Ident a1
+                               -> case GHC.Base.eqString a1 OtherData2.$fReadSyllWord4 of wild1 {
                                     GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
                                     GHC.Types.True -> lvl79 } })
                       } in
@@ -772,89 +548,35 @@ c5918816044d5d0409cecd1526975ae3
                          (Text.ParserCombinators.ReadP.NTCo:ReadP[0] <()>_R)
                            @ b
                            k) }) -}
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   $wa1 ::
     GHC.Prim.Int#
     -> forall b.
        (OtherData2.Syllable -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <L,U><L,C(U)>, Inline: [0] -}
-f117c6d37e2b33ff13a65b0aee53bddc
-  $wa2 ::
-    GHC.Prim.Int#
-    -> forall b.
-       (OtherData2.Word -> Text.ParserCombinators.ReadP.P b)
-       -> Text.ParserCombinators.ReadP.P b
-  {- Arity: 2, Strictness: <L,U><L,C(U)>, Inline: [0],
-     Unfolding: (\ ww :: GHC.Prim.Int#
-                   @ b
-                   w :: OtherData2.Word -> Text.ParserCombinators.ReadP.P b ->
-                 case GHC.Prim.tagToEnum#
-                        @ GHC.Types.Bool
-                        (GHC.Prim.<=# ww 10) of wild2 {
-                   GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
-                   GHC.Types.True
-                   -> let {
-                        lvl78 :: Text.ParserCombinators.ReadP.P b
-                        = let {
-                            lvl79 :: Text.ParserCombinators.ReadP.P b
-                            = GHC.Read.$wa
-                                @ PhonemeType2.Phoneme
-                                PhonemeType2.$fReadPhoneme2
-                                  `cast`
-                                (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
-                                          <PhonemeType2.Phoneme>_R))
-                                @ b
-                                (\ a7 :: [PhonemeType2.Phoneme] -> w (OtherData2.Word a7))
-                          } in
-                          Text.Read.Lex.expect2
-                            @ b
-                            (\ a98 :: Text.Read.Lex.Lexeme ->
-                             case a98 of wild {
-                               DEFAULT -> Text.ParserCombinators.ReadP.Fail @ b
-                               Text.Read.Lex.Ident a2
-                               -> case GHC.Base.eqString a2 OtherData2.$fReadWord4 of wild1 {
-                                    GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
-                                    GHC.Types.True -> lvl79 } })
-                      } in
-                      let {
-                        k :: () -> Text.ParserCombinators.ReadP.P b
-                          {- Arity: 1, Strictness: <L,A>, Inline: INLINE[0],
-                             Unfolding: InlineRule (1, True, True) (\ w2 :: () -> lvl78) -}
-                        = \ w2 :: () -> lvl78
-                      } in
-                      Text.ParserCombinators.ReadP.Look
-                        @ b
-                        (\ a98 :: GHC.Base.String ->
-                         (Text.ParserCombinators.ReadP.skipSpaces_skip a98)
-                           `cast`
-                         (Text.ParserCombinators.ReadP.NTCo:ReadP[0] <()>_R)
-                           @ b
-                           k) }) -}
-7c147c1d12883c4b2a450f11fdd82e21
+6bed9f244e447aea23a5cf828c2f8ae2
   data SyllWord = SyllWord [OtherData2.Syllable]
-26325dd47864c84829bfa1bf382a9842
+2594319a6dfcfc0bb1b53d39db7c217e
   data Syllable
     = Syllable {getOnset :: [PhonemeType2.Phoneme],
                 getNucleus :: PhonemeType2.Phoneme,
                 getCoda :: [PhonemeType2.Phoneme]}
-f117c6d37e2b33ff13a65b0aee53bddc
-  data Word = Word [PhonemeType2.Phoneme]
-7216c438911b16ac94ddb6cf3f5b8ce9
+880bbd518c9ed54a225c9a9d601064fe
   getCoda :: OtherData2.Syllable -> [PhonemeType2.Phoneme]
   RecSel OtherData2.Syllable
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: OtherData2.Syllable ->
                  case ds of wild { OtherData2.Syllable ds1 ds2 ds3 -> ds3 }) -}
-679b6eea56bd2eeb561cfb0917e4b1e5
+60fbca30b94d2c862bcae76870d644c8
   getNucleus :: OtherData2.Syllable -> PhonemeType2.Phoneme
   RecSel OtherData2.Syllable
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: OtherData2.Syllable ->
                  case ds of wild { OtherData2.Syllable ds1 ds2 ds3 -> ds2 }) -}
-a4b6e9cbec0ce7c0552f9acd48ebc70a
+3890233e515c5707b3298e97249f0eae
   getOnset :: OtherData2.Syllable -> [PhonemeType2.Phoneme]
   RecSel OtherData2.Syllable
   {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)>,
@@ -865,25 +587,18 @@ instance GHC.Classes.Eq [OtherData2.SyllWord]
   = OtherData2.$fEqSyllWord
 instance GHC.Classes.Eq [OtherData2.Syllable]
   = OtherData2.$fEqSyllable
-instance GHC.Classes.Eq [OtherData2.Word] = OtherData2.$fEqWord
 instance GHC.Read.Read [OtherData2.SyllWord]
   = OtherData2.$fReadSyllWord
 instance GHC.Read.Read [OtherData2.Syllable]
   = OtherData2.$fReadSyllable
-instance GHC.Read.Read [OtherData2.Word] = OtherData2.$fReadWord
 instance GHC.Show.Show [OtherData2.SyllWord]
   = OtherData2.$fShowSyllWord
 instance GHC.Show.Show [OtherData2.Syllable]
   = OtherData2.$fShowSyllable
-instance GHC.Show.Show [OtherData2.Word] = OtherData2.$fShowWord
 "SPEC/OtherData2 $dmreadsPrec @ Syllable" [ALWAYS] forall $dRead :: GHC.Read.Read
                                                                       OtherData2.Syllable
   GHC.Read.$dmreadsPrec @ OtherData2.Syllable $dRead
   = OtherData2.$fReadSyllable_$s$dmreadsPrec
-"SPEC/OtherData2 $dmreadsPrec @ Word" [ALWAYS] forall $dRead :: GHC.Read.Read
-                                                                  OtherData2.Word
-  GHC.Read.$dmreadsPrec @ OtherData2.Word $dRead
-  = OtherData2.$fReadWord_$s$dmreadsPrec
 "SPEC/OtherData2 readListDefault @ SyllWord" [ALWAYS] forall $dRead :: GHC.Read.Read
                                                                          OtherData2.SyllWord
   GHC.Read.readListDefault @ OtherData2.SyllWord $dRead
@@ -892,10 +607,6 @@ instance GHC.Show.Show [OtherData2.Word] = OtherData2.$fShowWord
                                                                          OtherData2.Syllable
   GHC.Read.readListDefault @ OtherData2.Syllable $dRead
   = OtherData2.$fReadSyllable_$sreadListDefault
-"SPEC/OtherData2 readListDefault @ Word" [ALWAYS] forall $dRead :: GHC.Read.Read
-                                                                     OtherData2.Word
-  GHC.Read.readListDefault @ OtherData2.Word $dRead
-  = OtherData2.$fReadWord_$sreadListDefault
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

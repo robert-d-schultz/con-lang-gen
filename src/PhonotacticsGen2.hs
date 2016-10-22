@@ -14,9 +14,9 @@ import PhonemeType2
 -- Make sonority hierarchy (consonants only)
 makeSonHier :: [Phoneme] -> RVar [[Phoneme]]
 makeSonHier cons = filter (not.null) . concat <$> sequence [glides, liquids, nasals, obstruents] where
-  (g, cons2) = partition (\x -> manner x == APPROXIMANT && place x >= ALVEOLOPALATAL) cons
-  (l, cons3) = partition (\x -> manner x `elem` [APPROXIMANT, LAPPROXIMANT, TRILL, FLAP, LFLAP]) cons2
-  (n, o) = partition (\x -> manner x == NASAL) cons3
+  (g, cons2) = partition (\x -> cmanner x == APPROXIMANT && cplace x >= ALVEOLOPALATAL) cons
+  (l, cons3) = partition (\x -> cmanner x `elem` [APPROXIMANT, LAPPROXIMANT, TRILL, FLAP, LFLAP]) cons2
+  (n, o) = partition (\x -> cmanner x == NASAL) cons3
   glides = furtherDivide g []
   liquids = furtherDivide l []
   nasals = furtherDivide n []

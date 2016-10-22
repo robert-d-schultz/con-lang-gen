@@ -1,6 +1,6 @@
 module WordGen2
 ( makeDictionary
-, makeWord
+, makeMorpheme
 , syllabifyWord
 ) where
 
@@ -22,12 +22,16 @@ import OtherData2
 makeDictionary :: Int -> [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar [Word]
 makeDictionary n vows sonhier settings = replicateM n (makeWord vows sonhier settings)
 
--- Generate a word given vowels, the consonant sonority hierarchy, and some settings
+-- Given consonant phonotactics, and vowel phonotactics, generate (one) root morpheme for a word
+makeWord :: [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar Word
+makeWord vows sonhier ((ns,xs), (ni,xi), (nt,xt), (ne,xe)) = Word . (:[]) <$> makeMorpheme vows sonhier ((ns,xs), (ni,xi), (nt,xt), (ne,xe))
+
+-- Generate a morpheme given vowels, the consonant sonority hierarchy, and some settings
 -- So far this only does vowel-nucleus syllables
 -- Maybe should have a "completely random" version
-makeWord :: [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar Word
-makeWord vows sonhier ((ns,xs), (ni,xi), (nt,xt), (ne,xe)) = do
-  -- decide how many syllables in the word
+makeMorpheme :: [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar Morpheme
+makeMorpheme vows sonhier ((ns,xs), (ni,xi), (nt,xt), (ne,xe)) = do
+  -- decide how many syllables in the morpheme
   s <- uniform ns xs
   -- pick the initial consonant cluster
   i <- uniform ni xi
@@ -38,11 +42,11 @@ makeWord vows sonhier ((ns,xs), (ni,xi), (nt,xt), (ne,xe)) = do
   -- pick vowels
   vowels <- choices s vows
   -- pick inside consonant clusters
-  inter <- replicateM (s-1) $ join $ makeConsonantCluster <$> uniform nt xt <*> return (sonhier ++ reverse (init sonhier)) <*> return []
+  inter <- replicateM (max (s-1) 0) $ join $ makeConsonantCluster <$> uniform nt xt <*> return (sonhier ++ reverse (init sonhier)) <*> return []
   --shuffle vowels and inside consonants together
   let inside = concat $ transpose [map (:[]) vowels, inter]
 
-  return $ Word $ initial ++ concat inside ++ end
+  return $ Morpheme $ initial ++ concat inside ++ end
 
 -- Generate a consonant cluster
 -- Goes through sonority hierarchy taking consonants from each grouping
@@ -58,32 +62,34 @@ makeConsonantCluster l sonhier out = do
 -- Syllabification
 -- Given a word and sonority hierarchy, syllabify the word
 syllabifyWord :: [[Phoneme]] -> Word -> SyllWord
-syllabifyWord sonhier (Word phones) = SyllWord sylls where
-  groups = breakWord phones [] sonhier
+syllabifyWord sonhier (Word morphemes) = SyllWord sylls where
+  -- Combine morphemes into one string of phonemes
+  phonemes = concatMap getPhonemes morphemes
+  groups = breakWord phonemes [] sonhier
   sylls = map (makeSyllable sonhier) groups
 
 -- Given a group of phones, make a proper syllable structure
 makeSyllable :: [[Phoneme]] -> [Phoneme] -> Syllable
-makeSyllable sonhier phones = Syllable onset nucleus coda where
-  nucleus = maximumBy (comparing (retrieveSon sonhier)) phones
-  i = last $ elemIndices nucleus phones
-  (onset, _)= splitAt i phones
-  (_, coda)= splitAt (i+1) phones
+makeSyllable sonhier phonemes = Syllable onset nucleus coda where
+  nucleus = maximumBy (comparing (retrieveSon sonhier)) phonemes
+  i = last $ elemIndices nucleus phonemes
+  (onset, _)= splitAt i phonemes
+  (_, coda)= splitAt (i+1) phonemes
 
 -- Input the raw string of phones, output groups of phones that correspond to syllables
 breakWord :: [Phoneme] -> [Phoneme] -> [[Phoneme]] -> [[Phoneme]]
 breakWord [] syll sonhier = [syll]
-breakWord phones [] sonhier = breakWord (init phones) [last phones] sonhier
-breakWord phones syll sonhier
+breakWord phonemes [] sonhier = breakWord (init phonemes) [last phonemes] sonhier
+breakWord phonemes syll sonhier
   -- start a new syllable for a vowel immediately after another vowel
-  | retrieveSon sonhier (last phones) == length sonhier + 1 &&
-    retrieveSon sonhier (head syll) == length sonhier + 1                  = breakWord phones [] sonhier ++ [syll]
+  | retrieveSon sonhier (last phonemes) == length sonhier + 1 &&
+    retrieveSon sonhier (head syll) == length sonhier + 1                  = breakWord phonemes [] sonhier ++ [syll]
   -- start new syllable when at local minimum (edge case)
   | length syll < 2 &&
-    retrieveSon sonhier (last phones) > retrieveSon sonhier (head syll)    = breakWord (init phones) (last phones : syll) sonhier
+    retrieveSon sonhier (last phonemes) > retrieveSon sonhier (head syll)    = breakWord (init phonemes) (last phonemes : syll) sonhier
   -- start new syllable when at local minimum
   | length syll >= 2 &&
-    retrieveSon sonhier (last phones) > retrieveSon sonhier (head syll) &&
-    retrieveSon sonhier (syll !! 1) >= retrieveSon sonhier (head syll)     = breakWord phones [] sonhier ++ [syll]
+    retrieveSon sonhier (last phonemes) > retrieveSon sonhier (head syll) &&
+    retrieveSon sonhier (syll !! 1) >= retrieveSon sonhier (head syll)     = breakWord phonemes [] sonhier ++ [syll]
   -- otherwise add next phone to syllable
-  | otherwise                                                              = breakWord (init phones) (last phones : syll) sonhier
+  | otherwise                                                              = breakWord (init phonemes) (last phonemes : syll) sonhier

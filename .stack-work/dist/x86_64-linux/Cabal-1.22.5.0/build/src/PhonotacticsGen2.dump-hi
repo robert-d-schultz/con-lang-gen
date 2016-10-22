@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-17 20:49:37.834554 UTC
+2016-10-22 02:56:02.212498 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen2 7103
-  interface hash: 1e9d5e2558f8360e31c178497ee7b1ed
-  ABI hash: d87784e8c6b16bb65eef600d5207f998
+  interface hash: ba9df6f38e3e83b48bce597989d4faef
+  ABI hash: 2783b78d0608e224248753914cd2d938
   export-list hash: eeb4fc49f527130e45ddd26216cfa05a
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
@@ -89,47 +89,47 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  PhonemeType2 a9247e25a5379dedeed4d4661db0033f
-  exports: 65413a119a4e8e15b6921e348e21398d
-  ALVEOLOPALATAL 6edc53d6a9633f5a2b2463bf152c94ef
-  APPROXIMANT 8e992136fce538200d4070732d96c18f
-  Diphthong 4ed3d8413861709394530a4ca3b3d760
-  FLAP 8351454d2171c30eae2625c7246fe0d0
-  LAPPROXIMANT 702a000ccd5b4bcbd01a299bbee30154
-  LFLAP 26d90a6ea07d64cc29e8cfe8bcd1745f
-  NASAL e239d4e0e5c92c1d3ed5a316e5c8db76
-  Phoneme 3abb4073c17ef07e2eb6d2446d16852f
-  TRILL 9825e2d4abe3ff0f199ac80ea298864e
-  Vowel 423983cba00b3a4daecba49c9b6a2681
-  manner 02f7ce6247e618afbd29f9dad29c7dd6
-  place 8d658c2b83d84d3d6a3dfbf6f77f5a55
+import  -/  PhonemeType2 197339ce6b16abf97787f114b13340ff
+  exports: df9b2faa8257842f4b45d50bfdeb2c0c
+  ALVEOLOPALATAL 7e3d63e3234d8fb2fc1e7ef87f1610f4
+  APPROXIMANT 57179ac9330f0a6a6cacb2b1f21f5a30
+  Diphthong e39fe806f632e9a04b50747a0a03008e
+  FLAP 4c03b39b6f1fbde5bac5f3878b9da27f
+  LAPPROXIMANT c70fe2e653e5f27fbbcee02aaf60f916
+  LFLAP 1b494ff2f51b82db5845f010e2bdbdc1
+  NASAL 0d2fd6bc2c4ba81f05bee7974aa27c6e
+  Phoneme 20569906d69b1b60892d82b112a7f488
+  TRILL 83b20206325bba2ed3b347c642118bd7
+  Vowel 7b55ccf548e3963c82bbac249efc2663
+  cmanner 5e52ece4b8401f167d25be0a7c4443cc
+  cplace 6aa92e5397db80d98535c96cabe05571
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random.Distribution.Uniform ce34c1edd0e59e868fcf9e0bf914c4ef
 import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
-1cf8b6a345752763d0d474ac8e078861
+530fe4cc137e039952380fb7956650cc
   $wgo ::
     [PhonemeType2.Phoneme]
     -> (# [PhonemeType2.Phoneme], [PhonemeType2.Phoneme] #)
   {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
-42bfe8529d782f3b91480029356c59d1
+3db6d0bf47486236493d403ab85acae9
   $wgo1 ::
     [PhonemeType2.Phoneme]
     -> (# [PhonemeType2.Phoneme], [PhonemeType2.Phoneme] #)
   {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
-8a97400f894bc59e2ff97a67523a0aa1
+e455f866e5f34a26d50766a1b7e5aab5
   $wgo2 ::
     [PhonemeType2.Phoneme]
     -> (# [PhonemeType2.Phoneme], [PhonemeType2.Phoneme] #)
   {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
-05935e2085c61c94ca32ef5b90d970c4
+1afdcddd391ca3e5be0f6dc6bdc30e65
   furtherDivide ::
     [PhonemeType2.Phoneme]
     -> [[PhonemeType2.Phoneme]]
     -> Data.RVar.RVar [[PhonemeType2.Phoneme]]
   {- Arity: 2, Strictness: <S,1*U><L,U> -}
-01f2275a8ce2c50f32105699603d198c
+e0ee0d6547cfbb4bb98721e48cc0f9dd
   makeSonHier ::
     [PhonemeType2.Phoneme] -> Data.RVar.RVar [[PhonemeType2.Phoneme]]
   {- Arity: 1, Strictness: <L,1*U>,
@@ -243,7 +243,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                                      <Data.Random.Source.Internal.Prim.Prim>_R
                                      <Data.Functor.Identity.Identity>_R))
                            (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[[PhonemeType2.Phoneme]]>_N))) -}
-0b97e9ed4ad2dc7e5bfe5b2854706f24
+9bc34ed99406815b53e85f4f2b7d028c
   makeSonHier1 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [[PhonemeType2.Phoneme]]]
@@ -257,11 +257,11 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-c612dd05e568876f95834f66207a5b78
+ed791fd28eeaf2bc534f0efea65ad671
   makeSonHier_go ::
     [[[PhonemeType2.Phoneme]]] -> [[PhonemeType2.Phoneme]]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-9cb866c565054a0703ca4915f697401c
+3c45675ce5d6cd33741cce877432aff6
   retrieveSon ::
     [[PhonemeType2.Phoneme]] -> PhonemeType2.Phoneme -> GHC.Types.Int
   {- Arity: 2, Strictness: <S,1*U><S,1*U>,
@@ -283,13 +283,13 @@ c612dd05e568876f95834f66207a5b78
                                    (GHC.Types.[] @ [PhonemeType2.Phoneme])))
                              0 of wild1 {
                         [] -> Data.Maybe.fromJust1 @ GHC.Types.Int : a5 ds1 -> a5 }
-                   PhonemeType2.Vowel ds1 ds2 ds3 ds4
+                   PhonemeType2.Vowel ds1 ds2 ds3 ds4 ds5
                    -> case GHC.List.$wlenAcc
                              @ [PhonemeType2.Phoneme]
                              sonHier
                              0 of ww2 { DEFAULT ->
                       GHC.Types.I# (GHC.Prim.+# ww2 1) }
-                   PhonemeType2.Diphthong ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8
+                   PhonemeType2.Diphthong ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9
                    -> case GHC.List.$wlenAcc
                              @ [PhonemeType2.Phoneme]
                              sonHier

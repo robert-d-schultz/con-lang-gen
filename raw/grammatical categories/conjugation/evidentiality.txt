@@ -1,0 +1,5 @@
+[ [EXP, REP]
+, [EXP, HSY, QUO]
+, [VIS, NVIS, REP]
+, [VIS, NVIS, HSY, QUO]
+]

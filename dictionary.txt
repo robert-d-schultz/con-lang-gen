@@ -1,68 +1,152 @@
-Consonant inventory: /d̪/, /d̪ʰ/, /n̪/, /ɾ̪/, /ɺ̪/, /ð̞/, /l̪/, /r̪/, /d/, /dʰ/, /n/, /ɾ/, /ɺ/, /ɹ/, /l/, /r/, /d̠/, /d̠ʰ/, /n̠/, /ɾ̠/, /ɺ̠/, /ɹ̠/, /l̠/, /r̠/, /ɖ/, /ɖʰ/, /ɳ/, /ɽ/, /ɺ̢/, /ɻ/, /ɭ/, /ɽ͡r/, /ɟ/, /ɟʰ/, /ɲ/, /ʎ̯/, /j/, /ʎ/, /ɢ/, /ɢʰ/, /ɴ/, /ʟ̠̆/, /ʁ̞/, /ʟ̠/, /ɡ/, /ɡʰ/, /ŋ/, /ʟ̆/, /ɰ/, /ʟ/, /ʡ/, /ʡʰ/, /ʡ̮/, /ɦ̞/, and /ʢ/
+Consonant inventory:
+<table>
+	<tr>
+		<th colspan="9">Consonant Inventory</th>
+	</tr>
+	<tr>
+		<td></td>
+		<td>LABIAL</td>
+		<td>DENTAL</td>
+		<td>ALVEOLAR</td>
+		<td>POSTALVEOLAR</td>
+		<td>RETROFLEX</td>
+		<td>UVULAR</td>
+		<td>VELAR</td>
+		<td>LARYNGEAL</td>
+	</tr>
+	<tr>
+		<th rowspan="2">STOP</th>
+	</tr>
+	<tr>
+		<td></td>
+		<td>d̪</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	<tr>
+		<th rowspan="2">FLAP</th>
+	</tr>
+	<tr>
+		<td>ⱱ̟</td>
+		<td>ɾ̪</td>
+		<td>ɾ</td>
+		<td>ɾ̠</td>
+		<td>ɽ</td>
+		<td></td>
+		<td></td>
+		<td>ʡ̮</td>
+	<tr>
+		<th rowspan="2">LFLAP</th>
+	</tr>
+	<tr>
+		<td></td>
+		<td>ɺ̪</td>
+		<td>ɺ</td>
+		<td>ɺ̠</td>
+		<td>ɺ̢</td>
+		<td>ʟ̠̆</td>
+		<td>ʟ̆</td>
+		<td></td>
+	<tr>
+		<th rowspan="2">FRICATIVE</th>
+	</tr>
+	<tr>
+		<td></td>
+		<td>z̪</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	<tr>
+		<th rowspan="2">SILIBANT</th>
+	</tr>
+	<tr>
+		<td></td>
+		<td>ERROR</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	<tr>
+		<th rowspan="2">TRILL</th>
+	</tr>
+	<tr>
+		<td>ʙ</td>
+		<td>r̪</td>
+		<td>r</td>
+		<td>r̠</td>
+		<td>ɽ͡r</td>
+		<td></td>
+		<td></td>
+		<td>ʢ</td>
+</table>[Consonant {place = LABIAL, manner = FLAP, voice = MODAL, csymbol = "\11377\799"},Consonant {place = LABIAL, manner = TRILL, voice = MODAL, csymbol = "\665"},Consonant {place = DENTAL, manner = STOP, voice = MODAL, csymbol = "d\810"},Consonant {place = DENTAL, manner = FLAP, voice = MODAL, csymbol = "\638\810"},Consonant {place = DENTAL, manner = LFLAP, voice = MODAL, csymbol = "\634\810"},Consonant {place = DENTAL, manner = FRICATIVE, voice = MODAL, csymbol = "z\810"},Consonant {place = DENTAL, manner = SILIBANT, voice = MODAL, csymbol = "ERROR"},Consonant {place = DENTAL, manner = TRILL, voice = MODAL, csymbol = "r\810"},Consonant {place = ALVEOLAR, manner = FLAP, voice = MODAL, csymbol = "\638"},Consonant {place = ALVEOLAR, manner = LFLAP, voice = MODAL, csymbol = "\634"},Consonant {place = ALVEOLAR, manner = TRILL, voice = MODAL, csymbol = "r"},Consonant {place = POSTALVEOLAR, manner = FLAP, voice = MODAL, csymbol = "\638\800"},Consonant {place = POSTALVEOLAR, manner = LFLAP, voice = MODAL, csymbol = "\634\800"},Consonant {place = POSTALVEOLAR, manner = TRILL, voice = MODAL, csymbol = "r\800"},Consonant {place = RETROFLEX, manner = FLAP, voice = MODAL, csymbol = "\637"},Consonant {place = RETROFLEX, manner = LFLAP, voice = MODAL, csymbol = "\634\802"},Consonant {place = RETROFLEX, manner = TRILL, voice = MODAL, csymbol = "\637\865r"},Consonant {place = UVULAR, manner = LFLAP, voice = MODAL, csymbol = "\671\774\800"},Consonant {place = VELAR, manner = LFLAP, voice = MODAL, csymbol = "\671\774"},Consonant {place = LARYNGEAL, manner = FLAP, voice = MODAL, csymbol = "\673\814"},Consonant {place = LARYNGEAL, manner = TRILL, voice = MODAL, csymbol = "\674"}]
+Vowel inventory: /ɛ/, /æ/, /ʌ̈/, and /ɘ/
 
-[Consonant {place = DENTAL, manner = STOP, voice = MODAL, csymbol = "d\810"},Consonant {place = DENTAL, manner = STOP, voice = ASPIRATED, csymbol = "d\810\688"},Consonant {place = DENTAL, manner = NASAL, voice = MODAL, csymbol = "n\810"},Consonant {place = DENTAL, manner = FLAP, voice = MODAL, csymbol = "\638\810"},Consonant {place = DENTAL, manner = LFLAP, voice = MODAL, csymbol = "\634\810"},Consonant {place = DENTAL, manner = APPROXIMANT, voice = MODAL, csymbol = "\240\798"},Consonant {place = DENTAL, manner = LAPPROXIMANT, voice = MODAL, csymbol = "l\810"},Consonant {place = DENTAL, manner = TRILL, voice = MODAL, csymbol = "r\810"},Consonant {place = ALVEOLAR, manner = STOP, voice = MODAL, csymbol = "d"},Consonant {place = ALVEOLAR, manner = STOP, voice = ASPIRATED, csymbol = "d\688"},Consonant {place = ALVEOLAR, manner = NASAL, voice = MODAL, csymbol = "n"},Consonant {place = ALVEOLAR, manner = FLAP, voice = MODAL, csymbol = "\638"},Consonant {place = ALVEOLAR, manner = LFLAP, voice = MODAL, csymbol = "\634"},Consonant {place = ALVEOLAR, manner = APPROXIMANT, voice = MODAL, csymbol = "\633"},Consonant {place = ALVEOLAR, manner = LAPPROXIMANT, voice = MODAL, csymbol = "l"},Consonant {place = ALVEOLAR, manner = TRILL, voice = MODAL, csymbol = "r"},Consonant {place = POSTALVEOLAR, manner = STOP, voice = MODAL, csymbol = "d\800"},Consonant {place = POSTALVEOLAR, manner = STOP, voice = ASPIRATED, csymbol = "d\800\688"},Consonant {place = POSTALVEOLAR, manner = NASAL, voice = MODAL, csymbol = "n\800"},Consonant {place = POSTALVEOLAR, manner = FLAP, voice = MODAL, csymbol = "\638\800"},Consonant {place = POSTALVEOLAR, manner = LFLAP, voice = MODAL, csymbol = "\634\800"},Consonant {place = POSTALVEOLAR, manner = APPROXIMANT, voice = MODAL, csymbol = "\633\800"},Consonant {place = POSTALVEOLAR, manner = LAPPROXIMANT, voice = MODAL, csymbol = "l\800"},Consonant {place = POSTALVEOLAR, manner = TRILL, voice = MODAL, csymbol = "r\800"},Consonant {place = RETROFLEX, manner = STOP, voice = MODAL, csymbol = "\598"},Consonant {place = RETROFLEX, manner = STOP, voice = ASPIRATED, csymbol = "\598\688"},Consonant {place = RETROFLEX, manner = NASAL, voice = MODAL, csymbol = "\627"},Consonant {place = RETROFLEX, manner = FLAP, voice = MODAL, csymbol = "\637"},Consonant {place = RETROFLEX, manner = LFLAP, voice = MODAL, csymbol = "\634\802"},Consonant {place = RETROFLEX, manner = APPROXIMANT, voice = MODAL, csymbol = "\635"},Consonant {place = RETROFLEX, manner = LAPPROXIMANT, voice = MODAL, csymbol = "\621"},Consonant {place = RETROFLEX, manner = TRILL, voice = MODAL, csymbol = "\637\865r"},Consonant {place = PALATAL, manner = STOP, voice = MODAL, csymbol = "\607"},Consonant {place = PALATAL, manner = STOP, voice = ASPIRATED, csymbol = "\607\688"},Consonant {place = PALATAL, manner = NASAL, voice = MODAL, csymbol = "\626"},Consonant {place = PALATAL, manner = LFLAP, voice = MODAL, csymbol = "\654\815"},Consonant {place = PALATAL, manner = APPROXIMANT, voice = MODAL, csymbol = "j"},Consonant {place = PALATAL, manner = LAPPROXIMANT, voice = MODAL, csymbol = "\654"},Consonant {place = UVULAR, manner = STOP, voice = MODAL, csymbol = "\610"},Consonant {place = UVULAR, manner = STOP, voice = ASPIRATED, csymbol = "\610\688"},Consonant {place = UVULAR, manner = NASAL, voice = MODAL, csymbol = "\628"},Consonant {place = UVULAR, manner = LFLAP, voice = MODAL, csymbol = "\671\774\800"},Consonant {place = UVULAR, manner = APPROXIMANT, voice = MODAL, csymbol = "\641\798"},Consonant {place = UVULAR, manner = LAPPROXIMANT, voice = MODAL, csymbol = "\671\800"},Consonant {place = VELAR, manner = STOP, voice = MODAL, csymbol = "\609"},Consonant {place = VELAR, manner = STOP, voice = ASPIRATED, csymbol = "\609\688"},Consonant {place = VELAR, manner = NASAL, voice = MODAL, csymbol = "\331"},Consonant {place = VELAR, manner = LFLAP, voice = MODAL, csymbol = "\671\774"},Consonant {place = VELAR, manner = APPROXIMANT, voice = MODAL, csymbol = "\624"},Consonant {place = VELAR, manner = LAPPROXIMANT, voice = MODAL, csymbol = "\671"},Consonant {place = LARYNGEAL, manner = STOP, voice = MODAL, csymbol = "\673"},Consonant {place = LARYNGEAL, manner = STOP, voice = ASPIRATED, csymbol = "\673\688"},Consonant {place = LARYNGEAL, manner = FLAP, voice = MODAL, csymbol = "\673\814"},Consonant {place = LARYNGEAL, manner = APPROXIMANT, voice = MODAL, csymbol = "\614\798"},Consonant {place = LARYNGEAL, manner = TRILL, voice = MODAL, csymbol = "\674"}]
-Vowel inventory: /ɤ̞/, /ɶ̽/, /ɘ/, and /ɪ̈/
-
-Diphthongs: /ɪ̈ɶ̽/, /ɘɤ̞/, /ɤ̞ɶ̽/, and /ɤ̞ɘ/
+Diphthongs: /ʌ̈ɘ/, /ɘɛ/, /æɛ/, and /ʌ̈ɛ/
 
 Sonority hierarchy: 
-ɤ̞, ɶ̽, ɘ, ɪ̈, ɪ̈ɶ̽, ɘɤ̞, ɤ̞ɶ̽, ɤ̞ɘ
-j, ʁ̞, ɰ, ɦ̞
-ʢ
-ɽ͡r, ʎ̯, ʎ, ʟ̠̆, ʟ̠, ʟ̆, ʟ, ʡ̮
-ɭ
-ɾ̪, ɺ̪, ð̞, l̪, r̪, ɾ, ɺ, ɹ, l, r, ɾ̠, ɺ̠, ɹ̠, l̠, r̠, ɽ, ɺ̢, ɻ
-n̪, n, n̠, ɳ, ɲ, ɴ, ŋ
-ɡʰ, ʡ, ʡʰ
-d̪, d̪ʰ, d, dʰ, d̠, d̠ʰ, ɖ, ɖʰ, ɟ, ɟʰ, ɢ, ɢʰ, ɡ
+ɛ, æ, ʌ̈, ɘ, ʌ̈ɘ, ɘɛ, æɛ, ʌ̈ɛ
+ʡ̮, ʢ
+ʟ̆
+ⱱ̟, ʙ, ɾ̪, ɺ̪, r̪, ɾ, ɺ, r, ɾ̠, ɺ̠, r̠, ɽ, ɺ̢, ɽ͡r, ʟ̠̆
+ERROR
+z̪
+d̪
 
-/dʡʰɘɤ̞rn̪.d̪ɪ̈jʢ/
-/ɟʡɘɤ̞.ɰɤ̞ɘɰ.ʢɘɤ̞ɦ̞ʡ̮.l̪ɤ̞ɘ/
-/ɖʰɤ̞ɶ̽ʎɾ̠.ʡɪ̈ɶ̽ɭ.ɺ̢ɭɘɤ̞n̪.ɖʰʡɶ̽ʁ̞/
-/ɤ̞ʢ.ʟ̠ɘʁ̞ʢ/
-/ɖʰɺɘɤ̞jʟ̠̆.l̪ɶ̽ʁ̞.ʢɪ̈.ɦ̞ɤ̞ɘɭ/
-/ɤ̞ɶ̽ʢ.ʡɤ̞/
-/ɤ̞/
-/ɟʡʰɪ̈ɶ̽/
-/d̪ɘʢʟ̠.ɻɤ̞ɶ̽ʢ.ɭɪ̈ɶ̽ʢ/
-/ɶ̽ʢ.ɭɪ̈ɶ̽ʁ̞ɭ/
-/ɪ̈.ʎ̯ɘɰʢ.ɭɘjʢ/
-/ɖʰɘɤ̞.ɰɤ̞ɶ̽ɳ.ɢʰʢɪ̈ʡʰ/
-/nɤ̞ɘʁ̞ɺ.nɤ̞ɶ̽ʁ̞ʢ/
-/ʡʰɘj.ɾ̪ɤ̞ɶ̽ɰ/
-/ɪ̈ɶ̽jʟ̆.ɭɘɦ̞ʟ.ɡʰɶ̽ʢʟ̠̆.ʡɶ̽/
-/d̠ʰn̠ɘj.ʢɤ̞ɘʁ̞ɭ.ɾɪ̈ɶ̽/
-/ɘɤ̞ʢ.ɾ̠ɶ̽.ɦ̞ɤ̞ɘʡ̮.ɭɤ̞ɰ/
-/ɪ̈ɺ.ɳɤ̞ɘɦ̞ʟ̠̆/
-/ɢʰɤ̞ɘʎ̯ɭ.ʡʰɪ̈ɶ̽ʟ̆.ɭɘɤ̞ʢ.ʟ̠̆ɪ̈/
-/ʡɘj.ʢɪ̈ɰ/
-/ɶ̽ɽ͡rɭ/
-/ɤ̞ɶ̽ʢ.ɽ͡rɘʢʟ/
-/ɤ̞ʟ̠ɭ/
-/ɡʰnɘɤ̞.ɦ̞ɤ̞ɶ̽/
-/nɘʢ.ʟ̠̆ɪ̈ɾ̠/
-/ɤ̞ʢɭ.rɘɦ̞ʢ/
-/dʰɘ.ʢɘɤ̞ɾ̠ɲ.ʡɤ̞ɶ̽/
-/ɤ̞ɘɭn̠/
-/ɟʰɡʰɤ̞.ɦ̞ɪ̈ɶ̽.ʁ̞ɶ̽/
-/dɤ̞ɘɦ̞.ʢɤ̞ɘ.jɤ̞ɶ̽ɰʢ/
-/ɡʰɭɤ̞ʢ/
-/ɡʰɘɤ̞ʢɺ̠.ŋɤ̞ɘ.ʢɘɤ̞/
-/r̪ɭɪ̈ɶ̽.ʢɤ̞n.ʡʡʰɘɦ̞.ʡ̮ɶ̽ʢɹ/
-/nɘɦ̞ʢ.ɾ̠ɘ.ʁ̞ɘɰʢ.ʟ̆ɤ̞ɶ̽ɦ̞/
-/ɘɤ̞ɭ.ŋɤ̞ɘʢʡ̮/
-/ɶ̽/
-/ɲrɘɤ̞ɭ.n̪ɘɤ̞.jɤ̞ɶ̽/
-/ɡɤ̞ɘɭ.l̠ɤ̞ɘʢ/
-/rɭɤ̞ɶ̽.ɭɘ.ʁ̞ɘɤ̞ɭ.dʰɘɤ̞ʢ/
-/ɟʰʡʰɤ̞ɶ̽.ʢɪ̈ɶ̽ʟɭ.ʡʰɶ̽jʢ/
-/ɡʰn̪ɤ̞.ɺ̢ɪ̈ɶ̽ʢ/
-/ɪ̈.ʟ̠ɤ̞ɶ̽.ʁ̞ɘ/
-/d̪ʰɘʟ̠̆.ɭɪ̈ɶ̽ʟ̠.ɡʰɤ̞ɘɭ/
-/ɘɤ̞ʟ̠/
-/ɟɽ͡rɤ̞ʁ̞/
-/ɖʰɡʰɪ̈ɶ̽ʢɭ.ʡɘɰʟ̆/
-/d̠ʰɪ̈ɶ̽ʢɭ/
-/ʟ̆ʢɘɤ̞ɺ.ɡʰʡʰɤ̞ɘ.ʁ̞ɤ̞.ʁ̞ɘɰ/
-/ŋɭɪ̈ɦ̞ɽ͡r.n̠ɘɤ̞d̪/
-/ʡʰɺ̪ɤ̞ɘ/
+/d̪z̪æɺ.ERRORæʟ̆ɾ̠.d̪æɛ.z̪ɺ̪ʟ̆ʌ̈/
+/ɾ̠æɛʟ̆.ʙʌ̈ɛʟ̆ERROR.z̪ʌ̈ɘ.z̪z̪æ/
+/z̪ERRORʌ̈ɘ.ʡ̮ʌ̈ɛ.ʟ̆ʌ̈ɛʡ̮/
+/d̪ʌ̈.ʟ̆ʌ̈ɘ.ʟ̆æʡ̮z̪/
+/z̪ɘʡ̮/
+/rʟ̆ʌ̈ɛʡ̮.ʟ̆ʌ̈ɘʢʟ̆/
+/d̪ERRORɘʢ.ɽ͡ræ.ʟ̠̆æʟ̆r/
+/d̪ERRORɘʡ̮.ʟ̆æɛʡ̮ʟ̆.ERRORʌ̈ɛʡ̮/
+/ERRORɾ̠ʌ̈ɛʡ̮ʟ̠̆.z̪æ.ɺ̠æɛ/
+/z̪ERRORɘɛr̪z̪.d̪ʌ̈ɛʡ̮.z̪ʌ̈ɘ/
+/z̪ɘʢERROR.z̪ʌ̈.ʟ̆æʢ/
+/ERRORʌ̈ɛʡ̮ɽ͡r.d̪ɘɽ/
+/d̪z̪æ.ɽʌ̈ʢʟ̆.z̪æ/
+/z̪ɛ.d̪ʌ̈ɛ.ʢæɛ.ʡ̮ʌ̈ɛ/
+/æɛʢ/
+/d̪z̪æ.ʢɛʢʟ̆/
+/d̪ʌ̈/
+/æɛʢ.ERRORɘɛ.ʢɘ/
+/d̪ʌ̈ʢ.ɺæʟ̆ⱱ̟/
+/z̪ʌ̈ʟ̆z̪/
+/ʌ̈ʟ̠̆ERROR.z̪ɛʟ̆/
+/ʌ̈ʢ.ʙɘɛʟ̆ɾ.z̪ʌ̈ɘɽ.ERRORʌ̈/
+/d̪ERRORæ.ʢʌ̈ʡ̮.ʟ̆ɘ.ʢæɛʢz̪/
+/d̪z̪ʌ̈ʟ̆.z̪ERRORæɛʟ̆ɾ̪/
+/d̪ERRORɛ/
+/d̪z̪ʌ̈.ʡ̮ʌ̈ⱱ̟.ERRORɘ.ʢæʢʟ̆/
+/ɘɛʡ̮/
+/ERRORʟ̆ʌ̈ɘ/
+/æʟ̆ʙ/
+/d̪ʟ̆ʌ̈ʢʟ̠̆/
+/d̪æɛʢɺ̠/
+/d̪æɛ.ʡ̮ɘ.ʢɘʟ̆.d̪ʌ̈ɘ/
+/ʌ̈ɘʡ̮.r̪ɛʡ̮.ʟ̆ʌ̈ɘʢʟ̆.ERRORʌ̈ɘʟ̆/
+/ʌ̈ɛʡ̮.ʟ̆ɘɛʟ̆.ERRORɛʢ.ɾ̠ʌ̈ɘɺ̠/
+/d̪z̪æʟ̆.ERRORɘɛ/
+/z̪ERRORʌ̈ɛʢERROR/
+/ʌ̈ɘʢ.ʟ̆ɛd̪/
+/ɘ.ʟ̆ʌ̈ɛʟ̆.ɽ͡ræɛ/
+/d̪ɘɛʢʟ̆/
+/d̪ERRORɛ/
+/d̪ʌ̈ɘɺ/
+/z̪ɾ̠ɘ.ʢæERRORz̪/
+/ʌ̈ɛɺ̪.z̪æɛ.ʟ̆ɘɛ.ʡ̮ʌ̈ɘ/
+/d̪ʌ̈ʢʟ̆.ɺ̢ɛr̪.z̪z̪ɘʢʟ̆.ʙæ/
+/æɛ.ʟ̆æʡ̮/
+/d̪z̪ʌ̈ɘ.ʟ̆ʌ̈ʟ̆.z̪æɛɾERROR.d̪æɛʢd̪/
+/ɛ/
+/d̪ɘ/
+/ɘʢ.ʟ̆ʌ̈ʢʟ̆/
+/d̪ɘɛERROR.d̪æ/

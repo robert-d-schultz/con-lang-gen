@@ -1,13 +1,11 @@
 module OtherData2
-( Word(..)
-, SyllWord(..)
+( SyllWord(..)
 , Syllable(..)
 ) where
 
-import Prelude hiding (Word)
 import PhonemeType2
 
-data Word = Word [Phoneme] deriving (Eq, Show, Read)
+-- Used to parse out syllables from a word
 data SyllWord = SyllWord [Syllable] deriving (Eq, Show, Read)
 data Syllable = Syllable
               { getOnset :: [Phoneme]

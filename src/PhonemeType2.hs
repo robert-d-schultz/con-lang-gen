@@ -1,38 +1,45 @@
 -- Data types for phonemes
 module PhonemeType2
-( Phoneme(..)
+( Word(..)
+, Morpheme(..)
+, Phoneme(..)
 , Place (..)
 , Manner(..)
 , Phonation(..)
 , Height(..)
 , Backness(..)
 , Roundedness(..)
-, PhonemeInventory(..)
+, Length(..)
 ) where
 
-import Prelude
+import Prelude hiding (Word)
+
+data Word = Word { getMorphemes :: [Morpheme] } deriving (Eq, Show, Read)
+data Morpheme = Morpheme { getPhonemes :: [Phoneme] } deriving (Eq, Show, Read)
 
 data Phoneme = Consonant
-           { place :: Place
-           , manner :: Manner
-           , voice :: Phonation
+           { cplace :: Place
+           , cmanner :: Manner
+           , cvoice :: Phonation
            , csymbol :: String
            }
            | Vowel
-           { height :: Height
-           , backness :: Backness
-           , roundedness :: Roundedness
+           { vheight :: Height
+           , vbackness :: Backness
+           , vroundedness :: Roundedness
+           , vlength :: Length
            , vsymbol :: String
            }
            | Diphthong
-           { height1 :: Height
-           , backness1 :: Backness
-           , roundedness1 :: Roundedness
-           , vsymbol1 :: String
-           , height2 :: Height
-           , backness2 :: Backness
-           , roundedness2 :: Roundedness
-           , vsymbol2 :: String
+           { dheight1 :: Height
+           , dbackness1 :: Backness
+           , droundedness1 :: Roundedness
+           , dlength1 :: Length
+           , dheight2 :: Height
+           , dbackness2 :: Backness
+           , droundedness2 :: Roundedness
+           , dlength2 :: Length
+           , dsymbol :: String
            }
            | Blank deriving (Eq, Ord, Show, Read)
 
@@ -99,7 +106,10 @@ data Backness    = BACK
                  | NEARFRONT
                  | FRONT deriving (Eq, Ord, Show, Read, Enum, Bounded)
 
-data Roundedness = ROUNDED
+data Roundedness = DEFAULT
+                 | ROUNDED
                  | UNROUNDED deriving (Eq, Ord, Show, Read, Enum, Bounded)
 
-data PhonemeInventory = PhonemeInventory [Phoneme] deriving (Eq, Ord, Show, Read)
+data Length = SHORT
+            | NORMAL
+            | LONG deriving (Eq, Ord, Show, Read, Enum, Bounded)
