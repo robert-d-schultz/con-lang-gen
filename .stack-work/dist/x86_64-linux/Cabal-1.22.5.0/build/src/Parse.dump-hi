@@ -1,27 +1,30 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-28 03:36:48.313559 UTC
+2016-10-27 06:13:03.292284 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Parse 7103
-  interface hash: d95801e48267a350b330f76722663e63
-  ABI hash: ee5615312a6e4a4034626ef25d3825f5
-  export-list hash: a43fa29eab0d91fcd1a61d63814f3862
-  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
-  flag hash: 962af636f8e927040c7daa9c21457292
+  interface hash: 9227ad23d68e7890481f621eaa1b3258
+  ABI hash: b8bdac844d6b2beff3bd3eb9f1ca1be8
+  export-list hash: 593f3ee1da80a8ac3dee4ced2a04f7a8
+  orphan hash: 3a4c3cc797a5998c6166efd9b269de76
+  flag hash: 9b5f0a9c5ab937702e8736ae3b06ccc6
   sig of: Nothing
   used TH splices: False
   where
 exports:
   Parse.parseConPhonemeInventory
-  Parse.parseConPhonotactics
   Parse.parseDictionary
+  Parse.parseDiphPhonemeInventory
+  Parse.parseInflectionSystem
+  Parse.parseManifestSystem
+  Parse.parseManifestSystems
+  Parse.parseSonHier
   Parse.parseVowPhonemeInventory
-  Parse.parseVowPhonotactics
-module dependencies: OtherData PhonemeInventoryGen PhonemeType
-                     PhonotacticsGen WordGen
+module dependencies: InflectionData InflectionGen MorphologyGen
+                     OtherData PhonemeData PhonemeGen PhonotacticsGen Romanization
+                     Syllabification WordGen
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
-                      OneTuple-0.2.1@OneTu_7qUmBkRamgQ0H9fFgZmi5H
                       array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
                       containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
                       deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
@@ -49,10 +52,10 @@ package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       th-extras-0.0.0.4@thext_LRY1RUMy7ShLl2tqhMyHdO
                       time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
                       transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
-                      tuple-0.3.0.2@tuple_0P5GlwXwirn97NAX2TWlIC
                       vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
 orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
          base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         conla_1eA9qWUPH9nBowcXqqaV8r:InflectionData
          mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI:System.Random.Mersenne.Pure64
          random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source
          random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.IO
@@ -88,82 +91,2453 @@ family instance modules: base-4.8.2.0:Control.Applicative
 import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
 import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
 import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  OtherData f086edab5429a445c5a03de742c12a46
-  exports: 9eafbe3cd8a957307681d0a6605eb9fd
-  Syllable 0e9897796ca07f2105bbf15b49fe388e
-  Syllable e49f00d6d0b10b3393e432ef706386f1
-  Word 097d937bc14d976a13b35a18438de6be
-  Word 9ed61db17767f4e29bbbb31944883fc1
-import  -/  PhonemeType ae499e04429789f68b804baafd2bc506
-  exports: 3ba39fd360b81c89e4deec0e37d35fd4
-  Blank 166226366c396ae718303a1d9dfdadeb
-  Consonant 797698e6ca14e45d7ef88cb78e8a7943
-  MaybeConsonant 8b1f1964c3eda75693ff3855f66d2ad1
-  Vowel 18f4cd19b6c612ebb25f221389f4b642
-  Vowel e51938fc3a28180cc0e71906aef6982c
-import  -/  WordGen f90ac4ac75fdd6adf29c176d754bc14b
-  exports: f22628ee4f45b769b72413775fccbca1
+import  -/  InflectionData dfc2b52a55c6102297919706a64a0fc4
+  exports: 84295a2aa554fe18c3d6540e0e817aca
+  ABS a3252f4a4a710b89cb5fb7de82e1b369
+  ABS2 eb1684384a976e273e438949d0ec775a
+  ABS3 6be3d6381455c2fb8b696cc673f5312a
+  ACC 2b2fda0eb08c51dc90fb6148ccefaf57
+  ACTIVE 3ba72c2c1e21d6295228fdecada43267
+  ADP 539b358ddd1551fd93e671afc96b8d26
+  AFF 5add5afc7904d210d3a490227ae9e2c2
+  AN 42eeb2bad5257a6329021388af5f3e5f
+  ASS 2a6be203163f9b9ecee57e34c3ac4036
+  AUD 2739e3361701043925baf77afb784e34
+  Animacy 733cd520a7c9e157df7c0aea38100a5a
+  Aspect 3850d91a00b41f2f5240a98d717e8e72
+  COM 2b76b87baebdf435b7beeabc49572b1c
+  COND d2361735d6d633a6948b3da7fcc26040
+  Case 3e30b77606116c9a528b5a2b5461d97b
+  Clusivity c413fee28212168b6775aefd548e00c9
+  DEF 8d748be9ca26529f33fb1f923020e96a
+  DEO e1bdd44325f603c7267f01e32106435e
+  DIR 8d9eb4a041b966694a25a2820b4d5b4f
+  DITRANS 6152d5fed351fad3fb9f511c0306d604
+  DRT1 725209de801a148693b3a1e0dd656053
+  DRT2 8e77f5f6983c863b286fb1e596f89df1
+  DTR b21de5642ce5abb305938082a702222a
+  DU 50fcf453d4134ec695b980a29fe4cd7a
+  Definiteness b9da224a5a14860d49d67b2859c0b465
+  EPIS 49957e1cf160ac61da80abe59d52b79b
+  ERG 242042da048c3f299ccd1e30069f693d
+  ERG2 de764a63f239327d8a305047510fe781
+  EXCL a983eff8a825b023231f0281290be9a5
+  EXP 39fb9fbeb15671cac0c64b87f6440471
+  Evidentiality 81ef3758cd3f737f92a15566b4335acf
+  F ac15a595214777bd31a3218819e030d7
+  FAM 020a332e474eacc912777608faeb189a
+  FIRST 48d1cb7c2f1d83a1de5e2f9265d3a8e6
+  FORM c84cddcf50f3a69b3b30d03a1c89f99f
+  FUT 22f7071c1707a9a5ad548fa8dbf32d17
+  Gender c5edda692e03a9e3df065b8d199e385d
+  HSY b7ec6deb79ea6bf9bc3f57ed8853a3ba
+  HUM f3cc080c1aad6b4deeb6fa2bccaf0594
+  Honorific dfb063e584002de31fb83fb825dd29ff
+  IMMF 257497248da12f0b5b735a79449b5c75
+  IMP 5896c233e906a51bff9fe678983ecda4
+  INAN bc71303144408b8e0b3c01a698c3fc97
+  INCL bac5f6be02f3de01fe47cff9a0ffbc03
+  IND 94e31433500827896f6fc7317593b6d8
+  INDF 0f18d8dc59178d72f386c6c7fab05a58
+  INDIR 33c11eede937cf918bc3e7b40e90720e
+  INFER 7f3e3846cf5300b250025f73f10b7c92
+  INTR 98a3c8f1468a44aed1afcaf6486e04a6
+  IPFV d67b8deba84497dcbdf3820b0ec57a74
+  IRR 01f85b575b5a6c8568ec10db883d47e8
+  InflectionSystem a77baed6c20192b8f22b3dec38ab08b3
+  JUS ff8661f50232e8102ed4137af87e8738
+  M a33e59aa6442f58b158eb58e86aeb2a2
+  MIDDLE cec3bd8aac63929210909333a5263b42
+  MTR 38eaa2ec74c04a8494c49165b1023ec4
+  Manifest 5526bd48d73d2306879b380053db6e88
+  Manifest 14fec65287fdbb06ce4e9e396345475a
+  ManifestSystem 5cbe6db833ae3aa93592b3769fcc5964
+  Mood c8b893053b386faa19ee0015c2b817c2
+  N 2761cf9a44a1c32cde855db72eedf436
+  NEG dff0f557a7c6585017cc76625e3a8713
+  NFUT aadcbc0a5e6ea71a9c70c598f270bb4f
+  NHUM 1aabea2bb718651cb357c3799ddc8eb3
+  NOM e48fab6ad7e66b270b3d44299396b275
+  NOM2 0bedadd273329b732c4a2633a0b9af8f
+  NPST ef10eb93ee329bc4f90720335bc7325f
+  NSPEC 54835cfb4afe982653e516b52081286f
+  NTOP d699d0e5f090d1378f2ee3a1d590499f
+  NTRANS 6d44308fb94e48434c275b4da88a96ad
+  NVIS 8a61e6d7f5b696fb72b0acbfbf0e92bc
+  NVOL 62eed4e2ac2602e016e74c92ccd000f8
+  NoManifest ba8239be89dc838c187fab6b941ffac1
+  Number 50da230f212270d0c1b92a32c3347c6c
+  OBJ 0526edd0dda91e80e503d006432cd24f
+  OBL1 ef793f3b583f79749abffcfa4c9d22d9
+  OBL2 9719ddb67b02526e113354c9f560b804
+  OBL3 90d2f40646fd75ce379d60a009dfaf74
+  OBL4 dd46062abcab3745546fe74d84f78d01
+  OBL5 2d7361ef9406794babd0f32bbc0ce956
+  OBL6 1529fdeb00304922604d1b44bca00044
+  OPT 42672410c8ae4be1bf7018c7a23bf831
+  PA f514317733ed5714d422290e2819817e
+  PASSIVE 3f25f60946cdf427bfb1005472e613ed
+  PEG 18ddb938031de45b1ebd73056cabf845
+  PFV a6744c592f3265b73861969d04b0ec30
+  PL 88312afb8258c789f292152473a43bf8
+  POST bd20fc62a2dfa2e5ccd9193c2d88c1e2
+  POT 8def0775558c41d944dd5a85c1ba110f
+  PREP 92be55048862651c942802619eaebfe6
+  PRIM 121b8eee701e56bf6a3a28c8504dff89
+  PRS cf0c8203ef675e164a1789ecce0dfee6
+  PST 7a1ae789af7dd13e6c47c05855881f15
+  Person a2d676a93bd091804cbdfda78f682da8
+  Polarity 760d4f86d6aad7519f1cff401393492d
+  PostParticle f07697f1b24ac8991d64af37c14319f9
+  PostParticleSystem 6f6bf6e5f5ec79bc9e3c2d5a21047784
+  PreParticle 65af5bc08b49fbfb1bdf9041c872bc81
+  PreParticleSystem 64e014574010d72e9663ac317bbfef55
+  Prefix b289f5c0698695f8a048f6c64a2d9117
+  PrefixSystem 0c7ff6ffe3f079ca98967d89c92df7ec
+  QUO 852193aa6819520a82918e2f6e246268
+  REC 39ce41c300425ca1fa26063cac787d9a
+  REM d7039a309f6a02b2853bf6e410b8d2ed
+  REMF a2cbbe8bf8ae39321be5be7484b718f7
+  REP 69e3be57964e78034a9c85a8d14e8158
+  SBJV e818f934239eb69677e723eef86cd881
+  SEC 521ae8401a0b8245a3b54727a1439319
+  SECOND 1fd41a3d72f4ecd4c9c38412a035e53d
+  SG 338cc5af2e0925cf07417e23aeaa8324
+  SPEC 3d1b1029c9ed2844c8c57ab05ea9053e
+  Specificity ddf06519a04fe9d7312b057c3bf2a55a
+  Suffix 88ff0f490e033563159edfaea583ad41
+  SuffixSystem 1442c6d0f99121d306d1976b7e73f942
+  THIRD d2bf2377a6ca158cd3befa97f99f9dc6
+  TOP 5efb9f83cc4d1975fbde9dbced327724
+  TR e2a4f7c6415843f19d16a7e7aed175a5
+  TRANS 32c2166a40427a20f068fc56fca63517
+  TRI f6003232b6ca329acb4b8b6d6859c587
+  Tense ef165a186fbafaf5cc0bbe099a4b91b0
+  Topic ae01a43ac4566693ed520efc4ae942af
+  Transitivity 771b2c7bf1a5cdb98a55ddd9b2879a4c
+  VIS e5fe44bd1ce2bbc783ac13068c9d1817
+  VOL c35cc01c4a681a420af90a96a9a11156
+  Voice efe0567aac5cdd53235e250e93c9bff0
+  Volition d7b9cc4c84b4eba4e706d67aa644c840
+  ZO 2a8e8fb385b8d27fe6d61417b65d1c06
+  aniSys ebbd5dac4586671c2ab3bdb1857380d3
+  aspSys bef40311d53fce6d2e0eaf90bf037732
+  casSys b3835102aba8cf24606f601e1d473e8b
+  cluSys 4a234ac60619972ed818e008a4afe914
+  defSys ac6a6b9f32cd0f07fb8c447673c66e7c
+  eviSys f22958469441b5d2ff50bd9ce2a0b264
+  genSys 975f89892bcfe3f47c3b35cfa8174f87
+  honSys 949bc9b42706b2791331dd68ac592d28
+  mooSys 1832180fcdfe6653270f0d17fdf81fa0
+  numSys 29bb00d9e497c60b9a3e61fff6697abb
+  perSys c9b40b4cf6fdaf61ee830a5101350153
+  polSys 760602abd650e1446dc561af1f7226dc
+  speSys 6b00508c29849609e879f981d4d7e2b6
+  tenSys cbe4372a2163a0ac65b36d97702538b7
+  topSys f2c45ab27985d0e4d27d3d9ec20605b7
+  traSys 173e8b57af892a8018ada9d7ad3874d3
+  voiSys 965f587afc177bd9b5b0f2b92932f449
+  volSys 47b95d244c436bd9df28af9746faaf6d
+import  -/  MorphologyGen f928edf92ac044711d1144d924818ef0
+  exports: bc95151dbaa57e5a552160ef5b8dd48a
+  cleanGrammarSys 592ab01c04ef94575740157fc2723698
+import  -/  OtherData e2b50a410ce19d2d27f8b50952de8b42
+  exports: f505dec72f229982fb85e59b44566731
+  SyllWord 2a83dbf010cc1727d65afdacadf98645
+  Syllable a40fb799bdb0ad6c6a41baed2c661053
+  Syllable 82cacb4fbcd54c7a79c5a699c51fa550
+import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
+  exports: 6190a60b3ecf64d963416d84612d3413
+  AFFRICATE 147f242a04fba4ccaf3d990013a051a5
+  ALVEOLAR c6b89f8b792d9549c21b502170ee4e1c
+  ALVEOLOPALATAL 25346444b980c5a1ac9a043d30332738
+  APPROXIMANT 688bb45ab09fc9e6611f59d892650e5d
+  ASPIRATED 756e7c3f604a54456232d7e10e6e0cde
+  BACK 66c69778bae2e4a440bb5a9cec7741ca
+  BILABIAL 35be04d944862e0b4b3cd07ca4d4133e
+  BREATHY f6261f7e07b77dd9cd142213c14126e3
+  Backness 9747e3c7b5ae543ddf6a14d6c68612ef
+  Blank dd9f6a7e0cf8d89e9f8fe59dc1ca5907
+  CENTRAL a7a040b3167734845bc52f2315f379f7
+  CLOSE 19452b32e5ab61d38a230a97dff883ec
+  CLOSEMID 829b1a375886bafe473e5cd43c980de0
+  CORONAL ca62d4def85883412db49d69771fd684
+  CREAKY 4c3da3105ff3af15a8154f034d9336ad
+  Consonant 1bbdee182d405f2fb083318c4e2c6978
+  DEFAULT 84e40dde3b21b2bbcc2467fc8b704c5b
+  DENTAL 925136b48a76ca089014bdfac23ad309
+  DENTIALVEOLAR f08684c6c979289597282b401bfbae39
+  DORSAL bd982f4073f646c80f518bd24cad6c99
+  Diphthong dd3d8f9f97afc9c5dce57589c3791239
+  EPIGLOTTAL 4785a016a8862bf0c02884d663d41e83
+  EPIPHARYNGEAL aebcfcb1d9fa1bca206af6180adaf0ac
+  FLAP eccdd9a127edaee2ea4ed02c15b14dc9
+  FRICATIVE 9fe324020397eadebc8f607209e35373
+  FRONT 726360f7e0deebd1fa2b672cc9d9f70a
+  GLOTTAL 9f89b2526fe223b1411cb7cc61b642cc
+  Height 56a4ebd86a55476fcceec0b5b5ad52dd
+  LABIAL 77986b66f6db3ff46d81e8a03975a08b
+  LABIODENTAL 92275a3e1cccc7362f3597112fc06258
+  LAFFRICATE 3e4cdb3cdeb16222335c945aafc38d2f
+  LAPPROXIMANT 3c4f7b9a6a409f6c5ec3ef14ac4541d2
+  LARYNGEAL 4ec5bea4a7834fa9780a3eaf6b6b5b4e
+  LFLAP f2a7011e636265dc707312cd55371337
+  LFRICATIVE fd803e10efe16b2dce9944b62a4a74b4
+  LONG ee29e780120d882796a87cbbcdb00e55
+  Length 414a8b878bf71816d2002a26fce00728
+  MID 23250c6a570df131de1cdb293bacfe16
+  MODAL bd244264bab2966de13717630fceb06d
+  Manner 2286baa806cedbe4b7d0c4916ea37630
+  Morpheme 4f48109d326bee9a53078869dbb034aa
+  Morpheme b64262a4cf24269d3af16c38a15f99cc
+  NASAL 33a4f70f850c97bc19932b2d99f86fec
+  NEARBACK 0a01970fff4a2ba092ad40544a59a654
+  NEARCLOSE a0d527593a0e5b421ef4d1de2a61e5d4
+  NEARFRONT 2fbf2ba3b8d9a1fda8899a2a6b7c003d
+  NEAROPEN abe71d4960553e1118e265c97da6ca81
+  NORMAL 341b4c7351a42f38158edd4de3495449
+  OPEN f9dd652c29b38c171f0203609f54d8af
+  OPENMID f4ad7f69fb5efb224cc41b1415e8557b
+  PALATAL 82a2f3e6a3c4c0a3e97f9f57ac5073f8
+  PHARYNGEAL 5c09d12e196eec4f612a556219df3e90
+  POSTALVEOLAR 7e03f37b030e8871b4d22fdd4b93d488
+  Phonation d728b957933ed40e5f338884385b44c8
+  Phoneme b470252dd3c1b881fdcf6f5f8e488f7a
+  Place e0644167ea1572fa835311f673311319
+  RETROFLEX a3afd188eeb6612ef479970d85082992
+  ROUNDED 0a5556dccc06d975adb090e5266ecb1d
+  Roundedness 4c51106b8aab206d34cb6b9d104e8504
+  SAFFRICATE b1edf15f9894f243d08ceea9bb332359
+  SHORT ca70fa1eca0ee2f7a463a74c2a265547
+  SILIBANT f64a5f1ed2462d03b63a4ac44aed52e4
+  SLACK c990fb0ced343bfe6a5ecaaeda0b09e1
+  STIFF 0bcb6b807cc83b67beb5b05b41f42598
+  STOP 1e220103167759b2457a52d787a2828e
+  TRILL 6ee80409b4b73f8f366272d21ec77dba
+  UNROUNDED a7c2b1df7a48e8f0af1f098da4350bc3
+  UVULAR 00b57ece7781c1ead6406b34dc02a2bf
+  VELAR c83c546d533edfd28dc443ee9c5d12af
+  VOICELESS dbf8f182d917d2469a91d36a4068291b
+  Vowel 3d033a9ea8966876e27fd237e6e3b1f9
+  Word 1681594c37a7b959bf1fd6376ae38aed
+  csymbol e9f363472129d1328a9c783ae12f3847
+  vsymbol 37945cd577b90530308ffcb2c51d6186
+import  -/  Romanization 9b41e7d9b2894a30094bb8bfdb2a6262
+  exports: 71e3484a4b1fb5c752fcd3291232e7ff
+  romanizeWord 979030edb2486e7c7d32bc599815e8c2
+import  -/  Syllabification 4733e842b6c77a5ec7321501f8cad06b
+  exports: a741c5c7159797f058482789d7878efa
+  syllabifyWord eb8ca7af072dfd4f545c9dc26b0173f3
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-2a9488c3ce5eab2a302a3b09a45a566b
-  $wparseConPhonotactics ::
-    [PhonemeType.MaybeConsonant]
-    -> [PhonemeType.MaybeConsonant] -> GHC.Base.String
-  {- Arity: 2, Strictness: <L,U><L,U>, Inline: [0] -}
-8b3ddba890eded2ea1c02afb4e227837
-  $wparseSyllable ::
-    PhonemeType.MaybeConsonant
-    -> PhonemeType.Vowel
-    -> PhonemeType.MaybeConsonant
+b8ff08e03c95f91cb59a0144d8044735
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==1 ::
+    InflectionData.Manifest InflectionData.Volition
+    -> InflectionData.Manifest InflectionData.Volition
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest
+                            InflectionData.Volition
+                   b :: InflectionData.Manifest InflectionData.Volition ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.VOL
+                                       -> case b2 of wild5 {
+                                            InflectionData.VOL -> GHC.Types.False
+                                            InflectionData.NVOL -> GHC.Types.True }
+                                       InflectionData.NVOL
+                                       -> case b2 of wild5 {
+                                            InflectionData.VOL -> GHC.Types.True
+                                            InflectionData.NVOL -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.VOL
+                                       -> case b2 of wild5 {
+                                            InflectionData.VOL -> GHC.Types.False
+                                            InflectionData.NVOL -> GHC.Types.True }
+                                       InflectionData.NVOL
+                                       -> case b2 of wild5 {
+                                            InflectionData.VOL -> GHC.Types.True
+                                            InflectionData.NVOL -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.VOL
+                                       -> case b2 of wild5 {
+                                            InflectionData.VOL -> GHC.Types.False
+                                            InflectionData.NVOL -> GHC.Types.True }
+                                       InflectionData.NVOL
+                                       -> case b2 of wild5 {
+                                            InflectionData.VOL -> GHC.Types.True
+                                            InflectionData.NVOL -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.VOL
+                                       -> case b2 of wild5 {
+                                            InflectionData.VOL -> GHC.Types.False
+                                            InflectionData.NVOL -> GHC.Types.True }
+                                       InflectionData.NVOL
+                                       -> case b2 of wild5 {
+                                            InflectionData.VOL -> GHC.Types.True
+                                            InflectionData.NVOL -> GHC.Types.False } } } } } }) -}
+9dc9162f828eaee0d7fcaaa8ef0e5329
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==10 ::
+    InflectionData.Manifest InflectionData.Clusivity
+    -> InflectionData.Manifest InflectionData.Clusivity
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest
+                            InflectionData.Clusivity
+                   b :: InflectionData.Manifest InflectionData.Clusivity ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.INCL
+                                       -> case b2 of wild5 {
+                                            InflectionData.INCL -> GHC.Types.False
+                                            InflectionData.EXCL -> GHC.Types.True }
+                                       InflectionData.EXCL
+                                       -> case b2 of wild5 {
+                                            InflectionData.INCL -> GHC.Types.True
+                                            InflectionData.EXCL -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.INCL
+                                       -> case b2 of wild5 {
+                                            InflectionData.INCL -> GHC.Types.False
+                                            InflectionData.EXCL -> GHC.Types.True }
+                                       InflectionData.EXCL
+                                       -> case b2 of wild5 {
+                                            InflectionData.INCL -> GHC.Types.True
+                                            InflectionData.EXCL -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.INCL
+                                       -> case b2 of wild5 {
+                                            InflectionData.INCL -> GHC.Types.False
+                                            InflectionData.EXCL -> GHC.Types.True }
+                                       InflectionData.EXCL
+                                       -> case b2 of wild5 {
+                                            InflectionData.INCL -> GHC.Types.True
+                                            InflectionData.EXCL -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.INCL
+                                       -> case b2 of wild5 {
+                                            InflectionData.INCL -> GHC.Types.False
+                                            InflectionData.EXCL -> GHC.Types.True }
+                                       InflectionData.EXCL
+                                       -> case b2 of wild5 {
+                                            InflectionData.INCL -> GHC.Types.True
+                                            InflectionData.EXCL -> GHC.Types.False } } } } } }) -}
+079473524fe4c6e5d9362747fee951e8
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==11 ::
+    InflectionData.Manifest InflectionData.Person
+    -> InflectionData.Manifest InflectionData.Person -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Person
+                   b :: InflectionData.Manifest InflectionData.Person ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.FIRST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.FIRST -> GHC.Types.False }
+                                       InflectionData.SECOND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SECOND -> GHC.Types.False }
+                                       InflectionData.THIRD
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.THIRD -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.FIRST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.FIRST -> GHC.Types.False }
+                                       InflectionData.SECOND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SECOND -> GHC.Types.False }
+                                       InflectionData.THIRD
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.THIRD -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.FIRST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.FIRST -> GHC.Types.False }
+                                       InflectionData.SECOND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SECOND -> GHC.Types.False }
+                                       InflectionData.THIRD
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.THIRD -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.FIRST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.FIRST -> GHC.Types.False }
+                                       InflectionData.SECOND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SECOND -> GHC.Types.False }
+                                       InflectionData.THIRD
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.THIRD -> GHC.Types.False } } } } } }) -}
+f3ba2ddd208ceb046e97ebc52badb0bc
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==12 ::
+    InflectionData.Manifest InflectionData.Topic
+    -> InflectionData.Manifest InflectionData.Topic -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Topic
+                   b :: InflectionData.Manifest InflectionData.Topic ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.TOP
+                                       -> case b2 of wild5 {
+                                            InflectionData.TOP -> GHC.Types.False
+                                            InflectionData.NTOP -> GHC.Types.True }
+                                       InflectionData.NTOP
+                                       -> case b2 of wild5 {
+                                            InflectionData.TOP -> GHC.Types.True
+                                            InflectionData.NTOP -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.TOP
+                                       -> case b2 of wild5 {
+                                            InflectionData.TOP -> GHC.Types.False
+                                            InflectionData.NTOP -> GHC.Types.True }
+                                       InflectionData.NTOP
+                                       -> case b2 of wild5 {
+                                            InflectionData.TOP -> GHC.Types.True
+                                            InflectionData.NTOP -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.TOP
+                                       -> case b2 of wild5 {
+                                            InflectionData.TOP -> GHC.Types.False
+                                            InflectionData.NTOP -> GHC.Types.True }
+                                       InflectionData.NTOP
+                                       -> case b2 of wild5 {
+                                            InflectionData.TOP -> GHC.Types.True
+                                            InflectionData.NTOP -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.TOP
+                                       -> case b2 of wild5 {
+                                            InflectionData.TOP -> GHC.Types.False
+                                            InflectionData.NTOP -> GHC.Types.True }
+                                       InflectionData.NTOP
+                                       -> case b2 of wild5 {
+                                            InflectionData.TOP -> GHC.Types.True
+                                            InflectionData.NTOP -> GHC.Types.False } } } } } }) -}
+d37a23913b819773291f45b8a042ea83
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==13 ::
+    InflectionData.Manifest InflectionData.Specificity
+    -> InflectionData.Manifest InflectionData.Specificity
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest
+                            InflectionData.Specificity
+                   b :: InflectionData.Manifest InflectionData.Specificity ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.SPEC
+                                       -> case b2 of wild5 {
+                                            InflectionData.SPEC -> GHC.Types.False
+                                            InflectionData.NSPEC -> GHC.Types.True }
+                                       InflectionData.NSPEC
+                                       -> case b2 of wild5 {
+                                            InflectionData.SPEC -> GHC.Types.True
+                                            InflectionData.NSPEC -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.SPEC
+                                       -> case b2 of wild5 {
+                                            InflectionData.SPEC -> GHC.Types.False
+                                            InflectionData.NSPEC -> GHC.Types.True }
+                                       InflectionData.NSPEC
+                                       -> case b2 of wild5 {
+                                            InflectionData.SPEC -> GHC.Types.True
+                                            InflectionData.NSPEC -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.SPEC
+                                       -> case b2 of wild5 {
+                                            InflectionData.SPEC -> GHC.Types.False
+                                            InflectionData.NSPEC -> GHC.Types.True }
+                                       InflectionData.NSPEC
+                                       -> case b2 of wild5 {
+                                            InflectionData.SPEC -> GHC.Types.True
+                                            InflectionData.NSPEC -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.SPEC
+                                       -> case b2 of wild5 {
+                                            InflectionData.SPEC -> GHC.Types.False
+                                            InflectionData.NSPEC -> GHC.Types.True }
+                                       InflectionData.NSPEC
+                                       -> case b2 of wild5 {
+                                            InflectionData.SPEC -> GHC.Types.True
+                                            InflectionData.NSPEC -> GHC.Types.False } } } } } }) -}
+d3c0fe05e820e376791731aff54035d8
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==14 ::
+    InflectionData.Manifest InflectionData.Definiteness
+    -> InflectionData.Manifest InflectionData.Definiteness
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest
+                            InflectionData.Definiteness
+                   b :: InflectionData.Manifest InflectionData.Definiteness ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.DEF
+                                       -> case b2 of wild5 {
+                                            InflectionData.DEF -> GHC.Types.False
+                                            InflectionData.INDF -> GHC.Types.True }
+                                       InflectionData.INDF
+                                       -> case b2 of wild5 {
+                                            InflectionData.DEF -> GHC.Types.True
+                                            InflectionData.INDF -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.DEF
+                                       -> case b2 of wild5 {
+                                            InflectionData.DEF -> GHC.Types.False
+                                            InflectionData.INDF -> GHC.Types.True }
+                                       InflectionData.INDF
+                                       -> case b2 of wild5 {
+                                            InflectionData.DEF -> GHC.Types.True
+                                            InflectionData.INDF -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.DEF
+                                       -> case b2 of wild5 {
+                                            InflectionData.DEF -> GHC.Types.False
+                                            InflectionData.INDF -> GHC.Types.True }
+                                       InflectionData.INDF
+                                       -> case b2 of wild5 {
+                                            InflectionData.DEF -> GHC.Types.True
+                                            InflectionData.INDF -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.DEF
+                                       -> case b2 of wild5 {
+                                            InflectionData.DEF -> GHC.Types.False
+                                            InflectionData.INDF -> GHC.Types.True }
+                                       InflectionData.INDF
+                                       -> case b2 of wild5 {
+                                            InflectionData.DEF -> GHC.Types.True
+                                            InflectionData.INDF -> GHC.Types.False } } } } } }) -}
+c62ddc93beb2d4df2cddcf42030d98cf
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==15 ::
+    InflectionData.Manifest InflectionData.Number
+    -> InflectionData.Manifest InflectionData.Number -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Number
+                   b :: InflectionData.Manifest InflectionData.Number ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.SG
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SG -> GHC.Types.False }
+                                       InflectionData.DU
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DU -> GHC.Types.False }
+                                       InflectionData.TRI
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.TRI -> GHC.Types.False }
+                                       InflectionData.PA
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PA -> GHC.Types.False }
+                                       InflectionData.PL
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PL -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.SG
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SG -> GHC.Types.False }
+                                       InflectionData.DU
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DU -> GHC.Types.False }
+                                       InflectionData.TRI
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.TRI -> GHC.Types.False }
+                                       InflectionData.PA
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PA -> GHC.Types.False }
+                                       InflectionData.PL
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PL -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.SG
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SG -> GHC.Types.False }
+                                       InflectionData.DU
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DU -> GHC.Types.False }
+                                       InflectionData.TRI
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.TRI -> GHC.Types.False }
+                                       InflectionData.PA
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PA -> GHC.Types.False }
+                                       InflectionData.PL
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PL -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.SG
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SG -> GHC.Types.False }
+                                       InflectionData.DU
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DU -> GHC.Types.False }
+                                       InflectionData.TRI
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.TRI -> GHC.Types.False }
+                                       InflectionData.PA
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PA -> GHC.Types.False }
+                                       InflectionData.PL
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PL -> GHC.Types.False } } } } } }) -}
+7e17b7ba0058f76e0295ea8f49e55c40
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==16 ::
+    InflectionData.Manifest InflectionData.Case
+    -> InflectionData.Manifest InflectionData.Case -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Case
+                   b :: InflectionData.Manifest InflectionData.Case ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of x1 { DEFAULT ->
+                                     case b2 of x2 { DEFAULT ->
+                                     case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==#
+                                               (GHC.Prim.dataToTag# @ InflectionData.Case x1)
+                                               (GHC.Prim.dataToTag#
+                                                  @ InflectionData.Case
+                                                  x2)) of wild4 {
+                                       GHC.Types.False -> GHC.Types.True
+                                       GHC.Types.True -> GHC.Types.False } } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of x1 { DEFAULT ->
+                                     case b2 of x2 { DEFAULT ->
+                                     case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==#
+                                               (GHC.Prim.dataToTag# @ InflectionData.Case x1)
+                                               (GHC.Prim.dataToTag#
+                                                  @ InflectionData.Case
+                                                  x2)) of wild4 {
+                                       GHC.Types.False -> GHC.Types.True
+                                       GHC.Types.True -> GHC.Types.False } } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of x1 { DEFAULT ->
+                                     case b2 of x2 { DEFAULT ->
+                                     case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==#
+                                               (GHC.Prim.dataToTag# @ InflectionData.Case x1)
+                                               (GHC.Prim.dataToTag#
+                                                  @ InflectionData.Case
+                                                  x2)) of wild4 {
+                                       GHC.Types.False -> GHC.Types.True
+                                       GHC.Types.True -> GHC.Types.False } } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of x1 { DEFAULT ->
+                                     case b2 of x2 { DEFAULT ->
+                                     case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==#
+                                               (GHC.Prim.dataToTag# @ InflectionData.Case x1)
+                                               (GHC.Prim.dataToTag#
+                                                  @ InflectionData.Case
+                                                  x2)) of wild4 {
+                                       GHC.Types.False -> GHC.Types.True
+                                       GHC.Types.True -> GHC.Types.False } } } } } } }) -}
+87972bc35358bc7540e0c60fc840a5a4
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==17 ::
+    InflectionData.Manifest InflectionData.Animacy
+    -> InflectionData.Manifest InflectionData.Animacy -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Animacy
+                   b :: InflectionData.Manifest InflectionData.Animacy ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.AN
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.AN -> GHC.Types.False }
+                                       InflectionData.HUM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.HUM -> GHC.Types.False }
+                                       InflectionData.NHUM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NHUM -> GHC.Types.False }
+                                       InflectionData.ZO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ZO -> GHC.Types.False }
+                                       InflectionData.INAN
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.INAN -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.AN
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.AN -> GHC.Types.False }
+                                       InflectionData.HUM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.HUM -> GHC.Types.False }
+                                       InflectionData.NHUM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NHUM -> GHC.Types.False }
+                                       InflectionData.ZO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ZO -> GHC.Types.False }
+                                       InflectionData.INAN
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.INAN -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.AN
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.AN -> GHC.Types.False }
+                                       InflectionData.HUM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.HUM -> GHC.Types.False }
+                                       InflectionData.NHUM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NHUM -> GHC.Types.False }
+                                       InflectionData.ZO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ZO -> GHC.Types.False }
+                                       InflectionData.INAN
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.INAN -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.AN
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.AN -> GHC.Types.False }
+                                       InflectionData.HUM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.HUM -> GHC.Types.False }
+                                       InflectionData.NHUM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NHUM -> GHC.Types.False }
+                                       InflectionData.ZO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ZO -> GHC.Types.False }
+                                       InflectionData.INAN
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.INAN -> GHC.Types.False } } } } } }) -}
+54d1b61bbc5f330462e68a23a35ed4e5
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==18 ::
+    InflectionData.Manifest InflectionData.Gender
+    -> InflectionData.Manifest InflectionData.Gender -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Gender
+                   b :: InflectionData.Manifest InflectionData.Gender ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.M
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.M -> GHC.Types.False }
+                                       InflectionData.F
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.F -> GHC.Types.False }
+                                       InflectionData.COM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.COM -> GHC.Types.False }
+                                       InflectionData.N
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.N -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.M
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.M -> GHC.Types.False }
+                                       InflectionData.F
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.F -> GHC.Types.False }
+                                       InflectionData.COM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.COM -> GHC.Types.False }
+                                       InflectionData.N
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.N -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.M
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.M -> GHC.Types.False }
+                                       InflectionData.F
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.F -> GHC.Types.False }
+                                       InflectionData.COM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.COM -> GHC.Types.False }
+                                       InflectionData.N
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.N -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.M
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.M -> GHC.Types.False }
+                                       InflectionData.F
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.F -> GHC.Types.False }
+                                       InflectionData.COM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.COM -> GHC.Types.False }
+                                       InflectionData.N
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.N -> GHC.Types.False } } } } } }) -}
+fc41d90c775ddecc569708ade80ded21
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==2 ::
+    InflectionData.Manifest InflectionData.Transitivity
+    -> InflectionData.Manifest InflectionData.Transitivity
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest
+                            InflectionData.Transitivity
+                   b :: InflectionData.Manifest InflectionData.Transitivity ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.NTRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NTRANS -> GHC.Types.False }
+                                       InflectionData.TRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.TRANS -> GHC.Types.False }
+                                       InflectionData.DITRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DITRANS -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.NTRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NTRANS -> GHC.Types.False }
+                                       InflectionData.TRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.TRANS -> GHC.Types.False }
+                                       InflectionData.DITRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DITRANS -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.NTRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NTRANS -> GHC.Types.False }
+                                       InflectionData.TRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.TRANS -> GHC.Types.False }
+                                       InflectionData.DITRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DITRANS -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.NTRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NTRANS -> GHC.Types.False }
+                                       InflectionData.TRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.TRANS -> GHC.Types.False }
+                                       InflectionData.DITRANS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DITRANS
+                                            -> GHC.Types.False } } } } } }) -}
+c9ea02c627415fbb6d589370daffb893
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==3 ::
+    InflectionData.Manifest InflectionData.Evidentiality
+    -> InflectionData.Manifest InflectionData.Evidentiality
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest
+                            InflectionData.Evidentiality
+                   b :: InflectionData.Manifest InflectionData.Evidentiality ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.EXP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.EXP -> GHC.Types.False }
+                                       InflectionData.VIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.VIS -> GHC.Types.False }
+                                       InflectionData.NVIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NVIS -> GHC.Types.False }
+                                       InflectionData.AUD
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.AUD -> GHC.Types.False }
+                                       InflectionData.INFER
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.INFER -> GHC.Types.False }
+                                       InflectionData.REP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REP -> GHC.Types.False }
+                                       InflectionData.HSY
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.HSY -> GHC.Types.False }
+                                       InflectionData.QUO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.QUO -> GHC.Types.False }
+                                       InflectionData.ASS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ASS -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.EXP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.EXP -> GHC.Types.False }
+                                       InflectionData.VIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.VIS -> GHC.Types.False }
+                                       InflectionData.NVIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NVIS -> GHC.Types.False }
+                                       InflectionData.AUD
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.AUD -> GHC.Types.False }
+                                       InflectionData.INFER
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.INFER -> GHC.Types.False }
+                                       InflectionData.REP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REP -> GHC.Types.False }
+                                       InflectionData.HSY
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.HSY -> GHC.Types.False }
+                                       InflectionData.QUO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.QUO -> GHC.Types.False }
+                                       InflectionData.ASS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ASS -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.EXP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.EXP -> GHC.Types.False }
+                                       InflectionData.VIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.VIS -> GHC.Types.False }
+                                       InflectionData.NVIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NVIS -> GHC.Types.False }
+                                       InflectionData.AUD
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.AUD -> GHC.Types.False }
+                                       InflectionData.INFER
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.INFER -> GHC.Types.False }
+                                       InflectionData.REP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REP -> GHC.Types.False }
+                                       InflectionData.HSY
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.HSY -> GHC.Types.False }
+                                       InflectionData.QUO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.QUO -> GHC.Types.False }
+                                       InflectionData.ASS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ASS -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.EXP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.EXP -> GHC.Types.False }
+                                       InflectionData.VIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.VIS -> GHC.Types.False }
+                                       InflectionData.NVIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NVIS -> GHC.Types.False }
+                                       InflectionData.AUD
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.AUD -> GHC.Types.False }
+                                       InflectionData.INFER
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.INFER -> GHC.Types.False }
+                                       InflectionData.REP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REP -> GHC.Types.False }
+                                       InflectionData.HSY
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.HSY -> GHC.Types.False }
+                                       InflectionData.QUO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.QUO -> GHC.Types.False }
+                                       InflectionData.ASS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ASS -> GHC.Types.False } } } } } }) -}
+70ff4d0f59f1afb444b24a3928d31007
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==4 ::
+    InflectionData.Manifest InflectionData.Voice
+    -> InflectionData.Manifest InflectionData.Voice -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Voice
+                   b :: InflectionData.Manifest InflectionData.Voice ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.ACTIVE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ACTIVE -> GHC.Types.False }
+                                       InflectionData.MIDDLE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.MIDDLE -> GHC.Types.False }
+                                       InflectionData.PASSIVE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PASSIVE -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.ACTIVE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ACTIVE -> GHC.Types.False }
+                                       InflectionData.MIDDLE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.MIDDLE -> GHC.Types.False }
+                                       InflectionData.PASSIVE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PASSIVE -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.ACTIVE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ACTIVE -> GHC.Types.False }
+                                       InflectionData.MIDDLE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.MIDDLE -> GHC.Types.False }
+                                       InflectionData.PASSIVE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PASSIVE -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.ACTIVE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.ACTIVE -> GHC.Types.False }
+                                       InflectionData.MIDDLE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.MIDDLE -> GHC.Types.False }
+                                       InflectionData.PASSIVE
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PASSIVE
+                                            -> GHC.Types.False } } } } } }) -}
+b1d7698f121984fe0695ac33d751e430
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==5 ::
+    InflectionData.Manifest InflectionData.Mood
+    -> InflectionData.Manifest InflectionData.Mood -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Mood
+                   b :: InflectionData.Manifest InflectionData.Mood ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.IND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IND -> GHC.Types.False }
+                                       InflectionData.IRR
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IRR -> GHC.Types.False }
+                                       InflectionData.DEO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DEO -> GHC.Types.False }
+                                       InflectionData.IMP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IMP -> GHC.Types.False }
+                                       InflectionData.JUS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.JUS -> GHC.Types.False }
+                                       InflectionData.OPT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.OPT -> GHC.Types.False }
+                                       InflectionData.EPIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.EPIS -> GHC.Types.False }
+                                       InflectionData.SBJV
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SBJV -> GHC.Types.False }
+                                       InflectionData.POT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.POT -> GHC.Types.False }
+                                       InflectionData.COND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.COND -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.IND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IND -> GHC.Types.False }
+                                       InflectionData.IRR
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IRR -> GHC.Types.False }
+                                       InflectionData.DEO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DEO -> GHC.Types.False }
+                                       InflectionData.IMP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IMP -> GHC.Types.False }
+                                       InflectionData.JUS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.JUS -> GHC.Types.False }
+                                       InflectionData.OPT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.OPT -> GHC.Types.False }
+                                       InflectionData.EPIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.EPIS -> GHC.Types.False }
+                                       InflectionData.SBJV
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SBJV -> GHC.Types.False }
+                                       InflectionData.POT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.POT -> GHC.Types.False }
+                                       InflectionData.COND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.COND -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.IND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IND -> GHC.Types.False }
+                                       InflectionData.IRR
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IRR -> GHC.Types.False }
+                                       InflectionData.DEO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DEO -> GHC.Types.False }
+                                       InflectionData.IMP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IMP -> GHC.Types.False }
+                                       InflectionData.JUS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.JUS -> GHC.Types.False }
+                                       InflectionData.OPT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.OPT -> GHC.Types.False }
+                                       InflectionData.EPIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.EPIS -> GHC.Types.False }
+                                       InflectionData.SBJV
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SBJV -> GHC.Types.False }
+                                       InflectionData.POT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.POT -> GHC.Types.False }
+                                       InflectionData.COND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.COND -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.IND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IND -> GHC.Types.False }
+                                       InflectionData.IRR
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IRR -> GHC.Types.False }
+                                       InflectionData.DEO
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.DEO -> GHC.Types.False }
+                                       InflectionData.IMP
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IMP -> GHC.Types.False }
+                                       InflectionData.JUS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.JUS -> GHC.Types.False }
+                                       InflectionData.OPT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.OPT -> GHC.Types.False }
+                                       InflectionData.EPIS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.EPIS -> GHC.Types.False }
+                                       InflectionData.SBJV
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.SBJV -> GHC.Types.False }
+                                       InflectionData.POT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.POT -> GHC.Types.False }
+                                       InflectionData.COND
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.COND -> GHC.Types.False } } } } } }) -}
+658f6c3d5ce0feacfde0d8f2571b71cb
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==6 ::
+    InflectionData.Manifest InflectionData.Aspect
+    -> InflectionData.Manifest InflectionData.Aspect -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Aspect
+                   b :: InflectionData.Manifest InflectionData.Aspect ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.PFV
+                                       -> case b2 of wild5 {
+                                            InflectionData.PFV -> GHC.Types.False
+                                            InflectionData.IPFV -> GHC.Types.True }
+                                       InflectionData.IPFV
+                                       -> case b2 of wild5 {
+                                            InflectionData.PFV -> GHC.Types.True
+                                            InflectionData.IPFV -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.PFV
+                                       -> case b2 of wild5 {
+                                            InflectionData.PFV -> GHC.Types.False
+                                            InflectionData.IPFV -> GHC.Types.True }
+                                       InflectionData.IPFV
+                                       -> case b2 of wild5 {
+                                            InflectionData.PFV -> GHC.Types.True
+                                            InflectionData.IPFV -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.PFV
+                                       -> case b2 of wild5 {
+                                            InflectionData.PFV -> GHC.Types.False
+                                            InflectionData.IPFV -> GHC.Types.True }
+                                       InflectionData.IPFV
+                                       -> case b2 of wild5 {
+                                            InflectionData.PFV -> GHC.Types.True
+                                            InflectionData.IPFV -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.PFV
+                                       -> case b2 of wild5 {
+                                            InflectionData.PFV -> GHC.Types.False
+                                            InflectionData.IPFV -> GHC.Types.True }
+                                       InflectionData.IPFV
+                                       -> case b2 of wild5 {
+                                            InflectionData.PFV -> GHC.Types.True
+                                            InflectionData.IPFV -> GHC.Types.False } } } } } }) -}
+a8e37f92dfef6bc08a940c94c5843894
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==7 ::
+    InflectionData.Manifest InflectionData.Tense
+    -> InflectionData.Manifest InflectionData.Tense -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest InflectionData.Tense
+                   b :: InflectionData.Manifest InflectionData.Tense ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.PST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PST -> GHC.Types.False }
+                                       InflectionData.REM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REM -> GHC.Types.False }
+                                       InflectionData.REC
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REC -> GHC.Types.False }
+                                       InflectionData.NPST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NPST -> GHC.Types.False }
+                                       InflectionData.PRS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PRS -> GHC.Types.False }
+                                       InflectionData.NFUT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NFUT -> GHC.Types.False }
+                                       InflectionData.FUT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.FUT -> GHC.Types.False }
+                                       InflectionData.IMMF
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IMMF -> GHC.Types.False }
+                                       InflectionData.REMF
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REMF -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.PST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PST -> GHC.Types.False }
+                                       InflectionData.REM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REM -> GHC.Types.False }
+                                       InflectionData.REC
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REC -> GHC.Types.False }
+                                       InflectionData.NPST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NPST -> GHC.Types.False }
+                                       InflectionData.PRS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PRS -> GHC.Types.False }
+                                       InflectionData.NFUT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NFUT -> GHC.Types.False }
+                                       InflectionData.FUT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.FUT -> GHC.Types.False }
+                                       InflectionData.IMMF
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IMMF -> GHC.Types.False }
+                                       InflectionData.REMF
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REMF -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.PST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PST -> GHC.Types.False }
+                                       InflectionData.REM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REM -> GHC.Types.False }
+                                       InflectionData.REC
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REC -> GHC.Types.False }
+                                       InflectionData.NPST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NPST -> GHC.Types.False }
+                                       InflectionData.PRS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PRS -> GHC.Types.False }
+                                       InflectionData.NFUT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NFUT -> GHC.Types.False }
+                                       InflectionData.FUT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.FUT -> GHC.Types.False }
+                                       InflectionData.IMMF
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IMMF -> GHC.Types.False }
+                                       InflectionData.REMF
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REMF -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.PST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PST -> GHC.Types.False }
+                                       InflectionData.REM
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REM -> GHC.Types.False }
+                                       InflectionData.REC
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REC -> GHC.Types.False }
+                                       InflectionData.NPST
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NPST -> GHC.Types.False }
+                                       InflectionData.PRS
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.PRS -> GHC.Types.False }
+                                       InflectionData.NFUT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.NFUT -> GHC.Types.False }
+                                       InflectionData.FUT
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.FUT -> GHC.Types.False }
+                                       InflectionData.IMMF
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.IMMF -> GHC.Types.False }
+                                       InflectionData.REMF
+                                       -> case b2 of wild5 {
+                                            DEFAULT -> GHC.Types.True
+                                            InflectionData.REMF -> GHC.Types.False } } } } } }) -}
+67e5c04145023a8de0fccf2090425ea6
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==8 ::
+    InflectionData.Manifest InflectionData.Polarity
+    -> InflectionData.Manifest InflectionData.Polarity
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest
+                            InflectionData.Polarity
+                   b :: InflectionData.Manifest InflectionData.Polarity ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.AFF
+                                       -> case b2 of wild5 {
+                                            InflectionData.AFF -> GHC.Types.False
+                                            InflectionData.NEG -> GHC.Types.True }
+                                       InflectionData.NEG
+                                       -> case b2 of wild5 {
+                                            InflectionData.AFF -> GHC.Types.True
+                                            InflectionData.NEG -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.AFF
+                                       -> case b2 of wild5 {
+                                            InflectionData.AFF -> GHC.Types.False
+                                            InflectionData.NEG -> GHC.Types.True }
+                                       InflectionData.NEG
+                                       -> case b2 of wild5 {
+                                            InflectionData.AFF -> GHC.Types.True
+                                            InflectionData.NEG -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.AFF
+                                       -> case b2 of wild5 {
+                                            InflectionData.AFF -> GHC.Types.False
+                                            InflectionData.NEG -> GHC.Types.True }
+                                       InflectionData.NEG
+                                       -> case b2 of wild5 {
+                                            InflectionData.AFF -> GHC.Types.True
+                                            InflectionData.NEG -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.AFF
+                                       -> case b2 of wild5 {
+                                            InflectionData.AFF -> GHC.Types.False
+                                            InflectionData.NEG -> GHC.Types.True }
+                                       InflectionData.NEG
+                                       -> case b2 of wild5 {
+                                            InflectionData.AFF -> GHC.Types.True
+                                            InflectionData.NEG -> GHC.Types.False } } } } } }) -}
+9dbbad664ba14e8eac8ec62be5cc1172
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==9 ::
+    InflectionData.Manifest InflectionData.Honorific
+    -> InflectionData.Manifest InflectionData.Honorific
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ a21 :: InflectionData.Manifest
+                            InflectionData.Honorific
+                   b :: InflectionData.Manifest InflectionData.Honorific ->
+                 case a21 of wild {
+                   InflectionData.NoManifest
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.False
+                        InflectionData.Manifest ipv ipv1 -> GHC.Types.True }
+                   InflectionData.Manifest a1 a22
+                   -> case b of wild1 {
+                        InflectionData.NoManifest -> GHC.Types.True
+                        InflectionData.Manifest b1 b2
+                        -> case a1 of wild2 {
+                             InflectionData.PreParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PreParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.FAM
+                                       -> case b2 of wild5 {
+                                            InflectionData.FAM -> GHC.Types.False
+                                            InflectionData.FORM -> GHC.Types.True }
+                                       InflectionData.FORM
+                                       -> case b2 of wild5 {
+                                            InflectionData.FAM -> GHC.Types.True
+                                            InflectionData.FORM -> GHC.Types.False } } }
+                             InflectionData.Prefix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Prefix
+                                  -> case a22 of wild4 {
+                                       InflectionData.FAM
+                                       -> case b2 of wild5 {
+                                            InflectionData.FAM -> GHC.Types.False
+                                            InflectionData.FORM -> GHC.Types.True }
+                                       InflectionData.FORM
+                                       -> case b2 of wild5 {
+                                            InflectionData.FAM -> GHC.Types.True
+                                            InflectionData.FORM -> GHC.Types.False } } }
+                             InflectionData.Suffix
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.Suffix
+                                  -> case a22 of wild4 {
+                                       InflectionData.FAM
+                                       -> case b2 of wild5 {
+                                            InflectionData.FAM -> GHC.Types.False
+                                            InflectionData.FORM -> GHC.Types.True }
+                                       InflectionData.FORM
+                                       -> case b2 of wild5 {
+                                            InflectionData.FAM -> GHC.Types.True
+                                            InflectionData.FORM -> GHC.Types.False } } }
+                             InflectionData.PostParticle
+                             -> case b1 of wild3 {
+                                  DEFAULT -> GHC.Types.True
+                                  InflectionData.PostParticle
+                                  -> case a22 of wild4 {
+                                       InflectionData.FAM
+                                       -> case b2 of wild5 {
+                                            InflectionData.FAM -> GHC.Types.False
+                                            InflectionData.FORM -> GHC.Types.True }
+                                       InflectionData.FORM
+                                       -> case b2 of wild5 {
+                                            InflectionData.FAM -> GHC.Types.True
+                                            InflectionData.FORM -> GHC.Types.False } } } } } }) -}
+b39c7cf6d11f4d3bbf0a65a6698aa324
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Volition)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Volition)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Volition
+                     InflectionData.$fEqVolition)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==1 -}
+03d62bcd5df2d15102c1461583a5ef46
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest1 ::
+    GHC.Classes.Eq
+      (InflectionData.Manifest InflectionData.Transitivity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Transitivity)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Transitivity
+                     InflectionData.$fEqTransitivity)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==2 -}
+ecee9312917e1ed31a72332ceef446a9
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest10 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Person)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Person)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Person
+                     InflectionData.$fEqPerson)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==11 -}
+f50bf75329bb22f528e9c49fc17105e9
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest11 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Topic)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Topic)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Topic
+                     InflectionData.$fEqTopic)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==12 -}
+e1d8bfa69e4a939aa83f0c8045a53c7a
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest12 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Specificity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Specificity)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Specificity
+                     InflectionData.$fEqSpecificity)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==13 -}
+49dd0fbf07492d65544ffc0df91d4e02
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest13 ::
+    GHC.Classes.Eq
+      (InflectionData.Manifest InflectionData.Definiteness)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Definiteness)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Definiteness
+                     InflectionData.$fEqDefiniteness)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==14 -}
+ddf5f1cbd16b3bd7b108a78531112758
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest14 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Number)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Number)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Number
+                     InflectionData.$fEqNumber)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==15 -}
+5f24d9f94cf8f2e21e2a0fc177834318
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest15 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Case)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Case)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Case
+                     InflectionData.$fEqCase)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==16 -}
+d8049a764c13623fcd54d3f8b1cc0015
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest16 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Animacy)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Animacy)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Animacy
+                     InflectionData.$fEqAnimacy)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==17 -}
+56a36b907a5d3d542e06fccb010aa10e
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest17 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Gender)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Gender)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Gender
+                     InflectionData.$fEqGender)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==18 -}
+c50c762f487df1ad7956de302a5be50d
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest2 ::
+    GHC.Classes.Eq
+      (InflectionData.Manifest InflectionData.Evidentiality)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Evidentiality)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Evidentiality
+                     InflectionData.$fEqEvidentiality)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==3 -}
+d5b858a0b63ebe7336f87fa029b5892d
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest3 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Voice)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Voice)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Voice
+                     InflectionData.$fEqVoice)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==4 -}
+c1af71c0a831aa5d9b10928bedc01e24
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest4 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Mood)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Mood)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Mood
+                     InflectionData.$fEqMood)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==5 -}
+574749326a82cfb116eead64861b3839
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest5 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Aspect)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Aspect)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Aspect
+                     InflectionData.$fEqAspect)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==6 -}
+baf5f14f080c3b87ba34e2f4b4c4fc6d
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest6 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Tense)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Tense)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Tense
+                     InflectionData.$fEqTense)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==7 -}
+53fa0856704491441f9f3772ee7811f9
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest7 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Polarity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Polarity)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Polarity
+                     InflectionData.$fEqPolarity)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==8 -}
+bc9eb6f75191635ce10e89059a47ffe6
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest8 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Honorific)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Honorific)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Honorific
+                     InflectionData.$fEqHonorific)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==9 -}
+de77006066b4dc1b075610633bb87ae9
+  $s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest9 ::
+    GHC.Classes.Eq (InflectionData.Manifest InflectionData.Clusivity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Manifest InflectionData.Clusivity)
+                  (InflectionData.$fEqManifest_$c==
+                     @ InflectionData.Clusivity
+                     InflectionData.$fEqClusivity)
+                  Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==10 -}
+a83272039eb84f26f9b3f1c7d8f868c2
+  $wparseManifestSystems ::
+    GHC.Prim.Int#
+    -> [InflectionData.ManifestSystem]
+    -> InflectionData.InflectionSystem
     -> GHC.Base.String
-  {- Arity: 3, HasNoCafRefs,
-     Strictness: <S,1*U><L,1*U(A,A,A,1*U)><L,1*U>, Inline: [0],
-     Unfolding: (\ ww :: PhonemeType.MaybeConsonant
-                   ww1 :: PhonemeType.Vowel
-                   ww2 :: PhonemeType.MaybeConsonant ->
-                 case ww of wild {
-                   PhonemeType.Consonant ds ds1 ds2 ipa
-                   -> GHC.Base.++
-                        @ GHC.Types.Char
-                        ipa
-                        (case ww1 of wild1 { PhonemeType.Vowel ds3 ds4 ds5 ipa1 ->
-                         GHC.Base.++
-                           @ GHC.Types.Char
-                           ipa1
-                           (case ww2 of wild2 {
-                              PhonemeType.Consonant ds6 ds7 ds8 ipa2 -> ipa2
-                              PhonemeType.Blank -> GHC.Types.[] @ GHC.Types.Char }) })
-                   PhonemeType.Blank
-                   -> case ww1 of wild1 { PhonemeType.Vowel ds ds1 ds2 ipa ->
-                      GHC.Base.++
-                        @ GHC.Types.Char
-                        ipa
-                        (case ww2 of wild2 {
-                           PhonemeType.Consonant ds3 ds4 ds5 ipa1 -> ipa1
-                           PhonemeType.Blank -> GHC.Types.[] @ GHC.Types.Char }) } }) -}
-7860feadc8d34b6008fafe38e68b85ed
-  $wparseVowPhonotactics ::
-    [PhonemeType.Vowel]
-    -> [PhonemeType.Vowel]
-    -> [PhonemeType.Vowel]
-    -> [PhonemeType.Vowel]
-    -> GHC.Base.String
-  {- Arity: 4, Strictness: <S,1*U><L,1*U><L,1*U><L,1*U>,
+  {- Arity: 3,
+     Strictness: <S,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-2bed9bcaac4df9145bf8fff7ad300ef9
-  $wparseWord :: [OtherData.Syllable] -> GHC.Base.String
-  {- Arity: 1, Strictness: <L,1*U>, Inline: [0],
-     Unfolding: (\ ww :: [OtherData.Syllable] ->
+3fbc2e5acae0bc47a0dca9a331fc12d7
+  $wparseSyllable ::
+    [PhonemeData.Phoneme]
+    -> PhonemeData.Phoneme -> [PhonemeData.Phoneme] -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,1*U><S,1*U><L,1*U>, Inline: [0] -}
+8457fabb16638aec03c36713884de08d
+  parseConPhonemeInventory ::
+    [PhonemeData.Place]
+    -> [PhonemeData.Manner]
+    -> [PhonemeData.Phonation]
+    -> [PhonemeData.Phoneme]
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <L,U><L,1*U><L,U><L,U> -}
+d1e7fb2372cee42e394a4973d0aa32bb
+  parseDictionary ::
+    [[PhonemeData.Phoneme]] -> [PhonemeData.Word] -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U><L,1*U>,
+     Unfolding: (\ sonHier :: [[PhonemeData.Phoneme]]
+                   wrds :: [PhonemeData.Word] ->
                  GHC.CString.unpackAppendCString#
-                   "/"#
+                   "\n"#
                    (case GHC.Base.map
-                           @ OtherData.Syllable
+                           @ PhonemeData.Word
                            @ [GHC.Types.Char]
-                           Parse.parseSyllable
-                           ww of wild {
-                      [] -> Parse.parseDictionary3
+                           (\ word :: PhonemeData.Word ->
+                            GHC.CString.unpackAppendCString#
+                              "/"#
+                              (case word of ww { PhonemeData.Word ww1 ->
+                               case Syllabification.$wsyllabifyWord
+                                      sonHier
+                                      ww1 of ww2 { (##) ww3 ->
+                               let {
+                                 n :: [GHC.Types.Char]
+                                 = GHC.CString.unpackAppendCString#
+                                     "/"#
+                                     (GHC.CString.unpackAppendCString#
+                                        " - "#
+                                        (Romanization.romanizeWord_go ww1))
+                               } in
+                               case GHC.Base.map
+                                      @ OtherData.Syllable
+                                      @ [GHC.Types.Char]
+                                      Parse.parseSyllable
+                                      ww3 of wild {
+                                 [] -> n
+                                 : x xs1
+                                 -> GHC.Base.++
+                                      @ GHC.Types.Char
+                                      (Data.OldList.intercalate_$spoly_go
+                                         @ GHC.Types.Char
+                                         x
+                                         (Data.OldList.prependToAll
+                                            @ [GHC.Types.Char]
+                                            Parse.parseDictionary2
+                                            xs1))
+                                      n } } }))
+                           wrds of wild {
+                      [] -> GHC.Types.[] @ GHC.Types.Char
+                      : x xs1
+                      -> Data.OldList.intercalate_$spoly_go
+                           @ GHC.Types.Char
+                           x
+                           (Data.OldList.prependToAll
+                              @ [GHC.Types.Char]
+                              Parse.parseDictionary1
+                              xs1) })) -}
+e767d2f030f0a31a0986b258e08357c0
+  parseDictionary1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+8788bff5e39d408c8cfa59a141c5554e
+  parseDictionary2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "."#) -}
+6a7f1934cd56df230292969b8d54ab82
+  parseDiphPhonemeInventory ::
+    [PhonemeData.Phoneme] -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ diphs :: [PhonemeData.Phoneme] ->
+                 GHC.CString.unpackAppendCString#
+                   "<br>\n\
+                   \Diphthongs: /"#
+                   (case Parse.parseDiphPhonemeInventory_go1 diphs of wild {
+                      [] -> case GHC.List.init2 ret_ty [GHC.Types.Char] of {}
+                      : x xs
+                      -> let {
+                           a :: [GHC.Types.Char]
+                           = GHC.CString.unpackAppendCString#
+                               "/, and /"#
+                               (GHC.Base.++
+                                  @ GHC.Types.Char
+                                  (Parse.parseDiphPhonemeInventory_go
+                                     wild
+                                     (GHC.List.lastError @ [GHC.Types.Char]))
+                                  Parse.parseDiphPhonemeInventory2)
+                         } in
+                         case GHC.List.init1 @ [GHC.Types.Char] x xs of wild1 {
+                           [] -> a
+                           : x1 xs1
+                           -> GHC.Base.++
+                                @ GHC.Types.Char
+                                (Data.OldList.intercalate_$spoly_go
+                                   @ GHC.Types.Char
+                                   x1
+                                   (Data.OldList.prependToAll
+                                      @ [GHC.Types.Char]
+                                      Parse.parseDiphPhonemeInventory1
+                                      xs1))
+                                a } })) -}
+6791a924f28ddbb2b4436328cc158bb0
+  parseDiphPhonemeInventory1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/, /"#) -}
+49db310c985e992b5f051449ae0e67f9
+  parseDiphPhonemeInventory2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/\n"#) -}
+9bdecbadd65ef08a194641c1894fbd7f
+  parseDiphPhonemeInventory_go ::
+    [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+91242a1e820f2c600fb7ddb71fc4bbb0
+  parseDiphPhonemeInventory_go1 ::
+    [PhonemeData.Phoneme] -> [[GHC.Types.Char]]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+691875b46f43ca0b301cd2410b90aa75
+  parseInflectionSystem ::
+    InflectionData.InflectionSystem -> GHC.Base.String
+  {- Arity: 1,
+     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)> -}
+728b3f93e44697e93cb3b22191e5a316
+  parseManifestSystem ::
+    InflectionData.ManifestSystem
+    -> [InflectionData.Manifest InflectionData.Gender]
+    -> [InflectionData.Manifest InflectionData.Animacy]
+    -> [InflectionData.Manifest InflectionData.Case]
+    -> [InflectionData.Manifest InflectionData.Number]
+    -> [InflectionData.Manifest InflectionData.Definiteness]
+    -> [InflectionData.Manifest InflectionData.Specificity]
+    -> [InflectionData.Manifest InflectionData.Topic]
+    -> [InflectionData.Manifest InflectionData.Person]
+    -> [InflectionData.Manifest InflectionData.Clusivity]
+    -> [InflectionData.Manifest InflectionData.Honorific]
+    -> [InflectionData.Manifest InflectionData.Polarity]
+    -> [InflectionData.Manifest InflectionData.Tense]
+    -> [InflectionData.Manifest InflectionData.Aspect]
+    -> [InflectionData.Manifest InflectionData.Mood]
+    -> [InflectionData.Manifest InflectionData.Voice]
+    -> [InflectionData.Manifest InflectionData.Evidentiality]
+    -> [InflectionData.Manifest InflectionData.Transitivity]
+    -> [InflectionData.Manifest InflectionData.Volition]
+    -> GHC.Base.String
+  {- Arity: 19,
+     Strictness: <L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U> -}
+e72229862c5598f06b762017fa54345f
+  parseManifestSystems ::
+    GHC.Types.Int
+    -> [InflectionData.ManifestSystem]
+    -> InflectionData.InflectionSystem
+    -> GHC.Base.String
+  {- Arity: 3,
+     Strictness: <S(S),1*U(U)><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: [InflectionData.ManifestSystem]
+                   w2 :: InflectionData.InflectionSystem ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Parse.$wparseManifestSystems ww1 w1 w2 }) -}
+dd2d3a65f1b9becf7a79bb9984ff6619
+  parsePhoneme :: PhonemeData.Phoneme -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: PhonemeData.Phoneme ->
+                 case ds of wild {
+                   PhonemeData.Consonant ds1 ds2 ds3 ipa -> ipa
+                   PhonemeData.Vowel ds1 ds2 ds3 ds4 ipa -> ipa
+                   PhonemeData.Diphthong ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ipa -> ipa
+                   PhonemeData.Blank -> GHC.Types.[] @ GHC.Types.Char }) -}
+273b8ee369eec20b14935267676cf5f8
+  parseSonHier ::
+    [PhonemeData.Phoneme] -> [[PhonemeData.Phoneme]] -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,1*U><L,1*U>,
+     Unfolding: (\ vows :: [PhonemeData.Phoneme]
+                   cons :: [[PhonemeData.Phoneme]] ->
+                 GHC.CString.unpackAppendCString#
+                   "\n\
+                   \\n\
+                   \Sonority hierarchy: \n\
+                   \/"#
+                   (let {
+                      a :: [GHC.Types.Char]
+                      = GHC.CString.unpackAppendCString#
+                          "/\n\
+                          \/"#
+                          (case GHC.Base.map
+                                  @ [PhonemeData.Phoneme]
+                                  @ [GHC.Types.Char]
+                                  Parse.parseSonHier2
+                                  cons of wild {
+                             [] -> Parse.parseDiphPhonemeInventory2
+                             : x xs1
+                             -> GHC.Base.++
+                                  @ GHC.Types.Char
+                                  (Data.OldList.intercalate_$spoly_go
+                                     @ GHC.Types.Char
+                                     x
+                                     (Data.OldList.prependToAll
+                                        @ [GHC.Types.Char]
+                                        Parse.parseSonHier1
+                                        xs1))
+                                  Parse.parseDiphPhonemeInventory2 })
+                    } in
+                    case GHC.Base.map
+                           @ PhonemeData.Phoneme
+                           @ [GHC.Types.Char]
+                           Parse.parsePhoneme
+                           vows of wild {
+                      [] -> a
                       : x xs1
                       -> GHC.Base.++
                            @ GHC.Types.Char
@@ -172,168 +2546,121 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                               x
                               (Data.OldList.prependToAll
                                  @ [GHC.Types.Char]
-                                 Parse.parseDictionary2
+                                 Parse.parseDiphPhonemeInventory1
                                  xs1))
-                           Parse.parseDictionary3 })) -}
-c9229808b3a8918d0e732223868c6582
-  parseConPhonemeInventory ::
-    [PhonemeType.MaybeConsonant] -> GHC.Base.String
-  {- Arity: 1, Strictness: <L,1*U>,
-     Unfolding: (\ cons :: [PhonemeType.MaybeConsonant] ->
-                 GHC.CString.unpackAppendCString#
-                   "Consonant inventory: "#
-                   (case Parse.parseConPhonemeInventory_go1 cons of wild {
-                      [] -> case GHC.List.init2 ret_ty [GHC.Types.Char] of {}
-                      : x xs
-                      -> let {
-                           a :: [GHC.Types.Char]
-                           = GHC.CString.unpackAppendCString#
-                               ", and "#
-                               (GHC.Base.++
-                                  @ GHC.Types.Char
-                                  (Parse.parseConPhonemeInventory_go
-                                     wild
-                                     (GHC.List.lastError @ [GHC.Types.Char]))
-                                  Parse.parseConPhonemeInventory2)
-                         } in
-                         case GHC.List.init1 @ [GHC.Types.Char] x xs of wild1 {
-                           [] -> a
-                           : x1 xs1
-                           -> GHC.Base.++
-                                @ GHC.Types.Char
-                                (Data.OldList.intercalate_$spoly_go
-                                   @ GHC.Types.Char
-                                   x1
-                                   (Data.OldList.prependToAll
-                                      @ [GHC.Types.Char]
-                                      Parse.parseConPhonemeInventory1
-                                      xs1))
-                                a } })) -}
-a8ba924ff97932ac52ab88c087f62e8c
-  parseConPhonemeInventory1 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
-fa54723e8b14333291c42224f3631134
-  parseConPhonemeInventory2 :: [GHC.Types.Char]
+                           a })) -}
+698f7a34392c2510227d6ab750a2fa06
+  parseSonHier1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
-                   "\n\
-                   \\n"#) -}
-13ac20ffbbc8e1e1ebaf9666e3cc23e5
-  parseConPhonemeInventory_go ::
-    [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
-890a4ce585ef2342ebb302c021d2112c
-  parseConPhonemeInventory_go1 ::
-    [PhonemeType.MaybeConsonant] -> [[GHC.Types.Char]]
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-1b306f4b58317ee8228e51f88df00dde
-  parseConPhonotactics ::
-    ([PhonemeType.MaybeConsonant], [PhonemeType.MaybeConsonant])
-    -> GHC.Base.String
-  {- Arity: 1, Strictness: <S,1*U(U,U)>, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ w :: ([PhonemeType.MaybeConsonant],
-                         [PhonemeType.MaybeConsonant]) ->
-                 case w of ww { (,) ww1 ww2 ->
-                 Parse.$wparseConPhonotactics ww1 ww2 }) -}
-632e8b7defbfeda7f55a9e905fcb3b39
-  parseDictionary :: [OtherData.Word] -> GHC.Base.String
+                   "/\n\
+                   \/"#) -}
+66784dcfd34c9988a83c84b85d2da9e7
+  parseSonHier2 :: [PhonemeData.Phoneme] -> [GHC.Types.Char]
   {- Arity: 1, Strictness: <S,1*U>,
-     Unfolding: (\ wrds :: [OtherData.Word] ->
+     Unfolding: (\ x :: [PhonemeData.Phoneme] ->
                  case GHC.Base.map
-                        @ OtherData.Word
+                        @ PhonemeData.Phoneme
                         @ [GHC.Types.Char]
-                        Parse.parseWord
-                        wrds of wild {
+                        Parse.parsePhoneme
+                        x of wild {
                    [] -> GHC.Types.[] @ GHC.Types.Char
-                   : x xs1
+                   : x1 xs1
                    -> Data.OldList.intercalate_$spoly_go
                         @ GHC.Types.Char
-                        x
+                        x1
                         (Data.OldList.prependToAll
                            @ [GHC.Types.Char]
-                           Parse.parseDictionary1
+                           Parse.parseDiphPhonemeInventory1
                            xs1) }) -}
-e767d2f030f0a31a0986b258e08357c0
-  parseDictionary1 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
-8788bff5e39d408c8cfa59a141c5554e
-  parseDictionary2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "."#) -}
-4ae6204e809c70cdb2e1887df5c66c11
-  parseDictionary3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "/"#) -}
-f65fe0d07d0c45ab6807c61ca5ee2df7
+191df0095c6422f1ea0e69696d47013f
   parseSyllable :: OtherData.Syllable -> GHC.Base.String
-  {- Arity: 1, HasNoCafRefs,
-     Strictness: <S(SLL),1*U(1*U,1*U(A,A,A,1*U),1*U)>,
+  {- Arity: 1, Strictness: <S(SSL),1*U(1*U,1*U,1*U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ w :: OtherData.Syllable ->
                  case w of ww { OtherData.Syllable ww1 ww2 ww3 ->
                  Parse.$wparseSyllable ww1 ww2 ww3 }) -}
-b10da33956c6fb4260c7d048f5130f56
-  parseVowPhonemeInventory :: [PhonemeType.Vowel] -> GHC.Base.String
-  {- Arity: 1, Strictness: <L,1*U>,
-     Unfolding: (\ vows :: [PhonemeType.Vowel] ->
-                 GHC.CString.unpackAppendCString#
-                   "Vowel inventory: "#
-                   (case Parse.parseVowPhonemeInventory_go1 vows of wild {
-                      [] -> case GHC.List.init2 ret_ty [GHC.Types.Char] of {}
-                      : x xs
-                      -> let {
-                           a :: [GHC.Types.Char]
-                           = GHC.CString.unpackAppendCString#
-                               ", and "#
-                               (GHC.Base.++
-                                  @ GHC.Types.Char
-                                  (Parse.parseVowPhonemeInventory_go
-                                     wild
-                                     (GHC.List.lastError @ [GHC.Types.Char]))
-                                  Parse.parseConPhonemeInventory2)
-                         } in
-                         case GHC.List.init1 @ [GHC.Types.Char] x xs of wild1 {
-                           [] -> a
-                           : x1 xs1
-                           -> GHC.Base.++
-                                @ GHC.Types.Char
-                                (Data.OldList.intercalate_$spoly_go
-                                   @ GHC.Types.Char
-                                   x1
-                                   (Data.OldList.prependToAll
-                                      @ [GHC.Types.Char]
-                                      Parse.parseConPhonemeInventory1
-                                      xs1))
-                                a } })) -}
-cac136b4518c25556c9e59ee747cbcc5
-  parseVowPhonemeInventory_go ::
-    [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
-bc65b771754e540a3d46a6f3ad04dcc4
-  parseVowPhonemeInventory_go1 ::
-    [PhonemeType.Vowel] -> [[GHC.Types.Char]]
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-e6485353810a2c074a947a185f21b3c4
-  parseVowPhonotactics ::
-    ([PhonemeType.Vowel],
-     [PhonemeType.Vowel],
-     [PhonemeType.Vowel],
-     [PhonemeType.Vowel])
+428437b2cd459b344c2b46ede6592275
+  parseVowPhonemeInventory ::
+    [PhonemeData.Height]
+    -> [PhonemeData.Backness]
+    -> [PhonemeData.Roundedness]
+    -> [PhonemeData.Length]
+    -> [PhonemeData.Phoneme]
     -> GHC.Base.String
-  {- Arity: 1, Strictness: <S(SLLL),1*U(1*U,1*U,1*U,1*U)>,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ w :: ([PhonemeType.Vowel],
-                         [PhonemeType.Vowel],
-                         [PhonemeType.Vowel],
-                         [PhonemeType.Vowel]) ->
-                 case w of ww { (,,,) ww1 ww2 ww3 ww4 ->
-                 Parse.$wparseVowPhonotactics ww1 ww2 ww3 ww4 }) -}
-bda138991f76122ba4a76ab97406ceb5
-  parseWord :: OtherData.Word -> GHC.Base.String
-  {- Arity: 1, Strictness: <S,1*U(1*U)>, Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ w :: OtherData.Word ->
-                 case w of ww { OtherData.Word ww1 -> Parse.$wparseWord ww1 }) -}
+  {- Arity: 5, Strictness: <L,1*U><L,U><L,U><L,U><L,U> -}
+"SPEC/Parse $fEqManifest @ Animacy" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                              InflectionData.Animacy
+  InflectionData.$fEqManifest @ InflectionData.Animacy $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest16
+"SPEC/Parse $fEqManifest @ Aspect" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                             InflectionData.Aspect
+  InflectionData.$fEqManifest @ InflectionData.Aspect $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest5
+"SPEC/Parse $fEqManifest @ Case" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                           InflectionData.Case
+  InflectionData.$fEqManifest @ InflectionData.Case $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest15
+"SPEC/Parse $fEqManifest @ Clusivity" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                InflectionData.Clusivity
+  InflectionData.$fEqManifest @ InflectionData.Clusivity $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest9
+"SPEC/Parse $fEqManifest @ Definiteness" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                   InflectionData.Definiteness
+  InflectionData.$fEqManifest @ InflectionData.Definiteness $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest13
+"SPEC/Parse $fEqManifest @ Evidentiality" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                    InflectionData.Evidentiality
+  InflectionData.$fEqManifest @ InflectionData.Evidentiality $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest2
+"SPEC/Parse $fEqManifest @ Gender" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                             InflectionData.Gender
+  InflectionData.$fEqManifest @ InflectionData.Gender $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest17
+"SPEC/Parse $fEqManifest @ Honorific" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                InflectionData.Honorific
+  InflectionData.$fEqManifest @ InflectionData.Honorific $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest8
+"SPEC/Parse $fEqManifest @ Mood" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                           InflectionData.Mood
+  InflectionData.$fEqManifest @ InflectionData.Mood $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest4
+"SPEC/Parse $fEqManifest @ Number" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                             InflectionData.Number
+  InflectionData.$fEqManifest @ InflectionData.Number $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest14
+"SPEC/Parse $fEqManifest @ Person" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                             InflectionData.Person
+  InflectionData.$fEqManifest @ InflectionData.Person $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest10
+"SPEC/Parse $fEqManifest @ Polarity" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                               InflectionData.Polarity
+  InflectionData.$fEqManifest @ InflectionData.Polarity $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest7
+"SPEC/Parse $fEqManifest @ Specificity" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                  InflectionData.Specificity
+  InflectionData.$fEqManifest @ InflectionData.Specificity $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest12
+"SPEC/Parse $fEqManifest @ Tense" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                            InflectionData.Tense
+  InflectionData.$fEqManifest @ InflectionData.Tense $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest6
+"SPEC/Parse $fEqManifest @ Topic" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                            InflectionData.Topic
+  InflectionData.$fEqManifest @ InflectionData.Topic $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest11
+"SPEC/Parse $fEqManifest @ Transitivity" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                   InflectionData.Transitivity
+  InflectionData.$fEqManifest @ InflectionData.Transitivity $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest1
+"SPEC/Parse $fEqManifest @ Voice" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                            InflectionData.Voice
+  InflectionData.$fEqManifest @ InflectionData.Voice $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest3
+"SPEC/Parse $fEqManifest @ Volition" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                               InflectionData.Volition
+  InflectionData.$fEqManifest @ InflectionData.Volition $dEq
+  = Parse.$s$fEq(,,,,,,,,,,,,,,,,,)_$c==_$s$fEqManifest
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

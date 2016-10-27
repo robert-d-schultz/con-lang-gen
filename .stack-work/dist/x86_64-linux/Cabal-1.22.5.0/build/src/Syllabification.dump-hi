@@ -1,0 +1,126 @@
+
+==================== FINAL INTERFACE ====================
+2016-10-25 04:39:50.891841 UTC
+
+interface conla_1eA9qWUPH9nBowcXqqaV8r:Syllabification 7103
+  interface hash: 3aed2ca909fcdca9a0a33c691af9102e
+  ABI hash: 4733e842b6c77a5ec7321501f8cad06b
+  export-list hash: a741c5c7159797f058482789d7878efa
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 962af636f8e927040c7daa9c21457292
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Syllabification.syllabifyWord
+module dependencies: OtherData PhonemeData PhonotacticsGen
+package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
+                      MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      erf-2.0.0.0@erf_6l78BnvLL4b2mWYp3HJJxX
+                      flexible-defaults-0.0.1.2@flexi_70LqvhG3vbS8bRvV8pHtMk
+                      ghc-prim-0.4.0.0 integer-gmp-1.0.0.0
+                      math-functions-0.1.7.0@mathf_BN6S7j0ar3LC4TsnYu0us5
+                      mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI
+                      monad-loops-0.4.3@monad_LQiHRUYhFhYBU7nOOWDOrb
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk
+                      old-locale-1.0.0.7@oldlo_7h2Gx6mVPJ5Gheca8j9Mpe
+                      old-time-1.1.0.3@oldti_JVjJvknZJ0JKghfag2Jw2L
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L
+                      random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL
+                      random-shuffle-0.0.4@rando_9kOz9tEn1526ShtWz8x59X
+                      random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr
+                      rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG
+                      stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD
+                      syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE template-haskell-2.10.0.0
+                      th-extras-0.0.0.4@thext_LRY1RUMy7ShLl2tqhMyHdO
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
+orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
+         base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.IO
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.MWC
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.PureMT
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.StdGen
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE:Data.Generics.Instances
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk:System.Random.MWC
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Primitive
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Ord 66127262fc269c8a61d7d87ba94bd4d2
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  OtherData e2b50a410ce19d2d27f8b50952de8b42
+  exports: f505dec72f229982fb85e59b44566731
+  SyllWord 2a83dbf010cc1727d65afdacadf98645
+  SyllWord 188e9f4fb1498b6603ef3cbac6b16e4b
+  Syllable a40fb799bdb0ad6c6a41baed2c661053
+  Syllable 82cacb4fbcd54c7a79c5a699c51fa550
+import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
+  exports: 6190a60b3ecf64d963416d84612d3413
+  Phoneme b470252dd3c1b881fdcf6f5f8e488f7a
+  Word 5ef8c136f7cf4396a5065100ab7b2865
+  Word 1681594c37a7b959bf1fd6376ae38aed
+  getPhonemes 57d70c3a5762befbf1808fb17df23628
+import  -/  PhonotacticsGen 9e23f8dea7b610bbee322457d8678afd
+  exports: 5bbf082cfe2be7a4eaae7a2a5f6b7de8
+  retrieveSon a83ac27837ada1b4430c7af8af2c9a67
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+968f0340a2aeada7cf5d47fced7b785e
+  $wsyllabifyWord ::
+    [[PhonemeData.Phoneme]]
+    -> [PhonemeData.Morpheme] -> (# [OtherData.Syllable] #)
+  {- Arity: 2, Strictness: <L,U><L,1*U>, Inline: [0] -}
+eb8ca7af072dfd4f545c9dc26b0173f3
+  syllabifyWord ::
+    [[PhonemeData.Phoneme]] -> PhonemeData.Word -> OtherData.SyllWord
+  {- Arity: 2, Strictness: <L,U><S,1*U(1*U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: [[PhonemeData.Phoneme]] w1 :: PhonemeData.Word ->
+                 case w1 of ww { PhonemeData.Word ww1 ->
+                 case Syllabification.$wsyllabifyWord w ww1 of ww2 { (##) ww3 ->
+                 OtherData.SyllWord ww3 } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,23 +1,22 @@
 
 ==================== FINAL INTERFACE ====================
-2016-09-24 20:40:09.199924 UTC
+2016-10-25 01:43:13.356987 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen 7103
-  interface hash: f66159cbf2f7cfa8c348d695f07ad085
-  ABI hash: 3161bd3b293595ac2e49b76ca89047ec
-  export-list hash: 09c66478cd924912531c964a5f38d806
-  orphan hash: fe48ecd7cd2d48d4180b6321e152208a
+  interface hash: fe7539e36a524fb4b68a997eedd5802d
+  ABI hash: 9e23f8dea7b610bbee322457d8678afd
+  export-list hash: 5bbf082cfe2be7a4eaae7a2a5f6b7de8
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  PhonotacticsGen.makeConPhonotactics
-  PhonotacticsGen.makeVowPhonotactics
-module dependencies: PhonemeInventoryGen PhonemeType
+  PhonotacticsGen.makeSonHier
+  PhonotacticsGen.retrieveSon
+module dependencies: PhonemeData
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
-                      OneTuple-0.2.1@OneTu_7qUmBkRamgQ0H9fFgZmi5H
                       array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
                       containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
                       deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
@@ -45,7 +44,6 @@ package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       th-extras-0.0.0.4@thext_LRY1RUMy7ShLl2tqhMyHdO
                       time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
                       transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
-                      tuple-0.3.0.2@tuple_0P5GlwXwirn97NAX2TWlIC
                       vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
 orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
          base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
@@ -82,129 +80,87 @@ family instance modules: base-4.8.2.0:Control.Applicative
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
 import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Maybe 1cb58de2b04ee3c0c0a7dc9201184aff
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  PhonemeInventoryGen 6dea7946c11c44f58a6494423af32d95
-  exports: a48589ab3dfb3d6be8da2a80c0d9cecf
-import  -/  PhonemeType ae499e04429789f68b804baafd2bc506
-  exports: 3ba39fd360b81c89e4deec0e37d35fd4
-  Blank 166226366c396ae718303a1d9dfdadeb
-  MaybeConsonant 8b1f1964c3eda75693ff3855f66d2ad1
-  Vowel e51938fc3a28180cc0e71906aef6982c
-import  -/  containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set 7116dff3002cb8f8fc1c63ac63f4ea50
-import  -/  containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base 681af891dffe392ee938c8b49d69f236
+import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
+  exports: 6190a60b3ecf64d963416d84612d3413
+  AFFRICATE 147f242a04fba4ccaf3d990013a051a5
+  APPROXIMANT 688bb45ab09fc9e6611f59d892650e5d
+  ASPIRATED 756e7c3f604a54456232d7e10e6e0cde
+  BREATHY f6261f7e07b77dd9cd142213c14126e3
+  CREAKY 4c3da3105ff3af15a8154f034d9336ad
+  DORSAL bd982f4073f646c80f518bd24cad6c99
+  Diphthong dd3d8f9f97afc9c5dce57589c3791239
+  FLAP eccdd9a127edaee2ea4ed02c15b14dc9
+  FRICATIVE 9fe324020397eadebc8f607209e35373
+  LAFFRICATE 3e4cdb3cdeb16222335c945aafc38d2f
+  LAPPROXIMANT 3c4f7b9a6a409f6c5ec3ef14ac4541d2
+  LFLAP f2a7011e636265dc707312cd55371337
+  LFRICATIVE fd803e10efe16b2dce9944b62a4a74b4
+  MODAL bd244264bab2966de13717630fceb06d
+  NASAL 33a4f70f850c97bc19932b2d99f86fec
+  Phoneme b470252dd3c1b881fdcf6f5f8e488f7a
+  SAFFRICATE b1edf15f9894f243d08ceea9bb332359
+  SILIBANT f64a5f1ed2462d03b63a4ac44aed52e4
+  SLACK c990fb0ced343bfe6a5ecaaeda0b09e1
+  STIFF 0bcb6b807cc83b67beb5b05b41f42598
+  STOP 1e220103167759b2457a52d787a2828e
+  TRILL 6ee80409b4b73f8f366272d21ec77dba
+  VOICELESS dbf8f182d917d2469a91d36a4068291b
+  Vowel 3d033a9ea8966876e27fd237e6e3b1f9
+  cmanner 63b423ecfee1e7aefd47b7c99d563063
+  cplace 96038e128746e5b5fcd1511ba99ef291
+  cvoice 4d9403c61cf0bfebe916b2dd0e86d5dd
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random.Distribution.Uniform ce34c1edd0e59e868fcf9e0bf914c4ef
 import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
-import  -/  tuple-0.3.0.2@tuple_0P5GlwXwirn97NAX2TWlIC:Data.Tuple.Sequence e58e5defba9a8c597a984a339de09d02
-0cdd9a115d2de75dcbe6ef0142d52187
-  $sfromList ::
-    [PhonemeType.Vowel] -> Data.Set.Base.Set PhonemeType.Vowel
-  {- Arity: 1, Strictness: <S,1*U>,
-     Unfolding: (\ ds :: [PhonemeType.Vowel] ->
-                 case ds of wild {
-                   [] -> Data.Set.Base.Tip @ PhonemeType.Vowel
-                   : x ds1
-                   -> case ds1 of wild1 {
-                        []
-                        -> case x of dt { PhonemeType.Vowel ipv ipv1 ipv2 ipv3 ->
-                           Data.Set.Base.Bin
-                             @ PhonemeType.Vowel
-                             1
-                             dt
-                             (Data.Set.Base.Tip @ PhonemeType.Vowel)
-                             (Data.Set.Base.Tip @ PhonemeType.Vowel) }
-                        : ipv ipv1
-                        -> case x of ww { PhonemeType.Vowel ww1 ww2 ww3 ww4 ->
-                           case ipv of ww5 { PhonemeType.Vowel ww6 ww7 ww8 ww9 ->
-                           case PhonemeType.$w$c>= ww1 ww2 ww3 ww4 ww6 ww7 ww8 ww9 of wild2 {
-                             GHC.Types.False
-                             -> PhonotacticsGen.$wgo5
-                                  1
-                                  (Data.Set.Base.Bin
-                                     @ PhonemeType.Vowel
-                                     1
-                                     ww
-                                     (Data.Set.Base.Tip @ PhonemeType.Vowel)
-                                     (Data.Set.Base.Tip @ PhonemeType.Vowel))
-                                  wild1
-                             GHC.Types.True
-                             -> PhonotacticsGen.$sfromList_go5
-                                  (Data.Set.Base.Bin
-                                     @ PhonemeType.Vowel
-                                     1
-                                     ww
-                                     (Data.Set.Base.Tip @ PhonemeType.Vowel)
-                                     (Data.Set.Base.Tip @ PhonemeType.Vowel))
-                                  wild1 } } } } }) -}
-754c7041e42e58339a9105c51412a85f
-  $sfromList_go5 ::
-    Data.Set.Base.Set PhonemeType.Vowel
-    -> [PhonemeType.Vowel] -> Data.Set.Base.Set PhonemeType.Vowel
-  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
-8be3193563c08e48082576c55ce42957
-  $sunions_go5 ::
-    Data.Set.Base.Set PhonemeType.Vowel
-    -> [Data.Set.Base.Set PhonemeType.Vowel]
-    -> Data.Set.Base.Set PhonemeType.Vowel
-  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
-70837d0c0e1413b734373dc539d481bd
-  $w$sgo5 ::
-    PhonemeType.Height
-    -> PhonemeType.Backness
-    -> PhonemeType.Roundedness
-    -> GHC.Base.String
-    -> Data.Set.Base.Set PhonemeType.Vowel
-    -> Data.Set.Base.Set PhonemeType.Vowel
-  {- Arity: 5, Strictness: <L,U><L,U><L,U><L,U><S,1*U>,
-     Inline: [0] -}
-181912c223aaebafdb280220864f707b
-  $wgo5 ::
-    GHC.Prim.Int#
-    -> Data.Set.Base.Set PhonemeType.Vowel
-    -> [PhonemeType.Vowel]
-    -> Data.Set.Base.Set PhonemeType.Vowel
-  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
-f629efa0b48ea36d0995fd5986e958ed
-  $wmakeVowPhonotactics ::
-    [PhonemeType.MaybeConsonant]
-    -> [PhonemeType.MaybeConsonant]
-    -> [PhonemeType.Vowel]
-    -> Data.RVar.RVar
-         ([PhonemeType.Vowel],
-          [PhonemeType.Vowel],
-          [PhonemeType.Vowel],
-          [PhonemeType.Vowel])
-  {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0] -}
-aaa7d1648f2beecab626c5d299772db4
-  makeConPhonotactics ::
-    [PhonemeType.MaybeConsonant]
-    -> Data.RVar.RVar
-         ([PhonemeType.MaybeConsonant], [PhonemeType.MaybeConsonant])
+584b0245007aab1cf39091959e249ff7
+  makeSonHier ::
+    [PhonemeData.Phoneme] -> Data.RVar.RVar [[PhonemeData.Phoneme]]
   {- Arity: 1, Strictness: <L,1*U> -}
-3c239a44ce91324791dec9ca58dcf5be
-  makeVowPhonotactics ::
-    ([PhonemeType.MaybeConsonant], [PhonemeType.MaybeConsonant])
-    -> [PhonemeType.Vowel]
-    -> Data.RVar.RVar
-         ([PhonemeType.Vowel],
-          [PhonemeType.Vowel],
-          [PhonemeType.Vowel],
-          [PhonemeType.Vowel])
-  {- Arity: 2, Strictness: <S,1*U(U,U)><L,U>, Inline: INLINE[0],
-     Unfolding: InlineRule (2, True, False)
-                (\ w :: ([PhonemeType.MaybeConsonant],
-                         [PhonemeType.MaybeConsonant])
-                   w1 :: [PhonemeType.Vowel] ->
-                 case w of ww { (,) ww1 ww2 ->
-                 PhonotacticsGen.$wmakeVowPhonotactics ww1 ww2 w1 }) -}
-"SPEC/PhonotacticsGen fromList @ Vowel" [ALWAYS] forall $dOrd :: GHC.Classes.Ord
-                                                                   PhonemeType.Vowel
-  Data.Set.Base.fromList @ PhonemeType.Vowel $dOrd
-  = PhonotacticsGen.$sfromList
+a83ac27837ada1b4430c7af8af2c9a67
+  retrieveSon ::
+    [[PhonemeData.Phoneme]] -> PhonemeData.Phoneme -> GHC.Types.Int
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ sonHier :: [[PhonemeData.Phoneme]]
+                   ds :: PhonemeData.Phoneme ->
+                 case ds of wild {
+                   DEFAULT
+                   -> case PhonotacticsGen.retrieveSon_go
+                             (GHC.Base.map
+                                @ [PhonemeData.Phoneme]
+                                @ GHC.Types.Bool
+                                (GHC.List.elem @ PhonemeData.Phoneme PhonemeData.$fEqPhoneme wild)
+                                (GHC.List.reverse1
+                                   @ [PhonemeData.Phoneme]
+                                   sonHier
+                                   (GHC.Types.[] @ [PhonemeData.Phoneme])))
+                             0 of wild1 {
+                        [] -> Data.Maybe.fromJust1 @ GHC.Types.Int : a1 ds1 -> a1 }
+                   PhonemeData.Vowel ds1 ds2 ds3 ds4 ds5
+                   -> case GHC.List.$wlenAcc
+                             @ [PhonemeData.Phoneme]
+                             sonHier
+                             0 of ww2 { DEFAULT ->
+                      GHC.Types.I# (GHC.Prim.+# ww2 1) }
+                   PhonemeData.Diphthong ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9
+                   -> case GHC.List.$wlenAcc
+                             @ [PhonemeData.Phoneme]
+                             sonHier
+                             0 of ww2 { DEFAULT ->
+                      GHC.Types.I# (GHC.Prim.+# ww2 1) } }) -}
+94d5c7ff5dd058829b4d24d3412ca737
+  retrieveSon_go ::
+    [GHC.Types.Bool] -> GHC.Prim.Int# -> [GHC.Types.Int]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U> -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

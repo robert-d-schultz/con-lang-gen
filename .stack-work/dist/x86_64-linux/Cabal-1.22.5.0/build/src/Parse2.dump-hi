@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-22 02:56:08.869328 UTC
+2016-10-22 22:13:20.402226 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Parse2 7103
-  interface hash: 4b1881ccd3be8688e65114ae93f67a6b
-  ABI hash: c3eaccdb10e7ca83de1942e10309300e
-  export-list hash: 67faf37a72f9390c8462b59e87898e9f
+  interface hash: b027f7b7ef7d9fc36d772f08bbc2ae3b
+  ABI hash: ed673a445f12baa77427c4538a32e22b
+  export-list hash: 60a91ec0a1ecd94de81017321e758d19
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -15,11 +15,13 @@ exports:
   Parse2.parseConPhonemeInventory
   Parse2.parseDictionary
   Parse2.parseDiphPhonemeInventory
+  Parse2.parseExponentSystems
   Parse2.parseGrammarSystem
   Parse2.parseSonHier
   Parse2.parseVowPhonemeInventory
-module dependencies: GrammarType2 OtherData2 PhonemeInventoryGen2
-                     PhonemeType2 PhonotacticsGen2 WordGen2
+module dependencies: GrammarGen2 GrammarType2 MorphologyGen
+                     OtherData2 PhonemeInventoryGen2 PhonemeType2 PhonotacticsGen2
+                     WordGen2
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
                       array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
@@ -87,62 +89,68 @@ family instance modules: base-4.8.2.0:Control.Applicative
 import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
 import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
 import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  GrammarType2 e2c3b99d01966a9bb196f4f8c3e58e7a
-  exports: 5ca45ab2b232909d9429e4b6138b838a
-  ABL 738f987d7fc884d4667fdf45b89b51de
-  ACC 9c9729e39d4fc706d6e03b9201e5e041
-  AN 1d02ca67d2b90b0222825d123db97813
-  Animacy 997f0106cc61a0dae6693b73d4ae044c
-  COM 996c0c3c570d7c77f3523464c4fe33ad
-  Case e317df6bd7f01bf53f9bafa3ac506fc7
-  DAT 31717eb32c90bdc9a314db185bbdd050
-  DEF df03600bd400f8d2ee7c37b051c127f7
-  DU dc035f93001cf29635e1e99b2a9a4703
-  Definiteness 2a24341dc728cf3214c312c2683a2f7a
-  ERG 6148b71f22b002715d28a3a4f9472146
-  Exponent 92b87e99388896b172131cacf023bbcb
-  F 71eb1d01ccf23b50e3803339849c682c
-  FAM 78dd4574780d94fb63c620cc649b640b
-  FORM 1a38f692aa2acd0e586a9ca82e4a6a49
-  GEN cf3045f24b611cafc303f48d5d100f52
-  Gender 483b53f5081b71881e402c116818b125
-  GrammarSystem 56e731ee30b3dfb09e37589f3037fcd9
-  HUM f21dbac65dd0a9c04ba7fa7d11ca5f3c
-  Honorific f7bc47c734d5bf5ab3e9ea94b2c3ae2f
-  INAN 67ea589a2029259fcbb687c70ae6a10d
-  INDF 1763b2322a156b28b32a79deaa564dec
-  INS 1096faf8103eb39797c15aee5124f533
-  LOC 6d018f60eb6b58a017e99bab92bb2934
-  M 3a9f9da047c8da96dae34631c0112e0f
-  Manifest 972fa0fec8d0708852832bdd0fd96d7e
-  N fe535f898f4c04bed34f6697e798dbec
-  NHUM 16a7d706d74a5748836869241118915d
-  NOM 566e8ff6b1d19e7b40f7b6b1a5dc4398
-  NSPEC 46d7dd41a53cb8b746dd2df6d9624297
-  NoManifest 2b49755bf3bcd439695f99229649a644
-  Number a7c28e97173ad7b983bce4b939a8926c
-  PA ef307365fd6afad131862c18a785b0e3
-  PL 4a4a1ef4893cccd440e03dfc3de2f898
-  PREP 3d1940db58bec680bdcdcb6720d6c720
-  Particle 84042ac709105d6b40002eaf72c436d3
-  SG 097037b36415c839e3fb084d9c213cec
-  SPEC e4d362740307f1050060f4fdc170e5a9
-  Specificity 8acc464be69c950c5a5371aa4ffa757d
-  TRI 76f828aa81bf0ff2e970ca789d169103
-  VOC 777c9aba9dcbd96aa430e6f5783c8791
-  ZO 8c74e0e772e74cf5789369f94b4accaf
-  aSys 779e92ccd97a7898dde6e429ef287d9e
-  cSys acad02f82189be9b440ef9a73a751ad1
-  dSys 826e61eefe0409e4bced9af7c17e74d7
-  gSys 75aaee7a0819db87d1776d5421a5252d
-  hSys 2b8ad935157a5faa60bd935701648bbf
-  nSys 8ddd717f6fe4e77dd041a08e167da70f
-  sSys a6358505bc6e4f409818a8519927fd01
+import  -/  GrammarType2 554c1372029403d0f78a34fd86291814
+  exports: bc4b67f93b57e401f71bf872fb10af16
+  ABL 5abef65e153410a35032c30c0b90c3be
+  ACC 377823d621f1a01ca52c02b9272c4d34
+  AN 0d9efd539fb5eeaf26263074e27551e2
+  Animacy 08fe611e10b39cec598d03993fbc490b
+  COM dc435e902fb70b98883873a575ba2abe
+  Case fcaa4072d88a1238ff7d9377b198162c
+  DAT 49605a7e5777b82f7d8277407eaf7a5e
+  DEF 01c05a3d299cc7bbd1f65616500c9b55
+  DU 2a695110d3d7a4bebf16aae3dadd943c
+  Definiteness ae15ce513899bbb81e1bdfe89e424f26
+  ERG efac79e9b1df5fc641162b102d31a677
+  Exponent 9c3574ff1bafcd6368498a6a051c301c
+  ExponentSystem e9d745ac7b87b749b2fd364b5781c872
+  ExponentSystem 8458b2ed20531adbd7e1f0415074af95
+  F f0c4fb3d592957e47657e1c5ed838c06
+  FAM 09f8e32f1ff65086282f8cd591cca22f
+  FORM ca071484af96fb0309b022b042f316fd
+  GEN 12eeda55a63d5c766911b5d65d919de9
+  Gender 498ce41f2238314803d9983a3ee7b9a8
+  GrammarSystem f1c45a0abc5686da3599290cbd333b39
+  HUM 3815e56fed0e42da8c5673983f1fef18
+  Honorific 270aa74414213d38a897e2c2f04e2cb0
+  INAN d81a266f14d27704b4ed86dc2fce6fb3
+  INDF 1ddc1a6f8137fffd1b35fd4c7104bc1a
+  INS 7f716214444f0e7c19add7288dfb75ce
+  LOC ba9def8a5a0d79b6a12ab43882d66372
+  M 68928aee73f143a491436c945128430b
+  Manifest fd2e4f6f534fd240b9cde0b8f8a520af
+  N 329025bc3903d2ba0de87e8afa3e0f83
+  NHUM 22698b4bb5cb74ee1a6cc6ae89c47295
+  NOM 6c23c1dbfe340f951bbe0fd4864d0639
+  NSPEC ea60b91b2c7793ef32b15172c2b2fa1a
+  NoManifest d8cbcb4c9124ecc6352b6ce43bcafca2
+  Number dc554c15fa6745d82b7cf16c87b8dfc7
+  PA d0ba96ee7b7f56533bbfafb514296ec9
+  PL d79586ad9bbaffd8d3dfe0482a69c947
+  PREP 998a9334e679e31f4baa8d1b985e4b2c
+  Particle 68ea730d84fef1f594f0f7bcabdae8c7
+  SG 2f625695ed10a0a51eef091eda5afaea
+  SPEC 05cedc0039a9849274ec3ab92cd7e230
+  Specificity 6417e4f225623173ad75902202935d29
+  TRI 87e8148cd1a5ca07dba0573c61dc93ae
+  VOC 8661e390839e3b7fb710e13ac442fcfd
+  ZO a00bc8a637afb8755bd1a6fd4abdd286
+  aSys b28153b080deb74bae61e57b3aa09fb0
+  cSys 307a71f4746149a69b70293d71669a43
+  dSys 9c768a06d579fdc1ec52e3d19de17993
+  gSys 5fdb8327bf387a57166d29daab56f35c
+  hSys ffc49b5cf7506f8fe38952bf18cc2f2a
+  nSys 6179438e519cdb4fe74dd18f5a5441b6
+  sSys fbdc589d741cdb7db88e98d70e67268d
+import  -/  MorphologyGen dda621a348d62fef7543ecda10eac03e
+  exports: 98cb8040762704b605d5b96ec412df96
+  cleanGrammarSysE c8826521b85d37f410ccfa22c52a4e9d
 import  -/  OtherData2 08f9fdb83c0ec02cbc12c2fe756e9c77
   exports: b7fb5a9c6a9b7223e3a71462099d5c6f
   SyllWord 169e91dd652260a58cf3451ff7f6c5f1
@@ -191,6 +199,8 @@ import  -/  PhonemeType2 197339ce6b16abf97787f114b13340ff
   MID 765e89afd9e863571bebda9e8f94d079
   MODAL bcf40a06dcc3f1abc814ad76f131d0d0
   Manner 9412c45cd95f18b011a2b8e64ee99754
+  Morpheme e8682e3ac4d3447fa8f71212e6d80dc7
+  Morpheme 2ae9d5e2279d7aff2754760a9a3abd27
   NASAL 0d2fd6bc2c4ba81f05bee7974aa27c6e
   NEARBACK c6ec4205f17f2930c6223fec97935106
   NEARCLOSE 34ef302d7ea89a95c7787470df54dc00
@@ -225,7 +235,15 @@ import  -/  PhonemeType2 197339ce6b16abf97787f114b13340ff
 import  -/  WordGen2 1d57f485ad2b915da00768b4a85e902d
   exports: f40529166b753f6184771346ad1c5d65
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-c7e26c25a8bbcc6429ad20220a3f37f6
+6309401f3f000357ebe4c8b5424fa21b
+  $wparseExponentSystems ::
+    GHC.Prim.Int#
+    -> [GrammarType2.ExponentSystem]
+    -> GrammarType2.GrammarSystem
+    -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,U><L,U><L,U(U,U,U,U,U,U,U)>,
+     Inline: [0] -}
+1ff5fdfc799b12a9ef4a88c2baede5cd
   $wparseGrammarSystem ::
     GrammarType2.Manifest ([GrammarType2.Gender], GHC.Types.Int)
     -> GrammarType2.Manifest ([GrammarType2.Animacy], GHC.Types.Int)
@@ -353,7 +371,21 @@ e987654a0bc33e3f22d5d26c77c5e945
   parseDiphPhonemeInventory_go1 ::
     [PhonemeType2.Phoneme] -> [[GHC.Types.Char]]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-cf02f6d0058bc46f8731128527db343e
+d6fdbdd185b2de909fbee02be2b710bf
+  parseExponentSystems ::
+    GHC.Types.Int
+    -> [GrammarType2.ExponentSystem]
+    -> GrammarType2.GrammarSystem
+    -> GHC.Base.String
+  {- Arity: 3, Strictness: <S(S),1*U(U)><L,U><L,U(U,U,U,U,U,U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: [GrammarType2.ExponentSystem]
+                   w2 :: GrammarType2.GrammarSystem ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Parse2.$wparseExponentSystems ww1 w1 w2 }) -}
+4430ea25ef8d527b7529bb6cf9b63d0a
   parseGrammarSystem :: GrammarType2.GrammarSystem -> GHC.Base.String
   {- Arity: 1, Strictness: <S(SLLLLLL),U(U,U,U,U,U,U,U)>,
      Inline: INLINE[0],

@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-20 22:14:26.327527 UTC
+2016-10-27 06:13:06.009564 UTC
 
 interface main@main:Main 7103
-  interface hash: 95497d9d2e3b3bd92a81cc34fb332c89
+  interface hash: faa1768a8db54db86c68224399dea688
   ABI hash: 4ff5904c238c1bc927a920673c9086fa
   export-list hash: 111b464f1a40b815073e610af3ba0b57
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -47,6 +47,7 @@ package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
 orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
          base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:InflectionData
          mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI:System.Random.Mersenne.Pure64
          random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source
          random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.IO
@@ -79,13 +80,16 @@ family instance modules: base-4.8.2.0:Control.Applicative
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Primitive
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Parse2 c6fd87781b11b3f340c23e8174d9ae89
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeInventoryGen2 e5148585c98888d3b6d853c6869a93f1
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen2 1d6a6d3629741d75dc9d1e17e59228ee
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:WordGen2 5b41573a69760a17489c584c8c9b4cff
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:InflectionGen 7a5f2474a9677b88c2c56282ae171417
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:MorphologyGen f928edf92ac044711d1144d924818ef0
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Parse b8bdac844d6b2beff3bd3eb9f1ca1be8
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeGen 28ce5b9e9c6c08088c2b3abde3cd0d20
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen 9e23f8dea7b610bbee322457d8678afd
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:WordGen 41cebf80bfe9a5c601e3f8f32a7f5690
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130

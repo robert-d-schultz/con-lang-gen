@@ -4,34 +4,44 @@ module Main where
 import Data.Random.Extras
 import Data.Random hiding (sample)
 import Data.RVar
-import PhonemeInventoryGen2
-import PhonotacticsGen2
-import WordGen2
-import Parse2
-import GrammarGen2
+
+import PhonemeGen
+import PhonotacticsGen
+import WordGen
+import Parse
+import InflectionGen
 import MorphologyGen
 
 main :: IO ()
 main = do
-  -- inventoryC <- sampleRVar (makeConInventory 12)
+  -- consonants
   places <- sampleRVar makePlaces
   manners <- sampleRVar makeManners
   phonations <- sampleRVar makePhonations
   inventoryC <- sampleRVar (makeConsonants places manners phonations)
+
+  -- vowels
   heights <- sampleRVar makeHeights
   backs <- sampleRVar makeBacknesses
   rounds <- sampleRVar makeRoundedneses
   lengths <- sampleRVar makeLengths
   inventoryV <- sampleRVar (makeVowels heights backs rounds lengths)
-  inventoryD <- sampleRVar (makeDiphInventory 4 inventoryV)
-  sonHier <- sampleRVar (makeSonHier inventoryC)
-  wrds <- sampleRVar (makeDictionary 50 (inventoryV ++ inventoryD) sonHier ((1, 4), (0, 2), (1, 3), (0, 2)))
-  let syllWrds = map (syllabifyWord sonHier) wrds
-  idata <- loadInputData2
-  (gramSys, (nPar, nExp)) <- sampleRVar (makeGrammarSystem idata)
-  expSystems <- sampleRVar (makeExponentSystems nExp inventoryV sonHier gramSys)
-  parSystems <- sampleRVar (makeParticleSystems nPar inventoryV sonHier gramSys)
 
+  -- diphthongs
+  inventoryD <- sampleRVar (makeDiphInventory 4 inventoryV)
+
+  -- phonotactics
+  sonHier <- sampleRVar (makeSonHier inventoryC)
+
+  -- root morphemes
+  roots <- sampleRVar (makeDictionary 50 (inventoryV ++ inventoryD) sonHier ((1, 4), (0, 2), (1, 3), (0, 2)))
+
+  -- inflection / grammatical categories
+  idata <- loadInputData
+  (inflSys, shit) <- sampleRVar (makeInflectionSystem idata)
+  systems <- sampleRVar (mapM (makeLexicalInflection inventoryV sonHier inflSys) shit)
+
+  -- outputs
   writeFile "phonology.txt" $ "Phonology"
                             ++ parseConPhonemeInventory places manners phonations inventoryC
                             ++ parseVowPhonemeInventory heights backs rounds lengths inventoryV
@@ -40,11 +50,12 @@ main = do
   writeFile "phonotactics.txt" $ "Phonotactics"
                                ++ parseSonHier (inventoryV ++ inventoryD) sonHier
 
-  writeFile "grammar.txt" $ "Grammar"
-                      --   ++ show gramSys ++ "\n"
-                         ++ parseExponentSystems (length expSystems) expSystems gramSys
-                      --   ++ show particleSystems ++ "\n"
-                      --   ++ parseGrammarSystem gramSys
+  writeFile "inflection.txt" $ "Inflection"
+                            -- ++ show inflSys ++ "\n"
+                            -- ++ show shit ++ "\n"
+                            -- ++ show systems ++ "\n"
+                             ++ parseLCInflection inflSys
+                             ++ concatMap (parseLexicalSystems inflSys) systems
 
   writeFile "lexicon.txt" $ "Lexicon"
-                         ++ parseDictionary syllWrds
+                         ++ parseDictionary sonHier roots

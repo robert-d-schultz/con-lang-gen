@@ -1,7 +1,6 @@
 module MorphologyGen
-( makeExponentSystems
-, makeParticleSystems
-, cleanGrammarSysE
+( makeLexicalInflection
+, cleanGrammarSys
 ) where
 
 import Prelude hiding (Word)
@@ -10,62 +9,89 @@ import Data.Random.Extras
 import Data.Random hiding (sample)
 import Control.Monad
 
-import PhonemeType2
-import GrammarGen2
-import GrammarType2
-import WordGen2
+import PhonemeData
+import InflectionGen
+import InflectionData
+import WordGen
 
+-- Inflections for each lexical category
+makeLexicalInflection :: [Phoneme] -> [[Phoneme]] -> InflectionSystem -> (LexicalCategory, Int, Int, Int, Int) -> RVar (LexicalCategory, [ManifestSystem], [ManifestSystem], [ManifestSystem], [ManifestSystem])
+makeLexicalInflection vows sonHier inflSys (lc, prep, posp, pref, suff) = (,,,,) lc <$> makePreParticleSystems lc prep vows sonHier inflSys <*> makePostParticleSystems lc posp vows sonHier inflSys <*> makePrefixSystems lc pref vows sonHier inflSys <*> makeSuffixSystems lc suff vows sonHier inflSys
 
-makeExponentSystems :: Int -> [Phoneme] -> [[Phoneme]] -> GrammarSystem -> RVar [ExponentSystem]
-makeExponentSystems 0 vows sonHier gramSys = return []
-makeExponentSystems i vows sonHier gramSys = (++) <$> makeExponentSystems (i-1) vows sonHier gramSys <*> ((:[]) <$> makeExponentSystem i vows sonHier gramSys)
+-- Prefixes
+makePrefixSystems :: LexicalCategory -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar [ManifestSystem]
+makePrefixSystems lc 0 vows sonHier gramSys = return []
+makePrefixSystems lc i vows sonHier gramSys = (++) <$> makePrefixSystems lc (i-1) vows sonHier gramSys <*> ((:[]) <$> makePrefixSystem lc i vows sonHier gramSys)
 
-makeExponentSystem :: Int -> [Phoneme] -> [[Phoneme]] -> GrammarSystem -> RVar ExponentSystem
-makeExponentSystem i vows sonHier gramSys = do
-  let (g, a, c, n, h, d, s) = cleanGrammarSysE i gramSys
-  let combos = (,,,,,,) <$> g <*> a <*> c <*> n <*> h <*> d <*> s
-  morphs <- replicateM (length combos) (makeMorpheme vows sonHier ((0, 1), (0, 0), (0, 0), (1, 3)))
-  return $ ExponentSystem (zip morphs combos)
+makePrefixSystem :: LexicalCategory -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar ManifestSystem
+makePrefixSystem lc i vows sonHier gramSys = do
+  let (gen,ani,cas,num,def,spe,top,per,clu,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc Prefix i
+  let combos = (,,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> clu <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
+  morphs <- replicateM (length combos) (makeMorpheme vows sonHier ((0, 1), (1, 2), (0, 0), (0, 0)))
+  return $ ManifestSystem lc Prefix (zip morphs combos)
 
-makeParticleSystems :: Int -> [Phoneme] -> [[Phoneme]] -> GrammarSystem -> RVar [ParticleSystem]
-makeParticleSystems 0 vows sonHier gramSys = return []
-makeParticleSystems i vows sonHier gramSys = (++) <$> makeParticleSystems (i-1) vows sonHier gramSys <*> ((:[]) <$> makeParticleSystem i vows sonHier gramSys)
+-- Suffixes
+makeSuffixSystems :: LexicalCategory -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar [ManifestSystem]
+makeSuffixSystems lc 0 vows sonHier gramSys = return []
+makeSuffixSystems lc i vows sonHier gramSys = (++) <$> makeSuffixSystems lc (i-1) vows sonHier gramSys <*> ((:[]) <$> makeSuffixSystem lc i vows sonHier gramSys)
 
-makeParticleSystem :: Int -> [Phoneme] -> [[Phoneme]] -> GrammarSystem -> RVar ParticleSystem
-makeParticleSystem i vows sonHier gramSys = do
-  let (g, a, c, n, h, d, s) = cleanGrammarSysP i gramSys
-  let combos = (,,,,,,) <$> g <*> a <*> c <*> n <*> h <*> d <*> s
-  morphs <- replicateM (length combos) (makeMorpheme vows sonHier ((0, 1), (1, 2), (0, 1), (1, 2)))
-  return $ ParticleSystem (zip morphs combos)
+makeSuffixSystem :: LexicalCategory -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar ManifestSystem
+makeSuffixSystem lc i vows sonHier gramSys = do
+  let (gen,ani,cas,num,def,spe,top,per,clu,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc Suffix i
+  let combos = (,,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> clu <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
+  morphs <- replicateM (length combos) (makeMorpheme vows sonHier ((0, 1), (0, 0), (0, 0), (1, 2)))
+  return $ ManifestSystem lc Suffix (zip morphs combos)
 
-cleanSysE :: Int -> Manifest ([a], Int) -> [Manifest a]
-cleanSysE i (Exponent (x, j))
-  | i == j = map Exponent x
-  | otherwise = [NoManifest]
-cleanSysE i _ = [NoManifest]
+-- Pre-position particles
+makePreParticleSystems :: LexicalCategory -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar [ManifestSystem]
+makePreParticleSystems lc 0 vows sonHier gramSys = return []
+makePreParticleSystems lc i vows sonHier gramSys = (++) <$> makePreParticleSystems lc (i-1) vows sonHier gramSys <*> ((:[]) <$> makePreParticleSystem lc i vows sonHier gramSys)
 
-cleanGrammarSysE :: Int -> GrammarSystem -> ([Manifest Gender], [Manifest Animacy], [Manifest Case], [Manifest Number], [Manifest Honorific], [Manifest Definiteness], [Manifest Specificity])
-cleanGrammarSysE i gramSys = (g, a, c, n, h, d, s) where
-  g = cleanSysE i (gSys gramSys)
-  a = cleanSysE i (aSys gramSys)
-  c = cleanSysE i (cSys gramSys)
-  n = cleanSysE i (nSys gramSys)
-  h = cleanSysE i (hSys gramSys)
-  d = cleanSysE i (dSys gramSys)
-  s = cleanSysE i (sSys gramSys)
+makePreParticleSystem :: LexicalCategory -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar ManifestSystem
+makePreParticleSystem lc i vows sonHier gramSys = do
+  let (gen,ani,cas,num,def,spe,top,per,clu,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc PreParticle i
+  let combos = (,,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> clu <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
+  morphs <- replicateM (length combos) (makeMorpheme vows sonHier ((1, 2), (0, 2), (1, 2), (0, 2)))
+  return $ ManifestSystem lc PreParticle (zip morphs combos)
 
-cleanSysP :: Int -> Manifest ([a], Int) -> [Manifest a]
-cleanSysP i (Particle (x, j))
-  | i == j = map Particle x
-  | otherwise = [NoManifest]
-cleanSysP i _ = [NoManifest]
+-- Post-position particles
+makePostParticleSystems :: LexicalCategory -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar [ManifestSystem]
+makePostParticleSystems lc 0 vows sonHier gramSys = return []
+makePostParticleSystems lc i vows sonHier gramSys = (++) <$> makePostParticleSystems lc (i-1) vows sonHier gramSys <*> ((:[]) <$> makePostParticleSystem lc i vows sonHier gramSys)
 
-cleanGrammarSysP :: Int -> GrammarSystem -> ([Manifest Gender], [Manifest Animacy], [Manifest Case], [Manifest Number], [Manifest Honorific], [Manifest Definiteness], [Manifest Specificity])
-cleanGrammarSysP i gramSys = (g, a, c, n, h, d, s) where
-  g = cleanSysP i (gSys gramSys)
-  a = cleanSysP i (aSys gramSys)
-  c = cleanSysP i (cSys gramSys)
-  n = cleanSysP i (nSys gramSys)
-  h = cleanSysP i (hSys gramSys)
-  d = cleanSysP i (dSys gramSys)
-  s = cleanSysP i (sSys gramSys)
+makePostParticleSystem :: LexicalCategory -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar ManifestSystem
+makePostParticleSystem lc i vows sonHier gramSys = do
+  let (gen,ani,cas,num,def,spe,top,per,clu,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc PostParticle i
+  let combos = (,,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> clu <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
+  morphs <- replicateM (length combos) (makeMorpheme vows sonHier ((1, 2), (0, 2), (1, 2), (0, 2)))
+  return $ ManifestSystem lc PostParticle (zip morphs combos)
+
+-- Clean sys
+cleanSys :: Manifest [a] -> LexicalCategory -> ManifestType -> Int -> [Manifest a]
+cleanSys NoManifest _ _ _ = [NoManifest]
+cleanSys (Manifest t x) lc mt i = out where
+  filt = filter (== (lc, mt, i)) t
+  out
+    | null filt = [NoManifest]
+    | otherwise = map (Manifest t) x
+
+cleanGrammarSys :: InflectionSystem -> LexicalCategory -> ManifestType -> Int -> ([Manifest Gender], [Manifest Animacy], [Manifest Case], [Manifest Number], [Manifest Definiteness], [Manifest Specificity], [Manifest Topic], [Manifest Person], [Manifest Clusivity], [Manifest Honorific], [Manifest Polarity], [Manifest Tense], [Manifest Aspect], [Manifest Mood], [Manifest Voice], [Manifest Evidentiality], [Manifest Transitivity], [Manifest Volition])
+cleanGrammarSys gramSys lc mt i = (gen,ani,cas,num,def,spe,top,per,clu,hon,pol,ten,asp,moo,voi,evi,tra,vol) where
+  gen = cleanSys (genSys gramSys) lc mt i
+  ani = cleanSys (aniSys gramSys) lc mt i
+  cas = cleanSys (casSys gramSys) lc mt i
+  num = cleanSys (numSys gramSys) lc mt i
+  def = cleanSys (defSys gramSys) lc mt i
+  spe = cleanSys (speSys gramSys) lc mt i
+  top = cleanSys (topSys gramSys) lc mt i
+  per = cleanSys (perSys gramSys) lc mt i
+  clu = cleanSys (cluSys gramSys) lc mt i
+  hon = cleanSys (honSys gramSys) lc mt i
+  pol = cleanSys (polSys gramSys) lc mt i
+  ten = cleanSys (tenSys gramSys) lc mt i
+  asp = cleanSys (aspSys gramSys) lc mt i
+  moo = cleanSys (mooSys gramSys) lc mt i
+  voi = cleanSys (voiSys gramSys) lc mt i
+  evi = cleanSys (eviSys gramSys) lc mt i
+  tra = cleanSys (traSys gramSys) lc mt i
+  vol = cleanSys (volSys gramSys) lc mt i

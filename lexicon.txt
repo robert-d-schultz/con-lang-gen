@@ -1,50 +1,51 @@
-Lexicon/ʐɑɾ̠ɾ.r̪ɤɾ/
-/zɶɽɾ/
-/ɖyɶ̯r̠ɾ.ɣɯœ̯ɽ͡rr̠.ɾɯrⱱ.ɳʌɯ̯/
-/ɯr̠ɾ.ɳɑ/
-/ɹ̠̟ɡɤɽɾ/
-/ɑø̯ɾ̠.ɳyɶ̯.ʙɤɽr.r̪ɑ/
-/ʌɯ̯ɽr̠.ɾ̪ɯœ̯ɽ.ⱱyɶ̯ɽ͡r.ʙɯœ̯ɳ/
-/ɖɡœɾ̠ɾ/
-/ʒɤɾ̠ɾ.r̪œɽ.ⱱ̟ɤɾⱱ̟/
-/ɖmʌɽ͡rr̠/
-/ɖɻ̟œ.ɾ̠ʌɯ̯ɽ.ɾ̠ɑø̯ɾʙ.ŋɤ/
-/bɖɑr̠/
-/ʌrn̠/
-/ɑø̯r̠/
-/ɖɯɽ͡r.ŋɑø̯ɽɾ̪/
-/ʌr̠ɾ/
-/vn̠y/
-/ɣnʌɽɾ̠.ɾɶ/
-/ɱɳɤɾʙ.ŋɑø̯ɾ.ʙɑø̯ɾ.ɱɯ/
-/ɶɾ.ⱱ̟ʌɯ̯r̠ɳ.ɖɑø̯r/
-/ɖɤɽ͡r/
-/ɹ̟ʌɯ̯ɾ.ɳʌɯ̯.ɽ͡rɤɽ͡rɳ/
-/ʌɯ̯.rɑɽr̠/
-/ɖɡœ.ryɶ̯ɾʐ.ɖø.r̠ʌɯ̯/
-/ɑɽ͡r.ɾøɾɡ.zɯœ̯ɾ̠.ʙɤɽɾ̠/
-/ɑɾ̠.ɣɯœ̯ɽ.rʌɽ͡rr̠/
-/βɖyɾ.ɱmɶɽr̠/
-/ɖʐʌɯ̯ɽ.r̠ɑø̯ɽ͡rr̠.ɾɑø̯.ɽɤ/
-/b̪ɶɽ͡r.r̠yɶ̯ɽ͡rɻ̟.ɖyɶ̯ɾ̠ⱱ̟.ɣɑ/
-/ŋɽy.rɶ.ɽɯr̪ɻ̟.ɖyɽɾ̠/
-/y.ɽ͡rø.r̠ɑø̯ŋʐ.z̪ɯ/
-/dyɶ̯ɽɾ.ʙ̠ø/
-/bɶɽ͡rɾ̠/
-/n̠ɯœ̯ɽ͡rɾ̠.ɾɯœ̯ɽ.ⱱ̟yɳ.mɤɽ͡rʙ̠/
-/vɖʌɯ̯.ʙ̠ɑø̯ɽ͡r/
-/z̪n̠ør.ɾɯɾ̠/
-/ɣɤɾn̠/
-/ɖɤɽ͡rɾ̠.ɾ̪øɾ.ɳør̠/
-/z̪ɖyɶ̯ɽ͡rr.ɾœɽ͡rr.ɾɑø̯ɾn̠/
-/œɽ.ɾ̠ɶ.ɾʌɯ̯/
-/ɖɻ̟ʌɯ̯ⱱ̟.ɖɻ̟œ.ɳɶʐ/
-/ʌɯ̯/
-/vɯœ̯r/
-/ɖʐyɶ̯r̠/
-/ʐn̠ør̪/
-/ɑɾ.ɾ̪œɾ.ⱱ̟yɽ͡rɳ/
-/ɖy.ɽ͡rɤɾ̠/
-/ɹ̠̟ʌ.ɾ̪yɶ̯ɽɾ̠/
-/ɣɾʌɽ͡rr̠/
-/ɖʐœɽ͡r.ɾɑø̯.ɽ͡ryɶ̯ɽɾ.ⱱyɽ/
+Lexicon
+/œː.pʌːɡt/ - eepoogt
+/ø̆/ - e
+/p̪ɯ̞.ɨ̆.p̪ʡøm̥.dɶːɱb/ - pooopgendaanb
+/pɱɶŋ.ddɪ̈̆ʙ̠̊ .ɡʌʙ̥ɱ/ - pnangddoorgorn
+/ɶːʙ̠.ʔʜø̞ːʌː̯.ʜɶː/ - aargheeoohaa
+/kø̞̆.pɡɨm/ - kepgoom
+/ʔøb̪p/ - gebp
+/ɑ̆ʙ̥ʡ.tɘŋ̊b.p̪yː.ŋʙ̠ø̞ːʌː̯ŋp̪/ - argtunbpiingreeoongp
+/ʡɤ̞/ - go
+/ʏ̟̆ʙ̠̊ / - ir
+/ʏ̟ʢ.mɤ̆ʜ/ - ihmoh
+/pɯː.m̥ʌ.ʙ̥ɑɱ̊b̪.pʌ̞dt/ - poooonoranbpadt
+/əʢ.ŋ̊ɘ/ - uhnu
+/bɯ̞.ɯ.ŋ̊ø̞̆/ - booone
+/ʏ̟̆.ʔɯː.ʢœː.dʌ̞ʢ/ - igooooheedah
+/yːʜ.kø̞̆ʙ/ - iihker
+/kʢɶ.ʙœ.ʢɯ̆.käʡt/ - kharehookagt
+/ɡʏ̟ːʢɱ.ɡø̆ʙ.ɡɱ̊ʏ̟̆ʙ̥.bɡɤː/ - giihngergnirbgoo
+/pɡɶ.ɡɯ̞̆ʙ̥.ʡʙʏ̟̆ɑ̯̆ʡ/ - pgagorgriag
+/œ̞ːŋ/ - aang
+/pŋɑ̆ɱ̊.bø̞ːʌː̯.ʢœ̞ː.ŋy/ - pnganbeeoohaangi
+/tb̪ɜː.ɡɶ/ - tbaaga
+/yː.ɱʙ̥ɤːʙ̠̊ .tä̆ʙ̠ʡ/ - iinroortarg
+/p̪ɡɶ.p̪m̥ʜʏ̟ː.byːʙ̠̊ n̥/ - pgapnhiibiirn
+/tʌ̆ʙ.p̪b̪œ̞ː/ - torpbaa
+/dɶ.b̪ʜɨː.ʡə̆ʢ.nɨŋ/ - dabhooooguhnoong
+/ø̆.ɱ̊ɤː/ - enoo
+/pə̆.ʌ̞ːʙ̠̊ .ɡɜɡ.kä̆nʡ/ - puaargagkang
+/bŋø̞ːʌː̯ʙ̠m̥.ʡœ̞̆.nɨːʙ̠/ - bngeeoornganoooor
+/bɯː.nə.pʡɱœ̞̆ŋd/ - boooonupgnangd
+/p̪ʢɐʜ.dɐ.ɡɨːʙ̥/ - phahdagoooor
+/bɪ̈̆k/ - book
+/ɜːʙ.n̥ʏ̟ːʡ.ʔb̪ɶː.ɱ̊ʙ̥ə̆ʙ̥m̥/ - aarniiggbaanrurn
+/bœ̞̆ɱ/ - ban
+/ɯ̆.ɡʌ̞ː/ - oogaa
+/n̥ɪ̈̆.dœ̞̆ʙ̥.ɡɱœːʙ̥/ - noodargneer
+/ɱ̊ɯ̆m̥.ʡɨː/ - noongoooo
+/m̥ɑːʙ.ʡʏ̟ːn̥.tø̞̆n̥b̪.pø̞ːʙm/ - naargiintenbpeerm
+/ʡɤ̞dp/ - godp
+/nʏ̟ː.n̥ø̞̆.nɐ.ʙ̠̊ ɤ̞̆/ - niinenaro
+/pɯ̆ŋ.b̪ɘ̆ʜ/ - poongbuh
+/ɤ̆.ʙ̥y.ɱ̊ɨ̆.ʜyːʙ̠/ - orinoohiir
+/m̥ɶʢ.m̥ɤʢ.ɱɘːŋ̊.ʡɘː/ - nahnohnuunguu
+/ɐ̆ʙ.dyːʙm.b̪ɯ̆ʜʡ/ - ardiirmboohg
+/ɡn̥ʌʙ/ - gnor
+/ɯʜ/ - ooh
+/ɱ̊äːm.bŋœ̞/ - naambnga
+/ʌn̥.b̪ə̆ʙ̠̊ m.dø̞ːʌː̯.bø̞ʙ̠̊ / - onburmdeeoober
+/p̪n̥ɪ̈ːʡ.kɪ̈̆ŋ.p̪œ̆/ - pnoooogkoongpe
+/tʡɪ̈̆.mø̞ːʌː̯ʜ/ - tgoomeeooh
