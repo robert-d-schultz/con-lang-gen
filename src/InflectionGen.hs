@@ -65,24 +65,7 @@ readFeature :: Read a => FilePath -> IO a
 readFeature = fmap read . readFile
 
 
--- Create "agreement system"
-{- makeAgreementSystem :: RVar AgreementSystem
-makeAgreementSystem = AgreementSystem . concat <$> sequence [svAgr, obAgr, anAgr, aaAgr, avAgr, pnAgr, vpAgr] where
-  svAgr = choice [[Agreement Sub Verb], []]
-  obAgr = choice [[Agreement Obj Verb], []]
-  anAgr = choice [[Agreement Adj Noun], []]
-  aaAgr = choice [[Agreement Adv Adj], []]
-  avAgr = choice [[Agreement Adv Verb], []]
-  pnAgr = choice [[Agreement Prep Noun], []]
-  vpAgr = choice [[Agreement Verb Prep], []] -}
-
-
 -- Create "inflection system"
--- Decides if the category will manifest, and if it will manifest by particle or exponent
--- Also decides which categories will be grouped together
--- For instance, gender, case, and number as a single exponent (declension)
--- Or gender, case, and number each as an exponent (agglutination)
--- And anything in between
 
 makeInflectionSystem :: InputData -> RVar (InflectionSystem, [(LexicalCategory, Int, Int, Int, Int)])
 makeInflectionSystem idata = do

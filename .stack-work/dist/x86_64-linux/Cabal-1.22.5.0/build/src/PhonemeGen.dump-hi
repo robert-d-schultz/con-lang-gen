@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-23 00:09:50.569407 UTC
+2016-10-29 01:24:22.265589 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeGen 7103
-  interface hash: 1a7ddf414ef8a0763ae385df91c47451
-  ABI hash: 28ce5b9e9c6c08088c2b3abde3cd0d20
+  interface hash: d29d8f46478f6c70e8d3899ba9f53774
+  ABI hash: 44431a2b9295a7efdbb24a370fea6130
   export-list hash: ac2fac7549593bb4b2279f37f817f5be
   orphan hash: 3cb9e3ae293ee3a18fc56ba59cc7c98d
   flag hash: 962af636f8e927040c7daa9c21457292
@@ -96,8 +96,8 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
-  exports: 6190a60b3ecf64d963416d84612d3413
+import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
+  exports: 8834c83badd5837275d7ec1bbd2f424a
   AFFRICATE 147f242a04fba4ccaf3d990013a051a5
   ALVEOLAR c6b89f8b792d9549c21b502170ee4e1c
   ALVEOLOPALATAL 25346444b980c5a1ac9a043d30332738
@@ -112,12 +112,12 @@ import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
   CLOSEMID 829b1a375886bafe473e5cd43c980de0
   CORONAL ca62d4def85883412db49d69771fd684
   CREAKY 4c3da3105ff3af15a8154f034d9336ad
-  Consonant 1bbdee182d405f2fb083318c4e2c6978
+  Consonant b75bb727b0d1dc285bc6e78bea093faf
   DEFAULT 84e40dde3b21b2bbcc2467fc8b704c5b
   DENTAL 925136b48a76ca089014bdfac23ad309
   DENTIALVEOLAR f08684c6c979289597282b401bfbae39
   DORSAL bd982f4073f646c80f518bd24cad6c99
-  Diphthong dd3d8f9f97afc9c5dce57589c3791239
+  Diphthong aa609d265bfaa803022b7633544c1bf3
   EPIGLOTTAL 4785a016a8862bf0c02884d663d41e83
   EPIPHARYNGEAL aebcfcb1d9fa1bca206af6180adaf0ac
   FLAP eccdd9a127edaee2ea4ed02c15b14dc9
@@ -149,7 +149,7 @@ import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
   PHARYNGEAL 5c09d12e196eec4f612a556219df3e90
   POSTALVEOLAR 7e03f37b030e8871b4d22fdd4b93d488
   Phonation d728b957933ed40e5f338884385b44c8
-  Phoneme b470252dd3c1b881fdcf6f5f8e488f7a
+  Phoneme 725a483aa2dd4b7c0473c29cf990b878
   Place e0644167ea1572fa835311f673311319
   RETROFLEX a3afd188eeb6612ef479970d85082992
   ROUNDED 0a5556dccc06d975adb090e5266ecb1d
@@ -165,9 +165,9 @@ import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
   UVULAR 00b57ece7781c1ead6406b34dc02a2bf
   VELAR c83c546d533edfd28dc443ee9c5d12af
   VOICELESS dbf8f182d917d2469a91d36a4068291b
-  Vowel 3d033a9ea8966876e27fd237e6e3b1f9
-  csymbol e9f363472129d1328a9c783ae12f3847
-  vsymbol 37945cd577b90530308ffcb2c51d6186
+  Vowel bc70fa2bda72574d3d9a605b3092c858
+  csymbol adede1920d7863e2930e586cb77c5227
+  vsymbol d4a50191fa439edee5dacea3c2489af1
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
@@ -284,14 +284,14 @@ dd54d878f8f740a072d46c1aeb1f6b01
                    @ PhonemeData.Backness
                    PhonemeData.BACK
                    (GHC.Types.[] @ PhonemeData.Backness)) -}
-7303951e77da22285d614cd38ba9588a
+517ef749c52eb2b1e2a04bea2fddcbb2
   makeConsonants ::
     [PhonemeData.Place]
     -> [PhonemeData.Manner]
     -> [PhonemeData.Phonation]
     -> Data.RVar.RVar [PhonemeData.Phoneme]
   {- Arity: 3, Strictness: <L,U><L,U><L,U> -}
-f26f39719260f8a9b097a3d84f1eb921
+08df67b8adc5f68af0a7d7508bf3bc58
   makeDiphInventory ::
     GHC.Types.Int
     -> [PhonemeData.Phoneme] -> Data.RVar.RVar [PhonemeData.Phoneme]
@@ -3289,7 +3289,7 @@ d4f6da7c3f3806efed0ed4c28ff499e3
                    @ PhonemeData.Roundedness
                    PhonemeData.DEFAULT
                    (GHC.Types.[] @ PhonemeData.Roundedness)) -}
-2bc825df2e49c5626cc7c0a55b5043e0
+ae132717315c9dc83b8c5a70f71e8f07
   makeVowels ::
     [PhonemeData.Height]
     -> [PhonemeData.Backness]

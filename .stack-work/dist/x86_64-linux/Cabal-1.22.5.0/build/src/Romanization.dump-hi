@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-27 06:12:58.467914 UTC
+2016-10-29 01:24:21.248642 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Romanization 7103
-  interface hash: 1b0abcfb4b28d8b7d187900c4f29f99a
-  ABI hash: 9b41e7d9b2894a30094bb8bfdb2a6262
+  interface hash: 71069e87e00a9c007f6c2fecddb61cb1
+  ABI hash: 70014b863a55d5efad898444ddbb1f26
   export-list hash: 71e3484a4b1fb5c752fcd3291232e7ff
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
@@ -26,8 +26,8 @@ import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
-  exports: 6190a60b3ecf64d963416d84612d3413
+import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
+  exports: 8834c83badd5837275d7ec1bbd2f424a
   AFFRICATE 147f242a04fba4ccaf3d990013a051a5
   ALVEOLAR c6b89f8b792d9549c21b502170ee4e1c
   ALVEOLOPALATAL 25346444b980c5a1ac9a043d30332738
@@ -41,12 +41,12 @@ import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
   CLOSEMID 829b1a375886bafe473e5cd43c980de0
   CORONAL ca62d4def85883412db49d69771fd684
   CREAKY 4c3da3105ff3af15a8154f034d9336ad
-  Consonant 1bbdee182d405f2fb083318c4e2c6978
+  Consonant b75bb727b0d1dc285bc6e78bea093faf
   DEFAULT 84e40dde3b21b2bbcc2467fc8b704c5b
   DENTAL 925136b48a76ca089014bdfac23ad309
   DENTIALVEOLAR f08684c6c979289597282b401bfbae39
   DORSAL bd982f4073f646c80f518bd24cad6c99
-  Diphthong dd3d8f9f97afc9c5dce57589c3791239
+  Diphthong aa609d265bfaa803022b7633544c1bf3
   EPIGLOTTAL 4785a016a8862bf0c02884d663d41e83
   EPIPHARYNGEAL aebcfcb1d9fa1bca206af6180adaf0ac
   FLAP eccdd9a127edaee2ea4ed02c15b14dc9
@@ -63,8 +63,8 @@ import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
   LONG ee29e780120d882796a87cbbcdb00e55
   MID 23250c6a570df131de1cdb293bacfe16
   MODAL bd244264bab2966de13717630fceb06d
-  Morpheme 4f48109d326bee9a53078869dbb034aa
-  Morpheme b64262a4cf24269d3af16c38a15f99cc
+  Morpheme 638ca31a2fd80dc92fadb76f1b8badfd
+  Morpheme f6ac1984a4423d03613ec94d362955ea
   NASAL 33a4f70f850c97bc19932b2d99f86fec
   NEARBACK 0a01970fff4a2ba092ad40544a59a654
   NEARCLOSE a0d527593a0e5b421ef4d1de2a61e5d4
@@ -76,7 +76,7 @@ import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
   PALATAL 82a2f3e6a3c4c0a3e97f9f57ac5073f8
   PHARYNGEAL 5c09d12e196eec4f612a556219df3e90
   POSTALVEOLAR 7e03f37b030e8871b4d22fdd4b93d488
-  Phoneme b470252dd3c1b881fdcf6f5f8e488f7a
+  Phoneme 725a483aa2dd4b7c0473c29cf990b878
   RETROFLEX a3afd188eeb6612ef479970d85082992
   ROUNDED 0a5556dccc06d975adb090e5266ecb1d
   SAFFRICATE b1edf15f9894f243d08ceea9bb332359
@@ -90,31 +90,31 @@ import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
   UVULAR 00b57ece7781c1ead6406b34dc02a2bf
   VELAR c83c546d533edfd28dc443ee9c5d12af
   VOICELESS dbf8f182d917d2469a91d36a4068291b
-  Vowel 3d033a9ea8966876e27fd237e6e3b1f9
-  Word 5ef8c136f7cf4396a5065100ab7b2865
-  Word 1681594c37a7b959bf1fd6376ae38aed
+  Vowel bc70fa2bda72574d3d9a605b3092c858
+  Word 58728e383c3ae1ba22d7c75c2611ac1b
+  Word 53dc4151a59abddfd798786b00d0a617
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-8e0a805683dca7d3759efec2239d709f
+d8596479487a786e0aafd12580b30ade
   romanizeMorpheme :: PhonemeData.Morpheme -> GHC.Base.String
   {- Arity: 1, Strictness: <S(S),1*U(1*U)>, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ w :: PhonemeData.Morpheme ->
                  case w of ww { PhonemeData.Morpheme ww1 ->
                  Romanization.romanizeMorpheme_go ww1 }) -}
-52b6776b94bf6a5482512354dfdca118
+05a60074accc4966a7b57f34c24330c0
   romanizeMorpheme_go :: [PhonemeData.Phoneme] -> [GHC.Types.Char]
   {- Arity: 1, Strictness: <S,1*U> -}
-5ac8a1889e2e4375c20a6e05ee68940d
+e64c551c6e764e99456c1bcaa5979d4a
   romanizePhoneme :: PhonemeData.Phoneme -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U> -}
-979030edb2486e7c7d32bc599815e8c2
+9f6f1295e284529c8727361824cc78ca
   romanizeWord :: PhonemeData.Word -> GHC.Base.String
   {- Arity: 1, Strictness: <S(S),1*U(1*U)>, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ w :: PhonemeData.Word ->
                  case w of ww { PhonemeData.Word ww1 ->
                  Romanization.romanizeWord_go ww1 }) -}
-55e1da588fccaf4c6c722faafa93e54f
+565aa25e5bbf40b8b3e5006516d18579
   romanizeWord_go :: [PhonemeData.Morpheme] -> [GHC.Types.Char]
   {- Arity: 1, Strictness: <S,1*U> -}
 vectorised variables:

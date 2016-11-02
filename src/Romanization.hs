@@ -80,4 +80,4 @@ romanizePhoneme (Vowel h b r l s)
   | h `elem` [CLOSEMID, MID, OPENMID] && b `elem` [CENTRAL, NEARFRONT, NEARBACK] = "u"
   | otherwise = "u"
 
-romanizePhoneme (Diphthong h b r l h2 b2 r2 l2 s) = romanizePhoneme (Vowel h b r l s) ++ romanizePhoneme (Vowel h2 b2 r2 l2 s)
+romanizePhoneme (Diphthong h b r h2 b2 r2 l s) = romanizePhoneme (Vowel h b r l s) ++ romanizePhoneme (Vowel h2 b2 r2 l s)

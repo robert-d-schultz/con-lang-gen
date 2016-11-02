@@ -49,10 +49,10 @@ v = [ [Vowel CLOSE FRONT UNROUNDED NORMAL "i",Vowel CLOSE FRONT ROUNDED NORMAL "
 
 makeDiphInventory :: Int -> [Phoneme] -> RVar [Phoneme]
 makeDiphInventory n vs = sample n subseq where
-  subseq = map makeDiph $ filter (\(Vowel h1 b1 r1 l1 _,Vowel h2 b2 r2 l2 _) -> (h1 /= h2 || b1 /= b2) && l1 == l2) ((,) <$> vs <*> vs)
+  subseq = map makeDiph $ filter (\(Vowel h1 b1 r1 l1 _, Vowel h2 b2 r2 l2 _) -> (h1 /= h2 || b1 /= b2) && l1 == l2) ((,) <$> vs <*> vs)
 
 makeDiph :: (Phoneme, Phoneme) -> Phoneme
-makeDiph (Vowel h1 b1 r1 l1 s1, Vowel h2 b2 r2 l2 s2) = Diphthong h1 b1 r1 l1 h2 b2 r2 l2 (s1 ++ s2 ++ "\815")
+makeDiph (Vowel h1 b1 r1 l1 s1, Vowel h2 b2 r2 l2 s2) = Diphthong h1 b1 r1 h2 b2 r2 NORMAL (s1 ++ s2 ++ "\815")
 
 -- Make the places of articulation for consonants
 makePlaces :: RVar [Place]

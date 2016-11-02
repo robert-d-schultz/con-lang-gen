@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-27 06:13:01.019575 UTC
+2016-10-31 02:26:52.54703 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:MorphologyGen 7103
-  interface hash: 66f8a041a09df1a06f1bf80a13d329aa
-  ABI hash: f928edf92ac044711d1144d924818ef0
-  export-list hash: bc95151dbaa57e5a552160ef5b8dd48a
+  interface hash: f771c497e4692d1afd9ab60cfea21f6a
+  ABI hash: aa796f2bcf7210652962b8eac8de78e0
+  export-list hash: f903e1f996d60136e05ef566d0c948d9
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -13,10 +13,7 @@ interface conla_1eA9qWUPH9nBowcXqqaV8r:MorphologyGen 7103
   where
 exports:
   MorphologyGen.cleanGrammarSys
-  MorphologyGen.makePostParticleSystems
-  MorphologyGen.makePreParticleSystems
-  MorphologyGen.makePrefixSystems
-  MorphologyGen.makeSuffixSystems
+  MorphologyGen.makeLexicalInflection
 module dependencies: InflectionData InflectionGen OtherData
                      PhonemeData PhonemeGen PhonotacticsGen WordGen
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
@@ -91,65 +88,64 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  InflectionData dfc2b52a55c6102297919706a64a0fc4
-  exports: 84295a2aa554fe18c3d6540e0e817aca
-  Animacy 733cd520a7c9e157df7c0aea38100a5a
-  Aspect 3850d91a00b41f2f5240a98d717e8e72
-  Case 3e30b77606116c9a528b5a2b5461d97b
-  Clusivity c413fee28212168b6775aefd548e00c9
-  Definiteness b9da224a5a14860d49d67b2859c0b465
-  Evidentiality 81ef3758cd3f737f92a15566b4335acf
-  Gender c5edda692e03a9e3df065b8d199e385d
-  Honorific dfb063e584002de31fb83fb825dd29ff
-  InflectionSystem a77baed6c20192b8f22b3dec38ab08b3
-  Manifest 5526bd48d73d2306879b380053db6e88
-  Manifest 14fec65287fdbb06ce4e9e396345475a
-  ManifestSystem 5cbe6db833ae3aa93592b3769fcc5964
-  Mood c8b893053b386faa19ee0015c2b817c2
-  NoManifest ba8239be89dc838c187fab6b941ffac1
-  Number 50da230f212270d0c1b92a32c3347c6c
-  Person a2d676a93bd091804cbdfda78f682da8
-  Polarity 760d4f86d6aad7519f1cff401393492d
-  PostParticle f07697f1b24ac8991d64af37c14319f9
-  PostParticleSystem 6f6bf6e5f5ec79bc9e3c2d5a21047784
-  PreParticle 65af5bc08b49fbfb1bdf9041c872bc81
-  PreParticleSystem 64e014574010d72e9663ac317bbfef55
-  Prefix b289f5c0698695f8a048f6c64a2d9117
-  PrefixSystem 0c7ff6ffe3f079ca98967d89c92df7ec
-  Specificity ddf06519a04fe9d7312b057c3bf2a55a
-  Suffix 88ff0f490e033563159edfaea583ad41
-  SuffixSystem 1442c6d0f99121d306d1976b7e73f942
-  Tense ef165a186fbafaf5cc0bbe099a4b91b0
-  Topic ae01a43ac4566693ed520efc4ae942af
-  Transitivity 771b2c7bf1a5cdb98a55ddd9b2879a4c
-  Voice efe0567aac5cdd53235e250e93c9bff0
-  Volition d7b9cc4c84b4eba4e706d67aa644c840
-  aniSys ebbd5dac4586671c2ab3bdb1857380d3
-  aspSys bef40311d53fce6d2e0eaf90bf037732
-  casSys b3835102aba8cf24606f601e1d473e8b
-  cluSys 4a234ac60619972ed818e008a4afe914
-  defSys ac6a6b9f32cd0f07fb8c447673c66e7c
-  eviSys f22958469441b5d2ff50bd9ce2a0b264
-  genSys 975f89892bcfe3f47c3b35cfa8174f87
-  honSys 949bc9b42706b2791331dd68ac592d28
-  mooSys 1832180fcdfe6653270f0d17fdf81fa0
-  numSys 29bb00d9e497c60b9a3e61fff6697abb
-  perSys c9b40b4cf6fdaf61ee830a5101350153
-  polSys 760602abd650e1446dc561af1f7226dc
-  speSys 6b00508c29849609e879f981d4d7e2b6
-  tenSys cbe4372a2163a0ac65b36d97702538b7
-  topSys f2c45ab27985d0e4d27d3d9ec20605b7
-  traSys 173e8b57af892a8018ada9d7ad3874d3
-  voiSys 965f587afc177bd9b5b0f2b92932f449
-  volSys 47b95d244c436bd9df28af9746faaf6d
-import  -/  InflectionGen 7a5f2474a9677b88c2c56282ae171417
-  exports: ca9b6ba47d73c9260d453af18131b8f1
-import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
-  exports: 6190a60b3ecf64d963416d84612d3413
-  Phoneme b470252dd3c1b881fdcf6f5f8e488f7a
-import  -/  WordGen 41cebf80bfe9a5c601e3f8f32a7f5690
+import  -/  InflectionData 620c60c71e5f79e12e441f4d14e494c5
+  exports: a8d83707be65f59bd55316dc57d3e65e
+  Animacy 169ebe44828e15997da16a086b9b84e2
+  Aspect 56bab6fdafd7cafcd92c9755a5ea2032
+  Case 15a5612a324b972acf0e741e2bc6608f
+  Clusivity 3a4205128915d100820ff6257606640f
+  Definiteness be54ced0f7a9e9dbb19f9061d7dd5391
+  Evidentiality 8d67950b7bc98730e60ddd07089da962
+  Gender dc38f7a4ded9cc67467b5a9dd769fcf5
+  Honorific 9289039192416879bb2fe055999c7335
+  InflectionSystem 6f37316ad5bc95a52627782348e28168
+  LexicalCategory 6d2c52c387dc93c2abb2c47833bbbfda
+  Manifest 5146f5d6f9a5a6842fdc010bcb896b8c
+  Manifest aa0a164e1f050975da3ca6f9d6f7585a
+  ManifestSystem 9234783cc8f20c9c7b2647ac8a1b0c88
+  ManifestSystem dbada76221b2ba3927c15c3dcf26a1af
+  ManifestType 652642acd6e91546346062d0d1df8c9d
+  Mood 8b8666475412890bd4ef31f87825a04b
+  NoManifest d414366a5625b3f850476770ece1dbbd
+  Number 62540c56c8b62df1e5a7c671cd89e35c
+  Person 39fbbcfcc14da7372e84446a55a88f39
+  Polarity d4f587cb2d189871de567f0749c484ab
+  PostParticle 19889faa1d6fede0131ac095348a2328
+  PreParticle e615185a77594242c83b20f952735e46
+  Prefix 18fe5402bce1ac5100d5f3fd8fbc8fa2
+  Specificity 43240a2f26d982c55d81a47318306fc4
+  Suffix c87962a93411fcd5393a12dcefd49477
+  Tense 1a8c67d1f01afbbcfb22733cde707ca9
+  Topic e1b6224fcbcc327712deb0c145c7f7ba
+  Transitivity 9762685d7cb7374500147f2897d84980
+  Voice 497bb7be1c19f7f308e0958b43035be4
+  Volition 3bc4914e230103d822b910efe91e72fb
+  aniSys 9cde17d15b2cf747b3229c2499ed19e8
+  aspSys aba18ddd02db3535523908cec87a1115
+  casSys 79e947c762124fa234a273d1c74e7c1c
+  cluSys 39a94ed1fac020f87d4444f4a7912a57
+  defSys ffdd56de91275074cb915e5eb9805518
+  eviSys fcc03e2b63241248a33ac711a6118d25
+  genSys b38f3225a2d28dd96dea37251bee9185
+  honSys ac3c6a751b928278ea31f4cec2928345
+  mooSys 8a776b9731b39a3eb4858045d22d1df1
+  numSys 3a7e66e2d52bf8261d23c6f57d1fc486
+  perSys 33ce8277fed89490fa0e0536a3c3776b
+  polSys 0eaed13d7b67d3dbd167fde9f647e6b3
+  speSys 8e88acb3fd29f6bc2e3144f0422936b6
+  tenSys 7ac2c47c5740e767e4a9a71d461e43c5
+  topSys 0b93d7624bfca76c49c8d4a51f8dfc21
+  traSys f20e2ceaf690b1093af545695dea6d71
+  voiSys 94f2b6baa8fc9a45b3597a6466aef2ad
+  volSys 0f78c4349901893b48cec41621389532
+import  -/  InflectionGen 01fbcfdeb4bee1ffed290d04b48ffb84
+  exports: 048d5473e30e89d79e5837b0f0227111
+import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
+  exports: 8834c83badd5837275d7ec1bbd2f424a
+  Phoneme 725a483aa2dd4b7c0473c29cf990b878
+import  -/  WordGen 5aa3b7d1957a69e2673e41e5e8bdc31f
   exports: 9dfefff67ac26aa86a6a1d79ec7432b6
-  makeMorpheme 6ca6dfb0ccb54b1c229250f8a3afd966
+  makeMorpheme da75a9aaeb42e0ae5821796c1595af68
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
@@ -167,50 +163,208 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-3011a09e921a514958062f13feeff7d9
+eb995a60e43d57af3b681a73eb95fcc5
+  $wmakeLexicalInflection ::
+    [PhonemeData.Phoneme]
+    -> [[PhonemeData.Phoneme]]
+    -> InflectionData.InflectionSystem
+    -> InflectionData.LexicalCategory
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> Data.RVar.RVar
+         (InflectionData.LexicalCategory,
+          [InflectionData.ManifestSystem],
+          [InflectionData.ManifestSystem],
+          [InflectionData.ManifestSystem],
+          [InflectionData.ManifestSystem])
+  {- Arity: 8,
+     Strictness: <L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><L,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ w :: [PhonemeData.Phoneme]
+                   w1 :: [[PhonemeData.Phoneme]]
+                   w2 :: InflectionData.InflectionSystem
+                   ww :: InflectionData.LexicalCategory
+                   ww1 :: GHC.Types.Int
+                   ww2 :: GHC.Types.Int
+                   ww3 :: GHC.Types.Int
+                   ww4 :: GHC.Types.Int ->
+                 let {
+                   m1 :: Data.RVar.RVarT
+                           Data.Functor.Identity.Identity [InflectionData.ManifestSystem]
+                   = case ww1 of ww5 { GHC.Types.I# ww6 ->
+                     MorphologyGen.$wmakePreParticleSystems ww ww6 w w1 w2 }
+                 } in
+                 let {
+                   m2 :: Data.RVar.RVarT
+                           Data.Functor.Identity.Identity [InflectionData.ManifestSystem]
+                   = case ww2 of ww5 { GHC.Types.I# ww6 ->
+                     MorphologyGen.$wmakePostParticleSystems ww ww6 w w1 w2 }
+                 } in
+                 let {
+                   m4 :: Data.RVar.RVarT
+                           Data.Functor.Identity.Identity [InflectionData.ManifestSystem]
+                   = case ww3 of ww5 { GHC.Types.I# ww6 ->
+                     MorphologyGen.$wmakePrefixSystems ww ww6 w w1 w2 }
+                 } in
+                 let {
+                   m5 :: Data.RVar.RVarT
+                           Data.Functor.Identity.Identity [InflectionData.ManifestSystem]
+                   = case ww4 of ww5 { GHC.Types.I# ww6 ->
+                     MorphologyGen.$wmakeSuffixSystems ww ww6 w w1 w2 }
+                 } in
+                 (\ @ b1
+                    eta :: (InflectionData.LexicalCategory,
+                            [InflectionData.ManifestSystem],
+                            [InflectionData.ManifestSystem],
+                            [InflectionData.ManifestSystem],
+                            [InflectionData.ManifestSystem])
+                           -> b1
+                    eta1 :: forall a6.
+                            Control.Monad.Prompt.Lift
+                              Data.Random.Source.Internal.Prim.Prim
+                              Data.Functor.Identity.Identity
+                              a6
+                            -> (a6 -> b1) -> b1 ->
+                  m1
+                    `cast`
+                  (Trans
+                       (Trans
+                            (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                            (Control.Monad.Prompt.NTCo:PromptT[0]
+                                 <Data.Random.Source.Internal.Prim.Prim>_R
+                                 <Data.Functor.Identity.Identity>_R) <[InflectionData.ManifestSystem]>_N)
+                       (Control.Monad.Prompt.NTCo:Prompt[0]
+                            <Control.Monad.Prompt.Lift
+                               Data.Random.Source.Internal.Prim.Prim
+                               Data.Functor.Identity.Identity>_R
+                            <[InflectionData.ManifestSystem]>_R))
+                    @ b1
+                    (\ x :: [InflectionData.ManifestSystem] ->
+                     case x of x1 { DEFAULT ->
+                     m2
+                       `cast`
+                     (Trans
+                          (Trans
+                               (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                               (Control.Monad.Prompt.NTCo:PromptT[0]
+                                    <Data.Random.Source.Internal.Prim.Prim>_R
+                                    <Data.Functor.Identity.Identity>_R) <[InflectionData.ManifestSystem]>_N)
+                          (Control.Monad.Prompt.NTCo:Prompt[0]
+                               <Control.Monad.Prompt.Lift
+                                  Data.Random.Source.Internal.Prim.Prim
+                                  Data.Functor.Identity.Identity>_R
+                               <[InflectionData.ManifestSystem]>_R))
+                       @ b1
+                       (\ x2 :: [InflectionData.ManifestSystem] ->
+                        case x2 of x3 { DEFAULT ->
+                        m4
+                          `cast`
+                        (Trans
+                             (Trans
+                                  (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                  (Control.Monad.Prompt.NTCo:PromptT[0]
+                                       <Data.Random.Source.Internal.Prim.Prim>_R
+                                       <Data.Functor.Identity.Identity>_R) <[InflectionData.ManifestSystem]>_N)
+                             (Control.Monad.Prompt.NTCo:Prompt[0]
+                                  <Control.Monad.Prompt.Lift
+                                     Data.Random.Source.Internal.Prim.Prim
+                                     Data.Functor.Identity.Identity>_R
+                                  <[InflectionData.ManifestSystem]>_R))
+                          @ b1
+                          (\ x4 :: [InflectionData.ManifestSystem] ->
+                           case x4 of x5 { DEFAULT ->
+                           m5
+                             `cast`
+                           (Trans
+                                (Trans
+                                     (Data.RVar.NTCo:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                     (Control.Monad.Prompt.NTCo:PromptT[0]
+                                          <Data.Random.Source.Internal.Prim.Prim>_R
+                                          <Data.Functor.Identity.Identity>_R) <[InflectionData.ManifestSystem]>_N)
+                                (Control.Monad.Prompt.NTCo:Prompt[0]
+                                     <Control.Monad.Prompt.Lift
+                                        Data.Random.Source.Internal.Prim.Prim
+                                        Data.Functor.Identity.Identity>_R
+                                     <[InflectionData.ManifestSystem]>_R))
+                             @ b1
+                             (\ x6 :: [InflectionData.ManifestSystem] ->
+                              case x6 of x7 { DEFAULT -> eta (ww, x1, x3, x5, x7) })
+                             eta1 })
+                          eta1 })
+                       eta1 })
+                    eta1)
+                   `cast`
+                 (Trans
+                      (Sym (Control.Monad.Prompt.NTCo:Prompt[0]
+                                <Control.Monad.Prompt.Lift
+                                   Data.Random.Source.Internal.Prim.Prim
+                                   Data.Functor.Identity.Identity>_R
+                                <(InflectionData.LexicalCategory,
+                                  [InflectionData.ManifestSystem],
+                                  [InflectionData.ManifestSystem],
+                                  [InflectionData.ManifestSystem],
+                                  [InflectionData.ManifestSystem])>_R))
+                      (Trans
+                           (Sym (Control.Monad.Prompt.NTCo:PromptT[0]
+                                     <Data.Random.Source.Internal.Prim.Prim>_R
+                                     <Data.Functor.Identity.Identity>_R))
+                           (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <(InflectionData.LexicalCategory,
+                                                                                                [InflectionData.ManifestSystem],
+                                                                                                [InflectionData.ManifestSystem],
+                                                                                                [InflectionData.ManifestSystem],
+                                                                                                [InflectionData.ManifestSystem])>_N))) -}
+c95e95beb0eaccfe128d6729ce9e780f
   $wmakePostParticleSystems ::
-    GHC.Prim.Int#
+    InflectionData.LexicalCategory
+    -> GHC.Prim.Int#
     -> [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]
     -> InflectionData.InflectionSystem
     -> Data.RVar.RVar [InflectionData.ManifestSystem]
-  {- Arity: 4,
-     Strictness: <S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+  {- Arity: 5,
+     Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-da1b2cb9b6f197641233dfbc9d8227a6
+13bee86907a55a7e0422bfbad61ee55c
   $wmakePreParticleSystems ::
-    GHC.Prim.Int#
+    InflectionData.LexicalCategory
+    -> GHC.Prim.Int#
     -> [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]
     -> InflectionData.InflectionSystem
     -> Data.RVar.RVar [InflectionData.ManifestSystem]
-  {- Arity: 4,
-     Strictness: <S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+  {- Arity: 5,
+     Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-adf1f9811ca1835261617a47b75200c6
+456eec52ef66a87faf05a2e44e4fc86a
   $wmakePrefixSystems ::
-    GHC.Prim.Int#
+    InflectionData.LexicalCategory
+    -> GHC.Prim.Int#
     -> [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]
     -> InflectionData.InflectionSystem
     -> Data.RVar.RVar [InflectionData.ManifestSystem]
-  {- Arity: 4,
-     Strictness: <S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+  {- Arity: 5,
+     Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-cd44c09e721ea6d4b467b6226f5665b7
+af621fe0e5797b97d1538f84cec5682a
   $wmakeSuffixSystems ::
-    GHC.Prim.Int#
+    InflectionData.LexicalCategory
+    -> GHC.Prim.Int#
     -> [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]
     -> InflectionData.InflectionSystem
     -> Data.RVar.RVar [InflectionData.ManifestSystem]
-  {- Arity: 4,
-     Strictness: <S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+  {- Arity: 5,
+     Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-592ab01c04ef94575740157fc2723698
+9895f58d58b0e108f682cf2800481bca
   cleanGrammarSys ::
-    GHC.Types.Int
-    -> InflectionData.InflectionSystem
+    InflectionData.InflectionSystem
+    -> InflectionData.LexicalCategory
+    -> InflectionData.ManifestType
+    -> GHC.Types.Int
     -> ([InflectionData.Manifest InflectionData.Gender],
         [InflectionData.Manifest InflectionData.Animacy],
         [InflectionData.Manifest InflectionData.Case],
@@ -229,211 +383,46 @@ cd44c09e721ea6d4b467b6226f5665b7
         [InflectionData.Manifest InflectionData.Evidentiality],
         [InflectionData.Manifest InflectionData.Transitivity],
         [InflectionData.Manifest InflectionData.Volition])
-  {- Arity: 2, HasNoCafRefs,
-     Strictness: <L,U(U)><L,U(1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U)>,
-     Unfolding: (\ i :: GHC.Types.Int
-                   gramSys :: InflectionData.InflectionSystem ->
-                 (case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Gender i ds1 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Animacy i ds2 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Case i ds3 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Number i ds4 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Definiteness i ds5 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Specificity i ds6 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Topic i ds7 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Person i ds8 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Clusivity i ds9 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Honorific i ds10 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Polarity i ds11 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Tense i ds12 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Aspect i ds13 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Mood i ds14 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Voice i ds15 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Evidentiality i ds16 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Transitivity i ds17 },
-                  case gramSys of wild { InflectionData.InflectionSystem ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
-                  MorphologyGen.cleanSys @ InflectionData.Volition i ds18 })) -}
-655e46d2f81a5974c3f6295985e69a94
-  cleanGrammarSys1 :: a -> InflectionData.Manifest a
-  {- Arity: 1, HasNoCafRefs,
-     Unfolding: (\ @ a6 ->
-                 InflectionData.Manifest @ a6 InflectionData.PostParticle) -}
-d385944c43c1b2a66bd25f8a80f1a5c9
-  cleanGrammarSys2 :: a -> InflectionData.Manifest a
-  {- Arity: 1, HasNoCafRefs,
-     Unfolding: (\ @ a6 ->
-                 InflectionData.Manifest @ a6 InflectionData.Suffix) -}
-76a197e338d18486a01dd26acbab475c
-  cleanGrammarSys3 :: a -> InflectionData.Manifest a
-  {- Arity: 1, HasNoCafRefs,
-     Unfolding: (\ @ a6 ->
-                 InflectionData.Manifest @ a6 InflectionData.Prefix) -}
-685d3b1efe69d75dd91f5e450e119bf3
-  cleanGrammarSys4 :: a -> InflectionData.Manifest a
-  {- Arity: 1, HasNoCafRefs,
-     Unfolding: (\ @ a6 ->
-                 InflectionData.Manifest @ a6 InflectionData.PreParticle) -}
-cf7f824d42235d67281654d9698481f9
-  cleanGrammarSys5 :: [InflectionData.Manifest a]
-  {- HasNoCafRefs, Strictness: m2,
-     Unfolding: (\ @ a6 ->
-                 GHC.Types.:
-                   @ (InflectionData.Manifest a6)
-                   (InflectionData.NoManifest @ a6)
-                   (GHC.Types.[] @ (InflectionData.Manifest a6))) -}
-adad7f3a236067a2c23b59cb2ded4648
-  cleanSys ::
-    GHC.Types.Int
-    -> InflectionData.Manifest ([a], GHC.Types.Int)
-    -> [InflectionData.Manifest a]
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U)><S,1*U>,
-     Unfolding: (\ @ a6
-                   i :: GHC.Types.Int
-                   ds :: InflectionData.Manifest ([a6], GHC.Types.Int) ->
-                 case ds of wild {
-                   InflectionData.NoManifest -> MorphologyGen.cleanGrammarSys5 @ a6
-                   InflectionData.Manifest ds1 ds2
-                   -> case ds1 of wild1 {
-                        InflectionData.PreParticle
-                        -> case ds2 of wild2 { (,) x j ->
-                           case i of wild3 { GHC.Types.I# x1 ->
-                           case j of wild4 { GHC.Types.I# y ->
-                           case GHC.Prim.tagToEnum#
-                                  @ GHC.Types.Bool
-                                  (GHC.Prim.==# x1 y) of wild5 {
-                             GHC.Types.False -> MorphologyGen.cleanGrammarSys5 @ a6
-                             GHC.Types.True
-                             -> GHC.Base.map
-                                  @ a6
-                                  @ (InflectionData.Manifest a6)
-                                  (MorphologyGen.cleanGrammarSys4 @ a6)
-                                  x } } } }
-                        InflectionData.Prefix
-                        -> case ds2 of wild2 { (,) x j ->
-                           case i of wild3 { GHC.Types.I# x1 ->
-                           case j of wild4 { GHC.Types.I# y ->
-                           case GHC.Prim.tagToEnum#
-                                  @ GHC.Types.Bool
-                                  (GHC.Prim.==# x1 y) of wild5 {
-                             GHC.Types.False -> MorphologyGen.cleanGrammarSys5 @ a6
-                             GHC.Types.True
-                             -> GHC.Base.map
-                                  @ a6
-                                  @ (InflectionData.Manifest a6)
-                                  (MorphologyGen.cleanGrammarSys3 @ a6)
-                                  x } } } }
-                        InflectionData.Suffix
-                        -> case ds2 of wild2 { (,) x j ->
-                           case i of wild3 { GHC.Types.I# x1 ->
-                           case j of wild4 { GHC.Types.I# y ->
-                           case GHC.Prim.tagToEnum#
-                                  @ GHC.Types.Bool
-                                  (GHC.Prim.==# x1 y) of wild5 {
-                             GHC.Types.False -> MorphologyGen.cleanGrammarSys5 @ a6
-                             GHC.Types.True
-                             -> GHC.Base.map
-                                  @ a6
-                                  @ (InflectionData.Manifest a6)
-                                  (MorphologyGen.cleanGrammarSys2 @ a6)
-                                  x } } } }
-                        InflectionData.PostParticle
-                        -> case ds2 of wild2 { (,) x j ->
-                           case i of wild3 { GHC.Types.I# x1 ->
-                           case j of wild4 { GHC.Types.I# y ->
-                           case GHC.Prim.tagToEnum#
-                                  @ GHC.Types.Bool
-                                  (GHC.Prim.==# x1 y) of wild5 {
-                             GHC.Types.False -> MorphologyGen.cleanGrammarSys5 @ a6
-                             GHC.Types.True
-                             -> GHC.Base.map
-                                  @ a6
-                                  @ (InflectionData.Manifest a6)
-                                  (MorphologyGen.cleanGrammarSys1 @ a6)
-                                  x } } } } } }) -}
-e420ae6d59d41098af75e7cd89ffef61
-  makePostParticleSystems ::
-    GHC.Types.Int
-    -> [PhonemeData.Phoneme]
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U)><L,U><L,U><L,U(U)> -}
+f4a2d17036605fda47d0eb60b7f1611b
+  makeLexicalInflection ::
+    [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]
     -> InflectionData.InflectionSystem
-    -> Data.RVar.RVar [InflectionData.ManifestSystem]
+    -> (InflectionData.LexicalCategory,
+        GHC.Types.Int,
+        GHC.Types.Int,
+        GHC.Types.Int,
+        GHC.Types.Int)
+    -> Data.RVar.RVar
+         (InflectionData.LexicalCategory,
+          [InflectionData.ManifestSystem],
+          [InflectionData.ManifestSystem],
+          [InflectionData.ManifestSystem],
+          [InflectionData.ManifestSystem])
   {- Arity: 4,
-     Strictness: <S(S),1*U(U)><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+     Strictness: <L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><S,1*U(U,1*U(U),1*U(U),1*U(U),1*U(U))>,
      Inline: INLINE[0],
      Unfolding: InlineRule (4, True, False)
-                (\ w :: GHC.Types.Int
-                   w1 :: [PhonemeData.Phoneme]
-                   w2 :: [[PhonemeData.Phoneme]]
-                   w3 :: InflectionData.InflectionSystem ->
-                 case w of ww { GHC.Types.I# ww1 ->
-                 MorphologyGen.$wmakePostParticleSystems ww1 w1 w2 w3 }) -}
-233b5f288bdafa16ba476861b42d6f79
-  makePreParticleSystems ::
-    GHC.Types.Int
-    -> [PhonemeData.Phoneme]
-    -> [[PhonemeData.Phoneme]]
-    -> InflectionData.InflectionSystem
-    -> Data.RVar.RVar [InflectionData.ManifestSystem]
-  {- Arity: 4,
-     Strictness: <S(S),1*U(U)><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (4, True, False)
-                (\ w :: GHC.Types.Int
-                   w1 :: [PhonemeData.Phoneme]
-                   w2 :: [[PhonemeData.Phoneme]]
-                   w3 :: InflectionData.InflectionSystem ->
-                 case w of ww { GHC.Types.I# ww1 ->
-                 MorphologyGen.$wmakePreParticleSystems ww1 w1 w2 w3 }) -}
-8780d46b84c4505ec8178a0f114cd980
-  makePrefixSystems ::
-    GHC.Types.Int
-    -> [PhonemeData.Phoneme]
-    -> [[PhonemeData.Phoneme]]
-    -> InflectionData.InflectionSystem
-    -> Data.RVar.RVar [InflectionData.ManifestSystem]
-  {- Arity: 4,
-     Strictness: <S(S),1*U(U)><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (4, True, False)
-                (\ w :: GHC.Types.Int
-                   w1 :: [PhonemeData.Phoneme]
-                   w2 :: [[PhonemeData.Phoneme]]
-                   w3 :: InflectionData.InflectionSystem ->
-                 case w of ww { GHC.Types.I# ww1 ->
-                 MorphologyGen.$wmakePrefixSystems ww1 w1 w2 w3 }) -}
-55fbd3d976437a15e2cf978c27581f87
-  makeSuffixSystems ::
-    GHC.Types.Int
-    -> [PhonemeData.Phoneme]
-    -> [[PhonemeData.Phoneme]]
-    -> InflectionData.InflectionSystem
-    -> Data.RVar.RVar [InflectionData.ManifestSystem]
-  {- Arity: 4,
-     Strictness: <S(S),1*U(U)><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (4, True, False)
-                (\ w :: GHC.Types.Int
-                   w1 :: [PhonemeData.Phoneme]
-                   w2 :: [[PhonemeData.Phoneme]]
-                   w3 :: InflectionData.InflectionSystem ->
-                 case w of ww { GHC.Types.I# ww1 ->
-                 MorphologyGen.$wmakeSuffixSystems ww1 w1 w2 w3 }) -}
+                (\ w :: [PhonemeData.Phoneme]
+                   w1 :: [[PhonemeData.Phoneme]]
+                   w2 :: InflectionData.InflectionSystem
+                   w3 :: (InflectionData.LexicalCategory,
+                          GHC.Types.Int,
+                          GHC.Types.Int,
+                          GHC.Types.Int,
+                          GHC.Types.Int) ->
+                 case w3 of ww { (,,,,) ww1 ww2 ww3 ww4 ww5 ->
+                 MorphologyGen.$wmakeLexicalInflection
+                   w
+                   w1
+                   w2
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5 }) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

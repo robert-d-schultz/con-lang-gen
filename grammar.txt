@@ -1,0 +1,3 @@
+Grammar
+Grammar {getSI = SubInitial, getOF = ObjFinal, getCI = CompFinal, getVtoI = OblVtoIMove, getAH = NoAffixHop, getNS = NoNullSub, getObT = OblTopic, getNT = OptNullTop, getTM = OblTopMark, getItoC = OblItoCMove, getWHM = OblWHMove, getPP = PiedPipe, getQI = OblQuesInv}
+the man at the table vomits on the ugly woman

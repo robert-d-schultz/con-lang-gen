@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-27 06:12:58.96964 UTC
+2016-11-02 14:46:10.087193 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:WordGen 7103
-  interface hash: e2fd0f11374e98129b2ec204636aad85
-  ABI hash: 41cebf80bfe9a5c601e3f8f32a7f5690
+  interface hash: a4069fb203dd7db7c95eeed8e15db115
+  ABI hash: 5aa3b7d1957a69e2673e41e5e8bdc31f
   export-list hash: 9dfefff67ac26aa86a6a1d79ec7432b6
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
@@ -89,18 +89,18 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  OtherData e2b50a410ce19d2d27f8b50952de8b42
+import  -/  OtherData ef85631315e8bb1c90bd776e9bb7751c
   exports: f505dec72f229982fb85e59b44566731
-import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
-  exports: 6190a60b3ecf64d963416d84612d3413
-  Morpheme 4f48109d326bee9a53078869dbb034aa
-  Morpheme b64262a4cf24269d3af16c38a15f99cc
-  Phoneme b470252dd3c1b881fdcf6f5f8e488f7a
-  Word 5ef8c136f7cf4396a5065100ab7b2865
-  Word 1681594c37a7b959bf1fd6376ae38aed
-import  -/  PhonemeGen 28ce5b9e9c6c08088c2b3abde3cd0d20
+import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
+  exports: 8834c83badd5837275d7ec1bbd2f424a
+  Morpheme 638ca31a2fd80dc92fadb76f1b8badfd
+  Morpheme f6ac1984a4423d03613ec94d362955ea
+  Phoneme 725a483aa2dd4b7c0473c29cf990b878
+  Word 58728e383c3ae1ba22d7c75c2611ac1b
+  Word 53dc4151a59abddfd798786b00d0a617
+import  -/  PhonemeGen 44431a2b9295a7efdbb24a370fea6130
   exports: ac2fac7549593bb4b2279f37f817f5be
-import  -/  PhonotacticsGen 9e23f8dea7b610bbee322457d8678afd
+import  -/  PhonotacticsGen 6b0ffb15d766a08cc9d1828eaa725159
   exports: 5bbf082cfe2be7a4eaae7a2a5f6b7de8
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
@@ -169,7 +169,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-7e649e28825418ec1c5bccdbb77dc627
+a9223fbd4bbfb5ca739ca06f93a9d6ea
   $wmakeMorpheme ::
     [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]
@@ -185,7 +185,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
   {- Arity: 10,
      Strictness: <L,U><L,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-80309940be91c5094a1ad0ebd56a4b1d
+acbb87d27dc38c203a5e8c0ef4167fee
   makeDictionary ::
     GHC.Types.Int
     -> [PhonemeData.Phoneme]
@@ -217,7 +217,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                                           <Data.Random.Source.Internal.Prim.Prim>_R
                                           <Data.Functor.Identity.Identity>_R))
                                 (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Word]>_N))) -}
-943aeb4e083bc35e3eef78605786aa57
+da39d1b77ec977f00919908d9c69b8c9
   makeDictionary1 ::
     GHC.Types.Int
     -> [PhonemeData.Phoneme]
@@ -300,7 +300,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                                         <Data.Random.Source.Internal.Prim.Prim>_R
                                         <Data.Functor.Identity.Identity>_R))
                               (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <PhonemeData.Word>_N)) } } } } })) -}
-6ca6dfb0ccb54b1c229250f8a3afd966
+da75a9aaeb42e0ae5821796c1595af68
   makeMorpheme ::
     [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]

@@ -34,11 +34,10 @@ data Phoneme = Consonant
            { dheight1 :: Height
            , dbackness1 :: Backness
            , droundedness1 :: Roundedness
-           , dlength1 :: Length
            , dheight2 :: Height
            , dbackness2 :: Backness
            , droundedness2 :: Roundedness
-           , dlength2 :: Length
+           , dlength :: Length
            , dsymbol :: String
            }
            | Blank deriving (Eq, Ord, Show, Read)

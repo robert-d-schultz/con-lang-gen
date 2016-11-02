@@ -24,6 +24,11 @@ library
                      , InflectionGen
                      , InflectionData
                      , MorphologyGen
+                     , Romanization
+                     , Syllabification
+                     , GrammarGen
+                     , GrammarData
+                     , Translate
   build-depends:       base >= 4.7 && < 5
                      , rvar -any
                      , random-fu -any

@@ -1,19 +1,25 @@
 module Main where
 
---import PhonologyGen
 import Data.Random.Extras
 import Data.Random hiding (sample)
 import Data.RVar
 
-import PhonemeGen
+{-import PhonemeGen
 import PhonotacticsGen
 import WordGen
 import Parse
 import InflectionGen
-import MorphologyGen
+import MorphologyGen -}
+import GrammarGen
+import Translate
 
 main :: IO ()
 main = do
+  grammar <- sampleRVar makeGrammar
+  writeFile "grammar.txt" $ "Grammar\n"
+                         ++ show grammar ++ "\n"
+                         ++ testExample grammar
+{-
   -- consonants
   places <- sampleRVar makePlaces
   manners <- sampleRVar makeManners
@@ -59,3 +65,4 @@ main = do
 
   writeFile "lexicon.txt" $ "Lexicon"
                          ++ parseDictionary sonHier roots
+-}

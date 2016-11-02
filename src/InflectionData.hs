@@ -44,17 +44,9 @@ deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, E
 
 -- How does the grammatical category manifest?
 -- NoManifest - there is no concept of this in the language
--- Particle - category uses particles to manifest (the, an, a for definiteness/specificity in English)
+-- Particle - category uses particles to manifest (the, an, a for definiteness/specificity in English?)
 -- Exponent - manifests by changing the word
-  -- Identity - no change, different from NoManifest tho
-  -- Affixation
-    -- Prefix
-    -- Suffix
-    -- Infix
-    -- Circumfix
-  -- Reduplication - duplicate part of the word
-  -- Internal modification - just change something, use phonological rule maybe, although straight [Morpheme] -> [Morpheme] might be better
-  -- Subtraction - same thing as affixation, really
+
 
 data Manifest a = NoManifest | Manifest [(LexicalCategory, ManifestType, Int)] a deriving (Eq, Show, Read)
 
@@ -94,8 +86,16 @@ data Case          = INTR | ACC | ERG | PEG | INDIR | SEC
                    | NOM2 | ABS2 | ABS3 | DTR | OBJ | DRT1
                    | TR
                    | DRT2
+                   | OBL1 | OBL2 | OBL3 | OBL4 | OBL5 | OBL6
                    | ADP | PREP | POST
-                   | OBL1 | OBL2 | OBL3 | OBL4 | OBL5 | OBL6 deriving (Eq, Show, Read)
+                   | LAT | LOC | ABL
+                   | COMP | EQU | IDEN | ABE
+                   | DAT | INS | COMIT | INSCOMIT | ORN | BEN
+                   | CAUS | DISTR
+                   | GEN | POSS | PART
+                   | VOC
+
+                   deriving (Eq, Show, Read)
 data Number        = SG | DU | TRI | PA | PL deriving (Eq, Show, Read)
 data Definiteness  = DEF | INDF deriving (Eq, Show, Read)
 data Specificity   = SPEC | NSPEC deriving (Eq, Show, Read)

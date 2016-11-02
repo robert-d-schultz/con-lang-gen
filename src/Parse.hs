@@ -43,7 +43,7 @@ parsePhoneme :: Phoneme -> String
 parsePhoneme Blank = []
 parsePhoneme (Consonant _ _ _ ipa) = ipa
 parsePhoneme (Vowel _ _ _ _ ipa) = ipa
-parsePhoneme (Diphthong _ _ _ _ _ _ _ _ ipa) = ipa
+parsePhoneme (Diphthong _ _ _ _ _ _ _ ipa) = ipa
 
 -- Parse the consonant inventory into html table
 parseConPhonemeInventory :: [Place] -> [Manner] -> [Phonation] -> [Phoneme] -> String

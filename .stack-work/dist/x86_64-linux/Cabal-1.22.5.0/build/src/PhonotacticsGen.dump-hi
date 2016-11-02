@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-25 01:43:13.356987 UTC
+2016-10-28 08:59:32.808993 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen 7103
-  interface hash: fe7539e36a524fb4b68a997eedd5802d
-  ABI hash: 9e23f8dea7b610bbee322457d8678afd
+  interface hash: 295565ee2753952f109eca42efd6e7b8
+  ABI hash: 6b0ffb15d766a08cc9d1828eaa725159
   export-list hash: 5bbf082cfe2be7a4eaae7a2a5f6b7de8
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
@@ -88,15 +88,15 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
-  exports: 6190a60b3ecf64d963416d84612d3413
+import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
+  exports: 8834c83badd5837275d7ec1bbd2f424a
   AFFRICATE 147f242a04fba4ccaf3d990013a051a5
   APPROXIMANT 688bb45ab09fc9e6611f59d892650e5d
   ASPIRATED 756e7c3f604a54456232d7e10e6e0cde
   BREATHY f6261f7e07b77dd9cd142213c14126e3
   CREAKY 4c3da3105ff3af15a8154f034d9336ad
   DORSAL bd982f4073f646c80f518bd24cad6c99
-  Diphthong dd3d8f9f97afc9c5dce57589c3791239
+  Diphthong aa609d265bfaa803022b7633544c1bf3
   FLAP eccdd9a127edaee2ea4ed02c15b14dc9
   FRICATIVE 9fe324020397eadebc8f607209e35373
   LAFFRICATE 3e4cdb3cdeb16222335c945aafc38d2f
@@ -105,7 +105,7 @@ import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
   LFRICATIVE fd803e10efe16b2dce9944b62a4a74b4
   MODAL bd244264bab2966de13717630fceb06d
   NASAL 33a4f70f850c97bc19932b2d99f86fec
-  Phoneme b470252dd3c1b881fdcf6f5f8e488f7a
+  Phoneme 725a483aa2dd4b7c0473c29cf990b878
   SAFFRICATE b1edf15f9894f243d08ceea9bb332359
   SILIBANT f64a5f1ed2462d03b63a4ac44aed52e4
   SLACK c990fb0ced343bfe6a5ecaaeda0b09e1
@@ -113,20 +113,20 @@ import  -/  PhonemeData fc090a0bcda3a243800b6c4018b433c0
   STOP 1e220103167759b2457a52d787a2828e
   TRILL 6ee80409b4b73f8f366272d21ec77dba
   VOICELESS dbf8f182d917d2469a91d36a4068291b
-  Vowel 3d033a9ea8966876e27fd237e6e3b1f9
-  cmanner 63b423ecfee1e7aefd47b7c99d563063
-  cplace 96038e128746e5b5fcd1511ba99ef291
-  cvoice 4d9403c61cf0bfebe916b2dd0e86d5dd
+  Vowel bc70fa2bda72574d3d9a605b3092c858
+  cmanner a9429695b211c23c7924d39159db5ba5
+  cplace fca7d253ab64bc724a01d2e6925663e3
+  cvoice 5b16e74a055f469d2f2e1c9a9bbdec50
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random.Distribution.Uniform ce34c1edd0e59e868fcf9e0bf914c4ef
 import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
-584b0245007aab1cf39091959e249ff7
+e1fd2adda3e27129ee66324b8fb52047
   makeSonHier ::
     [PhonemeData.Phoneme] -> Data.RVar.RVar [[PhonemeData.Phoneme]]
   {- Arity: 1, Strictness: <L,1*U> -}
-a83ac27837ada1b4430c7af8af2c9a67
+fc68d44d08b8ab0c413f94a100c4b828
   retrieveSon ::
     [[PhonemeData.Phoneme]] -> PhonemeData.Phoneme -> GHC.Types.Int
   {- Arity: 2, Strictness: <S,1*U><S,1*U>,
@@ -151,7 +151,7 @@ a83ac27837ada1b4430c7af8af2c9a67
                              sonHier
                              0 of ww2 { DEFAULT ->
                       GHC.Types.I# (GHC.Prim.+# ww2 1) }
-                   PhonemeData.Diphthong ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9
+                   PhonemeData.Diphthong ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8
                    -> case GHC.List.$wlenAcc
                              @ [PhonemeData.Phoneme]
                              sonHier
