@@ -1,5 +1,6 @@
 module WordGen
-( makeDictionary
+( loadMeaningData
+, makeDictionary
 , makeMorpheme
 ) where
 
@@ -15,10 +16,23 @@ import PhonemeData
 import PhonotacticsGen
 import OtherData
 
+-- Input data
+data MeaningData = MeaningData
+  {
+    inputGeneral       :: [String]
+  }
+
+loadMeaningData :: IO MeaningData
+loadMeaningData =  MeaningData
+  <$> readMeaning "raw/meanings/meanings.txt"
+
+readMeaning :: Read a => FilePath -> IO a
+readMeaning = fmap read . readFile
+
 -- Generate words
--- Generate a list of words
-makeDictionary :: Int -> [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar [Word]
-makeDictionary n vows sonhier settings = replicateM n (makeWord vows sonhier settings)
+-- Generate
+makeDictionary :: MeaningData -> [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar [(String, Word)]
+makeDictionary mData vows sonhier settings = mapM (\i -> (,) <$> return i <*> makeWord vows sonhier settings) (inputGeneral mData)
 
 -- Given sonority hierarchy, generate (one) root morpheme for a word
 makeWord :: [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar Word

@@ -1,54 +1,43 @@
 Phonology<br>
 <table border=1>
 	<tr>
-		<th colspan="11">Consonant Inventory</th>
+		<th colspan="7">Consonant Inventory</th>
 	</tr>
 	<tr>
 		<th></th>
-		<th colspan="2">Bilabial</th>
-		<th colspan="2">Labiodental</th>
-		<th colspan="2">Coronal</th>
-		<th colspan="2">Dorsal</th>
-		<th colspan="2">Laryngeal</th>
+		<th colspan="1">Bilabial</th>
+		<th colspan="1">Labiodental</th>
+		<th colspan="1">Denti-alveolar</th>
+		<th colspan="1">Retroflex</th>
+		<th colspan="1">Uvular</th>
+		<th colspan="1">Palatal</th>
 	</tr>
 	<tr>
 		<th>Stop</th>
-		<td>p</td>
 		<td>b</td>
-		<td>p̪</td>
 		<td>b̪</td>
-		<td>t</td>
 		<td>d</td>
-		<td>k</td>
-		<td>ɡ</td>
-		<td>ʔ</td>
-		<td>ʡ</td>
+		<td>ɖ</td>
+		<td>ɢ</td>
+		<td>ɟ</td>
 	</tr>
 	<tr>
-		<th>Nasal</th>
-		<td>m̥</td>
-		<td>m</td>
-		<td>ɱ̊</td>
-		<td>ɱ</td>
-		<td>n̥</td>
-		<td>n</td>
-		<td>ŋ̊</td>
-		<td>ŋ</td>
+		<th>Flap</th>
+		<td>ⱱ̟</td>
+		<td></td>
+		<td></td>
+		<td></td>
 		<td></td>
 		<td></td>
 	</tr>
 	<tr>
-		<th>Trill</th>
-		<td>ʙ̥</td>
-		<td>ʙ</td>
-		<td>ʙ̠̊ </td>
-		<td>ʙ̠</td>
+		<th>Lateral flap</th>
 		<td></td>
 		<td></td>
-		<td></td>
-		<td></td>
-		<td>ʜ</td>
-		<td>ʢ</td>
+		<td>ɺ</td>
+		<td>ɺ̢</td>
+		<td>ʟ̠̆</td>
+		<td>ʎ̯</td>
 	</tr>
 </table>
 <br>
@@ -190,4 +179,4 @@ Phonology<br>
 	</tr>
 </table>
 <br>
-Diphthongs: /ʏ̟̆ɑ̯̆/, /ø̞̆ɜ̯̆/, /ø̞ːʌː̯/, and /øːʌ̞ː̯/
+Diphthongs: /yːʏ̟ː̯/, /ɯ̞œ̞̯/, /œ̞̆ø̞̯̆/, and /yʏ̟̯/

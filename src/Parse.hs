@@ -1,6 +1,7 @@
 {-# LANGUAGE Rank2Types #-}
 module Parse
 ( parseDictionary
+, parseWord
 , parseConPhonemeInventory
 , parseVowPhonemeInventory
 , parseDiphPhonemeInventory
@@ -11,6 +12,8 @@ module Parse
 
 import Prelude hiding (Word)
 import Data.List
+import GHC.Exts hiding (Word)
+import Control.Arrow
 
 import PhonemeData
 import OtherData
@@ -20,12 +23,18 @@ import Syllabification
 import Romanization
 
 -- Parse list of words to string
-parseDictionary :: [[Phoneme]] -> [Word] -> String
-parseDictionary sonHier wrds = "\n" ++ intercalate "\n" (map (parseWord sonHier) wrds)
+parseDictionary :: [[Phoneme]] -> [(String, Word)] -> String
+parseDictionary sonHier pairs = "\n" ++ intercalate "\n" (map (parseDictionaryEntry sonHier) (reduceHomophones pairs))
+
+reduceHomophones :: [(String, Word)] -> [([String], Word)]
+reduceHomophones pairs = map (second head . unzip) (groupWith snd (sortWith snd pairs))
+
+parseDictionaryEntry :: [[Phoneme]] -> ([String], Word) -> String
+parseDictionaryEntry sonHier (means, wrd) = romanizeWord wrd ++ " (" ++ parseWord sonHier wrd ++ ")" ++ concatMap ("\n\t n. " ++ ) means
 
 -- Parse Word to string
 parseWord :: [[Phoneme]] -> Word -> String
-parseWord sonHier word = "/" ++ intercalate "." (map parseSyllable sylls) ++ "/" ++ " - " ++ romanizeWord word where
+parseWord sonHier word = "/" ++ intercalate "." (map parseSyllable sylls) ++ "/" where
   (SyllWord sylls) = syllabifyWord sonHier word
 
 -- Parse morpheme for use in exponent table

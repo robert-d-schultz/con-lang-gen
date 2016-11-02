@@ -64,7 +64,6 @@ loadInputData =
 readFeature :: Read a => FilePath -> IO a
 readFeature = fmap read . readFile
 
-
 -- Create "inflection system"
 
 makeInflectionSystem :: InputData -> RVar (InflectionSystem, [(LexicalCategory, Int, Int, Int, Int)])

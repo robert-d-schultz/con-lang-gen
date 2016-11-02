@@ -1,12 +1,17 @@
 {-# LANGUAGE NamedFieldPuns #-}
 module Translate
-( testExample
+( parseParseTree
 , parsePhrase
+, treeExample
 ) where
 
+import Prelude hiding (Word)
 import Data.List
+import Data.Maybe
 
 import GrammarData
+import Parse
+import PhonemeData
 
 -- The point here is to translate a parse tree into the target language's grammar system.
 -- Worry about lexical translation later
@@ -29,18 +34,27 @@ import GrammarData
 -- PiedPiping            - question related
 -- QuestionInversion     - question related
 
-testExample :: Grammar -> String
-testExample grammar = unwords (filter (not.null) (parsePhrase grammar underlyingExample))
+parseParseTree :: [[Phoneme]] -> [(String, Word)] -> Grammar -> Phrase -> String
+parseParseTree sonHier dict g pt = native ++ "\n" ++ literal ++ "\n\"" ++ english ++ "\"" where
+  native  = unwords (filter (not.null) (parsePhrase sonHier dict g pt))
+  literal = unwords (filter (not.null) (parsePhrase [] dict g pt))
+  english = unwords (filter (not.null) (parsePhrase [] dict eg pt))
 
-engGrammar = Grammar SubInitial ObjFinal CompFinal OblVtoIMove NoAffixHop NoNullSub OptTopic NoNullTop NoTopMark OblItoCMove OblWHMove PiedPipe OblQuesInv
 
-underlyingExample = XP Comp Null XPNull (XBarC Comp Null (LeafNull Null) (XP Infl Null XPNull (XBarC Infl Null (Leaf Infl Null LeafAffix "s") (XP Verb Null themanonthetable (XBarC Verb Null (Leaf Verb Null LeafWord "vomit") ontheuglywoman)))))
+translate :: [[Phoneme]] -> [(String, Word)] -> String -> String
+translate [] dict str = str
+translate sonHier dict str = fromMaybe "<UNK>" (parseWord sonHier <$> lookup str dict)
+
+
+eg = Grammar SubInitial ObjFinal CompFinal OblVtoIMove NoAffixHop NoNullSub OptTopic NoNullTop NoTopMark OblItoCMove OblWHMove PiedPipe OblQuesInv
+
+treeExample = XP Comp Null XPNull (XBarC Comp Null (LeafNull Null) (XP Infl Null XPNull (XBarC Infl Null (Leaf Infl Null LeafAffix "s") (XP Verb Null themanonthetable (XBarC Verb Null (Leaf Verb Null LeafWord "vomit") ontheuglywoman)))))
 themanonthetable = XP Det Null XPNull (XBarC Det Null (Leaf Det Null LeafWord "the") (XP Noun Null XPNull (XBarC Noun Null (Leaf Noun Null LeafWord "man") onthetable)))
 onthetable = XP Adpo Null XPNull (XBarC Adpo Null (Leaf Adpo Null LeafWord "at") (XP Det Null XPNull (XBarC Det Null (Leaf Det Null LeafWord "the") (XP Noun Null XPNull (XBarC Noun Null (Leaf Noun Null LeafWord "table") XPNull)))))
 ontheuglywoman = XP Adpo Null XPNull (XBarC Adpo Null (Leaf Adpo Null LeafWord "on") (XP Det Null XPNull (XBarC Det Null (Leaf Det Null LeafWord "the") (XP Noun Null XPNull (XBarA Noun Null (XP Adj Null XPNull (XBarC Adj Null (Leaf Adj Null LeafWord "ugly") XPNull)) (XBarC Noun Null (Leaf Noun Null LeafWord "woman") XPNull))))))
 
-parsePhrase :: Grammar -> Phrase -> [String]
-parsePhrase g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl _ iHead (XP Verb _ vSpec (XBarC Verb _ vHead vComp)))))) = cp where
+parsePhrase :: [[Phoneme]] -> [(String, Word)] -> Grammar -> Phrase -> [String]
+parsePhrase sonHier dict g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl _ iHead (XP Verb _ vSpec (XBarC Verb _ vHead vComp)))))) = cp where
   cp
     | getSI g == SubInitial = cSpecOut ++ cbar
     | otherwise             = cbar ++ cSpecOut
@@ -63,51 +77,51 @@ parsePhrase g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl 
   cSpecOut
     | getWHM g == OblWHMove && phraseIl vComp == Ques && phraseLC vComp == Det = ["Who/what"]
     | getWHM g == OblWHMove && phraseIl vComp == Ques && phraseLC vComp == Adpo = ["Where"]
-    | otherwise = parsePhrase g cSpec
+    | otherwise = parsePhrase sonHier dict g cSpec
   cHeadOut
-    | getItoC g == OblItoCMove && cHead == LeafNull Ques = parseLeaves g [iHead]
-    | otherwise = parseLeaves g [cHead]
+    | getItoC g == OblItoCMove && cHead == LeafNull Ques = parseLeaves sonHier dict g [iHead]
+    | otherwise = parseLeaves sonHier dict g [cHead]
   iSpecOut
-    | True      = parsePhrase g vSpec
-    | otherwise = parsePhrase g iSpec
+    | True      = parsePhrase sonHier dict g vSpec
+    | otherwise = parsePhrase sonHier dict g iSpec
   iHeadOut
-    | getVtoI g == OblVtoIMove && getItoC g == OblItoCMove && cHead == LeafNull Ques = parseLeaves g [vHead]
+    | getVtoI g == OblVtoIMove && getItoC g == OblItoCMove && cHead == LeafNull Ques = parseLeaves sonHier dict g [vHead]
     | getItoC g == OblItoCMove && cHead == LeafNull Ques = []
-    | getVtoI g == OblVtoIMove = parseLeaves g [vHead, iHead]
+    | getVtoI g == OblVtoIMove = parseLeaves sonHier dict g [vHead, iHead]
     | getVtoI g == NoVtoIMove && getAH g == OblAffixHop = []
-    | otherwise = parseLeaves g [iHead]
+    | otherwise = parseLeaves sonHier dict g [iHead]
   vSpecOut
     | True      = []
-    | otherwise = parsePhrase g vSpec
+    | otherwise = parsePhrase sonHier dict g vSpec
   vHeadOut
     | getVtoI g == OblVtoIMove = []
-    | (getVtoI g == NoVtoIMove && getAH g == OblAffixHop && leafT iHead == LeafAffix) && (getItoC g /= OblItoCMove || cHead /= LeafNull Ques) = parseLeaves g [vHead, iHead]
-    | otherwise = parseLeaves g [vHead]
+    | (getVtoI g == NoVtoIMove && getAH g == OblAffixHop && leafT iHead == LeafAffix) && (getItoC g /= OblItoCMove || cHead /= LeafNull Ques) = parseLeaves sonHier dict g [vHead, iHead]
+    | otherwise = parseLeaves sonHier dict g [vHead]
   vCompOut
     | getWHM g == OblWHMove && phraseIl vComp == Ques = []
-    | otherwise = parsePhrase g vComp
+    | otherwise = parsePhrase sonHier dict g vComp
 
-parsePhrase g (XP lc Ques spec bar)
-  | getSI g == SubInitial = parsePhrase g spec ++ parseBar g bar
-  | otherwise             = parseBar g bar ++ parsePhrase g spec
-parsePhrase g (XP lc _ spec bar)
-  | getSI g == SubInitial = parsePhrase g spec ++ parseBar g bar
-  | otherwise             = parseBar g bar ++ parsePhrase g spec
-parsePhrase g XPNull = []
+parsePhrase sonHier dict g (XP lc Ques spec bar)
+  | getSI g == SubInitial = parsePhrase sonHier dict g spec ++ parseBar sonHier dict g bar
+  | otherwise             = parseBar sonHier dict g bar ++ parsePhrase sonHier dict g spec
+parsePhrase sonHier dict g (XP lc _ spec bar)
+  | getSI g == SubInitial = parsePhrase sonHier dict g spec ++ parseBar sonHier dict g bar
+  | otherwise             = parseBar sonHier dict g bar ++ parsePhrase sonHier dict g spec
+parsePhrase sonHier dict g XPNull = []
 
-parseBar :: Grammar -> Bar -> [String]
-parseBar g (XBarA lc _ adjunct bar) = parsePhrase g adjunct ++ parseBar g bar
-parseBar g (XBarC lc _ leaf comp)
-  | (lc /= Verb && getCI g == CompFinal) || (lc == Verb && getOF g == ObjFinal) = parseLeaves g [leaf] ++ parsePhrase g comp
-  | otherwise            = parsePhrase g comp ++ parseLeaves g [leaf]
+parseBar :: [[Phoneme]] -> [(String, Word)] -> Grammar -> Bar -> [String]
+parseBar sonHier dict g (XBarA lc _ adjunct bar) = parsePhrase sonHier dict g adjunct ++ parseBar sonHier dict g bar
+parseBar sonHier dict g (XBarC lc _ leaf comp)
+  | (lc /= Verb && getCI g == CompFinal) || (lc == Verb && getOF g == ObjFinal) = parseLeaves sonHier dict g [leaf] ++ parsePhrase sonHier dict g comp
+  | otherwise            = parsePhrase sonHier dict g comp ++ parseLeaves sonHier dict g [leaf]
 
-parseLeaves :: Grammar -> [Leaf] -> [String]
-parseLeaves _ [] = [""]
-parseLeaves g leaves
-  | leafisNull $ last leaves         = parseLeaves g (init leaves)
-  | length leaves == 1 && leafT (last leaves) == LeafAffix = ["<do>" ++ leafStr (last leaves)]
-  | leafT (last leaves) == LeafAffix = init (parseLeaves g (init leaves)) ++ [last (parseLeaves g (init leaves)) ++ leafStr (last leaves)]
-  | otherwise                        = parseLeaves g (init leaves) ++ [leafStr $ last leaves]
+parseLeaves :: [[Phoneme]] -> [(String, Word)] -> Grammar -> [Leaf] -> [String]
+parseLeaves _ _ _ [] = [""]
+parseLeaves sonHier dict g leaves
+  | leafisNull $ last leaves         = parseLeaves sonHier dict g (init leaves)
+  | length leaves == 1 && leafT (last leaves) == LeafAffix = ["<do>" ++ translate sonHier dict (leafStr $ last leaves)]
+  | leafT (last leaves) == LeafAffix = init (parseLeaves sonHier dict g (init leaves)) ++ [last (parseLeaves sonHier dict g (init leaves)) ++  translate sonHier dict (leafStr $ last leaves)]
+  | otherwise                        = parseLeaves sonHier dict g (init leaves) ++ [translate sonHier dict (leafStr $ last leaves)]
 
 leafisNull :: Leaf -> Bool
 leafisNull LeafNull{} = True

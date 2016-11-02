@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-31 02:26:52.54703 UTC
+2016-11-02 18:56:36.548456 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:MorphologyGen 7103
-  interface hash: f771c497e4692d1afd9ab60cfea21f6a
+  interface hash: 480256eefc17ae591ef45ececf2fb890
   ABI hash: aa796f2bcf7210652962b8eac8de78e0
   export-list hash: f903e1f996d60136e05ef566d0c948d9
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -143,8 +143,8 @@ import  -/  InflectionGen 01fbcfdeb4bee1ffed290d04b48ffb84
 import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
   exports: 8834c83badd5837275d7ec1bbd2f424a
   Phoneme 725a483aa2dd4b7c0473c29cf990b878
-import  -/  WordGen 5aa3b7d1957a69e2673e41e5e8bdc31f
-  exports: 9dfefff67ac26aa86a6a1d79ec7432b6
+import  -/  WordGen 5d4976051e9ead79ee9ab0d44eb3662e
+  exports: 5ee31c708723536bda1554f47c037d50
   makeMorpheme da75a9aaeb42e0ae5821796c1595af68
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c

@@ -1,51 +1,1193 @@
 Lexicon
-/œː.pʌːɡt/ - eepoogt
-/ø̆/ - e
-/p̪ɯ̞.ɨ̆.p̪ʡøm̥.dɶːɱb/ - pooopgendaanb
-/pɱɶŋ.ddɪ̈̆ʙ̠̊ .ɡʌʙ̥ɱ/ - pnangddoorgorn
-/ɶːʙ̠.ʔʜø̞ːʌː̯.ʜɶː/ - aargheeoohaa
-/kø̞̆.pɡɨm/ - kepgoom
-/ʔøb̪p/ - gebp
-/ɑ̆ʙ̥ʡ.tɘŋ̊b.p̪yː.ŋʙ̠ø̞ːʌː̯ŋp̪/ - argtunbpiingreeoongp
-/ʡɤ̞/ - go
-/ʏ̟̆ʙ̠̊ / - ir
-/ʏ̟ʢ.mɤ̆ʜ/ - ihmoh
-/pɯː.m̥ʌ.ʙ̥ɑɱ̊b̪.pʌ̞dt/ - poooonoranbpadt
-/əʢ.ŋ̊ɘ/ - uhnu
-/bɯ̞.ɯ.ŋ̊ø̞̆/ - booone
-/ʏ̟̆.ʔɯː.ʢœː.dʌ̞ʢ/ - igooooheedah
-/yːʜ.kø̞̆ʙ/ - iihker
-/kʢɶ.ʙœ.ʢɯ̆.käʡt/ - kharehookagt
-/ɡʏ̟ːʢɱ.ɡø̆ʙ.ɡɱ̊ʏ̟̆ʙ̥.bɡɤː/ - giihngergnirbgoo
-/pɡɶ.ɡɯ̞̆ʙ̥.ʡʙʏ̟̆ɑ̯̆ʡ/ - pgagorgriag
-/œ̞ːŋ/ - aang
-/pŋɑ̆ɱ̊.bø̞ːʌː̯.ʢœ̞ː.ŋy/ - pnganbeeoohaangi
-/tb̪ɜː.ɡɶ/ - tbaaga
-/yː.ɱʙ̥ɤːʙ̠̊ .tä̆ʙ̠ʡ/ - iinroortarg
-/p̪ɡɶ.p̪m̥ʜʏ̟ː.byːʙ̠̊ n̥/ - pgapnhiibiirn
-/tʌ̆ʙ.p̪b̪œ̞ː/ - torpbaa
-/dɶ.b̪ʜɨː.ʡə̆ʢ.nɨŋ/ - dabhooooguhnoong
-/ø̆.ɱ̊ɤː/ - enoo
-/pə̆.ʌ̞ːʙ̠̊ .ɡɜɡ.kä̆nʡ/ - puaargagkang
-/bŋø̞ːʌː̯ʙ̠m̥.ʡœ̞̆.nɨːʙ̠/ - bngeeoornganoooor
-/bɯː.nə.pʡɱœ̞̆ŋd/ - boooonupgnangd
-/p̪ʢɐʜ.dɐ.ɡɨːʙ̥/ - phahdagoooor
-/bɪ̈̆k/ - book
-/ɜːʙ.n̥ʏ̟ːʡ.ʔb̪ɶː.ɱ̊ʙ̥ə̆ʙ̥m̥/ - aarniiggbaanrurn
-/bœ̞̆ɱ/ - ban
-/ɯ̆.ɡʌ̞ː/ - oogaa
-/n̥ɪ̈̆.dœ̞̆ʙ̥.ɡɱœːʙ̥/ - noodargneer
-/ɱ̊ɯ̆m̥.ʡɨː/ - noongoooo
-/m̥ɑːʙ.ʡʏ̟ːn̥.tø̞̆n̥b̪.pø̞ːʙm/ - naargiintenbpeerm
-/ʡɤ̞dp/ - godp
-/nʏ̟ː.n̥ø̞̆.nɐ.ʙ̠̊ ɤ̞̆/ - niinenaro
-/pɯ̆ŋ.b̪ɘ̆ʜ/ - poongbuh
-/ɤ̆.ʙ̥y.ɱ̊ɨ̆.ʜyːʙ̠/ - orinoohiir
-/m̥ɶʢ.m̥ɤʢ.ɱɘːŋ̊.ʡɘː/ - nahnohnuunguu
-/ɐ̆ʙ.dyːʙm.b̪ɯ̆ʜʡ/ - ardiirmboohg
-/ɡn̥ʌʙ/ - gnor
-/ɯʜ/ - ooh
-/ɱ̊äːm.bŋœ̞/ - naambnga
-/ʌn̥.b̪ə̆ʙ̠̊ m.dø̞ːʌː̯.bø̞ʙ̠̊ / - onburmdeeoober
-/p̪n̥ɪ̈ːʡ.kɪ̈̆ŋ.p̪œ̆/ - pnoooogkoongpe
-/tʡɪ̈̆.mø̞ːʌː̯ʜ/ - tgoomeeooh
+broooolarab (/bⱱ̟ɯː.ʎ̯ɑ.ⱱ̟ä̆b/)
+	 n. wind
+bledaalooolg (/bɺø̆.ɖɐː.ʎ̯ɪ̈.ʌ̆ɺɢ/)
+	 n. soup
+blii (/bɺyːʏ̟ː̯/)
+	 n. language
+bloolola (/bɺ̢ɯ.ɺ̢ɤ̞̆.ʎ̯ɐ/)
+	 n. account
+blur (/bɺ̢əⱱ̟/)
+	 n. stomach
+bladliilblabi (/bʎ̯ɜ.ɖɺyːɺ.b̪ɺɑ̆.by̆/)
+	 n. sheep
+boolb (/bɯ̆ɺ̢b̪/)
+	 n. statement
+boodeb (/bɯ.døb/)
+	 n. school
+boodlooloo (/bɨ̆.dʟ̠̆ʌː.ɺɨ̆/)
+	 n. reading
+bil (/by̆ʟ̠̆/)
+	 n. hair
+boolor (/bɯ̞ː.ʟ̠̆ʌ̆ⱱ̟/)
+	 n. tendency
+bool (/bɪ̈̆ʎ̯/)
+	 n. change
+biilbolblibrool (/bʏ̟ːʟ̠̆.b̪ʌ̆ɺ̢.bɺʏ̟̆.b̪ⱱ̟ɤːʟ̠̆/)
+	 n. power
+bord (/bɤⱱ̟ɖ/)
+	 n. attraction
+bud (/bɘ̆d/)
+	 n. sail
+begrobool (/bø̆.ɟⱱ̟ɤ̞.b̪ɯ̆ʎ̯/)
+	 n. twist
+boblogralel (/bɤ̞̆.bʟ̠̆ʌ̆.ɢⱱ̟ɑ.ʎ̯œɺ/)
+	 n. relation
+boluglilo (/bɤ̞̆.ʎ̯ɘ.ɢɺ̢y.ɺ̢ɤ/)
+	 n. shock
+buuelg (/bə.ɘ̆.œ̆ʎ̯ɟ/)
+	 n. drawer
+booldaalalee (/bʌːʎ̯.dɑː.ʟ̠̆ʌ̞̆.ɺ̢øː/)
+	 n. drop
+booaaroo (/bʌː.ɜː.ⱱ̟ɤː/)
+	 n. chest
+beloooorlalbel (/bœ̆.ɺɯː.ⱱ̟ʎ̯ɶɺ.b̪ø̆ʎ̯/)
+	 n. point
+bellarluldeeg (/bœ̆.ɺ̢ɺ̢ɐ̆.ⱱ̟ɺə̆ɺ.ɖøːɢ/)
+	 n. noise
+belaliild (/bœ.ʟ̠̆ɐ.ɺ̢ʏ̟ːʎ̯ɖ/)
+	 n. eye
+balluulol (/bʌ̞̆.ɺ̢ʎ̯əː.ɺʌ̆ʟ̠̆/)
+	 n. worm
+balloablool (/bʌ̞̆.ʎ̯ɺ̢ɯ̞œ̞̯.bʟ̠̆ɤːʎ̯/)
+	 n. copy
+bagoodoooolbub (/bœ̞̆.ɟɨ.dɪ̈ːɺ.bəb̪/)
+	 n. library
+balaaleea (/bœ̞̆.ʎ̯ɑː.ɺ̢øː.ä/)
+	 n. answer
+bada (/bɑ̆.dʌ̞/)
+	 n. surprise
+balleld (/bɶ̆.ʟ̠̆ɺø̞̆ɺ̢ɖ/)
+	 n. rest
+baaoolbooaal (/bɶː.ɯʎ̯.b̪ɪ̈̆.ɜːʟ̠̆/)
+	 n. science
+roolloolbooga (/ⱱ̟ɨ.ʟ̠̆ɺ̢ʌːɺ̢.b̪ɯ̆.ɟʌ̞/)
+	 n. suggestion
+rooliibliilgo (/ⱱ̟ɪ̈̆.ʎ̯yː.b̪ʎ̯yːʏ̟ː̯ʎ̯.ɢʌ/)
+	 n. humor
+riirgurooooob (/ⱱ̟ʏ̟ːⱱ̟.ɟɘ.ⱱ̟ʌ̆.ɪ̈ːb̪/)
+	 n. structure
+rudarb (/ⱱ̟ɘ.dɐ̆ⱱ̟b/)
+	 n. tray
+relgidlalaa (/ⱱ̟øʎ̯.ɢʏ̟̆.ɖʎ̯ɜ̆.ɺɑː/)
+	 n. cake
+rola (/ⱱ̟ɤ̞.ʎ̯ɜ/)
+	 n. slip
+ruloirb (/ⱱ̟ə.ɺ̢ɤ̞.yⱱ̟b̪/)
+	 n. basket
+regoollarla (/ⱱ̟ø̞̆.ɟɤː.ɺ̢ʟ̠̆ɑ.ⱱ̟ɺ̢ɶ̆/)
+	 n. manager
+reeliii (/ⱱ̟ø̞ː.ʟ̠̆ʏ̟ː.y/)
+	 n. thought
+roor (/ⱱ̟ʌːⱱ̟/)
+	 n. mass
+rar (/ⱱ̟ɜⱱ̟/)
+	 n. pipe
+re (/ⱱ̟œ/)
+	 n. punishment
+relaal (/ⱱ̟œ.ʎ̯ɶːʎ̯/)
+	 n. family
+raablole (/ⱱ̟ɐː.bʎ̯ɤ̆.ɺœ/)
+	 n. camera
+raaaole (/ⱱ̟œ̞.ɐː.ʌ.ʎ̯ø̞̆/)
+	 n. ear
+raludol (/ⱱ̟ɶ.ʎ̯ə.ɖɤ̞̆ɺ/)
+	 n. angle
+roaloolaelb (/ⱱ̟ɯ̞œ̞̯.ʟ̠̆ɪ̈.ʎ̯œ̞̆ø̞̯̆ʟ̠̆b̪/)
+	 n. attention
+broooolelgoob (/b̪ⱱ̟ɯː.ʎ̯ø̞̆ʎ̯.ɢɪ̈̆b̪/)
+	 n. skirt
+blulbaaballa (/b̪ɺɘɺ.bɜː.b̪ʌ̞̆.ɺɺä/)
+	 n. produce
+bleerodoolaa (/b̪ɺ̢øː.ⱱ̟ɤ̞.ɖɤ̞ː.ɺɜː/)
+	 n. rate
+blooli (/b̪ɺ̢ʌː.ʟ̠̆y/)
+	 n. wash
+blolbigoo (/b̪ʎ̯ɯ̞ɺ̢.b̪ʏ̟̆.ɟɨ̆/)
+	 n. example
+blealiil (/b̪ʎ̯ø̞.ʌ̞̆.ʎ̯yːɺ̢/)
+	 n. wax
+bloo (/b̪ʎ̯ʌː/)
+	 n. nose
+blal (/b̪ʎ̯ʌ̞̆ʎ̯/)
+	 n. loss
+booaalool (/b̪ɯ̆.ʌ̞ː.ʎ̯ʌːɺ̢/)
+	 n. seat
+boooolaldiidloor (/b̪ɯː.ʟ̠̆ɜʎ̯.ɖyːʏ̟ː̯.ɖʟ̠̆ɯ̆ⱱ̟/)
+	 n. coat
+bilaagle (/b̪y̆.ʎ̯ʌ̞ː.ɟɺø̞/)
+	 n. cup
+biiag (/b̪yː.œ̞̆ɢ/)
+	 n. side
+boal (/b̪ɯ̞̆.ɐ̆ɺ/)
+	 n. force
+bologod (/b̪ɯ̞.ʎ̯ʌ.ɟɤ̆ɖ/)
+	 n. door
+boo (/b̪ɯ̞ː/)
+	 n. tree
+boorleebuldol (/b̪ɪ̈̆.ⱱ̟ʎ̯œː.bəɺ̢.ɖɤ̞ɺ/)
+	 n. protest
+boloo (/b̪ɤ̆.ʎ̯ʌː/)
+	 n. day
+bullab (/b̪ɘ̆.ɺɺ̢ɐb̪/)
+	 n. existence
+buladloo (/b̪ɘ̆.ɺ̢œ̞̆.dʟ̠̆ɨ̆/)
+	 n. turn
+bolbol (/b̪ɤ̞̆ʟ̠̆.b̪ɯ̞ɺ̢/)
+	 n. record
+boroooolaa (/b̪ʌ.ⱱ̟ɯː.ʎ̯ɶː/)
+	 n. use
+booloo (/b̪ʌː.ʟ̠̆ɪ̈/)
+	 n. connection
+bellelool (/b̪œ̆.ʟ̠̆ɺœ̆.ʎ̯ɨɺ/)
+	 n. back
+baregooa (/b̪ʌ̞.ⱱ̟ø̆.ɢɯ̞ː.ä/)
+	 n. hammer
+balbuu (/b̪ʌ̞ʟ̠̆.b̪ɘː/)
+	 n. middle
+balbleed (/b̪ɐ̆ʎ̯.bʟ̠̆ø̞ːd/)
+	 n. space
+baallileg (/b̪ɐː.ʎ̯ʟ̠̆ʏ̟.ʎ̯øɟ/)
+	 n. opinion
+baaliillaardlor (/b̪ɶː.ɺyː.ʟ̠̆ʟ̠̆ɶːⱱ̟.ɖɺɤ̞ⱱ̟/)
+	 n. driving
+boalaree (/b̪ɯ̞œ̞̯.ʎ̯ʌ̞.ⱱ̟øː/)
+	 n. motion
+baegeeliildroo (/b̪œ̞̆ø̞̯̆.ɟœː.ʟ̠̆ʏ̟ːʟ̠̆.dⱱ̟ɨ/)
+	 n. muscle
+drolo (/dⱱ̟ɯ̞̆.ʎ̯ɤ̞̆/)
+	 n. floor
+drii (/dⱱ̟yʏ̟̯/)
+	 n. cover
+dlaaldood (/dɺ̢ʌ̞ːɺ̢.ɖɯ̆d/)
+	 n. butter
+dla (/dɺ̢œ̞/)
+	 n. selection
+dlo (/dʎ̯ɤ̆/)
+	 n. measure
+dlaloolbaered (/dʎ̯ɶ.ʎ̯ɨ̆ɺ.bœ̞̆ø̞̯̆.ⱱ̟œɖ/)
+	 n. boy
+dooludalee (/dɯ̆.ʎ̯ə̆.ɖɑ.ɺœː/)
+	 n. field
+dooooaagloae (/dɯː.äː.ɟɺ̢ɯ̞̆.œ̞̆ø̞̯̆/)
+	 n. fall
+doordloooo (/dɨⱱ̟.ɖʎ̯ɯː/)
+	 n. spring
+doole (/dɨ.ʟ̠̆ø̞̆/)
+	 n. leaf
+dii (/dyː/)
+	 n. country
+doolo (/dɤː.ʟ̠̆ɤ̆/)
+	 n. observation
+duullee (/dɘː.ɺɺø̞ː/)
+	 n. island
+deloo (/dø̞.ʟ̠̆ɪ̈/)
+	 n. talk
+deeredaad (/dø̞ː.ⱱ̟œ.dʌ̞ːd/)
+	 n. crime
+doruuba (/dʌ̆.ⱱ̟əː.b̪ɑ̆/)
+	 n. house
+doodooguloooob (/dʌː.dɯ.ɟɘ̆.ʎ̯ɪ̈ːb̪/)
+	 n. roof
+daadaedilaa (/dɜː.ɖœ̞̆ø̞̯̆.dʏ̟̆.ɺ̢ɐː/)
+	 n. needle
+daalago (/dɜː.ʟ̠̆ɐ̆.ɟɯ̞/)
+	 n. metal
+debooro (/dœ.bɯ.ⱱ̟ɤ̞/)
+	 n. animal
+deela (/dœː.ʟ̠̆ʌ̞/)
+	 n. sun
+dalii (/dʌ̞.ʟ̠̆yːʏ̟ː̯/)
+	 n. top
+daabaalio (/dʌ̞ː.b̪ɜː.ɺʏ̟̆.ʌ̆/)
+	 n. competition
+dal (/dɐɺ/)
+	 n. sister
+daella (/dœ̞̆.œ.ɺʟ̠̆ä/)
+	 n. amount
+dadre (/dä̆.dⱱ̟ø/)
+	 n. stretch
+doad (/dɯ̞œ̞̯ɖ/)
+	 n. pain
+lildi (/ɺyʎ̯.ɖy̆/)
+	 n. match
+liiriireelulg (/ɺyː.ⱱ̟yːʏ̟ː̯.ⱱ̟œː.ɺɘ̆ʎ̯ɟ/)
+	 n. list
+lolaaiillool (/ɺɯ̞.ʟ̠̆äː.ʏ̟ː.ɺʟ̠̆ʌːʟ̠̆/)
+	 n. head
+liblellal (/ɺʏ̟̆.bʟ̠̆ø̆.ʟ̠̆ʟ̠̆ɶ̆ɺ/)
+	 n. offer
+logaela (/ɺɤ̆.ɢœ̞̆ø̞̯̆.ʟ̠̆ʌ̞̆/)
+	 n. rail
+lubiilo (/ɺɘ.b̪yʏ̟̯.ʎ̯ɤ/)
+	 n. brass
+lulg (/ɺɘʟ̠̆ɟ/)
+	 n. belief
+lerdilbelor (/ɺøⱱ̟.dyɺ.b̪ø.ʎ̯ʌ̆ⱱ̟/)
+	 n. steel
+lol (/ɺɤ̞̆ʎ̯/)
+	 n. paper
+la (/ɺɜ̆/)
+	 n. development
+laloolelg (/ɺɜ̆.ʟ̠̆ɪ̈.ɺœ̆ɺ̢ɢ/)
+	 n. mother
+lalbool (/ɺɜɺ̢.b̪ɤ̞ːʎ̯/)
+	 n. help
+lala (/ɺɜ.ɺ̢ɶ̆/)
+	 n. wire
+lalooboolbaa (/ɺɜ.ʎ̯ɯ.bɤ̞ːʟ̠̆.bɑː/)
+	 n. bird
+le (/ɺœ̆/)
+	 n. goat
+lel (/ɺœ̆ɺ/)
+	 n. stone
+lebilalooool (/ɺœ.b̪ʏ̟̆.ʟ̠̆ɐ̆.ɺ̢ɯːɺ̢/)
+	 n. band
+lele (/ɺœ.ɺ̢ø/)
+	 n. lock
+lag (/ɺœ̞̆ɢ/)
+	 n. face
+lalaal (/ɺä.ɺ̢œ̞ːʎ̯/)
+	 n. note
+laa (/ɺɶː/)
+	 n. friend
+loaliili (/ɺɯ̞œ̞̯.ɺyːʏ̟ː̯.ɺ̢y̆/)
+	 n. glove
+droogiil (/ɖⱱ̟ɤː.ɟyʏ̟̯ɺ̢/)
+	 n. monkey
+dlebeed (/ɖɺø.b̪œːd/)
+	 n. comparison
+dlo (/ɖɺɤ̞/)
+	 n. pocket
+dlaebe (/ɖɺœ̞̆ø̞̯̆.b̪ø̆/)
+	 n. instrument
+dlalagulal (/ɖɺ̢ɐ̆.ʟ̠̆ɜ̆.ɟə̆.ɺœ̞ɺ̢/)
+	 n. farm
+dla (/ɖɺ̢ä/)
+	 n. porter
+dleegabooooldiil (/ɖʎ̯øː.ɟɐ.bɪ̈ːɺ.dyːʏ̟ː̯ɺ̢/)
+	 n. knife
+dloraalodeeg (/ɖʟ̠̆ɤ.ⱱ̟ɑː.ʟ̠̆ɤ̞̆.døːɢ/)
+	 n. order
+dlelalo (/ɖʟ̠̆ø̞̆.ʟ̠̆ɐ̆.ɺ̢ɤ/)
+	 n. knowledge
+dlal (/ɖʟ̠̆ɐʟ̠̆/)
+	 n. regret
+dooldlogoog (/ɖɯ̆ʟ̠̆.dʟ̠̆ʌ̆.ɟɤ̞ːɟ/)
+	 n. love
+dibilli (/ɖy̆.bʏ̟̆.ʟ̠̆ɺ̢y̆/)
+	 n. knot
+diglaogo (/ɖy̆.ɢɺ̢ɜ̆.ɤ̞̆.ɟɤ̆/)
+	 n. ice
+dog (/ɖɯ̞ɟ/)
+	 n. baby
+dog (/ɖɯ̞ɢ/)
+	 n. cow
+doerooooraab (/ɖɤ.œ̆.ⱱ̟ɨː.ⱱ̟ɐːb̪/)
+	 n. bit
+doola (/ɖɤː.ɺɶ̆/)
+	 n. ring
+doluu (/ɖɤ̞.ɺɘː/)
+	 n. blade
+doolleloob (/ɖɤ̞ː.ʎ̯ɺœ̆.ɺɪ̈̆b̪/)
+	 n. wall
+dudlaoooolid (/ɖə.dɺɐ.ɪ̈ː.ʟ̠̆ʏ̟̆d/)
+	 n. guide
+doobolil (/ɖʌː.b̪ɤ̞.ɺy̆ʟ̠̆/)
+	 n. card
+deelulaal (/ɖœː.ɺə̆.ɺ̢äːɺ/)
+	 n. idea
+dagid (/ɖɐ̆.ɟʏ̟d/)
+	 n. base
+dalgiibaa (/ɖɐ̆ʎ̯.ɢyʏ̟̯.bɶː/)
+	 n. brush
+dadli (/ɖœ̞̆.ɖʟ̠̆y̆/)
+	 n. journey
+dalab (/ɖœ̞̆.ʟ̠̆ʌ̞b̪/)
+	 n. touch
+daoorlolood (/ɖœ̞̆.ɯ̞ː.ⱱ̟ʎ̯ɤ.ɺ̢ɯ̆ɖ/)
+	 n. dress
+daar (/ɖœ̞ːⱱ̟/)
+	 n. building
+daaglooliig (/ɖɑː.ɟɺɯ̞.ɯ̞̆.ɺ̢yːʏ̟ː̯ɢ/)
+	 n. berry
+daaooool (/ɖɑː.ɪ̈ːɺ/)
+	 n. net
+daldlardellaa (/ɖä̆ɺ̢.dʎ̯ä̆ⱱ̟.dø̆.ɺɺ̢ɜː/)
+	 n. street
+lool (/ɺ̢ɨ̆ɺ/)
+	 n. linen
+looooooludla (/ɺ̢ɨː.ɪ̈̆.ɺə.dʟ̠̆ʌ̞/)
+	 n. bath
+loolalaldee (/ɺ̢ɪ̈.ʎ̯ɑ.ɺʌ̞̆ʟ̠̆.dø̞ː/)
+	 n. person
+liloo (/ɺ̢ʏ̟̆.ɺɨ/)
+	 n. quality
+lo (/ɺ̢ɤ̆/)
+	 n. smash
+ludaaal (/ɺ̢ɘ̆.ɖɑː.ɜɺ̢/)
+	 n. sense
+luurrulol (/ɺ̢ɘː.ⱱ̟ⱱ̟ɘ.ʟ̠̆ɤ̞ʎ̯/)
+	 n. egg
+leluu (/ɺ̢ø̆.ʟ̠̆əː/)
+	 n. tail
+lede (/ɺ̢ø.dø̞̆/)
+	 n. silver
+lod (/ɺ̢ɤ̞̆ɖ/)
+	 n. sort
+lodaal (/ɺ̢ɤ̞.ɖäːɺ/)
+	 n. toe
+lulgoo (/ɺ̢əɺ̢.ɟɤ̞ː/)
+	 n. potato
+leelug (/ɺ̢ø̞ː.ʎ̯ɘɢ/)
+	 n. gold
+leeoorai (/ɺ̢ø̞ː.ɪ̈.ⱱ̟ä̆.ʏ̟̆/)
+	 n. thing
+loaadula (/ɺ̢ʌ̆.ɑː.ɖɘ̆.ʟ̠̆ɜ̆/)
+	 n. judge
+lalblee (/ɺ̢ʌ̞ɺ.b̪ʎ̯øː/)
+	 n. credit
+ladog (/ɺ̢œ̞̆.dɯ̞ɟ/)
+	 n. process
+laraaldrilaer (/ɺ̢ä.ⱱ̟ɑːʟ̠̆.ɖⱱ̟ʏ̟̆.ʟ̠̆œ̞̆ø̞̯̆ⱱ̟/)
+	 n. range
+liirdloldrode (/ɺ̢yʏ̟̯ⱱ̟.ɖʎ̯ʌ̆ɺ̢.ɖⱱ̟ɤ̞.dœ/)
+	 n. payment
+liiliiloola (/ɺ̢yːʏ̟ː̯.ɺ̢yʏ̟̯.ʟ̠̆ɯ̞ː.ɺ̢ʌ̞/)
+	 n. son
+glil (/ɟɺy̆ʎ̯/)
+	 n. boot
+gluud (/ɟɺəːɖ/)
+	 n. year
+gloogoolblab (/ɟɺʌː.ɟɯɺ.bɺ̢ʌ̞̆b̪/)
+	 n. stage
+glooliilgoodle (/ɟɺ̢ɯ̞ː.ʎ̯yːʏ̟ː̯ɺ.ɟɤ̞ː.dʟ̠̆ø̞/)
+	 n. cry
+gloableelralduu (/ɟɺ̢ɯ̞œ̞̯.bɺ̢øː.ɺⱱ̟ɑ̆ʟ̠̆.ɖɘː/)
+	 n. gun
+gloogae (/ɟʎ̯ɤ̞ː.ɢœ̞̆ø̞̯̆/)
+	 n. comfort
+goolaloal (/ɟɯ.ɺ̢ɐ.ʟ̠̆ɯ̞œ̞̯ɺ/)
+	 n. smoke
+gooooloob (/ɟɯː.ʎ̯ɪ̈̆b̪/)
+	 n. doubt
+goo (/ɟɨ/)
+	 n. finger
+gillel (/ɟy̆.ɺ̢ɺø̞ɺ̢/)
+	 n. whistle
+go (/ɟɯ̞̆/)
+	 n. oil
+goroo (/ɟɯ̞.ⱱ̟ɤː/)
+	 n. book
+gooldlaeer (/ɟɪ̈̆ʟ̠̆.dɺ̢ɶ̆.øːⱱ̟/)
+	 n. business
+giiboooolgoae (/ɟʏ̟ː.b̪ɪ̈ːʎ̯.ɢɯ̞œ̞̯.ø/)
+	 n. roll
+gula (/ɟɘ̆.ʟ̠̆ɐ̆/)
+	 n. part
+gulalbib (/ɟɘ.ɺʌ̞̆ɺ.byb̪/)
+	 n. moon
+ger (/ɟøⱱ̟/)
+	 n. fowl
+gobeldiilaa (/ɟʌ.b̪ø̞̆ɺ.dyʏ̟̯.ʟ̠̆ɑː/)
+	 n. hearing
+ga (/ɟɜ̆/)
+	 n. front
+garuubelii (/ɟɜ.ⱱ̟ɘː.b̪ø̆.ɺ̢yː/)
+	 n. vessel
+gaduael (/ɟʌ̞̆.də.œ̞̆ø̞̯̆ʎ̯/)
+	 n. pull
+gaalud (/ɟʌ̞ː.ʎ̯ɘɖ/)
+	 n. secretary
+gaabeel (/ɟɐː.bøːʎ̯/)
+	 n. cook
+gaabouuloo (/ɟœ̞ː.b̪ɯ̞̆.əː.ʎ̯ɪ̈̆/)
+	 n. minute
+galaleralg (/ɟɶ̆.ʎ̯ä.ʟ̠̆œ̆.ⱱ̟œ̞ɺ̢ɟ/)
+	 n. insurance
+ga (/ɟɶ/)
+	 n. air
+gaadiil (/ɟɶː.ɖyːʟ̠̆/)
+	 n. milk
+looagiigo (/ʎ̯ɯ̆.ɶ̆.ɟyː.ɟɤ/)
+	 n. meat
+loolooleol (/ʎ̯ɯ.ʎ̯ʌː.ɺ̢ø̞̆.ɤ̞ɺ/)
+	 n. birth
+loo (/ʎ̯ɨ̆/)
+	 n. train
+lollal (/ʎ̯ɯ̞.ɺ̢ʎ̯ɜ̆ɺ/)
+	 n. seed
+looleerlag (/ʎ̯ɯ̞ː.ɺøː.ⱱ̟ʟ̠̆ɐ̆ɟ/)
+	 n. root
+lolaalglooga (/ʎ̯ɤ̆.ʎ̯ɶːɺ.ɢɺɯ.ɟä̆/)
+	 n. bag
+lulaag (/ʎ̯ɘ̆.ɺ̢ɜːɟ/)
+	 n. meeting
+le (/ʎ̯ø̆/)
+	 n. week
+lebaliila (/ʎ̯ø̆.bɶ̆.ʟ̠̆yːʏ̟ː̯.ʟ̠̆ä̆/)
+	 n. group
+lel (/ʎ̯ø̆ɺ/)
+	 n. bucket
+lerguu (/ʎ̯øⱱ̟.ɟɘː/)
+	 n. cloth
+lellaro (/ʎ̯ø̞.ɺɺɑ̆.ⱱ̟ɤ/)
+	 n. cause
+lalda (/ʎ̯ɜʟ̠̆.ɖɶ/)
+	 n. chain
+laargeerlaaob (/ʎ̯ɜːⱱ̟.ɟœː.ⱱ̟ɺ̢ɜː.ʌb/)
+	 n. room
+le (/ʎ̯œ̆/)
+	 n. harbor
+lad (/ʎ̯ɐd/)
+	 n. stick
+laaldil (/ʎ̯ɐːʟ̠̆.ɖy̆ɺ/)
+	 n. rule
+laa (/ʎ̯œ̞ː/)
+	 n. time
+lada (/ʎ̯ä̆.ɖɜ̆/)
+	 n. song
+lagoolag (/ʎ̯ɶ̆.ɢɨ.ɺ̢ɶ̆ɟ/)
+	 n. attempt
+liidaaulaad (/ʎ̯yʏ̟̯.ɖɶː.ɘ̆.ɺ̢œ̞ːɖ/)
+	 n. copper
+liilu (/ʎ̯yʏ̟̯.ʟ̠̆ɘ̆/)
+	 n. crush
+gloooo (/ɢɺɨː/)
+	 n. exchange
+glerelgaa (/ɢɺø.ⱱ̟ø̆ʎ̯.ɢœ̞ː/)
+	 n. chance
+gloolgaeeld (/ɢɺɤ̞ːʟ̠̆.ɢɐ.œːʎ̯ɖ/)
+	 n. fear
+gloolaalii (/ɢɺ̢ʌː.ɺ̢äː.ɺ̢yʏ̟̯/)
+	 n. music
+glalaaga (/ɢɺ̢ɐ.ʎ̯ɶː.ɢɑ/)
+	 n. skin
+glaaldelblod (/ɢɺ̢œ̞ːɺ̢.ɖø̞ʟ̠̆.b̪ɺ̢ɤ̞d/)
+	 n. fire
+glaaloa (/ɢɺ̢äː.ɺɯ̞œ̞̯/)
+	 n. event
+glilbleoorbuug (/ɢʎ̯y̆ɺ̢.bʎ̯ø.ɤːⱱ̟.b̪ɘːɟ/)
+	 n. peace
+gleelalliia (/ɢʎ̯ø̞ː.ɺ̢ʌ̞.ɺɺ̢yː.ʌ̞̆/)
+	 n. machine
+glooalar (/ɢʎ̯ʌː.ɶ.ɺœ̞̆ⱱ̟/)
+	 n. fruit
+glaloolra (/ɢʎ̯ɶ̆.ʎ̯ɯ̆.ɺ̢ⱱ̟ʌ̞̆/)
+	 n. thread
+glolalii (/ɢʟ̠̆ʌ.ɺʌ̞̆.ʎ̯yː/)
+	 n. circle
+glaa (/ɢʟ̠̆ɐː/)
+	 n. history
+giliilloollab (/ɢy̆.ɺyʏ̟̯.ɺɺɯ.ɺ̢ɺ̢œ̞b/)
+	 n. tin
+gillarleellu (/ɢy.ʎ̯ʟ̠̆œ̞.ⱱ̟ʟ̠̆ø̞ː.ʎ̯ɺ̢ɘ/)
+	 n. stop
+gii (/ɢyː/)
+	 n. mist
+golrul (/ɢɯ̞.ɺ̢ⱱ̟ɘ̆ɺ/)
+	 n. cotton
+goolruuab (/ɢɪ̈̆.ɺ̢ⱱ̟ɘː.ɜb/)
+	 n. window
+gidaald (/ɢʏ̟̆.ɖɜːɺɖ/)
+	 n. play
+ge (/ɢø̆/)
+	 n. adjustment
+gelgleloldlud (/ɢøɺ.ɢʎ̯ø̆.ɺ̢ɤ̆ɺ.dɺ̢ɘ̆d/)
+	 n. interest
+geeboooore (/ɢøː.b̪ɨː.ⱱ̟ø/)
+	 n. pig
+geedoooob (/ɢøː.ɖɪ̈.ɪ̈b̪/)
+	 n. crack
+guloolgeloog (/ɢə̆.ɺ̢ɪ̈ɺ.ɟœ̆.ɺɪ̈̆ɟ/)
+	 n. apple
+guuloooo (/ɢəː.ɺɨː/)
+	 n. orange
+guul (/ɢəːʟ̠̆/)
+	 n. disease
+gella (/ɢø̞.ɺʎ̯ɶ̆/)
+	 n. hook
+geelooooroooolal (/ɢø̞ː.ɺɪ̈ː.ⱱ̟ɪ̈ː.ʎ̯ʌ̞ʎ̯/)
+	 n. war
+googoo (/ɢʌː.ɢɨ/)
+	 n. sea
+galoole (/ɢɜ̆.ɺɨ.ʟ̠̆ø̆/)
+	 n. feeling
+ge (/ɢœ̆/)
+	 n. tongue
+gelliie (/ɢœ̆.ɺʎ̯yʏ̟̯.œ̆/)
+	 n. frame
+gal (/ɢʌ̞̆ɺ̢/)
+	 n. flower
+gadooooglod (/ɢœ̞̆.ɖɪ̈ː.ɟɺ̢ɤ̞̆ɖ/)
+	 n. insect
+gau (/ɢɑ̆.ə/)
+	 n. woman
+gadlaal (/ɢä̆.ɖɺœ̞ːɺ̢/)
+	 n. key
+gald (/ɢɶʎ̯d/)
+	 n. waste
+giibeeooool (/ɢyːʏ̟ː̯.bøː.ɪ̈ːʟ̠̆/)
+	 n. bottle
+giibuulduuloo (/ɢyːʏ̟ː̯.b̪ɘːʟ̠̆.ɖəː.ɺ̢ɯ̞ː/)
+	 n. rod
+giilgaalulbeb (/ɢyːʏ̟ː̯ʎ̯.ɟœ̞ː.ʟ̠̆ə̆ʎ̯.bœb/)
+	 n. learning
+giielooooil (/ɢyːʏ̟ː̯.ø̆.ʟ̠̆ɪ̈ː.ʏ̟̆ʎ̯/)
+	 n. mine
+goaglooooloo (/ɢɯ̞œ̞̯.ɢʟ̠̆ɪ̈ː.ɺ̢ʌː/)
+	 n. mouth
+loolbooooboooo (/ʟ̠̆ɯ̞ːɺ.b̪ɪ̈ː.b̪ɨː/)
+	 n. destruction
+logooliilig (/ʟ̠̆ɤ̆.ɢɯ̞ː.ʎ̯yːʏ̟ː̯.ʟ̠̆ʏ̟̆ɟ/)
+	 n. profit
+lood (/ʟ̠̆ɤːd/)
+	 n. burn
+lullaad (/ʟ̠̆ə̆.ʟ̠̆ɺ̢ɶːd/)
+	 n. run
+lalaaroaloo (/ʟ̠̆ɜ̆.ɺ̢ɑː.ⱱ̟ɯ̞œ̞̯.ɺ̢ɯ̆/)
+	 n. paint
+laaloodegloo (/ʟ̠̆ɜː.ɺɨ.dø̞̆.ɟʎ̯ɯ̆/)
+	 n. nation
+laa (/ʟ̠̆ʌ̞ː/)
+	 n. weather
+la (/ʟ̠̆ɑ̆/)
+	 n. hat
+labroogolool (/ʟ̠̆ɑ̆.bⱱ̟ʌː.ɢʌ̆.ʎ̯ɯ̆ʟ̠̆/)
+	 n. distance
+lad (/ʟ̠̆ɑ̆d/)
+	 n. discovery
+laabooeeb (/ʟ̠̆ɶ.ɑ.b̪ɯ̆.œːb̪/)
+	 n. snake
+laelgaer (/ʟ̠̆œ̞̆ø̞̯̆ʟ̠̆.ɟœ̞̆ø̞̯̆ⱱ̟/)
+	 n. throat
+oolo (/ɯ̆.ʎ̯ʌ̆/)
+	 n. box
+oolboaaallii (/ɯ̆ʟ̠̆.bɯ̞œ̞̯.œ̞ː.ɺʎ̯yʏ̟̯/)
+	 n. effect
+oor (/ɯⱱ̟/)
+	 n. jump
+oolaliig (/ɯ.ɺä̆.ɺyʏ̟̯ɟ/)
+	 n. laugh
+oooo (/ɯː/)
+	 n. position
+oooolold (/ɯː.ʟ̠̆ʌ̆ɺɖ/)
+	 n. drink
+oordaalaal (/ɨ̆ⱱ̟.ɖɑː.ɺ̢ɐ̆.ɜ̆ɺ̢/)
+	 n. apparatus
+oolaalg (/ɨ̆.ɺɑːɺɟ/)
+	 n. damage
+oogal (/ɨ̆.ɟä̆ʎ̯/)
+	 n. distribution
+oolboo (/ɨ̆ʎ̯.bɨ̆/)
+	 n. current
+ooldralboo (/ɨ̆ʟ̠̆.ɖⱱ̟ʌ̞ɺ.bɯ̞ː/)
+	 n. plant
+oo (/ɨ/)
+	 n. grip
+oodloo (/ɨ.ɖɺ̢ɤː/)
+	 n. question
+ooldoooolooo (/ɨɺ̢.ɖɪ̈ː.ʎ̯ɯ̞.ɨ̆/)
+	 n. lift
+oolooluool (/ɨ.ɺ̢ɪ̈.ɺɘ̆.ʌːʟ̠̆/)
+	 n. receipt
+oolela (/ɨ.ɺ̢ø̞.ɺɜ̆/)
+	 n. snow
+ooloaela (/ɨ.ɺ̢ɯ̞œ̞̯.ø.ɺ̢ɑ̆/)
+	 n. ant
+oog (/ɨɟ/)
+	 n. story
+ooloorlooa (/ɨ.ʎ̯ɪ̈̆.ⱱ̟ʎ̯ɪ̈̆.ʌ̞/)
+	 n. stitch
+oogalo (/ɨ.ɢɐ.ɺɯ̞̆/)
+	 n. pot
+oooodar (/ɨː.dä̆ⱱ̟/)
+	 n. support
+ooooldolla (/ɨːʟ̠̆.ɖɤ̆.ʟ̠̆ɺɜ/)
+	 n. light
+oooolgaalulolg (/ɨːʟ̠̆.ɢɑː.ʎ̯ɘ.ʟ̠̆ɯ̞ɺɢ/)
+	 n. collar
+oooolallaer (/ɨː.ʟ̠̆ɶ̆.ɺɺ̢œ̞̆ø̞̯̆ⱱ̟/)
+	 n. prose
+iblugoogiil (/y̆.b̪ɺɘ̆.ɟɯ̆.ɢyʏ̟̯ʎ̯/)
+	 n. weight
+ilborbee (/y̆ɺ̢.b̪ɤⱱ̟.b̪œː/)
+	 n. meal
+ililbulgo (/y̆.ʟ̠̆yɺ.b̪ɘʟ̠̆.ɟɤ̞/)
+	 n. unit
+iliibo (/y̆.ʟ̠̆yː.bɤ̞/)
+	 n. polish
+irararg (/y.ⱱ̟ä.ⱱ̟œ̞̆ⱱ̟ɢ/)
+	 n. rain
+ib (/yb̪/)
+	 n. number
+ilooblui (/y.ʎ̯ɨ̆.b̪ɺɘ.y/)
+	 n. heat
+iir (/yːⱱ̟/)
+	 n. steam
+iiri (/yː.ⱱ̟y̆/)
+	 n. office
+iiguualb (/yː.ɢəː.ä̆ɺ̢b/)
+	 n. balance
+o (/ɯ̞̆/)
+	 n. mountain
+or (/ɯ̞̆ⱱ̟/)
+	 n. pin
+olaagoo (/ɯ̞̆.ɺɐː.ɟɯ̆/)
+	 n. expansion
+ol (/ɯ̞̆ɺ̢/)
+	 n. winter
+oldiil (/ɯ̞̆ʎ̯.ɖyːʏ̟ː̯ɺ̢/)
+	 n. voice
+ooloo (/ɯ̞̆.ʌ̆.ʟ̠̆ɪ̈/)
+	 n. industry
+orluug (/ɯ̞.ⱱ̟ʟ̠̆əːɢ/)
+	 n. division
+oriibel (/ɯ̞.ⱱ̟ʏ̟ː.bø̞̆ʟ̠̆/)
+	 n. fly
+ore (/ɯ̞.ⱱ̟ø/)
+	 n. letter
+olle (/ɯ̞.ɺ̢ʎ̯ø̆/)
+	 n. boat
+oeelooooblal (/ɯ̞.øː.ɺ̢ɨː.bʟ̠̆ʌ̞̆ʟ̠̆/)
+	 n. error
+ooblaabluulg (/ɯ̞ː.bɺʌ̞ː.bɺ̢ɘːɺ̢ɢ/)
+	 n. station
+oorolgel (/ɯ̞ː.ⱱ̟ɯ̞̆ɺ̢.ɟøɺ/)
+	 n. canvas
+ooboooo (/ɯ̞ː.b̪ɪ̈ː/)
+	 n. chalk
+oolol (/ɯ̞ː.ɺ̢ɤʟ̠̆/)
+	 n. cushion
+oolrea (/ɯ̞ː.ʟ̠̆ⱱ̟ø.ɑ/)
+	 n. education
+ooloo (/ɯ̞ː.ʟ̠̆ɨ̆/)
+	 n. sock
+oolloollooolb (/ɪ̈̆.ʎ̯ʟ̠̆ɯ.ɺʟ̠̆ɯ̞.ɨ̆ɺb/)
+	 n. bite
+oodloooolooooluub (/ɪ̈.ɖʟ̠̆ɪ̈ː.ʟ̠̆ɯː.ɺəːb/)
+	 n. ink
+ooiruug (/ɪ̈.y.ⱱ̟ɘːɟ/)
+	 n. slope
+oooorubreed (/ɪ̈ː.ⱱ̟ɘ.b̪ⱱ̟øːd/)
+	 n. thunder
+ooooliralel (/ɪ̈ː.ʎ̯ʏ̟̆.ⱱ̟ä̆.ɺ̢ø̞̆ʟ̠̆/)
+	 n. wood
+oooogrubral (/ɪ̈ː.ɢⱱ̟ɘ.b̪ⱱ̟ɑ̆ʎ̯/)
+	 n. edge
+oooogloolag (/ɪ̈ː.ɢʎ̯ɪ̈.ʟ̠̆œ̞̆ɢ/)
+	 n. shelf
+ooooellaa (/ɪ̈ː.œ̆.ɺ̢ɺäː/)
+	 n. fiction
+ooooaal (/ɪ̈ː.ʌ̞ːʟ̠̆/)
+	 n. tax
+ib (/ʏ̟̆b/)
+	 n. church
+ib (/ʏ̟̆b̪/)
+	 n. authority
+idlaaaa (/ʏ̟̆.dʎ̯ɶː.äː/)
+	 n. store
+ioooob (/ʏ̟̆.ɪ̈ːb̪/)
+	 n. act
+ilelberoo (/ʏ̟.ʎ̯œʟ̠̆.b̪ø̆.ⱱ̟ɯ̆/)
+	 n. blood
+igoooa (/ʏ̟.ɢʌː.ɯ̞œ̞̯/)
+	 n. reason
+il (/ʏ̟ʟ̠̆/)
+	 n. month
+ialloboorg (/ʏ̟.ɜ̆.ʎ̯ʎ̯ɤ̆.bʌːⱱ̟ɟ/)
+	 n. arm
+ielool (/ʏ̟.œ̆.ɺ̢ɪ̈ʎ̯/)
+	 n. impulse
+iaagoolig (/ʏ̟.œ̞ː.ɟʌː.ʎ̯ʏ̟ɟ/)
+	 n. ticket
+iiblaal (/ʏ̟ː.bɺ̢ɐːɺ̢/)
+	 n. money
+iida (/ʏ̟ː.dɶ̆/)
+	 n. pleasure
+iigoulglolb (/ʏ̟ː.ɢɯ̞̆.ə̆ʎ̯.ɢɺ̢ɤ̞̆ʟ̠̆b/)
+	 n. plane
+o (/ɤ̆/)
+	 n. government
+oba (/ɤ̆.b̪œ̞/)
+	 n. writing
+oogaa (/ɤ̆.ɤ.ɟɶː/)
+	 n. smile
+o (/ɤ/)
+	 n. coal
+oraa (/ɤ.ⱱ̟ɑː/)
+	 n. sponge
+ollalaal (/ɤ.ɺ̢ɺ̢ɶ.ʎ̯ɑːʟ̠̆/)
+	 n. amusement
+olooleel (/ɤ.ɺ̢ʌː.ʎ̯øːʟ̠̆/)
+	 n. reaction
+oaallar (/ɤ.ʌ̞ː.ʎ̯ʟ̠̆ʌ̞ⱱ̟/)
+	 n. sex
+oodaal (/ɤː.ɖɑ.äɺ/)
+	 n. fork
+oolb (/ɤːʎ̯b̪/)
+	 n. bread
+oolla (/ɤː.ʟ̠̆ɺ̢ä̆/)
+	 n. soap
+udri (/ɘ̆.dⱱ̟y/)
+	 n. prison
+ulallaalor (/ɘ̆.ɺɶ̆.ʟ̠̆ɺʌ̞ː.ʎ̯ɯ̞ⱱ̟/)
+	 n. cart
+ul (/ɘ̆ɺ̢/)
+	 n. garden
+ulgliilee (/ɘ̆ʎ̯.ɢɺyʏ̟̯.ʟ̠̆øː/)
+	 n. ship
+uluu (/ɘ̆.ʟ̠̆ɘː/)
+	 n. bridge
+uoolal (/ɘ̆.ɯ̞ː.ɺä̆ʟ̠̆/)
+	 n. danger
+ualee (/ɘ̆.ɑ.ɺ̢ø̞ː/)
+	 n. hole
+urbeeolglaa (/ɘⱱ̟.bœː.ɤ̞̆ʎ̯.ɢɺ̢œ̞ː/)
+	 n. table
+uleoooolbled (/ɘ.ɺø̞̆.ɪ̈ːɺ.bʎ̯ø̞d/)
+	 n. drain
+ulbodoooode (/ɘɺ̢.bɯ̞̆.dɨː.ɖœ/)
+	 n. liquid
+uol (/ɘ.ɯ̞ʎ̯/)
+	 n. watch
+uaagola (/ɘ.ʌ̞ː.ɟʌ̆.ʎ̯ɑ̆/)
+	 n. morning
+uu (/ɘː/)
+	 n. color
+uudlo (/ɘː.ɖɺɯ̞̆/)
+	 n. father
+uulgud (/ɘːʟ̠̆.ɟɘ̆d/)
+	 n. fold
+e (/ø̆/)
+	 n. market
+ebi (/ø̆.b̪ʏ̟̆/)
+	 n. blow
+ed (/ø̆d/)
+	 n. powder
+edilba (/ø̆.dʏ̟ʎ̯.bɜ̆/)
+	 n. trick
+eludaal (/ø̆.ɺɘ.ɖäːɺ̢/)
+	 n. growth
+e (/ø/)
+	 n. fact
+elbeeb (/øɺ.bøːb̪/)
+	 n. body
+elboalrorbla (/øɺ.bɯ̞œ̞̯.ʎ̯ⱱ̟ɤ̆ⱱ̟.bʎ̯ɶ/)
+	 n. addition
+edud (/ø.ɖə̆ɖ/)
+	 n. nail
+eloo (/ø.ɺ̢ɤ̞ː/)
+	 n. burst
+el (/øʎ̯/)
+	 n. lead
+eollaer (/ø.ɤ.ɺ̢ɺ̢œ̞̆ø̞̯̆ⱱ̟/)
+	 n. property
+eebialoo (/øː.bʏ̟̆.ɐ̆.ɺɤː/)
+	 n. company
+eereeld (/øː.ⱱ̟œːɺ̢d/)
+	 n. purpose
+eede (/øː.ɖø/)
+	 n. pencil
+eelgoolg (/øːɺ̢.ɢɪ̈̆ʟ̠̆ɢ/)
+	 n. poison
+eel (/øːʎ̯/)
+	 n. parcel
+eelbaaldalge (/øːʎ̯.b̪äːɺ.dɑ̆ɺ.ɟœ̆/)
+	 n. knee
+orolg (/ɤ̞̆.ⱱ̟ɤ̆ʎ̯ɢ/)
+	 n. dog
+odleae (/ɤ̞̆.dɺø̞̆.œ̞̆ø̞̯̆/)
+	 n. shade
+ol (/ɤ̞̆ɺ̢/)
+	 n. word
+olela (/ɤ̞̆.ʎ̯œ.ɺ̢ɑ/)
+	 n. servant
+olaal (/ɤ̞̆.ʎ̯œ̞ːʟ̠̆/)
+	 n. hospital
+o (/ɤ̞/)
+	 n. society
+og (/ɤ̞ɟ/)
+	 n. reward
+oo (/ɤ̞ː/)
+	 n. trade
+oob (/ɤ̞ːb/)
+	 n. news
+oolblalaad (/ɤ̞ːɺ.bʎ̯ʌ̞̆.ɺɜːd/)
+	 n. condition
+oolilael (/ɤ̞ː.ɺy̆.ɺ̢œ̞̆ø̞̯̆ʎ̯/)
+	 n. debt
+ood (/ɤ̞ːɖ/)
+	 n. lip
+oolalroolae (/ɤ̞ː.ɺ̢ɶ.ɺ̢ⱱ̟ɯ̆.ʟ̠̆œ̞̆ø̞̯̆/)
+	 n. basin
+oogralbla (/ɤ̞ː.ɟⱱ̟ɶ̆ɺ.b̪ʎ̯ɜ̆/)
+	 n. death
+u (/ə̆/)
+	 n. cord
+	 n. trouble
+udob (/ə̆.dɯ̞̆b̪/)
+	 n. argument
+ulaalloolb (/ə̆.ɺœ̞.ɜ.ɺɺ̢ɤ̞ːɺ̢b/)
+	 n. cork
+ula (/ə̆.ɺɶ/)
+	 n. move
+uua (/ə̆.ə̆.ɶ/)
+	 n. work
+ubluur (/ə.b̪ɺɘːⱱ̟/)
+	 n. expert
+ulad (/ə.ɺɑ̆ɖ/)
+	 n. pump
+ulbedarla (/əɺ̢.bø̆.ɖɶ.ⱱ̟ɺɶ̆/)
+	 n. earth
+ulaaree (/ə.ʟ̠̆ɜː.ⱱ̟ø̞ː/)
+	 n. limit
+uulolaalral (/əː.ɺ̢ɤ̆.ɺ̢œ̞ː.ɺⱱ̟ɑɺ/)
+	 n. start
+uuladi (/əː.ɺ̢ä.dʏ̟/)
+	 n. owner
+uuag (/əː.ʌ̞ɟ/)
+	 n. scale
+e (/ø̞̆/)
+	 n. committee
+elgodeeaa (/ø̞̆ɺ.ɟɯ̞.ɖøː.ɐː/)
+	 n. request
+ed (/ø̞̆ɖ/)
+	 n. flight
+erle (/ø̞.ⱱ̟ɺø̞/)
+	 n. sound
+erlaldoold (/ø̞.ⱱ̟ɺɜɺ.ɖɯ̆ɺɖ/)
+	 n. way
+eruuag (/ø̞.ⱱ̟əː.ɑ̆ɢ/)
+	 n. harmony
+eluuliilloolg (/ø̞.ɺ̢ɘː.ʎ̯yːʏ̟ː̯.ʎ̯ʎ̯ʌːʎ̯ɢ/)
+	 n. attack
+egroobil (/ø̞.ɢⱱ̟ɤ̞ː.b̪yʟ̠̆/)
+	 n. clock
+egudloooal (/ø̞.ɢɘ.dʟ̠̆ɪ̈.ɯ̞œ̞̯ɺ̢/)
+	 n. brake
+eoooolrobli (/ø̞.ɯː.ʟ̠̆ⱱ̟ʌ.b̪ʟ̠̆ʏ̟̆/)
+	 n. silk
+ee (/ø̞ː/)
+	 n. disgust
+	 n. grain
+eebegluul (/ø̞ː.b̪ø̆.ɢɺəːɺ̢/)
+	 n. plate
+eeg (/ø̞ːɢ/)
+	 n. kick
+eeloodlaeg (/ø̞ː.ʟ̠̆ɯ̆.dʎ̯œ̞̆ø̞̯̆ɢ/)
+	 n. push
+eelooooool (/ø̞ː.ʟ̠̆ɯ.ɪ̈ːɺ̢/)
+	 n. price
+oliilgool (/ʌ̆.ʎ̯yːɺ̢.ɢɪ̈ʟ̠̆/)
+	 n. ornament
+olug (/ʌ̆.ʟ̠̆ɘɢ/)
+	 n. wing
+oooloogiirg (/ʌ̆.ɪ̈.ʎ̯ʌː.ɢʏ̟ːⱱ̟ɢ/)
+	 n. button
+olalul (/ʌ.ɺʌ̞̆.ɺ̢əʎ̯/)
+	 n. direction
+ooroooo (/ʌː.ⱱ̟ɯː/)
+	 n. square
+oolglii (/ʌːʎ̯.ɟɺ̢yʏ̟̯/)
+	 n. daughter
+ooloo (/ʌː.ʎ̯ɤː/)
+	 n. need
+ooaadoolii (/ʌː.ʌ̞ː.ɖʌː.ʟ̠̆yʏ̟̯/)
+	 n. detail
+arlaalab (/ɜ̆.ⱱ̟ʎ̯äː.ʟ̠̆ɐb/)
+	 n. bee
+aleeld (/ɜ̆.ɺøːɺ̢d/)
+	 n. board
+aloooolooool (/ɜ̆.ɺ̢ɨː.ʟ̠̆ɯːɺ/)
+	 n. agreement
+alaalu (/ɜ̆.ɺ̢ɶː.ʎ̯ə/)
+	 n. mark
+alol (/ɜ̆.ʟ̠̆ɤɺ̢/)
+	 n. water
+a (/ɜ/)
+	 n. sign
+albag (/ɜɺ.b̪œ̞ɟ/)
+	 n. sky
+aloloig (/ɜ.ɺɤ̆.ɺ̢ɤ.yɢ/)
+	 n. hand
+aloordlael (/ɜ.ɺ̢ɤːⱱ̟.dɺ̢œ̞̆ø̞̯̆ɺ/)
+	 n. step
+agaoblo (/ɜ.ɟʌ̞.ɤ̞.bʟ̠̆ɯ̞/)
+	 n. religion
+agaiig (/ɜ.ɟä.yːɢ/)
+	 n. plow
+aldrulolb (/ɜʟ̠̆.ɖⱱ̟ɘ̆.ʎ̯ɤ̞ɺ̢b̪/)
+	 n. kettle
+aoo (/ɜ.ɪ̈/)
+	 n. degree
+aaalaalgul (/ɜ.äː.ʎ̯äːɺ̢.ɟə̆ʎ̯/)
+	 n. branch
+aal (/ɜːɺ/)
+	 n. heart
+aalloollelig (/ɜː.ɺɺɨ̆.ʎ̯ʟ̠̆ø̞̆.ʎ̯yɢ/)
+	 n. bulb
+aaldloordlarlir (/ɜːɺ̢.dɺɯ̞ːⱱ̟.dʟ̠̆ʌ̞.ⱱ̟ɺ̢ʏ̟̆ⱱ̟/)
+	 n. smell
+aalg (/ɜːʎ̯ɢ/)
+	 n. picture
+aalal (/ɜː.ʎ̯ɑ̆ɺ̢/)
+	 n. mind
+aalaroolgaad (/ɜː.ʟ̠̆ä̆.ⱱ̟ɪ̈̆ʎ̯.ɢɜːɖ/)
+	 n. design
+aai (/ɜː.ʏ̟/)
+	 n. umbrella
+ebod (/œ̆.bɤ̆d/)
+	 n. nerve
+elloraaloo (/œ̆.ɺɺɤ.ⱱ̟ʌ̞ː.ʟ̠̆ɨ/)
+	 n. leg
+elard (/œ̆.ɺʌ̞̆ⱱ̟d/)
+	 n. experience
+elalaad (/œ̆.ɺɐ̆.ɺ̢ɶːɖ/)
+	 n. man
+eglillod (/œ̆.ɟʎ̯ʏ̟̆.ɺʎ̯ɤɖ/)
+	 n. teaching
+eglaareeblalg (/œ̆.ɢʎ̯œ̞ː.ⱱ̟øː.b̪ʎ̯ʌ̞̆ʎ̯ɢ/)
+	 n. oven
+euudaldlal (/œ̆.ɘː.dɶ̆ʎ̯.ɖʎ̯äʎ̯/)
+	 n. army
+eeed (/œ̆.œːɖ/)
+	 n. rice
+eriiliii (/œ.ⱱ̟yʏ̟̯.ɺyːʏ̟ː̯.y̆/)
+	 n. operation
+edoo (/œ.dɯ̆/)
+	 n. walk
+elleelag (/œ.ɺʎ̯œː.ʟ̠̆ɜɟ/)
+	 n. kiss
+elarbiirooool (/œ.ʎ̯œ̞ⱱ̟.byʏ̟̯.ⱱ̟ɯːɺ̢/)
+	 n. spade
+elgobloolaelb (/œʟ̠̆.ɟɯ̞.b̪ʟ̠̆ɯ̆.ʟ̠̆œ̞̆ø̞̯̆ʎ̯b/)
+	 n. chin
+arbeleloo (/ʌ̞̆ⱱ̟.b̪ø̞̆.ɺø̞.ɺɤː/)
+	 n. verse
+adi (/ʌ̞̆.ɖʏ̟/)
+	 n. road
+al (/ʌ̞̆ɺ̢/)
+	 n. land
+aloo (/ʌ̞̆.ʟ̠̆ɨ/)
+	 n. view
+a (/ʌ̞/)
+	 n. ray
+	 n. stem
+alaagadiild (/ʌ̞.ɺɑː.ɢɑ̆.ɖyːʟ̠̆d/)
+	 n. respect
+algooooeerg (/ʌ̞ʎ̯.ɟɨː.ø̞ːⱱ̟ɢ/)
+	 n. hate
+aa (/ʌ̞ː/)
+	 n. cough
+	 n. hope
+aalliilaael (/ʌ̞ː.ɺɺyːʏ̟ː̯.ɺœ̞ː.ø̞̆ɺ̢/)
+	 n. test
+aalaor (/ʌ̞ː.ɺɜ.ɯ̞̆ⱱ̟/)
+	 n. page
+aalurgu (/ʌ̞ː.ɺ̢əⱱ̟.ɢɘ/)
+	 n. brick
+aalgladooee (/ʌ̞ːʟ̠̆.ɟɺ̢ɶ̆.ɖɪ̈.œː/)
+	 n. thumb
+aalgulool (/ʌ̞ːʟ̠̆.ɟɘ̆.ɺ̢ɤ̞ːʎ̯/)
+	 n. ball
+a (/ɐ̆/)
+	 n. desire
+alii (/ɐ̆.ɺyː/)
+	 n. fight
+alaaaa (/ɐ̆.ɺ̢ɶː.äː/)
+	 n. summer
+alagadob (/ɐ̆.ʎ̯ä.ɢɜ.dɤb/)
+	 n. representative
+aldoooo (/ɐ̆ʟ̠̆.dɪ̈ː/)
+	 n. look
+alild (/ɐ.ɺ̢y̆ɺ̢ɖ/)
+	 n. brother
+alaabeldloa (/ɐ.ɺ̢œ̞ː.b̪øʎ̯.dʟ̠̆ɯ̞œ̞̯/)
+	 n. town
+al (/ɐʎ̯/)
+	 n. increase
+alo (/ɐ.ʎ̯ɤ̞/)
+	 n. flag
+alulb (/ɐ.ʟ̠̆ɘɺ̢b̪/)
+	 n. night
+alaalb (/ɐ.ʟ̠̆ʌ̞ːʎ̯b/)
+	 n. horn
+aaree (/ɐː.ⱱ̟ø̞ː/)
+	 n. hour
+aad (/ɐːɖ/)
+	 n. sleep
+aadroooolalel (/ɐː.ɖⱱ̟ɪ̈ː.ʟ̠̆ɜ.ʎ̯ø̞̆ɺ̢/)
+	 n. screw
+a (/œ̞̆/)
+	 n. dust
+aldaleeblal (/œ̞̆ʟ̠̆.dä.ɺø̞ː.b̪ʎ̯ɐɺ/)
+	 n. tooth
+a (/œ̞/)
+	 n. shirt
+ar (/œ̞ⱱ̟/)
+	 n. memory
+aroaldaalii (/œ̞.ⱱ̟ɯ̞œ̞̯ɺ̢.dɶː.ɺ̢yːʏ̟ː̯/)
+	 n. girl
+ablaal (/œ̞.b̪ɺœ̞ːʟ̠̆/)
+	 n. salt
+adoob (/œ̞.ɖɯb/)
+	 n. name
+aa (/œ̞ː/)
+	 n. foot
+aabe (/œ̞ː.bø̞/)
+	 n. organization
+aarbleebaaral (/œ̞ːⱱ̟.bɺ̢øː.bœ̞ː.ⱱ̟ʌ̞̆ɺ̢/)
+	 n. spoon
+aabeeli (/œ̞ː.b̪øː.ʟ̠̆y/)
+	 n. wool
+aalbalgooldralg (/œ̞ːɺ̢.b̪œ̞̆ʟ̠̆.ɟɤːʟ̠̆.ɖⱱ̟ʌ̞̆ʟ̠̆ɢ/)
+	 n. join
+aalaroooolee (/œ̞ː.ɺ̢ɐ.ⱱ̟ɪ̈ː.ʟ̠̆ø̞ː/)
+	 n. cat
+aaleeloo (/œ̞ː.ʟ̠̆ø̞ː.ʟ̠̆ɯ̞ː/)
+	 n. feather
+a (/ɑ̆/)
+	 n. taste
+	 n. theory
+abula (/ɑ̆.bɘ.ɺœ̞/)
+	 n. river
+araaloooooo (/ɑ̆.ⱱ̟äː.ɺ̢ɤ̞ː.ɨː/)
+	 n. wine
+ado (/ɑ̆.dɤ̞̆/)
+	 n. value
+aldeldi (/ɑ̆ɺ.dø̞ɺ̢.dʏ̟̆/)
+	 n. behavior
+aglaag (/ɑ̆.ɢɺ̢œ̞ːɟ/)
+	 n. system
+ar (/ɑⱱ̟/)
+	 n. rub
+arooullaald (/ɑ.ⱱ̟ɪ̈.ə.ʟ̠̆ʟ̠̆äːʎ̯ɖ/)
+	 n. stocking
+arerdead (/ɑ.ⱱ̟œ̆ⱱ̟.ɖø̞.ɶ̆ɖ/)
+	 n. shake
+aldaaooag (/ɑɺ.däː.ɯ̞ː.ɜɟ/)
+	 n. food
+adood (/ɑ.ɖʌːɖ/)
+	 n. engine
+al (/ɑɺ̢/)
+	 n. map
+alaelgrag (/ɑ.ɺ̢œ̞̆ø̞̯̆ʟ̠̆.ɢⱱ̟ɜ̆ɟ/)
+	 n. advertisement
+aglael (/ɑ.ɟʟ̠̆œ̞̆ø̞̯̆ɺ̢/)
+	 n. jelly
+aodooooga (/ɑ.ɤ̞.ɖɨː.ɟɶ̆/)
+	 n. rhythm
+aab (/ɑːb/)
+	 n. iron
+aallulag (/ɑː.ɺɺ̢ɘ.ʎ̯ɑ̆ɢ/)
+	 n. arch
+aalbrag (/ɑːʟ̠̆.b̪ⱱ̟ʌ̞̆ɢ/)
+	 n. line
+ablirar (/ä̆.bɺ̢y̆.ⱱ̟äⱱ̟/)
+	 n. neck
+adlaaba (/ä̆.dɺɐː.b̪ɶ̆/)
+	 n. scissors
+albal (/ä̆ɺ.b̪ɑ̆ɺ/)
+	 n. breath
+alulaag (/ä̆.ɺ̢ə̆.ʎ̯ɑːɢ/)
+	 n. decision
+alo (/ä̆.ʎ̯ɯ̞/)
+	 n. stamp
+agii (/ä̆.ɢyːʏ̟ː̯/)
+	 n. trousers
+a (/ä/)
+	 n. approval
+	 n. cloud
+	 n. size
+algaalaallaab (/äʎ̯.ɢäː.ɺäː.ʎ̯ɺɶːb̪/)
+	 n. bone
+al (/äʟ̠̆/)
+	 n. invention
+ae (/ä.œ̆/)
+	 n. rat
+aa (/äː/)
+	 n. wound
+aaraaged (/äː.ⱱ̟ɜː.ɢød/)
+	 n. self
+aaldergla (/äːɺ̢.ɖœ̆ⱱ̟.ɟɺɜ̆/)
+	 n. sneeze
+aaooe (/äː.ɪ̈.ø̞/)
+	 n. grass
+abadaii (/ɶ̆.bɜ̆.dɑ̆.ʏ̟ː/)
+	 n. shoe
+aril (/ɶ̆.ⱱ̟yɺ̢/)
+	 n. wave
+adiioo (/ɶ̆.dyːʏ̟ː̯.ɯ̞ː/)
+	 n. care
+aldaalbarle (/ɶ̆ɺ̢.ɖœ̞ːʎ̯.bɑ̆.ⱱ̟ʟ̠̆ø̞/)
+	 n. print
+algoooolba (/ɶ̆ʎ̯.ɢɨːɺ.b̪ɑ̆/)
+	 n. flame
+ag (/ɶ̆ɢ/)
+	 n. nut
+aigeelug (/ɶ̆.y.ɢœː.ɺ̢ɘ̆ɢ/)
+	 n. discussion
+ar (/ɶⱱ̟/)
+	 n. level
+alloolool (/ɶ.ɺɺɯ̆.ɺ̢ʌːʎ̯/)
+	 n. leather
+aligegliir (/ɶ.ʟ̠̆y.ɢø̞.ɟɺ̢yːⱱ̟/)
+	 n. place
+aa (/ɶː/)
+	 n. pen
+	 n. sugar
+aaolb (/ɶː.ʌ̆ɺ̢b̪/)
+	 n. sand
+iir (/yʏ̟̯ⱱ̟/)
+	 n. jewel
+iildaag (/yʏ̟̯ɺ̢.dɜːɟ/)
+	 n. brain
+iig (/yʏ̟̯ɢ/)
+	 n. transport
+iiglura (/yʏ̟̯.ɢɺ̢ɘ̆.ⱱ̟ɶ/)
+	 n. fish
+iid (/yːʏ̟ː̯d/)
+	 n. carriage
+iilbo (/yːʏ̟ː̯ɺ.b̪ɯ̞/)
+	 n. shame
+iildlulerag (/yːʏ̟ː̯ɺ.ɖɺ̢ə̆.ʎ̯ø̞.ⱱ̟ä̆ɟ/)
+	 n. cheese
+iidloorro (/yːʏ̟ː̯.ɖʎ̯ɯ̆.ⱱ̟ⱱ̟ɤ̞̆/)
+	 n. law
+iiloooor (/yːʏ̟ː̯.ʎ̯ɨːⱱ̟/)
+	 n. paste
+iilug (/yːʏ̟ː̯.ʎ̯ɘɢ/)
+	 n. bed
+iialdoraa (/yːʏ̟ː̯.ʌ̞̆ɺ̢.ɖɯ̞̆.ⱱ̟ʌ̞ː/)
+	 n. comb
+oardalurbloo (/ɯ̞œ̞̯ⱱ̟.ɖɐ̆.ɺ̢ə̆ⱱ̟.bɺ̢ʌː/)
+	 n. form
+oab (/ɯ̞œ̞̯b̪/)
+	 n. curtain
+oag (/ɯ̞œ̞̯ɢ/)
+	 n. horse
+oagliilluulo (/ɯ̞œ̞̯.ɢɺyː.ɺ̢ʎ̯əː.ʎ̯ɤ̞/)
+	 n. glass
+oalu (/ɯ̞œ̞̯.ʟ̠̆ɘ̆/)
+	 n. art
+oaooloog (/ɯ̞œ̞̯.ɯ̆.ʟ̠̆ɤːɢ/)
+	 n. bell
+oaireg (/ɯ̞œ̞̯.y.ⱱ̟ø̆ɟ/)
+	 n. star
+oauuaad (/ɯ̞œ̞̯.ɘː.ɜːɖ/)
+	 n. control
+aebloooo (/œ̞̆ø̞̯̆.bʎ̯ɯː/)
+	 n. swim
+aebee (/œ̞̆ø̞̯̆.bøː/)
+	 n. end
+aebob (/œ̞̆ø̞̯̆.b̪ʌ̆b/)
+	 n. wheel
+aelegoordaa (/œ̞̆ø̞̯̆.ɺœ.ɟɨ̆ⱱ̟.ɖœ̞ː/)
+	 n. curve
+aeliila (/œ̞̆ø̞̯̆.ɺ̢ʏ̟ː.ʎ̯ɜ/)
+	 n. whip
+aelilulal (/œ̞̆ø̞̯̆.ʟ̠̆ʏ̟̆.ʎ̯ɘ̆.ɺ̢ɐ̆ɺ/)
+	 n. substance
+aeadolgold (/œ̞̆ø̞̯̆.ɑ.ɖʌʟ̠̆.ɢɤ̞ʟ̠̆ɖ/)
+	 n. digestion

@@ -14,8 +14,8 @@ module PhonemeData
 
 import Prelude hiding (Word)
 
-data Word = Word { getMorphemes :: [Morpheme] } deriving (Eq, Show, Read)
-data Morpheme = Morpheme { getPhonemes :: [Phoneme] } deriving (Eq, Show, Read)
+data Word = Word { getMorphemes :: [Morpheme] } deriving (Eq, Ord, Show, Read)
+data Morpheme = Morpheme { getPhonemes :: [Phoneme] } deriving (Eq, Ord, Show, Read)
 
 data Phoneme = Consonant
            { cplace :: Place

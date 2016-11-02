@@ -1,3 +1,5 @@
 Grammar
-Grammar {getSI = SubInitial, getOF = ObjFinal, getCI = CompFinal, getVtoI = OblVtoIMove, getAH = NoAffixHop, getNS = NoNullSub, getObT = OblTopic, getNT = OptNullTop, getTM = OblTopMark, getItoC = OblItoCMove, getWHM = OblWHMove, getPP = PiedPipe, getQI = OblQuesInv}
-the man at the table vomits on the ugly woman
+Grammar {getSI = SubFinal, getOF = ObjInitial, getCI = CompFinal, getVtoI = OblVtoIMove, getAH = NoAffixHop, getNS = OptNullSub, getObT = OblTopic, getNT = OptNullTop, getTM = NoTopMark, getItoC = OblItoCMove, getWHM = OblWHMove, getPP = PiedPipe, getQI = OblQuesInv}
+<UNK><UNK> <UNK> <UNK> <UNK> /ɢɑ̆.ə/ <UNK> /œ̆.ɺɐ̆.ɺ̢ɶːɖ/ <UNK> <UNK> /ɘⱱ̟.bœː.ɤ̞̆ʎ̯.ɢɺ̢œ̞ː/
+vomits on the ugly woman the man at the table
+"the man at the table vomits on the ugly woman"

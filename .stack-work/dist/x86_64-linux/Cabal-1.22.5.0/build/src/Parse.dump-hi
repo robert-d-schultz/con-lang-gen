@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-31 09:53:22.225446 UTC
+2016-11-02 18:56:38.019488 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Parse 7103
-  interface hash: 9d8bd408c292c337daf59b3eec2fd286
-  ABI hash: 5c91993347224c9d87769610e48c2286
+  interface hash: 7e48ad524bc1ad1b30b985d65e9a3c2d
+  ABI hash: 943ec535e20ec1550c7062503b98eeb9
   export-list hash: 6391a9b712339fd6d7b063f0580775df
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 9b5f0a9c5ab937702e8736ae3b06ccc6
@@ -87,11 +87,13 @@ family instance modules: base-4.8.2.0:Control.Applicative
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Primitive
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
+import  -/  base-4.8.2.0:Control.Arrow ab7f126fed349de468f94ac777dc8f4e
 import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
 import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
 import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
 import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Exts 7bdf420b67c4b8c9ccc9ea593e90bb92
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
@@ -409,11 +411,6 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
   {- Arity: 3,
      Strictness: <L,U><S,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-a4927710c27ff7ef5e7438fa3ac76951
-  $wparseSyllable ::
-    [PhonemeData.Phoneme]
-    -> PhonemeData.Phoneme -> [PhonemeData.Phoneme] -> GHC.Base.String
-  {- Arity: 3, Strictness: <S,1*U><S,1*U><L,1*U>, Inline: [0] -}
 2cf29beaf4d294f8eb2440da8cfb602f
   parseConPhonemeInventory ::
     [PhonemeData.Place]
@@ -422,65 +419,11 @@ a4927710c27ff7ef5e7438fa3ac76951
     -> [PhonemeData.Phoneme]
     -> GHC.Base.String
   {- Arity: 4, Strictness: <L,U><L,1*U><L,U><L,U> -}
-be3ebdddfd04d4c2b4a13af95347e3aa
+b350a75452cc0d0459e6ec933aedc8f9
   parseDictionary ::
-    [[PhonemeData.Phoneme]] -> [PhonemeData.Word] -> GHC.Base.String
-  {- Arity: 2, Strictness: <L,U><L,1*U>,
-     Unfolding: (\ sonHier :: [[PhonemeData.Phoneme]]
-                   wrds :: [PhonemeData.Word] ->
-                 GHC.CString.unpackAppendCString#
-                   "\n"#
-                   (case GHC.Base.map
-                           @ PhonemeData.Word
-                           @ [GHC.Types.Char]
-                           (\ word :: PhonemeData.Word ->
-                            GHC.CString.unpackAppendCString#
-                              "/"#
-                              (case word of ww { PhonemeData.Word ww1 ->
-                               case Syllabification.$wsyllabifyWord
-                                      sonHier
-                                      ww1 of ww2 { (##) ww3 ->
-                               let {
-                                 n :: [GHC.Types.Char]
-                                 = GHC.CString.unpackAppendCString#
-                                     "/"#
-                                     (GHC.CString.unpackAppendCString#
-                                        " - "#
-                                        (Romanization.romanizeWord_go ww1))
-                               } in
-                               case GHC.Base.map
-                                      @ OtherData.Syllable
-                                      @ [GHC.Types.Char]
-                                      Parse.parseSyllable
-                                      ww3 of wild {
-                                 [] -> n
-                                 : x xs1
-                                 -> GHC.Base.++
-                                      @ GHC.Types.Char
-                                      (Data.OldList.intercalate_$spoly_go
-                                         @ GHC.Types.Char
-                                         x
-                                         (Data.OldList.prependToAll
-                                            @ [GHC.Types.Char]
-                                            Parse.parseDictionary2
-                                            xs1))
-                                      n } } }))
-                           wrds of wild {
-                      [] -> GHC.Types.[] @ GHC.Types.Char
-                      : x xs1
-                      -> Data.OldList.intercalate_$spoly_go
-                           @ GHC.Types.Char
-                           x
-                           (Data.OldList.prependToAll
-                              @ [GHC.Types.Char]
-                              Parse.parseDictionary1
-                              xs1) })) -}
-e767d2f030f0a31a0986b258e08357c0
-  parseDictionary1 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
-8788bff5e39d408c8cfa59a141c5554e
-  parseDictionary2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "."#) -}
+    [[PhonemeData.Phoneme]]
+    -> [(PhonemeData.Word, GHC.Base.String)] -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U><L,1*U> -}
 37ecbb37303e91af6655a96c5157a40e
   parseDiphPhonemeInventory ::
     [PhonemeData.Phoneme] -> GHC.Base.String
@@ -658,14 +601,6 @@ b365a6a37c6f55dc827c8e3d81c08e87
                            @ [GHC.Types.Char]
                            Parse.parseDiphPhonemeInventory1
                            xs1) }) -}
-7ff880d4f987dddfeed7d2abbf815827
-  parseSyllable :: OtherData.Syllable -> GHC.Base.String
-  {- Arity: 1, Strictness: <S(SSL),1*U(1*U,1*U,1*U)>,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ w :: OtherData.Syllable ->
-                 case w of ww { OtherData.Syllable ww1 ww2 ww3 ->
-                 Parse.$wparseSyllable ww1 ww2 ww3 }) -}
 5ccc280ac469782c117c9fc8865cd708
   parseVowPhonemeInventory ::
     [PhonemeData.Height]
