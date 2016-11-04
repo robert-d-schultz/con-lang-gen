@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-02 18:56:38.019488 UTC
+2016-11-04 09:25:14.763216 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Parse 7103
-  interface hash: 7e48ad524bc1ad1b30b985d65e9a3c2d
-  ABI hash: 943ec535e20ec1550c7062503b98eeb9
-  export-list hash: 6391a9b712339fd6d7b063f0580775df
+  interface hash: 3b79293ab7ca7359f8b7999ccbcaf47b
+  ABI hash: 19567af977eedb4dccb8eec2233b3469
+  export-list hash: dcc6fd75f8e0ce635435ff482f3e4104
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 9b5f0a9c5ab937702e8736ae3b06ccc6
   sig of: Nothing
@@ -19,9 +19,10 @@ exports:
   Parse.parseLexicalSystems
   Parse.parseSonHier
   Parse.parseVowPhonemeInventory
-module dependencies: InflectionData InflectionGen MorphologyGen
-                     OtherData PhonemeData PhonemeGen PhonotacticsGen Romanization
-                     Syllabification WordGen
+  Parse.parseWord
+module dependencies: GrammarData InflectionData InflectionGen
+                     MorphologyGen OtherData PhonemeData PhonemeGen PhonotacticsGen
+                     Romanization Syllabification WordGen
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
                       array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
@@ -98,166 +99,169 @@ import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  InflectionData 620c60c71e5f79e12e441f4d14e494c5
-  exports: a8d83707be65f59bd55316dc57d3e65e
-  ABS 0f4d9fa3567fa5ddcc5c337ee5f1e656
-  ABS2 19de21bbc0237d227df1e1b5ac3a6a78
-  ABS3 1e18b75ef1c8bb249b27c4c1b26764c4
-  ACC 086a1273df462c38c01b88ff0de30a97
-  ACTIVE b235170c9d609658986cd59f97bfc91f
-  ADP 15df6707e49ea607da799ec871740c00
-  AFF 78d29fbaa8a2e8accbea8791626e60ae
-  AN e912fa113ba7638f38f403849469a643
-  ASS 81accad2500c8dfa67e323b3515dfefa
-  AUD 6cfb02a85ec53e78d00e051090a9944a
-  Adj 5b78864012fb3c715e34bf1409a6359e
-  Adv 969403f22096d34afdff314504b24e53
-  Animacy 169ebe44828e15997da16a086b9b84e2
-  Aspect 56bab6fdafd7cafcd92c9755a5ea2032
-  COM 06f05da70ed5c6bc5fa93459dd785f7a
-  COND a6233507ad24d2b17c360e9446daa7d3
-  Case 15a5612a324b972acf0e741e2bc6608f
-  Clusivity 3a4205128915d100820ff6257606640f
-  DEF 67a2848725f4a60da5d919c4d71adb1c
-  DEO ce8d90bf9e88f73f7b5449d97f41701f
-  DIR bfdb5f6a940c7bc8043a65c0cb85df7a
-  DITRANS 37a58171c14dde2d12b420144c7cb7b3
-  DRT1 23d7d3ee05a75fc743f1dbc910ba1a85
-  DRT2 d7a0a36e67f9527618c6c4e974734482
-  DTR 6fb68eab2b61716cd214774d6e1d7992
-  DU 6e013a5f27dbebe9ba00277666b5dbcd
-  Definiteness be54ced0f7a9e9dbb19f9061d7dd5391
-  EPIS b2a05df3c201064bc7459dfeec16de46
-  ERG a1671aaa82b227b821d560c6386c5651
-  ERG2 d2cd026704d0b636da2b76028a601dc4
-  EXCL 28914cf7b54336d4909518b854d15b17
-  EXP 0f3a02c35f92b485b72a9e8aec0eff6e
-  Evidentiality 8d67950b7bc98730e60ddd07089da962
-  F 06a353a2d076c89e4beb3c2ea2d6c232
-  FAM d3de87bd0e3d4f1a07d0324253deee62
-  FIRST 1c0d61c553414852ecabe359997c4b65
-  FORM 8be08b3a5a99c372b0b3844f5b282d36
-  FUT 4a3564ed677612d23c0dcd39db59ed8c
-  Gender dc38f7a4ded9cc67467b5a9dd769fcf5
-  HSY ee16972fcca99374e9466fd5ce58c971
-  HUM c85d3a15b24bfe02abc205d6b53b2d27
-  Honorific 9289039192416879bb2fe055999c7335
-  IMMF e65a53afb63c3a1de14f8db5e98f033b
-  IMP c383842ee80e22ef7ef378aa2245f7fb
-  INAN ac94e10e57543eeb83d2d389124fa3e2
-  INCL 635968e98db1e752b0acfb45c7a8a867
-  IND 45eb81f0cf9c52f7d5d1fe7159b58247
-  INDF e76cc455a3d36e45d11c1080c5ba2ef8
-  INDIR 69858bfb22bb5d3b898f09450445d110
-  INFER fffbd630e303bb5b73dae606a4275faf
-  INTR 8a2de37da39a9c7ec866a71e3cccbe98
-  IPFV 3339b65e16a18a86d734d260eb629d58
-  IRR 4512d0438a7067a430ad94f68137850e
-  InflectionSystem 6f37316ad5bc95a52627782348e28168
-  JUS a3b5e1eb08b236e278874e67b46c0cd3
-  LexicalCategory 6d2c52c387dc93c2abb2c47833bbbfda
-  M 80a70d39c49379d9e33ee96126a36b1d
-  MIDDLE d753591897c181b96578bfe71694f1d4
-  MTR 264fc2a75e7f5a4cc6e67fa965bcb1aa
-  Manifest 5146f5d6f9a5a6842fdc010bcb896b8c
-  Manifest aa0a164e1f050975da3ca6f9d6f7585a
-  ManifestSystem 9234783cc8f20c9c7b2647ac8a1b0c88
-  ManifestSystem dbada76221b2ba3927c15c3dcf26a1af
-  Mood 8b8666475412890bd4ef31f87825a04b
-  N 5228ee7904dea3f4902143b71445500b
-  NEG c48daac80c88b30191ed35d8c47a2879
-  NFUT f0ddad33e56ec929b1317a361b83c83b
-  NHUM 2a2f78cd156350e8c772eef1ebeed5cc
-  NOM 97ada37594a3d94b537dca19d5ae7067
-  NOM2 7f1e44e4bf22d502aa4d2f2ef3ac6c27
-  NPST 872646ebaa10bb5f83c07345899a2aa5
-  NSPEC f7ba60c489d052c7d837aadda38dd76b
-  NTOP f35c0ae78d5377302233c4363ee9f6db
-  NTRANS a2318fa53bf3c4e8024c2e9c161bd5fc
-  NVIS bed2e8756deb76f0aa96421e08f017c8
-  NVOL 2dfb850859f0dca026d5a20cadcdf946
-  NoManifest d414366a5625b3f850476770ece1dbbd
-  Number 62540c56c8b62df1e5a7c671cd89e35c
-  OBJ 80207e157a6e2c91d387d6bf50228839
-  OBL1 362a3c2ed4179f38f609afdaa61501fd
-  OBL2 a6ccd170b257eeef53af6547da5bbedc
-  OBL3 b74434e487c12af6b030f3d933ca3111
-  OBL4 abb9d66da60c433327de24112af20f59
-  OBL5 5f25c104ed2d5a6c0a9f6c7a0efc9f4d
-  OBL6 230e41ad5cac1738a95a2120395dabdf
-  OPT cab8a3901f066829a3dd43b159a862c9
-  Obj 2a78d7bac81e55011139bca2534ffa2a
-  PA dbbaefbb9942ed20e06d1fc7f56c64fa
-  PASSIVE 510ff299fca41cfa2e57e032a645f82b
-  PEG 0ed29728705399bc9525f4db1c166f71
-  PFV d3a036fda496f1a97cd848481ea05734
-  PL 6fbb93315dfcecf28e37f86c3333ddfd
-  POST 88dc926ed19b7d963e339f3807fe45e5
-  POT 7e8372b275d5de8fa324813621b13e2a
-  PREP d87008c9ff6bd4371d0f8bdb216b5d11
-  PRIM eba4ce269b6b8162653a1004ce79d9c5
-  PRS 5a4cdabcce3eff3b8695ed319b5b6469
-  PST 2f848d21c809c07eebdcb23548fc362a
-  Person 39fbbcfcc14da7372e84446a55a88f39
-  Polarity d4f587cb2d189871de567f0749c484ab
-  PostParticle 19889faa1d6fede0131ac095348a2328
-  PreParticle e615185a77594242c83b20f952735e46
-  Prefix 18fe5402bce1ac5100d5f3fd8fbc8fa2
-  Prep b12be256f346a82d2c3d0c46f102ffda
-  QUO 107d9da6ba9e9b53c9c62eec93260b8f
-  REC 6265f1905ad3e0eaeb1f01865d2991b1
-  REM 65690b3ad0f48bd7fc2bb2d08d95c3df
-  REMF 961df6d0dc0b47200f455001d2ccdae6
-  REP d2ba975878e4349837c24947ae697be3
-  SBJV 2c1f7ccf2406e802ddec2566496e72d4
-  SEC 7b148f289316afda415f60f8835429dc
-  SECOND b518a41daa92d89607a32b6663dfc0c9
-  SG 9ea4330e44ebdb5e3266b02944611a15
-  SPEC 68ba0142bd37600fe3fef82eae6f3454
-  Specificity 43240a2f26d982c55d81a47318306fc4
-  Sub 16453f57c373d677e9bce32ffcea9cb6
-  Suffix c87962a93411fcd5393a12dcefd49477
-  THIRD 34cfeb1cab8abafe601b321c27d587d2
-  TOP 88ddc08aff272db207917c5d8cd86e01
-  TR af48a3c2e27dae7e51410ea9934bee55
-  TRANS cb9fd58b64650af1aec31ab4440e2940
-  TRI 7c7cec23e1a0c610df25290288893c5a
-  Tense 1a8c67d1f01afbbcfb22733cde707ca9
-  Topic e1b6224fcbcc327712deb0c145c7f7ba
-  Transitivity 9762685d7cb7374500147f2897d84980
-  VIS bbdf4bac23e50cee7d0761a3eb609c73
-  VOL f16aa389e14eedb470aef4680877e9d2
-  Verb cc72c75a8aa8fee8ac0d31e777152f5b
-  Voice 497bb7be1c19f7f308e0958b43035be4
-  Volition 3bc4914e230103d822b910efe91e72fb
-  ZO ec01f56a6a552c043fa8978588d41dd2
-  aniSys 9cde17d15b2cf747b3229c2499ed19e8
-  aspSys aba18ddd02db3535523908cec87a1115
-  casSys 79e947c762124fa234a273d1c74e7c1c
-  cluSys 39a94ed1fac020f87d4444f4a7912a57
-  defSys ffdd56de91275074cb915e5eb9805518
-  eviSys fcc03e2b63241248a33ac711a6118d25
-  genSys b38f3225a2d28dd96dea37251bee9185
-  honSys ac3c6a751b928278ea31f4cec2928345
-  mooSys 8a776b9731b39a3eb4858045d22d1df1
-  numSys 3a7e66e2d52bf8261d23c6f57d1fc486
-  perSys 33ce8277fed89490fa0e0536a3c3776b
-  polSys 0eaed13d7b67d3dbd167fde9f647e6b3
-  speSys 8e88acb3fd29f6bc2e3144f0422936b6
-  tenSys 7ac2c47c5740e767e4a9a71d461e43c5
-  topSys 0b93d7624bfca76c49c8d4a51f8dfc21
-  traSys f20e2ceaf690b1093af545695dea6d71
-  voiSys 94f2b6baa8fc9a45b3597a6466aef2ad
-  volSys 0f78c4349901893b48cec41621389532
-import  -/  MorphologyGen aa796f2bcf7210652962b8eac8de78e0
-  exports: f903e1f996d60136e05ef566d0c948d9
-  cleanGrammarSys 9895f58d58b0e108f682cf2800481bca
+import  -/  GrammarData b86371ccb48390730f6498310ddac76f
+  exports: d1002ba5737e19703411cb57857cf209
+  Adj a3bce51fd2fd7e4dc0d2574150a46bdd
+  Adpo e1b568ccc2675d1bef53ee8c3ef42f36
+  Adv 4a64e83d00d2a5bdf1bc31836d30e3ed
+  LexCat b95e114b0b6d51b5dd936a539d4fcd51
+  Noun 29b0c18b13a4547db43d1c3e1971f3f5
+  Obj b4f9889d136903923d8bc809466b9633
+  Subj 3cfe6619fad03b0ad0047434a3ce1fb3
+  Verb f06c4b09592b8a5d74db07316a39ae60
+import  -/  InflectionData 072303e933f9eb87493ca2db6553722b
+  exports: 11ce4827ce97282915e6b63398631625
+  ABS cf7e205ad31c66dcf7e76a307f143817
+  ABS2 e209ff70164fe00e9071e82a4581b73d
+  ABS3 02d05ed1dc5a14ea1383b0db41526082
+  ACC d5bf44dd777e3e1aaa2e24e1f74644b1
+  ACTIVE b098f40dc5cb2b974bf70675d2929b28
+  ADP ee72810d82108de212e916ed8328d470
+  AFF 5c93dba210b224e8aefc607c318384f9
+  AN 55ac4666ecab9991248fd0e8b72368fb
+  ASS ba3f1c5d20f6aa80aac80ab539b862f6
+  AUD a9351ce2d5c8ece924660c13a88932dc
+  Animacy cedf9e666cdb6656f2a2a96d2d3bd589
+  Aspect 6cd9c63aad1a4e1ec43732010ec1ea5c
+  COM 7b77890081d480d6d8786e36167cb365
+  COND 9b859c5d02aff5dfafe25d8a5f9d7ecf
+  Case fe9f4ca1606b5f19f2230e1deea3d046
+  Clusivity ec2f2b20d2b1cf035f6ca129e5552311
+  DEF fa20032ba8ddd27be310ad02915bbf41
+  DEO e1b24a1abd72e20fc18cd7e8eedefa00
+  DIR ebd6380a1f832d91e7fc9effef6aaa5e
+  DITRANS e3a0d89157f2d83f99a5367a07516463
+  DRT1 d3820b09d72a24574e423092b2958b2f
+  DRT2 237a20f414b7904adbb4a90d1751bc12
+  DTR 5a1ccd3487d0118c69e040ef7d619991
+  DU 8a6bab5495b3e17f7f6a965978773c01
+  Definiteness b37f400b256ab5a9a84f13e148a3d2d5
+  EPIS bae1229c4b5c344d63792dd0674284ce
+  ERG b9800fbde32d2bd14b25cfa8e1c71c14
+  ERG2 83be53b4a7dbcc60a077e42a4bb6cd99
+  EXCL 0d08bb8de53071431e5d8e3d98407e1b
+  EXP 20a93640dd966f6cf8186d1eb7e206de
+  Evidentiality 72f49e3daffb56d4bf46854dab7a01ee
+  F 82e950b67779798796f2baa7b1a854c0
+  FAM cbb341199367977a58524b01131234be
+  FIRST 315b89a5b45a037fa5a0c73dd7e0950d
+  FORM c66779ee2778b9fde48274295ef73e51
+  FUT 4f694bc9c605b7c9eb78a9bfe72435d3
+  Gender bea847055a51c2d8a5a4f43d44b03253
+  HSY f15d7292856604ec1d0745cf2d098c05
+  HUM 6be55d3fe8918b427319929a28d7b23f
+  Honorific b998d88ddf707e2096355bc29dc9a0f5
+  IMMF d0cfbac81e4dcac4be8b27e3141a025a
+  IMP 4df70152cbcf6bb12ad5d06cc3f2e476
+  INAN b50d9f46a5b64892f5fecea8b12ad83d
+  INCL d3593e2ec5514a955f3aef5cccd454e3
+  IND 064c2ab36734294bf8185bae154966a1
+  INDF 52a6a91481d72b281ae51ae3dca87aef
+  INDIR b37439508a01505b1b92831ce41c34dd
+  INFER e9a98d7f49bce40a2eb49edca0fea3f2
+  INTR 91f32e667433911fef0f5d8ad78c239d
+  IPFV 65243100e56e27fcadd15649fd07ca64
+  IRR 647b7bb644f7c105054a0893323c452c
+  InflectionSystem 1e3fe4826a39142c5de940012234f2c4
+  JUS c769dd86af6badd087ba38c9f309d904
+  M 3c0b24bbef493f73241cf418b667946f
+  MIDDLE df81ddcf24d286900a219f2466413294
+  MTR 4aaaef2c2fa40b9f29d633fe687110c5
+  Manifest 56c295ecee861c84924b0ef3cc95c44d
+  Manifest 585905e8fe5aabe454e8c831c9719ba2
+  ManifestSystem 268e7a03a2371f8f98142b4115e92b1f
+  ManifestSystem 0e7b2c73aa17600e0a7730d855d918b4
+  Mood 89f52f47d857baf59a835f155022c894
+  N 4ac60101878a22edc6f6ff7239514789
+  NEG 1a20ee25b3ded1fbaeb2e12f379cc9f3
+  NFUT 1fd7bb63dccdfee66c16b3eeae37e081
+  NHUM fc2bb5a5138b2763e566062b48ef9fe1
+  NOM 6372ee0118db22d7961ada41c4e3371d
+  NOM2 cba8fd202484fcb379a1d3e2acfcc72d
+  NPST 236f7ac3103cee2d402467dbc2afb4d7
+  NSPEC 86a105a1d13b19ccdb14415ff887447c
+  NTOP 0b95113aaf730f2c4db62de46f63d782
+  NTRANS 5ffd59a502a2030cc8507c5bd0743c0c
+  NVIS 25474bf7260657320e4749784d3e8212
+  NVOL d3f1ae474cd9f6086aac8b8c6147b776
+  NoManifest e94596ffd7352e0e0c9de30b8b5e034b
+  Number d524767ed256fd8fb6411842c02ad522
+  OBJ 54e1a2118312e5d2c5c81bb884cde752
+  OBL1 9030858bed725730e49ff2e55ff34457
+  OBL2 463fb7742f68dc3fe876c6727b7edf95
+  OBL3 3a8e33fffc825bfc03d2a8af33b8a7ac
+  OBL4 1f85476408b4214f6179d9136cf12322
+  OBL5 77af57ade14eed614c99f48c8c5fc4d5
+  OBL6 0b90073f54f6586ca59d91235c6e2f61
+  OPT 40cde0a7b0058e0d78057cac4a9df421
+  PA e5aa510414c5c1f1666b8eb1c08846e0
+  PASSIVE 9feb8170cbf27cdc4964400258affd26
+  PEG 62d0b45e041a3ed61b1414b7f5319211
+  PFV 1bf5eb12b6c7a276cb262c5fcdc1a11d
+  PL 5c0d47683fd34889dec7c206636f6c47
+  POST c21c2e2d6e24e59c87a4df29da1de914
+  POT 0ce69a751b97bce2cdecdc1323dc7a0b
+  PREP ba596378086c005a73a26555ab7ab229
+  PRIM 9d1d3cb8d4297934d0b3c07999e68eca
+  PRS 26cd29d90bd490cc6f3a02b32b3e2ade
+  PST cd754acd8827599ac07f7a3ddbfc49a0
+  Person 87552d4bd640161dc918422e1f989f36
+  Polarity b165a208777adb6384e8aa49b7841cdc
+  PostParticle 051ff9038fce71d768ebdb0aef6d2dd4
+  PreParticle baa2d75778bba4584f1d021ffebf5a10
+  Prefix 631fddd0577e039670e847f15dc395e5
+  QUO 2c7fd9ee977273c51ca7e9b3a8cc8ce7
+  REC 20356383605f3ed88408c2656e10bd73
+  REM 457b16c7adbe1e67d030fa92d1e62422
+  REMF 546d4ca880ab0f597b8ad93a16c1c640
+  REP bc9f339ef18044e7edc944afd1016b98
+  SBJV 1586f27c9be9c52573273a51efc1077d
+  SEC 7c108dd9ced5ef2a2a7daa597855505e
+  SECOND bfdb3588226f552e5ff2ed477d78f712
+  SG 1b3bad822be48bc704470fcc7ea80b3e
+  SPEC ce7bdecfb32a8576a078dea2430a64e7
+  Specificity 43df515dcdadd0ea11740b17c269f784
+  Suffix 9f592c7bd6fb2cf679abca7c05f8cc1a
+  THIRD a667f4e1e81a3d94b8caa7f2977b2e96
+  TOP 850e35116776a2aa4c8c2deade57f692
+  TR 77bfa53861b0984e7876f84238989968
+  TRANS db0203f116f520eb878d75a2b2ae0dd7
+  TRI 207837423bd40be5dc51689d80c203b5
+  Tense 004b6b4805c5a693db94c0d4a7a3616e
+  Topic 324933ffc8ee2e478eb9c9c4b97f7e1c
+  Transitivity aa30e8d12dfa43bab7ebbfaa9a7bbce4
+  VIS 4d96980ace97bfbffedee0ff7e894e9e
+  VOL d240900b98ac44d21c4ee00657a07098
+  Voice 523b90b12350f06385d4da5905742868
+  Volition 79163f2537538d5ab28ad5d835b8900a
+  ZO 20c61cc634f0472349ce87a9a0cd1c2c
+  aniSys bf2169ba387ab3638393b84dee90c49a
+  aspSys 486a8c668bebed30f10df64f6643cd35
+  casSys b6253f264cf04b70ed6733ef84265597
+  cluSys 1cf3ddc5b66c5059d89d1759026d76ef
+  defSys 791f6bb49015e490e4fbaca91284d8c2
+  eviSys 5f339467cb57a3613471b8a6ebc540f8
+  genSys c2d6181902bbf995c74be89480b26002
+  honSys af70c7f20f205d30889f82d82d0aeb97
+  mooSys 51b1a25ce92a0ae2667748a51389e595
+  numSys 179377656af013c07c11434888cc557e
+  perSys 5da2ccc97fb2c77d51c790b5bcb3cec4
+  polSys 36b2afcffd5ef0a1cda1beadc367dc13
+  speSys b7c67cfc67167d978d2235118f373623
+  tenSys b03397c4d00cd45069a68405c6b06dd1
+  topSys 6853f117ed274e895a39b6a3602af3f2
+  traSys d27da8882b7759d098740802420a9feb
+  voiSys 38713f13dcf55bcb8c1bbbe8a724c366
+  volSys 24176821604239ceb5a5e4fb709e7dfc
+import  -/  MorphologyGen 8ceb28ea48040c72239d3de9e2e0951c
+  exports: f9340380e19fdb3ff659d628c905371a
+  cleanGrammarSys 5decb3fac3e9cf2cb78e51ed40a13149
 import  -/  OtherData ef85631315e8bb1c90bd776e9bb7751c
   exports: f505dec72f229982fb85e59b44566731
   SyllWord 9c149b11caa7af61cc3fda153b1dcef5
   Syllable 05a619088617b930774519c90865b296
   Syllable 5683ce4e3b2a6c457b5e9c6c6ca43ce6
-import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
+import  -/  PhonemeData 2bc4225bb63ccf0a16ac10bab410e892
   exports: 8834c83badd5837275d7ec1bbd2f424a
   AFFRICATE 147f242a04fba4ccaf3d990013a051a5
   ALVEOLAR c6b89f8b792d9549c21b502170ee4e1c
@@ -299,8 +303,8 @@ import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
   MID 23250c6a570df131de1cdb293bacfe16
   MODAL bd244264bab2966de13717630fceb06d
   Manner 2286baa806cedbe4b7d0c4916ea37630
-  Morpheme 638ca31a2fd80dc92fadb76f1b8badfd
-  Morpheme f6ac1984a4423d03613ec94d362955ea
+  Morpheme 773f530596237f1e058299251c3d7d0d
+  Morpheme a75f0140e4b212df166951d7f735baaf
   NASAL 33a4f70f850c97bc19932b2d99f86fec
   NEARBACK 0a01970fff4a2ba092ad40544a59a654
   NEARCLOSE a0d527593a0e5b421ef4d1de2a61e5d4
@@ -330,20 +334,26 @@ import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
   VELAR c83c546d533edfd28dc443ee9c5d12af
   VOICELESS dbf8f182d917d2469a91d36a4068291b
   Vowel bc70fa2bda72574d3d9a605b3092c858
-  Word 53dc4151a59abddfd798786b00d0a617
+  Word 55b6ea537d860cf92b62e64e19ceba7b
   csymbol adede1920d7863e2930e586cb77c5227
   vsymbol d4a50191fa439edee5dacea3c2489af1
-import  -/  Romanization 70014b863a55d5efad898444ddbb1f26
+import  -/  Romanization 1523dd09770b04f055c2d59814f16324
   exports: 71e3484a4b1fb5c752fcd3291232e7ff
-  romanizeWord 9f6f1295e284529c8727361824cc78ca
-import  -/  Syllabification 4d1a94e4c863694436d35a5e6a3dd5a2
+  romanizeWord 6d52f6408ee50aea5e95ac6ac01b4f16
+import  -/  Syllabification 96e237022078ceadc1014b4a4cd94a29
   exports: a741c5c7159797f058482789d7878efa
-  syllabifyWord 532b463556cfa2c09bd8b62049df43e0
+  syllabifyWord 842ed49da6db8873ca9344fa308b4001
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-435ac774a11ade76a404927b0bbdd592
+15fdad1dfd672a78c4e320a098269c32
+  $wgo ::
+    [((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)]
+    -> (# [(GHC.Base.String, GrammarData.LexCat)],
+          [PhonemeData.Word] #)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
+1f3bc3df771b3d712af547f17ac7406b
   $wparseLexicalSystems ::
     InflectionData.InflectionSystem
-    -> InflectionData.LexicalCategory
+    -> GrammarData.LexCat
     -> [InflectionData.ManifestSystem]
     -> [InflectionData.ManifestSystem]
     -> [InflectionData.ManifestSystem]
@@ -353,7 +363,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
      Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><L,1*U><L,U><L,U><L,U><L,U>,
      Inline: [0],
      Unfolding: (\ w :: InflectionData.InflectionSystem
-                   ww :: InflectionData.LexicalCategory
+                   ww :: GrammarData.LexCat
                    ww1 :: [InflectionData.ManifestSystem]
                    ww2 :: [InflectionData.ManifestSystem]
                    ww3 :: [InflectionData.ManifestSystem]
@@ -361,7 +371,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                  GHC.CString.unpackAppendCString#
                    "<br>\n"#
                    (let {
-                      n :: [GHC.Types.Char]
+                      a :: [GHC.Types.Char]
                       = case GHC.List.$wlenAcc
                                @ InflectionData.ManifestSystem
                                ww1
@@ -390,19 +400,20 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                                  Parse.$wparseManifestSystems ww4 ww8 w }) }) }) }
                     } in
                     case ww of wild {
-                      InflectionData.Sub
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems6 n
-                      InflectionData.Obj
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems5 n
-                      InflectionData.Adj
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems4 n
-                      InflectionData.Adv
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems3 n
-                      InflectionData.Prep
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems2 n
-                      InflectionData.Verb
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems1 n })) -}
-5c2c6da32a566809dff619b4c1065af0
+                      DEFAULT -> Parse.parseLexicalSystems7
+                      GrammarData.Verb
+                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems6 a
+                      GrammarData.Adpo
+                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems5 a
+                      GrammarData.Adj
+                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems4 a
+                      GrammarData.Adv
+                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems3 a
+                      GrammarData.Obj
+                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems2 a
+                      GrammarData.Subj
+                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems1 a })) -}
+3ee4bcbb6f4d9693139c4585fa753b6e
   $wparseManifestSystems ::
     [InflectionData.ManifestSystem]
     -> GHC.Prim.Int#
@@ -411,6 +422,11 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
   {- Arity: 3,
      Strictness: <L,U><S,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
+a4927710c27ff7ef5e7438fa3ac76951
+  $wparseSyllable ::
+    [PhonemeData.Phoneme]
+    -> PhonemeData.Phoneme -> [PhonemeData.Phoneme] -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,1*U><S,1*U><L,1*U>, Inline: [0] -}
 2cf29beaf4d294f8eb2440da8cfb602f
   parseConPhonemeInventory ::
     [PhonemeData.Place]
@@ -419,11 +435,116 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
     -> [PhonemeData.Phoneme]
     -> GHC.Base.String
   {- Arity: 4, Strictness: <L,U><L,1*U><L,U><L,U> -}
-b350a75452cc0d0459e6ec933aedc8f9
+1173c1752c3040727cdde4d86c7f6112
   parseDictionary ::
     [[PhonemeData.Phoneme]]
-    -> [(PhonemeData.Word, GHC.Base.String)] -> GHC.Base.String
-  {- Arity: 2, Strictness: <L,U><L,1*U> -}
+    -> [((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)]
+    -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U><L,1*U>,
+     Unfolding: (\ sonHier :: [[PhonemeData.Phoneme]]
+                   pairs :: [((GHC.Base.String, GrammarData.LexCat),
+                              PhonemeData.Word)] ->
+                 GHC.CString.unpackAppendCString#
+                   "\n"#
+                   (letrec {
+                      groupByFBCore :: [((GHC.Base.String, GrammarData.LexCat),
+                                         PhonemeData.Word)]
+                                       -> [[GHC.Types.Char]]
+                        {- Arity: 1, Strictness: <S,1*U> -}
+                      = \ ds :: [((GHC.Base.String, GrammarData.LexCat),
+                                  PhonemeData.Word)] ->
+                        case ds of wild {
+                          [] -> GHC.Types.[] @ [GHC.Types.Char]
+                          : x xs
+                          -> let {
+                               ds1 :: ([((GHC.Base.String, GrammarData.LexCat),
+                                         PhonemeData.Word)],
+                                       [((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)])
+                               = case GHC.List.$wspan
+                                        @ ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
+                                        (\ y :: ((GHC.Base.String, GrammarData.LexCat),
+                                                 PhonemeData.Word) ->
+                                         case x of wild1 { (,) ds2 y1 ->
+                                         case y1 of wild2 { PhonemeData.Word a8 ->
+                                         case y of wild3 { (,) ds3 y2 ->
+                                         case y2 of wild4 { PhonemeData.Word b1 ->
+                                         GHC.Classes.$fEq[]_$c==
+                                           @ PhonemeData.Morpheme
+                                           PhonemeData.$fEqMorpheme
+                                           a8
+                                           b1 } } } })
+                                        xs of ww { (#,#) ww1 ww2 ->
+                                 (ww1, ww2) }
+                             } in
+                             GHC.Types.:
+                               @ [GHC.Types.Char]
+                               (case Parse.$wgo
+                                       (GHC.Types.:
+                                          @ ((GHC.Base.String, GrammarData.LexCat),
+                                             PhonemeData.Word)
+                                          x
+                                          (case ds1 of wild1 { (,) ys zs ->
+                                           ys })) of ww { (#,#) ww1 ww2 ->
+                                case ww2 of wild1 {
+                                  [] -> case GHC.List.badHead ret_ty [GHC.Types.Char] of {}
+                                  : x1 ds2
+                                  -> case x1 of ww3 { PhonemeData.Word ww4 ->
+                                     GHC.Base.++
+                                       @ GHC.Types.Char
+                                       (Romanization.romanizeWord_go ww4)
+                                       (GHC.CString.unpackAppendCString#
+                                          " ("#
+                                          (GHC.Base.++
+                                             @ GHC.Types.Char
+                                             (Parse.parseWord sonHier ww3)
+                                             (GHC.CString.unpackAppendCString#
+                                                ")"#
+                                                (Parse.parseDictionary_go ww1)))) } } })
+                               (case ds1 of wild1 { (,) ys zs -> groupByFBCore zs }) }
+                    } in
+                    case groupByFBCore
+                           (Data.OldList.sortBy
+                              @ ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
+                              Parse.parseDictionary2
+                              (Data.OldList.sortBy
+                                 @ ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
+                                 Parse.parseDictionary2
+                                 pairs)) of wild {
+                      [] -> GHC.Types.[] @ GHC.Types.Char
+                      : x xs1
+                      -> Data.OldList.intercalate_$spoly_go
+                           @ GHC.Types.Char
+                           x
+                           (Data.OldList.prependToAll
+                              @ [GHC.Types.Char]
+                              Parse.parseDictionary1
+                              xs1) })) -}
+e767d2f030f0a31a0986b258e08357c0
+  parseDictionary1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+2128c6f6b86d8258a5efc6318ae8a47a
+  parseDictionary2 ::
+    ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
+    -> ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
+    -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs,
+     Unfolding: (\ x :: ((GHC.Base.String, GrammarData.LexCat),
+                         PhonemeData.Word)
+                   y :: ((GHC.Base.String, GrammarData.LexCat),
+                         PhonemeData.Word)[OneShot] ->
+                 case x of wild { (,) ds1 y1 ->
+                 case y1 of wild1 { PhonemeData.Word a9 ->
+                 case y of wild2 { (,) ds2 y2 ->
+                 case y2 of wild3 { PhonemeData.Word b1 ->
+                 GHC.Classes.$w$ccompare14
+                   @ PhonemeData.Morpheme
+                   PhonemeData.$fOrdMorpheme
+                   a9
+                   b1 } } } }) -}
+8ced8ab262d54ea486f8a2b84bfdc080
+  parseDictionary_go ::
+    [([GHC.Types.Char], GrammarData.LexCat)] -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U> -}
 37ecbb37303e91af6655a96c5157a40e
   parseDiphPhonemeInventory ::
     [PhonemeData.Phoneme] -> GHC.Base.String
@@ -473,15 +594,15 @@ c0d85280be0ee1123c1b66b21706a591
   parseDiphPhonemeInventory_go1 ::
     [PhonemeData.Phoneme] -> [[GHC.Types.Char]]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-3f8b0a8736402098cfa54126b296b9a3
+778370230d6ef9d5fa5015be797b7d74
   parseLCInflection ::
     InflectionData.InflectionSystem -> GHC.Base.String
   {- Arity: 1,
      Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)> -}
-bf7290abed73d0713184e0edfe5cf487
+fa2eaf81ebc1cf4251386565e2f1f7b0
   parseLexicalSystems ::
     InflectionData.InflectionSystem
-    -> (InflectionData.LexicalCategory,
+    -> (GrammarData.LexCat,
         [InflectionData.ManifestSystem],
         [InflectionData.ManifestSystem],
         [InflectionData.ManifestSystem],
@@ -492,31 +613,34 @@ bf7290abed73d0713184e0edfe5cf487
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ w :: InflectionData.InflectionSystem
-                   w1 :: (InflectionData.LexicalCategory,
+                   w1 :: (GrammarData.LexCat,
                           [InflectionData.ManifestSystem],
                           [InflectionData.ManifestSystem],
                           [InflectionData.ManifestSystem],
                           [InflectionData.ManifestSystem]) ->
                  case w1 of ww { (,,,,) ww1 ww2 ww3 ww4 ww5 ->
                  Parse.$wparseLexicalSystems w ww1 ww2 ww3 ww4 ww5 }) -}
-069996475ff4c5189b0fb5bc67f7f26d
+5ddc729e927a29f70ca5b5ae78668561
   parseLexicalSystems1 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Verb"#) -}
-01553077cc9f0b7a8923da5c6e21a7d3
+  {- Unfolding: (GHC.CString.unpackCString# "Subject"#) -}
+7445be06d241a23d5f35d00dcc9ed3f1
   parseLexicalSystems2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Preposition"#) -}
+  {- Unfolding: (GHC.CString.unpackCString# "Object"#) -}
 962cc6c993b9c1935a8eb3edb59da620
   parseLexicalSystems3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Adverb"#) -}
 d29e6ab72e70d57f5520cdc00c507a70
   parseLexicalSystems4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Adjective"#) -}
-e301743721478849c0882b7d72c23253
+6eab7133448fd81a487718e1922c1137
   parseLexicalSystems5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Object"#) -}
-78a4727decb52ec5c6061db4fa1a9e9e
+  {- Unfolding: (GHC.CString.unpackCString# "Adposition"#) -}
+e7137246f7d0b2b7e102189ee76350ba
   parseLexicalSystems6 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Subject"#) -}
+  {- Unfolding: (GHC.CString.unpackCString# "Verb"#) -}
+1389583c8d482058f492c425d252dde9
+  parseLexicalSystems7 :: GHC.Base.String
+  {- Strictness: b -}
 cc02a10c94d6400dcf23a311785fc7a7
   parsePhoneme :: PhonemeData.Phoneme -> GHC.Base.String
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
@@ -601,6 +725,14 @@ b365a6a37c6f55dc827c8e3d81c08e87
                            @ [GHC.Types.Char]
                            Parse.parseDiphPhonemeInventory1
                            xs1) }) -}
+7ff880d4f987dddfeed7d2abbf815827
+  parseSyllable :: OtherData.Syllable -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(SSL),1*U(1*U,1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: OtherData.Syllable ->
+                 case w of ww { OtherData.Syllable ww1 ww2 ww3 ->
+                 Parse.$wparseSyllable ww1 ww2 ww3 }) -}
 5ccc280ac469782c117c9fc8865cd708
   parseVowPhonemeInventory ::
     [PhonemeData.Height]
@@ -610,6 +742,41 @@ b365a6a37c6f55dc827c8e3d81c08e87
     -> [PhonemeData.Phoneme]
     -> GHC.Base.String
   {- Arity: 5, Strictness: <L,1*U><L,U><L,U><L,U><L,U> -}
+5fe9cb010c88a9826d27c40887b3e219
+  parseWord ::
+    [[PhonemeData.Phoneme]] -> PhonemeData.Word -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U><L,1*U(1*U)>,
+     Unfolding: (\ sonHier :: [[PhonemeData.Phoneme]]
+                   word :: PhonemeData.Word ->
+                 GHC.CString.unpackAppendCString#
+                   "/"#
+                   (case word of ww { PhonemeData.Word ww1 ->
+                    case Syllabification.$wsyllabifyWord
+                           sonHier
+                           ww1 of ww2 { (##) ww3 ->
+                    case GHC.Base.map
+                           @ OtherData.Syllable
+                           @ [GHC.Types.Char]
+                           Parse.parseSyllable
+                           ww3 of wild {
+                      [] -> Parse.parseWord2
+                      : x xs1
+                      -> GHC.Base.++
+                           @ GHC.Types.Char
+                           (Data.OldList.intercalate_$spoly_go
+                              @ GHC.Types.Char
+                              x
+                              (Data.OldList.prependToAll
+                                 @ [GHC.Types.Char]
+                                 Parse.parseWord1
+                                 xs1))
+                           Parse.parseWord2 } } })) -}
+9358ba8c7af32269ca38c6638e659a84
+  parseWord1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "."#) -}
+1ba7724c926ca4fc3629bb373ba0965b
+  parseWord2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/"#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

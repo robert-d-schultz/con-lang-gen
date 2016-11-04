@@ -15,24 +15,36 @@ import PhonemeGen
 import PhonemeData
 import PhonotacticsGen
 import OtherData
+import InflectionData
+import GrammarData
 
 -- Input data
 data MeaningData = MeaningData
   {
-    inputGeneral       :: [String]
+      inputNouns       :: [String]
+    , inputVerbs       :: [String]
+    , inputAdjs        :: [String]
+    , inputAdpos       :: [String]
   }
 
 loadMeaningData :: IO MeaningData
 loadMeaningData =  MeaningData
-  <$> readMeaning "raw/meanings/meanings.txt"
+  <$> readMeaning "raw/meanings/nouns.txt"
+  <*> readMeaning "raw/meanings/verbs.txt"
+  <*> readMeaning "raw/meanings/adjectives.txt"
+  <*> readMeaning "raw/meanings/adpositions.txt"
 
 readMeaning :: Read a => FilePath -> IO a
 readMeaning = fmap read . readFile
 
 -- Generate words
 -- Generate
-makeDictionary :: MeaningData -> [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar [(String, Word)]
-makeDictionary mData vows sonhier settings = mapM (\i -> (,) <$> return i <*> makeWord vows sonhier settings) (inputGeneral mData)
+makeDictionary :: MeaningData -> [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar [((String, LexCat), Word)]
+makeDictionary mData vows sonhier set = concat <$> sequence [n, v, a, p] where
+  n = mapM (\i -> (,) <$> ((,) <$> return i <*> return Noun) <*> makeWord vows sonhier set) (inputNouns mData)
+  v = mapM (\i -> (,) <$> ((,) <$> return i <*> return Verb) <*> makeWord vows sonhier set) (inputVerbs mData)
+  a = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adj) <*> makeWord vows sonhier set) (inputAdjs mData)
+  p = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adpo) <*> makeWord vows sonhier set) (inputAdpos mData)
 
 -- Given sonority hierarchy, generate (one) root morpheme for a word
 makeWord :: [Phoneme] -> [[Phoneme]] -> ((Int, Int), (Int, Int), (Int, Int), (Int, Int)) -> RVar Word

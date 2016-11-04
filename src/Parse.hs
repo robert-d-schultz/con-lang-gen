@@ -21,16 +21,25 @@ import InflectionData
 import MorphologyGen
 import Syllabification
 import Romanization
+import GrammarData
 
 -- Parse list of words to string
-parseDictionary :: [[Phoneme]] -> [(String, Word)] -> String
+parseDictionary :: [[Phoneme]] -> [((String, LexCat), Word)] -> String
 parseDictionary sonHier pairs = "\n" ++ intercalate "\n" (map (parseDictionaryEntry sonHier) (reduceHomophones pairs))
 
-reduceHomophones :: [(String, Word)] -> [([String], Word)]
+reduceHomophones :: [((String, LexCat), Word)] -> [([(String, LexCat)], Word)]
 reduceHomophones pairs = map (second head . unzip) (groupWith snd (sortWith snd pairs))
 
-parseDictionaryEntry :: [[Phoneme]] -> ([String], Word) -> String
-parseDictionaryEntry sonHier (means, wrd) = romanizeWord wrd ++ " (" ++ parseWord sonHier wrd ++ ")" ++ concatMap ("\n\t n. " ++ ) means
+parseDictionaryEntry :: [[Phoneme]] -> ([(String, LexCat)], Word) -> String
+parseDictionaryEntry sonHier (means, wrd) = romanizeWord wrd ++ " (" ++ parseWord sonHier wrd ++ ")" ++ concatMap (\(str, lc) -> "\n\t" ++ parseLC lc ++ " " ++ str) means
+
+parseLC :: LexCat -> String
+parseLC lc
+  | lc == Verb = "v."
+  | lc == Noun = "n."
+  | lc == Adj  = "adj."
+  | lc == Adv  = "adv."
+  | lc == Adpo = "p."
 
 -- Parse Word to string
 parseWord :: [[Phoneme]] -> Word -> String
@@ -197,112 +206,80 @@ parseSonHier vows cons = "\n\nSonority hierarchy: " ++ "\n/" ++ cListv ++ "/\n/"
   cListc = map (intercalate "/, /") fListc
 
 parseLCInflection :: InflectionSystem -> String
-parseLCInflection inflSys = concatMap (parseInflectionSystem inflSys) [Sub, Obj, Adj, Adv, Prep, Verb]
+parseLCInflection inflSys = concatMap (parseInflectionSystem inflSys) [Subj, Obj, Adj, Adv, Adpo, Verb]
 
 -- Parse inflection system (gives summary)
-parseInflectionSystem :: InflectionSystem -> LexicalCategory -> String
+parseInflectionSystem :: InflectionSystem -> LexCat -> String
 parseInflectionSystem inflSys lc = output where
   output
-    | null (preparticles ++ postparticles ++ prefixes ++ suffixes) = "<br>\nNo grammatical categories manifest for " ++ parseLexicalCategory lc ++ "s.\n"
-    | otherwise = "<br>\nGrammatical categories manifest for " ++ parseLexicalCategory lc ++ "s in the following ways:\n<ul>" ++ preparticles ++ postparticles ++ prefixes ++ suffixes ++ "</ul>\n"
+    | null (particles ++ affixes) = "<br>\nNo grammatical categories manifest for " ++ parseLexCat lc ++ "s.\n"
+    | otherwise = "<br>\nGrammatical categories manifest for " ++ parseLexCat lc ++ "s in the following ways:\n<ul>" ++ particles ++ affixes ++ "</ul>\n"
 
--- parse pre-position particles
-  filt1 = filter (not.null) (fooBar (isPreParticle lc) inflSys)
-  preparticles
+-- parse particles
+  filt1 = filter (not.null) (fooBar (isParticle lc) inflSys)
+  particles
     | null filt1       = ""
-    | otherwise        = "\n\t<li>With pre-position particles:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt1 ++ "</li>\n\t\t</ul>"
+    | otherwise        = "\n\t<li>With particles:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt1 ++ "</li>\n\t\t</ul>"
 
-  -- parse post-position particles
-  filt2 = filter (not.null) (fooBar (isPostParticle lc) inflSys)
-  postparticles
-    | null filt2       = ""
-    | otherwise        = "\n\t<li>With post-position particles:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt2 ++ "</li>\n\t\t</ul>"
-
-  -- parse prefixes
-  filt4 = filter (not.null) (fooBar (isPrefix lc) inflSys)
-  prefixes
+  -- parse affixes
+  filt4 = filter (not.null) (fooBar (isAffix lc) inflSys)
+  affixes
     | null filt4      = ""
-    | otherwise       = "\n\t<li>With prefixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt4 ++ "</li>\n\t\t</ul>"
-
-  -- parse suffixes
-  filt3 = filter (not.null) (fooBar (isSuffix lc) inflSys)
-  suffixes
-    | null filt3      = ""
-    | otherwise       = "\n\t<li>With suffixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt3 ++ "</li>\n\t\t</ul>"
+    | otherwise       = "\n\t<li>With affixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt4 ++ "</li>\n\t\t</ul>"
 
   fooBar :: (forall a . Manifest a -> Bool) -> InflectionSystem -> [String]
-  fooBar b inflSys = [gen, ani, cas, num, def, spe, top, per, clu, hon, pol, ten, asp, moo, voi, evi, tra, vol] where
-    gen | b (genSys inflSys) = parseGenders $ genSys inflSys | otherwise = ""
-    ani | b (aniSys inflSys) = parseAnimacies $ aniSys inflSys | otherwise = ""
-    cas | b (casSys inflSys) = parseCases $ casSys inflSys | otherwise = ""
-    num | b (numSys inflSys) = parseNumbers $ numSys inflSys | otherwise = ""
-    def | b (defSys inflSys) = parseDefinitenesses $ defSys inflSys | otherwise = ""
-    spe | b (speSys inflSys) = parseSpecificities $ speSys inflSys | otherwise = ""
-    top | b (topSys inflSys) = parseTopics $ topSys inflSys | otherwise = ""
-    per | b (perSys inflSys) = parsePersons $ perSys inflSys | otherwise = ""
-    clu | b (cluSys inflSys) = parseClusivities $ cluSys inflSys | otherwise = ""
-    hon | b (honSys inflSys) = parseHonorifics $ honSys inflSys | otherwise = ""
-    pol | b (polSys inflSys) = parsePolarities $ polSys inflSys | otherwise = ""
-    ten | b (tenSys inflSys) = parseTenses $ tenSys inflSys | otherwise = ""
-    asp | b (aspSys inflSys) = parseAspects $ aspSys inflSys | otherwise = ""
-    moo | b (mooSys inflSys) = parseMoods $ mooSys inflSys | otherwise = ""
-    voi | b (voiSys inflSys) = parseVoices $ voiSys inflSys | otherwise = ""
+  fooBar b inflSys = [gen, ani, cas, num, def, spe, top, per, hon, pol, ten, asp, moo, voi, evi, tra, vol] where
+    gen | b (genSys inflSys) = parseGenders $ genSys inflSys         | otherwise = ""
+    ani | b (aniSys inflSys) = parseAnimacies $ aniSys inflSys       | otherwise = ""
+    cas | b (casSys inflSys) = parseCases $ casSys inflSys           | otherwise = ""
+    num | b (numSys inflSys) = parseNumbers $ numSys inflSys         | otherwise = ""
+    def | b (defSys inflSys) = parseDefinitenesses $ defSys inflSys  | otherwise = ""
+    spe | b (speSys inflSys) = parseSpecificities $ speSys inflSys   | otherwise = ""
+    top | b (topSys inflSys) = parseTopics $ topSys inflSys          | otherwise = ""
+    per | b (perSys inflSys) = parsePersons $ perSys inflSys         | otherwise = ""
+    hon | b (honSys inflSys) = parseHonorifics $ honSys inflSys      | otherwise = ""
+    pol | b (polSys inflSys) = parsePolarities $ polSys inflSys      | otherwise = ""
+    ten | b (tenSys inflSys) = parseTenses $ tenSys inflSys          | otherwise = ""
+    asp | b (aspSys inflSys) = parseAspects $ aspSys inflSys         | otherwise = ""
+    moo | b (mooSys inflSys) = parseMoods $ mooSys inflSys           | otherwise = ""
+    voi | b (voiSys inflSys) = parseVoices $ voiSys inflSys          | otherwise = ""
     evi | b (eviSys inflSys) = parseEvidentialities $ eviSys inflSys | otherwise = ""
-    tra | b (traSys inflSys) = parseTransitivities $ traSys inflSys | otherwise = ""
-    vol | b (volSys inflSys) = parseVolitions $ volSys inflSys | otherwise = ""
+    tra | b (traSys inflSys) = parseTransitivities $ traSys inflSys  | otherwise = ""
+    vol | b (volSys inflSys) = parseVolitions $ volSys inflSys       | otherwise = ""
 
-  isSuffix :: LexicalCategory -> Manifest a -> Bool
-  isSuffix _ NoManifest = False
-  isSuffix lc (Manifest t _) = out where
+  isAffix :: LexCat -> Manifest a -> Bool
+  isAffix _ NoManifest = False
+  isAffix lc (Manifest t _) = out where
     out
       | null filt = False
       | otherwise = True
-    filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Suffix) t
+    filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Affix) t
 
-  isPrefix :: LexicalCategory -> Manifest a -> Bool
-  isPrefix _ NoManifest = False
-  isPrefix lc (Manifest t _) = out where
+  isParticle :: LexCat -> Manifest a -> Bool
+  isParticle _ NoManifest = False
+  isParticle lc (Manifest t _) = out where
     out
       | null filt = False
       | otherwise = True
-    filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Prefix) t
+    filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Particle) t
 
-  isPreParticle :: LexicalCategory -> Manifest a -> Bool
-  isPreParticle _ NoManifest = False
-  isPreParticle lc (Manifest t _) = out where
-    out
-      | null filt = False
-      | otherwise = True
-    filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == PreParticle) t
-
-  isPostParticle :: LexicalCategory -> Manifest a -> Bool
-  isPostParticle _ NoManifest = False
-  isPostParticle lc (Manifest t _) = out where
-    out
-      | null filt = False
-      | otherwise = True
-    filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == PostParticle) t
-
-
-parseLexicalSystems :: InflectionSystem -> (LexicalCategory, [ManifestSystem], [ManifestSystem], [ManifestSystem], [ManifestSystem]) -> String
-parseLexicalSystems inflSys (lc, preps, posps, prefs, suffs) = "<br>\n" ++ parseLexicalCategory lc
-                                                            ++ parseManifestSystems preps (length preps) inflSys
-                                                            ++ parseManifestSystems posps (length posps) inflSys
-                                                            ++ parseManifestSystems prefs (length prefs) inflSys
-                                                            ++ parseManifestSystems suffs (length suffs) inflSys
+parseLexicalSystems :: InflectionSystem -> (LexCat, [ManifestSystem], [ManifestSystem]) -> String
+parseLexicalSystems inflSys (lc, parts, affs) = "<br>\n" ++ parseLexCat lc
+                                                         ++ parseManifestSystems parts (length parts) inflSys
+                                                         ++ parseManifestSystems affs (length affs) inflSys
 
 parseManifestSystems :: [ManifestSystem] -> Int -> InflectionSystem -> String
 parseManifestSystems expSyss 0 gramSys = ""
-parseManifestSystems expSyss i gramSys = parseManifestSystems (init expSyss) (i-1) gramSys ++ parseManifestSystem (last expSyss) gen ani cas num def spe top per clu hon pol ten asp moo voi evi tra vol where
+parseManifestSystems expSyss i gramSys = parseManifestSystems (init expSyss) (i-1) gramSys ++ parseManifestSystem (last expSyss) gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol where
   ManifestSystem lc mt xs = last expSyss
-  (gen,ani,cas,num,def,spe,top,per,clu,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc mt i
+  (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc mt i
 
 
 -- Parse a manifestation system (particles/declensions) into an html table
 -- Horizontal: Case, Gender, Animacy, Number, Honorific, Transitivity, Evidentiality, Voice, Volition (9)
 -- Vertical:   Tense, Aspect, Mood, Person, Clusivity, Definiteness, Specificity, Polarity, Topic     (9)
-parseManifestSystem :: ManifestSystem -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Case] -> [Manifest Number] -> [Manifest Definiteness] -> [Manifest Specificity] -> [Manifest Topic] -> [Manifest Person] -> [Manifest Clusivity] -> [Manifest Honorific] -> [Manifest Polarity] -> [Manifest Tense] -> [Manifest Aspect] -> [Manifest Mood] -> [Manifest Voice] -> [Manifest Evidentiality] -> [Manifest Transitivity] -> [Manifest Volition] -> String
-parseManifestSystem manSys gens anis cass nums defs spes tops pers clus hons pols tens asps moos vois evis tras vols  = "<br>\n<table border=1>" ++ title ++ header ++ exarows ++ "\n</table>\n" where
+parseManifestSystem :: ManifestSystem -> [Express Gender] -> [Express Animacy] -> [Express Case] -> [Express Number] -> [Express Definiteness] -> [Express Specificity] -> [Express Topic] -> [Express Person] -> [Express Honorific] -> [Express Polarity] -> [Express Tense] -> [Express Aspect] -> [Express Mood] -> [Express Voice] -> [Express Evidentiality] -> [Express Transitivity] -> [Express Volition] -> String
+parseManifestSystem manSys gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols  = "<br>\n<table border=1>" ++ title ++ header ++ exarows ++ "\n</table>\n" where
 
   -- title
   hls = [length cass,length gens,length anis,length nums,length hons,length tras,length evis,length vois,length vols]
@@ -310,10 +287,8 @@ parseManifestSystem manSys gens anis cass nums defs spes tops pers clus hons pol
 
 
   parseSystemType :: ManifestSystem -> String
-  parseSystemType (ManifestSystem _ PreParticle _)  = "Pre-position Particle"
-  parseSystemType (ManifestSystem _ PostParticle _) = "Post-position Particle"
-  parseSystemType (ManifestSystem _ Prefix _)       = "Prefix"
-  parseSystemType (ManifestSystem _ Suffix _)       = "Suffix"
+  parseSystemType (ManifestSystem _ Particle _) = "Particle"
+  parseSystemType (ManifestSystem _ Affix _)    = "Affix"
 
   -- header
   horLabels = [map parseCase2 cass, map parseGender2 gens, map parseAnimacy2 anis, map parseNumber2 nums, map parseHonorific2 hons, map parseTransitivity2 tras, map parseEvidentiality2 evis, map parseVoice2 vois, map parseVolition2 vols]
@@ -329,98 +304,92 @@ parseManifestSystem manSys gens anis cass nums defs spes tops pers clus hons pol
                  ++ "</tr>"
 
   -- mega rows
-  vls = [length tens,length asps,length moos,length pers,length clus,length defs,length spes,length pols,length tops]
+  vls = [length tens,length asps,length moos,length pers,length defs,length spes,length pols,length tops]
 
-  exarows = concatMap (makeExaRow manSys vls asps moos pers clus defs spes pols tops cass gens anis nums hons tras evis vois vols) tens
+  exarows = concatMap (makeExaRow manSys vls asps moos pers defs spes pols tops cass gens anis nums hons tras evis vois vols) tens
 
   rowSpanN :: [Int] -> Int
   rowSpanN [] = 1
   rowSpanN ns =  head ns * rowSpanN (tail ns) + 1
 
-  makeExaRow :: ManifestSystem -> [Int] -> [Manifest Aspect] -> [Manifest Mood] -> [Manifest Person] -> [Manifest Clusivity] -> [Manifest Definiteness] -> [Manifest Specificity] -> [Manifest Polarity] -> [Manifest Topic] -> [Manifest Case] -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> String
-  makeExaRow manSys vls asps moos pers clus defs spes pols tops cass gens anis nums hons tras evis vois vols ten = exarow where
+  makeExaRow :: ManifestSystem -> [Int] -> [Express Aspect] -> [Express Mood] -> [Express Person] -> [Express Definiteness] -> [Express Specificity] -> [Express Polarity] -> [Express Topic] -> [Express Case] -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> String
+  makeExaRow manSys vls asps moos pers defs spes pols tops cass gens anis nums hons tras evis vois vols ten = exarow where
     exarow = "\n\t<tr>\n\t\t<th rowspan=\"" ++ show (rowSpanN (drop 1 vls)) ++ "\">" ++ parseTense2 ten ++ "</th>" ++ petarows ++ "\n\t</tr>"
-    petarows = concatMap (makePetaRow manSys vls moos pers clus defs spes pols tops cass gens anis nums hons tras evis vois vols ten) asps
+    petarows = concatMap (makePetaRow manSys vls moos pers defs spes pols tops cass gens anis nums hons tras evis vois vols ten) asps
 
-  makePetaRow :: ManifestSystem -> [Int] -> [Manifest Mood] -> [Manifest Person] -> [Manifest Clusivity] -> [Manifest Definiteness] -> [Manifest Specificity] -> [Manifest Polarity] -> [Manifest Topic] -> [Manifest Case] -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> String
-  makePetaRow manSys vls moos pers clus defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp = petarow where
+  makePetaRow :: ManifestSystem -> [Int] -> [Express Mood] -> [Express Person] -> [Express Definiteness] -> [Express Specificity] -> [Express Polarity] -> [Express Topic] -> [Express Case] -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> String
+  makePetaRow manSys vls moos pers defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp = petarow where
     petarow = "\n\t\t<tr>\n\t\t\t<th rowspan=\"" ++ show (rowSpanN (drop 2 vls)) ++ "\">" ++ parseAspect2 asp ++ "</th>" ++ terarows ++ "\n\t\t</tr>"
-    terarows = concatMap (makeTeraRow manSys vls pers clus defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp) moos
+    terarows = concatMap (makeTeraRow manSys vls pers defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp) moos
 
-  makeTeraRow :: ManifestSystem -> [Int] -> [Manifest Person] -> [Manifest Clusivity] -> [Manifest Definiteness] -> [Manifest Specificity] -> [Manifest Polarity] -> [Manifest Topic] -> [Manifest Case] -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> String
-  makeTeraRow manSys vls pers clus defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo = terarow where
+  makeTeraRow :: ManifestSystem -> [Int] -> [Express Person] -> [Express Definiteness] -> [Express Specificity] -> [Express Polarity] -> [Express Topic] -> [Express Case] -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> String
+  makeTeraRow manSys vls pers defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo = terarow where
     terarow = "\n\t\t\t<tr>\n\t\t\t\t<th rowspan=\"" ++ show (rowSpanN (drop 3 vls)) ++ "\">" ++ parseMood2 moo ++ "</th>" ++ gigarows ++ "\n\t\t\t</tr>"
-    gigarows = concatMap (makeGigaRow manSys vls clus defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo) pers
+    gigarows = concatMap (makeGigaRow manSys vls defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo) pers
 
-  makeGigaRow :: ManifestSystem -> [Int] -> [Manifest Clusivity] -> [Manifest Definiteness] -> [Manifest Specificity] -> [Manifest Polarity] -> [Manifest Topic] -> [Manifest Case] -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> String
-  makeGigaRow manSys vls clus defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per = gigarow where
+  makeGigaRow :: ManifestSystem -> [Int] -> [Express Definiteness] -> [Express Specificity] -> [Express Polarity] -> [Express Topic] -> [Express Case] -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> String
+  makeGigaRow manSys vls defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per = gigarow where
     gigarow = "\n\t\t\t\t<tr>\n\t\t\t\t\t<th rowspan=\"" ++ show (rowSpanN (drop 4 vls)) ++ "\">" ++ parsePerson2 per ++ "</th>" ++ megarows ++ "\n\t\t\t\t</tr>"
-    megarows = concatMap (makeMegaRow manSys vls defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per) clus
+    megarows = makeMegaRow manSys vls defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per
 
-  makeMegaRow :: ManifestSystem -> [Int] -> [Manifest Definiteness] -> [Manifest Specificity] -> [Manifest Polarity] -> [Manifest Topic] -> [Manifest Case] -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> String
-  makeMegaRow manSys vls defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per clu = megarow where
-    megarow = "\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<th rowspan=\"" ++ show (rowSpanN (drop 5 vls)) ++ "\">" ++ parseClusivity2 clu ++ "</th>" ++ kilorows ++ "\n\t\t\t\t\t</tr>"
-    kilorows = concatMap (makeKiloRow manSys vls spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per clu) defs
+  makeMegaRow :: ManifestSystem -> [Int] -> [Express Definiteness] -> [Express Specificity] -> [Express Polarity] -> [Express Topic] -> [Express Case] -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> String
+  makeMegaRow manSys vls defs spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per = megarow where
+    megarow = "\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<th rowspan=\"" ++ show (rowSpanN (drop 5 vls)) ++ "\">" ++ "</th>" ++ kilorows ++ "\n\t\t\t\t\t</tr>"
+    kilorows = concatMap (makeKiloRow manSys vls spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per) defs
 
-  makeKiloRow :: ManifestSystem -> [Int] -> [Manifest Specificity] -> [Manifest Polarity] -> [Manifest Topic] -> [Manifest Case] -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> String
-  makeKiloRow manSys vls spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per clu def = kilorow where
+  makeKiloRow :: ManifestSystem -> [Int] -> [Express Specificity] -> [Express Polarity] -> [Express Topic] -> [Express Case] -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> String
+  makeKiloRow manSys vls spes pols tops cass gens anis nums hons tras evis vois vols ten asp moo per def = kilorow where
     kilorow = "\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<th rowspan=\"" ++ show (rowSpanN (drop 6 vls)) ++ "\">" ++ parseDefiniteness2 def ++ "</th>" ++ hectorows ++ "\n\t\t\t\t\t\t</tr>"
-    hectorows = concatMap (makeHectoRow manSys vls pols tops cass gens anis nums hons tras evis vois vols ten asp moo per clu def) spes
+    hectorows = concatMap (makeHectoRow manSys vls pols tops cass gens anis nums hons tras evis vois vols ten asp moo per def) spes
 
-  makeHectoRow :: ManifestSystem -> [Int] -> [Manifest Polarity] -> [Manifest Topic] -> [Manifest Case] -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> String
-  makeHectoRow manSys vls pols tops cass gens anis nums hons tras evis vois vols ten asp moo per clu def spe = hectorow where
+  makeHectoRow :: ManifestSystem -> [Int] -> [Express Polarity] -> [Express Topic] -> [Express Case] -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> String
+  makeHectoRow manSys vls pols tops cass gens anis nums hons tras evis vois vols ten asp moo per def spe = hectorow where
     hectorow = "\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<th rowspan=\"" ++ show (rowSpanN (drop 7 vls)) ++ "\">" ++ parseSpecificity2 spe ++ "</th>" ++ decarows ++ "\n\t\t\t\t\t\t\t</tr>"
-    decarows = concatMap (makeDecaRow manSys vls tops cass gens anis nums hons tras evis vois vols ten asp moo per clu def spe) pols
+    decarows = concatMap (makeDecaRow manSys vls tops cass gens anis nums hons tras evis vois vols ten asp moo per def spe) pols
 
-  makeDecaRow :: ManifestSystem -> [Int] -> [Manifest Topic] -> [Manifest Case] -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> String
-  makeDecaRow manSys vls tops cass gens anis nums hons tras evis vois vols ten asp moo per clu def spe pol = decarow where
+  makeDecaRow :: ManifestSystem -> [Int] -> [Express Topic] -> [Express Case] -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> String
+  makeDecaRow manSys vls tops cass gens anis nums hons tras evis vois vols ten asp moo per def spe pol = decarow where
     decarow = "\n\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t<th rowspan=\"" ++ show (rowSpanN (drop 8 vls)) ++ "\">" ++ parsePolarity2 pol ++ "</th>" ++ rows ++ "\n\t\t\t\t\t\t\t\t</tr>"
-    rows = concatMap (makeRow manSys vls cass gens anis nums hons tras evis vois vols ten asp moo per clu def spe pol) tops
+    rows = concatMap (makeRow manSys vls cass gens anis nums hons tras evis vois vols ten asp moo per def spe pol) tops
 
-  makeRow :: ManifestSystem -> [Int] -> [Manifest Case] -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> String
-  makeRow manSys vls cass gens anis nums hons tras evis vois vols ten asp moo per clu def spe pol top = row where
+  makeRow :: ManifestSystem -> [Int] -> [Express Case] -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> String
+  makeRow manSys vls cass gens anis nums hons tras evis vois vols ten asp moo per def spe pol top = row where
     row = "\n\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t<th rowspan=\"" ++ show (rowSpanN (drop 9 vls)) ++ "\">" ++ parseTopic2 top ++ "</th>" ++ decirows ++ "\n\t\t\t\t\t\t\t\t\t</tr>"
-    decirows = concatMap (makeDeciRow manSys gens anis nums hons tras evis vois vols ten asp moo per clu def spe pol top) cass
+    decirows = concatMap (makeDeciRow manSys gens anis nums hons tras evis vois vols ten asp moo per def spe pol top) cass
 
-  makeDeciRow :: ManifestSystem -> [Manifest Gender] -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> Manifest Case -> String
-  makeDeciRow manSys gens anis nums hons tras evis vois vols ten asp moo per clu def spe pol top cas = concatMap (makeCentiRow manSys anis nums hons tras evis vois vols ten asp moo per clu def spe pol top cas) gens
+  makeDeciRow :: ManifestSystem -> [Express Gender] -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> String
+  makeDeciRow manSys gens anis nums hons tras evis vois vols ten asp moo per def spe pol top cas = concatMap (makeCentiRow manSys anis nums hons tras evis vois vols ten asp moo per def spe pol top cas) gens
 
-  makeCentiRow :: ManifestSystem -> [Manifest Animacy] -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> Manifest Case -> Manifest Gender -> String
-  makeCentiRow manSys anis nums hons tras evis vois vols ten asp moo per clu def spe pol top cas gen = concatMap (makeMilliRow manSys nums hons tras evis vois vols ten asp moo per clu def spe pol top cas gen) anis
+  makeCentiRow :: ManifestSystem -> [Express Animacy] -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> String
+  makeCentiRow manSys anis nums hons tras evis vois vols ten asp moo per def spe pol top cas gen = concatMap (makeMilliRow manSys nums hons tras evis vois vols ten asp moo per def spe pol top cas gen) anis
 
-  makeMilliRow :: ManifestSystem -> [Manifest Number] -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> Manifest Case -> Manifest Gender -> Manifest Animacy -> String
-  makeMilliRow manSys nums hons tras evis vois vols ten asp moo per clu def spe pol top cas gen ani = concatMap (makeMicroRow manSys hons tras evis vois vols ten asp moo per clu def spe pol top cas gen ani) nums
+  makeMilliRow :: ManifestSystem -> [Express Number] -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> String
+  makeMilliRow manSys nums hons tras evis vois vols ten asp moo per def spe pol top cas gen ani = concatMap (makeMicroRow manSys hons tras evis vois vols ten asp moo per def spe pol top cas gen ani) nums
 
-  makeMicroRow :: ManifestSystem -> [Manifest Honorific] -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> Manifest Case -> Manifest Gender -> Manifest Animacy -> Manifest Number -> String
-  makeMicroRow manSys hons tras evis vois vols ten asp moo per clu def spe pol top cas gen ani num = concatMap (makeNanoRow manSys tras evis vois vols ten asp moo per clu def spe pol top cas gen ani num) hons
+  makeMicroRow :: ManifestSystem -> [Express Honorific] -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> String
+  makeMicroRow manSys hons tras evis vois vols ten asp moo per def spe pol top cas gen ani num = concatMap (makeNanoRow manSys tras evis vois vols ten asp moo per def spe pol top cas gen ani num) hons
 
-  makeNanoRow :: ManifestSystem -> [Manifest Transitivity] -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> Manifest Case -> Manifest Gender -> Manifest Animacy -> Manifest Number -> Manifest Honorific -> String
-  makeNanoRow manSys tras evis vois vols ten asp moo per clu def spe pol top cas gen ani num hon = concatMap (makePicoRow manSys evis vois vols ten asp moo per clu def spe pol top cas gen ani num hon) tras
+  makeNanoRow :: ManifestSystem -> [Express Transitivity] -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> String
+  makeNanoRow manSys tras evis vois vols ten asp moo per def spe pol top cas gen ani num hon = concatMap (makePicoRow manSys evis vois vols ten asp moo per def spe pol top cas gen ani num hon) tras
 
-  makePicoRow :: ManifestSystem -> [Manifest Evidentiality] -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> Manifest Case -> Manifest Gender -> Manifest Animacy -> Manifest Number -> Manifest Honorific -> Manifest Transitivity -> String
-  makePicoRow manSys evis vois vols ten asp moo per clu def spe pol top cas gen ani num hon tra = concatMap (makeFemtoRow manSys vois vols ten asp moo per clu def spe pol top cas gen ani num hon tra) evis
+  makePicoRow :: ManifestSystem -> [Express Evidentiality] -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> Express Transitivity -> String
+  makePicoRow manSys evis vois vols ten asp moo per def spe pol top cas gen ani num hon tra = concatMap (makeFemtoRow manSys vois vols ten asp moo per def spe pol top cas gen ani num hon tra) evis
 
-  makeFemtoRow :: ManifestSystem -> [Manifest Voice] -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> Manifest Case -> Manifest Gender -> Manifest Animacy -> Manifest Number -> Manifest Honorific -> Manifest Transitivity -> Manifest Evidentiality -> String
-  makeFemtoRow manSys vois vols ten asp moo per clu def spe pol top cas gen ani num hon tra evi = concatMap (makeAttoRow manSys vols ten asp moo per clu def spe pol top cas gen ani num hon tra evi) vois
+  makeFemtoRow :: ManifestSystem -> [Express Voice] -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> Express Transitivity -> Express Evidentiality -> String
+  makeFemtoRow manSys vois vols ten asp moo per def spe pol top cas gen ani num hon tra evi = concatMap (makeAttoRow manSys vols ten asp moo per def spe pol top cas gen ani num hon tra evi) vois
 
-  makeAttoRow :: ManifestSystem -> [Manifest Volition] -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> Manifest Case -> Manifest Gender -> Manifest Animacy -> Manifest Number -> Manifest Honorific -> Manifest Transitivity -> Manifest Evidentiality -> Manifest Voice -> String
-  makeAttoRow manSys vols ten asp moo per clu def spe pol top cas gen ani num hon tra evi voi = cluster where
-    cluster = "\n\t\t\t\t\t\t\t\t\t\t<td>" ++ intercalate "</td>\n\t\t\t\t\t\t\t\t\t\t<td>" (map (getMorpheme manSys ten asp moo per clu def spe pol top cas gen ani num hon tra evi voi) vols) ++ "</td>"
+  makeAttoRow :: ManifestSystem -> [Express Volition] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> Express Transitivity -> Express Evidentiality -> Express Voice -> String
+  makeAttoRow manSys vols ten asp moo per def spe pol top cas gen ani num hon tra evi voi = cluster where
+    cluster = "\n\t\t\t\t\t\t\t\t\t\t<td>" ++ intercalate "</td>\n\t\t\t\t\t\t\t\t\t\t<td>" (map (getMorpheme manSys ten asp moo per def spe pol top cas gen ani num hon tra evi voi) vols) ++ "</td>"
 
-  getMorpheme :: ManifestSystem -> Manifest Tense -> Manifest Aspect -> Manifest Mood -> Manifest Person -> Manifest Clusivity -> Manifest Definiteness -> Manifest Specificity -> Manifest Polarity -> Manifest Topic -> Manifest Case -> Manifest Gender -> Manifest Animacy -> Manifest Number -> Manifest Honorific -> Manifest Transitivity -> Manifest Evidentiality -> Manifest Voice -> Manifest Volition -> String
-  getMorpheme (ManifestSystem _ PreParticle combos) ten asp moo per clu def spe pol top cas gen ani num hon tra evi voi vol = output where
-    filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,clu,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
+  getMorpheme :: ManifestSystem -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> Express Transitivity -> Express Evidentiality -> Express Voice -> Express Volition -> String
+  getMorpheme (ManifestSystem _ Particle combos) ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = output where
+    filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
     output
       | not.null $ filt = parseMorpheme (fst $ head filt)
       | otherwise = ""
-  getMorpheme (ManifestSystem lc PostParticle combos) ten asp moo per clu def spe pol top cas gen ani num hon tra evi voi vol = getMorpheme (ManifestSystem lc PreParticle combos) ten asp moo per clu def spe pol top cas gen ani num hon tra evi voi vol
-  getMorpheme (ManifestSystem _ Prefix combos) ten asp moo per clu def spe pol top cas gen ani num hon tra evi voi vol = output where
-    filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,clu,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
-    output
-      | not.null $ filt = parseMorpheme (fst $ head filt) ++ "–"
-      | otherwise = ""
-  getMorpheme (ManifestSystem _ Suffix combos) ten asp moo per clu def spe pol top cas gen ani num hon tra evi voi vol = output where
-    filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,clu,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
+  getMorpheme (ManifestSystem _ Affix combos) ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = output where
+    filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
     output
       | not.null $ filt = "–" ++ parseMorpheme (fst $ head filt)
       | otherwise = ""
@@ -464,11 +433,6 @@ parsePersons :: Manifest [Person] -> String
 parsePersons (Manifest _ pers) = "Person (" ++ intercalate ", " (init strs) ++ ", and " ++ last strs ++ ")" where
   strs = map parsePerson pers
 parsePersons NoManifest = ""
-
-parseClusivities :: Manifest [Clusivity] -> String
-parseClusivities (Manifest _ clus) = "Clusivity (" ++ intercalate ", " (init strs) ++ ", and " ++ last strs ++ ")" where
-  strs = map parseClusivity clus
-parseClusivities NoManifest = ""
 
 parseHonorifics :: Manifest [Honorific] -> String
 parseHonorifics (Manifest _ hons) = "Honorific (" ++ intercalate ", " (init strs) ++ ", and " ++ last strs ++ ")" where
@@ -578,17 +542,17 @@ parseTopic top
 parsePerson :: Person -> String
 parsePerson per
   | per == FIRST  = "First"
+  | per == FSTINCL = "First inclusive"
+  | per == FSTEXCL = "First exclusive"
   | per == SECOND = "Second"
   | per == THIRD  = "Third"
-
-parseClusivity :: Clusivity -> String
-parseClusivity top
-  | top == INCL = "Inclusive"
-  | top == EXCL = "Exclusive"
+  | per == THRDPROX  = "Proximate"
+  | per == THRDOBV  = "Obviative"
 
 parseHonorific :: Honorific -> String
 parseHonorific hon
   | hon == FAM   = "Informal"
+  | hon == NEU   = "Neutral"
   | hon == FORM  = "Formal"
 
 parsePolarity :: Polarity -> String
@@ -610,8 +574,14 @@ parseTense ten
 
 parseAspect :: Aspect -> String
 parseAspect asp
-  | asp == PFV  = "Perfect"
-  | asp == IPFV = "Imperfect"
+  | asp == NNPROG = "Not progressive"
+  | asp == PFV  = "Perfective"
+  | asp == IPFV = "Imperfective"
+  | asp == HAB = "Habitual"
+  | asp == CONT = "Continuous"
+  | asp == NPROG = "Non-progressive"
+  | asp == PROG = "Progressive"
+
 
 parseMood :: Mood -> String
 parseMood moo
@@ -648,6 +618,7 @@ parseTransitivity :: Transitivity -> String
 parseTransitivity tra
   | tra == NTRANS  = "Intransitive"
   | tra == TRANS   = "Transitive"
+  | tra == MTRANS = "Monotransitive"
   | tra == DITRANS = "Ditransitive"
 
 parseVolition :: Volition -> String
@@ -655,84 +626,79 @@ parseVolition vol
   | vol == VOL  = "Intended"
   | vol == NVOL = "Unintended"
 
-parseGender2 :: Manifest Gender -> String
-parseGender2 NoManifest = ""
-parseGender2 (Manifest _ gen) = parseGender gen
+parseGender2 :: Express Gender -> String
+parseGender2 NoExpress = ""
+parseGender2 (Express gen) = parseGender gen
 
-parseAnimacy2 :: Manifest Animacy -> String
-parseAnimacy2 NoManifest = ""
-parseAnimacy2 (Manifest _ ani) = parseAnimacy ani
+parseAnimacy2 :: Express Animacy -> String
+parseAnimacy2 NoExpress = ""
+parseAnimacy2 (Express ani) = parseAnimacy ani
 
-parseCase2 :: Manifest Case -> String
-parseCase2 NoManifest = ""
-parseCase2 (Manifest _ cas) = parseCase cas
+parseCase2 :: Express Case -> String
+parseCase2 NoExpress = ""
+parseCase2 (Express cas) = parseCase cas
 
-parseNumber2 :: Manifest Number -> String
-parseNumber2 NoManifest = ""
-parseNumber2 (Manifest _ num) = parseNumber num
+parseNumber2 :: Express Number -> String
+parseNumber2 NoExpress = ""
+parseNumber2 (Express num) = parseNumber num
 
-parseDefiniteness2 :: Manifest Definiteness -> String
-parseDefiniteness2 NoManifest = ""
-parseDefiniteness2 (Manifest _ def) = parseDefiniteness def
+parseDefiniteness2 :: Express Definiteness -> String
+parseDefiniteness2 NoExpress = ""
+parseDefiniteness2 (Express def) = parseDefiniteness def
 
-parseSpecificity2 :: Manifest Specificity -> String
-parseSpecificity2 NoManifest = ""
-parseSpecificity2 (Manifest _ spe) = parseSpecificity spe
+parseSpecificity2 :: Express Specificity -> String
+parseSpecificity2 NoExpress = ""
+parseSpecificity2 (Express spe) = parseSpecificity spe
 
-parseTopic2 :: Manifest Topic -> String
-parseTopic2 NoManifest = ""
-parseTopic2 (Manifest _ top) = parseTopic top
+parseTopic2 :: Express Topic -> String
+parseTopic2 NoExpress = ""
+parseTopic2 (Express top) = parseTopic top
 
-parsePerson2 :: Manifest Person -> String
-parsePerson2 NoManifest = ""
-parsePerson2 (Manifest _ per) = parsePerson per
+parsePerson2 :: Express Person -> String
+parsePerson2 NoExpress = ""
+parsePerson2 (Express per) = parsePerson per
 
-parseClusivity2 :: Manifest Clusivity -> String
-parseClusivity2 NoManifest = ""
-parseClusivity2 (Manifest _ clu) = parseClusivity clu
+parseHonorific2 :: Express Honorific -> String
+parseHonorific2 NoExpress = ""
+parseHonorific2 (Express hon) = parseHonorific hon
 
-parseHonorific2 :: Manifest Honorific -> String
-parseHonorific2 NoManifest = ""
-parseHonorific2 (Manifest _ hon) = parseHonorific hon
+parsePolarity2 :: Express Polarity -> String
+parsePolarity2 NoExpress = ""
+parsePolarity2 (Express pol) = parsePolarity pol
 
-parsePolarity2 :: Manifest Polarity -> String
-parsePolarity2 NoManifest = ""
-parsePolarity2 (Manifest _ pol) = parsePolarity pol
+parseTense2 :: Express Tense -> String
+parseTense2 NoExpress = ""
+parseTense2 (Express ten) = parseTense ten
 
-parseTense2 :: Manifest Tense -> String
-parseTense2 NoManifest = ""
-parseTense2 (Manifest _ ten) = parseTense ten
+parseAspect2 :: Express Aspect -> String
+parseAspect2 NoExpress = ""
+parseAspect2 (Express asp) = parseAspect asp
 
-parseAspect2 :: Manifest Aspect -> String
-parseAspect2 NoManifest = ""
-parseAspect2 (Manifest _ asp) = parseAspect asp
+parseMood2 :: Express Mood -> String
+parseMood2 NoExpress = ""
+parseMood2 (Express moo) = parseMood moo
 
-parseMood2 :: Manifest Mood -> String
-parseMood2 NoManifest = ""
-parseMood2 (Manifest _ moo) = parseMood moo
+parseVoice2 :: Express Voice -> String
+parseVoice2 NoExpress = ""
+parseVoice2 (Express voi) = parseVoice voi
 
-parseVoice2 :: Manifest Voice -> String
-parseVoice2 NoManifest = ""
-parseVoice2 (Manifest _ voi) = parseVoice voi
+parseEvidentiality2 :: Express Evidentiality -> String
+parseEvidentiality2 NoExpress = ""
+parseEvidentiality2 (Express evi) = parseEvidentiality evi
 
-parseEvidentiality2 :: Manifest Evidentiality -> String
-parseEvidentiality2 NoManifest = ""
-parseEvidentiality2 (Manifest _ evi) = parseEvidentiality evi
+parseTransitivity2 :: Express Transitivity -> String
+parseTransitivity2 NoExpress = ""
+parseTransitivity2 (Express tra) = parseTransitivity tra
 
-parseTransitivity2 :: Manifest Transitivity -> String
-parseTransitivity2 NoManifest = ""
-parseTransitivity2 (Manifest _ tra) = parseTransitivity tra
+parseVolition2 :: Express Volition -> String
+parseVolition2 NoExpress = ""
+parseVolition2 (Express vol) = parseVolition vol
 
-parseVolition2 :: Manifest Volition -> String
-parseVolition2 NoManifest = ""
-parseVolition2 (Manifest _ vol) = parseVolition vol
-
-
-parseLexicalCategory :: LexicalCategory -> String
-parseLexicalCategory lc
-  | lc == Sub = "Subject"
-  | lc == Obj = "Object"
-  | lc == Adj = "Adjective"
-  | lc == Adv = "Adverb"
-  | lc == Prep = "Preposition"
-  | lc == Verb ="Verb"
+parseLexCat :: LexCat -> String
+parseLexCat lc
+  | lc == Subj = "Subject"
+  | lc == Obj  = "Object"
+  | lc == Adj  = "Adjective"
+  | lc == Adv  = "Adverb"
+  | lc == Adpo = "Adposition"
+  | lc == Verb = "Verb"

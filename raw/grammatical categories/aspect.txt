@@ -1,2 +1,5 @@
-[ [PFV,IPFV]
+[ [PFV, IPFV]
+, [PFV, HAB, CONT]
+, [PFV, HAB, NPROG, PROG]
+, [NNPROG, PROG]
 ]

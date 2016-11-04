@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-02 18:56:26.125279 UTC
+2016-11-03 21:25:36.454559 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeData 7103
-  interface hash: cee78bd0f7579d52dfe3aeaabc76f0e9
-  ABI hash: 86639d5baa3c8896a59c20b5d5d0708d
+  interface hash: 6b70e992fbfaec9d61e1e8eb76410dd8
+  ABI hash: 2bc4225bb63ccf0a16ac10bab410e892
   export-list hash: 8834c83badd5837275d7ec1bbd2f424a
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
@@ -2109,7 +2109,7 @@ e0644167ea1572fa835311f673311319
                    (GHC.Prim.==#
                       (GHC.Prim.dataToTag# @ PhonemeData.Manner x1)
                       (GHC.Prim.dataToTag# @ PhonemeData.Manner x2)) } }) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fEqMorpheme :: GHC.Classes.Eq PhonemeData.Morpheme
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -2117,7 +2117,7 @@ f6ac1984a4423d03613ec94d362955ea
                   @ PhonemeData.Morpheme
                   PhonemeData.$fEqMorpheme_$c==
                   PhonemeData.$fEqMorpheme_$c/= -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fEqMorpheme_$c/= ::
     PhonemeData.Morpheme -> PhonemeData.Morpheme -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -2133,7 +2133,7 @@ f6ac1984a4423d03613ec94d362955ea
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fEqMorpheme_$c== ::
     PhonemeData.Morpheme -> PhonemeData.Morpheme -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -2316,7 +2316,7 @@ e0644167ea1572fa835311f673311319
                    -> case ds1 of wild1 {
                         DEFAULT -> GHC.Types.False
                         PhonemeData.UNROUNDED -> GHC.Types.True } }) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fEqWord :: GHC.Classes.Eq PhonemeData.Word
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -2324,7 +2324,7 @@ e0644167ea1572fa835311f673311319
                   @ PhonemeData.Word
                   PhonemeData.$fEqWord_$c==
                   PhonemeData.$fEqWord_$c/= -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fEqWord_$c/= ::
     PhonemeData.Word -> PhonemeData.Word -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -2340,7 +2340,7 @@ e0644167ea1572fa835311f673311319
                         b1 of wild2 {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False } } }) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fEqWord_$c== ::
     PhonemeData.Word -> PhonemeData.Word -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs,
@@ -3039,6 +3039,124 @@ e0644167ea1572fa835311f673311319
                            (GHC.Prim.dataToTag# @ PhonemeData.Manner x1)
                            (GHC.Prim.dataToTag# @ PhonemeData.Manner x2)) of wild {
                    GHC.Types.False -> x2 GHC.Types.True -> x1 } } }) -}
+a75f0140e4b212df166951d7f735baaf
+  $fOrdMorpheme :: GHC.Classes.Ord PhonemeData.Morpheme
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ PhonemeData.Morpheme
+                  PhonemeData.$fEqMorpheme
+                  PhonemeData.$fOrdMorpheme_$ccompare
+                  PhonemeData.$fOrdMorpheme_$c<
+                  PhonemeData.$fOrdMorpheme_$c<=
+                  PhonemeData.$fOrdMorpheme_$c>
+                  PhonemeData.$fOrdMorpheme_$c>=
+                  PhonemeData.$fOrdMorpheme_$cmax
+                  PhonemeData.$fOrdMorpheme_$cmin -}
+a75f0140e4b212df166951d7f735baaf
+  $fOrdMorpheme_$c< ::
+    PhonemeData.Morpheme -> PhonemeData.Morpheme -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Morpheme b :: PhonemeData.Morpheme ->
+                 case a8 of wild { PhonemeData.Morpheme a9 ->
+                 case b of wild1 { PhonemeData.Morpheme b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Phoneme
+                        PhonemeData.$fOrdPhoneme
+                        a9
+                        b1 of wild2 {
+                   DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True } } }) -}
+a75f0140e4b212df166951d7f735baaf
+  $fOrdMorpheme_$c<= ::
+    PhonemeData.Morpheme -> PhonemeData.Morpheme -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Morpheme b :: PhonemeData.Morpheme ->
+                 case a8 of wild { PhonemeData.Morpheme a9 ->
+                 case b of wild1 { PhonemeData.Morpheme b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Phoneme
+                        PhonemeData.$fOrdPhoneme
+                        a9
+                        b1 of wild2 {
+                   DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False } } }) -}
+a75f0140e4b212df166951d7f735baaf
+  $fOrdMorpheme_$c> ::
+    PhonemeData.Morpheme -> PhonemeData.Morpheme -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Morpheme b :: PhonemeData.Morpheme ->
+                 case a8 of wild { PhonemeData.Morpheme a9 ->
+                 case b of wild1 { PhonemeData.Morpheme b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Phoneme
+                        PhonemeData.$fOrdPhoneme
+                        a9
+                        b1 of wild2 {
+                   DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True } } }) -}
+a75f0140e4b212df166951d7f735baaf
+  $fOrdMorpheme_$c>= ::
+    PhonemeData.Morpheme -> PhonemeData.Morpheme -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Morpheme b :: PhonemeData.Morpheme ->
+                 case a8 of wild { PhonemeData.Morpheme a9 ->
+                 case b of wild1 { PhonemeData.Morpheme b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Phoneme
+                        PhonemeData.$fOrdPhoneme
+                        a9
+                        b1 of wild2 {
+                   DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False } } }) -}
+a75f0140e4b212df166951d7f735baaf
+  $fOrdMorpheme_$ccompare ::
+    PhonemeData.Morpheme -> PhonemeData.Morpheme -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Morpheme b :: PhonemeData.Morpheme ->
+                 case a8 of wild { PhonemeData.Morpheme a9 ->
+                 case b of wild1 { PhonemeData.Morpheme b1 ->
+                 GHC.Classes.$w$ccompare14
+                   @ PhonemeData.Phoneme
+                   PhonemeData.$fOrdPhoneme
+                   a9
+                   b1 } }) -}
+a75f0140e4b212df166951d7f735baaf
+  $fOrdMorpheme_$cmax ::
+    PhonemeData.Morpheme
+    -> PhonemeData.Morpheme -> PhonemeData.Morpheme
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ x :: PhonemeData.Morpheme y :: PhonemeData.Morpheme ->
+                 case x of wild { PhonemeData.Morpheme a8 ->
+                 case y of wild1 { PhonemeData.Morpheme b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Phoneme
+                        PhonemeData.$fOrdPhoneme
+                        a8
+                        b1 of wild2 {
+                   DEFAULT -> wild1 GHC.Types.GT -> wild } } }) -}
+a75f0140e4b212df166951d7f735baaf
+  $fOrdMorpheme_$cmin ::
+    PhonemeData.Morpheme
+    -> PhonemeData.Morpheme -> PhonemeData.Morpheme
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ x :: PhonemeData.Morpheme y :: PhonemeData.Morpheme ->
+                 case x of wild { PhonemeData.Morpheme a8 ->
+                 case y of wild1 { PhonemeData.Morpheme b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Phoneme
+                        PhonemeData.$fOrdPhoneme
+                        a8
+                        b1 of wild2 {
+                   DEFAULT -> wild GHC.Types.GT -> wild1 } } }) -}
 d728b957933ed40e5f338884385b44c8
   $fOrdPhonation :: GHC.Classes.Ord PhonemeData.Phonation
   DFunId[0]
@@ -3589,6 +3707,122 @@ e0644167ea1572fa835311f673311319
                         PhonemeData.ROUNDED -> PhonemeData.ROUNDED
                         PhonemeData.UNROUNDED -> PhonemeData.ROUNDED }
                    PhonemeData.UNROUNDED -> y }) -}
+55b6ea537d860cf92b62e64e19ceba7b
+  $fOrdWord :: GHC.Classes.Ord PhonemeData.Word
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ PhonemeData.Word
+                  PhonemeData.$fEqWord
+                  PhonemeData.$fOrdWord_$ccompare
+                  PhonemeData.$fOrdWord_$c<
+                  PhonemeData.$fOrdWord_$c<=
+                  PhonemeData.$fOrdWord_$c>
+                  PhonemeData.$fOrdWord_$c>=
+                  PhonemeData.$fOrdWord_$cmax
+                  PhonemeData.$fOrdWord_$cmin -}
+55b6ea537d860cf92b62e64e19ceba7b
+  $fOrdWord_$c< ::
+    PhonemeData.Word -> PhonemeData.Word -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Word b :: PhonemeData.Word ->
+                 case a8 of wild { PhonemeData.Word a9 ->
+                 case b of wild1 { PhonemeData.Word b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Morpheme
+                        PhonemeData.$fOrdMorpheme
+                        a9
+                        b1 of wild2 {
+                   DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True } } }) -}
+55b6ea537d860cf92b62e64e19ceba7b
+  $fOrdWord_$c<= ::
+    PhonemeData.Word -> PhonemeData.Word -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Word b :: PhonemeData.Word ->
+                 case a8 of wild { PhonemeData.Word a9 ->
+                 case b of wild1 { PhonemeData.Word b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Morpheme
+                        PhonemeData.$fOrdMorpheme
+                        a9
+                        b1 of wild2 {
+                   DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False } } }) -}
+55b6ea537d860cf92b62e64e19ceba7b
+  $fOrdWord_$c> ::
+    PhonemeData.Word -> PhonemeData.Word -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Word b :: PhonemeData.Word ->
+                 case a8 of wild { PhonemeData.Word a9 ->
+                 case b of wild1 { PhonemeData.Word b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Morpheme
+                        PhonemeData.$fOrdMorpheme
+                        a9
+                        b1 of wild2 {
+                   DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True } } }) -}
+55b6ea537d860cf92b62e64e19ceba7b
+  $fOrdWord_$c>= ::
+    PhonemeData.Word -> PhonemeData.Word -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Word b :: PhonemeData.Word ->
+                 case a8 of wild { PhonemeData.Word a9 ->
+                 case b of wild1 { PhonemeData.Word b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Morpheme
+                        PhonemeData.$fOrdMorpheme
+                        a9
+                        b1 of wild2 {
+                   DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False } } }) -}
+55b6ea537d860cf92b62e64e19ceba7b
+  $fOrdWord_$ccompare ::
+    PhonemeData.Word -> PhonemeData.Word -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(1*U)><S(S),1*U(1*U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ a8 :: PhonemeData.Word b :: PhonemeData.Word ->
+                 case a8 of wild { PhonemeData.Word a9 ->
+                 case b of wild1 { PhonemeData.Word b1 ->
+                 GHC.Classes.$w$ccompare14
+                   @ PhonemeData.Morpheme
+                   PhonemeData.$fOrdMorpheme
+                   a9
+                   b1 } }) -}
+55b6ea537d860cf92b62e64e19ceba7b
+  $fOrdWord_$cmax ::
+    PhonemeData.Word -> PhonemeData.Word -> PhonemeData.Word
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ x :: PhonemeData.Word y :: PhonemeData.Word ->
+                 case x of wild { PhonemeData.Word a8 ->
+                 case y of wild1 { PhonemeData.Word b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Morpheme
+                        PhonemeData.$fOrdMorpheme
+                        a8
+                        b1 of wild2 {
+                   DEFAULT -> wild1 GHC.Types.GT -> wild } } }) -}
+55b6ea537d860cf92b62e64e19ceba7b
+  $fOrdWord_$cmin ::
+    PhonemeData.Word -> PhonemeData.Word -> PhonemeData.Word
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ x :: PhonemeData.Word y :: PhonemeData.Word ->
+                 case x of wild { PhonemeData.Word a8 ->
+                 case y of wild1 { PhonemeData.Word b1 ->
+                 case GHC.Classes.$w$ccompare14
+                        @ PhonemeData.Morpheme
+                        PhonemeData.$fOrdMorpheme
+                        a8
+                        b1 of wild2 {
+                   DEFAULT -> wild GHC.Types.GT -> wild1 } } }) -}
 9747e3c7b5ae543ddf6a14d6c68612ef
   $fReadBackness :: GHC.Read.Read PhonemeData.Backness
   DFunId[0]
@@ -5138,7 +5372,7 @@ b8e9e1a5fa0f8649e0cc5b1ada80e699
                       @ [PhonemeData.Manner]
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ [PhonemeData.Manner]))) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fReadMorpheme :: GHC.Read.Read PhonemeData.Morpheme
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -5148,7 +5382,7 @@ f6ac1984a4423d03613ec94d362955ea
                   PhonemeData.$fReadMorpheme_$sreadListDefault
                   PhonemeData.$fReadMorpheme_$creadPrec
                   PhonemeData.$fReadMorpheme_$creadListPrec -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fReadMorpheme1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -5168,7 +5402,7 @@ f6ac1984a4423d03613ec94d362955ea
                              <PhonemeData.Morpheme>_R))
                    @ b
                    eta1) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fReadMorpheme2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP PhonemeData.Morpheme
@@ -5183,7 +5417,7 @@ f6ac1984a4423d03613ec94d362955ea
                                        <PhonemeData.Morpheme>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                   <PhonemeData.Morpheme>_R)))) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fReadMorpheme3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -5195,7 +5429,7 @@ f6ac1984a4423d03613ec94d362955ea
                    @ b
                    w1 :: PhonemeData.Morpheme -> Text.ParserCombinators.ReadP.P b ->
                  case w of ww { GHC.Types.I# ww1 -> PhonemeData.$wa ww1 @ b w1 }) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fReadMorpheme_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [PhonemeData.Morpheme]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -5208,7 +5442,7 @@ f6ac1984a4423d03613ec94d362955ea
                                     <[PhonemeData.Morpheme]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                <[PhonemeData.Morpheme]>_R))) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fReadMorpheme_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec PhonemeData.Morpheme
   {- Arity: 1,
@@ -5217,7 +5451,7 @@ f6ac1984a4423d03613ec94d362955ea
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                           <PhonemeData.Morpheme>_R)) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fReadMorpheme_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS PhonemeData.Morpheme
@@ -5243,7 +5477,7 @@ f6ac1984a4423d03613ec94d362955ea
                       @ PhonemeData.Morpheme
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ PhonemeData.Morpheme))) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fReadMorpheme_$sreadListDefault ::
     Text.ParserCombinators.ReadP.ReadS [PhonemeData.Morpheme]
   {- Arity: 1,
@@ -6846,7 +7080,7 @@ d32be58e0d159f69c1f6b48452f67715
                       @ [PhonemeData.Roundedness]
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ [PhonemeData.Roundedness]))) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fReadWord :: GHC.Read.Read PhonemeData.Word
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -6856,7 +7090,7 @@ d32be58e0d159f69c1f6b48452f67715
                   PhonemeData.$fReadWord_$sreadListDefault
                   PhonemeData.$fReadWord_$creadPrec
                   PhonemeData.$fReadWord_$creadListPrec -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fReadWord1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -6875,7 +7109,7 @@ d32be58e0d159f69c1f6b48452f67715
                              <PhonemeData.Word>_R))
                    @ b
                    eta1) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fReadWord2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP PhonemeData.Word
@@ -6890,7 +7124,7 @@ d32be58e0d159f69c1f6b48452f67715
                                        <PhonemeData.Word>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                   <PhonemeData.Word>_R)))) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fReadWord3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -6903,7 +7137,7 @@ d32be58e0d159f69c1f6b48452f67715
                    w1 :: PhonemeData.Word -> Text.ParserCombinators.ReadP.P b ->
                  case w of ww { GHC.Types.I# ww1 ->
                  PhonemeData.$wa1 ww1 @ b w1 }) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fReadWord_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [PhonemeData.Word]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -6916,7 +7150,7 @@ d32be58e0d159f69c1f6b48452f67715
                                     <[PhonemeData.Word]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                                <[PhonemeData.Word]>_R))) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fReadWord_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec PhonemeData.Word
   {- Arity: 1,
@@ -6925,7 +7159,7 @@ d32be58e0d159f69c1f6b48452f67715
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
                           <PhonemeData.Word>_R)) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fReadWord_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS PhonemeData.Word
@@ -6950,7 +7184,7 @@ d32be58e0d159f69c1f6b48452f67715
                       @ PhonemeData.Word
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$creturn
                          @ PhonemeData.Word))) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fReadWord_$sreadListDefault ::
     Text.ParserCombinators.ReadP.ReadS [PhonemeData.Word]
   {- Arity: 1,
@@ -7100,7 +7334,7 @@ d32be58e0d159f69c1f6b48452f67715
                    w1 :: PhonemeData.Manner
                    w2 :: GHC.Base.String ->
                  PhonemeData.$w$cshowsPrec3 w1 w2) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fShowMorpheme :: GHC.Show.Show PhonemeData.Morpheme
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -7109,7 +7343,7 @@ f6ac1984a4423d03613ec94d362955ea
                   PhonemeData.$fShowMorpheme_$cshowsPrec1
                   PhonemeData.$fShowMorpheme_$cshow
                   PhonemeData.$fShowMorpheme_$cshowList -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fShowMorpheme1 :: PhonemeData.Morpheme -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ w :: PhonemeData.Morpheme w1 :: GHC.Base.String ->
@@ -7127,7 +7361,7 @@ f6ac1984a4423d03613ec94d362955ea
 e329d71a4e3390b24a04ea990c2e5be5
   $fShowMorpheme5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Morpheme {"#) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fShowMorpheme_$cshow :: PhonemeData.Morpheme -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -7136,7 +7370,7 @@ f6ac1984a4423d03613ec94d362955ea
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fShowMorpheme_$cshowList ::
     [PhonemeData.Morpheme] -> GHC.Show.ShowS
   {- Arity: 2,
@@ -7147,7 +7381,7 @@ f6ac1984a4423d03613ec94d362955ea
   $fShowMorpheme_$cshowsPrec ::
     GHC.Types.Int -> PhonemeData.Phoneme -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U> -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $fShowMorpheme_$cshowsPrec1 ::
     GHC.Types.Int -> PhonemeData.Morpheme -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U)><L,U>,
@@ -7290,7 +7524,7 @@ e0644167ea1572fa835311f673311319
                    w1 :: PhonemeData.Roundedness
                    w2 :: GHC.Base.String ->
                  PhonemeData.$w$cshowsPrec7 w1 w2) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fShowWord :: GHC.Show.Show PhonemeData.Word
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -7299,7 +7533,7 @@ e0644167ea1572fa835311f673311319
                   PhonemeData.$fShowWord_$cshowsPrec
                   PhonemeData.$fShowWord_$cshow
                   PhonemeData.$fShowWord_$cshowList -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fShowWord1 :: PhonemeData.Word -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (\ w :: PhonemeData.Word w1 :: GHC.Base.String ->
@@ -7311,7 +7545,7 @@ e0644167ea1572fa835311f673311319
 0772ec9b70d5a2e3abdb6a16d8f99c42
   $fShowWord3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Word {"#) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fShowWord_$cshow :: PhonemeData.Word -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
@@ -7320,13 +7554,13 @@ e0644167ea1572fa835311f673311319
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fShowWord_$cshowList :: [PhonemeData.Word] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ PhonemeData.Word
                    PhonemeData.$fShowWord1) -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $fShowWord_$cshowsPrec ::
     GHC.Types.Int -> PhonemeData.Word -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U)><L,U>,
@@ -7421,7 +7655,7 @@ e0644167ea1572fa835311f673311319
                    -> GHC.Base.++ @ GHC.Types.Char PhonemeData.$fReadManner22 w1
                    PhonemeData.LFLAP
                    -> GHC.Base.++ @ GHC.Types.Char PhonemeData.$fReadManner19 w1 }) -}
-07827a3b41739ac75d835ab7bd2ac880
+1bd2b305715e1321a43119509d60718f
   $w$cshowsPrec4 ::
     GHC.Prim.Int#
     -> [PhonemeData.Phoneme] -> GHC.Base.String -> GHC.Base.String
@@ -7452,7 +7686,7 @@ e0644167ea1572fa835311f673311319
                                      PhonemeData.$fShowMorpheme2
                                      x1
                                      (let {
-                                        lvl90 :: [GHC.Types.Char]
+                                        lvl92 :: [GHC.Types.Char]
                                         = GHC.Types.: @ GHC.Types.Char GHC.Show.showList__2 s
                                       } in
                                       letrec {
@@ -7460,7 +7694,7 @@ e0644167ea1572fa835311f673311319
                                           {- Arity: 1, Strictness: <S,1*U> -}
                                         = \ ds2 :: [PhonemeData.Phoneme] ->
                                           case ds2 of wild1 {
-                                            [] -> lvl90
+                                            [] -> lvl92
                                             : y ys
                                             -> GHC.Types.:
                                                  @ GHC.Types.Char
@@ -7523,7 +7757,7 @@ e0644167ea1572fa835311f673311319
                         @ GHC.Types.Char
                         PhonemeData.$fReadRoundedness9
                         w1 }) -}
-b7cdb0d0f3b350cd18859fcfae66e929
+f763807058f37536ebda6c8bc0ad4dfb
   $w$cshowsPrec8 ::
     GHC.Prim.Int#
     -> [PhonemeData.Morpheme] -> GHC.Base.String -> GHC.Base.String
@@ -7555,7 +7789,7 @@ b7cdb0d0f3b350cd18859fcfae66e929
                                      0
                                      ww3
                                      (let {
-                                        lvl90 :: [GHC.Types.Char]
+                                        lvl92 :: [GHC.Types.Char]
                                         = GHC.Types.: @ GHC.Types.Char GHC.Show.showList__2 s
                                       } in
                                       letrec {
@@ -7563,7 +7797,7 @@ b7cdb0d0f3b350cd18859fcfae66e929
                                           {- Arity: 1, Strictness: <S,1*U> -}
                                         = \ ds2 :: [PhonemeData.Morpheme] ->
                                           case ds2 of wild1 {
-                                            [] -> lvl90
+                                            [] -> lvl92
                                             : y ys
                                             -> GHC.Types.:
                                                  @ GHC.Types.Char
@@ -7687,14 +7921,14 @@ e0644167ea1572fa835311f673311319
                         GHC.Types.False -> PhonemeData.$fEnumRoundedness1 ww
                         GHC.Types.True
                         -> GHC.Prim.tagToEnum# @ PhonemeData.Roundedness ww } }) -}
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   $wa ::
     GHC.Prim.Int#
     -> forall b.
        (PhonemeData.Morpheme -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <L,U><L,C(U)>, Inline: [0] -}
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   $wa1 ::
     GHC.Prim.Int#
     -> forall b.
@@ -7727,7 +7961,7 @@ f6ac1984a4423d03613ec94d362955ea
     | LAPPROXIMANT
     | LFLAP
     Promotable
-f6ac1984a4423d03613ec94d362955ea
+a75f0140e4b212df166951d7f735baaf
   data Morpheme = Morpheme {getPhonemes :: [PhonemeData.Phoneme]}
 d728b957933ed40e5f338884385b44c8
   data Phonation
@@ -7778,7 +8012,7 @@ e0644167ea1572fa835311f673311319
 4c51106b8aab206d34cb6b9d104e8504
   data Roundedness = DEFAULT | ROUNDED | UNROUNDED
     Promotable
-53dc4151a59abddfd798786b00d0a617
+55b6ea537d860cf92b62e64e19ceba7b
   data Word = Word {getMorphemes :: [PhonemeData.Morpheme]}
 a9429695b211c23c7924d39159db5ba5
   cmanner :: PhonemeData.Phoneme -> PhonemeData.Manner
@@ -7924,14 +8158,14 @@ bec541e0cb1a1452a6c2e406ed05a5a0
 0be3116cc6f7622eb9af782601085f77
   dsymbol1 :: GHC.Base.String
   {- Strictness: b -}
-28ec5dd63c6c5c4e519cd961f4f77310
+7e4952227a029392fc878e694c115fd8
   getMorphemes :: PhonemeData.Word -> [PhonemeData.Morpheme]
   RecSel PhonemeData.Word
   {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: PhonemeData.Word ->
                  case ds of wild { PhonemeData.Word ds1 -> ds1 }) -}
-e7ba0cc6057ab656364ef46e6b05f372
+cf67a99225ac5cd3326bdeda7d07491d
   getPhonemes :: PhonemeData.Morpheme -> [PhonemeData.Phoneme]
   RecSel PhonemeData.Morpheme
   {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
@@ -8052,6 +8286,8 @@ instance GHC.Classes.Ord [PhonemeData.Length]
   = PhonemeData.$fOrdLength
 instance GHC.Classes.Ord [PhonemeData.Manner]
   = PhonemeData.$fOrdManner
+instance GHC.Classes.Ord [PhonemeData.Morpheme]
+  = PhonemeData.$fOrdMorpheme
 instance GHC.Classes.Ord [PhonemeData.Phonation]
   = PhonemeData.$fOrdPhonation
 instance GHC.Classes.Ord [PhonemeData.Phoneme]
@@ -8060,6 +8296,7 @@ instance GHC.Classes.Ord [PhonemeData.Place]
   = PhonemeData.$fOrdPlace
 instance GHC.Classes.Ord [PhonemeData.Roundedness]
   = PhonemeData.$fOrdRoundedness
+instance GHC.Classes.Ord [PhonemeData.Word] = PhonemeData.$fOrdWord
 instance GHC.Read.Read [PhonemeData.Backness]
   = PhonemeData.$fReadBackness
 instance GHC.Read.Read [PhonemeData.Height]

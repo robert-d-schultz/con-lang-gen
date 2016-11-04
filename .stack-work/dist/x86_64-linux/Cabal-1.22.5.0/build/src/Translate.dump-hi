@@ -1,408 +1,510 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-02 18:56:24.527653 UTC
+2016-11-04 09:25:16.172388 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Translate 7103
-  interface hash: 502211717da7fb8197eb7a78a092d5d5
-  ABI hash: 6a70748093673cc2cf8be098616b851e
-  export-list hash: d3c3adc5499bb368f2be0e56c10b64ab
-  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  interface hash: 0108452b5fe78fa12a64863ba1f020fe
+  ABI hash: 71c526c22feff71e799d823372a954f7
+  export-list hash: 7af8a6142248896fd9e55a28160c4903
+  orphan hash: 63fcffdedb77395e6e9869bf15383211
   flag hash: 5d774d2eb7a24578afae116cd337b129
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Translate.parseParseTree
   Translate.parsePhrase
-  Translate.testExample
-module dependencies: GrammarData
-package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
-                      integer-gmp-1.0.0.0
-orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+  Translate.treeExample
+module dependencies: GrammarData InflectionData InflectionGen
+                     MorphologyGen OtherData Parse PhonemeData PhonemeGen
+                     PhonotacticsGen Romanization Syllabification WordGen
+package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
+                      MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      erf-2.0.0.0@erf_6l78BnvLL4b2mWYp3HJJxX
+                      flexible-defaults-0.0.1.2@flexi_70LqvhG3vbS8bRvV8pHtMk
+                      ghc-prim-0.4.0.0 integer-gmp-1.0.0.0
+                      math-functions-0.1.7.0@mathf_BN6S7j0ar3LC4TsnYu0us5
+                      mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI
+                      monad-loops-0.4.3@monad_LQiHRUYhFhYBU7nOOWDOrb
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk
+                      old-locale-1.0.0.7@oldlo_7h2Gx6mVPJ5Gheca8j9Mpe
+                      old-time-1.1.0.3@oldti_JVjJvknZJ0JKghfag2Jw2L
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L
+                      random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL
+                      random-shuffle-0.0.4@rando_9kOz9tEn1526ShtWz8x59X
+                      random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr
+                      rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG
+                      stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD
+                      syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE template-haskell-2.10.0.0
+                      th-extras-0.0.0.4@thext_LRY1RUMy7ShLl2tqhMyHdO
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
+orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
+         base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         conla_1eA9qWUPH9nBowcXqqaV8r:InflectionData
+         mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.IO
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.MWC
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.PureMT
+         random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.StdGen
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances
+         stateref-0.3@state_KptOBHsY85L8YzpDAos2Hi:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         syb-0.6@syb_4kccWaTe3QZLxAMQYKgEyE:Data.Generics.Instances
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
 family instance modules: base-4.8.2.0:Control.Applicative
-                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
-                         base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         mwc-random-0.13.4.0@mwcra_0lrQ1SkkNA85sa8eZ98xQk:System.Random.MWC
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Primitive
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
+                         vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
 import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
 import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Maybe 1cb58de2b04ee3c0c0a7dc9201184aff
 import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  GrammarData 6068300199f0f1711a9c0db611362463
-  exports: 5d09169d5fed1c01e64e0120168a8712
-  Adj 666c2ed9120329503902a4d940bc0fd1
-  Adpo 8aa1740a23fc9c7630326a2c179ae06c
-  Bar 2b353fa9d69c4b806de27403b3b905b6
-  Comp 958afb6cba26ac8ba12fbc5de8b84e62
-  CompFinal 125548533127cfa42c2d8cdc1103cc08
-  Det cbd5443a13039b9eef45e75210af574a
-  Grammar 63614f7b2ad70ff9d1e5f3b76b39eb03
-  Grammar a6eb7d97a517f02cf0be122f225433af
-  Infl 841930f7acc28cc3a64d5b5b956d57ca
-  Leaf 5ad5ae2b5e28c79014c4785b88301957
-  Leaf 2ef30aa6b29e534627151abc07bccbb5
-  LeafAffix 5553677dfcbdcbc7a127cf8e25a62ff3
-  LeafNull 08e5840487dc4e992c938e131ad87bad
-  LeafWord 25272501043edd3c1c543d6cad5f208f
-  NoAffixHop f8f6d6f291cf4c088370a4d4f7135f37
-  NoNullSub 5e54ed80015098002a3a8f4beadf4c27
-  NoNullTop 998dbd6fa6c80bc6fb760de5bde3b604
-  NoTopMark 61ce4fb345adffa1d1a4e11ba16c52ab
-  NoVtoIMove 903edbc9a78c837fac78e61a2ae4c5bd
-  Noun 9ddadf502f706ca4cd191c8aab283518
-  Null 982ba6ad329ab6ca91933a50f43208f8
-  ObjFinal 912d928801088ee3a324d53d898477cf
-  OblAffixHop 45e4c817e63a6389d63b8c15a66721d0
-  OblItoCMove 50bdf04d77fbbcdd7cb5074651993317
-  OblQuesInv 7a731c911e077db4229f885d32189cb3
-  OblVtoIMove 38732b884e0523d161dce8221cbe7d93
-  OblWHMove fa719a10189ad63a4a048b19e59d59f1
-  OptTopic 0462619b8873e9ee600635bc9b06df14
-  Phrase 2b353fa9d69c4b806de27403b3b905b6
-  PiedPipe c4e9e2cfd24b76146474693826831bfa
-  Ques 970ff4399831bbf39b5b29c1f3c50cfd
-  SubInitial 21ca162f2cbe158984d75e59906e3d2c
-  Verb 9553115c272c78b002040d7ae3b19176
-  XBarA a843e3b89afedda68b0276ce3c0411a6
-  XBarC f8b211c59ed4fde79c7e6729a468fe9f
-  XP 49b01d57611d87fa0761007606bdd6e2
-  XPNull 1895ba91d2daade5ecfa3bb623e551b5
-  getAH 9753dfdbbca2d12f545ab2cea3bb579f
-  getCI ff021f96db0caa8effad2d5dfe40c571
-  getItoC 759d3910d21eb7c165a4e776881945f5
-  getOF 8debed396b09068d8be0e18e28bb5475
-  getSI 2063e83cbb2593942482a0ea77c700fc
-  getVtoI 9f37009f589e611e863d77ed2df4417b
-  getWHM 67748aefb2473f6fed4d8824719ed382
-  leafStr ccf140b139913b7f09221d055bfb6f9f
-  leafT 2a771e60d9ac90b7f04f8ea238518f55
-  phraseIl 2c43be2c443adb21d36631683d9e3e61
-  phraseLC be74283e4695633f957545d36d793853
+import  -/  GrammarData b86371ccb48390730f6498310ddac76f
+  exports: d1002ba5737e19703411cb57857cf209
+  Adj a3bce51fd2fd7e4dc0d2574150a46bdd
+  Adpo e1b568ccc2675d1bef53ee8c3ef42f36
+  Bar 8679cbc76bef34e185a6502de15c1c2c
+  Comp 4aa692b4228e09583c427e24f0c1af2b
+  CompFinal 5157333e53be0521545dfe1bf97b1f38
+  Det 9733e2778effda2425f47e0d4b1b4c38
+  Grammar 91b621ebddaf39e9c665db0c25a7acd9
+  Grammar 6fa2fa1c593ca3d4a39d72e5f818a657
+  Infl 55b2b48775e5494c4f68a23fa3ef154a
+  Leaf 477916d5ffa5c86c64188abd02294292
+  Leaf ea53066d7a68bd996a4fe376dbd589db
+  LeafAffix ed6df10d1dddb4c6b8c43fa7c6332da5
+  LeafNull e2e17dab6c5143af21d17465ae0c2c86
+  LeafWord 0c150edac23316477a95ecda762b3fa5
+  LexCat b95e114b0b6d51b5dd936a539d4fcd51
+  NoAffixHop f2c51389239b63cee428fc2ac2bc2af9
+  NoNullSub 4d89cdfd4c4372b4513c2ddc20f69f81
+  NoNullTop 4b771e5e415972b954667f6649fde779
+  NoTopMark 95a426a4fd103d4fb2030793586c7977
+  NoVtoIMove 75a4182f63c78e238f40634a3dc51ee1
+  Noun 29b0c18b13a4547db43d1c3e1971f3f5
+  Null f9711c1466b60755c6fc233aebc7e6f1
+  ObjFinal 92131afdd8224361644c462bb63b8352
+  OblAffixHop aa049679288e8549be36aefbe701254e
+  OblItoCMove 972a31b6d63da55a6b897465f7b1ff3e
+  OblQuesInv 22de845345ab5060b48c63812d123837
+  OblVtoIMove 9ec8b3d7b01aefb7da542f79f95a070f
+  OblWHMove 3eb38d16319b876ebfda1ce7dffd6d62
+  OptTopic c1a5fe2dd5470bf1722a0c9904f1a04b
+  Phrase 8679cbc76bef34e185a6502de15c1c2c
+  PiedPipe ceb78ea4d795663e69713b167662dc91
+  Ques d221ac7c29e591ada35584a7e66aa4d8
+  SubInitial 0f45c8fc851322dc327934b417e538d4
+  Verb f06c4b09592b8a5d74db07316a39ae60
+  XBarA b93a14eea4209527430ca6bdbeba0254
+  XBarC bc33249651a6065750d7f86057ab5d18
+  XP 909c6f4faf60b35a2910da9ee062d848
+  XPNull 37d4773e01d7d9df6b119a26bf386df8
+  getAH 817eff9b356740d4007fe8cd3895f15e
+  getCI 9c8ac8b9e0ed673215efd57c1069ea35
+  getItoC 2e3d54dba9ff06b22b2e3bcff7dd24ff
+  getOF df9f34e5149d586e9a99926dc63ab793
+  getSI f62e32593566cea7a02e0ad359d48b05
+  getVtoI 1236973abb797986df68c85224870364
+  getWHM c434c923bd8e7af566735bb7421581bc
+  leafLC 9de23cd2426a7876b68933459e1e23b0
+  leafStr 2cd35995087b174e29fe124e7fca45f7
+  leafT 6f0bd4a87ab0edb6bf92e70d31ac22e2
+  phraseIl 3208d83a0d283843fef97c934ca5ab9f
+  phraseLC e9e19aadded5931c4eec84da78ce5ebf
+import  -/  Parse 19567af977eedb4dccb8eec2233b3469
+  exports: dcc6fd75f8e0ce635435ff482f3e4104
+  parseWord 5fe9cb010c88a9826d27c40887b3e219
+import  -/  PhonemeData 2bc4225bb63ccf0a16ac10bab410e892
+  exports: 8834c83badd5837275d7ec1bbd2f424a
+  Phoneme 725a483aa2dd4b7c0473c29cf990b878
+  Word 55b6ea537d860cf92b62e64e19ceba7b
+import  -/  Romanization 1523dd09770b04f055c2d59814f16324
+  exports: 71e3484a4b1fb5c752fcd3291232e7ff
+  romanizeWord 6d52f6408ee50aea5e95ac6ac01b4f16
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-ec6d31eefa4f4ed51454c569c2f76c15
+7f6a4512a5660b41a558acb613022f61
+  $s$fEq(,) :: GHC.Classes.Eq ([GHC.Types.Char], GrammarData.LexCat)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ ([GHC.Types.Char], GrammarData.LexCat)
+                  (GHC.Classes.$fEq(,)_$c==
+                     @ [GHC.Types.Char]
+                     @ GrammarData.LexCat
+                     Translate.$s$fEq(,)1
+                     GrammarData.$fEqLexCat)
+                  (GHC.Classes.$fEq(,)_$c/=
+                     @ [GHC.Types.Char]
+                     @ GrammarData.LexCat
+                     Translate.$s$fEq(,)1
+                     GrammarData.$fEqLexCat) -}
+10a9a32c2708285682fad92295898526
+  $s$fEq(,)1 :: GHC.Classes.Eq [GHC.Types.Char]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Classes.$fEq[]_$s$fEq[]1 -}
+4160a4e56220bd5cd4ee99c7102b9c90
   onthetable :: GrammarData.Phrase
   {- Strictness: m2,
      Unfolding: (GrammarData.XP
                    GrammarData.Adpo
                    GrammarData.Null
                    GrammarData.XPNull
-                   Translate.testExample27) -}
-21eb6b12fa62d0614b89b2abf1d3b33f
+                   Translate.treeExample27) -}
+c641be3702bd421b3bd16febe89033a2
   ontheuglywoman :: GrammarData.Phrase
   {- Strictness: m2,
      Unfolding: (GrammarData.XP
                    GrammarData.Adpo
                    GrammarData.Null
                    GrammarData.XPNull
-                   Translate.testExample6) -}
-e8ea1d51a48efee9042b561ef249f2dd
+                   Translate.treeExample6) -}
+95675d3566e18143dfec57547731d60b
+  parseParseTree ::
+    [[PhonemeData.Phoneme]]
+    -> [((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)]
+    -> GrammarData.Grammar
+    -> GrammarData.Phrase
+    -> GHC.Base.String
+  {- Arity: 4,
+     Strictness: <L,U><L,U><L,U(U,U,U,U,U,A,A,A,A,U,U,A,A)><S,U> -}
+aaaa703d74ba5b74711a17319316d09c
   parsePhrase ::
-    GrammarData.Grammar -> GrammarData.Phrase -> [GHC.Base.String]
+    GrammarData.Grammar -> GrammarData.Phrase -> [[GrammarData.Leaf]]
   {- Arity: 2,
      Strictness: <L,1*U(U,U,U,U,U,A,A,A,A,U,U,A,A)><S,1*U> -}
-f7d122692529898fb9dd4569e5f53c0a
-  testExample :: GrammarData.Grammar -> GHC.Base.String
-  {- Arity: 1, Strictness: <L,1*U(U,U,U,U,U,A,A,A,A,U,U,A,A)>,
-     Unfolding: (\ grammar :: GrammarData.Grammar ->
-                 case Translate.testExample_go
-                        (Translate.parsePhrase
-                           grammar
-                           Translate.underlyingExample) of wild {
-                   [] -> GHC.Types.[] @ GHC.Types.Char : ds1 xs -> xs }) -}
-9436fe5123843b861aadcab1b827cb33
-  testExample1 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Comp
-                   GrammarData.Null
-                   Translate.testExample40
-                   Translate.testExample2) -}
-dbca62f9a94e168cd7b01b33dde66c08
-  testExample10 :: GrammarData.Bar
-  {- Strictness: m1,
-     Unfolding: (GrammarData.XBarA
-                   GrammarData.Noun
-                   GrammarData.Null
-                   Translate.testExample14
-                   Translate.testExample11) -}
-481b0e1a4179e73e161a5db90bdc9f3f
-  testExample11 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Noun
-                   GrammarData.Null
-                   Translate.testExample12
-                   GrammarData.XPNull) -}
-fa58c4d721fba58543004d397fd9e4ae
-  testExample12 :: GrammarData.Leaf
-  {- Strictness: m2,
-     Unfolding: (GrammarData.Leaf
-                   GrammarData.Noun
-                   GrammarData.Null
-                   GrammarData.LeafWord
-                   Translate.testExample13) -}
-c8ed2f8359209d4aa3f8036df66fc672
-  testExample13 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "woman"#) -}
-5fd91b3336497fe600d041c7820d9aa7
-  testExample14 :: GrammarData.Phrase
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XP
-                   GrammarData.Adj
-                   GrammarData.Null
-                   GrammarData.XPNull
-                   Translate.testExample15) -}
-427db0ceb5032b2e1286c809feac9daf
-  testExample15 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Adj
-                   GrammarData.Null
-                   Translate.testExample16
-                   GrammarData.XPNull) -}
-ae21d5fe2c27e4bc2f27cd7d1da99bb3
-  testExample16 :: GrammarData.Leaf
-  {- Strictness: m2,
-     Unfolding: (GrammarData.Leaf
-                   GrammarData.Adj
-                   GrammarData.Null
-                   GrammarData.LeafWord
-                   Translate.testExample17) -}
-045d68e9aa6db365a67d9644d5534c65
-  testExample17 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "ugly"#) -}
-57f5a1ff66ad065ee914882fce0cdc4c
-  testExample18 :: GrammarData.Leaf
-  {- Strictness: m2,
-     Unfolding: (GrammarData.Leaf
-                   GrammarData.Det
-                   GrammarData.Null
-                   GrammarData.LeafWord
-                   Translate.testExample19) -}
-501917d2bae9aef85aee3468f5962763
-  testExample19 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "the"#) -}
-226b475cfa0897bcb71f01f518261a8c
-  testExample2 :: GrammarData.Phrase
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XP
-                   GrammarData.Infl
-                   GrammarData.Null
-                   GrammarData.XPNull
-                   Translate.testExample3) -}
-1df8f08dfe93ffa08ffdcc2b2dd3d00a
-  testExample20 :: GrammarData.Leaf
-  {- Strictness: m2,
-     Unfolding: (GrammarData.Leaf
-                   GrammarData.Adpo
-                   GrammarData.Null
-                   GrammarData.LeafWord
-                   Translate.testExample21) -}
-0928253765d7543aaf72d1e490f77597
-  testExample21 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "on"#) -}
-92ace831200211d63b688e0c60010a4c
-  testExample22 :: GrammarData.Leaf
-  {- Strictness: m2,
-     Unfolding: (GrammarData.Leaf
-                   GrammarData.Verb
-                   GrammarData.Null
-                   GrammarData.LeafWord
-                   Translate.testExample23) -}
-66c7d0a617f36d43eda72a2c84dcd488
-  testExample23 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "vomit"#) -}
-1b0f39afe25f1a3db01c69e2c0137358
-  testExample24 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Det
-                   GrammarData.Null
-                   Translate.testExample18
-                   Translate.testExample25) -}
-9b0a93364687018dcc643a352505d316
-  testExample25 :: GrammarData.Phrase
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XP
-                   GrammarData.Noun
-                   GrammarData.Null
-                   GrammarData.XPNull
-                   Translate.testExample26) -}
-3f562c819baf6aa301e7dc3d389f08c3
-  testExample26 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Noun
-                   GrammarData.Null
-                   Translate.testExample36
-                   Translate.onthetable) -}
-f7108ad06ec82ffe1f06eb41c2fa5bc6
-  testExample27 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Adpo
-                   GrammarData.Null
-                   Translate.testExample34
-                   Translate.testExample28) -}
-457353ad3e426c18affea806babf28eb
-  testExample28 :: GrammarData.Phrase
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XP
-                   GrammarData.Det
-                   GrammarData.Null
-                   GrammarData.XPNull
-                   Translate.testExample29) -}
-ca1e8428e3b0b7db86f18534dc982c37
-  testExample29 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Det
-                   GrammarData.Null
-                   Translate.testExample18
-                   Translate.testExample30) -}
-c8d1ee73b6af8563643d91ea8ac8681d
-  testExample3 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Infl
-                   GrammarData.Null
-                   Translate.testExample38
-                   Translate.testExample4) -}
-9cefb652f07afd6d3fb471022dac4477
-  testExample30 :: GrammarData.Phrase
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XP
-                   GrammarData.Noun
-                   GrammarData.Null
-                   GrammarData.XPNull
-                   Translate.testExample31) -}
-6272409e878f555868fb1746b1508266
-  testExample31 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Noun
-                   GrammarData.Null
-                   Translate.testExample32
-                   GrammarData.XPNull) -}
-8858017b8f0ebc8fe2a6743a05110033
-  testExample32 :: GrammarData.Leaf
-  {- Strictness: m2,
-     Unfolding: (GrammarData.Leaf
-                   GrammarData.Noun
-                   GrammarData.Null
-                   GrammarData.LeafWord
-                   Translate.testExample33) -}
-777ce94e90be4429e2617ea2ae8687e4
-  testExample33 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "table"#) -}
-4c20f8d00c4f07b5ad54f7b7fd3b2e75
-  testExample34 :: GrammarData.Leaf
-  {- Strictness: m2,
-     Unfolding: (GrammarData.Leaf
-                   GrammarData.Adpo
-                   GrammarData.Null
-                   GrammarData.LeafWord
-                   Translate.testExample35) -}
-2c1eeb9fb3a529a9e05695310c63cd98
-  testExample35 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "at"#) -}
-c5c343195d6fe365a33a3ec63ac0cfe7
-  testExample36 :: GrammarData.Leaf
-  {- Strictness: m2,
-     Unfolding: (GrammarData.Leaf
-                   GrammarData.Noun
-                   GrammarData.Null
-                   GrammarData.LeafWord
-                   Translate.testExample37) -}
-00a0a1d761ed9d99df72c0ea9ce7609e
-  testExample37 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "man"#) -}
-22b531638186e49c6c47de976d58655c
-  testExample38 :: GrammarData.Leaf
-  {- Strictness: m2,
-     Unfolding: (GrammarData.Leaf
-                   GrammarData.Infl
-                   GrammarData.Null
-                   GrammarData.LeafAffix
-                   Translate.testExample39) -}
-3b0a5b520ad7ceb34fffcdcd7517bd93
-  testExample39 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "s"#) -}
-aa4cd176b49d2ba908a72ba86068ef09
-  testExample4 :: GrammarData.Phrase
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XP
-                   GrammarData.Verb
-                   GrammarData.Null
-                   Translate.themanonthetable
-                   Translate.testExample5) -}
-877d4e87d97ac99e5ca286db323d0d37
-  testExample40 :: GrammarData.Leaf
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GrammarData.LeafNull GrammarData.Null) -}
-a3613edfb6a52dabf097f8c370638f9c
-  testExample5 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Verb
-                   GrammarData.Null
-                   Translate.testExample22
-                   Translate.ontheuglywoman) -}
-5bd10c1ca176f0b382668d5eafeddba5
-  testExample6 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Adpo
-                   GrammarData.Null
-                   Translate.testExample20
-                   Translate.testExample7) -}
-7dc35d228023195329f0e2423a50cea5
-  testExample7 :: GrammarData.Phrase
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XP
-                   GrammarData.Det
-                   GrammarData.Null
-                   GrammarData.XPNull
-                   Translate.testExample8) -}
-e2ae2d6edbc15935608dc7ee4ec4a1f9
-  testExample8 :: GrammarData.Bar
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XBarC
-                   GrammarData.Det
-                   GrammarData.Null
-                   Translate.testExample18
-                   Translate.testExample9) -}
-dd1694e435a9254ddaf556995ee6e51e
-  testExample9 :: GrammarData.Phrase
-  {- Strictness: m2,
-     Unfolding: (GrammarData.XP
-                   GrammarData.Noun
-                   GrammarData.Null
-                   GrammarData.XPNull
-                   Translate.testExample10) -}
-c6682f9d90ca0a7c730c7e0b3c334295
-  testExample_go :: [[GHC.Types.Char]] -> [GHC.Types.Char]
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-a691c240894857864dc3eaf1eaa9ea92
+6432f7a9a23d98a601e10a501553ec9b
   themanonthetable :: GrammarData.Phrase
   {- Strictness: m2,
      Unfolding: (GrammarData.XP
                    GrammarData.Det
                    GrammarData.Null
                    GrammarData.XPNull
-                   Translate.testExample24) -}
-4d206d440b553c958ae8b1353d43974c
-  underlyingExample :: GrammarData.Phrase
+                   Translate.treeExample24) -}
+7bfaae119bd79a77ee5868f1cf8650c3
+  treeExample :: GrammarData.Phrase
   {- Strictness: m2,
      Unfolding: (GrammarData.XP
                    GrammarData.Comp
                    GrammarData.Null
                    GrammarData.XPNull
-                   Translate.testExample1) -}
+                   Translate.treeExample1) -}
+a1695b9309d350ddd7a76aef1acc2774
+  treeExample1 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Comp
+                   GrammarData.Null
+                   Translate.treeExample40
+                   Translate.treeExample2) -}
+4daabf8aaccf04805d74da244700ba9c
+  treeExample10 :: GrammarData.Bar
+  {- Strictness: m1,
+     Unfolding: (GrammarData.XBarA
+                   GrammarData.Noun
+                   GrammarData.Null
+                   Translate.treeExample14
+                   Translate.treeExample11) -}
+dc3d4a382bb72f36e28367ffd55f6846
+  treeExample11 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Noun
+                   GrammarData.Null
+                   Translate.treeExample12
+                   GrammarData.XPNull) -}
+3470a40a21676514ef5fccdd735b372c
+  treeExample12 :: GrammarData.Leaf
+  {- Strictness: m2,
+     Unfolding: (GrammarData.Leaf
+                   GrammarData.Noun
+                   GrammarData.Null
+                   GrammarData.LeafWord
+                   Translate.treeExample13) -}
+1af34092879881a91687031ff2d9ddf6
+  treeExample13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "woman"#) -}
+950bf0fddada931d967e49eac851c18b
+  treeExample14 :: GrammarData.Phrase
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XP
+                   GrammarData.Adj
+                   GrammarData.Null
+                   GrammarData.XPNull
+                   Translate.treeExample15) -}
+34ac771a0d34ee0f835823ddc56309a7
+  treeExample15 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Adj
+                   GrammarData.Null
+                   Translate.treeExample16
+                   GrammarData.XPNull) -}
+cd472880aed700c82c44aa5680fb5ea0
+  treeExample16 :: GrammarData.Leaf
+  {- Strictness: m2,
+     Unfolding: (GrammarData.Leaf
+                   GrammarData.Adj
+                   GrammarData.Null
+                   GrammarData.LeafWord
+                   Translate.treeExample17) -}
+b75658104a772cc08b33a7682e6a4cde
+  treeExample17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ugly"#) -}
+bc8515ffa9fec1535ff4748029a6f013
+  treeExample18 :: GrammarData.Leaf
+  {- Strictness: m2,
+     Unfolding: (GrammarData.Leaf
+                   GrammarData.Det
+                   GrammarData.Null
+                   GrammarData.LeafWord
+                   Translate.treeExample19) -}
+5364128ed0bcd6bba4de1c2bfd976abd
+  treeExample19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "the"#) -}
+008c69f7bdf5b16580659eef0587ea5a
+  treeExample2 :: GrammarData.Phrase
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XP
+                   GrammarData.Infl
+                   GrammarData.Null
+                   GrammarData.XPNull
+                   Translate.treeExample3) -}
+1069ab47708b883a8628727a1d6e9d8c
+  treeExample20 :: GrammarData.Leaf
+  {- Strictness: m2,
+     Unfolding: (GrammarData.Leaf
+                   GrammarData.Adpo
+                   GrammarData.Null
+                   GrammarData.LeafWord
+                   Translate.treeExample21) -}
+a51c4b2e146a9278f4dbbe4b861804f3
+  treeExample21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "on"#) -}
+041c87a7bf2a812b2e57c6b6705e2bca
+  treeExample22 :: GrammarData.Leaf
+  {- Strictness: m2,
+     Unfolding: (GrammarData.Leaf
+                   GrammarData.Verb
+                   GrammarData.Null
+                   GrammarData.LeafWord
+                   Translate.treeExample23) -}
+ef7da0bd25cb410eb25c5534075d38bc
+  treeExample23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "vomit"#) -}
+71c5e6e822f769b62f7b02ed21e8ab5c
+  treeExample24 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Det
+                   GrammarData.Null
+                   Translate.treeExample18
+                   Translate.treeExample25) -}
+090f43ed4f556b73104a406e66c5e365
+  treeExample25 :: GrammarData.Phrase
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XP
+                   GrammarData.Noun
+                   GrammarData.Null
+                   GrammarData.XPNull
+                   Translate.treeExample26) -}
+af36449d9805fb175783f6fd409d0136
+  treeExample26 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Noun
+                   GrammarData.Null
+                   Translate.treeExample36
+                   Translate.onthetable) -}
+bd5bc43ee2f59affae264d94798a9446
+  treeExample27 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Adpo
+                   GrammarData.Null
+                   Translate.treeExample34
+                   Translate.treeExample28) -}
+8be5246fea81495db97d9996cbde6511
+  treeExample28 :: GrammarData.Phrase
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XP
+                   GrammarData.Det
+                   GrammarData.Null
+                   GrammarData.XPNull
+                   Translate.treeExample29) -}
+8f681705700c6b62d9cf285c219b3f77
+  treeExample29 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Det
+                   GrammarData.Null
+                   Translate.treeExample18
+                   Translate.treeExample30) -}
+76c26c85bc0d288f3140c6d846a83848
+  treeExample3 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Infl
+                   GrammarData.Null
+                   Translate.treeExample38
+                   Translate.treeExample4) -}
+5a4f97353eb3ce680a2692766510c676
+  treeExample30 :: GrammarData.Phrase
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XP
+                   GrammarData.Noun
+                   GrammarData.Null
+                   GrammarData.XPNull
+                   Translate.treeExample31) -}
+ca6bc8db936eb4d861310204ec55fe5b
+  treeExample31 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Noun
+                   GrammarData.Null
+                   Translate.treeExample32
+                   GrammarData.XPNull) -}
+a358c72bad9dfdd96b7e0c189687b644
+  treeExample32 :: GrammarData.Leaf
+  {- Strictness: m2,
+     Unfolding: (GrammarData.Leaf
+                   GrammarData.Noun
+                   GrammarData.Null
+                   GrammarData.LeafWord
+                   Translate.treeExample33) -}
+3fbbe82917e96673bf7aac9a45884b2e
+  treeExample33 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "table"#) -}
+9579993fa91168ad0dbf8d8ca29db26e
+  treeExample34 :: GrammarData.Leaf
+  {- Strictness: m2,
+     Unfolding: (GrammarData.Leaf
+                   GrammarData.Adpo
+                   GrammarData.Null
+                   GrammarData.LeafWord
+                   Translate.treeExample35) -}
+10a51ccbf0e89b4cd54e79a092e4cb17
+  treeExample35 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "at"#) -}
+7093fc2aa5aa47a2def74ca917b9c782
+  treeExample36 :: GrammarData.Leaf
+  {- Strictness: m2,
+     Unfolding: (GrammarData.Leaf
+                   GrammarData.Noun
+                   GrammarData.Null
+                   GrammarData.LeafWord
+                   Translate.treeExample37) -}
+df30a3b624adc4fce6cd791c40426d0f
+  treeExample37 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "man"#) -}
+8cb9974e9f00163a740fac64f5f4bc5e
+  treeExample38 :: GrammarData.Leaf
+  {- Strictness: m2,
+     Unfolding: (GrammarData.Leaf
+                   GrammarData.Infl
+                   GrammarData.Null
+                   GrammarData.LeafAffix
+                   Translate.treeExample39) -}
+67243dabf15afa0c83e6f208e1df5c14
+  treeExample39 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "s"#) -}
+2c3227774115c13957287393a318e5f2
+  treeExample4 :: GrammarData.Phrase
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XP
+                   GrammarData.Verb
+                   GrammarData.Null
+                   Translate.themanonthetable
+                   Translate.treeExample5) -}
+5acabf278f242fc05e278ddfa3806c35
+  treeExample40 :: GrammarData.Leaf
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GrammarData.LeafNull GrammarData.Null) -}
+1b657e8a796f8ab46091238bb503dc06
+  treeExample5 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Verb
+                   GrammarData.Null
+                   Translate.treeExample22
+                   Translate.ontheuglywoman) -}
+1c4daf32832a401dc0c2a04a80dd3b7c
+  treeExample6 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Adpo
+                   GrammarData.Null
+                   Translate.treeExample20
+                   Translate.treeExample7) -}
+3c3d89b2c569d19102f165b1363cf908
+  treeExample7 :: GrammarData.Phrase
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XP
+                   GrammarData.Det
+                   GrammarData.Null
+                   GrammarData.XPNull
+                   Translate.treeExample8) -}
+47ccf4c615712737229d06369c90012c
+  treeExample8 :: GrammarData.Bar
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XBarC
+                   GrammarData.Det
+                   GrammarData.Null
+                   Translate.treeExample18
+                   Translate.treeExample9) -}
+587c0115d0a09286935d1200382484a9
+  treeExample9 :: GrammarData.Phrase
+  {- Strictness: m2,
+     Unfolding: (GrammarData.XP
+                   GrammarData.Noun
+                   GrammarData.Null
+                   GrammarData.XPNull
+                   Translate.treeExample10) -}
+"SPEC/Translate $fEq(,) @ [Char] @ LexCat" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                     [GHC.Types.Char]
+                                                           $dEq1 :: GHC.Classes.Eq
+                                                                      GrammarData.LexCat
+  GHC.Classes.$fEq(,) @ [GHC.Types.Char]
+                      @ GrammarData.LexCat
+                      $dEq
+                      $dEq1
+  = Translate.$s$fEq(,)
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
 parallel variables:
 parallel tycons:
-trusted: safe
+trusted: none
 require own pkg trusted: False
 

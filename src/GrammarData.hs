@@ -13,13 +13,14 @@ module GrammarData
 , ItoCMovement(..)
 , AffixHopping(..)
 , QuestionInversion(..)
-, LexCat(..)
 , Illoc(..)
 , LeafType(..)
 , Phrase(..)
 , Bar(..)
 , Leaf(..)
 ) where
+
+import InflectionData
 
 -- Language grammar
 data Grammar = Grammar
@@ -54,14 +55,12 @@ data PiedPiping            = PiedPipe    | PrepStrand  deriving (Eq, Enum, Show,
 data QuestionInversion     = NoQuesInv   | OblQuesInv  deriving (Eq, Enum, Show, Read)
 
 -- Parse tree, keep it simple stupid
-data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv deriving (Eq, Enum, Show)
-
 data Illoc = Null | Ques | Decl | Imper deriving (Eq, Enum, Show)
 
 data LeafType = LeafWord | LeafAffix deriving (Eq, Enum, Show)
 
 data Phrase = XPNull
-              | XP
+            | XP
                 { phraseLC :: LexCat
                 , phraseIl :: Illoc
                 , specifier :: Phrase
@@ -74,7 +73,7 @@ data Bar = XBarA
              , adjunct :: Phrase
              , barBar :: Bar
              }
-           | XBarC
+         | XBarC
              { barLC :: LexCat
              , barIl :: Illoc
              , leaf :: Leaf
@@ -82,9 +81,12 @@ data Bar = XBarA
              }  deriving (Eq, Show)
 
 data Leaf = LeafNull Illoc
-            | Leaf
-              { leafLC :: LexCat
-              , leafIl :: Illoc
-              , leafT :: LeafType
-              , leafStr :: String
-              } deriving (Eq, Show)
+          | LeafInfl
+            { leafInfl :: (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition)
+            }
+          | Leaf
+            { leafLC  :: LexCat
+            , leafIl  :: Illoc
+            , leafT   :: LeafType
+            , leafStr :: String
+            } deriving (Eq, Show)

@@ -1,2 +1,4 @@
-[
-[FAM,FORM]]
+[ [FAM, NEU, FORM]
+, [FAM, NEU]
+, [NEU, FORM]
+]

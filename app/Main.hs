@@ -40,30 +40,29 @@ main = do
 
   -- inflection / grammatical categories
   idata <- loadInputData
-  (inflSys, shit) <- sampleRVar (makeInflectionSystem idata)
-  systems <- sampleRVar (mapM (makeLexicalInflection inventoryV sonHier inflSys) shit)
+  (inflSys, numPerLexCat) <- sampleRVar (makeInflectionSystem idata)
+  systems <- sampleRVar (mapM (makeLexicalInflection inventoryV sonHier inflSys) numPerLexCat)
 
   -- root morphemes
   mData <- loadMeaningData
   roots <- sampleRVar (makeDictionary mData (inventoryV ++ inventoryD) sonHier ((1, 4), (0, 2), (1, 3), (0, 2)))
 
   -- outputs
-  writeFile "phonology.txt" $ "Phonology"
-                            ++ parseConPhonemeInventory places manners phonations inventoryC
-                            ++ parseVowPhonemeInventory heights backs rounds lengths inventoryV
-                            ++ parseDiphPhonemeInventory inventoryD
+  writeFile "out/phonology.txt" $ "Phonology"
+                               ++ parseConPhonemeInventory places manners phonations inventoryC
+                               ++ parseVowPhonemeInventory heights backs rounds lengths inventoryV
+                               ++ parseDiphPhonemeInventory inventoryD
 
-  writeFile "phonotactics.txt" $ "Phonotactics"
-                               ++ parseSonHier (inventoryV ++ inventoryD) sonHier
+  writeFile "out/phonotactics.txt" $ "Phonotactics"
+                                  ++ parseSonHier (inventoryV ++ inventoryD) sonHier
 
-  writeFile "inflection.txt" $ "Inflection"
+  writeFile "out/inflection.txt" $ "Inflection"
+                                ++ parseLCInflection inflSys
+                                ++ concatMap (parseLexicalSystems inflSys) systems
 
-                             ++ parseLCInflection inflSys
-                             ++ concatMap (parseLexicalSystems inflSys) systems
+  writeFile "out/grammar.txt" $ "Grammar\n"
+                             ++ show grammar ++ "\n"
+                             ++ parseParseTree sonHier roots grammar treeExample
 
-  writeFile "grammar.txt" $ "Grammar\n"
-                         ++ show grammar ++ "\n"
-                         ++ parseParseTree sonHier roots grammar treeExample
-
-  writeFile "lexicon.txt" $ "Lexicon"
-                         ++ parseDictionary sonHier roots
+  writeFile "out/lexicon.txt" $ "Lexicon"
+                             ++ parseDictionary sonHier roots

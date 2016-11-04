@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-02 18:56:33.113121 UTC
+2016-11-03 21:25:45.968028 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Syllabification 7103
-  interface hash: ceee80ad76705353541be498a9ee1bde
-  ABI hash: 4d1a94e4c863694436d35a5e6a3dd5a2
+  interface hash: 5d8513b4b448b6b285eac6b32dfce874
+  ABI hash: 96e237022078ceadc1014b4a4cd94a29
   export-list hash: a741c5c7159797f058482789d7878efa
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
@@ -92,22 +92,22 @@ import  -/  OtherData ef85631315e8bb1c90bd776e9bb7751c
   SyllWord e68b1f99426d7fe112bc7709dd503608
   Syllable 05a619088617b930774519c90865b296
   Syllable 5683ce4e3b2a6c457b5e9c6c6ca43ce6
-import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
+import  -/  PhonemeData 2bc4225bb63ccf0a16ac10bab410e892
   exports: 8834c83badd5837275d7ec1bbd2f424a
   Phoneme 725a483aa2dd4b7c0473c29cf990b878
-  Word 58728e383c3ae1ba22d7c75c2611ac1b
-  Word 53dc4151a59abddfd798786b00d0a617
-  getPhonemes e7ba0cc6057ab656364ef46e6b05f372
+  Word 1393f11ad51cd86d8180b3eab5b4bd1a
+  Word 55b6ea537d860cf92b62e64e19ceba7b
+  getPhonemes cf67a99225ac5cd3326bdeda7d07491d
 import  -/  PhonotacticsGen 6b0ffb15d766a08cc9d1828eaa725159
   exports: 5bbf082cfe2be7a4eaae7a2a5f6b7de8
   retrieveSon fc68d44d08b8ab0c413f94a100c4b828
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-864d382a1d8beded73805adcebda6228
+54ad2a94766ae42bf586562645f9b1c3
   $wsyllabifyWord ::
     [[PhonemeData.Phoneme]]
     -> [PhonemeData.Morpheme] -> (# [OtherData.Syllable] #)
   {- Arity: 2, Strictness: <L,U><L,1*U>, Inline: [0] -}
-532b463556cfa2c09bd8b62049df43e0
+842ed49da6db8873ca9344fa308b4001
   syllabifyWord ::
     [[PhonemeData.Phoneme]] -> PhonemeData.Word -> OtherData.SyllWord
   {- Arity: 2, Strictness: <L,U><S,1*U(1*U)>m, Inline: INLINE[0],

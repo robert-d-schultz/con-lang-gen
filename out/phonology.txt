@@ -1,0 +1,154 @@
+Phonology<br>
+<table border=1>
+	<tr>
+		<th colspan="9">Consonant Inventory</th>
+	</tr>
+	<tr>
+		<th></th>
+		<th colspan="1">Labial</th>
+		<th colspan="1">Coronal</th>
+		<th colspan="1">Alveolo-palatal</th>
+		<th colspan="1">Palatal</th>
+		<th colspan="1">Uvular</th>
+		<th colspan="1">Velar</th>
+		<th colspan="1">Epipharyngeal</th>
+		<th colspan="1">Glottal</th>
+	</tr>
+	<tr>
+		<th>Stop</th>
+		<td>b</td>
+		<td>d</td>
+		<td>ɟ̟</td>
+		<td>ɟ</td>
+		<td>ɢ</td>
+		<td>ɡ</td>
+		<td>ʡ</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Nasal</th>
+		<td>m</td>
+		<td>n</td>
+		<td>ɲ̟</td>
+		<td>ɲ</td>
+		<td>ɴ</td>
+		<td>ŋ</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Fricative</th>
+		<td>β</td>
+		<td>ɹ̟</td>
+		<td>ɻ̠̟</td>
+		<td>ʝ</td>
+		<td>ʁ</td>
+		<td>ɣ</td>
+		<td>ʕ</td>
+		<td>ɦ</td>
+	</tr>
+	<tr>
+		<th>Affricate</th>
+		<td>b͡β</td>
+		<td>d͡z</td>
+		<td>ɟ̟͡ʑ</td>
+		<td>ɟ͡ʝ</td>
+		<td>ɢ͡ʁ</td>
+		<td>ɡ͡ɣ</td>
+		<td>ʡ͡ʕ</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Silibant affricate</th>
+		<td></td>
+		<td>d͡z</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Lateral affricate</th>
+		<td></td>
+		<td>d͡ɮ</td>
+		<td>ɟ̟͡ʎ̟̝</td>
+		<td>ɟ͡ʎ̝̊</td>
+		<td>ɢ͡ʟ̝̠</td>
+		<td>ɡ͡ʟ̝</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Silibant fricative</th>
+		<td></td>
+		<td>z</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Lateral fricative</th>
+		<td></td>
+		<td>ɮ</td>
+		<td>ʎ̟̝</td>
+		<td>ʎ̝̊</td>
+		<td>ʟ̝̠</td>
+		<td>ʟ̝</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Approximant</th>
+		<td>β̞</td>
+		<td>ɹ</td>
+		<td>ɻ̠</td>
+		<td>j</td>
+		<td>ʁ̞</td>
+		<td>ɰ</td>
+		<td>ʕ̞</td>
+		<td>ɦ̞</td>
+	</tr>
+	<tr>
+		<th>Trill</th>
+		<td>ʙ</td>
+		<td>r</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>ʢ</td>
+		<td></td>
+	</tr>
+</table>
+<br>
+<table border=1>
+	<tr>
+		<th colspan="3">Vowel Inventory</th>
+	</tr>
+	<tr>
+		<th></th>
+		<th colspan="1">Front</th>
+		<th colspan="1">Back</th>
+	</tr>
+	<tr>
+		<th rowspan="2">Close</th>
+		<tr>
+			<td>y</td>
+			<td>ɯ</td>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="2">Open</th>
+		<tr>
+			<td>ɶ</td>
+			<td>ɑ</td>
+		</tr>
+	</tr>
+</table>
+<br>
+Diphthongs: /ɯy̯/, /ɯɑ̯/, /ɯɶ̯/, and /ɶy̯/

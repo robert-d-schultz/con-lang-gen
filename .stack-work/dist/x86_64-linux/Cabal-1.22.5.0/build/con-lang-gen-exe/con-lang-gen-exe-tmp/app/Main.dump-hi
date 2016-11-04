@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-02 18:56:39.979742 UTC
+2016-11-04 09:25:17.575191 UTC
 
 interface main@main:Main 7103
-  interface hash: fc32a5ae98e46be8fa294d86ba704073
+  interface hash: 60882df2bd683704d88e5ce155d9705f
   ABI hash: 4ff5904c238c1bc927a920673c9086fa
   export-list hash: 111b464f1a40b815073e610af3ba0b57
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -83,17 +83,16 @@ family instance modules: base-4.8.2.0:Control.Applicative
 import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
 import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
-import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 9bc7ddb84b2ed4ddda320753340533a3
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:InflectionGen 01fbcfdeb4bee1ffed290d04b48ffb84
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:MorphologyGen aa796f2bcf7210652962b8eac8de78e0
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Parse 943ec535e20ec1550c7062503b98eeb9
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 3f03ed4331afaf012b4471fede6a4807
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:InflectionGen c1cb37f0c31cecd6d37693176b3a15d4
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:MorphologyGen 8ceb28ea48040c72239d3de9e2e0951c
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Parse 19567af977eedb4dccb8eec2233b3469
 import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeGen 44431a2b9295a7efdbb24a370fea6130
 import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:PhonotacticsGen 6b0ffb15d766a08cc9d1828eaa725159
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Translate 6a70748093673cc2cf8be098616b851e
-import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:WordGen 5d4976051e9ead79ee9ab0d44eb3662e
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:Translate 71c526c22feff71e799d823372a954f7
+import  -/  con-lang-gen-0.0.0.1@conla_1eA9qWUPH9nBowcXqqaV8r:WordGen 9bf7a76709452e55efdea81abbb45e88
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130

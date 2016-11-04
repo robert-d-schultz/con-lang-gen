@@ -9,11 +9,20 @@ import Prelude hiding (Word)
 import PhonemeData
 
 romanizeWord :: Word -> String
-romanizeWord (Word morphs) = concatMap romanizeMorpheme morphs
+romanizeWord (Word morphemes) = concatMap romanizeMorpheme morphemes
 
 romanizeMorpheme :: Morpheme -> String
-romanizeMorpheme (Morpheme phonemes) = concatMap romanizePhoneme phonemes
+romanizeMorpheme (Morpheme phonemes) = romanizePhonemes phonemes
 
+romanizePhonemes :: [Phoneme] -> String
+romanizePhonemes [] = ""
+romanizePhonemes phonemes
+  | length phonemes > 1 && isVowel (head phonemes) && isVowel (head $ tail phonemes) = romanizePhoneme (head phonemes) ++ "\'" ++ romanizePhonemes (tail phonemes)
+  | otherwise = romanizePhoneme (head phonemes) ++ romanizePhonemes (tail phonemes)
+
+isVowel :: Phoneme -> Bool
+isVowel Vowel{} = True
+isVowel _ = False
 
 -- these rules suck, need diacritics and a pool to pull from as needed
 romanizePhoneme :: Phoneme -> String

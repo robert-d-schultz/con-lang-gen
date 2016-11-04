@@ -1,7 +1,9 @@
 {-# LANGUAGE StandaloneDeriving #-}
 module InflectionData
 ( Manifest(..)
+, Express(..)
 , ManifestType(..)
+, LexCat(..)
 , InflectionSystem(..)
 , Gender(..)
 , Animacy(..)
@@ -11,7 +13,6 @@ module InflectionData
 , Specificity(..)
 , Topic(..)
 , Person(..)
-, Clusivity(..)
 , Honorific(..)
 , Polarity(..)
 , Tense(..)
@@ -22,9 +23,6 @@ module InflectionData
 , Transitivity(..)
 , Volition(..)
 , ManifestSystem(..)
-, LexicalCategory(..)
-, AgreementSystem(..)
-, Agreement(..)
 ) where
 
 import Prelude
@@ -32,28 +30,27 @@ import PhonemeData
 import OtherData
 
 -- Used for 18-tuples
-instance (Show a, Show b, Show c, Show d, Show e, Show f, Show g, Show h, Show i, Show j, Show k, Show l, Show m, Show n, Show o, Show p, Show q, Show r) => Show (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r) where
-  showsPrec _ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r) = showTuple [shows a, shows b, shows c, shows d, shows e, shows f, shows g, shows h, shows i, shows j, shows k, shows l, shows m, shows n, shows o, shows p, shows q, shows r]
+instance (Show a, Show b, Show c, Show d, Show e, Show f, Show g, Show h, Show i, Show j, Show k, Show l, Show m, Show n, Show o, Show p, Show q) => Show (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q) where
+  showsPrec _ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q) = showTuple [shows a, shows b, shows c, shows d, shows e, shows f, shows g, shows h, shows i, shows j, shows k, shows l, shows m, shows n, shows o, shows p, shows q]
 
 showTuple :: [ShowS] -> ShowS
 showTuple ss = showChar '('
               . foldr1 (\s r -> s . showChar ',' . r) ss
               . showChar ')'
 
-deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, Eq k, Eq l, Eq m, Eq n, Eq o, Eq p, Eq q, Eq r) => Eq (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r)
+deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, Eq k, Eq l, Eq m, Eq n, Eq o, Eq p, Eq q) => Eq (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q)
 
 -- How does the grammatical category manifest?
 -- NoManifest - there is no concept of this in the language
 -- Particle - category uses particles to manifest (the, an, a for definiteness/specificity in English?)
 -- Exponent - manifests by changing the word
 
+data Manifest a = NoManifest | Manifest [(LexCat, ManifestType, Int)] a deriving (Eq, Show, Read)
+data Express a  = NoExpress  | Express a deriving (Eq, Show, Read)
 
-data Manifest a = NoManifest | Manifest [(LexicalCategory, ManifestType, Int)] a deriving (Eq, Show, Read)
+data ManifestType = Particle | Affix deriving (Eq, Show, Read)
 
-data ManifestType = PreParticle | Prefix | Suffix | PostParticle deriving (Eq, Show, Read)
-
-data LexicalCategory = Sub | Obj | Adj | Adv | Prep | Verb deriving (Eq, Show, Read)
-
+data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Obj | Subj | Pron deriving (Eq, Enum, Show, Read)
 
 -- Inflection system for nouns
 data InflectionSystem = InflectionSystem
@@ -65,7 +62,6 @@ data InflectionSystem = InflectionSystem
                       , speSys :: Manifest [Specificity]
                       , topSys :: Manifest [Topic]
                       , perSys :: Manifest [Person]
-                      , cluSys :: Manifest [Clusivity]
                       , honSys :: Manifest [Honorific]
                       , polSys :: Manifest [Polarity]
                       , tenSys :: Manifest [Tense]
@@ -100,24 +96,18 @@ data Number        = SG | DU | TRI | PA | PL deriving (Eq, Show, Read)
 data Definiteness  = DEF | INDF deriving (Eq, Show, Read)
 data Specificity   = SPEC | NSPEC deriving (Eq, Show, Read)
 data Topic         = TOP | NTOP deriving (Eq, Show, Read)
-data Person        = FIRST | SECOND | THIRD deriving (Eq, Show, Read)
-data Clusivity     = INCL | EXCL deriving (Eq, Show, Read)
+data Person        = FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THRDOBV deriving (Eq, Show, Read)
 -- For nouns and verbs
-data Honorific     = FAM | FORM deriving (Eq, Show, Read)
+data Honorific     = FAM | NEU | FORM deriving (Eq, Show, Read)
 data Polarity      = AFF | NEG deriving (Eq, Show, Read)
 -- For verbs
 data Tense         = PST | REM | REC | NPST | PRS | NFUT | FUT | IMMF | REMF deriving (Eq, Show, Read)
-data Aspect        = PFV | IPFV deriving (Eq, Show, Read)
+data Aspect        = NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Eq, Show, Read)
 data Mood          = IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Eq, Show, Read)
-data Voice         = ACTIVE| MIDDLE | PASSIVE deriving (Eq, Show, Read)
+data Voice         = ACTIVE | MIDDLE | PASSIVE deriving (Eq, Show, Read)
 data Evidentiality = EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Eq, Show, Read)
-data Transitivity  = NTRANS | TRANS | DITRANS deriving (Eq, Show, Read)
+data Transitivity  = NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Show, Read)
 data Volition      = VOL | NVOL deriving (Eq, Show, Read)
 
--- Particle/Exponent system
-data ManifestSystem = ManifestSystem LexicalCategory ManifestType [(Morpheme, (Manifest Gender, Manifest Animacy, Manifest Case, Manifest Number, Manifest Definiteness, Manifest Specificity, Manifest Topic, Manifest Person, Manifest Clusivity, Manifest Honorific, Manifest Polarity, Manifest Tense, Manifest Aspect, Manifest Mood, Manifest Voice, Manifest Evidentiality, Manifest Transitivity, Manifest Volition))] deriving (Eq, Show)
-
--- Agreement system
-
-data AgreementSystem = AgreementSystem [Agreement] deriving (Eq, Show, Read)
-data Agreement = Agreement LexicalCategory LexicalCategory deriving (Eq, Show, Read)
+-- Particle/Affix system
+data ManifestSystem = ManifestSystem LexCat ManifestType [(Morpheme, (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition))] deriving (Eq, Show)

@@ -15,6 +15,7 @@ import PhonemeData
 import PhonotacticsGen
 import OtherData
 import InflectionData
+import GrammarData
 
 -- Input data
 data InputData = InputData
@@ -27,7 +28,6 @@ data InputData = InputData
     , inputSpecificity   :: [[Specificity]]
     , inputTopic         :: [[Topic]]
     , inputPerson        :: [[Person]]
-    , inputClusivity     :: [[Clusivity]]
     , inputHonorific     :: [[Honorific]]
     , inputPolarity      :: [[Polarity]]
     , inputTense         :: [[Tense]]
@@ -50,7 +50,6 @@ loadInputData =
         <*> readFeature "raw/grammatical categories/specificity.txt"
         <*> readFeature "raw/grammatical categories/topic.txt"
         <*> readFeature "raw/grammatical categories/person.txt"
-        <*> readFeature "raw/grammatical categories/clusivity.txt"
         <*> readFeature "raw/grammatical categories/honorific.txt"
         <*> readFeature "raw/grammatical categories/polarity.txt"
         <*> readFeature "raw/grammatical categories/tense.txt"
@@ -66,7 +65,7 @@ readFeature = fmap read . readFile
 
 -- Create "inflection system"
 
-makeInflectionSystem :: InputData -> RVar (InflectionSystem, [(LexicalCategory, Int, Int, Int, Int)])
+makeInflectionSystem :: InputData -> RVar (InflectionSystem, [(LexCat, Int, Int)])
 makeInflectionSystem idata = do
   (genSys, genNs) <- fooGender idata
   (aniSys, aniNs) <- fooAnimacy idata genNs
@@ -76,8 +75,7 @@ makeInflectionSystem idata = do
   (speSys, speNs) <- fooSpecificity idata defNs
   (topSys, topNs) <- fooTopic idata speNs
   (perSys, perNs) <- fooPerson idata topNs
-  (cluSys, cluNs) <- fooClusivity idata perNs
-  (honSys, honNs) <- fooHonorific idata cluNs
+  (honSys, honNs) <- fooHonorific idata perNs
   (polSys, polNs) <- fooPolarity idata honNs
   (tenSys, tenNs) <- fooTense idata polNs
   (aspSys, aspNs) <- fooAspect idata tenNs
@@ -86,187 +84,173 @@ makeInflectionSystem idata = do
   (eviSys, eviNs) <- fooEvidentiality idata voiNs
   (traSys, traNs) <- fooTransitivity idata eviNs
   (volSys, volNs) <- fooVolition idata traNs
-  return (InflectionSystem genSys aniSys casSys numSys defSys speSys topSys perSys cluSys honSys polSys tenSys aspSys mooSys voiSys eviSys traSys volSys, volNs)
+  return (InflectionSystem genSys aniSys casSys numSys defSys speSys topSys perSys honSys polSys tenSys aspSys mooSys voiSys eviSys traSys volSys, volNs)
 
-bar :: [(LexicalCategory, Int, Int, Int, Int)] -> [(LexicalCategory, ManifestType, Int)] -> [LexicalCategory] -> RVar ([(LexicalCategory, ManifestType, Int)], [(LexicalCategory, Int, Int, Int, Int)])
+bar :: [(LexCat, Int, Int)] -> [(LexCat, ManifestType, Int)] -> [LexCat] -> RVar ([(LexCat, ManifestType, Int)], [(LexCat, Int, Int)])
 bar ks ts [] = return (ts,ks)
 bar ks ts lcs = do
   (newt, newks) <- rab ks (head lcs)
   bar newks (newt : ts) (tail lcs)
 
-rab :: [(LexicalCategory, Int, Int, Int, Int)] -> LexicalCategory -> RVar ((LexicalCategory, ManifestType, Int), [(LexicalCategory, Int, Int, Int, Int)])
+rab :: [(LexCat, Int, Int)] -> LexCat -> RVar ((LexCat, ManifestType, Int), [(LexCat, Int, Int)])
 rab lcs lc2 = join out where
-    (fu, ba) = partition (\(c, _, _, _, _) -> c == lc2) lcs
+    (fu, ba) = partition (\(c, _, _) -> c == lc2) lcs
     shit
-      | null fu = (lc2, 0, 0, 0, 0)
+      | null fu = (lc2, 0, 0)
       | otherwise = head fu
-    (lc, prep, posp, pref, suff) = shit
+    (lc, part, aff) = shit
 
     out = choice [ do
-                   i <- uniform 1 (prep+1)
-                   return ((lc, PreParticle, i), (lc, max i prep, posp, pref, suff) : ba)
+                   i <- uniform 1 (part+1)
+                   return ((lc, Particle, i), (lc, max i part, aff) : ba)
                  , do
-                   j <- uniform 1 (posp+1)
-                   return ((lc, PostParticle, j), (lc, prep, max j posp, pref, suff) : ba)
-                 , do
-                   k <- uniform 1 (pref+1)
-                   return ((lc, Prefix, k), (lc, prep, posp, max k pref, suff) : ba)
-                 , do
-                   l <- uniform 1 (suff+1)
-                   return ((lc, Suffix, l), (lc, prep, posp, pref, max l suff) : ba)
+                   j <- uniform 1 (aff+1)
+                   return ((lc, Affix, j), (lc, part, max j aff) : ba)
                  ]
 
-fooGender :: InputData -> RVar (Manifest [Gender], [(LexicalCategory, Int, Int, Int, Int)])
+fooGender :: InputData -> RVar (Manifest [Gender], [(LexCat, Int, Int)])
 fooGender idata = do
   gens <- makeGenders idata
   i <- uniform 0 3
-  cats <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   (ts, ks) <- bar [] [] cats
   choice [(NoManifest, []), (Manifest ts gens, ks)]
 
-fooAnimacy :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Animacy], [(LexicalCategory, Int, Int, Int, Int)])
+fooAnimacy :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Animacy], [(LexCat, Int, Int)])
 fooAnimacy idata genNs = do
   anis <- makeAnimacies idata
   i <- uniform 0 3
-  cats <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   (ts, ns) <- bar genNs [] cats
   choice [(NoManifest, genNs), (Manifest ts anis, ns)]
 
-fooCase :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Case], [(LexicalCategory, Int, Int, Int, Int)])
+fooCase :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Case], [(LexCat, Int, Int)])
 fooCase idata aniNs = do
   cass <- makeCases idata
   i <- uniform 0 3
-  cats <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   (ts, ns) <- bar aniNs [] cats
   choice [(NoManifest, aniNs), (Manifest ts cass, ns)]
 
-fooNumber :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Number], [(LexicalCategory, Int, Int, Int, Int)])
+fooNumber :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Number], [(LexCat, Int, Int)])
 fooNumber idata casNs = do
   nums <- makeNumbers idata
   i <- uniform 0 3
-  cats <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   (ts, ns) <- bar casNs [] cats
   choice [(NoManifest, casNs), (Manifest ts nums, ns)]
 
-fooDefiniteness :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Definiteness], [(LexicalCategory, Int, Int, Int, Int)])
+fooDefiniteness :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Definiteness], [(LexCat, Int, Int)])
 fooDefiniteness idata numNs = do
   defs <- makeDefinitenesses idata
   i <- uniform 0 3
-  cats <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   (ts, ns) <- bar numNs [] cats
   choice [(NoManifest, numNs), (Manifest ts defs, ns)]
 
-fooSpecificity :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Specificity], [(LexicalCategory, Int, Int, Int, Int)])
+fooSpecificity :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Specificity], [(LexCat, Int, Int)])
 fooSpecificity idata defNs = do
   spes <- makeSpecificities idata
   i <- uniform 0 3
-  cats <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   (ts, ns) <- bar defNs [] cats
   choice [(NoManifest, defNs), (Manifest ts spes, ns)]
 
-fooTopic :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Topic], [(LexicalCategory, Int, Int, Int, Int)])
+fooTopic :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Topic], [(LexCat, Int, Int)])
 fooTopic idata speNs = do
   tops <- makeTopics idata
   i <- uniform 0 3
-  cats <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   (ts, ns) <- bar speNs [] cats
   choice [(NoManifest, speNs), (Manifest ts tops, ns)]
 
-fooPerson :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Person], [(LexicalCategory, Int, Int, Int, Int)])
+fooPerson :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Person], [(LexCat, Int, Int)])
 fooPerson idata topNs = do
   pers <- makePersons idata
   i <- uniform 0 3
-  cats <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   (ts, ns) <- bar topNs [] cats
   choice [(NoManifest, topNs), (Manifest ts pers, ns)]
 
-fooClusivity :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Clusivity], [(LexicalCategory, Int, Int, Int, Int)])
-fooClusivity idata perNs = do
-  clus <- makeClusivities idata
-  i <- uniform 0 3
-  cats <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
-  (ts, ns) <- bar perNs [] cats
-  choice [(NoManifest, perNs), (Manifest ts clus, ns)]
-
-fooHonorific :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Honorific], [(LexicalCategory, Int, Int, Int, Int)])
-fooHonorific idata cluNs = do
+fooHonorific :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Honorific], [(LexCat, Int, Int)])
+fooHonorific idata perNs = do
   hons <- makeHonorifics idata
   i <- uniform 0 3
-  cats1 <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats1 <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   j <- uniform 0 4
-  cats2 <- (:) Verb <$> sample j [Adv, Prep, Obj, Sub]
+  cats2 <- (:) Verb <$> sample j [Adv, Adpo, Obj, Subj]
   k <- uniform 1 2
   norv <- sample k [cats1, cats2]
   let cats = head norv `union` last norv
-  (ts, ns) <- bar cluNs [] cats
-  choice [(NoManifest, cluNs), (Manifest ts hons, ns)]
+  (ts, ns) <- bar perNs [] cats
+  choice [(NoManifest, perNs), (Manifest ts hons, ns)]
 
-fooPolarity :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Polarity], [(LexicalCategory, Int, Int, Int, Int)])
+fooPolarity :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Polarity], [(LexCat, Int, Int)])
 fooPolarity idata honNs = do
   pols <- makePolarities idata
   i <- uniform 0 3
-  cats1 <- (++) [Obj, Sub] <$> sample i [Adj, Prep, Verb]
+  cats1 <- (++) [Obj, Subj] <$> sample i [Adj, Adpo, Verb]
   j <- uniform 0 4
-  cats2 <- (:) Verb <$> sample j [Adv, Prep, Obj, Sub]
+  cats2 <- (:) Verb <$> sample j [Adv, Adpo, Obj, Subj]
   k <- uniform 1 2
   norv <- sample k [cats1, cats2]
   let cats = head norv `union` last norv
   (ts, ns) <- bar honNs [] cats
   choice [(NoManifest, honNs), (Manifest ts pols, ns)]
 
-fooTense :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Tense], [(LexicalCategory, Int, Int, Int, Int)])
+fooTense :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Tense], [(LexCat, Int, Int)])
 fooTense idata polNs = do
   tens <- makeTenses idata
   i <- uniform 0 3
-  cats <- (:) Verb <$> sample i [Adv, Prep, Obj, Sub]
+  cats <- (:) Verb <$> sample i [Adv, Adpo, Obj, Subj]
   (ts, ns) <- bar polNs [] cats
   choice [(NoManifest, polNs), (Manifest ts tens, ns)]
 
-fooAspect :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Aspect], [(LexicalCategory, Int, Int, Int, Int)])
+fooAspect :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Aspect], [(LexCat, Int, Int)])
 fooAspect idata tenNs = do
   asps <- makeAspects idata
   i <- uniform 0 3
-  cats <- (:) Verb <$> sample i [Adv, Prep, Obj, Sub]
+  cats <- (:) Verb <$> sample i [Adv, Adpo, Obj, Subj]
   (ts, ns) <- bar tenNs [] cats
   choice [(NoManifest, tenNs), (Manifest ts asps, ns)]
 
-fooMood :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Mood], [(LexicalCategory, Int, Int, Int, Int)])
+fooMood :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Mood], [(LexCat, Int, Int)])
 fooMood idata aspNs = do
   moos <- makeMoods idata
   i <- uniform 0 3
-  cats <- (:) Verb <$> sample i [Adv, Prep, Obj, Sub]
+  cats <- (:) Verb <$> sample i [Adv, Adpo, Obj, Subj]
   (ts, ns) <- bar aspNs [] cats
   choice [(NoManifest, aspNs), (Manifest ts moos, ns)]
 
-fooVoice :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Voice], [(LexicalCategory, Int, Int, Int, Int)])
+fooVoice :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Voice], [(LexCat, Int, Int)])
 fooVoice idata mooNs = do
   vois <- makeVoices idata
   i <- uniform 0 3
-  cats <- (:) Verb <$> sample i [Adv, Prep, Obj, Sub]
+  cats <- (:) Verb <$> sample i [Adv, Adpo, Obj, Subj]
   (ts, ns) <- bar mooNs [] cats
   choice [(NoManifest, mooNs), (Manifest ts vois, ns)]
 
-fooEvidentiality :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Evidentiality], [(LexicalCategory, Int, Int, Int, Int)])
+fooEvidentiality :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Evidentiality], [(LexCat, Int, Int)])
 fooEvidentiality idata voiNs = do
   evis <- makeEvidentialities idata
   i <- uniform 0 3
-  cats <- (:) Verb <$> sample i [Adv, Prep, Obj, Sub]
+  cats <- (:) Verb <$> sample i [Adv, Adpo, Obj, Subj]
   (ts, ns) <- bar voiNs [] cats
   choice [(NoManifest, voiNs), (Manifest ts evis, ns)]
 
-fooTransitivity :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Transitivity], [(LexicalCategory, Int, Int, Int, Int)])
+fooTransitivity :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Transitivity], [(LexCat, Int, Int)])
 fooTransitivity idata eviNs = do
   tras <- makeTransitivities idata
   i <- uniform 0 3
-  cats <- (:) Verb <$> sample i [Adv, Prep, Obj, Sub]
+  cats <- (:) Verb <$> sample i [Adv, Adpo, Obj, Subj]
   (ts, ns) <- bar eviNs [] cats
   choice [(NoManifest, eviNs), (Manifest ts tras, ns)]
 
-fooVolition :: InputData -> [(LexicalCategory, Int, Int, Int, Int)] -> RVar (Manifest [Volition], [(LexicalCategory, Int, Int, Int, Int)])
+fooVolition :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Volition], [(LexCat, Int, Int)])
 fooVolition idata traNs = do
   vols <- makeVolitions idata
   i <- uniform 0 3
-  cats <- (:) Verb <$> sample i [Adv, Prep, Obj, Sub]
+  cats <- (:) Verb <$> sample i [Adv, Adpo, Obj, Subj]
   (ts, ns) <- bar traNs [] cats
   choice [(NoManifest, traNs), (Manifest ts vols, ns)]
 
@@ -294,9 +278,6 @@ makeTopics idata = choice $ inputTopic idata
 
 makePersons :: InputData -> RVar [Person]
 makePersons idata = choice $ inputPerson idata
-
-makeClusivities :: InputData -> RVar [Clusivity]
-makeClusivities idata = choice $ inputClusivity idata
 
 makeHonorifics :: InputData -> RVar [Honorific]
 makeHonorifics idata = choice $ inputHonorific idata

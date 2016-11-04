@@ -8,53 +8,67 @@ module Translate
 import Prelude hiding (Word)
 import Data.List
 import Data.Maybe
+import Data.Tuple
 
 import GrammarData
+import InflectionData
 import Parse
 import PhonemeData
+import Romanization
+import EnglishStuff
 
--- The point here is to translate a parse tree into the target language's grammar system.
--- Worry about lexical translation later
--- Working:
--- SubjectInitial        - "Subject side parameter"
--- ObjectFinal           - Special case of "Head directionality parameter" for V'?
--- ComplementizerInitial - "Head directionality parameter"
--- VtoIMovement          - "Verb raising"
--- AffixHopping          - "Affix lowering"
--- ItoCMovement          - interrogative marked C head
-
--- Not working:
--- NullSubject           - pronoun related
-
--- ObligatoryTopic       - topic related
--- NullTopic             - topic related
--- TopicMarking          - topic related
-
--- WHMovementObligatory  - question related
--- PiedPiping            - question related
--- QuestionInversion     - question related
-
-parseParseTree :: [[Phoneme]] -> [(String, Word)] -> Grammar -> Phrase -> String
-parseParseTree sonHier dict g pt = native ++ "\n" ++ literal ++ "\n\"" ++ english ++ "\"" where
-  native  = unwords (filter (not.null) (parsePhrase sonHier dict g pt))
-  literal = unwords (filter (not.null) (parsePhrase [] dict g pt))
-  english = unwords (filter (not.null) (parsePhrase [] dict eg pt))
-
-
-translate :: [[Phoneme]] -> [(String, Word)] -> String -> String
-translate [] dict str = str
-translate sonHier dict str = fromMaybe "<UNK>" (parseWord sonHier <$> lookup str dict)
-
-
-eg = Grammar SubInitial ObjFinal CompFinal OblVtoIMove NoAffixHop NoNullSub OptTopic NoNullTop NoTopMark OblItoCMove OblWHMove PiedPipe OblQuesInv
-
-treeExample = XP Comp Null XPNull (XBarC Comp Null (LeafNull Null) (XP Infl Null XPNull (XBarC Infl Null (Leaf Infl Null LeafAffix "s") (XP Verb Null themanonthetable (XBarC Verb Null (Leaf Verb Null LeafWord "vomit") ontheuglywoman)))))
+treeExample = XP Comp Null XPNull (XBarC Comp Null (LeafNull Null) (XP Infl Null XPNull (XBarC Infl Null (LeafInfl infl) (XP Verb Null themanonthetable (XBarC Verb Null (Leaf Verb Null LeafWord "sit") ontheuglywoman)))))
+infl = (NoExpress, NoExpress, NoExpress, Express SG, NoExpress, NoExpress, NoExpress, Express THIRD, NoExpress, NoExpress, Express PRS, Express PFV, Express IND, Express ACTIVE, NoExpress, NoExpress, NoExpress)
 themanonthetable = XP Det Null XPNull (XBarC Det Null (Leaf Det Null LeafWord "the") (XP Noun Null XPNull (XBarC Noun Null (Leaf Noun Null LeafWord "man") onthetable)))
 onthetable = XP Adpo Null XPNull (XBarC Adpo Null (Leaf Adpo Null LeafWord "at") (XP Det Null XPNull (XBarC Det Null (Leaf Det Null LeafWord "the") (XP Noun Null XPNull (XBarC Noun Null (Leaf Noun Null LeafWord "table") XPNull)))))
 ontheuglywoman = XP Adpo Null XPNull (XBarC Adpo Null (Leaf Adpo Null LeafWord "on") (XP Det Null XPNull (XBarC Det Null (Leaf Det Null LeafWord "the") (XP Noun Null XPNull (XBarA Noun Null (XP Adj Null XPNull (XBarC Adj Null (Leaf Adj Null LeafWord "ugly") XPNull)) (XBarC Noun Null (Leaf Noun Null LeafWord "woman") XPNull))))))
 
-parsePhrase :: [[Phoneme]] -> [(String, Word)] -> Grammar -> Phrase -> [String]
-parsePhrase sonHier dict g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl _ iHead (XP Verb _ vSpec (XBarC Verb _ vHead vComp)))))) = cp where
+parseParseTree :: [[Phoneme]] -> [((String, LexCat), Word)] -> Grammar -> Phrase -> String
+parseParseTree sonHier dict g pt = roman ++ "\n" ++ native ++ "\n" ++ literal ++ "\n\"" ++ english ++ "\"" where
+  leaves   = filter (not.all leafIsNull) (filter (not.null) (parsePhrase g pt))
+  eLeaves  = filter (not.all leafIsNull) (filter (not.null) (parsePhrase englishGrammar pt))
+  roman    = romanizeLeaves dict leaves
+  native   = translateLeaves sonHier dict leaves
+  literal  = leavesToEnglish leaves
+  english  = leavesToEnglish eLeaves
+
+leavesToEnglish :: [[Leaf]] -> String
+leavesToEnglish leaves = unwords $ map (\x -> if leafIsInfl $ head x then "<do>" ++ concatMap leafToEnglish x else concatMap leafToEnglish x ) leaves
+
+leafIsInfl :: Leaf -> Bool
+leafIsInfl LeafInfl{} = True
+leafIsInfl _ = False
+
+leafIsNull :: Leaf -> Bool
+leafIsNull LeafNull{} = True
+leafIsNull _ = False
+
+leafToEnglish :: Leaf -> String
+leafToEnglish LeafNull{} = ""
+leafToEnglish (Leaf _ _ _ str) = str
+leafToEnglish (LeafInfl infl) = fromMaybe "<UNK>" (lookup infl (map swap englishVerbInfl))
+
+translateLeaves :: [[Phoneme]] -> [((String, LexCat), Word)] -> [[Leaf]] -> String
+translateLeaves sonHier dict leaves = unwords $ map (\x -> if leafIsInfl $ head x then translate sonHier dict ("do", Verb) ++ concatMap (translateLeaf sonHier dict) x else concatMap (translateLeaf sonHier dict) x ) leaves
+
+translateLeaf :: [[Phoneme]] -> [((String, LexCat), Word)] -> Leaf -> String
+translateLeaf _ _ LeafNull{} = ""
+translateLeaf sonHier dict (Leaf lc _ _ str) = translate sonHier dict (str,lc)
+translateLeaf _ _ (LeafInfl infl) = "<UNK>" --we'll get there...
+
+translate :: [[Phoneme]] -> [((String, LexCat), Word)] -> (String, LexCat) -> String
+translate sonHier dict ent = fromMaybe "<UNK>" (parseWord sonHier <$> lookup ent dict)
+
+romanizeLeaves :: [((String, LexCat), Word)] -> [[Leaf]] -> String
+romanizeLeaves dict leaves = unwords $ map (concatMap $ romanizeLeaf dict) leaves
+
+romanizeLeaf :: [((String, LexCat), Word)] -> Leaf -> String
+romanizeLeaf _ LeafNull{} = ""
+romanizeLeaf dict (Leaf lc _ _ str) = fromMaybe "<UNK>" (romanizeWord <$> lookup (str, lc) dict)
+romanizeLeaf _ (LeafInfl infl) = "<UNK>" --we'll get there...
+
+parsePhrase :: Grammar -> Phrase -> [[Leaf]]
+parsePhrase g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl _ iHead (XP Verb _ vSpec (XBarC Verb _ vHead vComp)))))) = cp where
   cp
     | getSI g == SubInitial = cSpecOut ++ cbar
     | otherwise             = cbar ++ cSpecOut
@@ -75,54 +89,42 @@ parsePhrase sonHier dict g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec
     | otherwise           = vCompOut ++ vHeadOut
 
   cSpecOut
-    | getWHM g == OblWHMove && phraseIl vComp == Ques && phraseLC vComp == Det = ["Who/what"]
-    | getWHM g == OblWHMove && phraseIl vComp == Ques && phraseLC vComp == Adpo = ["Where"]
-    | otherwise = parsePhrase sonHier dict g cSpec
+    | getWHM g == OblWHMove && phraseIl vComp == Ques && phraseLC vComp == Det = [[Leaf Noun Ques LeafWord "Who/what"]]
+    | getWHM g == OblWHMove && phraseIl vComp == Ques && phraseLC vComp == Adpo = [[Leaf Noun Ques LeafWord "Where"]]
+    | otherwise = parsePhrase g cSpec
   cHeadOut
-    | getItoC g == OblItoCMove && cHead == LeafNull Ques = parseLeaves sonHier dict g [iHead]
-    | otherwise = parseLeaves sonHier dict g [cHead]
+    | getItoC g == OblItoCMove && cHead == LeafNull Ques = [[iHead]]
+    | otherwise = [[cHead]]
   iSpecOut
-    | True      = parsePhrase sonHier dict g vSpec
-    | otherwise = parsePhrase sonHier dict g iSpec
+    | True      = parsePhrase g vSpec
+    | otherwise = parsePhrase g iSpec
   iHeadOut
-    | getVtoI g == OblVtoIMove && getItoC g == OblItoCMove && cHead == LeafNull Ques = parseLeaves sonHier dict g [vHead]
+    | getVtoI g == OblVtoIMove && getItoC g == OblItoCMove && cHead == LeafNull Ques = [[vHead]]
     | getItoC g == OblItoCMove && cHead == LeafNull Ques = []
-    | getVtoI g == OblVtoIMove = parseLeaves sonHier dict g [vHead, iHead]
+    | getVtoI g == OblVtoIMove = [[vHead, iHead]]
     | getVtoI g == NoVtoIMove && getAH g == OblAffixHop = []
-    | otherwise = parseLeaves sonHier dict g [iHead]
+    | otherwise = [[iHead]]
   vSpecOut
     | True      = []
-    | otherwise = parsePhrase sonHier dict g vSpec
+    | otherwise = parsePhrase g vSpec
   vHeadOut
     | getVtoI g == OblVtoIMove = []
-    | (getVtoI g == NoVtoIMove && getAH g == OblAffixHop && leafT iHead == LeafAffix) && (getItoC g /= OblItoCMove || cHead /= LeafNull Ques) = parseLeaves sonHier dict g [vHead, iHead]
-    | otherwise = parseLeaves sonHier dict g [vHead]
+    | (getVtoI g == NoVtoIMove && getAH g == OblAffixHop) && (getItoC g /= OblItoCMove || cHead /= LeafNull Ques) = [[vHead, iHead]]
+    | otherwise = [[vHead]]
   vCompOut
     | getWHM g == OblWHMove && phraseIl vComp == Ques = []
-    | otherwise = parsePhrase sonHier dict g vComp
+    | otherwise = parsePhrase g vComp
 
-parsePhrase sonHier dict g (XP lc Ques spec bar)
-  | getSI g == SubInitial = parsePhrase sonHier dict g spec ++ parseBar sonHier dict g bar
-  | otherwise             = parseBar sonHier dict g bar ++ parsePhrase sonHier dict g spec
-parsePhrase sonHier dict g (XP lc _ spec bar)
-  | getSI g == SubInitial = parsePhrase sonHier dict g spec ++ parseBar sonHier dict g bar
-  | otherwise             = parseBar sonHier dict g bar ++ parsePhrase sonHier dict g spec
-parsePhrase sonHier dict g XPNull = []
+parsePhrase g (XP lc Ques spec bar)
+  | getSI g == SubInitial = parsePhrase g spec ++ parseBar g bar
+  | otherwise             = parseBar g bar ++ parsePhrase g spec
+parsePhrase g (XP lc _ spec bar)
+  | getSI g == SubInitial = parsePhrase g spec ++ parseBar g bar
+  | otherwise             = parseBar g bar ++ parsePhrase g spec
+parsePhrase g XPNull = []
 
-parseBar :: [[Phoneme]] -> [(String, Word)] -> Grammar -> Bar -> [String]
-parseBar sonHier dict g (XBarA lc _ adjunct bar) = parsePhrase sonHier dict g adjunct ++ parseBar sonHier dict g bar
-parseBar sonHier dict g (XBarC lc _ leaf comp)
-  | (lc /= Verb && getCI g == CompFinal) || (lc == Verb && getOF g == ObjFinal) = parseLeaves sonHier dict g [leaf] ++ parsePhrase sonHier dict g comp
-  | otherwise            = parsePhrase sonHier dict g comp ++ parseLeaves sonHier dict g [leaf]
-
-parseLeaves :: [[Phoneme]] -> [(String, Word)] -> Grammar -> [Leaf] -> [String]
-parseLeaves _ _ _ [] = [""]
-parseLeaves sonHier dict g leaves
-  | leafisNull $ last leaves         = parseLeaves sonHier dict g (init leaves)
-  | length leaves == 1 && leafT (last leaves) == LeafAffix = ["<do>" ++ translate sonHier dict (leafStr $ last leaves)]
-  | leafT (last leaves) == LeafAffix = init (parseLeaves sonHier dict g (init leaves)) ++ [last (parseLeaves sonHier dict g (init leaves)) ++  translate sonHier dict (leafStr $ last leaves)]
-  | otherwise                        = parseLeaves sonHier dict g (init leaves) ++ [translate sonHier dict (leafStr $ last leaves)]
-
-leafisNull :: Leaf -> Bool
-leafisNull LeafNull{} = True
-leafisNull _ = False
+parseBar :: Grammar -> Bar -> [[Leaf]]
+parseBar g (XBarA lc _ adjunct bar) = parsePhrase g adjunct ++ parseBar g bar
+parseBar g (XBarC lc _ leaf comp)
+  | (lc /= Verb && getCI g == CompFinal) || (lc == Verb && getOF g == ObjFinal) = [leaf] : parsePhrase g comp
+  | otherwise            = parsePhrase g comp ++ [[leaf]]

@@ -1,0 +1,6 @@
+Grammar
+Grammar {getSI = SubInitial, getOF = ObjFinal, getCI = CompInitial, getVtoI = NoVtoIMove, getAH = NoAffixHop, getNS = NoNullSub, getObT = OblTopic, getNT = OptNullTop, getTM = NoTopMark, getItoC = NoItoCMove, getWHM = NoWHMove, getPP = PiedPipe, getQI = OblQuesInv}
+dznooy <UNK> mooawooiyooil giyrmah <UNK> habyi himghrahnyooa ooaraiooar <UNK> mooarooahlaynoo <UNK>
+/d͡zɲɯɻ̠/ <UNK> /mɯɑ̯.ɰɯy̯.ɻ̠ɯy̯ʎ̟̝/ /ɟyɻ̠β̞.mɑʕ̞/ <UNK> /ɣɶ.bɻ̠y/ /ɟ̟ym.ɟ͡ʝɹɶɦ̞.ɲ̟ɻ̠ɯɑ̯/ /ɯɶ̯.rɶy̯.ɯɑ̯ʁ̞/ <UNK> /mɯɑ̯.rɯɑ̯ʢ.ɢ͡ʟ̝̠ɶj.ɲɯ/ /ʟ̝ɯy̯.ɻ̠ɶy̯β̞/<UNK>
+table the at man the sit ugly woman the on <do>ed
+"the man at the table sited on the ugly woman"

@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-02 18:56:35.765084 UTC
+2016-11-04 09:25:11.781406 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:InflectionGen 7103
-  interface hash: 73441f2ba28d9363047e3c97943b04d0
-  ABI hash: 01fbcfdeb4bee1ffed290d04b48ffb84
-  export-list hash: 048d5473e30e89d79e5837b0f0227111
+  interface hash: 2d1fbc1e9a0dc2fb36faba207d36f952
+  ABI hash: c1cb37f0c31cecd6d37693176b3a15d4
+  export-list hash: 03d05fe273a0eda1756451cde32687cd
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -14,8 +14,8 @@ interface conla_1eA9qWUPH9nBowcXqqaV8r:InflectionGen 7103
 exports:
   InflectionGen.loadInputData
   InflectionGen.makeInflectionSystem
-module dependencies: InflectionData OtherData PhonemeData
-                     PhonemeGen PhonotacticsGen
+module dependencies: GrammarData InflectionData OtherData
+                     PhonemeData PhonemeGen PhonotacticsGen
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
                       array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
@@ -94,46 +94,48 @@ import  -/  base-4.8.2.0:GHC.Read b423b4506a014855edbd329b567629f3
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
-import  -/  InflectionData 620c60c71e5f79e12e441f4d14e494c5
-  exports: a8d83707be65f59bd55316dc57d3e65e
-  Adj 5b78864012fb3c715e34bf1409a6359e
-  Adv 969403f22096d34afdff314504b24e53
-  Animacy 169ebe44828e15997da16a086b9b84e2
-  Aspect 56bab6fdafd7cafcd92c9755a5ea2032
-  Case 15a5612a324b972acf0e741e2bc6608f
-  Clusivity 3a4205128915d100820ff6257606640f
-  Definiteness be54ced0f7a9e9dbb19f9061d7dd5391
-  Evidentiality 8d67950b7bc98730e60ddd07089da962
-  Gender dc38f7a4ded9cc67467b5a9dd769fcf5
-  Honorific 9289039192416879bb2fe055999c7335
-  InflectionSystem 76601cdadca7cfcc77c35b2723b580c8
-  InflectionSystem 6f37316ad5bc95a52627782348e28168
-  LexicalCategory 6d2c52c387dc93c2abb2c47833bbbfda
-  Manifest 5146f5d6f9a5a6842fdc010bcb896b8c
-  Manifest aa0a164e1f050975da3ca6f9d6f7585a
-  ManifestType 652642acd6e91546346062d0d1df8c9d
-  Mood 8b8666475412890bd4ef31f87825a04b
-  NoManifest d414366a5625b3f850476770ece1dbbd
-  Number 62540c56c8b62df1e5a7c671cd89e35c
-  Obj 2a78d7bac81e55011139bca2534ffa2a
-  Person 39fbbcfcc14da7372e84446a55a88f39
-  Polarity d4f587cb2d189871de567f0749c484ab
-  PostParticle 19889faa1d6fede0131ac095348a2328
-  PreParticle e615185a77594242c83b20f952735e46
-  Prefix 18fe5402bce1ac5100d5f3fd8fbc8fa2
-  Prep b12be256f346a82d2c3d0c46f102ffda
-  Specificity 43240a2f26d982c55d81a47318306fc4
-  Sub 16453f57c373d677e9bce32ffcea9cb6
-  Suffix c87962a93411fcd5393a12dcefd49477
-  Tense 1a8c67d1f01afbbcfb22733cde707ca9
-  Topic e1b6224fcbcc327712deb0c145c7f7ba
-  Transitivity 9762685d7cb7374500147f2897d84980
-  Verb cc72c75a8aa8fee8ac0d31e777152f5b
-  Voice 497bb7be1c19f7f308e0958b43035be4
-  Volition 3bc4914e230103d822b910efe91e72fb
+import  -/  GrammarData b86371ccb48390730f6498310ddac76f
+  exports: d1002ba5737e19703411cb57857cf209
+  Adj a3bce51fd2fd7e4dc0d2574150a46bdd
+  Adpo e1b568ccc2675d1bef53ee8c3ef42f36
+  Adv 4a64e83d00d2a5bdf1bc31836d30e3ed
+  LexCat b95e114b0b6d51b5dd936a539d4fcd51
+  Obj b4f9889d136903923d8bc809466b9633
+  Subj 3cfe6619fad03b0ad0047434a3ce1fb3
+  Verb f06c4b09592b8a5d74db07316a39ae60
+import  -/  InflectionData 072303e933f9eb87493ca2db6553722b
+  exports: 11ce4827ce97282915e6b63398631625
+  Animacy cedf9e666cdb6656f2a2a96d2d3bd589
+  Aspect 6cd9c63aad1a4e1ec43732010ec1ea5c
+  Case fe9f4ca1606b5f19f2230e1deea3d046
+  Clusivity ec2f2b20d2b1cf035f6ca129e5552311
+  Definiteness b37f400b256ab5a9a84f13e148a3d2d5
+  Evidentiality 72f49e3daffb56d4bf46854dab7a01ee
+  Gender bea847055a51c2d8a5a4f43d44b03253
+  Honorific b998d88ddf707e2096355bc29dc9a0f5
+  InflectionSystem 5d28fe08f7d58928afc8935ed2f1ef8a
+  InflectionSystem 1e3fe4826a39142c5de940012234f2c4
+  Manifest 56c295ecee861c84924b0ef3cc95c44d
+  Manifest 585905e8fe5aabe454e8c831c9719ba2
+  ManifestType d4d7fe6a7722743af73d0848be830e04
+  Mood 89f52f47d857baf59a835f155022c894
+  NoManifest e94596ffd7352e0e0c9de30b8b5e034b
+  Number d524767ed256fd8fb6411842c02ad522
+  Person 87552d4bd640161dc918422e1f989f36
+  Polarity b165a208777adb6384e8aa49b7841cdc
+  PostParticle 051ff9038fce71d768ebdb0aef6d2dd4
+  PreParticle baa2d75778bba4584f1d021ffebf5a10
+  Prefix 631fddd0577e039670e847f15dc395e5
+  Specificity 43df515dcdadd0ea11740b17c269f784
+  Suffix 9f592c7bd6fb2cf679abca7c05f8cc1a
+  Tense 004b6b4805c5a693db94c0d4a7a3616e
+  Topic 324933ffc8ee2e478eb9c9c4b97f7e1c
+  Transitivity aa30e8d12dfa43bab7ebbfaa9a7bbce4
+  Voice 523b90b12350f06385d4da5905742868
+  Volition 79163f2537538d5ab28ad5d835b8900a
 import  -/  OtherData ef85631315e8bb1c90bd776e9bb7751c
   exports: f505dec72f229982fb85e59b44566731
-import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
+import  -/  PhonemeData 2bc4225bb63ccf0a16ac10bab410e892
   exports: 8834c83badd5837275d7ec1bbd2f424a
 import  -/  PhonemeGen 44431a2b9295a7efdbb24a370fea6130
   exports: ac2fac7549593bb4b2279f37f817f5be
@@ -145,7 +147,7 @@ import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random.Distribution.Uniform ce34c1edd0e59e868fcf9e0bf914c4ef
 import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
-26da94be4f11ee8b940b24a98aa2aa7b
+26e4e3d4a6767dce4c4c24739d8a117b
   data InputData
     = InputData {inputGender :: [[InflectionData.Gender]],
                  inputAnimacy :: [[InflectionData.Animacy]],
@@ -166,7 +168,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                  inputTransitivity :: [[InflectionData.Transitivity]],
                  inputVolition :: [[InflectionData.Volition]]}
     Promotable
-7d33f1c43dbb6b909f7c37f8055176f4
+f2efde4368f29cd299bccf4550cabaae
   inputAnimacy ::
     InflectionGen.InputData -> [[InflectionData.Animacy]]
   RecSel InflectionGen.InputData
@@ -176,7 +178,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds2 }) -}
-7689514854246ee65245fd0ce56ae9db
+1ab4ff34a0695b9ab0ef7ee582a86d7b
   inputAspect :: InflectionGen.InputData -> [[InflectionData.Aspect]]
   RecSel InflectionGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -185,7 +187,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds13 }) -}
-e781654c3f214c201838ae014a3154a9
+b4ed061e785a0321af4e8af120267d44
   inputCase :: InflectionGen.InputData -> [[InflectionData.Case]]
   RecSel InflectionGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -194,7 +196,7 @@ e781654c3f214c201838ae014a3154a9
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds3 }) -}
-dc7a74b72e7d64cd254ce442605d83d5
+b457dd3e8ada501cc6558cda5286e266
   inputClusivity ::
     InflectionGen.InputData -> [[InflectionData.Clusivity]]
   RecSel InflectionGen.InputData
@@ -204,7 +206,7 @@ dc7a74b72e7d64cd254ce442605d83d5
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds9 }) -}
-1e1e8c333fcc46f390517918d4d39c10
+a217f8a89ddf6f27e725cb8352510200
   inputDefiniteness ::
     InflectionGen.InputData -> [[InflectionData.Definiteness]]
   RecSel InflectionGen.InputData
@@ -214,7 +216,7 @@ dc7a74b72e7d64cd254ce442605d83d5
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds5 }) -}
-a88de50f95fe035cfc2b1da4965e54b7
+0621343571a0f19207503d2b6fb830c2
   inputEvidentiality ::
     InflectionGen.InputData -> [[InflectionData.Evidentiality]]
   RecSel InflectionGen.InputData
@@ -224,7 +226,7 @@ a88de50f95fe035cfc2b1da4965e54b7
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds16 }) -}
-defad3028d019dc45704d167fc962f1f
+88349784f0d8b4303d8a021b93ef0d1f
   inputGender :: InflectionGen.InputData -> [[InflectionData.Gender]]
   RecSel InflectionGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -233,7 +235,7 @@ defad3028d019dc45704d167fc962f1f
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds1 }) -}
-e0afe6ff4ee6d374f6d6f757697a8dc2
+8ae696620ee69ccad1789f6fccd49d2c
   inputHonorific ::
     InflectionGen.InputData -> [[InflectionData.Honorific]]
   RecSel InflectionGen.InputData
@@ -243,7 +245,7 @@ e0afe6ff4ee6d374f6d6f757697a8dc2
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds10 }) -}
-a74e39f8abb978767f3ef5d9e56cb0e8
+0c64f6a3165b5e73836499779a9646ff
   inputMood :: InflectionGen.InputData -> [[InflectionData.Mood]]
   RecSel InflectionGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -252,7 +254,7 @@ a74e39f8abb978767f3ef5d9e56cb0e8
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds14 }) -}
-249d6467bc0f277e9accbf1747b37549
+2642a59e196a5c2fe8caadc0660bb5c8
   inputNumber :: InflectionGen.InputData -> [[InflectionData.Number]]
   RecSel InflectionGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -261,7 +263,7 @@ a74e39f8abb978767f3ef5d9e56cb0e8
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds4 }) -}
-ba640b88dc61917d4ae9ca231a332404
+d63f8601ed56295e89364e0f0e717f5f
   inputPerson :: InflectionGen.InputData -> [[InflectionData.Person]]
   RecSel InflectionGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -270,7 +272,7 @@ ba640b88dc61917d4ae9ca231a332404
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds8 }) -}
-26ba203b0c84c7dd27eadf5fb201ebac
+afc6115c54839ca98efaf91c4f4b2a6c
   inputPolarity ::
     InflectionGen.InputData -> [[InflectionData.Polarity]]
   RecSel InflectionGen.InputData
@@ -280,7 +282,7 @@ ba640b88dc61917d4ae9ca231a332404
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds11 }) -}
-120157218554b856b1381a83e8060129
+f0e4cde1dc0ad7f9d0537c8d45aa1e26
   inputSpecificity ::
     InflectionGen.InputData -> [[InflectionData.Specificity]]
   RecSel InflectionGen.InputData
@@ -290,7 +292,7 @@ ba640b88dc61917d4ae9ca231a332404
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds6 }) -}
-7933c4eb2dcfcafe2d2c948c54ea7d3b
+26a2bf8437d71947e4383f21463f3533
   inputTense :: InflectionGen.InputData -> [[InflectionData.Tense]]
   RecSel InflectionGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -299,7 +301,7 @@ ba640b88dc61917d4ae9ca231a332404
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds12 }) -}
-13c714503e9a6eb0c1bf2cfdc46bc01e
+120ac90bb59333ec62e159c77e79b70e
   inputTopic :: InflectionGen.InputData -> [[InflectionData.Topic]]
   RecSel InflectionGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -308,7 +310,7 @@ ba640b88dc61917d4ae9ca231a332404
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds7 }) -}
-0ca43be8c5cd8bbc53a0a10d68416fde
+1a1c9e80c2f48ff1ecca4588a1cf46d4
   inputTransitivity ::
     InflectionGen.InputData -> [[InflectionData.Transitivity]]
   RecSel InflectionGen.InputData
@@ -318,7 +320,7 @@ ba640b88dc61917d4ae9ca231a332404
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds17 }) -}
-f2f0fcef88b172d1489e6d04e4a61812
+34d92d1ae715cbc6e60679932711a112
   inputVoice :: InflectionGen.InputData -> [[InflectionData.Voice]]
   RecSel InflectionGen.InputData
   {- Arity: 1, HasNoCafRefs,
@@ -327,7 +329,7 @@ f2f0fcef88b172d1489e6d04e4a61812
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds15 }) -}
-6b76420d8c73ae161d9c1533ae08a9a3
+67414deffba948a956f790686bcc4fff
   inputVolition ::
     InflectionGen.InputData -> [[InflectionData.Volition]]
   RecSel InflectionGen.InputData
@@ -337,25 +339,25 @@ f2f0fcef88b172d1489e6d04e4a61812
                 (\ ds :: InflectionGen.InputData ->
                  case ds of wild { InflectionGen.InputData ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
                  ds18 }) -}
-78e409af60168a8378c08d57fd41b27a
+5331b38cc5d1d0cf43ca6df8990c2e62
   loadInputData :: GHC.Types.IO InflectionGen.InputData
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 InflectionGen.loadInputData1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <InflectionGen.InputData>_R)) -}
-f86daaab6453234f368bef5f61c5ee2d
+53b15ee60ff5678a7ac788cb4b7aac48
   loadInputData1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           InflectionGen.InputData #)
   {- Arity: 1, Strictness: <L,U> -}
-4f5816391dc1c8069d2eb3f0e611cd0f
+686723eea20b07a67fb8e938e27c66d3
   makeInflectionSystem ::
     InflectionGen.InputData
     -> Data.RVar.RVar
          (InflectionData.InflectionSystem,
-          [(InflectionData.LexicalCategory,
+          [(GrammarData.LexCat,
             GHC.Types.Int,
             GHC.Types.Int,
             GHC.Types.Int,
