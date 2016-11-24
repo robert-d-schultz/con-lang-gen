@@ -16,20 +16,32 @@ import WordGen
 import GrammarData
 
 -- Inflections for each lexical category
-makeLexicalInflection :: [Phoneme] -> [[Phoneme]] -> InflectionSystem -> (LexCat, Int, Int) -> RVar (LexCat, [ManifestSystem], [ManifestSystem])
-makeLexicalInflection vows sonHier inflSys (lc, part, aff) = (,,) lc <$> makeParticleSystems lc part vows sonHier inflSys <*> makeAffixSystems lc aff vows sonHier inflSys
+makeLexicalInflection :: [Phoneme] -> [[Phoneme]] -> InflectionSystem -> (LexCat, Int, Int, Int) -> RVar (LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])
+makeLexicalInflection vows sonHier inflSys (lc, part, pref, suff) = (,,,) lc <$> makeParticleSystems lc part vows sonHier inflSys <*> makePrefixSystems lc pref vows sonHier inflSys <*> makeSuffixSystems lc suff vows sonHier inflSys
 
--- Affixs
-makeAffixSystems :: LexCat -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar [ManifestSystem]
-makeAffixSystems lc 0 vows sonHier gramSys = return []
-makeAffixSystems lc i vows sonHier gramSys = (++) <$> makeAffixSystems lc (i-1) vows sonHier gramSys <*> ((:[]) <$> makeAffixSystem lc i vows sonHier gramSys)
+-- Prefixs
+makePrefixSystems :: LexCat -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar [ManifestSystem]
+makePrefixSystems lc 0 vows sonHier gramSys = return []
+makePrefixSystems lc i vows sonHier gramSys = (++) <$> makePrefixSystems lc (i-1) vows sonHier gramSys <*> ((:[]) <$> makePrefixSystem lc i vows sonHier gramSys)
 
-makeAffixSystem :: LexCat -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar ManifestSystem
-makeAffixSystem lc i vows sonHier gramSys = do
-  let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc Affix i
+makePrefixSystem :: LexCat -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar ManifestSystem
+makePrefixSystem lc i vows sonHier gramSys = do
+  let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc Prefix i
   let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
   morphs <- replicateM (length combos) (makeMorpheme vows sonHier ((0, 1), (1, 2), (0, 0), (0, 0)))
-  return $ ManifestSystem lc Affix (zip morphs combos)
+  return $ ManifestSystem lc Prefix (zip morphs combos)
+
+-- Suffixs
+makeSuffixSystems :: LexCat -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar [ManifestSystem]
+makeSuffixSystems lc 0 vows sonHier gramSys = return []
+makeSuffixSystems lc i vows sonHier gramSys = (++) <$> makeSuffixSystems lc (i-1) vows sonHier gramSys <*> ((:[]) <$> makeSuffixSystem lc i vows sonHier gramSys)
+
+makeSuffixSystem :: LexCat -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar ManifestSystem
+makeSuffixSystem lc i vows sonHier gramSys = do
+  let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc Suffix i
+  let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
+  morphs <- replicateM (length combos) (makeMorpheme vows sonHier ((0, 1), (1, 2), (0, 0), (0, 0)))
+  return $ ManifestSystem lc Suffix (zip morphs combos)
 
 -- Particles
 makeParticleSystems :: LexCat -> Int -> [Phoneme] -> [[Phoneme]] -> InflectionSystem -> RVar [ManifestSystem]

@@ -1,5 +1,6 @@
 module WordGen
 ( loadMeaningData
+, MeaningData(..)
 , makeDictionary
 , makeMorpheme
 ) where

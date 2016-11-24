@@ -58,10 +58,10 @@ parseSyllable (Syllable onset nucleus coda) = concatMap parsePhoneme onset ++ pa
 
 -- Parse Phone to string
 parsePhoneme :: Phoneme -> String
-parsePhoneme Blank = []
+parsePhoneme Blank = ""
 parsePhoneme (Consonant _ _ _ ipa) = ipa
-parsePhoneme (Vowel _ _ _ _ ipa) = ipa
-parsePhoneme (Diphthong _ _ _ _ _ _ _ ipa) = ipa
+parsePhoneme (Vowel _ _ _ _ _ ipa) = ipa
+parsePhoneme (Diphthong _ _ _ _ _ _ _ _ ipa) = ipa
 
 -- Parse the consonant inventory into html table
 parseConPhonemeInventory :: [Place] -> [Manner] -> [Phonation] -> [Phoneme] -> String
@@ -136,7 +136,7 @@ parsePhonation h
 
 
 -- Parse the vowel inventory into html table
-parseVowPhonemeInventory :: [Height] -> [Backness] -> [Roundedness] -> [Length] -> [Phoneme]-> String
+parseVowPhonemeInventory :: [Height] -> [Backness] -> [Roundedness] -> [Length] -> [Phoneme] -> String
 parseVowPhonemeInventory heights backs rounds lengths vows = "<br>\n<table border=1>" ++ tHeader ++ pLabels ++ clusters ++ "\n</table>\n" where
   tHeader = "\n\t<tr>\n\t\t<th colspan=\"" ++ show (length backs * length rounds + 1) ++ "\">Vowel Inventory</th>\n\t</tr>"
   pLabels = "\n\t<tr>\n\t\t<th></th>\n\t\t<th colspan=\"" ++ show (length rounds) ++ "\">" ++ intercalate ("</th>\n\t\t<th colspan=\"" ++ show (length rounds) ++ "\">") (map parseBackness backs) ++ "</th>\n\t</tr>"
@@ -157,7 +157,7 @@ parseVowPhonemeInventory heights backs rounds lengths vows = "<br>\n<table borde
 
   getIPASymbol :: [Phoneme] -> Length -> Height -> Backness -> Roundedness -> String
   getIPASymbol vows len height back roundness = output where
-    filt = filter (\(Vowel h b r l s) -> h == height && b == back && r == roundness && l == len) vows
+    filt = filter (\(Vowel h b r l _ s) -> h == height && b == back && r == roundness && l == len) vows
     output
       | not.null $ filt = vsymbol $ head filt
       | otherwise = ""
@@ -192,6 +192,23 @@ parseLength l
   | l == NORMAL = ""
   | l == LONG   = "Long"
 
+parseTone :: Tone -> String
+parseTone t
+  | t == NONET   = ""
+  | t == TOPT    = "Top"
+  | t == HIGHT   = "High"
+  | t == MIDT    = "Mid"
+  | t == LOWT    = "Low"
+  | t == BOTTOMT = "Bottom"
+  | t == FALLT   = "Falling"
+  | t == HFALLT  = "High falling"
+  | t == LFALLT  = "Low falling"
+  | t == RISET   = "Rising"
+  | t == HRISET  = "High rising"
+  | t == LRISET  = "Low rising"
+  | t == DIPT    = "Dipping"
+  | t == PEAKT   = "Peaking"
+
 -- Parse the diphthong inventory, should be a table in the final
 parseDiphPhonemeInventory :: [Phoneme] -> String
 parseDiphPhonemeInventory diphs = "<br>\nDiphthongs: /" ++ intercalate "/, /" (init fList) ++ "/, and /" ++ last fList ++ "/\n" where
@@ -205,6 +222,8 @@ parseSonHier vows cons = "\n\nSonority hierarchy: " ++ "\n/" ++ cListv ++ "/\n/"
   fListc = map (map parsePhoneme) cons
   cListc = map (intercalate "/, /") fListc
 
+
+-- Parse inflection system (per lex cat)
 parseLCInflection :: InflectionSystem -> String
 parseLCInflection inflSys = concatMap (parseInflectionSystem inflSys) [Subj, Obj, Adj, Adv, Adpo, Verb]
 
@@ -212,8 +231,8 @@ parseLCInflection inflSys = concatMap (parseInflectionSystem inflSys) [Subj, Obj
 parseInflectionSystem :: InflectionSystem -> LexCat -> String
 parseInflectionSystem inflSys lc = output where
   output
-    | null (particles ++ affixes) = "<br>\nNo grammatical categories manifest for " ++ parseLexCat lc ++ "s.\n"
-    | otherwise = "<br>\nGrammatical categories manifest for " ++ parseLexCat lc ++ "s in the following ways:\n<ul>" ++ particles ++ affixes ++ "</ul>\n"
+    | null (particles ++ prefixes ++ suffixes) = "<br>\nNo grammatical categories manifest for " ++ parseLexCat lc ++ "s.\n"
+    | otherwise = "<br>\nGrammatical categories manifest for " ++ parseLexCat lc ++ "s in the following ways:\n<ul>" ++ particles ++ prefixes ++ suffixes ++ "</ul>\n"
 
 -- parse particles
   filt1 = filter (not.null) (fooBar (isParticle lc) inflSys)
@@ -221,11 +240,17 @@ parseInflectionSystem inflSys lc = output where
     | null filt1       = ""
     | otherwise        = "\n\t<li>With particles:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt1 ++ "</li>\n\t\t</ul>"
 
-  -- parse affixes
-  filt4 = filter (not.null) (fooBar (isAffix lc) inflSys)
-  affixes
-    | null filt4      = ""
-    | otherwise       = "\n\t<li>With affixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt4 ++ "</li>\n\t\t</ul>"
+  -- parse prefixes
+  filt2 = filter (not.null) (fooBar (isPrefix lc) inflSys)
+  prefixes
+    | null filt2      = ""
+    | otherwise       = "\n\t<li>With prefixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt2 ++ "</li>\n\t\t</ul>"
+
+  -- parse suffixes
+  filt3 = filter (not.null) (fooBar (isSuffix lc) inflSys)
+  suffixes
+    | null filt3      = ""
+    | otherwise       = "\n\t<li>With suffixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt3 ++ "</li>\n\t\t</ul>"
 
   fooBar :: (forall a . Manifest a -> Bool) -> InflectionSystem -> [String]
   fooBar b inflSys = [gen, ani, cas, num, def, spe, top, per, hon, pol, ten, asp, moo, voi, evi, tra, vol] where
@@ -247,13 +272,21 @@ parseInflectionSystem inflSys lc = output where
     tra | b (traSys inflSys) = parseTransitivities $ traSys inflSys  | otherwise = ""
     vol | b (volSys inflSys) = parseVolitions $ volSys inflSys       | otherwise = ""
 
-  isAffix :: LexCat -> Manifest a -> Bool
-  isAffix _ NoManifest = False
-  isAffix lc (Manifest t _) = out where
+  isPrefix :: LexCat -> Manifest a -> Bool
+  isPrefix _ NoManifest = False
+  isPrefix lc (Manifest t _) = out where
     out
       | null filt = False
       | otherwise = True
-    filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Affix) t
+    filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Prefix) t
+
+  isSuffix :: LexCat -> Manifest a -> Bool
+  isSuffix _ NoManifest = False
+  isSuffix lc (Manifest t _) = out where
+    out
+      | null filt = False
+      | otherwise = True
+    filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Suffix) t
 
   isParticle :: LexCat -> Manifest a -> Bool
   isParticle _ NoManifest = False
@@ -263,10 +296,11 @@ parseInflectionSystem inflSys lc = output where
       | otherwise = True
     filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Particle) t
 
-parseLexicalSystems :: InflectionSystem -> (LexCat, [ManifestSystem], [ManifestSystem]) -> String
-parseLexicalSystems inflSys (lc, parts, affs) = "<br>\n" ++ parseLexCat lc
+parseLexicalSystems :: InflectionSystem -> (LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem]) -> String
+parseLexicalSystems inflSys (lc, parts, prefs, suffs) = "<br>\n" ++ parseLexCat lc
                                                          ++ parseManifestSystems parts (length parts) inflSys
-                                                         ++ parseManifestSystems affs (length affs) inflSys
+                                                         ++ parseManifestSystems prefs (length prefs) inflSys
+                                                         ++ parseManifestSystems suffs (length suffs) inflSys
 
 parseManifestSystems :: [ManifestSystem] -> Int -> InflectionSystem -> String
 parseManifestSystems expSyss 0 gramSys = ""
@@ -288,7 +322,8 @@ parseManifestSystem manSys gens anis cass nums defs spes tops pers hons pols ten
 
   parseSystemType :: ManifestSystem -> String
   parseSystemType (ManifestSystem _ Particle _) = "Particle"
-  parseSystemType (ManifestSystem _ Affix _)    = "Affix"
+  parseSystemType (ManifestSystem _ Prefix _)    = "Prefix"
+  parseSystemType (ManifestSystem _ Suffix _)    = "Suffix"
 
   -- header
   horLabels = [map parseCase2 cass, map parseGender2 gens, map parseAnimacy2 anis, map parseNumber2 nums, map parseHonorific2 hons, map parseTransitivity2 tras, map parseEvidentiality2 evis, map parseVoice2 vois, map parseVolition2 vols]
@@ -388,7 +423,12 @@ parseManifestSystem manSys gens anis cass nums defs spes tops pers hons pols ten
     output
       | not.null $ filt = parseMorpheme (fst $ head filt)
       | otherwise = ""
-  getMorpheme (ManifestSystem _ Affix combos) ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = output where
+  getMorpheme (ManifestSystem _ Prefix combos) ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = output where
+    filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
+    output
+      | not.null $ filt = parseMorpheme (fst $ head filt) ++ "–"
+      | otherwise = ""
+  getMorpheme (ManifestSystem _ Suffix combos) ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = output where
     filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
     output
       | not.null $ filt = "–" ++ parseMorpheme (fst $ head filt)
@@ -562,15 +602,18 @@ parsePolarity pol
 
 parseTense :: Tense -> String
 parseTense ten
-  | ten == PST  = "Past"
-  | ten == REM  = "Remote past"
-  | ten == REC  = "Recent past"
-  | ten == NPST = "Non-past"
-  | ten == PRS  = "Present"
-  | ten == NFUT = "Non-future"
-  | ten == FUT  = "Future"
-  | ten == IMMF = "Immediate future"
-  | ten == REMF = "Remote future"
+  | ten == PST  = "Simple past"
+  | ten == PRS  = "Simple present"
+  | ten == FUT  = "Simple future"
+  | ten == APRS = "Anterior present"
+  | ten == APST = "Anterior past"
+  | ten `elem` [AFUT, AFUT1, AFUT2, AFUT3] = "Anterior future"
+  | ten == PPRS = "Posterior present"
+  | ten == PFUT = "Posterior future"
+  | ten `elem` [PPST, PPST1, PPST2, PPST3] = "Posterior past"
+  | ten == PSTPER  = "Past perfect"
+  | ten == PRSPER  = "Present perfect"
+  | ten == FUTPER  = "Future perfect"
 
 parseAspect :: Aspect -> String
 parseAspect asp

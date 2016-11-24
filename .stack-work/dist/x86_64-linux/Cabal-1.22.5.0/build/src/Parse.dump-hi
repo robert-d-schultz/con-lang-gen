@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-04 09:25:14.763216 UTC
+2016-11-10 18:42:14.187488 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Parse 7103
-  interface hash: 3b79293ab7ca7359f8b7999ccbcaf47b
-  ABI hash: 19567af977eedb4dccb8eec2233b3469
-  export-list hash: dcc6fd75f8e0ce635435ff482f3e4104
+  interface hash: 90f754e2614b356c66f2cb730d92a945
+  ABI hash: 94e789a967663383e8ceb212ebdc8a53
+  export-list hash: 772cd31f1c9f5253ac6fdd7b5d2cd9ed
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 9b5f0a9c5ab937702e8736ae3b06ccc6
   sig of: Nothing
@@ -99,275 +99,306 @@ import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  GrammarData b86371ccb48390730f6498310ddac76f
-  exports: d1002ba5737e19703411cb57857cf209
-  Adj a3bce51fd2fd7e4dc0d2574150a46bdd
-  Adpo e1b568ccc2675d1bef53ee8c3ef42f36
-  Adv 4a64e83d00d2a5bdf1bc31836d30e3ed
-  LexCat b95e114b0b6d51b5dd936a539d4fcd51
-  Noun 29b0c18b13a4547db43d1c3e1971f3f5
-  Obj b4f9889d136903923d8bc809466b9633
-  Subj 3cfe6619fad03b0ad0047434a3ce1fb3
-  Verb f06c4b09592b8a5d74db07316a39ae60
-import  -/  InflectionData 072303e933f9eb87493ca2db6553722b
-  exports: 11ce4827ce97282915e6b63398631625
-  ABS cf7e205ad31c66dcf7e76a307f143817
-  ABS2 e209ff70164fe00e9071e82a4581b73d
-  ABS3 02d05ed1dc5a14ea1383b0db41526082
-  ACC d5bf44dd777e3e1aaa2e24e1f74644b1
-  ACTIVE b098f40dc5cb2b974bf70675d2929b28
-  ADP ee72810d82108de212e916ed8328d470
-  AFF 5c93dba210b224e8aefc607c318384f9
-  AN 55ac4666ecab9991248fd0e8b72368fb
-  ASS ba3f1c5d20f6aa80aac80ab539b862f6
-  AUD a9351ce2d5c8ece924660c13a88932dc
-  Animacy cedf9e666cdb6656f2a2a96d2d3bd589
-  Aspect 6cd9c63aad1a4e1ec43732010ec1ea5c
-  COM 7b77890081d480d6d8786e36167cb365
-  COND 9b859c5d02aff5dfafe25d8a5f9d7ecf
-  Case fe9f4ca1606b5f19f2230e1deea3d046
-  Clusivity ec2f2b20d2b1cf035f6ca129e5552311
-  DEF fa20032ba8ddd27be310ad02915bbf41
-  DEO e1b24a1abd72e20fc18cd7e8eedefa00
-  DIR ebd6380a1f832d91e7fc9effef6aaa5e
-  DITRANS e3a0d89157f2d83f99a5367a07516463
-  DRT1 d3820b09d72a24574e423092b2958b2f
-  DRT2 237a20f414b7904adbb4a90d1751bc12
-  DTR 5a1ccd3487d0118c69e040ef7d619991
-  DU 8a6bab5495b3e17f7f6a965978773c01
-  Definiteness b37f400b256ab5a9a84f13e148a3d2d5
-  EPIS bae1229c4b5c344d63792dd0674284ce
-  ERG b9800fbde32d2bd14b25cfa8e1c71c14
-  ERG2 83be53b4a7dbcc60a077e42a4bb6cd99
-  EXCL 0d08bb8de53071431e5d8e3d98407e1b
-  EXP 20a93640dd966f6cf8186d1eb7e206de
-  Evidentiality 72f49e3daffb56d4bf46854dab7a01ee
-  F 82e950b67779798796f2baa7b1a854c0
-  FAM cbb341199367977a58524b01131234be
-  FIRST 315b89a5b45a037fa5a0c73dd7e0950d
-  FORM c66779ee2778b9fde48274295ef73e51
-  FUT 4f694bc9c605b7c9eb78a9bfe72435d3
-  Gender bea847055a51c2d8a5a4f43d44b03253
-  HSY f15d7292856604ec1d0745cf2d098c05
-  HUM 6be55d3fe8918b427319929a28d7b23f
-  Honorific b998d88ddf707e2096355bc29dc9a0f5
-  IMMF d0cfbac81e4dcac4be8b27e3141a025a
-  IMP 4df70152cbcf6bb12ad5d06cc3f2e476
-  INAN b50d9f46a5b64892f5fecea8b12ad83d
-  INCL d3593e2ec5514a955f3aef5cccd454e3
-  IND 064c2ab36734294bf8185bae154966a1
-  INDF 52a6a91481d72b281ae51ae3dca87aef
-  INDIR b37439508a01505b1b92831ce41c34dd
-  INFER e9a98d7f49bce40a2eb49edca0fea3f2
-  INTR 91f32e667433911fef0f5d8ad78c239d
-  IPFV 65243100e56e27fcadd15649fd07ca64
-  IRR 647b7bb644f7c105054a0893323c452c
-  InflectionSystem 1e3fe4826a39142c5de940012234f2c4
-  JUS c769dd86af6badd087ba38c9f309d904
-  M 3c0b24bbef493f73241cf418b667946f
-  MIDDLE df81ddcf24d286900a219f2466413294
-  MTR 4aaaef2c2fa40b9f29d633fe687110c5
-  Manifest 56c295ecee861c84924b0ef3cc95c44d
-  Manifest 585905e8fe5aabe454e8c831c9719ba2
-  ManifestSystem 268e7a03a2371f8f98142b4115e92b1f
-  ManifestSystem 0e7b2c73aa17600e0a7730d855d918b4
-  Mood 89f52f47d857baf59a835f155022c894
-  N 4ac60101878a22edc6f6ff7239514789
-  NEG 1a20ee25b3ded1fbaeb2e12f379cc9f3
-  NFUT 1fd7bb63dccdfee66c16b3eeae37e081
-  NHUM fc2bb5a5138b2763e566062b48ef9fe1
-  NOM 6372ee0118db22d7961ada41c4e3371d
-  NOM2 cba8fd202484fcb379a1d3e2acfcc72d
-  NPST 236f7ac3103cee2d402467dbc2afb4d7
-  NSPEC 86a105a1d13b19ccdb14415ff887447c
-  NTOP 0b95113aaf730f2c4db62de46f63d782
-  NTRANS 5ffd59a502a2030cc8507c5bd0743c0c
-  NVIS 25474bf7260657320e4749784d3e8212
-  NVOL d3f1ae474cd9f6086aac8b8c6147b776
-  NoManifest e94596ffd7352e0e0c9de30b8b5e034b
-  Number d524767ed256fd8fb6411842c02ad522
-  OBJ 54e1a2118312e5d2c5c81bb884cde752
-  OBL1 9030858bed725730e49ff2e55ff34457
-  OBL2 463fb7742f68dc3fe876c6727b7edf95
-  OBL3 3a8e33fffc825bfc03d2a8af33b8a7ac
-  OBL4 1f85476408b4214f6179d9136cf12322
-  OBL5 77af57ade14eed614c99f48c8c5fc4d5
-  OBL6 0b90073f54f6586ca59d91235c6e2f61
-  OPT 40cde0a7b0058e0d78057cac4a9df421
-  PA e5aa510414c5c1f1666b8eb1c08846e0
-  PASSIVE 9feb8170cbf27cdc4964400258affd26
-  PEG 62d0b45e041a3ed61b1414b7f5319211
-  PFV 1bf5eb12b6c7a276cb262c5fcdc1a11d
-  PL 5c0d47683fd34889dec7c206636f6c47
-  POST c21c2e2d6e24e59c87a4df29da1de914
-  POT 0ce69a751b97bce2cdecdc1323dc7a0b
-  PREP ba596378086c005a73a26555ab7ab229
-  PRIM 9d1d3cb8d4297934d0b3c07999e68eca
-  PRS 26cd29d90bd490cc6f3a02b32b3e2ade
-  PST cd754acd8827599ac07f7a3ddbfc49a0
-  Person 87552d4bd640161dc918422e1f989f36
-  Polarity b165a208777adb6384e8aa49b7841cdc
-  PostParticle 051ff9038fce71d768ebdb0aef6d2dd4
-  PreParticle baa2d75778bba4584f1d021ffebf5a10
-  Prefix 631fddd0577e039670e847f15dc395e5
-  QUO 2c7fd9ee977273c51ca7e9b3a8cc8ce7
-  REC 20356383605f3ed88408c2656e10bd73
-  REM 457b16c7adbe1e67d030fa92d1e62422
-  REMF 546d4ca880ab0f597b8ad93a16c1c640
-  REP bc9f339ef18044e7edc944afd1016b98
-  SBJV 1586f27c9be9c52573273a51efc1077d
-  SEC 7c108dd9ced5ef2a2a7daa597855505e
-  SECOND bfdb3588226f552e5ff2ed477d78f712
-  SG 1b3bad822be48bc704470fcc7ea80b3e
-  SPEC ce7bdecfb32a8576a078dea2430a64e7
-  Specificity 43df515dcdadd0ea11740b17c269f784
-  Suffix 9f592c7bd6fb2cf679abca7c05f8cc1a
-  THIRD a667f4e1e81a3d94b8caa7f2977b2e96
-  TOP 850e35116776a2aa4c8c2deade57f692
-  TR 77bfa53861b0984e7876f84238989968
-  TRANS db0203f116f520eb878d75a2b2ae0dd7
-  TRI 207837423bd40be5dc51689d80c203b5
-  Tense 004b6b4805c5a693db94c0d4a7a3616e
-  Topic 324933ffc8ee2e478eb9c9c4b97f7e1c
-  Transitivity aa30e8d12dfa43bab7ebbfaa9a7bbce4
-  VIS 4d96980ace97bfbffedee0ff7e894e9e
-  VOL d240900b98ac44d21c4ee00657a07098
-  Voice 523b90b12350f06385d4da5905742868
-  Volition 79163f2537538d5ab28ad5d835b8900a
-  ZO 20c61cc634f0472349ce87a9a0cd1c2c
-  aniSys bf2169ba387ab3638393b84dee90c49a
-  aspSys 486a8c668bebed30f10df64f6643cd35
-  casSys b6253f264cf04b70ed6733ef84265597
-  cluSys 1cf3ddc5b66c5059d89d1759026d76ef
-  defSys 791f6bb49015e490e4fbaca91284d8c2
-  eviSys 5f339467cb57a3613471b8a6ebc540f8
-  genSys c2d6181902bbf995c74be89480b26002
-  honSys af70c7f20f205d30889f82d82d0aeb97
-  mooSys 51b1a25ce92a0ae2667748a51389e595
-  numSys 179377656af013c07c11434888cc557e
-  perSys 5da2ccc97fb2c77d51c790b5bcb3cec4
-  polSys 36b2afcffd5ef0a1cda1beadc367dc13
-  speSys b7c67cfc67167d978d2235118f373623
-  tenSys b03397c4d00cd45069a68405c6b06dd1
-  topSys 6853f117ed274e895a39b6a3602af3f2
-  traSys d27da8882b7759d098740802420a9feb
-  voiSys 38713f13dcf55bcb8c1bbbe8a724c366
-  volSys 24176821604239ceb5a5e4fb709e7dfc
-import  -/  MorphologyGen 8ceb28ea48040c72239d3de9e2e0951c
-  exports: f9340380e19fdb3ff659d628c905371a
-  cleanGrammarSys 5decb3fac3e9cf2cb78e51ed40a13149
-import  -/  OtherData ef85631315e8bb1c90bd776e9bb7751c
+import  -/  GrammarData f95f1692a0522ba4f2ab8e4cff233a36
+  exports: 0e046bef964de644bb5bb5f62ec92514
+import  -/  InflectionData 316dc8b65cfd739af6e59de9ad59bbc6
+  exports: 24640cf62a9c3b7f4d5b0c718698bf0c
+  ABS 05a045afedddb9bf15d29b2fa7aaeba7
+  ABS2 879bfd711be7decae8daff97d283b6c8
+  ABS3 57c456cc235b5a3b91f1a11ff5f657eb
+  ACC 6f3d6bf2ccecc04720a850b8513a8851
+  ACTIVE 0d36727a1a174dcce2d3105cc014a687
+  ADP 3de7005926bd6ce1bc0a1eff0bb97d75
+  AFF d470cce1ddc0aafb02bf2c558ecea982
+  AFUT f5b8fa172ae09a5beefa608b22f063c8
+  AFUT1 a626555e6093a7a875ce92753a7a2ef0
+  AFUT2 29f56336d512ddab4cde370e748d71a7
+  AFUT3 a5a3f39a0e5386aadf008bfdc449c47f
+  AN 79cfd13f5a0190a575c3827ec60891bb
+  APRS 6a049057bcca9d4fef56fa82adf5c7b1
+  APST cbb01fb21a627d05a77a1d82392ac590
+  ASS 24eb7b945acd6f2758a0a94dba1e5a03
+  AUD 75087ec433baecc364734c0bbd043832
+  Adj b6a8748ebc7c8a127004065f39281bf7
+  Adpo 7302a0de0ff3a9e61c27a9a3a99c24d5
+  Adv c9a0dc74844120cea5856438b029282a
+  Animacy 0805e2c872c441491fbbd819376f13b8
+  Aspect 851bcc3c94895d395e7cdf9501dbfb00
+  COM 4502846563adb4a317c7150557ea0c3f
+  COND d61fd6fb5f9a580453e2944b048db77d
+  CONT ee4ee588894da1059891550c77271583
+  Case f0a3d2a3107908d84564bc0108b3c56f
+  DEF b6e4b5e643c5a64d45f0bdba92eb1a09
+  DEO 0812b0a2a580b2dee9da7a104b435f64
+  DIR 9a9825256d04f73e7c5d5db57f6aa334
+  DITRANS e16223f5abec75b50cac6c32071c827b
+  DRT1 32fb30babe32ce357fb90f227248d3ae
+  DRT2 287f30f80902e875144402a9db5984f0
+  DTR 0a74e000efa654ab94dd36f2c31a95f3
+  DU 07f744f970b998283878d08a5eb03642
+  Definiteness 250913a6cb1bc19b5a2a47309bfa066c
+  EPIS 4e814ccefbef97bde0d6c88aa1f97f2c
+  ERG d142c77cc934261a0d32fdcc962bf431
+  ERG2 a7051b22c89ee7eef6bc59d1a854ac24
+  EXP 7197b02dde3697a1c37d4038ed502788
+  Evidentiality cdbf36d6698b96caa0bed6ad294bfb83
+  Express 0c930380d6cf4f3d845cdce086abbc44
+  Express 16ae30a99f963c81137d7828dad80939
+  F 2f40cb29e4745a5c1b368d37ae8759a7
+  FAM 5564d796ca192928a36472a4d094f544
+  FIRST e516cf461188d6fc648a39b95511d610
+  FORM 78e21cceb1fc050c8b247cc53f0ea73d
+  FSTEXCL ac03faa3f2aba3c493d7ab2e11d1e72c
+  FSTINCL 2d6ce277cc108ca7092bf08be0f7dc83
+  FUT 059b29730d0f401f47f09fa964dca45d
+  FUTPER 558b7186a2deb06bcbba9e6766c13c5f
+  Gender a3623d5adfe047fe3ed20dca1c56d9df
+  HAB c5b8ce921a3b2ae5606b63c2b776c359
+  HSY b621dd4fd151fc1ade817c3e2b64ee12
+  HUM a5543bfea635338c902f6ea023e50254
+  Honorific 9621aad11f276ef3a5a55be34fb30507
+  IMP a2af6ceaf68f1652cec02fbfa3c42e7f
+  INAN c44b74ddeb1814ddd2e30e313ff94239
+  IND d68e4c1c4d613ec4f0d4ab47fcbfd53f
+  INDF 8ce6e5387a754446665c45023e333f43
+  INDIR e5155f218b2cbef0e8fdf7f2579ad34f
+  INFER 1690b57cbbdf5e853b48a5aecc69baaa
+  INTR ee72b9b17186fce0b2c02d1c1ec0cdc8
+  IPFV 5d27095f74f7da56e5e4236a9199eba7
+  IRR fab7ee1730834b6136f1a52bb9f8044a
+  InflectionSystem 340b506daec6555591e5534716353ebf
+  JUS a5625d186cf31dfcf193b1ff224a5d89
+  LexCat 669f64eab1a11feac3c6144dd5c31025
+  M d230cb9cc888706d2a009dddb3a0d799
+  MIDDLE 990d37e26fd864ce5bb96a84e83a0be6
+  MTR d74e13f29897b8fae3002865284f5dd8
+  MTRANS 485a6539018f6fa6e98457eeefa305e6
+  Manifest be5dbb905eaa61c91070df8e7b415c52
+  Manifest ceb3098f5042182adffdb975609a3c68
+  ManifestSystem 44c7a68715dd0f10cb88131d9ccc552a
+  ManifestSystem 2dfbbd1074217167272ae1c4beb86ae1
+  Mood 4e999fb9fa6728ec3df19bdd28482ccf
+  N b93c53d06c7077fe3582de6af0ef92b3
+  NEG 1417236b7510609fbdfe2ce93f86255d
+  NEU ccd1f661c9bd1e6669b07c8dfdcf4d88
+  NHUM 13a447e3f669cdebfe5d5a3da7be3194
+  NNPROG 19be91a53a315e0a8270d76dfd9a6807
+  NOM e7f504d2aec83e5381ebd1235b42b713
+  NOM2 7011eb4b373b956ced9d7bccc271dbcf
+  NPROG e07a6907a35eb7fdcfdb8847ec9522a1
+  NSPEC dae894605c197fcf1611447510715a45
+  NTOP 69b84587a70c17fd33c67847bd2bf604
+  NTRANS 895226971e87bfe53f37ab710c320833
+  NVIS d4b4eb1558f4a7870cc5a89103399cf2
+  NVOL 89715046def474b543a8f8da2d1aaee9
+  NoExpress 071999356a33bac64580dd8491d8f357
+  NoManifest a1000e139906e0b5e4ac8b6c897a10ea
+  Noun 4b3ff1753c1b5bd5340401062ce8e9e3
+  Number 5983d4e902f20ca491bfcf4389614668
+  OBJ 903171f178492d6d890e614ad81df48b
+  OBL1 fe3f93e7dc962efd61a1c9f5567c6144
+  OBL2 2e84e3639b7bf2f9d7f5706ada529edf
+  OBL3 3cfb5da97e68002e52bd35b4ceb80f8d
+  OBL4 1ad11fff00826d31d9dc3fb460914f1d
+  OBL5 1ac246115eeaec4e5708736abff2c300
+  OBL6 44a2ce6f0d063bb2b6f8e6a5999f73f5
+  OPT 1e9677022433aa5e86a0cc6e02c344ac
+  Obj 5bf8cc9d23064f75b87e73d35c5454b9
+  PA 2541d8aab8aca7c670b6d2ed4bd36726
+  PASSIVE 4091d1d79c5901f00913dc84cde35b89
+  PEG d3ad53a7d0a7c11d3a9c7d410f92c3f4
+  PFUT 8780538c8659d998442b00cc71744230
+  PFV 87ab28fe0f4799127ea3b33ee2f7ed5f
+  PL dd7a6fab97a576deeab6439f26253434
+  POST 797419b1526be4a585d18969fe335c00
+  POT dc1e18903cc9079b427ea54739a2507a
+  PPRS 0d115a2be4f4d0d5e3a8b4a15127872b
+  PPST 83b7843b83d254c477ebcdcf81ac6525
+  PPST1 a12c78ce4f607bf0b650615d5c1c2336
+  PPST2 facd1c73dfb4589d575fc4f67e46ef25
+  PPST3 7f6f6a3c891e9820e2fe6b1516074ee4
+  PREP 82512faaf44b7a09877c7c0a8407a2f2
+  PRIM f62a67395ad9e2ee390862890a956e38
+  PROG 2fb829323ec75eb86f71fc3bf7fa5691
+  PRS 4d0192c7fccd2ecca73512f84afd2e06
+  PRSPER ea42a92a3a4ab1bc0522f2950c330fed
+  PST 3edae383b012a7f3b6a7e2cacde1122b
+  PSTPER e591e6920f26ca07d8b904ec3a42f362
+  Particle b6dac7eb598cb10dac67044916f016c5
+  Person 8962065c67c1705ac692fcc8d9210bcd
+  Polarity eac2f82847484b9a87105d0693a7c5e1
+  Prefix 8590bd569f8bb6d038732e2c07f87092
+  QUO 286b82ba126e55961eb4e6720dfbfce7
+  REP a8ed0dcbe98118be1421d3a1fa2e2b03
+  SBJV 54f67c535d19172d9a0653f5ba2588d2
+  SEC 58c6f0fc3435e92c3d3bf48d724a93a0
+  SECOND 2d019239579409279979ff0fe2e6dfcd
+  SG e4991b96b153c5bcc5757098a16fbf73
+  SPEC b9db72ce925547d66d656083aaff81fc
+  Specificity 697b496d198df68093293e68c7d50d9d
+  Subj 631e45b5381caceb8ccd08c82aa9a800
+  Suffix 38bb50ed0298517a03588243ef98ac95
+  THIRD 8d310a0a5f073fd4b97a149c19b4f570
+  THRDOBV 4b0555cececc9ead5a51dd9e789baf64
+  THRDPROX 7126360aac3f383630f4b3ad5f791327
+  TOP 8aa960266452286d25f24a05383d90aa
+  TR 4981a3fb8d1c98dbb15f06f8d6d6192c
+  TRANS 87842eb7000cdb98a06be2caf05dc32f
+  TRI 33a3a49f046f9bcecaa2c0f62b16fa57
+  Tense b52863b70f3cc5626b7d1db2a6c4ef40
+  Topic 39f87e694fb863c1c8c61df134a24729
+  Transitivity 57945260416d71dc87e31cac669b161f
+  VIS 782817b7a3234fdb8159fb10d692cd5a
+  VOL 17312300f9e985cf631e3648dc8907ad
+  Verb 9421dc5b8cf6821456c38e572093888e
+  Voice 729607927630d1e92c199129334472f1
+  Volition fed3c8348b016bc886742bbd8b88b80d
+  ZO 3ac33d92f61de14bab01a085fe2eb28f
+  aniSys 367804e1af6d701e2096dafd5533118b
+  aspSys e9e7bd71dd2a785cb31526ef55b822bf
+  casSys 53f570e830294c8ef1f76287bc8fee75
+  defSys 39ed9cb2acfd9c2753c4d255e079ca33
+  eviSys 16a8ff4f3aeb46f813a259601251af2a
+  genSys 23c095a561aedbda7232209e41ccd3b8
+  honSys 831fcde3d22057fb7460c8af4d9ab10c
+  mooSys 7e4993890e9cffc9f67059af28200bf6
+  numSys d8ca6925d804e3eb3f0fe14c72e821b0
+  perSys 6b25af69b2baed03a467998ec509d392
+  polSys 6b03938dae2419f01636f6b46255ec51
+  speSys 8fe6a689cbb82088761f1cb46b491a37
+  tenSys f10468fa127c3da042273349447f9f1d
+  topSys d0e505630351aeb35518213bbfa7eb6f
+  traSys b87326eed2ea23696a3263a9e6a566d7
+  voiSys 3508299f499dacd346d5476b7095ae2b
+  volSys 0c538a57205dea6a225cb2d1e520dfee
+import  -/  MorphologyGen 01a79c2d8339eb1799781f6d15e27388
+  exports: 8b2fd2afd5faf171830833d5dda287d0
+  cleanGrammarSys 3581c42a3e0dd6b86e90b8b0b5eee6c3
+import  -/  OtherData 37db5ddc38f8875c91a0806c561b30cd
   exports: f505dec72f229982fb85e59b44566731
-  SyllWord 9c149b11caa7af61cc3fda153b1dcef5
-  Syllable 05a619088617b930774519c90865b296
-  Syllable 5683ce4e3b2a6c457b5e9c6c6ca43ce6
-import  -/  PhonemeData 2bc4225bb63ccf0a16ac10bab410e892
-  exports: 8834c83badd5837275d7ec1bbd2f424a
-  AFFRICATE 147f242a04fba4ccaf3d990013a051a5
-  ALVEOLAR c6b89f8b792d9549c21b502170ee4e1c
-  ALVEOLOPALATAL 25346444b980c5a1ac9a043d30332738
-  APPROXIMANT 688bb45ab09fc9e6611f59d892650e5d
-  ASPIRATED 756e7c3f604a54456232d7e10e6e0cde
-  BACK 66c69778bae2e4a440bb5a9cec7741ca
-  BILABIAL 35be04d944862e0b4b3cd07ca4d4133e
-  BREATHY f6261f7e07b77dd9cd142213c14126e3
-  Backness 9747e3c7b5ae543ddf6a14d6c68612ef
-  Blank 805b0aae2eb66442ff37c067e0d62089
-  CENTRAL a7a040b3167734845bc52f2315f379f7
-  CLOSE 19452b32e5ab61d38a230a97dff883ec
-  CLOSEMID 829b1a375886bafe473e5cd43c980de0
-  CORONAL ca62d4def85883412db49d69771fd684
-  CREAKY 4c3da3105ff3af15a8154f034d9336ad
-  Consonant b75bb727b0d1dc285bc6e78bea093faf
-  DEFAULT 84e40dde3b21b2bbcc2467fc8b704c5b
-  DENTAL 925136b48a76ca089014bdfac23ad309
-  DENTIALVEOLAR f08684c6c979289597282b401bfbae39
-  DORSAL bd982f4073f646c80f518bd24cad6c99
-  Diphthong aa609d265bfaa803022b7633544c1bf3
-  EPIGLOTTAL 4785a016a8862bf0c02884d663d41e83
-  EPIPHARYNGEAL aebcfcb1d9fa1bca206af6180adaf0ac
-  FLAP eccdd9a127edaee2ea4ed02c15b14dc9
-  FRICATIVE 9fe324020397eadebc8f607209e35373
-  FRONT 726360f7e0deebd1fa2b672cc9d9f70a
-  GLOTTAL 9f89b2526fe223b1411cb7cc61b642cc
-  Height 56a4ebd86a55476fcceec0b5b5ad52dd
-  LABIAL 77986b66f6db3ff46d81e8a03975a08b
-  LABIODENTAL 92275a3e1cccc7362f3597112fc06258
-  LAFFRICATE 3e4cdb3cdeb16222335c945aafc38d2f
-  LAPPROXIMANT 3c4f7b9a6a409f6c5ec3ef14ac4541d2
-  LARYNGEAL 4ec5bea4a7834fa9780a3eaf6b6b5b4e
-  LFLAP f2a7011e636265dc707312cd55371337
-  LFRICATIVE fd803e10efe16b2dce9944b62a4a74b4
-  LONG ee29e780120d882796a87cbbcdb00e55
-  Length 414a8b878bf71816d2002a26fce00728
-  MID 23250c6a570df131de1cdb293bacfe16
-  MODAL bd244264bab2966de13717630fceb06d
-  Manner 2286baa806cedbe4b7d0c4916ea37630
-  Morpheme 773f530596237f1e058299251c3d7d0d
-  Morpheme a75f0140e4b212df166951d7f735baaf
-  NASAL 33a4f70f850c97bc19932b2d99f86fec
-  NEARBACK 0a01970fff4a2ba092ad40544a59a654
-  NEARCLOSE a0d527593a0e5b421ef4d1de2a61e5d4
-  NEARFRONT 2fbf2ba3b8d9a1fda8899a2a6b7c003d
-  NEAROPEN abe71d4960553e1118e265c97da6ca81
-  NORMAL 341b4c7351a42f38158edd4de3495449
-  OPEN f9dd652c29b38c171f0203609f54d8af
-  OPENMID f4ad7f69fb5efb224cc41b1415e8557b
-  PALATAL 82a2f3e6a3c4c0a3e97f9f57ac5073f8
-  PHARYNGEAL 5c09d12e196eec4f612a556219df3e90
-  POSTALVEOLAR 7e03f37b030e8871b4d22fdd4b93d488
-  Phonation d728b957933ed40e5f338884385b44c8
-  Phoneme 725a483aa2dd4b7c0473c29cf990b878
-  Place e0644167ea1572fa835311f673311319
-  RETROFLEX a3afd188eeb6612ef479970d85082992
-  ROUNDED 0a5556dccc06d975adb090e5266ecb1d
-  Roundedness 4c51106b8aab206d34cb6b9d104e8504
-  SAFFRICATE b1edf15f9894f243d08ceea9bb332359
-  SHORT ca70fa1eca0ee2f7a463a74c2a265547
-  SILIBANT f64a5f1ed2462d03b63a4ac44aed52e4
-  SLACK c990fb0ced343bfe6a5ecaaeda0b09e1
-  STIFF 0bcb6b807cc83b67beb5b05b41f42598
-  STOP 1e220103167759b2457a52d787a2828e
-  TRILL 6ee80409b4b73f8f366272d21ec77dba
-  UNROUNDED a7c2b1df7a48e8f0af1f098da4350bc3
-  UVULAR 00b57ece7781c1ead6406b34dc02a2bf
-  VELAR c83c546d533edfd28dc443ee9c5d12af
-  VOICELESS dbf8f182d917d2469a91d36a4068291b
-  Vowel bc70fa2bda72574d3d9a605b3092c858
-  Word 55b6ea537d860cf92b62e64e19ceba7b
-  csymbol adede1920d7863e2930e586cb77c5227
-  vsymbol d4a50191fa439edee5dacea3c2489af1
-import  -/  Romanization 1523dd09770b04f055c2d59814f16324
+  SyllWord 0624a89133bbff2a1ba0667c167f657d
+  Syllable ce972a6ed094f671f39d3e48151bf110
+  Syllable beb50056cf357f9bcbcd0be61b7088e1
+import  -/  PhonemeData 408b6488aa28ce44ef05793241013f6f
+  exports: c711b36c9b7415c6d00ea9681146dbcb
+  AFFRICATE c0633accced1e40697782c5c04b069ce
+  ALVEOLAR 6fe183e3c8864ca442f7934e503d4650
+  ALVEOLOPALATAL daaffb93a2932477e0f61cae6455dfcd
+  APPROXIMANT afa9ca34009df8bf926af4481cb93350
+  ASPIRATED b450b7c37ee4c8ef687d93633b315711
+  BACK 2ec193314c96eb813ec77befac27f281
+  BILABIAL 3ab6fb02456e7fcc0dca4f2242171191
+  BOTTOMT 5c8c3bfeea1efd20d0e241577aeaed3c
+  BREATHY 8d667724cf65c3e5a0cd73cb0397fa29
+  Backness 8fd035312b9b1aba200f0ff8b45ff72f
+  Blank c038fb2739bcd61a81d7b8b9a51467b7
+  CENTRAL 42c0ac2b606a0dce589d130770507529
+  CLOSE 22a96e2ec8a1cab7a2f11a25f17987dc
+  CLOSEMID 28a8baa1d812c2959004ad2d5860cb36
+  CORONAL cc7698dba037e39c815c055830684fab
+  CREAKY cb0270b18ea7e542b72282922e925056
+  Consonant e834121481c88ee1a99bb2d9c0c327a2
+  DEFAULT b271861fd1783576b8280fda084f6056
+  DENTAL fe60451e7fc177f8625db85852eb0594
+  DENTIALVEOLAR e87e90600a110bb2397ee6da2ffbf497
+  DIPT b669c8a9f42776ed9f48cdf31ecba3ff
+  DORSAL 1715325532b0ab74efd7a9242241abba
+  Diphthong de76956b0dda8aec4042cce68ab3cbb6
+  EPIGLOTTAL 1a9f8059dab5e25b84a38539acc282e0
+  EPIPHARYNGEAL 6267ba3ac09d030e3a193c53a5993ff7
+  FALLT bf6493f564c877af8436448a72bf1e37
+  FLAP 3fdcd00eea839fd7b6da4b6acdc50091
+  FRICATIVE 55d73c4ea823ed2361247a0286d3ae01
+  FRONT e0d2a42adbbfcfd87ac73f47de30a67d
+  GLOTTAL de51a7f06d006897d0ca0d7b5fbd7880
+  HFALLT dc0ffd2bd3b9494d348f048b9c591d0e
+  HIGHT 7e89a0437c122c578ba5ac84b708192c
+  HRISET 17f437c4fdfc44f5b496ba136f41caee
+  Height bb7ef9ff04f02fbe9e908095d7879647
+  LABIAL c3a78c73d4e8cf0a03b0594238bdd0ea
+  LABIODENTAL 2912ab0d7ecd49578e43134b3ad7a5bf
+  LAFFRICATE 6f5bc94cce450cc0d219b9e7f4bcbde9
+  LAPPROXIMANT 51ca15e8d8190b49c520d84671352b20
+  LARYNGEAL 9c9a9c12eed09cfca90c9e2b46f5c65e
+  LFALLT 370593f09c7f1e4e0722ba38d021e3f9
+  LFLAP b1d07d8ecfdefe7336a346f04a1bc9f3
+  LFRICATIVE 8b71d52af44fcf2b2a9ec5d3a31321d4
+  LONG 6c15e86e7ce9a3cd079cd9b36f04d7af
+  LOWT e2c96f8c8a0008a363a3296afe0758d8
+  LRISET 59e93717df80eb5418d9965ef4df0bcd
+  Length 4b86df05ae3dae785a151fc2e2a4d662
+  MID 667a6c2f4d919e1e38ed9c4ff4b3260a
+  MIDT 268aa1e9dd8af14d1b6d8ef49d5dc0dd
+  MODAL a60f576982bf888dffe19414dff892e8
+  Manner cdf7cd4260ea9474daf2650d49d3b524
+  Morpheme 84694ed806c557c515bbf4e524e13725
+  Morpheme 383812fe40de4e6210cee815bfc93a6d
+  NASAL 426532af6235ef2717bfa577e4906681
+  NEARBACK 2f38802f6c145c99cfa5586df929a2ee
+  NEARCLOSE d7648572c57097cf4678314deb3fb67a
+  NEARFRONT 9d4ac6e377dd5f683a1fffdb5bef1503
+  NEAROPEN 491a5f682434521ae4a79e53765d96bf
+  NONET b3be8c8512b975551c05f5baffb2e3b9
+  NORMAL 0cce345bf4361ad51e3d65565a5c7d8e
+  OPEN 648d92e73f3591a0c10aa22bf73af8a2
+  OPENMID 1a820ba4ee453b6df8e4a6000474d157
+  PALATAL 1158b737ddb9a1219e5b2c2dc2261d56
+  PEAKT 2310bcd4e4515266cc481df033ba5148
+  PHARYNGEAL 9a742db34256d27cb1668ee7109a7b2b
+  POSTALVEOLAR fb373bc5ad900ec4e364a39937ff2d50
+  Phonation 2538822911657f5bc7898beed9a7f1fa
+  Phoneme 78c280a9bf84c920fdcdc1bfa9515e2f
+  Place a616e74c300a23926e887c7817b7b7ad
+  RETROFLEX d76654bb9469506b723a22ed8a2b942b
+  RISET 425c8b99bf07c70e4f648034b388578e
+  ROUNDED 382d348536829d0483430e784688d11a
+  Roundedness 3d23d3477a2c2b7874207db0a6b52ca6
+  SAFFRICATE b3daffb192c7e4171e761f236a414d52
+  SHORT 8975b9f99f59a81283ac8b701c7be2d0
+  SILIBANT cd19d84dfc64144f248cad9dfb2b0243
+  SLACK 38360f4734186e8a71cd1eb70076b104
+  STIFF 9532155286b949a79e44c716094fd6ed
+  STOP f7279e969883f96544c7de4d53999e6d
+  TOPT 5c5fc11cf7ab85cd94630c67df11043f
+  TRILL 2fca8896800c7846ccd54f7e650387fc
+  Tone c9348a5b3e7ca841d0de6bc684e0cd9f
+  UNROUNDED a85394a8cff5ac983dc69f1a095a4b21
+  UVULAR 1a9c449c6d7416a18ab62d11aa6d8e38
+  VELAR 2f6ec346e194f837cae24e473f67f200
+  VOICELESS 04648cc19c7e44a5ad8aa1e9bcc5d028
+  Vowel 0c80a941fa0fc13c4b1061bd7565d7d6
+  Word 82eaddf6262316ad93815378773a62ff
+  csymbol be9e716b1baf264bba90072e249f1793
+  vsymbol f5a8735f8217d4ab5b161b539e08e3e8
+import  -/  Romanization 804bca94f08cbe6d41992a68b525e575
   exports: 71e3484a4b1fb5c752fcd3291232e7ff
-  romanizeWord 6d52f6408ee50aea5e95ac6ac01b4f16
-import  -/  Syllabification 96e237022078ceadc1014b4a4cd94a29
+  romanizeWord 7f9c217ededf0559d0727e8e0fd891e3
+import  -/  Syllabification 7281e651cb3d926edd5f51e1c1524b58
   exports: a741c5c7159797f058482789d7878efa
-  syllabifyWord 842ed49da6db8873ca9344fa308b4001
+  syllabifyWord 9c41d63e10ca51c04b80d2cc0776e270
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-15fdad1dfd672a78c4e320a098269c32
+5ed204d783872fbe0fee85755b000a44
   $wgo ::
-    [((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)]
-    -> (# [(GHC.Base.String, GrammarData.LexCat)],
+    [((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)]
+    -> (# [(GHC.Base.String, InflectionData.LexCat)],
           [PhonemeData.Word] #)
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
-1f3bc3df771b3d712af547f17ac7406b
+5fe5ac923abc8f433da9e495ca27c705
   $wparseLexicalSystems ::
     InflectionData.InflectionSystem
-    -> GrammarData.LexCat
-    -> [InflectionData.ManifestSystem]
+    -> InflectionData.LexCat
     -> [InflectionData.ManifestSystem]
     -> [InflectionData.ManifestSystem]
     -> [InflectionData.ManifestSystem]
     -> GHC.Base.String
-  {- Arity: 6,
-     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><L,1*U><L,U><L,U><L,U><L,U>,
+  {- Arity: 5,
+     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><L,1*U><L,U><L,U><L,U>,
      Inline: [0],
      Unfolding: (\ w :: InflectionData.InflectionSystem
-                   ww :: GrammarData.LexCat
+                   ww :: InflectionData.LexCat
                    ww1 :: [InflectionData.ManifestSystem]
                    ww2 :: [InflectionData.ManifestSystem]
-                   ww3 :: [InflectionData.ManifestSystem]
-                   ww4 :: [InflectionData.ManifestSystem] ->
+                   ww3 :: [InflectionData.ManifestSystem] ->
                  GHC.CString.unpackAppendCString#
                    "<br>\n"#
                    (let {
@@ -375,59 +406,47 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                       = case GHC.List.$wlenAcc
                                @ InflectionData.ManifestSystem
                                ww1
-                               0 of ww5 { DEFAULT ->
+                               0 of ww4 { DEFAULT ->
                         GHC.Base.++
                           @ GHC.Types.Char
-                          (Parse.$wparseManifestSystems ww1 ww5 w)
+                          (Parse.$wparseManifestSystems ww1 ww4 w)
                           (case GHC.List.$wlenAcc
                                   @ InflectionData.ManifestSystem
                                   ww2
-                                  0 of ww6 { DEFAULT ->
+                                  0 of ww5 { DEFAULT ->
                            GHC.Base.++
                              @ GHC.Types.Char
-                             (Parse.$wparseManifestSystems ww2 ww6 w)
+                             (Parse.$wparseManifestSystems ww2 ww5 w)
                              (case GHC.List.$wlenAcc
                                      @ InflectionData.ManifestSystem
                                      ww3
-                                     0 of ww7 { DEFAULT ->
-                              GHC.Base.++
-                                @ GHC.Types.Char
-                                (Parse.$wparseManifestSystems ww3 ww7 w)
-                                (case GHC.List.$wlenAcc
-                                        @ InflectionData.ManifestSystem
-                                        ww4
-                                        0 of ww8 { DEFAULT ->
-                                 Parse.$wparseManifestSystems ww4 ww8 w }) }) }) }
+                                     0 of ww6 { DEFAULT ->
+                              Parse.$wparseManifestSystems ww3 ww6 w }) }) }
                     } in
-                    case ww of wild {
+                    case GHC.Prim.dataToTag# @ InflectionData.LexCat ww of wild {
                       DEFAULT -> Parse.parseLexicalSystems7
-                      GrammarData.Verb
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems6 a
-                      GrammarData.Adpo
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems5 a
-                      GrammarData.Adj
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems4 a
-                      GrammarData.Adv
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems3 a
-                      GrammarData.Obj
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems2 a
-                      GrammarData.Subj
+                      2 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems6 a
+                      5 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems5 a
+                      6 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems4 a
+                      7 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems3 a
+                      8 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems2 a
+                      9
                       -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems1 a })) -}
-3ee4bcbb6f4d9693139c4585fa753b6e
+d56928552dcd295fdd3bbce35207edc5
   $wparseManifestSystems ::
     [InflectionData.ManifestSystem]
     -> GHC.Prim.Int#
     -> InflectionData.InflectionSystem
     -> GHC.Base.String
   {- Arity: 3,
-     Strictness: <L,U><S,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+     Strictness: <L,U><S,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-a4927710c27ff7ef5e7438fa3ac76951
+771aab9a2d038ab6f9dea62891dea017
   $wparseSyllable ::
     [PhonemeData.Phoneme]
     -> PhonemeData.Phoneme -> [PhonemeData.Phoneme] -> GHC.Base.String
   {- Arity: 3, Strictness: <S,1*U><S,1*U><L,1*U>, Inline: [0] -}
-2cf29beaf4d294f8eb2440da8cfb602f
+2c92ec77819489cfb322e7cee7ed05b6
   parseConPhonemeInventory ::
     [PhonemeData.Place]
     -> [PhonemeData.Manner]
@@ -435,43 +454,45 @@ a4927710c27ff7ef5e7438fa3ac76951
     -> [PhonemeData.Phoneme]
     -> GHC.Base.String
   {- Arity: 4, Strictness: <L,U><L,1*U><L,U><L,U> -}
-1173c1752c3040727cdde4d86c7f6112
+712abfe4a508fcaf986231045e7dbf8d
   parseDictionary ::
     [[PhonemeData.Phoneme]]
-    -> [((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)]
+    -> [((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)]
     -> GHC.Base.String
   {- Arity: 2, Strictness: <L,U><L,1*U>,
      Unfolding: (\ sonHier :: [[PhonemeData.Phoneme]]
-                   pairs :: [((GHC.Base.String, GrammarData.LexCat),
+                   pairs :: [((GHC.Base.String, InflectionData.LexCat),
                               PhonemeData.Word)] ->
                  GHC.CString.unpackAppendCString#
                    "\n"#
                    (letrec {
-                      groupByFBCore :: [((GHC.Base.String, GrammarData.LexCat),
+                      groupByFBCore :: [((GHC.Base.String, InflectionData.LexCat),
                                          PhonemeData.Word)]
                                        -> [[GHC.Types.Char]]
                         {- Arity: 1, Strictness: <S,1*U> -}
-                      = \ ds :: [((GHC.Base.String, GrammarData.LexCat),
+                      = \ ds :: [((GHC.Base.String, InflectionData.LexCat),
                                   PhonemeData.Word)] ->
                         case ds of wild {
                           [] -> GHC.Types.[] @ [GHC.Types.Char]
                           : x xs
                           -> let {
-                               ds1 :: ([((GHC.Base.String, GrammarData.LexCat),
+                               ds1 :: ([((GHC.Base.String, InflectionData.LexCat),
                                          PhonemeData.Word)],
-                                       [((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)])
+                                       [((GHC.Base.String, InflectionData.LexCat),
+                                         PhonemeData.Word)])
                                = case GHC.List.$wspan
-                                        @ ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
-                                        (\ y :: ((GHC.Base.String, GrammarData.LexCat),
+                                        @ ((GHC.Base.String, InflectionData.LexCat),
+                                           PhonemeData.Word)
+                                        (\ y :: ((GHC.Base.String, InflectionData.LexCat),
                                                  PhonemeData.Word) ->
                                          case x of wild1 { (,) ds2 y1 ->
-                                         case y1 of wild2 { PhonemeData.Word a8 ->
+                                         case y1 of wild2 { PhonemeData.Word a9 ->
                                          case y of wild3 { (,) ds3 y2 ->
                                          case y2 of wild4 { PhonemeData.Word b1 ->
                                          GHC.Classes.$fEq[]_$c==
                                            @ PhonemeData.Morpheme
                                            PhonemeData.$fEqMorpheme
-                                           a8
+                                           a9
                                            b1 } } } })
                                         xs of ww { (#,#) ww1 ww2 ->
                                  (ww1, ww2) }
@@ -480,7 +501,7 @@ a4927710c27ff7ef5e7438fa3ac76951
                                @ [GHC.Types.Char]
                                (case Parse.$wgo
                                        (GHC.Types.:
-                                          @ ((GHC.Base.String, GrammarData.LexCat),
+                                          @ ((GHC.Base.String, InflectionData.LexCat),
                                              PhonemeData.Word)
                                           x
                                           (case ds1 of wild1 { (,) ys zs ->
@@ -504,10 +525,10 @@ a4927710c27ff7ef5e7438fa3ac76951
                     } in
                     case groupByFBCore
                            (Data.OldList.sortBy
-                              @ ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
+                              @ ((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)
                               Parse.parseDictionary2
                               (Data.OldList.sortBy
-                                 @ ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
+                                 @ ((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)
                                  Parse.parseDictionary2
                                  pairs)) of wild {
                       [] -> GHC.Types.[] @ GHC.Types.Char
@@ -522,30 +543,30 @@ a4927710c27ff7ef5e7438fa3ac76951
 e767d2f030f0a31a0986b258e08357c0
   parseDictionary1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
-2128c6f6b86d8258a5efc6318ae8a47a
+825413fe6597573792bfba7e0ac708a9
   parseDictionary2 ::
-    ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
-    -> ((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)
+    ((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)
+    -> ((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)
     -> GHC.Types.Ordering
   {- Arity: 2, HasNoCafRefs,
-     Unfolding: (\ x :: ((GHC.Base.String, GrammarData.LexCat),
+     Unfolding: (\ x :: ((GHC.Base.String, InflectionData.LexCat),
                          PhonemeData.Word)
-                   y :: ((GHC.Base.String, GrammarData.LexCat),
+                   y :: ((GHC.Base.String, InflectionData.LexCat),
                          PhonemeData.Word)[OneShot] ->
                  case x of wild { (,) ds1 y1 ->
-                 case y1 of wild1 { PhonemeData.Word a9 ->
+                 case y1 of wild1 { PhonemeData.Word a10 ->
                  case y of wild2 { (,) ds2 y2 ->
                  case y2 of wild3 { PhonemeData.Word b1 ->
                  GHC.Classes.$w$ccompare14
                    @ PhonemeData.Morpheme
                    PhonemeData.$fOrdMorpheme
-                   a9
+                   a10
                    b1 } } } }) -}
-8ced8ab262d54ea486f8a2b84bfdc080
+74494699fbdfeb3d12f3f52039cc4425
   parseDictionary_go ::
-    [([GHC.Types.Char], GrammarData.LexCat)] -> [GHC.Types.Char]
+    [([GHC.Types.Char], InflectionData.LexCat)] -> [GHC.Types.Char]
   {- Arity: 1, Strictness: <S,1*U> -}
-37ecbb37303e91af6655a96c5157a40e
+0875b533d2b33a15ff36f99e489147b8
   parseDiphPhonemeInventory ::
     [PhonemeData.Phoneme] -> GHC.Base.String
   {- Arity: 1, Strictness: <L,1*U>,
@@ -590,36 +611,34 @@ e767d2f030f0a31a0986b258e08357c0
   parseDiphPhonemeInventory_go ::
     [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
-c0d85280be0ee1123c1b66b21706a591
+3cb28b3ecae4b759a4f05421b46be980
   parseDiphPhonemeInventory_go1 ::
     [PhonemeData.Phoneme] -> [[GHC.Types.Char]]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-778370230d6ef9d5fa5015be797b7d74
+ed22ad52821241bb6643045211470062
   parseLCInflection ::
     InflectionData.InflectionSystem -> GHC.Base.String
   {- Arity: 1,
-     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)> -}
-fa2eaf81ebc1cf4251386565e2f1f7b0
+     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)> -}
+e0bb95b43fe1346e31d5bf1e165a3380
   parseLexicalSystems ::
     InflectionData.InflectionSystem
-    -> (GrammarData.LexCat,
-        [InflectionData.ManifestSystem],
+    -> (InflectionData.LexCat,
         [InflectionData.ManifestSystem],
         [InflectionData.ManifestSystem],
         [InflectionData.ManifestSystem])
     -> GHC.Base.String
   {- Arity: 2,
-     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><S,1*U(1*U,U,U,U,U)>,
+     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><S,1*U(1*U,U,U,U)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ w :: InflectionData.InflectionSystem
-                   w1 :: (GrammarData.LexCat,
-                          [InflectionData.ManifestSystem],
+                   w1 :: (InflectionData.LexCat,
                           [InflectionData.ManifestSystem],
                           [InflectionData.ManifestSystem],
                           [InflectionData.ManifestSystem]) ->
-                 case w1 of ww { (,,,,) ww1 ww2 ww3 ww4 ww5 ->
-                 Parse.$wparseLexicalSystems w ww1 ww2 ww3 ww4 ww5 }) -}
+                 case w1 of ww { (,,,) ww1 ww2 ww3 ww4 ->
+                 Parse.$wparseLexicalSystems w ww1 ww2 ww3 ww4 }) -}
 5ddc729e927a29f70ca5b5ae78668561
   parseLexicalSystems1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Subject"#) -}
@@ -641,17 +660,17 @@ e7137246f7d0b2b7e102189ee76350ba
 1389583c8d482058f492c425d252dde9
   parseLexicalSystems7 :: GHC.Base.String
   {- Strictness: b -}
-cc02a10c94d6400dcf23a311785fc7a7
+cc4466bcec68df2a1b6bdaaa027a56f5
   parsePhoneme :: PhonemeData.Phoneme -> GHC.Base.String
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: PhonemeData.Phoneme ->
                  case ds of wild {
                    PhonemeData.Consonant ds1 ds2 ds3 ipa -> ipa
-                   PhonemeData.Vowel ds1 ds2 ds3 ds4 ipa -> ipa
-                   PhonemeData.Diphthong ds1 ds2 ds3 ds4 ds5 ds6 ds7 ipa -> ipa
+                   PhonemeData.Vowel ds1 ds2 ds3 ds4 ds5 ipa -> ipa
+                   PhonemeData.Diphthong ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ipa -> ipa
                    PhonemeData.Blank -> GHC.Types.[] @ GHC.Types.Char }) -}
-946b2d8fac4d0e93b025d994d576d29c
+09751d181af5c7244fb3ef4134097787
   parseSonHier ::
     [PhonemeData.Phoneme] -> [[PhonemeData.Phoneme]] -> GHC.Base.String
   {- Arity: 2, Strictness: <L,1*U><L,1*U>,
@@ -707,7 +726,7 @@ cc02a10c94d6400dcf23a311785fc7a7
   {- Unfolding: (GHC.CString.unpackCString#
                    "/\n\
                    \/"#) -}
-b365a6a37c6f55dc827c8e3d81c08e87
+bbe07578c2fc03dd1266044b933683e2
   parseSonHier2 :: [PhonemeData.Phoneme] -> [GHC.Types.Char]
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: (\ x :: [PhonemeData.Phoneme] ->
@@ -725,7 +744,7 @@ b365a6a37c6f55dc827c8e3d81c08e87
                            @ [GHC.Types.Char]
                            Parse.parseDiphPhonemeInventory1
                            xs1) }) -}
-7ff880d4f987dddfeed7d2abbf815827
+3c160975a818f1bc8956114373cadf74
   parseSyllable :: OtherData.Syllable -> GHC.Base.String
   {- Arity: 1, Strictness: <S(SSL),1*U(1*U,1*U,1*U)>,
      Inline: INLINE[0],
@@ -733,7 +752,7 @@ b365a6a37c6f55dc827c8e3d81c08e87
                 (\ w :: OtherData.Syllable ->
                  case w of ww { OtherData.Syllable ww1 ww2 ww3 ->
                  Parse.$wparseSyllable ww1 ww2 ww3 }) -}
-5ccc280ac469782c117c9fc8865cd708
+1e4f74103eff51bc1bf2b33db1a2af3b
   parseVowPhonemeInventory ::
     [PhonemeData.Height]
     -> [PhonemeData.Backness]
@@ -742,7 +761,7 @@ b365a6a37c6f55dc827c8e3d81c08e87
     -> [PhonemeData.Phoneme]
     -> GHC.Base.String
   {- Arity: 5, Strictness: <L,1*U><L,U><L,U><L,U><L,U> -}
-5fe9cb010c88a9826d27c40887b3e219
+a5e79c59071bc0faf05b870b949d95ac
   parseWord ::
     [[PhonemeData.Phoneme]] -> PhonemeData.Word -> GHC.Base.String
   {- Arity: 2, Strictness: <L,U><L,1*U(1*U)>,

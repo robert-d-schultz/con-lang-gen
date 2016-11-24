@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-03 21:25:45.968028 UTC
+2016-11-05 13:37:39.665855 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Syllabification 7103
-  interface hash: 5d8513b4b448b6b285eac6b32dfce874
-  ABI hash: 96e237022078ceadc1014b4a4cd94a29
+  interface hash: 9b9fac5eec4d336867c3239178f3cffd
+  ABI hash: 7281e651cb3d926edd5f51e1c1524b58
   export-list hash: a741c5c7159797f058482789d7878efa
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
@@ -86,28 +86,28 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  OtherData ef85631315e8bb1c90bd776e9bb7751c
+import  -/  OtherData 37db5ddc38f8875c91a0806c561b30cd
   exports: f505dec72f229982fb85e59b44566731
-  SyllWord 9c149b11caa7af61cc3fda153b1dcef5
-  SyllWord e68b1f99426d7fe112bc7709dd503608
-  Syllable 05a619088617b930774519c90865b296
-  Syllable 5683ce4e3b2a6c457b5e9c6c6ca43ce6
-import  -/  PhonemeData 2bc4225bb63ccf0a16ac10bab410e892
-  exports: 8834c83badd5837275d7ec1bbd2f424a
-  Phoneme 725a483aa2dd4b7c0473c29cf990b878
-  Word 1393f11ad51cd86d8180b3eab5b4bd1a
-  Word 55b6ea537d860cf92b62e64e19ceba7b
-  getPhonemes cf67a99225ac5cd3326bdeda7d07491d
-import  -/  PhonotacticsGen 6b0ffb15d766a08cc9d1828eaa725159
+  SyllWord 0624a89133bbff2a1ba0667c167f657d
+  SyllWord 59d66866fb381a4f03360e4f2cfe323d
+  Syllable ce972a6ed094f671f39d3e48151bf110
+  Syllable beb50056cf357f9bcbcd0be61b7088e1
+import  -/  PhonemeData 408b6488aa28ce44ef05793241013f6f
+  exports: c711b36c9b7415c6d00ea9681146dbcb
+  Phoneme 78c280a9bf84c920fdcdc1bfa9515e2f
+  Word 4e1579ce9a1ea812805b7e69ae8f8d98
+  Word 82eaddf6262316ad93815378773a62ff
+  getPhonemes 551f39660dd90bd95cf96d35c76f405f
+import  -/  PhonotacticsGen df8b64d0247252501a5b56e100c90305
   exports: 5bbf082cfe2be7a4eaae7a2a5f6b7de8
-  retrieveSon fc68d44d08b8ab0c413f94a100c4b828
+  retrieveSon 050e86d2cfc5721dfc6d0826a54efd52
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-54ad2a94766ae42bf586562645f9b1c3
+55f4526ef780fa86fb5c145472697b5f
   $wsyllabifyWord ::
     [[PhonemeData.Phoneme]]
     -> [PhonemeData.Morpheme] -> (# [OtherData.Syllable] #)
   {- Arity: 2, Strictness: <L,U><L,1*U>, Inline: [0] -}
-842ed49da6db8873ca9344fa308b4001
+9c41d63e10ca51c04b80d2cc0776e270
   syllabifyWord ::
     [[PhonemeData.Phoneme]] -> PhonemeData.Word -> OtherData.SyllWord
   {- Arity: 2, Strictness: <L,U><S,1*U(1*U)>m, Inline: INLINE[0],

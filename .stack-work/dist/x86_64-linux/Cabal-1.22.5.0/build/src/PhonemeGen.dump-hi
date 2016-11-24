@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-02 18:56:33.933061 UTC
+2016-11-06 11:47:17.369934 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:PhonemeGen 7103
-  interface hash: d29d8f46478f6c70e8d3899ba9f53774
-  ABI hash: 44431a2b9295a7efdbb24a370fea6130
-  export-list hash: ac2fac7549593bb4b2279f37f817f5be
-  orphan hash: 3cb9e3ae293ee3a18fc56ba59cc7c98d
+  interface hash: 8992350ae39c7d91406d9a1290c85a1e
+  ABI hash: 882a8962f7e5d7a3a88d6f568f3c585f
+  export-list hash: 9e8e7402e02e274551e75a2a86f34bc1
+  orphan hash: cbedb7b7b4ab7c82f0bb4131e7e5ddea
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
   used TH splices: False
@@ -21,6 +21,7 @@ exports:
   PhonemeGen.makePhonations
   PhonemeGen.makePlaces
   PhonemeGen.makeRoundedneses
+  PhonemeGen.makeTones
   PhonemeGen.makeVowels
 module dependencies: PhonemeData
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
@@ -96,84 +97,99 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  PhonemeData 86639d5baa3c8896a59c20b5d5d0708d
-  exports: 8834c83badd5837275d7ec1bbd2f424a
-  AFFRICATE 147f242a04fba4ccaf3d990013a051a5
-  ALVEOLAR c6b89f8b792d9549c21b502170ee4e1c
-  ALVEOLOPALATAL 25346444b980c5a1ac9a043d30332738
-  APPROXIMANT 688bb45ab09fc9e6611f59d892650e5d
-  ASPIRATED 756e7c3f604a54456232d7e10e6e0cde
-  BACK 66c69778bae2e4a440bb5a9cec7741ca
-  BILABIAL 35be04d944862e0b4b3cd07ca4d4133e
-  BREATHY f6261f7e07b77dd9cd142213c14126e3
-  Backness 9747e3c7b5ae543ddf6a14d6c68612ef
-  CENTRAL a7a040b3167734845bc52f2315f379f7
-  CLOSE 19452b32e5ab61d38a230a97dff883ec
-  CLOSEMID 829b1a375886bafe473e5cd43c980de0
-  CORONAL ca62d4def85883412db49d69771fd684
-  CREAKY 4c3da3105ff3af15a8154f034d9336ad
-  Consonant b75bb727b0d1dc285bc6e78bea093faf
-  DEFAULT 84e40dde3b21b2bbcc2467fc8b704c5b
-  DENTAL 925136b48a76ca089014bdfac23ad309
-  DENTIALVEOLAR f08684c6c979289597282b401bfbae39
-  DORSAL bd982f4073f646c80f518bd24cad6c99
-  Diphthong aa609d265bfaa803022b7633544c1bf3
-  EPIGLOTTAL 4785a016a8862bf0c02884d663d41e83
-  EPIPHARYNGEAL aebcfcb1d9fa1bca206af6180adaf0ac
-  FLAP eccdd9a127edaee2ea4ed02c15b14dc9
-  FRICATIVE 9fe324020397eadebc8f607209e35373
-  FRONT 726360f7e0deebd1fa2b672cc9d9f70a
-  GLOTTAL 9f89b2526fe223b1411cb7cc61b642cc
-  Height 56a4ebd86a55476fcceec0b5b5ad52dd
-  LABIAL 77986b66f6db3ff46d81e8a03975a08b
-  LABIODENTAL 92275a3e1cccc7362f3597112fc06258
-  LAFFRICATE 3e4cdb3cdeb16222335c945aafc38d2f
-  LAPPROXIMANT 3c4f7b9a6a409f6c5ec3ef14ac4541d2
-  LARYNGEAL 4ec5bea4a7834fa9780a3eaf6b6b5b4e
-  LFLAP f2a7011e636265dc707312cd55371337
-  LFRICATIVE fd803e10efe16b2dce9944b62a4a74b4
-  LONG ee29e780120d882796a87cbbcdb00e55
-  Length 414a8b878bf71816d2002a26fce00728
-  MID 23250c6a570df131de1cdb293bacfe16
-  MODAL bd244264bab2966de13717630fceb06d
-  Manner 2286baa806cedbe4b7d0c4916ea37630
-  NASAL 33a4f70f850c97bc19932b2d99f86fec
-  NEARBACK 0a01970fff4a2ba092ad40544a59a654
-  NEARCLOSE a0d527593a0e5b421ef4d1de2a61e5d4
-  NEARFRONT 2fbf2ba3b8d9a1fda8899a2a6b7c003d
-  NEAROPEN abe71d4960553e1118e265c97da6ca81
-  NORMAL 341b4c7351a42f38158edd4de3495449
-  OPEN f9dd652c29b38c171f0203609f54d8af
-  OPENMID f4ad7f69fb5efb224cc41b1415e8557b
-  PALATAL 82a2f3e6a3c4c0a3e97f9f57ac5073f8
-  PHARYNGEAL 5c09d12e196eec4f612a556219df3e90
-  POSTALVEOLAR 7e03f37b030e8871b4d22fdd4b93d488
-  Phonation d728b957933ed40e5f338884385b44c8
-  Phoneme 725a483aa2dd4b7c0473c29cf990b878
-  Place e0644167ea1572fa835311f673311319
-  RETROFLEX a3afd188eeb6612ef479970d85082992
-  ROUNDED 0a5556dccc06d975adb090e5266ecb1d
-  Roundedness 4c51106b8aab206d34cb6b9d104e8504
-  SAFFRICATE b1edf15f9894f243d08ceea9bb332359
-  SHORT ca70fa1eca0ee2f7a463a74c2a265547
-  SILIBANT f64a5f1ed2462d03b63a4ac44aed52e4
-  SLACK c990fb0ced343bfe6a5ecaaeda0b09e1
-  STIFF 0bcb6b807cc83b67beb5b05b41f42598
-  STOP 1e220103167759b2457a52d787a2828e
-  TRILL 6ee80409b4b73f8f366272d21ec77dba
-  UNROUNDED a7c2b1df7a48e8f0af1f098da4350bc3
-  UVULAR 00b57ece7781c1ead6406b34dc02a2bf
-  VELAR c83c546d533edfd28dc443ee9c5d12af
-  VOICELESS dbf8f182d917d2469a91d36a4068291b
-  Vowel bc70fa2bda72574d3d9a605b3092c858
-  csymbol adede1920d7863e2930e586cb77c5227
-  vsymbol d4a50191fa439edee5dacea3c2489af1
+import  -/  PhonemeData 408b6488aa28ce44ef05793241013f6f
+  exports: c711b36c9b7415c6d00ea9681146dbcb
+  AFFRICATE c0633accced1e40697782c5c04b069ce
+  ALVEOLAR 6fe183e3c8864ca442f7934e503d4650
+  ALVEOLOPALATAL daaffb93a2932477e0f61cae6455dfcd
+  APPROXIMANT afa9ca34009df8bf926af4481cb93350
+  ASPIRATED b450b7c37ee4c8ef687d93633b315711
+  BACK 2ec193314c96eb813ec77befac27f281
+  BILABIAL 3ab6fb02456e7fcc0dca4f2242171191
+  BOTTOMT 5c8c3bfeea1efd20d0e241577aeaed3c
+  BREATHY 8d667724cf65c3e5a0cd73cb0397fa29
+  Backness 8fd035312b9b1aba200f0ff8b45ff72f
+  CENTRAL 42c0ac2b606a0dce589d130770507529
+  CLOSE 22a96e2ec8a1cab7a2f11a25f17987dc
+  CLOSEMID 28a8baa1d812c2959004ad2d5860cb36
+  CORONAL cc7698dba037e39c815c055830684fab
+  CREAKY cb0270b18ea7e542b72282922e925056
+  Consonant e834121481c88ee1a99bb2d9c0c327a2
+  DEFAULT b271861fd1783576b8280fda084f6056
+  DENTAL fe60451e7fc177f8625db85852eb0594
+  DENTIALVEOLAR e87e90600a110bb2397ee6da2ffbf497
+  DIPT b669c8a9f42776ed9f48cdf31ecba3ff
+  DORSAL 1715325532b0ab74efd7a9242241abba
+  Diphthong de76956b0dda8aec4042cce68ab3cbb6
+  EPIGLOTTAL 1a9f8059dab5e25b84a38539acc282e0
+  EPIPHARYNGEAL 6267ba3ac09d030e3a193c53a5993ff7
+  FALLT bf6493f564c877af8436448a72bf1e37
+  FLAP 3fdcd00eea839fd7b6da4b6acdc50091
+  FRICATIVE 55d73c4ea823ed2361247a0286d3ae01
+  FRONT e0d2a42adbbfcfd87ac73f47de30a67d
+  GLOTTAL de51a7f06d006897d0ca0d7b5fbd7880
+  HFALLT dc0ffd2bd3b9494d348f048b9c591d0e
+  HIGHT 7e89a0437c122c578ba5ac84b708192c
+  HRISET 17f437c4fdfc44f5b496ba136f41caee
+  Height bb7ef9ff04f02fbe9e908095d7879647
+  LABIAL c3a78c73d4e8cf0a03b0594238bdd0ea
+  LABIODENTAL 2912ab0d7ecd49578e43134b3ad7a5bf
+  LAFFRICATE 6f5bc94cce450cc0d219b9e7f4bcbde9
+  LAPPROXIMANT 51ca15e8d8190b49c520d84671352b20
+  LARYNGEAL 9c9a9c12eed09cfca90c9e2b46f5c65e
+  LFALLT 370593f09c7f1e4e0722ba38d021e3f9
+  LFLAP b1d07d8ecfdefe7336a346f04a1bc9f3
+  LFRICATIVE 8b71d52af44fcf2b2a9ec5d3a31321d4
+  LONG 6c15e86e7ce9a3cd079cd9b36f04d7af
+  LOWT e2c96f8c8a0008a363a3296afe0758d8
+  LRISET 59e93717df80eb5418d9965ef4df0bcd
+  Length 4b86df05ae3dae785a151fc2e2a4d662
+  MID 667a6c2f4d919e1e38ed9c4ff4b3260a
+  MIDT 268aa1e9dd8af14d1b6d8ef49d5dc0dd
+  MODAL a60f576982bf888dffe19414dff892e8
+  Manner cdf7cd4260ea9474daf2650d49d3b524
+  NASAL 426532af6235ef2717bfa577e4906681
+  NEARBACK 2f38802f6c145c99cfa5586df929a2ee
+  NEARCLOSE d7648572c57097cf4678314deb3fb67a
+  NEARFRONT 9d4ac6e377dd5f683a1fffdb5bef1503
+  NEAROPEN 491a5f682434521ae4a79e53765d96bf
+  NONET b3be8c8512b975551c05f5baffb2e3b9
+  NORMAL 0cce345bf4361ad51e3d65565a5c7d8e
+  OPEN 648d92e73f3591a0c10aa22bf73af8a2
+  OPENMID 1a820ba4ee453b6df8e4a6000474d157
+  PALATAL 1158b737ddb9a1219e5b2c2dc2261d56
+  PEAKT 2310bcd4e4515266cc481df033ba5148
+  PHARYNGEAL 9a742db34256d27cb1668ee7109a7b2b
+  POSTALVEOLAR fb373bc5ad900ec4e364a39937ff2d50
+  Phonation 2538822911657f5bc7898beed9a7f1fa
+  Phoneme 78c280a9bf84c920fdcdc1bfa9515e2f
+  Place a616e74c300a23926e887c7817b7b7ad
+  RETROFLEX d76654bb9469506b723a22ed8a2b942b
+  RISET 425c8b99bf07c70e4f648034b388578e
+  ROUNDED 382d348536829d0483430e784688d11a
+  Roundedness 3d23d3477a2c2b7874207db0a6b52ca6
+  SAFFRICATE b3daffb192c7e4171e761f236a414d52
+  SHORT 8975b9f99f59a81283ac8b701c7be2d0
+  SILIBANT cd19d84dfc64144f248cad9dfb2b0243
+  SLACK 38360f4734186e8a71cd1eb70076b104
+  STIFF 9532155286b949a79e44c716094fd6ed
+  STOP f7279e969883f96544c7de4d53999e6d
+  TOPT 5c5fc11cf7ab85cd94630c67df11043f
+  TRILL 2fca8896800c7846ccd54f7e650387fc
+  Tone c9348a5b3e7ca841d0de6bc684e0cd9f
+  UNROUNDED a85394a8cff5ac983dc69f1a095a4b21
+  UVULAR 1a9c449c6d7416a18ab62d11aa6d8e38
+  VELAR 2f6ec346e194f837cae24e473f67f200
+  VOICELESS 04648cc19c7e44a5ad8aa1e9bcc5d028
+  Vowel 0c80a941fa0fc13c4b1061bd7565d7d6
+  csymbol be9e716b1baf264bba90072e249f1793
+  vsymbol f5a8735f8217d4ab5b161b539e08e3e8
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random.Distribution.Uniform ce34c1edd0e59e868fcf9e0bf914c4ef
 import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
-3d2ee3fb36f77a4634d537a1dfacd4bb
+a4c63f58e0da2f018f68f589b6f61045
   $s$fEq(,) :: GHC.Classes.Eq (PhonemeData.Place, PhonemeData.Manner)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
@@ -188,328 +204,328 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                      @ PhonemeData.Manner
                      PhonemeData.$fEqPlace
                      PhonemeData.$fEqManner) -}
-b9fff860f2505283f3e8432c6a4c619b
+54c2a0e252996a68437a8f2a50b0649b
   makeBacknesses :: Data.RVar.RVar [PhonemeData.Backness]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Backness]
                    PhonemeGen.makeBacknesses1) -}
-da4cc1aa467c0a652242c4f5c65cd097
+c4635a8e7cad7d1850c6a4d1dcc587e7
   makeBacknesses1 :: [[PhonemeData.Backness]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Backness]
                    PhonemeGen.makeBacknesses13
                    PhonemeGen.makeBacknesses2) -}
-a448fe6ff37feb1b05d475bd2695c7bb
+337cbb3b6e80888d83550b48e59bd55f
   makeBacknesses10 :: [PhonemeData.Backness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Backness
                    PhonemeData.FRONT
                    PhonemeGen.makeBacknesses11) -}
-5b184683095e98c2d8e3956b6f6dc189
+95a9067148ec63c230a65b0a83add0e3
   makeBacknesses11 :: [PhonemeData.Backness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Backness
                    PhonemeData.CENTRAL
                    PhonemeGen.makeBacknesses9) -}
-41181995534f13a5f3446bc5a9846e96
+80e8c09274221b99b5d07e95c8bb71e0
   makeBacknesses12 :: [PhonemeData.Backness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Backness
                    PhonemeData.FRONT
                    PhonemeGen.makeBacknesses9) -}
-fd88233c6c0a827fe85bdcbc87e1b8fc
+7e998987aca61d2b42a8dd955a004141
   makeBacknesses13 :: [PhonemeData.Backness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Backness
                    PhonemeData.CENTRAL
                    (GHC.Types.[] @ PhonemeData.Backness)) -}
-37d91b1e3167c57b4b2280879c438aef
+b2f00554f0737bbb744dd110287a98ab
   makeBacknesses2 :: [[PhonemeData.Backness]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Backness]
                    PhonemeGen.makeBacknesses12
                    PhonemeGen.makeBacknesses3) -}
-11306ed351d1e628de16158b9dc49778
+1f379ec4cb786d1abd5dc3e0aad8b048
   makeBacknesses3 :: [[PhonemeData.Backness]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Backness]
                    PhonemeGen.makeBacknesses10
                    PhonemeGen.makeBacknesses4) -}
-bd52387bb52c6a9c59d9ee0ec18f0f01
+dabd0c06c4a0dc2b69202b8964fd5d8c
   makeBacknesses4 :: [[PhonemeData.Backness]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Backness]
                    PhonemeGen.makeBacknesses5
                    (GHC.Types.[] @ [PhonemeData.Backness])) -}
-8f777d2491be96a2453db96aad506262
+02cf4be0f4982ff3fa4ead5b43f6725f
   makeBacknesses5 :: [PhonemeData.Backness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Backness
                    PhonemeData.FRONT
                    PhonemeGen.makeBacknesses6) -}
-6738357bc735bfcb4c98962dae382909
+f6ae6c0e40fce7edf45795a5e8c0238d
   makeBacknesses6 :: [PhonemeData.Backness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Backness
                    PhonemeData.NEARFRONT
                    PhonemeGen.makeBacknesses7) -}
-4bed230629065c12febdde33891ef4d4
+962790a732e2b7b13bc581a20aacf030
   makeBacknesses7 :: [PhonemeData.Backness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Backness
                    PhonemeData.CENTRAL
                    PhonemeGen.makeBacknesses8) -}
-a94f0018425424c31ceb475b72e3f0d6
+fedae3510eb8eb693a2a209fa74058b3
   makeBacknesses8 :: [PhonemeData.Backness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Backness
                    PhonemeData.NEARBACK
                    PhonemeGen.makeBacknesses9) -}
-dd54d878f8f740a072d46c1aeb1f6b01
+6455a6a09365221f549f79c6b2ff8f34
   makeBacknesses9 :: [PhonemeData.Backness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Backness
                    PhonemeData.BACK
                    (GHC.Types.[] @ PhonemeData.Backness)) -}
-517ef749c52eb2b1e2a04bea2fddcbb2
+bfab8913cddb12a0bfdee23e288882d0
   makeConsonants ::
     [PhonemeData.Place]
     -> [PhonemeData.Manner]
     -> [PhonemeData.Phonation]
     -> Data.RVar.RVar [PhonemeData.Phoneme]
   {- Arity: 3, Strictness: <L,U><L,U><L,U> -}
-08df67b8adc5f68af0a7d7508bf3bc58
+514a0aa85ed46bc7755ff9e2e917281b
   makeDiphInventory ::
     GHC.Types.Int
     -> [PhonemeData.Phoneme] -> Data.RVar.RVar [PhonemeData.Phoneme]
   {- Arity: 2, Strictness: <L,1*U(U)><L,U> -}
-25d6cfd845db708a32741bdce41f1640
+fad23195cb30ae9df25fa2048693479b
   makeHeights :: Data.RVar.RVar [PhonemeData.Height]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Height]
                    PhonemeGen.makeHeights1) -}
-a75090b01c595f6d4e96b0e62a236dfd
+bedfcd3cec3e012aa8475dff8c84be39
   makeHeights1 :: [[PhonemeData.Height]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Height]
                    PhonemeGen.makeHeights20
                    PhonemeGen.makeHeights2) -}
-6bc1365c568a712c506ac0580ab9d8f5
+04768130af631157af7984313ad6aaf7
   makeHeights10 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.OPENMID
                    PhonemeGen.makeHeights11) -}
-f8a53e55a969a6cb78e454608b6ec867
+a373953c5354ab8a4af5c7c5d6f199a3
   makeHeights11 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.NEAROPEN
                    PhonemeGen.makeHeights12) -}
-3951a29504779ba5ca2db28f72910d0f
+d8cc565cbd9202cff95294212e220801
   makeHeights12 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.OPEN
                    (GHC.Types.[] @ PhonemeData.Height)) -}
-9862840e90699202ab4c4609be4f41ec
+b042e86968160079891c87f9f664196f
   makeHeights13 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.CLOSE
                    PhonemeGen.makeHeights14) -}
-58209fa9a7999d89b7fa53e30939fba5
+917984b2f5c490194ec0276095978a97
   makeHeights14 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.NEARCLOSE
                    PhonemeGen.makeHeights15) -}
-e3c35b07e42e63f3a5788c369e816251
+dcc6b69feeb09e225e66f843166e8139
   makeHeights15 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.CLOSEMID
                    PhonemeGen.makeHeights10) -}
-f5a5c42eb1f868b8872c4878775c61c9
+0015200d7e6eae500a6c3afa7c7dee88
   makeHeights16 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.CLOSE
                    PhonemeGen.makeHeights17) -}
-cc6832fd9556e954176ae85f26a4870d
+a5d3d0d1856f45e263a1c89fe60b95c8
   makeHeights17 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.CLOSEMID
                    PhonemeGen.makeHeights18) -}
-5aae58789487616901a74eb1756adf7b
+3811121116b3b03e8488a8af0f568910
   makeHeights18 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.OPENMID
                    PhonemeGen.makeHeights12) -}
-7736d94d475ef513283cdb56744e8f07
+cb63b2c29f8ba45d32ef7ca1f690bb48
   makeHeights19 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.CLOSE
                    PhonemeGen.makeHeights12) -}
-67eca890f99f749b8326b5a92fbe7f52
+aac0562a7ea8654347adf6b25732f573
   makeHeights2 :: [[PhonemeData.Height]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Height]
                    PhonemeGen.makeHeights19
                    PhonemeGen.makeHeights3) -}
-f8a508dd27b3b529cb693c506209cd56
+0a040d5cf4ab7f7dfe6bb9851ddbdb46
   makeHeights20 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.MID
                    (GHC.Types.[] @ PhonemeData.Height)) -}
-afdeb0f6d17bab3aa3fa1225d9078904
+c2df9ccdfa0d26ac9bc38c2eb00bbc3a
   makeHeights3 :: [[PhonemeData.Height]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Height]
                    PhonemeGen.makeHeights16
                    PhonemeGen.makeHeights4) -}
-9f3104b5dfffd6ccb4a2c3b7035d55d1
+8846c468a97171ab6f484cba9805986c
   makeHeights4 :: [[PhonemeData.Height]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Height]
                    PhonemeGen.makeHeights13
                    PhonemeGen.makeHeights5) -}
-0f12b43c7136ad88b8d2d9eb5b838d0b
+d9fc45209ea68ab9771421185fd7ab3c
   makeHeights5 :: [[PhonemeData.Height]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Height]
                    PhonemeGen.makeHeights6
                    (GHC.Types.[] @ [PhonemeData.Height])) -}
-e3112a55f779156b4486cea2b94741a1
+8bd6abb06d4347b3afce63f91b52eb1b
   makeHeights6 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.CLOSE
                    PhonemeGen.makeHeights7) -}
-60c00f6fe0ad06963f3af6beb62b0b01
+75ea0632f20547942c0ca7aee26a64f1
   makeHeights7 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.NEARCLOSE
                    PhonemeGen.makeHeights8) -}
-e8c9eec1cef6404c26385371d85f6127
+5d8d3fefcf015a967d15a299f1ca326e
   makeHeights8 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.CLOSEMID
                    PhonemeGen.makeHeights9) -}
-c7b3bbadbef6411883bead0c2b444a40
+618998f5632b438d819bbda87df5a3af
   makeHeights9 :: [PhonemeData.Height]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Height
                    PhonemeData.MID
                    PhonemeGen.makeHeights10) -}
-fba93274ae5cd74ac584ef9fac7e46f8
+473a00355cf655f574d0007824f5d916
   makeLengths :: Data.RVar.RVar [PhonemeData.Length]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Length]
                    PhonemeGen.makeLengths1) -}
-22a33c697d1c924263bddd4a40df2750
+e713682eb5d6f98acd850eaecada9424
   makeLengths1 :: [[PhonemeData.Length]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Length]
                    PhonemeGen.makeLengths9
                    PhonemeGen.makeLengths2) -}
-8b73a63c9d652199ef67b4370e19e48c
+9eee65d54b35e72c6b361bd1ba784774
   makeLengths2 :: [[PhonemeData.Length]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Length]
                    PhonemeGen.makeLengths6
                    PhonemeGen.makeLengths3) -}
-d491f62d85b2672037919fa4adbcc275
+0aee63cb12496a9b512a7537527f479c
   makeLengths3 :: [[PhonemeData.Length]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Length]
                    PhonemeGen.makeLengths8
                    PhonemeGen.makeLengths4) -}
-0fbd68146c96efcd3db6c7c87800f853
+304deadbc3e3c85d59b2d6a505f2ebd3
   makeLengths4 :: [[PhonemeData.Length]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Length]
                    PhonemeGen.makeLengths5
                    (GHC.Types.[] @ [PhonemeData.Length])) -}
-c16ffc1253972e5ee86c685ee9b0c198
+9e1bd06c0e7c3c57b3d47fab3080c867
   makeLengths5 :: [PhonemeData.Length]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Length
                    PhonemeData.SHORT
                    PhonemeGen.makeLengths6) -}
-3f369e95fed2852ef223991817361805
+ba735df66e2ddad99d56bb3078ea884c
   makeLengths6 :: [PhonemeData.Length]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Length
                    PhonemeData.NORMAL
                    PhonemeGen.makeLengths7) -}
-dfc408f2b097c75bf83a081845a5daa2
+5a235148aaae3cef677cc9ea02e18f09
   makeLengths7 :: [PhonemeData.Length]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Length
                    PhonemeData.LONG
                    (GHC.Types.[] @ PhonemeData.Length)) -}
-b22e86d613250908187f209a7bf9acbe
+003ad43b58110a5b840a9967d7b29229
   makeLengths8 :: [PhonemeData.Length]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Length
                    PhonemeData.SHORT
                    PhonemeGen.makeLengths9) -}
-0d4ba6efdd743e4e92c30d76ca6b822b
+695bb0d9fa6b9d9a2165e75139151208
   makeLengths9 :: [PhonemeData.Length]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Length
                    PhonemeData.NORMAL
                    (GHC.Types.[] @ PhonemeData.Length)) -}
-abf53b94acec9a237295d3ee897aafbe
+7b8ed94d910f5d3885c69cefe91df523
   makeManners :: Data.RVar.RVar [PhonemeData.Manner]
   {- Arity: 2, Strictness: <L,C(U)><L,U>,
      Unfolding: InlineRule (0, True, True)
@@ -526,7 +542,7 @@ abf53b94acec9a237295d3ee897aafbe
                                     <Data.Random.Source.Internal.Prim.Prim>_R
                                     <Data.Functor.Identity.Identity>_R))
                           (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N)) -}
-dc33cf4efeb0ea742f9e966e365eeebc
+4c5e281cbacf1d582b1e61da9721561c
   makeManners1 ::
     ([PhonemeData.Manner] -> b1)
     -> (forall a2.
@@ -551,21 +567,21 @@ dc33cf4efeb0ea742f9e966e365eeebc
                    (\ x :: [[PhonemeData.Manner]] ->
                     case PhonemeGen.makeManners_go x of vx { DEFAULT -> eta vx })
                    eta1) -}
-df7f9616308834e4a6c135a7acc83e4d
+7cd3e6061cd00c5fcc14ec56f0cdf25d
   makeManners10 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners11
                    (GHC.Types.[] @ [PhonemeData.Manner])) -}
-e50f4f708d02723472a62ea05dc00378
+e7cb8680bef25f5dd5f72d13bc128ac6
   makeManners11 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.TRILL
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-d41358d9cbcbb4ec2e1ac4ac75a89d43
+16ab5b5f854fa8f4990a037e306c402e
   makeManners12 ::
     ([PhonemeData.Manner] -> b1)
     -> (forall a2.
@@ -618,7 +634,7 @@ d41358d9cbcbb4ec2e1ac4ac75a89d43
                                    <[PhonemeData.Manner]>_R)) of nt { DEFAULT ->
                     nt @ b1 eta2 eta3 })
                    eta3) -}
-2b94470f68d6240edeccbd8234a77ca3
+4a2d1bca1fcdff1d7ab34f2fda08ec83
   makeManners13 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -639,7 +655,7 @@ d41358d9cbcbb4ec2e1ac4ac75a89d43
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners14) -}
-d105889e2bf12c0b6e14e17d8f5b69e8
+39671b0ee8dd8a56eb1e7738beafe08b
   makeManners14 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -662,7 +678,7 @@ d105889e2bf12c0b6e14e17d8f5b69e8
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Manner]))) -}
-4368625830e908e8d782bdb2c15ce61b
+91ce82070f178591f4d0a8cf078e2668
   makeManners15 ::
     ([PhonemeData.Manner] -> b1)
     -> (forall a2.
@@ -687,7 +703,7 @@ d105889e2bf12c0b6e14e17d8f5b69e8
                    (\ x :: [[PhonemeData.Manner]] ->
                     case PhonemeGen.makeManners_go1 x of vx { DEFAULT -> eta vx })
                    eta1) -}
-3fa4a982c90bd81779210ab704f328bf
+563cb842b5d466605f0b66395961aec0
   makeManners16 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -708,7 +724,7 @@ d105889e2bf12c0b6e14e17d8f5b69e8
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners17) -}
-b43b9c111fe87683f18f2372ba75c116
+0627786cce9cd0cb458c9a485569d99d
   makeManners17 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -719,19 +735,19 @@ b43b9c111fe87683f18f2372ba75c116
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Manner]))) -}
-8643ecfccdc218ef44604b819ffb3e55
+ef6d11ff707a249630a1547bee3f7523
   makeManners18 :: Data.RVar.RVar [PhonemeData.Manner]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners19) -}
-89bcc7865002e4cf6116c9a9caf70a93
+7a9eb6e555374949315d287cdb768c45
   makeManners19 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    (GHC.Types.[] @ PhonemeData.Manner)
                    PhonemeGen.makeManners20) -}
-58848bb02603a249410894c5b51a37c1
+0848ec08941dcbcb9427e5093d7e5c1b
   makeManners2 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -753,21 +769,21 @@ b43b9c111fe87683f18f2372ba75c116
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners3) -}
-5e9c9dda0dc09483e8e631745816f5b8
+bc6771cf3285d7c46390d68bb17c4c42
   makeManners20 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners21
                    (GHC.Types.[] @ [PhonemeData.Manner])) -}
-f266a42b85527bf85c17eff37ffa63f6
+ce92e18784a2e79657622944b3fdaf9d
   makeManners21 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.LAPPROXIMANT
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-a15261c1c327772a1b8a246da86630d6
+d140ac5d3d629a261fd7994591221d40
   makeManners22 ::
     ([PhonemeData.Manner] -> b)
     -> (forall a2.
@@ -788,7 +804,7 @@ a15261c1c327772a1b8a246da86630d6
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makeManners_eta1) -}
-a4839353225b362be02fa56c310ddcec
+51696e708c25a358acfdc42408811e7e
   makeManners23 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -802,7 +818,7 @@ a4839353225b362be02fa56c310ddcec
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-56fde929d4b263e1a018151022f1fcec
+9e087427f9a95b3ef378f13c9d55c0b7
   makeManners24 ::
     ([PhonemeData.Manner] -> b)
     -> (forall a2.
@@ -822,7 +838,7 @@ a4839353225b362be02fa56c310ddcec
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 (GHC.Types.[] @ PhonemeData.Manner)) -}
-c96535bdc2227f26e24f9ff42710b8d4
+b61ef28483212b272807e9bf34a156ba
   makeManners25 ::
     ([PhonemeData.Manner] -> b1)
     -> (forall a2.
@@ -875,7 +891,7 @@ c96535bdc2227f26e24f9ff42710b8d4
                                    <[PhonemeData.Manner]>_R)) of nt { DEFAULT ->
                     nt @ b1 eta2 eta3 })
                    eta3) -}
-5eaa21730d2b0566f96effcd25156c4b
+f44f0c688169cab997ea83a171170844
   makeManners26 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -896,7 +912,7 @@ c96535bdc2227f26e24f9ff42710b8d4
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners27) -}
-dd3fd1bb0c4857f94e565a68c6ee4e97
+4038a593d62413ddc1ce8353811ec117
   makeManners27 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -919,7 +935,7 @@ dd3fd1bb0c4857f94e565a68c6ee4e97
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Manner]))) -}
-0880f44778655939697f322d2fe4ffb6
+d588b76d5ee77d81071e32d60534e41c
   makeManners28 ::
     ([PhonemeData.Manner] -> b1)
     -> (forall a2.
@@ -944,7 +960,7 @@ dd3fd1bb0c4857f94e565a68c6ee4e97
                    (\ x :: [[PhonemeData.Manner]] ->
                     case PhonemeGen.makeManners_go2 x of vx { DEFAULT -> eta vx })
                    eta1) -}
-f4ec447b88ce8b9c3da8a32731d65785
+38dec6656921ea367af6a70ef05b15fa
   makeManners29 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -965,7 +981,7 @@ f4ec447b88ce8b9c3da8a32731d65785
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners30) -}
-6a1302ca6d838cd8714feef90c7a6f2b
+76a04de62c380505b8926475d5352a83
   makeManners3 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -975,7 +991,7 @@ f4ec447b88ce8b9c3da8a32731d65785
                         Data.Functor.Identity.Identity [PhonemeData.Manner])
                    PhonemeGen.makeManners72
                    PhonemeGen.makeManners4) -}
-5168f06d153369fa62df2d6c642755e0
+fa473582704cdd80c9314853a73b8c59
   makeManners30 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -996,7 +1012,7 @@ f4ec447b88ce8b9c3da8a32731d65785
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners31) -}
-83e3c848dbb234d0c5cf70294758a043
+ed19452c9fe98820f6b1a071367dfec5
   makeManners31 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1005,7 +1021,7 @@ f4ec447b88ce8b9c3da8a32731d65785
                         Data.Functor.Identity.Identity [PhonemeData.Manner])
                    PhonemeGen.makeManners37
                    PhonemeGen.makeManners32) -}
-656c2c971243d146a02c17b041bf31e3
+2399aab43122ca571cf9d576a19aa65a
   makeManners32 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1016,52 +1032,52 @@ f4ec447b88ce8b9c3da8a32731d65785
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Manner]))) -}
-dac82fe77e1909993d7b82dd1b1f6798
+3e4eba48786c9fcf9b471553887d0d34
   makeManners33 :: Data.RVar.RVar [PhonemeData.Manner]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners34) -}
-6c685a3c7376dc642f0c15c0b72e5c39
+f8ba5e7aac2178088d25439700345d08
   makeManners34 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    (GHC.Types.[] @ PhonemeData.Manner)
                    PhonemeGen.makeManners35) -}
-3f443cf78d07dd8676940f35e919da70
+b251c174c03644a38f02edea1825fec1
   makeManners35 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners36
                    (GHC.Types.[] @ [PhonemeData.Manner])) -}
-3872c5e37f5ec9251bfcb1fc375e5c70
+bda695d64c91826333b66cd3e3318fd0
   makeManners36 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.LFRICATIVE
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-a9db7316d8b64086218e9fc37a29020b
+fb9215c02d5d8db8cde6103fd84a7ada
   makeManners37 :: Data.RVar.RVar [PhonemeData.Manner]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners38) -}
-5d707fe93a01998cbaf0eb5565fba25f
+35251b9b664290efdc8a6122ba86d640
   makeManners38 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    (GHC.Types.[] @ PhonemeData.Manner)
                    PhonemeGen.makeManners39) -}
-b5562d0f7304bb673ceeef35a6d2c105
+c15cef147b1e451665a933c5af9c711e
   makeManners39 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners40
                    (GHC.Types.[] @ [PhonemeData.Manner])) -}
-26a0193588e62a099c874d1d0aad3851
+c9f30454d1eb855cd2b7eb4ce7bb50e4
   makeManners4 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1083,14 +1099,14 @@ b5562d0f7304bb673ceeef35a6d2c105
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners5) -}
-aa5e7e0cbdd421bfc0f68a2272bcd9cf
+10a34b6dd9b8a52d45854d18cf996cfc
   makeManners40 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.SILIBANT
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-f173422d80493587e20ae1bd4209157b
+e72fc0b38ce47209166e31ed7ac1906c
   makeManners41 ::
     ([PhonemeData.Manner] -> b1)
     -> (forall a2.
@@ -1143,7 +1159,7 @@ f173422d80493587e20ae1bd4209157b
                                    <[PhonemeData.Manner]>_R)) of nt { DEFAULT ->
                     nt @ b1 eta2 eta3 })
                    eta3) -}
-fe7f1105d5ffb3b80cc87503869daa17
+507bbb8e3c2fc7275f9c321f97f6225f
   makeManners42 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1164,7 +1180,7 @@ fe7f1105d5ffb3b80cc87503869daa17
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners43) -}
-c33147fe040274e49a3624c0ec9c5aa1
+3110783b5ce7f22971c183a35286478c
   makeManners43 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1187,7 +1203,7 @@ c33147fe040274e49a3624c0ec9c5aa1
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Manner]))) -}
-da51e8fea1ebc15faf05bce5206a1f4a
+b909a7d19ae41b9256158d9283e18776
   makeManners44 ::
     ([PhonemeData.Manner] -> b1)
     -> (forall a2.
@@ -1212,7 +1228,7 @@ da51e8fea1ebc15faf05bce5206a1f4a
                    (\ x :: [[PhonemeData.Manner]] ->
                     case PhonemeGen.makeManners_go3 x of vx { DEFAULT -> eta vx })
                    eta1) -}
-e9c3aff72c11dacb82ee9417b5a4d8cf
+f624a903413ee10d2c89e6969a5ae983
   makeManners45 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1233,7 +1249,7 @@ e9c3aff72c11dacb82ee9417b5a4d8cf
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners46) -}
-2125be74b1800add9f25e32e097f7ee9
+32a04ff0c4d8c13e72556e149fb4dd98
   makeManners46 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1242,7 +1258,7 @@ e9c3aff72c11dacb82ee9417b5a4d8cf
                         Data.Functor.Identity.Identity [PhonemeData.Manner])
                    PhonemeGen.makeManners52
                    PhonemeGen.makeManners47) -}
-9a96213e6c6781d8ed2a3dbd3b5681e4
+342ebe19a19558a11c382c46524305ff
   makeManners47 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1253,19 +1269,19 @@ e9c3aff72c11dacb82ee9417b5a4d8cf
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Manner]))) -}
-ad85c39d889294f152fcae1275fc3ce9
+52624afdc5d6d323a74daf8e598f8419
   makeManners48 :: Data.RVar.RVar [PhonemeData.Manner]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners49) -}
-4469b73b60f0413c2849bb8fd8dde9f8
+6fc92ccba6dab02acb1b664b605aad29
   makeManners49 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    (GHC.Types.[] @ PhonemeData.Manner)
                    PhonemeGen.makeManners50) -}
-5666d5f9112bc50d772f78f3a40f9711
+f30ba85c7b55cf030a2f791f299f429c
   makeManners5 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1287,47 +1303,47 @@ ad85c39d889294f152fcae1275fc3ce9
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners6) -}
-cc6dbba66e459f83d8224c9d01ad606f
+67441905f5e5f6451e64dfccc0686eab
   makeManners50 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners51
                    (GHC.Types.[] @ [PhonemeData.Manner])) -}
-2b93175dbd5a6f1d8995403ff5aaa04a
+7d2429f3350fab2bf7f998a289762397
   makeManners51 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.LAFFRICATE
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-19b516c5fd7fdc086d14ec9a9f4b2c1d
+fbcd31c81dc2936148833f6d52ab2bde
   makeManners52 :: Data.RVar.RVar [PhonemeData.Manner]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners53) -}
-1eb64b73ed4396eda824a4f0c49b1b84
+928cc11a60b488192765225bcf39472b
   makeManners53 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    (GHC.Types.[] @ PhonemeData.Manner)
                    PhonemeGen.makeManners54) -}
-3cc6df91b32099c64b91322fc7eb794d
+b8aa0f2579696e39b496a6aeae01174f
   makeManners54 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners55
                    (GHC.Types.[] @ [PhonemeData.Manner])) -}
-607ae4a76a5e5adee2e6b5cdfce98289
+2a031165398f31c74315e6d9633dd470
   makeManners55 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.SAFFRICATE
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-7f082ed3a4b11f83b509ce0dff5fc1e3
+7447446fcc475bb2726da3e7ad4a64f0
   makeManners56 ::
     ([PhonemeData.Manner] -> b)
     -> (forall a2.
@@ -1348,7 +1364,7 @@ cc6dbba66e459f83d8224c9d01ad606f
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makeManners_eta4) -}
-44ac6ae37171df668bfd97e737830d62
+f8d289167c83af151367b70a7fc4cc63
   makeManners57 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1362,7 +1378,7 @@ cc6dbba66e459f83d8224c9d01ad606f
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-8a332bdb362442dc0f7644401ec80bfe
+435a0e23d6f9f72593ac239ad64e0cac
   makeManners58 ::
     ([PhonemeData.Manner] -> b)
     -> (forall a2.
@@ -1383,7 +1399,7 @@ cc6dbba66e459f83d8224c9d01ad606f
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makeManners_eta5) -}
-1be4aaa86eb91bbeac867e9657279fbf
+2966aec7e9c2cc603e68c2d622b3c9ba
   makeManners59 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1397,7 +1413,7 @@ cc6dbba66e459f83d8224c9d01ad606f
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-339de5a9225c19b5837a1b5d520ac4dd
+2a74bb4e6d07e5a4778a119b804790f2
   makeManners6 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1419,7 +1435,7 @@ cc6dbba66e459f83d8224c9d01ad606f
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners7) -}
-2b33797370ccb6970bb6fe31d31817a6
+9fbea2e97c40dcc219bb477604a59899
   makeManners60 ::
     ([PhonemeData.Manner] -> b1)
     -> (forall a2.
@@ -1472,7 +1488,7 @@ cc6dbba66e459f83d8224c9d01ad606f
                                    <[PhonemeData.Manner]>_R)) of nt { DEFAULT ->
                     nt @ b1 eta2 eta3 })
                    eta3) -}
-c604eb1e72b639fd09242e72d69dea53
+d1a0f8b03a82db7d66b1cb94da7b90b3
   makeManners61 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1493,7 +1509,7 @@ c604eb1e72b639fd09242e72d69dea53
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners62) -}
-6473287b7da4c48750b9024c3988e10e
+dbaaf6e68f268514ae28acb4148a6c80
   makeManners62 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1516,7 +1532,7 @@ c604eb1e72b639fd09242e72d69dea53
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Manner]))) -}
-545cf0c32c7953199657c8167d0b0625
+e0492344d6f79d4de064abeba5e8f5c4
   makeManners63 ::
     ([PhonemeData.Manner] -> b1)
     -> (forall a2.
@@ -1541,7 +1557,7 @@ c604eb1e72b639fd09242e72d69dea53
                    (\ x :: [[PhonemeData.Manner]] ->
                     case PhonemeGen.makeManners_go4 x of vx { DEFAULT -> eta vx })
                    eta1) -}
-6ab3ff4e88461358f4c20936350c0be0
+e08fe953683da6de3efeaca49b3df632
   makeManners64 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1562,7 +1578,7 @@ c604eb1e72b639fd09242e72d69dea53
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Manner]>_N))
                    PhonemeGen.makeManners65) -}
-eed9060e23a84a63b56e69c09ce8e89b
+ec5811b1edd6625822f4de3766dd0a21
   makeManners65 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1573,33 +1589,33 @@ eed9060e23a84a63b56e69c09ce8e89b
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Manner]))) -}
-2725946379b4b2c4b4e26df5ec4e0bb7
+c114dec688a4039006f192d9a5e03052
   makeManners66 :: Data.RVar.RVar [PhonemeData.Manner]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners67) -}
-91e5f1c58e9b1726beba2b928d0e550a
+3cea39572c5cad2b078bf9856a01c7c8
   makeManners67 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    (GHC.Types.[] @ PhonemeData.Manner)
                    PhonemeGen.makeManners68) -}
-d448ed0c9a0dabde6b056e437a845d05
+7e39bc438a48bfa2cf50c9251a738f5f
   makeManners68 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners69
                    (GHC.Types.[] @ [PhonemeData.Manner])) -}
-473b9d5849492bf3c6ca364efb335409
+f30188ef3af422731ef76e741f9ae9d3
   makeManners69 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.LFLAP
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-307162a961124008c79764b5c0ff310a
+ea0f40bff70439337f175129243baf63
   makeManners7 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1611,7 +1627,7 @@ d448ed0c9a0dabde6b056e437a845d05
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Manner]))) -}
-3825caebabafbe13852c77d6ed485118
+a0a6fe0715f537ef890e8e3d37ac8ea8
   makeManners70 ::
     ([PhonemeData.Manner] -> b)
     -> (forall a2.
@@ -1632,7 +1648,7 @@ d448ed0c9a0dabde6b056e437a845d05
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makeManners_eta7) -}
-576b63b3bcd3e00b4825f90bc4517097
+19302f16849de5a31ffb2659b79c74f0
   makeManners71 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1646,33 +1662,33 @@ d448ed0c9a0dabde6b056e437a845d05
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-d697b01ddb7624a8b56e087e6696a60c
+b4ef8a1f3fc8d627823f1fc3016f36ed
   makeManners72 :: Data.RVar.RVar [PhonemeData.Manner]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners73) -}
-811807620815adbeb7fd3ca0d5cb2342
+52b5d761572d82c6da876f76d72b8db1
   makeManners73 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    (GHC.Types.[] @ PhonemeData.Manner)
                    PhonemeGen.makeManners74) -}
-970b7b98d8621812e6d1a201a27a715c
+838055b812727363eab6c1ad0933a3d7
   makeManners74 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners75
                    (GHC.Types.[] @ [PhonemeData.Manner])) -}
-1d8d77a196d0164a747b39337744544c
+bd1d50ac1bc0720fb8c4b4bba9a4c612
   makeManners75 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.NASAL
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-f710f62df5fe3da3e9d53e8355d85fe0
+9e9d760e4fa6f50bb408f9e4854033c0
   makeManners76 ::
     ([PhonemeData.Manner] -> b)
     -> (forall a2.
@@ -1693,7 +1709,7 @@ f710f62df5fe3da3e9d53e8355d85fe0
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makeManners_eta8) -}
-48614076d9dc9effc01c4d91a9d5b2bf
+ee946deddbd71ba4df6c4fbb8caf3ded
   makeManners77 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Manner]]
@@ -1707,19 +1723,19 @@ f710f62df5fe3da3e9d53e8355d85fe0
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-a83949cd82289e499e0b515368333fea
+bf30ff10e5f98e8ec5e4fefcdf625b82
   makeManners8 :: Data.RVar.RVar [PhonemeData.Manner]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Manner]
                    PhonemeGen.makeManners9) -}
-d2e32a6569a19d5eb126ba9a2a27b906
+e96287c5536424ce9d0dc326a1c65d20
   makeManners9 :: [[PhonemeData.Manner]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Manner]
                    (GHC.Types.[] @ PhonemeData.Manner)
                    PhonemeGen.makeManners10) -}
-d24cefee1814cf0bbd8b326faf5d5035
+6e2c78386dc3dfe998044ec9eaead3a1
   makeManners_eta ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -1729,14 +1745,14 @@ d24cefee1814cf0bbd8b326faf5d5035
                    @ (Data.RVar.RVarT
                         Data.Functor.Identity.Identity [PhonemeData.Manner])
                    PhonemeGen.makeManners13) -}
-ace67e96debb5f2800df7860c1e76bf2
+d888970202a492a45cd192083ccd96f3
   makeManners_eta1 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.APPROXIMANT
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-e9ea8d172069615e6b2e2f696cbbe2e3
+cc7ee621576dc946839b659f392d8bfd
   makeManners_eta2 ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -1746,7 +1762,7 @@ e9ea8d172069615e6b2e2f696cbbe2e3
                    @ (Data.RVar.RVarT
                         Data.Functor.Identity.Identity [PhonemeData.Manner])
                    PhonemeGen.makeManners26) -}
-4d7951064a9572ffd409099c69d4d1be
+1c78d9c0ff8eb821f2b8838801ee1be5
   makeManners_eta3 ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -1756,21 +1772,21 @@ e9ea8d172069615e6b2e2f696cbbe2e3
                    @ (Data.RVar.RVarT
                         Data.Functor.Identity.Identity [PhonemeData.Manner])
                    PhonemeGen.makeManners42) -}
-5009878d2f9d40b2f6f9f1d18717f1e1
+047f8cf3fc5b96e22a9b8951c1d60d30
   makeManners_eta4 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.AFFRICATE
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-baedd563beb97b52a0bf8b577f119e76
+f0a593fad3594dbded7d57f56a457c74
   makeManners_eta5 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.FRICATIVE
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-866b157b318e23a0dff47904f3454e07
+6d5abddb35f614366a1a80b331bb1b9f
   makeManners_eta6 ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -1780,160 +1796,160 @@ baedd563beb97b52a0bf8b577f119e76
                    @ (Data.RVar.RVarT
                         Data.Functor.Identity.Identity [PhonemeData.Manner])
                    PhonemeGen.makeManners61) -}
-f2aab35c645c8619b6cdef630d80f784
+6a4b0983680211f748eaf0d697544aaf
   makeManners_eta7 :: [PhonemeData.Manner]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.FLAP
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-5b59ede7d1ec2732bc3520b15a2561ad
+e1314cd30be2cdad7893979b6ad62a10
   makeManners_eta8 :: [PhonemeData.Manner]
   {- HasNoCafRefs, Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Manner
                    PhonemeData.STOP
                    (GHC.Types.[] @ PhonemeData.Manner)) -}
-6520db196a99d710a6cc524315866111
+5518768fe1fbd83abead282f23823563
   makeManners_go :: [[PhonemeData.Manner]] -> [PhonemeData.Manner]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-be2ed9e458f1ca5191b0c49710e9c3f9
+83bb312c9cb2654f66c21222b285200b
   makeManners_go1 :: [[PhonemeData.Manner]] -> [PhonemeData.Manner]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-95a04aa3404b33267bd8ad5f38d681cb
+9915fc21b5daae2f6de0d23964f4f1bd
   makeManners_go2 :: [[PhonemeData.Manner]] -> [PhonemeData.Manner]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-320ccfc22da45b053892b312ad70a717
+76c66321bb56acf64b720b5c1cf616d9
   makeManners_go3 :: [[PhonemeData.Manner]] -> [PhonemeData.Manner]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-eb5eaa166ba6cc26023c2f3e8e09c66b
+ff5c473cc7e7f6c2b0fd10a58eedb3a1
   makeManners_go4 :: [[PhonemeData.Manner]] -> [PhonemeData.Manner]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-585ab7222211c95283c178d166842deb
+8c737662983e4167b3d17834b7c82429
   makePhonations :: Data.RVar.RVar [PhonemeData.Phonation]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Phonation]
                    PhonemeGen.makePhonations1) -}
-5eddc220cd679d44ff131c94d2b712b4
+ccbe7485ecab05437fde292c2232a35a
   makePhonations1 :: [[PhonemeData.Phonation]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Phonation]
                    PhonemeGen.makePhonations17
                    PhonemeGen.makePhonations2) -}
-ec499b582861967797ab039a2df74169
+313b09fcac75b0786503df83a934014e
   makePhonations10 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.SLACK
                    PhonemeGen.makePhonations11) -}
-a7495d6d5889b6f2d8031cbaf492d29d
+aa3e70ef71eca95e00ac9253a2f2dc74
   makePhonations11 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.MODAL
                    PhonemeGen.makePhonations12) -}
-add7c6b2bc1faf7989e3c3c7199d5f1d
+6c1595b60b63f4d04254789d1859d804
   makePhonations12 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.STIFF
                    (GHC.Types.[] @ PhonemeData.Phonation)) -}
-3e61c9b16d43b62b85e2d2207a86342f
+7b7ec3afebc3029bf62bc2b0e85831d1
   makePhonations13 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.BREATHY
                    PhonemeGen.makePhonations14) -}
-857178140e5cd3f5ce5895d831c7f290
+7939e60953905be9db30fe098c2d5b18
   makePhonations14 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.MODAL
                    PhonemeGen.makePhonations15) -}
-003b11d7e1d247803f3f016365d43861
+7ff68fc9a922e639b61d58e146ea90c2
   makePhonations15 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.CREAKY
                    (GHC.Types.[] @ PhonemeData.Phonation)) -}
-113b27f7699a5078f390d842ad80d7a5
+ba3547099a5cec567d161b1ccd0ecb50
   makePhonations16 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.VOICELESS
                    PhonemeGen.makePhonations17) -}
-4656f1ed31314da5a95bace13d1ca288
+d54588a623bf148bf56b0172b512e5c6
   makePhonations17 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.MODAL
                    (GHC.Types.[] @ PhonemeData.Phonation)) -}
-e2f77b0eb31528f7e78814bfcaa8ff47
+76e775d83fab135047b4b1f22ae13d5c
   makePhonations2 :: [[PhonemeData.Phonation]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Phonation]
                    PhonemeGen.makePhonations16
                    PhonemeGen.makePhonations3) -}
-a84e4d8e4870155b0d1721f49e1e4a5f
+83a73edf882d04051ce63fe3aaa8056c
   makePhonations3 :: [[PhonemeData.Phonation]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Phonation]
                    PhonemeGen.makePhonations13
                    PhonemeGen.makePhonations4) -}
-8977d734a2aa50c983c81ece419cb87b
+a1724601767b39d1b55d31734665a078
   makePhonations4 :: [[PhonemeData.Phonation]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Phonation]
                    PhonemeGen.makePhonations10
                    PhonemeGen.makePhonations5) -}
-120b6074f25f47a931279edff38c2690
+3247ec68f9bd3101c78cab6f5c38e078
   makePhonations5 :: [[PhonemeData.Phonation]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Phonation]
                    PhonemeGen.makePhonations9
                    PhonemeGen.makePhonations6) -}
-749659c3e2ab62e57b108edf0d254110
+d301c51c23786d1a1b746f0f4f667494
   makePhonations6 :: [[PhonemeData.Phonation]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Phonation]
                    PhonemeGen.makePhonations7
                    (GHC.Types.[] @ [PhonemeData.Phonation])) -}
-b7106aeb53758366968241bf77d59543
+17a84781bbeab0e292548ba7d6ef90f8
   makePhonations7 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.MODAL
                    PhonemeGen.makePhonations8) -}
-ebfc87a7fe6a206d2021bfcb8274737b
+cebdb8df85cf6a775570c2b1f3fc645a
   makePhonations8 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.ASPIRATED
                    (GHC.Types.[] @ PhonemeData.Phonation)) -}
-2465af3f6ed88fa807d280218f67614b
+6612fa310c04f3770395bf542008c6ce
   makePhonations9 :: [PhonemeData.Phonation]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Phonation
                    PhonemeData.VOICELESS
                    PhonemeGen.makePhonations7) -}
-ba0db201664551b87f8b75a065a31b78
+3daf934c7a3ce5f9e9c7e97222bf52d9
   makePlaces :: Data.RVar.RVar [PhonemeData.Place]
   {- Arity: 2, Strictness: <L,C(U)><L,U>,
      Unfolding: InlineRule (0, True, True)
@@ -1950,7 +1966,7 @@ ba0db201664551b87f8b75a065a31b78
                                     <Data.Random.Source.Internal.Prim.Prim>_R
                                     <Data.Functor.Identity.Identity>_R))
                           (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N)) -}
-8acec986bd38f71a85c770b824311110
+88ac47f0d0e91c1d2a1bb689bfad9f93
   makePlaces1 ::
     ([PhonemeData.Place] -> b1)
     -> (forall a2.
@@ -1975,7 +1991,7 @@ ba0db201664551b87f8b75a065a31b78
                    (\ x :: [[PhonemeData.Place]] ->
                     case PhonemeGen.makePlaces_go x of vx { DEFAULT -> eta vx })
                    eta1) -}
-4fa23f84c2b7ac70bfc5325f6fbc5bcf
+5436c6ead99b7523512bdb2e693cbc4f
   makePlaces10 ::
     ([PhonemeData.Place] -> b1)
     -> (forall a2.
@@ -2000,7 +2016,7 @@ ba0db201664551b87f8b75a065a31b78
                    (\ x :: [[PhonemeData.Place]] ->
                     case PhonemeGen.makePlaces_go1 x of vx { DEFAULT -> eta vx })
                    eta1) -}
-7e24f99d6e5f2111a48568de4c552a0a
+2f5ee48519a1883ca711b2b2b9ab066c
   makePlaces11 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2009,7 +2025,7 @@ ba0db201664551b87f8b75a065a31b78
                         Data.Functor.Identity.Identity [PhonemeData.Place])
                    PhonemeGen.makePlaces14
                    PhonemeGen.makePlaces12) -}
-3017c14886939b4ac20e3103d4bbbfa0
+1ee482e78870666328a04fb0ddd026c9
   makePlaces12 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2033,7 +2049,7 @@ ba0db201664551b87f8b75a065a31b78
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Place]))) -}
-0436e4f7e29e8058d989c15febcc1916
+110715fbefc767a4da2751fa0b06e86e
   makePlaces13 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -2054,47 +2070,47 @@ ba0db201664551b87f8b75a065a31b78
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makePlaces_eta1) -}
-d0ed9ea2206949c6f5847e107ab96ba2
+1f0c67288f6a707d8654cda4e55d4c53
   makePlaces14 :: Data.RVar.RVar [PhonemeData.Place]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Place]
                    PhonemeGen.makePlaces15) -}
-3b2e523708b1568d11b3b6ac28a5161a
+0a4eb667213c8281c35c853f41481f51
   makePlaces15 :: [[PhonemeData.Place]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Place]
                    PhonemeGen.makePlaces19
                    PhonemeGen.makePlaces16) -}
-c423b1078934166105591aee8b44444e
+2350db2fb709a3437776fced9e58c6c2
   makePlaces16 :: [[PhonemeData.Place]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Place]
                    PhonemeGen.makePlaces17
                    (GHC.Types.[] @ [PhonemeData.Place])) -}
-087fd302e8abff0120240573df324628
+bffe72032fff8dfadbcc0d25bb6d12c1
   makePlaces17 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.PHARYNGEAL
                    PhonemeGen.makePlaces18) -}
-5a8546dc8c11fa74f91a8a141118f62c
+90a94057002b1babe6b68b3d808c9f71
   makePlaces18 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.EPIGLOTTAL
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-2edf822543b44baef401690754fb2b02
+026d7dbf7caac46326d5c005d43cc8ca
   makePlaces19 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.EPIPHARYNGEAL
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-9c0ecb327c309e2abd862acfa5ac6389
+06e870d9da65f3d0ae6ea56a88fd020f
   makePlaces2 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2116,7 +2132,7 @@ c423b1078934166105591aee8b44444e
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces3) -}
-9b344c474cccc28bc0425a099840a2a0
+571fd05e62ba7e9495848d60f395868b
   makePlaces20 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2130,7 +2146,7 @@ c423b1078934166105591aee8b44444e
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-7efefb3ec12d2380d4c738f1bfecc0d1
+b5beef412092be1d5901a6b3c4f1f10f
   makePlaces21 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -2150,7 +2166,7 @@ c423b1078934166105591aee8b44444e
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makePlaces_eta2) -}
-e33b71662b1121c577d1f75246adb00a
+4907856b8d7fbb01677ddaf64468fd5d
   makePlaces22 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -2170,7 +2186,7 @@ e33b71662b1121c577d1f75246adb00a
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 (GHC.Types.[] @ PhonemeData.Place)) -}
-1a6da77ee49a5f74d13bc073c6fe3691
+2dcf9430c404e89e933cefe65479668d
   makePlaces23 ::
     ([PhonemeData.Place] -> b1)
     -> (forall a2.
@@ -2223,7 +2239,7 @@ e33b71662b1121c577d1f75246adb00a
                                    <[PhonemeData.Place]>_R)) of nt { DEFAULT ->
                     nt @ b1 eta2 eta3 })
                    eta3) -}
-697a44274054fd54d3e324040caee436
+a62a8ae4fe59c03fa31ff7456409bfa0
   makePlaces24 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2244,7 +2260,7 @@ e33b71662b1121c577d1f75246adb00a
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces25) -}
-3132d372a3ce878391facc6b8cb5fc41
+ea48447ca058081e18967bad393e1289
   makePlaces25 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2267,7 +2283,7 @@ e33b71662b1121c577d1f75246adb00a
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Place]))) -}
-1b76cde7f4f26d0ef440d9b0b84af058
+fb264e927ffdb3237933aa7393b101ef
   makePlaces26 ::
     ([PhonemeData.Place] -> b1)
     -> (forall a2.
@@ -2338,7 +2354,7 @@ e33b71662b1121c577d1f75246adb00a
                        nt @ b1 eta2 eta1 } })
                       eta1 })
                    eta1) -}
-56dabdef498ae210dfec0e9d73d12654
+65c11eded13947de0dbca63f464496dd
   makePlaces27 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2347,7 +2363,7 @@ e33b71662b1121c577d1f75246adb00a
                         Data.Functor.Identity.Identity [PhonemeData.Place])
                    PhonemeGen.makePlaces32
                    PhonemeGen.makePlaces28) -}
-1b6d6baafb7f3004bd2d2b203a76eac9
+dd9b6f2c9606ba9ddae5b83eb25dea6d
   makePlaces28 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2369,7 +2385,7 @@ e33b71662b1121c577d1f75246adb00a
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces29) -}
-72316ffc8a604d68a4c381a3e4d2facf
+e95734b6261676d0327802b2a9aca039
   makePlaces29 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2393,7 +2409,7 @@ e33b71662b1121c577d1f75246adb00a
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Place]))) -}
-4d56f6451b11cc43e2b1ddf97ca04de4
+ae2b5894403edb6c2a9bd7c2de112d36
   makePlaces3 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2415,7 +2431,7 @@ e33b71662b1121c577d1f75246adb00a
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces4) -}
-8c4f9fa7de49c53f1b7b9a95702784a9
+5b41d953722aa8bb9de504269c4b9b82
   makePlaces30 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -2436,7 +2452,7 @@ e33b71662b1121c577d1f75246adb00a
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makePlaces_eta4) -}
-700a191a2fe68c19b1247d04384140a2
+a299db5d17031cd7c5751fe594d45f47
   makePlaces31 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -2457,40 +2473,40 @@ e33b71662b1121c577d1f75246adb00a
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makePlaces_eta5) -}
-5fa5c0c8dad61bdf8a48e706cb5fb2ab
+91f340b72b1a5bf0a8a3dd81eec70761
   makePlaces32 :: Data.RVar.RVar [PhonemeData.Place]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Place]
                    PhonemeGen.makePlaces33) -}
-a0111340dd0dc03f71f2f94f77eacfff
+9020fa1848bcd1280c3137372a6a3096
   makePlaces33 :: [[PhonemeData.Place]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Place]
                    PhonemeGen.makePlaces36
                    PhonemeGen.makePlaces34) -}
-bd5b3171fbed43005d10c25018d47a18
+f65cc86dc97613103c5c9c8668bf6dd3
   makePlaces34 :: [[PhonemeData.Place]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Place]
                    PhonemeGen.makePlaces35
                    (GHC.Types.[] @ [PhonemeData.Place])) -}
-ae80170ad8413bc3457a3e64d3b59e9f
+0ad9998e9d7747ce15a65ff54935284b
   makePlaces35 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.ALVEOLOPALATAL
                    PhonemeGen.makePlaces36) -}
-53593b4f00d668f8969a19446c585846
+9734d778915405736d1faa36d553298a
   makePlaces36 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.PALATAL
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-52aed184d52a3556126a5109ecda7d86
+904a27a14a3927ab528c8a0f063decaa
   makePlaces37 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2504,7 +2520,7 @@ ae80170ad8413bc3457a3e64d3b59e9f
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-e3298fedc99dd91f63a5313bdd848e29
+0ea2b34159ca88aee97e0bd7eb0c6dd9
   makePlaces38 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -2524,7 +2540,7 @@ e3298fedc99dd91f63a5313bdd848e29
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makePlaces_eta6) -}
-d612096a4fdfa9556196391f1bf47abb
+615ed5c61d0ec9f6afaf1092d2af27aa
   makePlaces39 ::
     ([PhonemeData.Place] -> b1)
     -> (forall a2.
@@ -2577,7 +2593,7 @@ d612096a4fdfa9556196391f1bf47abb
                                    <[PhonemeData.Place]>_R)) of nt { DEFAULT ->
                     nt @ b1 eta2 eta3 })
                    eta3) -}
-aa87d42e632ff2d67b56fcc0604c1d76
+2c849952df3ea0b4b98c518712f6f533
   makePlaces4 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2599,7 +2615,7 @@ aa87d42e632ff2d67b56fcc0604c1d76
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces5) -}
-710881ae94d91adcd1c2516ececcd695
+41fbedc9847e4ab1c39114f2ae359773
   makePlaces40 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2620,7 +2636,7 @@ aa87d42e632ff2d67b56fcc0604c1d76
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces41) -}
-8b9b2a1158edd63d7fc3bf7901a44f58
+c988429cd7dcb1e3b104463159ad116f
   makePlaces41 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2643,7 +2659,7 @@ aa87d42e632ff2d67b56fcc0604c1d76
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Place]))) -}
-d8331649a4a16d47c58082b09a6ad537
+9fbdb18e851a846fb4b24a17e6a45af7
   makePlaces42 ::
     ([PhonemeData.Place] -> b1)
     -> (forall a2.
@@ -2668,7 +2684,7 @@ d8331649a4a16d47c58082b09a6ad537
                    (\ x :: [[PhonemeData.Place]] ->
                     case PhonemeGen.makePlaces_go3 x of vx { DEFAULT -> eta vx })
                    eta1) -}
-5f35bcbb3ea151e4fd9f92c1a0af6ddd
+caee3604f5b75a67431d63baa8fdf532
   makePlaces43 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2677,7 +2693,7 @@ d8331649a4a16d47c58082b09a6ad537
                         Data.Functor.Identity.Identity [PhonemeData.Place])
                    PhonemeGen.makePlaces46
                    PhonemeGen.makePlaces44) -}
-ecd0befda14da244fc2451ecbcbbc8a1
+a3dbbe2d68eee4266a667e6811d6bf97
   makePlaces44 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2701,7 +2717,7 @@ ecd0befda14da244fc2451ecbcbbc8a1
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Place]))) -}
-f132d710a2abca2e2c9c2d9d1e548b44
+fd5d1f70f0076b5a92a47b9b813968d0
   makePlaces45 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -2722,33 +2738,33 @@ f132d710a2abca2e2c9c2d9d1e548b44
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makePlaces_eta8) -}
-77f5becb5aa07ebd9063e7c870e6124d
+728baa52b0d14502d722531b56be30b7
   makePlaces46 :: Data.RVar.RVar [PhonemeData.Place]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Place]
                    PhonemeGen.makePlaces47) -}
-5f5813d25a24eb8fa55a871e08638a06
+a89934677ed940ac5f7a22cf7f496212
   makePlaces47 :: [[PhonemeData.Place]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Place]
                    PhonemeGen.makePlaces52
                    PhonemeGen.makePlaces48) -}
-0fdfc7bb0ce51556227f50fa35e366d0
+554baf738ec9a0b5b86348261440889d
   makePlaces48 :: [[PhonemeData.Place]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Place]
                    PhonemeGen.makePlaces49
                    (GHC.Types.[] @ [PhonemeData.Place])) -}
-01249a3efc28c66776985e0b5f900902
+bcfa7a148068803dfe3a0bfbbf18c459
   makePlaces49 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.DENTAL
                    PhonemeGen.makePlaces50) -}
-c6d3bed2eaa820f3c4ccc647a419f4a6
+58d709ab04803b82a4d5da670f160a56
   makePlaces5 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2772,28 +2788,28 @@ c6d3bed2eaa820f3c4ccc647a419f4a6
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Place]))) -}
-7bcb2242dcdcad142749fc0cc112e56c
+f7840cb21a68b7023e48786b434cb6cc
   makePlaces50 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.ALVEOLAR
                    PhonemeGen.makePlaces51) -}
-fe3500035b29a1598ed7613c6e48b61c
+d740ac250d368c290a463a380986df25
   makePlaces51 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.POSTALVEOLAR
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-33293ef5f3f95f74d0556758ac8f9627
+63e17a9b0f343a7365ffff9b5466de50
   makePlaces52 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.DENTIALVEOLAR
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-699bee2c31e49f4026bc0cafcad20c55
+287e66f3ea02c9968c41b076bcf95867
   makePlaces53 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2807,7 +2823,7 @@ fe3500035b29a1598ed7613c6e48b61c
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-7c3d9f4e4a78dc1a2fa553660bfb3fe2
+7486f0fc1c822808a2f7749b8b893489
   makePlaces54 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -2827,7 +2843,7 @@ fe3500035b29a1598ed7613c6e48b61c
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makePlaces_eta9) -}
-3a1ea19714050f95b5a71e72c40b84cf
+3ab6d53065d1acaea2c30ab6a19d1af2
   makePlaces55 ::
     ([PhonemeData.Place] -> b1)
     -> (forall a2.
@@ -2880,7 +2896,7 @@ fe3500035b29a1598ed7613c6e48b61c
                                    <[PhonemeData.Place]>_R)) of nt { DEFAULT ->
                     nt @ b1 eta2 eta3 })
                    eta3) -}
-27af6695baa16c22017ec8555bcb6553
+9962667520522832091a0f037c8d2419
   makePlaces56 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2902,7 +2918,7 @@ fe3500035b29a1598ed7613c6e48b61c
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces57) -}
-e8520e2df8c878d211f7292c2dfa263f
+79c6b6887c7f2ac8ff5ff3085c87eb84
   makePlaces57 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2924,7 +2940,7 @@ e8520e2df8c878d211f7292c2dfa263f
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces58) -}
-e230f713ec1a47d0a6c9a54d6cc1eed6
+659d7e3b0810c4301a1f8fbfb236762b
   makePlaces58 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -2948,7 +2964,7 @@ e230f713ec1a47d0a6c9a54d6cc1eed6
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Place]))) -}
-a2e44b5acfc71d46b4fdcdd3f2995b97
+9f1160b22808e86581a6cc8562f23f3c
   makePlaces59 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -2968,7 +2984,7 @@ a2e44b5acfc71d46b4fdcdd3f2995b97
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makePlaces_eta11) -}
-172000cc1eebed6880f74834d1af9e53
+71ba3efacacdf9b598c5c3c5f5e3b252
   makePlaces6 ::
     ([PhonemeData.Place] -> b1)
     -> (forall a2.
@@ -3021,14 +3037,14 @@ a2e44b5acfc71d46b4fdcdd3f2995b97
                                    <[PhonemeData.Place]>_R)) of nt { DEFAULT ->
                     nt @ b1 eta2 eta3 })
                    eta3) -}
-ebbe4d9b48486ba165b47253a0fed052
+1eed17885dd16b89dd9a1c25903400dd
   makePlaces60 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.LABIODENTAL
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-003cc0760b41e8830cdd75a2e9341358
+10802bdb4d94a7dfc0b47e53c0d32a16
   makePlaces61 ::
     ([PhonemeData.Place] -> b)
     -> (forall a2.
@@ -3048,7 +3064,7 @@ ebbe4d9b48486ba165b47253a0fed052
                              a6
                            -> (a6 -> b) -> b ->
                  eta1 PhonemeGen.makePlaces_eta12) -}
-d77bbdc5afa201c2d6838469fd6a1e7a
+cc117bce0391c55026321f5b114843cf
   makePlaces62 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -3062,7 +3078,7 @@ d77bbdc5afa201c2d6838469fd6a1e7a
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-a50f8742af9cb54e2b7c0e93feb8b196
+5fd7cf3dcdd5a377211295314336a58f
   makePlaces7 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -3083,7 +3099,7 @@ a50f8742af9cb54e2b7c0e93feb8b196
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces8) -}
-c19653960ee41d60de6c29d169e708fe
+ca45e6daf67b46ecd1ccc2f7bc6168bc
   makePlaces8 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -3104,7 +3120,7 @@ c19653960ee41d60de6c29d169e708fe
                                        <Data.Functor.Identity.Identity>_R))
                              (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Place]>_N))
                    PhonemeGen.makePlaces9) -}
-9974f290fc3ea0f8989a283556b297bd
+e3da24f2c1f57114b1926152c5ddcf83
   makePlaces9 ::
     [Data.RVar.RVarT
        Data.Functor.Identity.Identity [PhonemeData.Place]]
@@ -3127,7 +3143,7 @@ c19653960ee41d60de6c29d169e708fe
                    (GHC.Types.[]
                       @ (Data.RVar.RVarT
                            Data.Functor.Identity.Identity [PhonemeData.Place]))) -}
-5e43ae03f5ad67d6e4c3b41ec37668e1
+32a66e7022b68ce02379650c0d340e4f
   makePlaces_eta ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -3137,14 +3153,14 @@ c19653960ee41d60de6c29d169e708fe
                    @ (Data.RVar.RVarT
                         Data.Functor.Identity.Identity [PhonemeData.Place])
                    PhonemeGen.makePlaces7) -}
-37240856c30208d792599cb41e1af755
+7eb70588c10a25d854401ba3c6f15347
   makePlaces_eta1 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.GLOTTAL
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-22b14c536bc354cf6422fb0dcbe4f7f8
+45d08c70264a2430b0ee39c5643e1bb1
   makePlaces_eta10 ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -3154,28 +3170,28 @@ c19653960ee41d60de6c29d169e708fe
                    @ (Data.RVar.RVarT
                         Data.Functor.Identity.Identity [PhonemeData.Place])
                    PhonemeGen.makePlaces56) -}
-bc34079827455cbcc1fe7de030041508
+dc54be26c8da09c48955d0cc3e4ce0d2
   makePlaces_eta11 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.BILABIAL
                    PhonemeGen.makePlaces60) -}
-07bbe9d2d1802ba4e9fca72d7c701cda
+5aca36ff9261686bf308d03f4e08d1d3
   makePlaces_eta12 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.LABIAL
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-1fab7045e5bb1e25ef85665077f1e35c
+39834e0c0dd848f0357cfcf8eee6db7e
   makePlaces_eta2 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.LARYNGEAL
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-9c58d09ca5d0b91ed41e7f8dde762d75
+3aa327ee5cc7c39ef5f949c69b054a03
   makePlaces_eta3 ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -3185,28 +3201,28 @@ bc34079827455cbcc1fe7de030041508
                    @ (Data.RVar.RVarT
                         Data.Functor.Identity.Identity [PhonemeData.Place])
                    PhonemeGen.makePlaces24) -}
-169a598c521bc39acf19632a75543ef8
+46238b53c51499a249aeb773cd8124fc
   makePlaces_eta4 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.UVULAR
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-be7e4765f9ce9a0d8cf34c98b4864649
+d352bc124aa40676f89cbd98873dd131
   makePlaces_eta5 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.VELAR
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-d9243c104b9d59088bdd56606edcb98c
+d28ac053c853ab320f945697005ab3dd
   makePlaces_eta6 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.DORSAL
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-0fefd78b610ee15e6751cc3caf212968
+e8163d307cc1dec4f1f07dd0fe59ebb9
   makePlaces_eta7 ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -3216,30 +3232,30 @@ d9243c104b9d59088bdd56606edcb98c
                    @ (Data.RVar.RVarT
                         Data.Functor.Identity.Identity [PhonemeData.Place])
                    PhonemeGen.makePlaces40) -}
-4e780fd89650f51cfee9e44f03a2eb2a
+6eaabb51ed0b2f24f857dca97394e2d2
   makePlaces_eta8 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.RETROFLEX
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-bd64056facb6290a16a2e5f0c681cf6a
+31c31a4bc35b91a1249b3182da904b1c
   makePlaces_eta9 :: [PhonemeData.Place]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Place
                    PhonemeData.CORONAL
                    (GHC.Types.[] @ PhonemeData.Place)) -}
-b340315d18114a2f477ccd3c03c2b195
+c9c510edf0a121daec0b046c928abcf7
   makePlaces_go :: [[PhonemeData.Place]] -> [PhonemeData.Place]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-0ad7d0a5124f5ea7a15cd09fc1d676bd
+85643dfbf593cecdfda2fe04e5854358
   makePlaces_go1 :: [[PhonemeData.Place]] -> [PhonemeData.Place]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-c9af3af374c342164a07e9315a2fc8af
+243fd6d58d5d756d624ba47dab9f6c32
   makePlaces_go2 :: [[PhonemeData.Place]] -> [PhonemeData.Place]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-0249044be05f138135f5036ee8ee7247
+a5f4bc9892e8d0b8acbe78fb0f6739b8
   makePlaces_go3 :: [[PhonemeData.Place]] -> [PhonemeData.Place]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 91053cb864305776802177b904d8b789
@@ -3249,58 +3265,506 @@ c9af3af374c342164a07e9315a2fc8af
                    @ Data.Functor.Identity.Identity
                    2
                    3) -}
-02bc1ae3edbe8dc00fc40795d0bee5fe
+4ec6683a93c76ee881df609c49dd0c7c
   makeRoundedneses :: Data.RVar.RVar [PhonemeData.Roundedness]
   {- Unfolding: (Data.Random.Extras.choice
                    @ [PhonemeData.Roundedness]
                    PhonemeGen.makeRoundedneses1) -}
-80468114dde23e1d53526b68405f2c48
+9779fd34c0a47af1477eed52bac1b5b2
   makeRoundedneses1 :: [[PhonemeData.Roundedness]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Roundedness]
                    PhonemeGen.makeRoundedneses5
                    PhonemeGen.makeRoundedneses2) -}
-6a3a48e40b460fca2233804ecf8b377c
+6465ee8ada7e7e26afbc27cbf06b39ea
   makeRoundedneses2 :: [[PhonemeData.Roundedness]]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ [PhonemeData.Roundedness]
                    PhonemeGen.makeRoundedneses3
                    (GHC.Types.[] @ [PhonemeData.Roundedness])) -}
-cf26883d521558fabbe2e4bae3b105f0
+8d8d7a074004d922d94051948e579232
   makeRoundedneses3 :: [PhonemeData.Roundedness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Roundedness
                    PhonemeData.UNROUNDED
                    PhonemeGen.makeRoundedneses4) -}
-92e6e4bf5bdb48ee1310fb98e764ad2c
+6e77b764a2fa68c2cc2dde8991fe9c1b
   makeRoundedneses4 :: [PhonemeData.Roundedness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Roundedness
                    PhonemeData.ROUNDED
                    (GHC.Types.[] @ PhonemeData.Roundedness)) -}
-d4f6da7c3f3806efed0ed4c28ff499e3
+62112dc09dcc3640f4aab481022f0709
   makeRoundedneses5 :: [PhonemeData.Roundedness]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ PhonemeData.Roundedness
                    PhonemeData.DEFAULT
                    (GHC.Types.[] @ PhonemeData.Roundedness)) -}
-ae132717315c9dc83b8c5a70f71e8f07
+acc5daf594c5011b6f5d94b2db74629b
+  makeTones :: Data.RVar.RVar [PhonemeData.Tone]
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones1) -}
+5b9402a7fa76ce2ebc17b1b7049ad0e9
+  makeTones1 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones22
+                   PhonemeGen.makeTones2) -}
+a517afb176a1c2a887b0a3a9bd7ac1bf
+  makeTones10 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones43
+                   PhonemeGen.makeTones11) -}
+1bb23b85be4dff7222797d3f74a52a14
+  makeTones11 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones39
+                   PhonemeGen.makeTones12) -}
+6e214c79555d176effee04e939807413
+  makeTones12 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones34
+                   PhonemeGen.makeTones13) -}
+c6e38649fa62d9eaa34e1bdd1b7ca83d
+  makeTones13 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones29
+                   PhonemeGen.makeTones14) -}
+4e369535e2a9996444bc5e20d333b9a0
+  makeTones14 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones23
+                   PhonemeGen.makeTones15) -}
+47b486715cbf36b9f8956ddcd37c803f
+  makeTones15 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones16
+                   (GHC.Types.[] @ [PhonemeData.Tone])) -}
+b0a26b425a1cbf3169f3e0c1ea0c4449
+  makeTones16 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.LOWT
+                   PhonemeGen.makeTones17) -}
+750c6591d71819f9ab740f1227b27aea
+  makeTones17 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.MIDT
+                   PhonemeGen.makeTones18) -}
+f82c0312fc012b6b2bbdabfb13c5fe16
+  makeTones18 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones19) -}
+64249ec4397e06e50b9d84b689a98194
+  makeTones19 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.TOPT
+                   PhonemeGen.makeTones20) -}
+4123a3deb7bbc73313768948a9873d95
+  makeTones2 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones63
+                   PhonemeGen.makeTones3) -}
+6e6a1577e7edb563e1b94df24b68d905
+  makeTones20 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.RISET
+                   PhonemeGen.makeTones21) -}
+644430ec14822f25c60745adc9103f4c
+  makeTones21 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.FALLT
+                   PhonemeGen.makeTones22) -}
+8ed6f7a517952ef8063fbe9dcef7fcec
+  makeTones22 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.NONET
+                   (GHC.Types.[] @ PhonemeData.Tone)) -}
+2c6141dd966d6b3626cc12f352ce29aa
+  makeTones23 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.LOWT
+                   PhonemeGen.makeTones24) -}
+16e130f26d0fbbaf67bf5cae6c67b852
+  makeTones24 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.MIDT
+                   PhonemeGen.makeTones25) -}
+3b02acf58b98ee693fa1b0d6752c19ab
+  makeTones25 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones26) -}
+ee3f02b74a9c786919149a1f78b2813f
+  makeTones26 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.TOPT
+                   PhonemeGen.makeTones27) -}
+5992ea51607809601b9993c3e703297e
+  makeTones27 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.RISET
+                   PhonemeGen.makeTones28) -}
+288cca6d583a1c654ee5d3d3f91acd50
+  makeTones28 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.FALLT
+                   (GHC.Types.[] @ PhonemeData.Tone)) -}
+d464f57e094375b7290d4ae48500f886
+  makeTones29 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.MIDT
+                   PhonemeGen.makeTones30) -}
+bf4dd1f9b90646447b9dc2f0e24b70ab
+  makeTones3 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones61
+                   PhonemeGen.makeTones4) -}
+7f20e594c1d86cf7a566e0a43ebe0a12
+  makeTones30 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.LOWT
+                   PhonemeGen.makeTones31) -}
+734c1b8d7b00e1c81590ebcc24c3b674
+  makeTones31 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.FALLT
+                   PhonemeGen.makeTones32) -}
+d0f807b090baa874ea9cf522e007425f
+  makeTones32 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones33) -}
+5350ca9223bbc1b39debb6aab1bc4211
+  makeTones33 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.RISET
+                   PhonemeGen.makeTones22) -}
+799d1783af3b7ee49a99f7b4e433d0fa
+  makeTones34 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.MIDT
+                   PhonemeGen.makeTones35) -}
+fcc8b83a4c2354d2f5120c63eef3d0b7
+  makeTones35 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.LOWT
+                   PhonemeGen.makeTones36) -}
+89a4a18ff89b25ac15a74a2f7fdd49d7
+  makeTones36 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.FALLT
+                   PhonemeGen.makeTones37) -}
+687ecfd1176367a2d5080e832b217ebf
+  makeTones37 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones38) -}
+7d0a29d2f46112e2e1917a43bfe04852
+  makeTones38 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.RISET
+                   (GHC.Types.[] @ PhonemeData.Tone)) -}
+6990c198703c7cf3be5538cb807f260d
+  makeTones39 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.MIDT
+                   PhonemeGen.makeTones40) -}
+e56afeb3309989fb4fea4616adec727a
+  makeTones4 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones60
+                   PhonemeGen.makeTones5) -}
+2c5e56f05d4f20be0409791f953b43fa
+  makeTones40 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.LFALLT
+                   PhonemeGen.makeTones41) -}
+1670318431d16979cf6ff73c206810bc
+  makeTones41 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HRISET
+                   PhonemeGen.makeTones42) -}
+99e92b8bad56abb76e3508cf8527c839
+  makeTones42 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.DIPT
+                   PhonemeGen.makeTones22) -}
+1a5cebcb366322f329b4092082bbfa5b
+  makeTones43 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.MIDT
+                   PhonemeGen.makeTones44) -}
+867d9549d0ad88f53d17694603bc93b8
+  makeTones44 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.LFALLT
+                   PhonemeGen.makeTones45) -}
+3776513a6a8c14e0dfbdea1d81d6614b
+  makeTones45 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HRISET
+                   PhonemeGen.makeTones46) -}
+974e3ddb9328cd876d149b683b8e348b
+  makeTones46 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.DIPT
+                   (GHC.Types.[] @ PhonemeData.Tone)) -}
+b520864208918d485255bb57db983ec7
+  makeTones47 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones48) -}
+3f23bf5fc9f2abefec5ac30ad0564da7
+  makeTones48 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.RISET
+                   PhonemeGen.makeTones49) -}
+8031e9f9fc2694563b23209547975679
+  makeTones49 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.DIPT
+                   PhonemeGen.makeTones21) -}
+956e8cd0da72d01cc725a140789ce771
+  makeTones5 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones59
+                   PhonemeGen.makeTones6) -}
+ca718303cbdbd2e89fc0dd3acfebc8a4
+  makeTones50 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones51) -}
+6b87f69742a0874a1783ff9602b1da95
+  makeTones51 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.RISET
+                   PhonemeGen.makeTones52) -}
+2c2a881c9be0b9a6b382633bf336f6e2
+  makeTones52 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.DIPT
+                   PhonemeGen.makeTones28) -}
+492ad786180ead1192d6d6575acf33b8
+  makeTones53 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones54) -}
+70e1412f07005cb66ba6cf7ce857d41b
+  makeTones54 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.MIDT
+                   PhonemeGen.makeTones55) -}
+c8feac89c19b791dcf14939bc275384d
+  makeTones55 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.LOWT
+                   PhonemeGen.makeTones22) -}
+9c6f3ad5e7d8a931ba0881d2b3d14013
+  makeTones56 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones57) -}
+295573f2d6e657ec5544ec05585039b5
+  makeTones57 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.MIDT
+                   PhonemeGen.makeTones58) -}
+7b85f0da7186873ff0b63697a9e462e3
+  makeTones58 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.LOWT
+                   (GHC.Types.[] @ PhonemeData.Tone)) -}
+751a5f76f328824e9e97c6b7690ed3d0
+  makeTones59 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones55) -}
+e7d210e500f7ef008665604f549e2944
+  makeTones6 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones56
+                   PhonemeGen.makeTones7) -}
+2eeb326b81c30ab93cdd7aea6e1905d0
+  makeTones60 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.LOWT
+                   PhonemeGen.makeTones21) -}
+a99773ba7578ebb2f8bc1f9d2b7645e8
+  makeTones61 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.FALLT
+                   PhonemeGen.makeTones62) -}
+9b5720abd375da5f0351353778a024fe
+  makeTones62 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.PEAKT
+                   PhonemeGen.makeTones22) -}
+aadf81fcd32a5331440012f11df73df0
+  makeTones63 :: [PhonemeData.Tone]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ PhonemeData.Tone
+                   PhonemeData.HIGHT
+                   PhonemeGen.makeTones21) -}
+3a2c23c24eb3389bf12e451b87e48356
+  makeTones7 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones53
+                   PhonemeGen.makeTones8) -}
+5ef78d38d2bb9b586c69d9b87f04cd2e
+  makeTones8 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones50
+                   PhonemeGen.makeTones9) -}
+7416005e5cb7125380f774a09bf6c79b
+  makeTones9 :: [[PhonemeData.Tone]]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ [PhonemeData.Tone]
+                   PhonemeGen.makeTones47
+                   PhonemeGen.makeTones10) -}
+a32ecad9637ece140afc016f54bd4234
   makeVowels ::
     [PhonemeData.Height]
     -> [PhonemeData.Backness]
     -> [PhonemeData.Roundedness]
     -> [PhonemeData.Length]
+    -> [PhonemeData.Tone]
     -> Data.RVar.RVar [PhonemeData.Phoneme]
-  {- Arity: 4, Strictness: <L,1*U><L,U><L,U><L,U>,
+  {- Arity: 5, Strictness: <L,1*U><L,U><L,U><L,U><L,U>,
      Unfolding: (\ heights :: [PhonemeData.Height]
                    backs :: [PhonemeData.Backness]
                    rounds :: [PhonemeData.Roundedness]
-                   lengths :: [PhonemeData.Length] ->
+                   lengths :: [PhonemeData.Length]
+                   tones :: [PhonemeData.Tone] ->
                  let {
                    eta :: [PhonemeData.Phoneme]
                    = letrec {
@@ -3341,19 +3805,34 @@ ae132717315c9dc83b8c5a70f71e8f07
                                                     case ds3 of wild3 {
                                                       [] -> z1
                                                       : y3 ys4
-                                                      -> GHC.Types.:
-                                                           @ PhonemeData.Phoneme
-                                                           (PhonemeData.Vowel
-                                                              y
-                                                              y1
-                                                              y2
-                                                              y3
-                                                              (PhonemeGen.retrieveVSymbol
-                                                                 y
-                                                                 y1
-                                                                 y2
-                                                                 y3))
-                                                           (go5 ys4) }
+                                                      -> let {
+                                                           z2 :: [PhonemeData.Phoneme] = go5 ys4
+                                                         } in
+                                                         letrec {
+                                                           go6 :: [PhonemeData.Tone]
+                                                                  -> [PhonemeData.Phoneme]
+                                                             {- Arity: 1, Strictness: <S,1*U> -}
+                                                           = \ ds4 :: [PhonemeData.Tone] ->
+                                                             case ds4 of wild4 {
+                                                               [] -> z2
+                                                               : y4 ys5
+                                                               -> GHC.Types.:
+                                                                    @ PhonemeData.Phoneme
+                                                                    (PhonemeData.Vowel
+                                                                       y
+                                                                       y1
+                                                                       y2
+                                                                       y3
+                                                                       y4
+                                                                       (PhonemeGen.retrieveVSymbol
+                                                                          y
+                                                                          y1
+                                                                          y2
+                                                                          y3
+                                                                          y4))
+                                                                    (go6 ys5) }
+                                                         } in
+                                                         go6 tones }
                                                 } in
                                                 go5 lengths }
                                        } in
@@ -3390,14 +3869,15 @@ ae132717315c9dc83b8c5a70f71e8f07
                                      <Data.Random.Source.Internal.Prim.Prim>_R
                                      <Data.Functor.Identity.Identity>_R))
                            (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <[PhonemeData.Phoneme]>_N))) -}
-18f850eeba8aeffb3449f64a663b2d3f
+e545917152b76fb6babcb1e2875b2034
   retrieveVSymbol ::
     PhonemeData.Height
     -> PhonemeData.Backness
     -> PhonemeData.Roundedness
     -> PhonemeData.Length
+    -> PhonemeData.Tone
     -> GHC.Base.String
-  {- Arity: 4, Strictness: <L,U><L,U><L,U><L,U> -}
+  {- Arity: 5, Strictness: <L,U><L,U><L,U><L,U><L,U> -}
 "SPEC/PhonemeGen $fEq(,) @ Place @ Manner" [ALWAYS] forall $dEq :: GHC.Classes.Eq
                                                                      PhonemeData.Place
                                                            $dEq1 :: GHC.Classes.Eq

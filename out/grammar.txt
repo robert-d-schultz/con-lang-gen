@@ -1,6 +1,8 @@
 Grammar
-Grammar {getSI = SubInitial, getOF = ObjFinal, getCI = CompInitial, getVtoI = NoVtoIMove, getAH = NoAffixHop, getNS = NoNullSub, getObT = OblTopic, getNT = OptNullTop, getTM = NoTopMark, getItoC = NoItoCMove, getWHM = NoWHMove, getPP = PiedPipe, getQI = OblQuesInv}
-dznooy <UNK> mooawooiyooil giyrmah <UNK> habyi himghrahnyooa ooaraiooar <UNK> mooarooahlaynoo <UNK>
-/d͡zɲɯɻ̠/ <UNK> /mɯɑ̯.ɰɯy̯.ɻ̠ɯy̯ʎ̟̝/ /ɟyɻ̠β̞.mɑʕ̞/ <UNK> /ɣɶ.bɻ̠y/ /ɟ̟ym.ɟ͡ʝɹɶɦ̞.ɲ̟ɻ̠ɯɑ̯/ /ɯɶ̯.rɶy̯.ɯɑ̯ʁ̞/ <UNK> /mɯɑ̯.rɯɑ̯ʢ.ɢ͡ʟ̝̠ɶj.ɲɯ/ /ʟ̝ɯy̯.ɻ̠ɶy̯β̞/<UNK>
-table the at man the sit ugly woman the on <do>ed
-"the man at the table sited on the ugly woman"
+Grammar {getSI = SubInitial, getOF = ObjInitial, getCI = CompFinal, getVtoI = OblVtoIMove, getAH = NoAffixHop, getNS = OptNullSub, getObT = OptTopic, getNT = OptNullTop, getTM = OblTopMark, getItoC = NoItoCMove, getWHM = NoWHMove, getPP = PrepStrand, getQI = OblQuesInv}
+
+
+gghahlgeygzi<UNK> kowhargohhuy<UNK> ohi loharggahh<UNK>
+ /qɟʰʌ̞̌̆ʜʟ̝.ɢœ́̆j̊.ɢɹ̟ʏ̟̂̆/  /cɪ̈̌̆ɰ.çœ̞́̆r̥.ʡɤ̌̆h̞.ʝɘ̂̆j/ /ɯ̞̂.ʢʏ̟́/  /ʎ̝̊ɨ᷉.h̞ɐ̂rɢ.qɑ́̆ʝç/
+the body will have not  breaked awake the attention
+"the body will have not  breaked awake the attention"

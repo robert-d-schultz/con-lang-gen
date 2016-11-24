@@ -10,6 +10,7 @@ module PhonemeData
 , Backness(..)
 , Roundedness(..)
 , Length(..)
+, Tone(..)
 ) where
 
 import Prelude hiding (Word)
@@ -28,6 +29,7 @@ data Phoneme = Consonant
            , vbackness :: Backness
            , vroundedness :: Roundedness
            , vlength :: Length
+           , vtone :: Tone
            , vsymbol :: String
            }
            | Diphthong
@@ -38,6 +40,7 @@ data Phoneme = Consonant
            , dbackness2 :: Backness
            , droundedness2 :: Roundedness
            , dlength :: Length
+           , dtone :: Tone
            , dsymbol :: String
            }
            | Blank deriving (Eq, Ord, Show, Read)
@@ -112,3 +115,18 @@ data Roundedness = DEFAULT
 data Length = SHORT
             | NORMAL
             | LONG deriving (Eq, Ord, Show, Read, Enum, Bounded)
+
+data Tone = NONET
+          | TOPT
+          | HIGHT
+          | MIDT
+          | LOWT
+          | BOTTOMT
+          | FALLT
+          | HFALLT
+          | LFALLT
+          | RISET
+          | HRISET
+          | LRISET
+          | DIPT
+          | PEAKT deriving (Eq, Ord, Show, Read, Enum, Bounded)

@@ -1,18 +1,60 @@
-General Overview
-----------------
+How it works so far
+-------------------
 
-A phoneme inventory will be generated. The generation process will include patterns from real language’s inventories. There will be separate consonant and vowel system generators.
+Phoneme inventories are generated. The generation process tries to strive for natural-sounding inventories. There are separate consonant, vowel, and diphthong inventory generators.
 
-This phoneme inventory will be referenced by the list of phonological rules that will be generated next. The phonological rules will outline which phones are connected to which phoneme. Certain phonemes will change sound under certain conditions.
+Phonotactics rules are also generated. A sonority hierarchy are the most basic and only instance of this.
 
-Phonotactics rules will also be generated. Positions of phonemes in syllables and words will be restricted as well as what consonant clusters or diphthongs may appear.
+A grammar system is generated. Parameters are selected.
 
-A grammar system will be generated. The generation process will select grammatical categories and decides how they will be expressed. Inflection systems – declensions and conjugations – will be one way for grammatical categories to be expressed. Inflection systems will have a agglutination variation. Determiners/articles/particles will be another way for grammatical categories to be expressed.
+An inflection scheme is selected. Grammatical categories are decided on as well as how they are expressed. Exponents and articles are some of the ways grammatical categories are expressed.
 
-The phoneme inventory along with the phonotactics rules will be used to generate syllables. The syllables will be used to fill out the inflection, agglutination, or particle systems.
+Morphemes (including roots) are generated from the phoneme inventory as well as the sonority hierarchy. The inflection scheme is filled in using this generator.
 
-The syllable generator will then be used to generate root words. Root words will include nouns, verbs, and adjectives.
+Meanings (given in English) are assigned a generated root word.
 
-All of the above structures will then be parsed by a output function into a text output. This output will include a consonant inventory table, vowel system chart, list of phonemes (with examples), list of phonological and phonotactics rules (with examples), [inflection tables/list of affixes/list of particles], and a dictionary.
+All of the above structures are then parsed by a output function into a text output. This output includes a consonant inventory table, vowel inventory table, list of diphthongs, sonority hierarchy description, exponent/particle tables, and a dictionary.
 
-See doc for more reading material.
+
+What needs improving
+--------------------
+Phonology:
+Everything.
+
+Syntax:
+.
+
+Inflection:
+A more-dynamic grammatical category generator
+
+Morphology:
+Various morphological systems.
+Domesticated animal terminology.
+
+Lexis:
+Number system generator.
+Color system generator.
+
+Semantics:
+Meanings should take from WordNet ideally.
+
+What needs starting
+-------------------
+
+Phonetics:
+Right now words are represented as a list of phonemes. The only output so far for a word is the "underlying" form. With a phonological rule generator the list of phonemes can be parsed into a list of phones which will allow the output to display the "surface" form of the word.
+This would involve generating a list of phonological rules and then applying those rules in a certain order to each word. This runs counter to optimality theory, but it would be so much easier to implement.
+
+Graphemics/Orthography:
+Right now words are represented as either a list of phonemes (as above) or by my terrible romanization function. With a proper grapheme generator, the word could be represented in a "native" writing system.
+This would involve picking the writing system type, then generating .svg's for each character, and then converting the set of .svgs into a .ttf file.
+
+Prosody:
+iuno.
+does poetry fit here? let's go with that.
+
+Historical/Comparative linguistics
+Language changes. Given a language's components, morph those components in some way into a new language. Record the change.
+Language families. Link languages morphed by language changes. Allow multiple offshoots of a single language.
+
+See /doc for more (probably wrong) reading material.

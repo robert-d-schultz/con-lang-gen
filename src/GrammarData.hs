@@ -14,7 +14,6 @@ module GrammarData
 , AffixHopping(..)
 , QuestionInversion(..)
 , Illoc(..)
-, LeafType(..)
 , Phrase(..)
 , Bar(..)
 , Leaf(..)
@@ -57,8 +56,6 @@ data QuestionInversion     = NoQuesInv   | OblQuesInv  deriving (Eq, Enum, Show,
 -- Parse tree, keep it simple stupid
 data Illoc = Null | Ques | Decl | Imper deriving (Eq, Enum, Show)
 
-data LeafType = LeafWord | LeafAffix deriving (Eq, Enum, Show)
-
 data Phrase = XPNull
             | XP
                 { phraseLC :: LexCat
@@ -82,11 +79,11 @@ data Bar = XBarA
 
 data Leaf = LeafNull Illoc
           | LeafInfl
-            { leafInfl :: (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition)
+            { leafLC :: LexCat
+            , leafInfl :: (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition)
             }
           | Leaf
             { leafLC  :: LexCat
             , leafIl  :: Illoc
-            , leafT   :: LeafType
             , leafStr :: String
             } deriving (Eq, Show)

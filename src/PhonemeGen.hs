@@ -9,6 +9,7 @@ module PhonemeGen
 , makeHeights
 , makeRoundedneses
 , makeLengths
+, makeTones
 ) where
 
 -- Import
@@ -38,21 +39,21 @@ c = [ [Consonant BILABIAL NASAL VOICELESS "m̥",Consonant BILABIAL NASAL MODAL "
     , [Consonant BILABIAL LFLAP VOICELESS [],Consonant BILABIAL LFLAP MODAL [],Consonant LABIODENTAL LFLAP VOICELESS [],Consonant LABIODENTAL LFLAP MODAL [],Consonant DENTAL LFLAP VOICELESS "ɺ̪̊",Consonant DENTAL LFLAP MODAL "ɺ̪",Consonant ALVEOLAR LFLAP VOICELESS "ɺ̥",Consonant ALVEOLAR LFLAP MODAL "ɺ",Consonant POSTALVEOLAR LFLAP VOICELESS "ɺ̠̊",Consonant POSTALVEOLAR LFLAP MODAL "ɺ̠",Consonant RETROFLEX LFLAP VOICELESS "ɺ̢̊",Consonant RETROFLEX LFLAP MODAL "ɺ̢",Consonant ALVEOLOPALATAL LFLAP VOICELESS "ʎ̯̟̊",Consonant ALVEOLOPALATAL LFLAP MODAL "ʎ̯̟",Consonant PALATAL LFLAP VOICELESS "ʎ̯̊",Consonant PALATAL LFLAP MODAL "ʎ̯",Consonant VELAR LFLAP VOICELESS "ʟ̥̆",Consonant VELAR LFLAP MODAL "ʟ̆",Consonant UVULAR LFLAP VOICELESS "ʟ̠̆̊",Consonant UVULAR LFLAP MODAL "ʟ̠̆",Consonant PHARYNGEAL LFLAP VOICELESS [],Consonant PHARYNGEAL LFLAP MODAL [],Consonant GLOTTAL LFLAP VOICELESS [],Consonant GLOTTAL LFLAP MODAL []]
     ]
 
-v = [ [Vowel CLOSE FRONT UNROUNDED NORMAL "i",Vowel CLOSE FRONT ROUNDED NORMAL "y",Vowel CLOSE NEARFRONT UNROUNDED NORMAL "ɪ̝",Vowel CLOSE NEARFRONT ROUNDED NORMAL "ʏ̝",Vowel CLOSE CENTRAL UNROUNDED NORMAL "ɨ",Vowel CLOSE CENTRAL ROUNDED NORMAL "ʉ",Vowel CLOSE NEARBACK UNROUNDED NORMAL "ɯ̟",Vowel CLOSE NEARBACK ROUNDED NORMAL "ʊ̝",Vowel CLOSE BACK UNROUNDED NORMAL "ɯ",Vowel CLOSE BACK ROUNDED NORMAL "u"]
-    , [Vowel NEARCLOSE FRONT UNROUNDED NORMAL "ɪ̟",Vowel NEARCLOSE FRONT ROUNDED NORMAL "ʏ̟",Vowel NEARCLOSE NEARFRONT UNROUNDED NORMAL "ɪ",Vowel NEARCLOSE NEARFRONT ROUNDED NORMAL "ʏ",Vowel NEARCLOSE CENTRAL UNROUNDED NORMAL "ɪ̈",Vowel NEARCLOSE CENTRAL ROUNDED NORMAL "ʊ̈",Vowel NEARCLOSE NEARBACK UNROUNDED NORMAL "ɯ̽",Vowel NEARCLOSE NEARBACK ROUNDED NORMAL "ʊ",Vowel NEARCLOSE BACK UNROUNDED NORMAL "ɯ̞",Vowel NEARCLOSE BACK ROUNDED NORMAL "ʊ̠"]
-    , [Vowel CLOSEMID FRONT UNROUNDED NORMAL "e",Vowel CLOSEMID FRONT ROUNDED NORMAL "ø",Vowel CLOSEMID NEARFRONT UNROUNDED NORMAL "ë",Vowel CLOSEMID NEARFRONT ROUNDED NORMAL "ø̈",Vowel CLOSEMID CENTRAL UNROUNDED NORMAL "ɘ",Vowel CLOSEMID CENTRAL ROUNDED NORMAL "ɵ",Vowel CLOSEMID NEARBACK UNROUNDED NORMAL "ɤ̈",Vowel CLOSEMID NEARBACK ROUNDED NORMAL "ö",Vowel CLOSEMID BACK UNROUNDED NORMAL "ɤ",Vowel CLOSEMID BACK ROUNDED NORMAL "o"]
-    , [Vowel MID FRONT UNROUNDED NORMAL "e̞",Vowel MID FRONT ROUNDED NORMAL "ø̞",Vowel MID NEARFRONT UNROUNDED NORMAL "ë̞",Vowel MID NEARFRONT ROUNDED NORMAL "ø̞̈",Vowel MID CENTRAL UNROUNDED NORMAL "ə",Vowel MID CENTRAL ROUNDED NORMAL "ɵ̞",Vowel MID NEARBACK UNROUNDED NORMAL "ɤ̞̈",Vowel MID NEARBACK ROUNDED NORMAL "ö̞",Vowel MID BACK UNROUNDED NORMAL "ɤ̞",Vowel MID BACK ROUNDED NORMAL "o̞"]
-    , [Vowel OPENMID FRONT UNROUNDED NORMAL "ɛ",Vowel OPENMID FRONT ROUNDED NORMAL "œ",Vowel OPENMID NEARFRONT UNROUNDED NORMAL "ɛ̈",Vowel OPENMID NEARFRONT ROUNDED NORMAL "œ̈",Vowel OPENMID CENTRAL UNROUNDED NORMAL "ɜ",Vowel OPENMID CENTRAL ROUNDED NORMAL "ɞ",Vowel OPENMID NEARBACK UNROUNDED NORMAL "ʌ̈",Vowel OPENMID NEARBACK ROUNDED NORMAL "ɔ̈",Vowel OPENMID BACK UNROUNDED NORMAL "ʌ",Vowel OPENMID BACK ROUNDED NORMAL "ɔ"]
-    , [Vowel NEAROPEN FRONT UNROUNDED NORMAL "æ",Vowel NEAROPEN FRONT ROUNDED NORMAL "œ̞",Vowel NEAROPEN NEARFRONT UNROUNDED NORMAL "a̽",Vowel NEAROPEN NEARFRONT ROUNDED NORMAL "ɶ̽",Vowel NEAROPEN CENTRAL UNROUNDED NORMAL "ɐ",Vowel NEAROPEN CENTRAL ROUNDED NORMAL "ɞ̞",Vowel NEAROPEN NEARBACK UNROUNDED NORMAL "ɑ̽",Vowel NEAROPEN NEARBACK ROUNDED NORMAL "ɒ̽",Vowel NEAROPEN BACK UNROUNDED NORMAL "ʌ̞",Vowel NEAROPEN BACK ROUNDED NORMAL "ɔ̞"]
-    , [Vowel OPEN FRONT UNROUNDED NORMAL "a",Vowel OPEN FRONT ROUNDED NORMAL "ɶ",Vowel OPEN NEARFRONT UNROUNDED NORMAL "a̠",Vowel OPEN NEARFRONT ROUNDED NORMAL "ɶ̠",Vowel OPEN CENTRAL UNROUNDED NORMAL "ä",Vowel OPEN CENTRAL ROUNDED NORMAL "ɒ̈",Vowel OPEN NEARBACK UNROUNDED NORMAL "ɑ̟",Vowel OPEN NEARBACK ROUNDED NORMAL "ɒ̟",Vowel OPEN BACK UNROUNDED NORMAL "ɑ",Vowel OPEN BACK ROUNDED NORMAL "ɒ"]
+v = [ [Vowel CLOSE FRONT UNROUNDED NORMAL NONET "i",Vowel CLOSE FRONT ROUNDED NORMAL NONET "y",Vowel CLOSE NEARFRONT UNROUNDED NORMAL NONET "ɪ̝",Vowel CLOSE NEARFRONT ROUNDED NORMAL NONET "ʏ̝",Vowel CLOSE CENTRAL UNROUNDED NORMAL NONET "ɨ",Vowel CLOSE CENTRAL ROUNDED NORMAL NONET "ʉ",Vowel CLOSE NEARBACK UNROUNDED NORMAL NONET "ɯ̟",Vowel CLOSE NEARBACK ROUNDED NORMAL NONET "ʊ̝",Vowel CLOSE BACK UNROUNDED NORMAL NONET "ɯ",Vowel CLOSE BACK ROUNDED NORMAL NONET "u"]
+    , [Vowel NEARCLOSE FRONT UNROUNDED NORMAL NONET "ɪ̟",Vowel NEARCLOSE FRONT ROUNDED NORMAL NONET "ʏ̟",Vowel NEARCLOSE NEARFRONT UNROUNDED NORMAL NONET "ɪ",Vowel NEARCLOSE NEARFRONT ROUNDED NORMAL NONET "ʏ",Vowel NEARCLOSE CENTRAL UNROUNDED NORMAL NONET "ɪ̈",Vowel NEARCLOSE CENTRAL ROUNDED NORMAL NONET "ʊ̈",Vowel NEARCLOSE NEARBACK UNROUNDED NORMAL NONET "ɯ̽",Vowel NEARCLOSE NEARBACK ROUNDED NORMAL NONET "ʊ",Vowel NEARCLOSE BACK UNROUNDED NORMAL NONET "ɯ̞",Vowel NEARCLOSE BACK ROUNDED NORMAL NONET "ʊ̠"]
+    , [Vowel CLOSEMID FRONT UNROUNDED NORMAL NONET "e",Vowel CLOSEMID FRONT ROUNDED NORMAL NONET "ø",Vowel CLOSEMID NEARFRONT UNROUNDED NORMAL NONET "ë",Vowel CLOSEMID NEARFRONT ROUNDED NORMAL NONET "ø̈",Vowel CLOSEMID CENTRAL UNROUNDED NORMAL NONET "ɘ",Vowel CLOSEMID CENTRAL ROUNDED NORMAL NONET "ɵ",Vowel CLOSEMID NEARBACK UNROUNDED NORMAL NONET "ɤ̈",Vowel CLOSEMID NEARBACK ROUNDED NORMAL NONET "ö",Vowel CLOSEMID BACK UNROUNDED NORMAL NONET "ɤ",Vowel CLOSEMID BACK ROUNDED NORMAL NONET "o"]
+    , [Vowel MID FRONT UNROUNDED NORMAL NONET "e̞",Vowel MID FRONT ROUNDED NORMAL NONET "ø̞",Vowel MID NEARFRONT UNROUNDED NORMAL NONET "ë̞",Vowel MID NEARFRONT ROUNDED NORMAL NONET "ø̞̈",Vowel MID CENTRAL UNROUNDED NORMAL NONET "ə",Vowel MID CENTRAL ROUNDED NORMAL NONET "ɵ̞",Vowel MID NEARBACK UNROUNDED NORMAL NONET "ɤ̞̈",Vowel MID NEARBACK ROUNDED NORMAL NONET "ö̞",Vowel MID BACK UNROUNDED NORMAL NONET "ɤ̞",Vowel MID BACK ROUNDED NORMAL NONET "o̞"]
+    , [Vowel OPENMID FRONT UNROUNDED NORMAL NONET "ɛ",Vowel OPENMID FRONT ROUNDED NORMAL NONET "œ",Vowel OPENMID NEARFRONT UNROUNDED NORMAL NONET "ɛ̈",Vowel OPENMID NEARFRONT ROUNDED NORMAL NONET "œ̈",Vowel OPENMID CENTRAL UNROUNDED NORMAL NONET "ɜ",Vowel OPENMID CENTRAL ROUNDED NORMAL NONET "ɞ",Vowel OPENMID NEARBACK UNROUNDED NORMAL NONET "ʌ̈",Vowel OPENMID NEARBACK ROUNDED NORMAL NONET "ɔ̈",Vowel OPENMID BACK UNROUNDED NORMAL NONET "ʌ",Vowel OPENMID BACK ROUNDED NORMAL NONET "ɔ"]
+    , [Vowel NEAROPEN FRONT UNROUNDED NORMAL NONET "æ",Vowel NEAROPEN FRONT ROUNDED NORMAL NONET "œ̞",Vowel NEAROPEN NEARFRONT UNROUNDED NORMAL NONET "a̽",Vowel NEAROPEN NEARFRONT ROUNDED NORMAL NONET "ɶ̽",Vowel NEAROPEN CENTRAL UNROUNDED NORMAL NONET "ɐ",Vowel NEAROPEN CENTRAL ROUNDED NORMAL NONET "ɞ̞",Vowel NEAROPEN NEARBACK UNROUNDED NORMAL NONET "ɑ̽",Vowel NEAROPEN NEARBACK ROUNDED NORMAL NONET "ɒ̽",Vowel NEAROPEN BACK UNROUNDED NORMAL NONET "ʌ̞",Vowel NEAROPEN BACK ROUNDED NORMAL NONET "ɔ̞"]
+    , [Vowel OPEN FRONT UNROUNDED NORMAL NONET "a",Vowel OPEN FRONT ROUNDED NORMAL NONET "ɶ",Vowel OPEN NEARFRONT UNROUNDED NORMAL NONET "a̠",Vowel OPEN NEARFRONT ROUNDED NORMAL NONET "ɶ̠",Vowel OPEN CENTRAL UNROUNDED NORMAL NONET "ä",Vowel OPEN CENTRAL ROUNDED NORMAL NONET "ɒ̈",Vowel OPEN NEARBACK UNROUNDED NORMAL NONET "ɑ̟",Vowel OPEN NEARBACK ROUNDED NORMAL NONET "ɒ̟",Vowel OPEN BACK UNROUNDED NORMAL NONET "ɑ",Vowel OPEN BACK ROUNDED NORMAL NONET "ɒ"]
     ]
 
 makeDiphInventory :: Int -> [Phoneme] -> RVar [Phoneme]
 makeDiphInventory n vs = sample n subseq where
-  subseq = map makeDiph $ filter (\(Vowel h1 b1 r1 l1 _, Vowel h2 b2 r2 l2 _) -> (h1 /= h2 || b1 /= b2) && l1 == l2) ((,) <$> vs <*> vs)
+  subseq = map makeDiph $ filter (\(Vowel h1 b1 r1 l1 t1 _, Vowel h2 b2 r2 l2 t2 _) -> (h1 /= h2 || b1 /= b2) && l1 == l2) ((,) <$> vs <*> vs)
 
 makeDiph :: (Phoneme, Phoneme) -> Phoneme
-makeDiph (Vowel h1 b1 r1 l1 s1, Vowel h2 b2 r2 l2 s2) = Diphthong h1 b1 r1 h2 b2 r2 NORMAL (s1 ++ s2 ++ "\815")
+makeDiph (Vowel h1 b1 r1 l1 t1 s1, Vowel h2 b2 r2 l2 t2 s2) = Diphthong h1 b1 r1 h2 b2 r2 NORMAL t1 (s1 ++ s2 ++ "\815")
 
 -- Make the places of articulation for consonants
 makePlaces :: RVar [Place]
@@ -174,30 +175,62 @@ makeLengths = choice [ [NORMAL]
                      , [SHORT, NORMAL, LONG]
                      ]
 
+-- Decides how tone will be contrasted for vowels
+makeTones :: RVar [Tone]
+makeTones = choice [ [NONET]
+                   , [HIGHT, FALLT, NONET]
+                   , [FALLT, PEAKT, NONET]
+                   , [LOWT, FALLT, NONET]
+                   , [HIGHT, LOWT, NONET]
+                   , [HIGHT, MIDT, LOWT]
+                   , [HIGHT, MIDT, LOWT, NONET]
+                   , [HIGHT, RISET, DIPT, FALLT]
+                   , [HIGHT, RISET, DIPT, FALLT, NONET]
+                   , [MIDT, LFALLT, HRISET, DIPT]
+                   , [MIDT, LFALLT, HRISET, DIPT, NONET]
+                   , [MIDT, LOWT, FALLT, HIGHT, RISET]
+                   , [MIDT, LOWT, FALLT, HIGHT, RISET, NONET]
+                   , [LOWT, MIDT, HIGHT, TOPT, RISET, FALLT]
+                   , [LOWT, MIDT, HIGHT, TOPT, RISET, FALLT, NONET]
+                   ]
+
 -- Make the vowel inventory from the above
-makeVowels :: [Height] -> [Backness] -> [Roundedness] -> [Length] -> RVar [Phoneme]
-makeVowels heights backs rounds lengths = return output where
+makeVowels :: [Height] -> [Backness] -> [Roundedness] -> [Length] -> [Tone] -> RVar [Phoneme]
+makeVowels heights backs rounds lengths tones = return output where
   -- Create all possible vowels from picked height, back, round, and length
-  vows = Vowel <$> heights <*> backs <*> rounds <*> lengths <*> [""]
+  vows = Vowel <$> heights <*> backs <*> rounds <*> lengths <*> tones <*> [""]
   -- Assign IPA symbol
   output = map assignVIPA vows
 
 -- Assigns IPA symbol to vowel
 assignVIPA :: Phoneme -> Phoneme
-assignVIPA (Vowel h b r l _) = Vowel h b r l (retrieveVSymbol h b r l)
+assignVIPA (Vowel h b r l t _) = Vowel h b r l t (retrieveVSymbol h b r l t)
 
--- Decides what IPA symbol to use, essentially
-retrieveVSymbol :: Height -> Backness -> Roundedness -> Length -> String
-retrieveVSymbol h b r l
-    | not.null $ searchVIPA h b r l = vsymbol $ head $ searchVIPA h b r l
-    | r == DEFAULT && ((b == FRONT) || (b == NEARFRONT)) = retrieveVSymbol h b ROUNDED l
-    | r == DEFAULT = retrieveVSymbol h b UNROUNDED l
-    | l == LONG = retrieveVSymbol h b r NORMAL ++ "\720"
-    | l == SHORT = retrieveVSymbol h b r NORMAL ++ "\774"
+-- Decides what IPA symbol to use
+retrieveVSymbol :: Height -> Backness -> Roundedness -> Length -> Tone -> String
+retrieveVSymbol h b r l t
+    | not.null $ searchVIPA h b r l t = vsymbol $ head $ searchVIPA h b r l t
+    | r == DEFAULT && ((b == FRONT) || (b == NEARFRONT)) = retrieveVSymbol h b ROUNDED l t
+    | r == DEFAULT = retrieveVSymbol h b UNROUNDED l t
+    | l == LONG = retrieveVSymbol h b r NORMAL t ++ "\720"
+    | l == SHORT = retrieveVSymbol h b r NORMAL t ++ "\774"
+    | t == TOPT = retrieveVSymbol h b r l NONET ++ "\779"
+    | t == HIGHT = retrieveVSymbol h b r l NONET ++ "\769"
+    | t == MIDT = retrieveVSymbol h b r l NONET ++ "\772"
+    | t == LOWT = retrieveVSymbol h b r l NONET ++ "\768"
+    | t == BOTTOMT = retrieveVSymbol h b r l NONET ++ "\783"
+    | t == FALLT = retrieveVSymbol h b r l NONET ++ "\770"
+    | t == HFALLT = retrieveVSymbol h b r l NONET ++ "\7623"
+    | t == LFALLT = retrieveVSymbol h b r l NONET ++ "\7622"
+    | t == RISET = retrieveVSymbol h b r l NONET ++ "\780"
+    | t == HRISET = retrieveVSymbol h b r l NONET ++ "\7620"
+    | t == LRISET = retrieveVSymbol h b r l NONET ++ "\7621"
+    | t == DIPT = retrieveVSymbol h b r l NONET ++ "\7625"
+    | t == PEAKT = retrieveVSymbol h b r l NONET ++ "\7624"
     | otherwise = "ERROR"
 
 -- Searches the "canon" IPA vowels for a match
-searchVIPA :: Height -> Backness -> Roundedness -> Length -> [Phoneme]
-searchVIPA h b r l = filt where
+searchVIPA :: Height -> Backness -> Roundedness -> Length -> Tone -> [Phoneme]
+searchVIPA h b r l t = filt where
   vows = filter (not . null . vsymbol) $ concat v
-  filt = filter (\(Vowel hv bv rv lv _) -> h == hv && b == bv && r == rv && l == lv) vows
+  filt = filter (\(Vowel hv bv rv lv tv _) -> h == hv && b == bv && r == rv && l == lv && t == tv) vows

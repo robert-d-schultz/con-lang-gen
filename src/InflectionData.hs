@@ -48,7 +48,7 @@ deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, E
 data Manifest a = NoManifest | Manifest [(LexCat, ManifestType, Int)] a deriving (Eq, Show, Read)
 data Express a  = NoExpress  | Express a deriving (Eq, Show, Read)
 
-data ManifestType = Particle | Affix deriving (Eq, Show, Read)
+data ManifestType = Particle | Prefix | Suffix deriving (Eq, Show, Read)
 
 data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Obj | Subj | Pron deriving (Eq, Enum, Show, Read)
 
@@ -89,9 +89,7 @@ data Case          = INTR | ACC | ERG | PEG | INDIR | SEC
                    | DAT | INS | COMIT | INSCOMIT | ORN | BEN
                    | CAUS | DISTR
                    | GEN | POSS | PART
-                   | VOC
-
-                   deriving (Eq, Show, Read)
+                   | VOC deriving (Eq, Show, Read)
 data Number        = SG | DU | TRI | PA | PL deriving (Eq, Show, Read)
 data Definiteness  = DEF | INDF deriving (Eq, Show, Read)
 data Specificity   = SPEC | NSPEC deriving (Eq, Show, Read)
@@ -101,7 +99,12 @@ data Person        = FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THR
 data Honorific     = FAM | NEU | FORM deriving (Eq, Show, Read)
 data Polarity      = AFF | NEG deriving (Eq, Show, Read)
 -- For verbs
-data Tense         = PST | REM | REC | NPST | PRS | NFUT | FUT | IMMF | REMF deriving (Eq, Show, Read)
+data Tense         = PST | PRS | FUT
+                   | APRS | APST
+                   | AFUT | AFUT1 | AFUT2 | AFUT3
+                   | PPRS | PFUT
+                   | PPST | PPST1 | PPST2 | PPST3
+                   | PSTPER | PRSPER | FUTPER deriving (Eq, Show, Read)
 data Aspect        = NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Eq, Show, Read)
 data Mood          = IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Eq, Show, Read)
 data Voice         = ACTIVE | MIDDLE | PASSIVE deriving (Eq, Show, Read)
@@ -110,4 +113,8 @@ data Transitivity  = NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Show, Read)
 data Volition      = VOL | NVOL deriving (Eq, Show, Read)
 
 -- Particle/Affix system
-data ManifestSystem = ManifestSystem LexCat ManifestType [(Morpheme, (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition))] deriving (Eq, Show)
+data ManifestSystem = ManifestSystem
+                    { manSysLC :: LexCat
+                    , manSysType :: ManifestType
+                    , manSysCombos :: [(Morpheme, (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition))]
+                    } deriving (Eq, Show)

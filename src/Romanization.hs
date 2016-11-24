@@ -70,23 +70,23 @@ romanizePhoneme (Consonant p m v s)
   | p == DENTAL = romanizePhoneme (Consonant ALVEOLAR m v s)
   | otherwise = "h"
 
-romanizePhoneme (Vowel h b r l s)
+romanizePhoneme (Vowel h b r l t s)
   | h == NEAROPEN && b == FRONT && r == UNROUNDED = "a"
   | h == CLOSEMID && b == FRONT && r == UNROUNDED = "e"
-  | h == CLOSE && b == FRONT && r == UNROUNDED = "ee"
+  | h == CLOSE && b == FRONT && r == UNROUNDED = "e"
   | h == NEARCLOSE && b == NEARFRONT && r == UNROUNDED = "i"
   | h == OPEN && b == BACK && r == ROUNDED = "o"
-  | h == CLOSE && b == BACK && r == ROUNDED && l == LONG = "oo"
+  | h == CLOSE && b == BACK && r == ROUNDED && l == LONG = "o"
   | h == OPENMID && b == BACK && r == ROUNDED = "u"
-  | l == LONG = concat $ replicate 2 (romanizePhoneme (Vowel h b r NORMAL s))
-  | l == SHORT = romanizePhoneme (Vowel h b r NORMAL s)
-  | r `elem` [UNROUNDED, ROUNDED] = romanizePhoneme (Vowel h b DEFAULT l s)
+  | l == LONG = concat $ replicate 2 (romanizePhoneme (Vowel h b r NORMAL t s))
+  | l == SHORT = romanizePhoneme (Vowel h b r NORMAL t s)
+  | r `elem` [UNROUNDED, ROUNDED] = romanizePhoneme (Vowel h b DEFAULT l t s)
   | h `elem` [NEARCLOSE, CLOSEMID, MID, OPENMID] && b == BACK = "o"
   | h `elem` [CLOSEMID, MID, OPENMID] && b == FRONT = "e"
   | h `elem` [OPENMID, NEAROPEN, OPEN] = "a"
   | h `elem` [CLOSE, NEARCLOSE] && b `elem` [FRONT, NEARFRONT] = "i"
-  | h `elem` [CLOSE, NEARCLOSE] && b `elem` [BACK, NEARBACK, CENTRAL] = "oo"
+  | h `elem` [CLOSE, NEARCLOSE] && b `elem` [BACK, NEARBACK, CENTRAL] = "o"
   | h `elem` [CLOSEMID, MID, OPENMID] && b `elem` [CENTRAL, NEARFRONT, NEARBACK] = "u"
   | otherwise = "u"
 
-romanizePhoneme (Diphthong h b r h2 b2 r2 l s) = romanizePhoneme (Vowel h b r l s) ++ romanizePhoneme (Vowel h2 b2 r2 l s)
+romanizePhoneme (Diphthong h b r h2 b2 r2 l t s) = romanizePhoneme (Vowel h b r l t s) ++ romanizePhoneme (Vowel h2 b2 r2 l t s)

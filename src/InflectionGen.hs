@@ -65,7 +65,7 @@ readFeature = fmap read . readFile
 
 -- Create "inflection system"
 
-makeInflectionSystem :: InputData -> RVar (InflectionSystem, [(LexCat, Int, Int)])
+makeInflectionSystem :: InputData -> RVar (InflectionSystem, [(LexCat, Int, Int, Int)])
 makeInflectionSystem idata = do
   (genSys, genNs) <- fooGender idata
   (aniSys, aniNs) <- fooAnimacy idata genNs
@@ -86,29 +86,32 @@ makeInflectionSystem idata = do
   (volSys, volNs) <- fooVolition idata traNs
   return (InflectionSystem genSys aniSys casSys numSys defSys speSys topSys perSys honSys polSys tenSys aspSys mooSys voiSys eviSys traSys volSys, volNs)
 
-bar :: [(LexCat, Int, Int)] -> [(LexCat, ManifestType, Int)] -> [LexCat] -> RVar ([(LexCat, ManifestType, Int)], [(LexCat, Int, Int)])
+bar :: [(LexCat, Int, Int, Int)] -> [(LexCat, ManifestType, Int)] -> [LexCat] -> RVar ([(LexCat, ManifestType, Int)], [(LexCat, Int, Int, Int)])
 bar ks ts [] = return (ts,ks)
 bar ks ts lcs = do
   (newt, newks) <- rab ks (head lcs)
   bar newks (newt : ts) (tail lcs)
 
-rab :: [(LexCat, Int, Int)] -> LexCat -> RVar ((LexCat, ManifestType, Int), [(LexCat, Int, Int)])
+rab :: [(LexCat, Int, Int, Int)] -> LexCat -> RVar ((LexCat, ManifestType, Int), [(LexCat, Int, Int, Int)])
 rab lcs lc2 = join out where
-    (fu, ba) = partition (\(c, _, _) -> c == lc2) lcs
+    (fu, ba) = partition (\(c, _, _, _) -> c == lc2) lcs
     shit
-      | null fu = (lc2, 0, 0)
+      | null fu = (lc2, 0, 0, 0)
       | otherwise = head fu
-    (lc, part, aff) = shit
+    (lc, part, pref, suff) = shit
 
     out = choice [ do
                    i <- uniform 1 (part+1)
-                   return ((lc, Particle, i), (lc, max i part, aff) : ba)
+                   return ((lc, Particle, i), (lc, max i part, pref, suff) : ba)
                  , do
-                   j <- uniform 1 (aff+1)
-                   return ((lc, Affix, j), (lc, part, max j aff) : ba)
+                   j <- uniform 1 (pref+1)
+                   return ((lc, Prefix, j), (lc, part, max j pref, suff) : ba)
+                 , do
+                   j <- uniform 1 (suff+1)
+                   return ((lc, Suffix, j), (lc, part, pref, max j suff) : ba)
                  ]
 
-fooGender :: InputData -> RVar (Manifest [Gender], [(LexCat, Int, Int)])
+fooGender :: InputData -> RVar (Manifest [Gender], [(LexCat, Int, Int, Int)])
 fooGender idata = do
   gens <- makeGenders idata
   i <- uniform 0 3
@@ -116,7 +119,7 @@ fooGender idata = do
   (ts, ks) <- bar [] [] cats
   choice [(NoManifest, []), (Manifest ts gens, ks)]
 
-fooAnimacy :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Animacy], [(LexCat, Int, Int)])
+fooAnimacy :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Animacy], [(LexCat, Int, Int, Int)])
 fooAnimacy idata genNs = do
   anis <- makeAnimacies idata
   i <- uniform 0 3
@@ -124,7 +127,7 @@ fooAnimacy idata genNs = do
   (ts, ns) <- bar genNs [] cats
   choice [(NoManifest, genNs), (Manifest ts anis, ns)]
 
-fooCase :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Case], [(LexCat, Int, Int)])
+fooCase :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Case], [(LexCat, Int, Int, Int)])
 fooCase idata aniNs = do
   cass <- makeCases idata
   i <- uniform 0 3
@@ -132,7 +135,7 @@ fooCase idata aniNs = do
   (ts, ns) <- bar aniNs [] cats
   choice [(NoManifest, aniNs), (Manifest ts cass, ns)]
 
-fooNumber :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Number], [(LexCat, Int, Int)])
+fooNumber :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Number], [(LexCat, Int, Int, Int)])
 fooNumber idata casNs = do
   nums <- makeNumbers idata
   i <- uniform 0 3
@@ -140,7 +143,7 @@ fooNumber idata casNs = do
   (ts, ns) <- bar casNs [] cats
   choice [(NoManifest, casNs), (Manifest ts nums, ns)]
 
-fooDefiniteness :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Definiteness], [(LexCat, Int, Int)])
+fooDefiniteness :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Definiteness], [(LexCat, Int, Int, Int)])
 fooDefiniteness idata numNs = do
   defs <- makeDefinitenesses idata
   i <- uniform 0 3
@@ -148,7 +151,7 @@ fooDefiniteness idata numNs = do
   (ts, ns) <- bar numNs [] cats
   choice [(NoManifest, numNs), (Manifest ts defs, ns)]
 
-fooSpecificity :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Specificity], [(LexCat, Int, Int)])
+fooSpecificity :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Specificity], [(LexCat, Int, Int, Int)])
 fooSpecificity idata defNs = do
   spes <- makeSpecificities idata
   i <- uniform 0 3
@@ -156,7 +159,7 @@ fooSpecificity idata defNs = do
   (ts, ns) <- bar defNs [] cats
   choice [(NoManifest, defNs), (Manifest ts spes, ns)]
 
-fooTopic :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Topic], [(LexCat, Int, Int)])
+fooTopic :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Topic], [(LexCat, Int, Int, Int)])
 fooTopic idata speNs = do
   tops <- makeTopics idata
   i <- uniform 0 3
@@ -164,7 +167,7 @@ fooTopic idata speNs = do
   (ts, ns) <- bar speNs [] cats
   choice [(NoManifest, speNs), (Manifest ts tops, ns)]
 
-fooPerson :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Person], [(LexCat, Int, Int)])
+fooPerson :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Person], [(LexCat, Int, Int, Int)])
 fooPerson idata topNs = do
   pers <- makePersons idata
   i <- uniform 0 3
@@ -172,7 +175,7 @@ fooPerson idata topNs = do
   (ts, ns) <- bar topNs [] cats
   choice [(NoManifest, topNs), (Manifest ts pers, ns)]
 
-fooHonorific :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Honorific], [(LexCat, Int, Int)])
+fooHonorific :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Honorific], [(LexCat, Int, Int, Int)])
 fooHonorific idata perNs = do
   hons <- makeHonorifics idata
   i <- uniform 0 3
@@ -185,7 +188,7 @@ fooHonorific idata perNs = do
   (ts, ns) <- bar perNs [] cats
   choice [(NoManifest, perNs), (Manifest ts hons, ns)]
 
-fooPolarity :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Polarity], [(LexCat, Int, Int)])
+fooPolarity :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Polarity], [(LexCat, Int, Int, Int)])
 fooPolarity idata honNs = do
   pols <- makePolarities idata
   i <- uniform 0 3
@@ -198,7 +201,7 @@ fooPolarity idata honNs = do
   (ts, ns) <- bar honNs [] cats
   choice [(NoManifest, honNs), (Manifest ts pols, ns)]
 
-fooTense :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Tense], [(LexCat, Int, Int)])
+fooTense :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Tense], [(LexCat, Int, Int, Int)])
 fooTense idata polNs = do
   tens <- makeTenses idata
   i <- uniform 0 3
@@ -206,7 +209,7 @@ fooTense idata polNs = do
   (ts, ns) <- bar polNs [] cats
   choice [(NoManifest, polNs), (Manifest ts tens, ns)]
 
-fooAspect :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Aspect], [(LexCat, Int, Int)])
+fooAspect :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Aspect], [(LexCat, Int, Int, Int)])
 fooAspect idata tenNs = do
   asps <- makeAspects idata
   i <- uniform 0 3
@@ -214,7 +217,7 @@ fooAspect idata tenNs = do
   (ts, ns) <- bar tenNs [] cats
   choice [(NoManifest, tenNs), (Manifest ts asps, ns)]
 
-fooMood :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Mood], [(LexCat, Int, Int)])
+fooMood :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Mood], [(LexCat, Int, Int, Int)])
 fooMood idata aspNs = do
   moos <- makeMoods idata
   i <- uniform 0 3
@@ -222,7 +225,7 @@ fooMood idata aspNs = do
   (ts, ns) <- bar aspNs [] cats
   choice [(NoManifest, aspNs), (Manifest ts moos, ns)]
 
-fooVoice :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Voice], [(LexCat, Int, Int)])
+fooVoice :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Voice], [(LexCat, Int, Int, Int)])
 fooVoice idata mooNs = do
   vois <- makeVoices idata
   i <- uniform 0 3
@@ -230,7 +233,7 @@ fooVoice idata mooNs = do
   (ts, ns) <- bar mooNs [] cats
   choice [(NoManifest, mooNs), (Manifest ts vois, ns)]
 
-fooEvidentiality :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Evidentiality], [(LexCat, Int, Int)])
+fooEvidentiality :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Evidentiality], [(LexCat, Int, Int, Int)])
 fooEvidentiality idata voiNs = do
   evis <- makeEvidentialities idata
   i <- uniform 0 3
@@ -238,7 +241,7 @@ fooEvidentiality idata voiNs = do
   (ts, ns) <- bar voiNs [] cats
   choice [(NoManifest, voiNs), (Manifest ts evis, ns)]
 
-fooTransitivity :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Transitivity], [(LexCat, Int, Int)])
+fooTransitivity :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Transitivity], [(LexCat, Int, Int, Int)])
 fooTransitivity idata eviNs = do
   tras <- makeTransitivities idata
   i <- uniform 0 3
@@ -246,7 +249,7 @@ fooTransitivity idata eviNs = do
   (ts, ns) <- bar eviNs [] cats
   choice [(NoManifest, eviNs), (Manifest ts tras, ns)]
 
-fooVolition :: InputData -> [(LexCat, Int, Int)] -> RVar (Manifest [Volition], [(LexCat, Int, Int)])
+fooVolition :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest [Volition], [(LexCat, Int, Int, Int)])
 fooVolition idata traNs = do
   vols <- makeVolitions idata
   i <- uniform 0 3

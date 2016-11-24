@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-04 09:25:10.382549 UTC
+2016-11-10 18:42:09.649214 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:WordGen 7103
-  interface hash: 7399a8a6af8ccaca4cb07a29d1969f51
-  ABI hash: 9bf7a76709452e55efdea81abbb45e88
-  export-list hash: 1589ce37a6d72194346fd41146c2ac82
+  interface hash: 890d073fc62907fdf1c08f1f286e302a
+  ABI hash: df6d57f99346b4db10ec1e481003cffb
+  export-list hash: caa25443cdbc9cab7d4ddf5c6024201b
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -15,6 +15,7 @@ exports:
   WordGen.loadMeaningData
   WordGen.makeDictionary
   WordGen.makeMorpheme
+  WordGen.MeaningData{WordGen.MeaningData WordGen.inputAdjs WordGen.inputAdpos WordGen.inputNouns WordGen.inputVerbs}
 module dependencies: GrammarData InflectionData OtherData
                      PhonemeData PhonemeGen PhonotacticsGen
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
@@ -96,26 +97,27 @@ import  -/  base-4.8.2.0:GHC.Read b423b4506a014855edbd329b567629f3
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
-import  -/  GrammarData b86371ccb48390730f6498310ddac76f
-  exports: d1002ba5737e19703411cb57857cf209
-  Adj a3bce51fd2fd7e4dc0d2574150a46bdd
-  LexCat b95e114b0b6d51b5dd936a539d4fcd51
-  Noun 29b0c18b13a4547db43d1c3e1971f3f5
-  Verb f06c4b09592b8a5d74db07316a39ae60
-import  -/  InflectionData 072303e933f9eb87493ca2db6553722b
-  exports: 11ce4827ce97282915e6b63398631625
-import  -/  OtherData ef85631315e8bb1c90bd776e9bb7751c
+import  -/  GrammarData f95f1692a0522ba4f2ab8e4cff233a36
+  exports: 0e046bef964de644bb5bb5f62ec92514
+import  -/  InflectionData 316dc8b65cfd739af6e59de9ad59bbc6
+  exports: 24640cf62a9c3b7f4d5b0c718698bf0c
+  Adj b6a8748ebc7c8a127004065f39281bf7
+  Adpo 7302a0de0ff3a9e61c27a9a3a99c24d5
+  LexCat 669f64eab1a11feac3c6144dd5c31025
+  Noun 4b3ff1753c1b5bd5340401062ce8e9e3
+  Verb 9421dc5b8cf6821456c38e572093888e
+import  -/  OtherData 37db5ddc38f8875c91a0806c561b30cd
   exports: f505dec72f229982fb85e59b44566731
-import  -/  PhonemeData 2bc4225bb63ccf0a16ac10bab410e892
-  exports: 8834c83badd5837275d7ec1bbd2f424a
-  Morpheme 773f530596237f1e058299251c3d7d0d
-  Morpheme a75f0140e4b212df166951d7f735baaf
-  Phoneme 725a483aa2dd4b7c0473c29cf990b878
-  Word 1393f11ad51cd86d8180b3eab5b4bd1a
-  Word 55b6ea537d860cf92b62e64e19ceba7b
-import  -/  PhonemeGen 44431a2b9295a7efdbb24a370fea6130
-  exports: ac2fac7549593bb4b2279f37f817f5be
-import  -/  PhonotacticsGen 6b0ffb15d766a08cc9d1828eaa725159
+import  -/  PhonemeData 408b6488aa28ce44ef05793241013f6f
+  exports: c711b36c9b7415c6d00ea9681146dbcb
+  Morpheme 84694ed806c557c515bbf4e524e13725
+  Morpheme 383812fe40de4e6210cee815bfc93a6d
+  Phoneme 78c280a9bf84c920fdcdc1bfa9515e2f
+  Word 4e1579ce9a1ea812805b7e69ae8f8d98
+  Word 82eaddf6262316ad93815378773a62ff
+import  -/  PhonemeGen 882a8962f7e5d7a3a88d6f568f3c585f
+  exports: 9e8e7402e02e274551e75a2a86f34bc1
+import  -/  PhonotacticsGen df8b64d0247252501a5b56e100c90305
   exports: 5bbf082cfe2be7a4eaae7a2a5f6b7de8
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
@@ -136,7 +138,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-1385564380542680d770c51311c8e07a
+2d63d7418f3d7b6a945946480adf8848
   $wmakeMorpheme ::
     [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]
@@ -152,134 +154,53 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
   {- Arity: 10,
      Strictness: <L,U><L,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
      Inline: [0] -}
-5b86db611f54c65fbc018864490f30b4
+0ffb158eab2f2b75a6f8d62512bd2d4c
   data MeaningData
     = MeaningData {inputNouns :: [GHC.Base.String],
                    inputVerbs :: [GHC.Base.String],
-                   inputAdjs :: [GHC.Base.String]}
-06c8aaa140ad058aa1c601ad5ea05f09
+                   inputAdjs :: [GHC.Base.String],
+                   inputAdpos :: [GHC.Base.String]}
+633c2758ca0f12e79b58a37f799bca29
   inputAdjs :: WordGen.MeaningData -> [GHC.Base.String]
   RecSel WordGen.MeaningData
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLSL),1*U(A,A,1*U,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: WordGen.MeaningData ->
-                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 -> ds3 }) -}
-4d5b5121a5bf9c0ba6dc305aeb069dc1
+                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 ds4 -> ds3 }) -}
+0b64bde3ea0a9103b4bd4a53d4cde0f9
+  inputAdpos :: WordGen.MeaningData -> [GHC.Base.String]
+  RecSel WordGen.MeaningData
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLS),1*U(A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: WordGen.MeaningData ->
+                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 ds4 -> ds4 }) -}
+e6ee3eaba610f0c7b6e89a33c20a5cc5
   inputNouns :: WordGen.MeaningData -> [GHC.Base.String]
   RecSel WordGen.MeaningData
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)>,
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLLL),1*U(1*U,A,A,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: WordGen.MeaningData ->
-                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 -> ds1 }) -}
-79abd64ce64f10110abda12b11ec0191
+                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 ds4 -> ds1 }) -}
+0c4b2e5a05a013f8d9994fb5e337df73
   inputVerbs :: WordGen.MeaningData -> [GHC.Base.String]
   RecSel WordGen.MeaningData
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U,A)>,
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLL),1*U(A,1*U,A,A)>,
      Unfolding: InlineRule (1, True, False)
                 (\ ds :: WordGen.MeaningData ->
-                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 -> ds2 }) -}
-0473237c6c77340f3b05492f15f006f1
+                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 ds4 -> ds2 }) -}
+a5f287419e665bf09af7fe1eef93ebd4
   loadMeaningData :: GHC.Types.IO WordGen.MeaningData
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 WordGen.loadMeaningData1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <WordGen.MeaningData>_R)) -}
-f3688dbf7d6c85d6f644d7103a0a79f7
+33bb8905a15f1f76354492bf82901cf8
   loadMeaningData1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, WordGen.MeaningData #)
-  {- Arity: 1, Strictness: <L,U>,
-     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 case GHC.IO.Handle.FD.openFile1
-                        WordGen.loadMeaningData5
-                        GHC.IO.IOMode.ReadMode
-                        s of ds1 { (#,#) ipv ipv1 ->
-                 case GHC.IO.Handle.Text.hGetContents1
-                        ipv1
-                        ipv of ds { (#,#) ipv2 ipv3 ->
-                 case GHC.IO.Handle.FD.openFile1
-                        WordGen.loadMeaningData4
-                        GHC.IO.IOMode.ReadMode
-                        ipv2 of ds2 { (#,#) ipv4 ipv5 ->
-                 case GHC.IO.Handle.Text.hGetContents1
-                        ipv5
-                        ipv4 of ds3 { (#,#) ipv6 ipv7 ->
-                 case GHC.IO.Handle.FD.openFile1
-                        WordGen.loadMeaningData3
-                        GHC.IO.IOMode.ReadMode
-                        ipv6 of ds4 { (#,#) ipv8 ipv9 ->
-                 case GHC.IO.Handle.Text.hGetContents1
-                        ipv9
-                        ipv8 of ds5 { (#,#) ipv10 ipv11 ->
-                 (# ipv10,
-                    WordGen.MeaningData
-                      (case Text.Read.readEither6
-                              @ [GHC.Base.String]
-                              (Text.ParserCombinators.ReadP.run
-                                 @ [GHC.Base.String]
-                                 WordGen.loadMeaningData2
-                                 ipv3) of wild {
-                         [] -> GHC.Err.error @ [GHC.Base.String] Text.Read.readEither4
-                         : x ds6
-                         -> case ds6 of wild1 {
-                              [] -> x
-                              : ipv12 ipv13
-                              -> GHC.Err.error @ [GHC.Base.String] Text.Read.readEither2 } })
-                      (case Text.Read.readEither6
-                              @ [GHC.Base.String]
-                              (Text.ParserCombinators.ReadP.run
-                                 @ [GHC.Base.String]
-                                 WordGen.loadMeaningData2
-                                 ipv7) of wild {
-                         [] -> GHC.Err.error @ [GHC.Base.String] Text.Read.readEither4
-                         : x ds6
-                         -> case ds6 of wild1 {
-                              [] -> x
-                              : ipv12 ipv13
-                              -> GHC.Err.error @ [GHC.Base.String] Text.Read.readEither2 } })
-                      (case Text.Read.readEither6
-                              @ [GHC.Base.String]
-                              (Text.ParserCombinators.ReadP.run
-                                 @ [GHC.Base.String]
-                                 WordGen.loadMeaningData2
-                                 ipv11) of wild {
-                         [] -> GHC.Err.error @ [GHC.Base.String] Text.Read.readEither4
-                         : x ds6
-                         -> case ds6 of wild1 {
-                              [] -> x
-                              : ipv12 ipv13
-                              -> GHC.Err.error
-                                   @ [GHC.Base.String]
-                                   Text.Read.readEither2 } }) #) } } } } } }) -}
-bb10ec99fe559235cb7e7257353a148d
-  loadMeaningData2 ::
-    Text.ParserCombinators.ReadP.P [GHC.Base.String]
-  {- Unfolding: (GHC.Read.$wa
-                   @ [GHC.Types.Char]
-                   GHC.Read.$fReadChar1
-                     `cast`
-                   (Trans
-                        (<Text.ParserCombinators.ReadPrec.Prec>_R
-                         ->_R Sym (Text.ParserCombinators.ReadP.NTCo:ReadP[0]
-                                       <[GHC.Types.Char]>_R))
-                        (Sym (Text.ParserCombinators.ReadPrec.NTCo:ReadPrec[0]
-                                  <[GHC.Types.Char]>_R)))
-                   @ [GHC.Base.String]
-                   (Text.Read.readEither5 @ [GHC.Base.String])) -}
-f5955a18ccb31d0b237b603e3503aad4
-  loadMeaningData3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "raw/meanings/adjectives.txt"#) -}
-e3bef6e480413bcbb3cd1082479750e3
-  loadMeaningData4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "raw/meanings/verbs.txt"#) -}
-e568280fee74385ae4022333ea1ea94c
-  loadMeaningData5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "raw/meanings/nouns.txt"#) -}
-b0bcb093352908f92f908ba090d95f2c
+  {- Arity: 1, Strictness: <L,U> -}
+2380f8d0ec14a4a0595eaaf74cb108d4
   makeDictionary ::
     WordGen.MeaningData
     -> [PhonemeData.Phoneme]
@@ -289,10 +210,10 @@ b0bcb093352908f92f908ba090d95f2c
         (GHC.Types.Int, GHC.Types.Int),
         (GHC.Types.Int, GHC.Types.Int))
     -> Data.RVar.RVar
-         [((GHC.Base.String, GrammarData.LexCat), PhonemeData.Word)]
+         [((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)]
   {- Arity: 4,
-     Strictness: <L,U(U,U,U)><L,U><L,U><L,U(U(U(U),U(U)),U(U(U),U(U)),U(U(U),U(U)),U(U(U),U(U)))> -}
-247fc6235f954af6f2d35985916af007
+     Strictness: <L,U(U,U,U,U)><L,U><L,U><L,U(U(U(U),U(U)),U(U(U),U(U)),U(U(U),U(U)),U(U(U),U(U)))> -}
+90c96d6dac5552cfb4cafae5fadb8741
   makeMorpheme ::
     [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]

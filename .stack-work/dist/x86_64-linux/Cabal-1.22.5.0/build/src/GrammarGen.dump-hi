@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-04 09:25:02.804241 UTC
+2016-11-10 18:42:08.177757 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 7103
-  interface hash: aef9dcc8357d59a6cfa7493c9d540422
-  ABI hash: 3f03ed4331afaf012b4471fede6a4807
-  export-list hash: 961cf30b6400ca08561c588e33a1e210
+  interface hash: cc27475e31beb4e9c38e8f65b7f9a5ab
+  ABI hash: a0435c6cccc42900e87047a873a0bd6f
+  export-list hash: 1b8f1be01a457ac63bfe8aeccef083c7
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -13,7 +13,8 @@ interface conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 7103
   where
 exports:
   GrammarGen.makeGrammar
-module dependencies: GrammarData
+module dependencies: GrammarData InflectionData OtherData
+                     PhonemeData
 package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz
                       array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0
@@ -46,6 +47,7 @@ package dependencies: MonadPrompt-1.0.0.5@Monad_5vpMHuuRBzi4bKjpRN3A9L
                       vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln
 orphans: MonadRandom-0.4.2.3@Monad_I7tEJH7vOtsKQS7CpG48fz:Control.Monad.Random
          base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         conla_1eA9qWUPH9nBowcXqqaV8r:InflectionData
          mersenne-random-pure64-0.2.0.5@merse_42koSxEhmjwBS69WXi19xI:System.Random.Mersenne.Pure64
          random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source
          random-source-0.3.0.6@rando_2sxt9MoqACW6I0STyXc5JW:Data.Random.Source.IO
@@ -81,40 +83,40 @@ family instance modules: base-4.8.2.0:Control.Applicative
 import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  GrammarData b86371ccb48390730f6498310ddac76f
-  exports: d1002ba5737e19703411cb57857cf209
-  CompFinal 5157333e53be0521545dfe1bf97b1f38
-  CompInitial 0b13267e6b95dafc9fcfcd609ecc6114
-  Grammar 91b621ebddaf39e9c665db0c25a7acd9
-  Grammar 6fa2fa1c593ca3d4a39d72e5f818a657
-  NoAffixHop f2c51389239b63cee428fc2ac2bc2af9
-  NoItoCMove 88510a529cabcf32d7208de7e40f276f
-  NoNullSub 4d89cdfd4c4372b4513c2ddc20f69f81
-  NoNullTop 4b771e5e415972b954667f6649fde779
-  NoQuesInv 7735083c84f94ef3c77e4280d8149187
-  NoTopMark 95a426a4fd103d4fb2030793586c7977
-  NoVtoIMove 75a4182f63c78e238f40634a3dc51ee1
-  NoWHMove 8dc38e70d1df0b6884e12559d6259a39
-  ObjFinal 92131afdd8224361644c462bb63b8352
-  ObjInitial cf3eb0172f36ea6febae1d107d470ed8
-  OblAffixHop aa049679288e8549be36aefbe701254e
-  OblItoCMove 972a31b6d63da55a6b897465f7b1ff3e
-  OblQuesInv 22de845345ab5060b48c63812d123837
-  OblTopMark fe2e83dd9978c33fd234434fc5d36ece
-  OblTopic bc5ed8f21290546510c9d77edfeb3f87
-  OblVtoIMove 9ec8b3d7b01aefb7da542f79f95a070f
-  OblWHMove 3eb38d16319b876ebfda1ce7dffd6d62
-  OptNullSub 9809498d2a02d8275e81ed236c29c4cb
-  OptNullTop 7f79d44e2591f8502c6d8c583b5e9a98
-  OptTopic c1a5fe2dd5470bf1722a0c9904f1a04b
-  PiedPipe ceb78ea4d795663e69713b167662dc91
-  PrepStrand aeadd3d15a66bf5be58bef70cb379b93
-  SubFinal 8927fbdac663717103788bbd9be2c5e7
-  SubInitial 0f45c8fc851322dc327934b417e538d4
+import  -/  GrammarData f95f1692a0522ba4f2ab8e4cff233a36
+  exports: 0e046bef964de644bb5bb5f62ec92514
+  CompFinal 4218b98d2cad94623d418f06c7daaf74
+  CompInitial 8b5437a083d2f9791daaa4f92c16bab9
+  Grammar 9431d56d0f401c256cc2bc0e7ead68ba
+  Grammar 11b00dbd6fd1fdd388e13ec0899e5848
+  NoAffixHop e58eeed187ea908b7fa653adc99b562e
+  NoItoCMove bb7578109ae596e18d3d7b2dd5f9b3d1
+  NoNullSub 25cf5afaaddd61d698e7f5e25b4baa2b
+  NoNullTop f60936602130ab68f29ed7cbcadb81c4
+  NoQuesInv b56d132ac872dd525bc8ec8fbc362ce1
+  NoTopMark a70d85020f95b4eff6df801d27ac5e9e
+  NoVtoIMove 7a81e1cc4474c4bb620697de0663ddd9
+  NoWHMove 50d295bfebbf039581c924ae7fb6e6f8
+  ObjFinal 2572911f9ea4c69e1434da22eb48e525
+  ObjInitial 703f4b45bc60c4f5a85310c83221c32a
+  OblAffixHop ec1f08cb309e90abdaf0c18a4682b13a
+  OblItoCMove 471fba2b63cac8f316f9f6c9c4b0c2b7
+  OblQuesInv 9f7009973f94ac39ca7ef05bb0bc36fa
+  OblTopMark fc1afc5f347c4943f4e7b4c34c24d49e
+  OblTopic 65808ae4e41011e268c505303ac83d3c
+  OblVtoIMove 39efa0a7a74da535449219bc74d9d881
+  OblWHMove f8f338efe214e1b26bdc4fe459e965cd
+  OptNullSub cd89e48d18f2d2bc28599667107ed8d4
+  OptNullTop a824b4edf4a0c44abee5562732e30efd
+  OptTopic 067d59f68b08ffd6608f54b391efdeb5
+  PiedPipe 7fc99674a4f47d4345a51bdb2ddaf912
+  PrepStrand 6550512fd48d2dda98b0aea99c404bfd
+  SubFinal 941401a84255097a4360b59afab1701f
+  SubInitial 777330f5f719b1bf1c174b513c8719ec
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
 import  -/  random-fu-0.2.7.0@rando_HO0DW1nA2fDCxZJ62mvJHr:Data.Random 355d6844bb1b3189cb19ec0007f6f130
 import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b8a65f45a17cccb1
-56230a94a09762b154aabcb02a40f9e4
+c238b1acb44af3e0739619912238abb0
   makeGrammar :: Data.RVar.RVar GrammarData.Grammar
   {- Arity: 2, Strictness: <L,C(U)><L,U>,
      Unfolding: InlineRule (0, True, True)
@@ -131,7 +133,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
                                     <Data.Random.Source.Internal.Prim.Prim>_R
                                     <Data.Functor.Identity.Identity>_R))
                           (Sym (Data.RVar.NTCo:RVarT[0]) <Data.Functor.Identity.Identity>_N) <GrammarData.Grammar>_N)) -}
-ca57bd7081ca4dafba009efa2413d50c
+ff562ca3289caa711165ef646ce17645
   makeGrammar1 ::
     (GrammarData.Grammar -> b1)
     -> (forall a2.
@@ -342,52 +344,52 @@ ca57bd7081ca4dafba009efa2413d50c
                          eta3 })
                       eta3 })
                    eta3) -}
-a204f6ec35555bae882e2952c38ba4dd
+9b317c455586a273ad5c7d2e24f6c540
   makeGrammar10 :: [GrammarData.WHMovementObligatory]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.WHMovementObligatory
                    GrammarData.OblWHMove
                    (GHC.Types.[] @ GrammarData.WHMovementObligatory)) -}
-a1116b0032db8812cea03984b9cc2bef
+fe111473042c5cb2b682adcf1917e68c
   makeGrammar11 :: Data.RVar.RVar GrammarData.ItoCMovement
   {- Unfolding: (Data.Random.Extras.choice
                    @ GrammarData.ItoCMovement
                    GrammarGen.makeGrammar12) -}
-102160fbd72a1da0c8deb6df2d0cd6aa
+761f811cbf339a889e57321f03b45540
   makeGrammar12 :: [GrammarData.ItoCMovement]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.ItoCMovement
                    GrammarData.NoItoCMove
                    GrammarGen.makeGrammar13) -}
-3ddc69bf6028dac72cf36f4f30437971
+4e02a3ac405942225bf6d5097a327393
   makeGrammar13 :: [GrammarData.ItoCMovement]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.ItoCMovement
                    GrammarData.OblItoCMove
                    (GHC.Types.[] @ GrammarData.ItoCMovement)) -}
-fbae6d384bdc325b67cd6ba7506a730a
+77cab0c15f0ea0f62c4bd4dc711298e3
   makeGrammar14 :: Data.RVar.RVar GrammarData.TopicMarking
   {- Unfolding: (Data.Random.Extras.choice
                    @ GrammarData.TopicMarking
                    GrammarGen.makeGrammar15) -}
-9f935e26a27e033cadfb9ef388b673e0
+4aff84281f88b05f82b504ba600b4b28
   makeGrammar15 :: [GrammarData.TopicMarking]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.TopicMarking
                    GrammarData.NoTopMark
                    GrammarGen.makeGrammar16) -}
-f934f8424f2dfda2b90e1dfdbfab707d
+8872855bc230d4a56c6042f60bb70385
   makeGrammar16 :: [GrammarData.TopicMarking]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.TopicMarking
                    GrammarData.OblTopMark
                    (GHC.Types.[] @ GrammarData.TopicMarking)) -}
-18588aed750ff2ad233951a2aebe860f
+c8f8d47da182526ab80c2bcb8e9b2925
   makeGrammar17 ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -399,7 +401,7 @@ f934f8424f2dfda2b90e1dfdbfab707d
                       GrammarData.NullSubject,
                       GrammarData.NullTopic)
                    GrammarGen.makeGrammar18) -}
-8abc71d57adf3876bc472e3959959c83
+a64a096e6d107a5472bac0432a4972c7
   makeGrammar18 ::
     [(GrammarData.ObligatoryTopic,
       GrammarData.NullSubject,
@@ -410,33 +412,33 @@ f934f8424f2dfda2b90e1dfdbfab707d
                       GrammarData.NullTopic)
                    GrammarGen.makeGrammar22
                    GrammarGen.makeGrammar19) -}
-12c9549f4a231ffffb67d5e49f4a2cd7
+afaa3a0e4d474e188486018d9bee1fbc
   makeGrammar19 ::
     [(GrammarData.ObligatoryTopic,
       GrammarData.NullSubject,
       GrammarData.NullTopic)]
   {- Unfolding: (GrammarGen.makeGrammar_go
                    GrammarGen.makeGrammar20) -}
-c490fc83ebe65e41a83f98fd0b54f273
+5dcc9dcad29ec1d8c270b76629bdc0ba
   makeGrammar2 :: Data.RVar.RVar GrammarData.QuestionInversion
   {- Unfolding: (Data.Random.Extras.choice
                    @ GrammarData.QuestionInversion
                    GrammarGen.makeGrammar3) -}
-940a83a39adeee1c73326d726f982742
+d41a564cb9ff72eca07711701e7c452e
   makeGrammar20 :: [GrammarData.ObligatoryTopic]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.ObligatoryTopic
                    GrammarData.OblTopic
                    GrammarGen.makeGrammar21) -}
-1eae51d7f398f8d555ca5fb165977052
+22ebd3bdba42435bd8fa0bca0259a289
   makeGrammar21 :: [GrammarData.ObligatoryTopic]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.ObligatoryTopic
                    GrammarData.OptTopic
                    (GHC.Types.[] @ GrammarData.ObligatoryTopic)) -}
-f9caec55b4ea5bba02133ae6284baaeb
+81df0292a5d36d447fc149c37261e4db
   makeGrammar22 ::
     (GrammarData.ObligatoryTopic,
      GrammarData.NullSubject,
@@ -445,7 +447,7 @@ f9caec55b4ea5bba02133ae6284baaeb
      Unfolding: ((GrammarData.OblTopic,
                   GrammarData.NoNullSub,
                   GrammarData.NoNullTop)) -}
-40c333206a21f4139cd519f190112e57
+d88c641d4c074f3cbfd823183f6215c6
   makeGrammar23 ::
     Data.RVar.RVarT
       Data.Functor.Identity.Identity
@@ -453,147 +455,147 @@ f9caec55b4ea5bba02133ae6284baaeb
   {- Unfolding: (Data.Random.Extras.choice
                    @ (GrammarData.VtoIMovement, GrammarData.AffixHopping)
                    GrammarGen.makeGrammar24) -}
-5872702ad7d350bf212e4d3a82433663
+39c8348e256966035a32b1dd5f856563
   makeGrammar24 ::
     [(GrammarData.VtoIMovement, GrammarData.AffixHopping)]
   {- Unfolding: (GHC.Types.:
                    @ (GrammarData.VtoIMovement, GrammarData.AffixHopping)
                    GrammarGen.makeGrammar28
                    GrammarGen.makeGrammar25) -}
-39260e22ff0146b88c5cb96b33cb968a
+3e6b8cdeb710cd0b263c514512a0759b
   makeGrammar25 ::
     [(GrammarData.VtoIMovement, GrammarData.AffixHopping)]
   {- Unfolding: (GrammarGen.makeGrammar_go1
                    GrammarGen.makeGrammar26) -}
-8b23a42a527b65e1f06bd768d114ad2f
+e349036065f11784c3598c5a0f5b717a
   makeGrammar26 :: [GrammarData.AffixHopping]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.AffixHopping
                    GrammarData.NoAffixHop
                    GrammarGen.makeGrammar27) -}
-ce1f076dc9826c4840da5afeec16df36
+5b6436af08431a6ab883c92dc733ccdf
   makeGrammar27 :: [GrammarData.AffixHopping]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.AffixHopping
                    GrammarData.OblAffixHop
                    (GHC.Types.[] @ GrammarData.AffixHopping)) -}
-1d6d705f473a85af2782ba3898a60375
+b3f410b98681c40ee55fa7a92722c2a7
   makeGrammar28 ::
     (GrammarData.VtoIMovement, GrammarData.AffixHopping)
   {- HasNoCafRefs,
      Unfolding: ((GrammarData.OblVtoIMove, GrammarData.NoAffixHop)) -}
-f6bb4d0617872c61d17ae8ddea4b01fd
+d03ce5ac6fcdfb9a965277d7b8d58934
   makeGrammar29 :: Data.RVar.RVar GrammarData.ComplementizerInitial
   {- Unfolding: (Data.Random.Extras.choice
                    @ GrammarData.ComplementizerInitial
                    GrammarGen.makeGrammar30) -}
-c475b5a07dbec8d0bd7447115fdfe1e9
+e4b7c471d6324d9fe7cb61fcfdfe3f73
   makeGrammar3 :: [GrammarData.QuestionInversion]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.QuestionInversion
                    GrammarData.NoQuesInv
                    GrammarGen.makeGrammar4) -}
-8ac914f8dd79454aeb2a28491403ac22
+6dc4f5019d43fdc93d48b9a9cae0254a
   makeGrammar30 :: [GrammarData.ComplementizerInitial]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.ComplementizerInitial
                    GrammarData.CompInitial
                    GrammarGen.makeGrammar31) -}
-eb6dddb5744f9e8ebc884e8291c882ca
+e89c5770e79ecb89fa47df2b1ead5b18
   makeGrammar31 :: [GrammarData.ComplementizerInitial]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.ComplementizerInitial
                    GrammarData.CompFinal
                    (GHC.Types.[] @ GrammarData.ComplementizerInitial)) -}
-968746ebe3ec930ae1c81ebc341c59eb
+f478fb388a4ae55296e78f9791e701b2
   makeGrammar32 :: Data.RVar.RVar GrammarData.ObjectFinal
   {- Unfolding: (Data.Random.Extras.choice
                    @ GrammarData.ObjectFinal
                    GrammarGen.makeGrammar33) -}
-f089386376633ee404eaceb9118e68e2
+bb643386b7d5a9b5395b249a85f1a1d0
   makeGrammar33 :: [GrammarData.ObjectFinal]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.ObjectFinal
                    GrammarData.ObjFinal
                    GrammarGen.makeGrammar34) -}
-83aabbdcd3152dc64cb965f151b75ceb
+6b0e8f32b6172845a08ab5022721b868
   makeGrammar34 :: [GrammarData.ObjectFinal]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.ObjectFinal
                    GrammarData.ObjInitial
                    (GHC.Types.[] @ GrammarData.ObjectFinal)) -}
-307b8fcb96ceff36e50e3551be5ad6d6
+a220f89e4a8d5389977182680690728e
   makeGrammar35 :: Data.RVar.RVar GrammarData.SubjectInitial
   {- Unfolding: (Data.Random.Extras.choice
                    @ GrammarData.SubjectInitial
                    GrammarGen.makeGrammar36) -}
-d602a06ecee427b625ddc00c3a1a3f47
+a0e8a516e0ae2bccab366feef1303f9d
   makeGrammar36 :: [GrammarData.SubjectInitial]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.SubjectInitial
                    GrammarData.SubInitial
                    GrammarGen.makeGrammar37) -}
-797e5cb57617a9a62e98758e40e4eed9
+73673022a7fc6be2f9ce7b980a87930a
   makeGrammar37 :: [GrammarData.SubjectInitial]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.SubjectInitial
                    GrammarData.SubFinal
                    (GHC.Types.[] @ GrammarData.SubjectInitial)) -}
-bdc3a8ee65a57d149b00f32e61298666
+8670fe1c738f1afcf730cdcb1a3877c5
   makeGrammar4 :: [GrammarData.QuestionInversion]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.QuestionInversion
                    GrammarData.OblQuesInv
                    (GHC.Types.[] @ GrammarData.QuestionInversion)) -}
-5293574fab06a922c894c8e33b0f4f17
+c67fd844da710617401a019fd466603c
   makeGrammar5 :: Data.RVar.RVar GrammarData.PiedPiping
   {- Unfolding: (Data.Random.Extras.choice
                    @ GrammarData.PiedPiping
                    GrammarGen.makeGrammar6) -}
-79e237a7fc78ab02f91f2b3a5b325e5f
+75096ea17f7adf573714ad1fbe3531f1
   makeGrammar6 :: [GrammarData.PiedPiping]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.PiedPiping
                    GrammarData.PiedPipe
                    GrammarGen.makeGrammar7) -}
-1e842941b9c0963f58bc89cdf38c53e9
+8c00429cf4d5eed223b2f37f3adfffa1
   makeGrammar7 :: [GrammarData.PiedPiping]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.PiedPiping
                    GrammarData.PrepStrand
                    (GHC.Types.[] @ GrammarData.PiedPiping)) -}
-f16e38c81fc218031646a13859c54ec6
+ba9629d0dfcfdbadbbff69dd810daa8a
   makeGrammar8 :: Data.RVar.RVar GrammarData.WHMovementObligatory
   {- Unfolding: (Data.Random.Extras.choice
                    @ GrammarData.WHMovementObligatory
                    GrammarGen.makeGrammar9) -}
-55c40194a53bb9a58d016cd54de0c694
+a2e003d64dee5e166c90807b71149824
   makeGrammar9 :: [GrammarData.WHMovementObligatory]
   {- HasNoCafRefs,
      Unfolding: (GHC.Types.:
                    @ GrammarData.WHMovementObligatory
                    GrammarData.NoWHMove
                    GrammarGen.makeGrammar10) -}
-2042025df0b6016cce85203a343afa94
+951b13d28bce2837a97bbe40eadc27a2
   makeGrammar_go ::
     [GrammarData.ObligatoryTopic]
     -> [(GrammarData.ObligatoryTopic,
          GrammarData.NullSubject,
          GrammarData.NullTopic)]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-8498858ae0f7c6a910337ffafec30075
+656b5131d141f639eb201f401da90dbe
   makeGrammar_go1 ::
     [GrammarData.AffixHopping]
     -> [(GrammarData.VtoIMovement, GrammarData.AffixHopping)]
