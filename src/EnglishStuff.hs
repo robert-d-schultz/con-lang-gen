@@ -17,18 +17,18 @@ englishInflection = InflectionSystem
                       , casSys = Manifest [(Pron, Suffix, 1), (Noun, Suffix, 1)] [NOM, ACC, GEN]
                       , numSys = Manifest [(Verb, Suffix, 1), (Noun, Suffix, 1), (Noun, Particle, 1)] [SG, PL]
                       , defSys = Manifest [(Noun, Particle, 1)] [DEF, INDF]
-                      , speSys = NoManifest
-                      , topSys = NoManifest
+                      , speSys = Manifest [(Noun, Particle, 2)] [SPEC, NSPEC] -- "fake"
+                      , topSys = Manifest [(Noun, Suffix, 2)] [TOP, NTOP] --"fake"
                       , perSys = Manifest [(Pron, Suffix, 1), (Noun, Suffix, 1)] [FIRST, SECOND, THIRD]
                       , honSys = NoManifest
                       , polSys = Manifest [(Verb, Particle, 1)] [AFF, NEG]
                       , tenSys = Manifest [(Verb, Suffix, 1)] [PST, PRS, FUT, PSTPER, PRSPER, FUTPER]
                       , aspSys = Manifest [(Verb, Particle, 2), (Verb, Suffix, 1)] [NNPROG, PROG]
                       , mooSys = Manifest [(Verb, Particle, 2), (Verb, Suffix, 1)] [IND, SBJV, COND, IMP]
-                      , voiSys = Manifest [(Verb, Suffix, 1)] [ACTIVE, PASSIVE]
+                      , voiSys = Manifest [(Verb, Particle, 1), (Verb, Suffix, 1)] [ACTIVE, PASSIVE]
                       , eviSys = NoManifest
                       , traSys = NoManifest
-                      , volSys = NoManifest
+                      , volSys = Manifest [(Verb, Particle, 3)] [VOL, NVOL] --"fake"
                       }
 
 englishManifest = [eVerbInfl, eNounInfl, ePronInfl]
@@ -72,11 +72,18 @@ ePronParticle1 = (Pron, Particle, [ ( "he", ( Express M, Express AN, Express NOM
 eVerbParticle2 = (Verb, Particle, [ ( "not", ( NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, Express NEG, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                                   , ( "", ( NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, Express AFF, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                                   ])
+eVerbParticle3 = (Verb, Particle, [ ( "(on purpose)", ( NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, Express VOL ) )
+                                  , ( "(accidentally)", ( NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, Express NVOL ) )
+                                  ])
 
 eNounParticle1 = (Noun, Particle, [ ( "the", ( NoExpress, NoExpress, NoExpress, Express SG, Express DEF, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                                   , ( "the", ( NoExpress, NoExpress, NoExpress, Express PL, Express DEF, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                                   , ( "a", ( NoExpress, NoExpress, NoExpress, Express SG, Express INDF, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                                   , ( "", ( NoExpress, NoExpress, NoExpress, Express PL, Express INDF, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
+                                  ])
+
+eNounParticle2 = (Noun, Particle, [ ( "(specific)", ( NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, Express SPEC, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
+                                  , ( "(nonspecific)", ( NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, Express NSPEC, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                                   ])
 
 eNounSuffix1 = (Noun, Suffix, [ ( "s", ( NoExpress, NoExpress, Express NOM, Express PL, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
@@ -85,6 +92,10 @@ eNounSuffix1 = (Noun, Suffix, [ ( "s", ( NoExpress, NoExpress, Express NOM, Expr
                               , ( "", ( NoExpress, NoExpress, Express ACC, Express SG, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                               , ( "s\'", ( NoExpress, NoExpress, Express GEN, Express PL, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                               , ( "\'s", ( NoExpress, NoExpress, Express GEN, Express SG, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
+                              ])
+
+eNounSuffix2 = (Noun, Suffix, [ ( "", ( NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, Express TOP, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
+                              , ( "", ( NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, Express NTOP, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                               ])
 
 eVerbParticle1 = (Verb, Particle, [ ( "will", ( NoExpress, NoExpress, NoExpress, Express SG, NoExpress, NoExpress, NoExpress, Express THIRD, NoExpress, NoExpress, Express FUT, Express NNPROG, Express IND, Express ACTIVE, NoExpress, NoExpress, NoExpress ) )

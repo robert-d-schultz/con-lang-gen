@@ -62,7 +62,7 @@ cleanSys (Manifest t x) lc mt i = out where
   filt = filter (== (lc, mt, i)) t
   out
     | null filt = [NoExpress]
-    | otherwise = NoExpress : map Express x
+    | otherwise = map Express x
 
 cleanGrammarSys :: InflectionSystem -> LexCat -> ManifestType -> Int -> ([Express Gender], [Express Animacy], [Express Case], [Express Number], [Express Definiteness], [Express Specificity], [Express Topic], [Express Person], [Express Honorific], [Express Polarity], [Express Tense], [Express Aspect], [Express Mood], [Express Voice], [Express Evidentiality], [Express Transitivity], [Express Volition])
 cleanGrammarSys gramSys lc mt i = (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) where

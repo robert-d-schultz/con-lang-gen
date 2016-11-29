@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-10 18:42:11.861281 UTC
+2016-11-27 12:05:50.9317 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:MorphologyGen 7103
-  interface hash: 2a252dfb56f17adecfb256086fc25930
-  ABI hash: 01a79c2d8339eb1799781f6d15e27388
-  export-list hash: 8b2fd2afd5faf171830833d5dda287d0
+  interface hash: 93ace3b8655466782db9f251d135c4e8
+  ABI hash: 01942de38c3aff9c7ed6a59b435af702
+  export-list hash: 8de0d74896901fa8074712836a786dd5
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -88,65 +88,65 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  GrammarData f95f1692a0522ba4f2ab8e4cff233a36
-  exports: 0e046bef964de644bb5bb5f62ec92514
-import  -/  InflectionData 316dc8b65cfd739af6e59de9ad59bbc6
-  exports: 24640cf62a9c3b7f4d5b0c718698bf0c
-  Animacy 0805e2c872c441491fbbd819376f13b8
-  Aspect 851bcc3c94895d395e7cdf9501dbfb00
-  Case f0a3d2a3107908d84564bc0108b3c56f
-  Definiteness 250913a6cb1bc19b5a2a47309bfa066c
-  Evidentiality cdbf36d6698b96caa0bed6ad294bfb83
-  Express 0c930380d6cf4f3d845cdce086abbc44
-  Express 16ae30a99f963c81137d7828dad80939
-  Gender a3623d5adfe047fe3ed20dca1c56d9df
-  Honorific 9621aad11f276ef3a5a55be34fb30507
-  InflectionSystem 340b506daec6555591e5534716353ebf
-  LexCat 669f64eab1a11feac3c6144dd5c31025
-  Manifest be5dbb905eaa61c91070df8e7b415c52
-  Manifest ceb3098f5042182adffdb975609a3c68
-  ManifestSystem 44c7a68715dd0f10cb88131d9ccc552a
-  ManifestSystem 2dfbbd1074217167272ae1c4beb86ae1
-  ManifestType af5ddf409df7e34b7ae5f58c0bd0fff6
-  Mood 4e999fb9fa6728ec3df19bdd28482ccf
-  NoExpress 071999356a33bac64580dd8491d8f357
-  NoManifest a1000e139906e0b5e4ac8b6c897a10ea
-  Number 5983d4e902f20ca491bfcf4389614668
-  Particle b6dac7eb598cb10dac67044916f016c5
-  Person 8962065c67c1705ac692fcc8d9210bcd
-  Polarity eac2f82847484b9a87105d0693a7c5e1
-  Prefix 8590bd569f8bb6d038732e2c07f87092
-  Specificity 697b496d198df68093293e68c7d50d9d
-  Suffix 38bb50ed0298517a03588243ef98ac95
-  Tense b52863b70f3cc5626b7d1db2a6c4ef40
-  Topic 39f87e694fb863c1c8c61df134a24729
-  Transitivity 57945260416d71dc87e31cac669b161f
-  Voice 729607927630d1e92c199129334472f1
-  Volition fed3c8348b016bc886742bbd8b88b80d
-  aniSys 367804e1af6d701e2096dafd5533118b
-  aspSys e9e7bd71dd2a785cb31526ef55b822bf
-  casSys 53f570e830294c8ef1f76287bc8fee75
-  defSys 39ed9cb2acfd9c2753c4d255e079ca33
-  eviSys 16a8ff4f3aeb46f813a259601251af2a
-  genSys 23c095a561aedbda7232209e41ccd3b8
-  honSys 831fcde3d22057fb7460c8af4d9ab10c
-  mooSys 7e4993890e9cffc9f67059af28200bf6
-  numSys d8ca6925d804e3eb3f0fe14c72e821b0
-  perSys 6b25af69b2baed03a467998ec509d392
-  polSys 6b03938dae2419f01636f6b46255ec51
-  speSys 8fe6a689cbb82088761f1cb46b491a37
-  tenSys f10468fa127c3da042273349447f9f1d
-  topSys d0e505630351aeb35518213bbfa7eb6f
-  traSys b87326eed2ea23696a3263a9e6a566d7
-  voiSys 3508299f499dacd346d5476b7095ae2b
-  volSys 0c538a57205dea6a225cb2d1e520dfee
-import  -/  InflectionGen 709f08f023dd604cad4af4d3165b22fa
-  exports: b233a17c739fa900a40a2a419fd5dc83
+import  -/  GrammarData 8ac8d86b6b864664f180483e73ce823b
+  exports: 5138522a0c1403d2fee44ad2a2f3e5a1
+import  -/  InflectionData 1d3c9a42a800e5c12f0b2505845bd490
+  exports: 14704a3a2d793893d80490c9a5c3fd3e
+  Animacy 91fb0b41f9ef14c662c70b3629b6b5fe
+  Aspect 8bbea98a3b619c1fafa2f31c2f747273
+  Case 6c10cc277989f00ac96ff5f8d0b9d977
+  Definiteness 69e12afea565be2617200bf9671a6c0d
+  Evidentiality 1261593b396b3f8b4367998b51bf6d8a
+  Express 1ae0c46a8b58a514f38dd5171a3e67a3
+  Express 7e958650c7791002a2540390e3aca90e
+  Gender e443e52c146978100c75258afee70577
+  Honorific 9f709bf4194f93c1f39907f3dcd0aede
+  InflectionSystem d140bda0afaf2a222d43f8ac1fd40fcf
+  LexCat 406c10c56e8fc899b6f590771b3372e0
+  Manifest 114198613dd9ad6edd0d798879c2e985
+  Manifest 402c727bb1d5614cf0c6243ee3fa7337
+  ManifestSystem 68733e867c197ec8e0576f4ed6aafe4d
+  ManifestSystem d00ca9fc0955f2d18fcf424b683d5934
+  ManifestType 339a9cc5bd8d02624186a930ed6d9c71
+  Mood 987f478754e08db3236fd0a739247bf9
+  NoExpress 749a51da58ebbc7f9683e59a2088dd1a
+  NoManifest ef9f93e4a4d3f65314ca388f1e754598
+  Number 111b9dd7881655400daece83d7690898
+  Particle 6ce29bede09feb22319ca6ecd1e3f608
+  Person cbc274f5b3d6239101cd9764b7773be5
+  Polarity 961c5eb0bc4c139961b0a440a23b769f
+  Prefix 6b0d4faa751777a71e8042659ab6b9f5
+  Specificity 6c3fc67424127bb4feb2d92b23a30da0
+  Suffix 7b772f49c77983d500993b93b36cc935
+  Tense 5f476bea2da27cbe0ffe1e5cde3d9551
+  Topic f2502f7485a2c7bc47bb080f20b26aeb
+  Transitivity 8463dae3116062b076dc25e0f6b8c749
+  Voice 66f849eb0df273279725c8472ced02cc
+  Volition 3a73fa2d976f240c7ba768b809a25328
+  aniSys 77b3a4432edfccebb3b22d1c9b24ac4d
+  aspSys b8fda4d4df735d7364c18984ec33d22d
+  casSys 0742e33feebcc2aedfa503cbac8da46c
+  defSys 32998dbfeb4e34fb6c5d335c07211467
+  eviSys bf96f69c433d29648ef52d67868a021f
+  genSys 9381ca4fedbf8ceed1ccbf87d7c5ea11
+  honSys 0d571c6678cc881fd60d97ead23d7dfc
+  mooSys d90942dd715cf7190a76153b176213fb
+  numSys e3f0341cfb574429476d3eef73dc9b22
+  perSys b556a32261e8c80f3f8a544ec8ca9305
+  polSys dd1e1dde879856f37659781ab72a7cd9
+  speSys db725844404908ae2faa7ea16c653f57
+  tenSys a84f08c83ed8f33a17989dcde7856121
+  topSys 94ae191c7be8b8307ec5a07176b30931
+  traSys 17d7b2e9ec588d6bd99bab7f098f36f7
+  voiSys 629ad62232c211277f83c5bfbea3bcb1
+  volSys 5fdcf2bef393c39136e0bea7f04d5cde
+import  -/  InflectionGen 9e818894ecef9e42111de8410cca4bc4
+  exports: 9827b70a94b04c8621de93f7b6ea3c79
 import  -/  PhonemeData 408b6488aa28ce44ef05793241013f6f
   exports: c711b36c9b7415c6d00ea9681146dbcb
   Phoneme 78c280a9bf84c920fdcdc1bfa9515e2f
-import  -/  WordGen df6d57f99346b4db10ec1e481003cffb
-  exports: caa25443cdbc9cab7d4ddf5c6024201b
+import  -/  WordGen 6d1731145d8f1940f5f2d3ba043fbabf
+  exports: f463cb1e49f3795359af4ee853c2eb03
   makeMorpheme 90c96d6dac5552cfb4cafae5fadb8741
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  random-extras-0.19@rando_11jAc932BDRD7ydjCrRr4L:Data.Random.Extras 5dc1684f88e3f2655bfb5d7aca60bf5c
@@ -165,7 +165,7 @@ import  -/  rvar-0.2.0.3@rvar_HDSuhGFxwNTDX4EfF6w8WG:Data.RVar 9b7fbdb5f1778e76b
            -> (a -> b) -> b)
        -> b
   {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,C(U)><L,U> -}
-c1e5d8e03a52c14de0945acae9b739cf
+3f7062196b281c9cc8ca9404b034cb25
   $wmakeLexicalInflection ::
     [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]
@@ -288,7 +288,7 @@ c1e5d8e03a52c14de0945acae9b739cf
                                                                                                 [InflectionData.ManifestSystem],
                                                                                                 [InflectionData.ManifestSystem],
                                                                                                 [InflectionData.ManifestSystem])>_N))) -}
-f5a465847ff46ae90b934e174a0ea6fe
+4e005b66558a50b48756a8fe74198476
   $wmakeParticleSystems ::
     InflectionData.LexCat
     -> GHC.Prim.Int#
@@ -299,7 +299,7 @@ f5a465847ff46ae90b934e174a0ea6fe
   {- Arity: 5,
      Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-1606d2384d6b074d52130ec35275edbd
+b7a85ea484a240b29e41696414b76e0d
   $wmakePrefixSystems ::
     InflectionData.LexCat
     -> GHC.Prim.Int#
@@ -310,7 +310,7 @@ f5a465847ff46ae90b934e174a0ea6fe
   {- Arity: 5,
      Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-90a7a24d6b2e2bc9882459f4434b8e2b
+c8951cb0d95ce758b16fec5fa0bedf38
   $wmakeSuffixSystems ::
     InflectionData.LexCat
     -> GHC.Prim.Int#
@@ -321,7 +321,7 @@ f5a465847ff46ae90b934e174a0ea6fe
   {- Arity: 5,
      Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
      Inline: [0] -}
-3581c42a3e0dd6b86e90b8b0b5eee6c3
+4da66b57f5add59887026d85a40f27b9
   cleanGrammarSys ::
     InflectionData.InflectionSystem
     -> InflectionData.LexCat
@@ -346,7 +346,7 @@ f5a465847ff46ae90b934e174a0ea6fe
         [InflectionData.Express InflectionData.Volition])
   {- Arity: 4, HasNoCafRefs,
      Strictness: <L,U(1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U)><L,U><L,U><L,U(U)> -}
-43ef856a9e644e6227fa03b7a1762821
+41efeaa1b121e53d3fe21fd9a18bca09
   makeLexicalInflection ::
     [PhonemeData.Phoneme]
     -> [[PhonemeData.Phoneme]]

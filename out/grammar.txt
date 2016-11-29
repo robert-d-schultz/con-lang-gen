@@ -1,8 +1,9 @@
 Grammar
-Grammar {getSI = SubInitial, getOF = ObjInitial, getCI = CompFinal, getVtoI = OblVtoIMove, getAH = NoAffixHop, getNS = OptNullSub, getObT = OptTopic, getNT = OptNullTop, getTM = OblTopMark, getItoC = NoItoCMove, getWHM = NoWHMove, getPP = PrepStrand, getQI = OblQuesInv}
+Grammar {getSI = SubInitial, getOF = ObjInitial, getCI = CompInitial, getVtoI = OblVtoIMove, getAH = NoAffixHop, getNS = NoNullSub, getObT = OblTopic, getNT = OptNullTop, getTM = NoTopMark, getItoC = NoItoCMove, getWHM = NoWHMove, getPP = PiedPipe, getQI = NoQuesInv}
 
 
-gghahlgeygzi<UNK> kowhargohhuy<UNK> ohi loharggahh<UNK>
- /qɟʰʌ̞̌̆ʜʟ̝.ɢœ́̆j̊.ɢɹ̟ʏ̟̂̆/  /cɪ̈̌̆ɰ.çœ̞́̆r̥.ʡɤ̌̆h̞.ʝɘ̂̆j/ /ɯ̞̂.ʢʏ̟́/  /ʎ̝̊ɨ᷉.h̞ɐ̂rɢ.qɑ́̆ʝç/
-the body will have not  breaked awake the attention
-"the body will have not  breaked awake the attention"
+dhorbroraarnraan<UNK> <UNK> ddheraamghar dhnirbhobhghmaron<UNK> <UNK> dha<UNK> <UNK>
+/m̩.bb̪ʰ̩.bb̪ʰdʰɒ́ɾ.b̪ɾu᷉.ɾɶ᷉ɑ̯᷉ɾ.ɱɾɶ᷉ɑ̯᷉n.bm̩/ /ûɾ.b̪ʰǐ/ /u᷉ɾɱ/ /ddʰǐ.ɾɶ᷉ɑ̯᷉m.ɡʰâɾ/ /m̩.bb̪ʰ̩.bb̪ʰdʰny̌ɾ.bʰɒ᷉.b̪ʰɡʰmɑ́.ɾɒ̂n.bm̩/ /bʰɒ́ɾn/ /u᷉ɾɱ/ /bu᷉.ɡbʰǎ.dʰán/ /nǔɾ.bûb/ /ǎ.b̪ʰdʰɑ᷉/
+UTRA.UCAS-DEF-UPOL-business-UEVI.UMOO.USPE TOP UPER deep UTRA.UCAS-DEF-UPOL-hook-UEVI.UMOO.USPE NTOP UPER UTRA.UPER.UDEF-UEVI-think-IND UCAS USPE
+business the deep hook the thinked will have
+"the business will have thinked the deep hook"

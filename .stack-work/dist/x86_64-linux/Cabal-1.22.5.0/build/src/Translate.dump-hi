@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-11 16:44:02.214656 UTC
+2016-11-28 15:14:49.916244 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Translate 7103
-  interface hash: 5084c951a8a2a391a8479c88fefbe812
-  ABI hash: 383cea27ceb9b5a1de7572090286772a
-  export-list hash: b0158330d27592769699fca54600c0ab
-  orphan hash: 4fa7a4fd7717094a91b4dcd3a49e0dbd
+  interface hash: 03cfb746462e7980d42050c37930c390
+  ABI hash: 3e60e97091828d8c3b29e268a4f520de
+  export-list hash: 6d6599ab3235034f57cb477d03e147c1
+  orphan hash: 4b5b45ffcd86c10bb58a9f436cf6457d
   flag hash: 5d774d2eb7a24578afae116cd337b129
   sig of: Nothing
   used TH splices: False
@@ -90,79 +90,99 @@ import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
 import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  EnglishStuff b171fac8c4a6d2835b5582b3d55586cc
-  exports: c169644eb2f6405382050c80d5a1f505
-  englishGrammar 28a53c0d3b274b6ba8fdec8ff435c882
-  englishVerbAux 82336712610a5d3e4f9de37998c45450
-  englishVerbSuffix 8cca9e2ac9dd07599eab72ac7da47891
-import  -/  GrammarData f95f1692a0522ba4f2ab8e4cff233a36
-  exports: 0e046bef964de644bb5bb5f62ec92514
-  Bar 564c5fa85e5318c63ca7f8cb5693ac9e
+import  -/  EnglishStuff 5fece719cf63858fda1956aa00549ab7
+  exports: ac5981334a8e49e87eafd7d2ab80605c
+  englishGrammar dac08adaea85885d6d1a879305c73ec7
+  englishManifest 9a47de3d7aa563b0f7fc8ad09d2ad458
+import  -/  GrammarData 8ac8d86b6b864664f180483e73ce823b
+  exports: 5138522a0c1403d2fee44ad2a2f3e5a1
+  Bar 9659e0c80a113c431b9ceeaca174dd69
   CompFinal 4218b98d2cad94623d418f06c7daaf74
-  Grammar 11b00dbd6fd1fdd388e13ec0899e5848
-  Leaf c20ba0f5c8492ccb88fd3ede00e95a8b
-  Leaf 5d5bd1f585d6394b756e0592885971df
-  LeafInfl 60b6bb181eba916a943888e22959a68b
-  LeafNull 6e962a36b9a4e586256ae5c966914fe2
-  LeafWord 45041eb6697c7dbcc9aa89ec5a9a58fb
-  NoVtoIMove 7a81e1cc4474c4bb620697de0663ddd9
+  CompInitial 8b5437a083d2f9791daaa4f92c16bab9
+  Grammar 54b1b32e84410d13fc0ab1d24cef787f
+  Leaf 31701f8c84782181aa0c8f6f7bfd67ba
+  Leaf c45a9487dc1554c122459c27a0c0c7a2
+  LeafInfl 0180160270fc8c3dd87799568271edb3
+  LeafNull f670957f8ec8e2f634eb59e8bafc60be
+  NoAffixHop e58eeed187ea908b7fa653adc99b562e
+  NoVtoIMove fa030db0cac4cf3934fe81872fe328d4
   Null 982ba6ad329ab6ca91933a50f43208f8
-  ObjFinal 2572911f9ea4c69e1434da22eb48e525
+  ObjFinal 15b0449e6839227f4fa099fe50a91592
   OblAffixHop ec1f08cb309e90abdaf0c18a4682b13a
   OblItoCMove 471fba2b63cac8f316f9f6c9c4b0c2b7
-  OblVtoIMove 39efa0a7a74da535449219bc74d9d881
-  OblWHMove f8f338efe214e1b26bdc4fe459e965cd
-  Phrase 564c5fa85e5318c63ca7f8cb5693ac9e
+  OblVtoIMove b9a4dfb51917976a57c9d70a3d84dac5
+  OblWHMove 498581a1c6ddb483056a9b23410b61f5
+  Phrase 9659e0c80a113c431b9ceeaca174dd69
   Ques 970ff4399831bbf39b5b29c1f3c50cfd
-  SubInitial 777330f5f719b1bf1c174b513c8719ec
-  XBarA faaf770df3bcbd6b5923eb75df84df49
-  XBarC b07257ec0bd23e6c8a3b32849f47b553
-  XP 6714ed9b04c24cb1126034ab90afe438
-  XPNull a6a26b4f60889211ed6a878927d9898c
-  getAH 93cd410b33208a78ec57099d19eb5e57
-  getCI 181e8b57a54031892261acb795ce6939
-  getItoC bde6ba52848d8850cfdc77bcc858f5b3
-  getOF 6fa18e653f0f5213295fafe5658824a7
-  getSI e248785691ee43d002c9257d72eeaba3
-  getVtoI d0f56a776bde9a239714c8440a76bb08
-  getWHM 740ca143bdf7bd2d4f09e1cfc421d07c
-  leafInfl d017a4fc86d58a430ec1350389dc7cf7
-  leafLC 12f0df0123abcf311b2e81306072c16e
-  phraseIl ca9b9c492353996b8d271e94ba111b53
-  phraseLC c3efecfd60b501750c3176360942feab
-import  -/  InflectionData 316dc8b65cfd739af6e59de9ad59bbc6
-  exports: 24640cf62a9c3b7f4d5b0c718698bf0c
-  Adpo 7302a0de0ff3a9e61c27a9a3a99c24d5
-  Animacy 0805e2c872c441491fbbd819376f13b8
-  Aspect 851bcc3c94895d395e7cdf9501dbfb00
-  Case f0a3d2a3107908d84564bc0108b3c56f
-  Comp 238d7c6e9bba1657a868a34feaf5f268
-  Definiteness 250913a6cb1bc19b5a2a47309bfa066c
-  Det 79b5d836cc8dd901b4f4a263f4cc277b
-  Evidentiality cdbf36d6698b96caa0bed6ad294bfb83
-  Express 16ae30a99f963c81137d7828dad80939
-  Gender a3623d5adfe047fe3ed20dca1c56d9df
-  Honorific 9621aad11f276ef3a5a55be34fb30507
-  Infl 7b1898a89458cc4d583446337683880e
-  LexCat 669f64eab1a11feac3c6144dd5c31025
-  ManifestSystem 2dfbbd1074217167272ae1c4beb86ae1
-  Mood 4e999fb9fa6728ec3df19bdd28482ccf
-  NoExpress 071999356a33bac64580dd8491d8f357
-  Noun 4b3ff1753c1b5bd5340401062ce8e9e3
-  Number 5983d4e902f20ca491bfcf4389614668
-  Person 8962065c67c1705ac692fcc8d9210bcd
-  Polarity eac2f82847484b9a87105d0693a7c5e1
-  Specificity 697b496d198df68093293e68c7d50d9d
-  Tense b52863b70f3cc5626b7d1db2a6c4ef40
-  Topic 39f87e694fb863c1c8c61df134a24729
-  Transitivity 57945260416d71dc87e31cac669b161f
-  Verb 9421dc5b8cf6821456c38e572093888e
-  Voice 729607927630d1e92c199129334472f1
-  Volition fed3c8348b016bc886742bbd8b88b80d
-  manSysCombos ea110dd4173031274ecd9b7d451a99ae
-import  -/  Parse 94e789a967663383e8ceb212ebdc8a53
-  exports: 772cd31f1c9f5253ac6fdd7b5d2cd9ed
+  SubInitial a5ae71a2fa5a793a64a5571dccaaae89
+  XBarA 20bdda52dcb73abc5c3faa3265ab74de
+  XBarC 5954e8f74c2760627a7181a3ecfab202
+  XP cb49dfeb07dc228963fa3ee033d8e319
+  XPNull 9708383b4997761a04dbefcbfe9d6f6e
+  getAH 8921262fa73de9c65a89f59c3b0fc8c3
+  getCI a0a26fad587439b6dca88a28896fc1c5
+  getItoC feb64d2f99e2b23075e3c6828c774513
+  getOF 895a99bad4ed86ed24854c872aac16e2
+  getSI 2d1a4ddf9089665b698dfbfb775a671c
+  getVtoI c099dcaa803be48944776e61e142ad78
+  getWHM dc8454ca703345b8e77193e6ca2e9ef6
+  leafInfl 2c0e24de7dc9bbe6bb849935762a7609
+  leafLC b1aa92a5e35ba084c7327ab431896724
+  phraseIl 350e37a4ca742e7890e9c65709851df8
+  phraseLC 0cd95a1bdde91cdbf3c44e8c4c7ad1bf
+import  -/  InflectionData 1d3c9a42a800e5c12f0b2505845bd490
+  exports: 14704a3a2d793893d80490c9a5c3fd3e
+  Adpo f2851efffd9470f86f77b62dde491078
+  Animacy 91fb0b41f9ef14c662c70b3629b6b5fe
+  Aspect 8bbea98a3b619c1fafa2f31c2f747273
+  Case 6c10cc277989f00ac96ff5f8d0b9d977
+  Comp 100abab7d53e74b334ec4f744ad12241
+  Definiteness 69e12afea565be2617200bf9671a6c0d
+  Det ed9bb9a2c4d189eb76f053da5c479f4a
+  Evidentiality 1261593b396b3f8b4367998b51bf6d8a
+  Express 1ae0c46a8b58a514f38dd5171a3e67a3
+  Express 7e958650c7791002a2540390e3aca90e
+  Gender e443e52c146978100c75258afee70577
+  Honorific 9f709bf4194f93c1f39907f3dcd0aede
+  Infl 63123bd80d07e89b2f24b300b060fb8b
+  LexCat 406c10c56e8fc899b6f590771b3372e0
+  ManifestSystem d00ca9fc0955f2d18fcf424b683d5934
+  Mood 987f478754e08db3236fd0a739247bf9
+  NoExpress 749a51da58ebbc7f9683e59a2088dd1a
+  Noun 03f9541569971afcd548f453c7b56f6a
+  Number 111b9dd7881655400daece83d7690898
+  Person cbc274f5b3d6239101cd9764b7773be5
+  Polarity 961c5eb0bc4c139961b0a440a23b769f
+  Specificity 6c3fc67424127bb4feb2d92b23a30da0
+  Tense 5f476bea2da27cbe0ffe1e5cde3d9551
+  Topic f2502f7485a2c7bc47bb080f20b26aeb
+  Transitivity 8463dae3116062b076dc25e0f6b8c749
+  UANI 08354aeb3969261d9de26a55068a0fa1
+  UASP 773d25316e79c7fc891e3e97f3619913
+  UCAS 88c3f4f685a030733b2cddc73f08cbe1
+  UDEF d8a3849b48935e4c2b1863f2ba1c7969
+  UEVI 4142f9d71a91d35fbc0cd3dce3c0d73a
+  UGEN 4ac97fbe7cdb98f310f8608fd1922f91
+  UHON a7496ba7fa435301182c3cd09f6bae7f
+  UMOO 94ccf8d6868e980806bf9100284f8a55
+  UNUM 7d54d631811525f9328cec4b4c15dc98
+  UPER 7a65a7b1e677904e4d831a00f9ccc4b0
+  UPOL 3d5ad83d727c6c6d8717a52a1cf18dd0
+  USPE e0474a08c6a31f0091dd505d5cb08389
+  UTEN 895fbb3b1f7a483f819e1a5148c2d9d3
+  UTOP e5f0d5a7d0deb0b6b73b4cc3db430439
+  UTRA 08d328105a5f2dbbe3146874023ff314
+  UVOI fe7da799f695a7aa8a7beb98d2ced112
+  UVOL c39ff1325f8d3ce1ed069e6837785a8b
+  Verb 7a8d9ab245a1af778cdf2e6e44f34c3a
+  Voice 66f849eb0df273279725c8472ced02cc
+  Volition 3a73fa2d976f240c7ba768b809a25328
+  getExp e8d8ee9a1de81f506aa3491726d1f060
+  manSysCombos c4e6f673c4760d3721cbfe0ccf301060
+import  -/  Parse 0bcbb2cb6453c6fc238bc86a01cb46bf
+  exports: 5ea6cd786088df35daa0ad64e1cdd1d8
   parseWord a5e79c59071bc0faf05b870b949d95ac
 import  -/  PhonemeData 408b6488aa28ce44ef05793241013f6f
   exports: c711b36c9b7415c6d00ea9681146dbcb
@@ -174,7 +194,7 @@ import  -/  Romanization 804bca94f08cbe6d41992a68b525e575
   exports: 71e3484a4b1fb5c752fcd3291232e7ff
   romanizeWord 7f9c217ededf0559d0727e8e0fd891e3
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-70a9edc7926aed4270c3662b09fa49d3
+c4786023f94679de879349c5d441e03d
   $s$fEq(,) ::
     GHC.Classes.Eq ([GHC.Types.Char], InflectionData.LexCat)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -190,7 +210,471 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                      @ InflectionData.LexCat
                      GHC.Classes.$fEq[]_$s$fEq[]1
                      InflectionData.$fEqLexCat) -}
-c76028e82373c365f480b9c4082597fe
+ddd6a98c95d2f4b12e4b569386a14c90
+  $s$fEqExpress ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Animacy)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Animacy)
+                  Translate.$s$fEqExpress1
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Animacy
+                     InflectionData.$fEqAnimacy) -}
+4e73a982471f25f2def2359c704a66ce
+  $s$fEqExpress1 ::
+    InflectionData.Express InflectionData.Animacy
+    -> InflectionData.Express InflectionData.Animacy -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Animacy
+                   ds1 :: InflectionData.Express InflectionData.Animacy ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqAnimacy_$c== a42 b1 } }) -}
+f7bd4a7b3685ab520a998d5ae6050191
+  $s$fEqExpress10 ::
+    InflectionData.Express InflectionData.Evidentiality
+    -> InflectionData.Express InflectionData.Evidentiality
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Evidentiality
+                   ds1 :: InflectionData.Express InflectionData.Evidentiality ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqEvidentiality_$c== a42 b1 } }) -}
+3abc12e400a1a365ba49c1bd23a2c700
+  $s$fEqExpress11 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Gender)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Gender)
+                  Translate.$s$fEqExpress12
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Gender
+                     InflectionData.$fEqGender) -}
+60a9d6bedf71eb10e2cb075ee244d73c
+  $s$fEqExpress12 ::
+    InflectionData.Express InflectionData.Gender
+    -> InflectionData.Express InflectionData.Gender -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Gender
+                   ds1 :: InflectionData.Express InflectionData.Gender ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqExpress_$c== a42 b1 } }) -}
+2e20333be665285590cc272eafacf8ba
+  $s$fEqExpress13 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Honorific)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Honorific)
+                  Translate.$s$fEqExpress14
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Honorific
+                     InflectionData.$fEqHonorific) -}
+1384db7286676681d8e3575ad1d7cfe6
+  $s$fEqExpress14 ::
+    InflectionData.Express InflectionData.Honorific
+    -> InflectionData.Express InflectionData.Honorific
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Honorific
+                   ds1 :: InflectionData.Express InflectionData.Honorific ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqExpress_$c==5 a42 b1 } }) -}
+23adf9636b148b8a32c76a8391ee6cc3
+  $s$fEqExpress15 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Mood)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Mood)
+                  Translate.$s$fEqExpress16
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Mood
+                     InflectionData.$fEqMood) -}
+301ea71e2665ab79c46ff6925e702085
+  $s$fEqExpress16 ::
+    InflectionData.Express InflectionData.Mood
+    -> InflectionData.Express InflectionData.Mood -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Mood
+                   ds1 :: InflectionData.Express InflectionData.Mood ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqMood_$c== a42 b1 } }) -}
+dca0a6b3a7da472ec79ec8ddadc2bac2
+  $s$fEqExpress17 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Number)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Number)
+                  Translate.$s$fEqExpress18
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Number
+                     InflectionData.$fEqNumber) -}
+504e42cb9cdba7d8b3efa1754f98a7fa
+  $s$fEqExpress18 ::
+    InflectionData.Express InflectionData.Number
+    -> InflectionData.Express InflectionData.Number -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Number
+                   ds1 :: InflectionData.Express InflectionData.Number ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqExpress_$c==1 a42 b1 } }) -}
+174bfd6b4803c1a869a0744edfcb9b8c
+  $s$fEqExpress19 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Person)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Person)
+                  Translate.$s$fEqExpress20
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Person
+                     InflectionData.$fEqPerson) -}
+4004e3c9ab1341890f495c3615ec5f65
+  $s$fEqExpress2 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Volition)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Volition)
+                  InflectionData.$fEqExpress_$s$c==13
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Volition
+                     InflectionData.$fEqVolition) -}
+87778ea36a3535e6e7ce87670d2a4364
+  $s$fEqExpress20 ::
+    InflectionData.Express InflectionData.Person
+    -> InflectionData.Express InflectionData.Person -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Person
+                   ds1 :: InflectionData.Express InflectionData.Person ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqExpress_$c==4 a42 b1 } }) -}
+0fd4d8f2b6aa5b9ee9a073dd468e7fe6
+  $s$fEqExpress21 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Polarity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Polarity)
+                  Translate.$s$fEqExpress22
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Polarity
+                     InflectionData.$fEqPolarity) -}
+bce4824ca949e424300bb72d62f6e39c
+  $s$fEqExpress22 ::
+    InflectionData.Express InflectionData.Polarity
+    -> InflectionData.Express InflectionData.Polarity -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Polarity
+                   ds1 :: InflectionData.Express InflectionData.Polarity ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqExpress_$c==6 a42 b1 } }) -}
+a59d290bf0378c5144e602c1aeae61c6
+  $s$fEqExpress23 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Specificity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Specificity)
+                  Translate.$s$fEqExpress24
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Specificity
+                     InflectionData.$fEqSpecificity) -}
+8cb75eb9d0d2cd1f146d783baab18fb9
+  $s$fEqExpress24 ::
+    InflectionData.Express InflectionData.Specificity
+    -> InflectionData.Express InflectionData.Specificity
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Specificity
+                   ds1 :: InflectionData.Express InflectionData.Specificity ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqExpress_$c==2 a42 b1 } }) -}
+bf26ce0ab7600dddfdf421c9996d5831
+  $s$fEqExpress25 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Tense)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Tense)
+                  Translate.$s$fEqExpress26
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Tense
+                     InflectionData.$fEqTense) -}
+7908653911ea53eb4fb8b9a761ba262e
+  $s$fEqExpress26 ::
+    InflectionData.Express InflectionData.Tense
+    -> InflectionData.Express InflectionData.Tense -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Tense
+                   ds1 :: InflectionData.Express InflectionData.Tense ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqTense_$c== a42 b1 } }) -}
+2d24abaaa216ac4cba33506377d1e6c6
+  $s$fEqExpress27 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Topic)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Topic)
+                  Translate.$s$fEqExpress28
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Topic
+                     InflectionData.$fEqTopic) -}
+6d8b0322913e267573a98ac4ce83f852
+  $s$fEqExpress28 ::
+    InflectionData.Express InflectionData.Topic
+    -> InflectionData.Express InflectionData.Topic -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Topic
+                   ds1 :: InflectionData.Express InflectionData.Topic ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqExpress_$c==3 a42 b1 } }) -}
+6b26e5773164066ae2d5ee147b913234
+  $s$fEqExpress29 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Transitivity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Transitivity)
+                  Translate.$s$fEqExpress30
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Transitivity
+                     InflectionData.$fEqTransitivity) -}
+dccca67c607d9fa9178fd21547e5e484
+  $s$fEqExpress3 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Aspect)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Aspect)
+                  Translate.$s$fEqExpress4
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Aspect
+                     InflectionData.$fEqAspect) -}
+740f8550b4dbbae9f5680f1ac02269bb
+  $s$fEqExpress30 ::
+    InflectionData.Express InflectionData.Transitivity
+    -> InflectionData.Express InflectionData.Transitivity
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Transitivity
+                   ds1 :: InflectionData.Express InflectionData.Transitivity ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqExpress_$c==8 a42 b1 } }) -}
+a6aa530e25f45579c1862c1d8576d478
+  $s$fEqExpress31 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Voice)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Voice)
+                  Translate.$s$fEqExpress32
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Voice
+                     InflectionData.$fEqVoice) -}
+1d4624b06c57bdaaecebf9f71e20104b
+  $s$fEqExpress32 ::
+    InflectionData.Express InflectionData.Voice
+    -> InflectionData.Express InflectionData.Voice -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Voice
+                   ds1 :: InflectionData.Express InflectionData.Voice ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqExpress_$c==7 a42 b1 } }) -}
+65470904de595edb829971d0f60ecd2b
+  $s$fEqExpress4 ::
+    InflectionData.Express InflectionData.Aspect
+    -> InflectionData.Express InflectionData.Aspect -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Aspect
+                   ds1 :: InflectionData.Express InflectionData.Aspect ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqAspect_$c== a42 b1 } }) -}
+875995a9bfa4bc52ba60463f52c9c88c
+  $s$fEqExpress5 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Case)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Case)
+                  Translate.$s$fEqExpress6
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Case
+                     InflectionData.$fEqCase) -}
+5ccd6fea658389bdf794953c885c1106
+  $s$fEqExpress6 ::
+    InflectionData.Express InflectionData.Case
+    -> InflectionData.Express InflectionData.Case -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Case
+                   ds1 :: InflectionData.Express InflectionData.Case ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqCase_$c== a42 b1 } }) -}
+5e2e20ba6a26b0de0c44018cc013cb75
+  $s$fEqExpress7 ::
+    GHC.Classes.Eq (InflectionData.Express InflectionData.Definiteness)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Definiteness)
+                  Translate.$s$fEqExpress8
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Definiteness
+                     InflectionData.$fEqDefiniteness) -}
+226adc380cd1c4a6dfc4b352a81121e2
+  $s$fEqExpress8 ::
+    InflectionData.Express InflectionData.Definiteness
+    -> InflectionData.Express InflectionData.Definiteness
+    -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: InflectionData.Express InflectionData.Definiteness
+                   ds1 :: InflectionData.Express InflectionData.Definiteness ->
+                 case ds of wild {
+                   InflectionData.NoExpress
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.True
+                        InflectionData.Express ipv -> GHC.Types.False }
+                   InflectionData.Express a42
+                   -> case ds1 of wild1 {
+                        InflectionData.NoExpress -> GHC.Types.False
+                        InflectionData.Express b1
+                        -> InflectionData.$fEqDefiniteness_$c== a42 b1 } }) -}
+51ab7ac04f5bd5a56dc54d4fb1e891bb
+  $s$fEqExpress9 ::
+    GHC.Classes.Eq
+      (InflectionData.Express InflectionData.Evidentiality)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Evidentiality)
+                  Translate.$s$fEqExpress10
+                  (InflectionData.$fEqExpress_$c/=
+                     @ InflectionData.Evidentiality
+                     InflectionData.$fEqEvidentiality) -}
+76355108e53bf2b1ce63767b125a4326
   parseParseTree ::
     [[PhonemeData.Phoneme]]
     -> [((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)]
@@ -202,8 +686,8 @@ c76028e82373c365f480b9c4082597fe
     -> GrammarData.Phrase
     -> GHC.Base.String
   {- Arity: 5,
-     Strictness: <L,U><L,U><L,U><L,U(U,U,U,U,U,A,A,A,A,U,U,A,A)><L,U> -}
-a2f380431d767c7d279379fb6faf772a
+     Strictness: <L,U><L,U><L,U><L,1*U(U,U,U,U,U,A,A,A,A,U,U,A,A)><L,U> -}
+6b7ff749bb2fc15535f160da8747ecd3
   parsePhrase ::
     GrammarData.Grammar -> GrammarData.Phrase -> [[GrammarData.Leaf]]
   {- Arity: 2,
@@ -217,6 +701,74 @@ a2f380431d767c7d279379fb6faf772a
                       $dEq
                       $dEq1
   = Translate.$s$fEq(,)
+"SPEC/Translate $fEqExpress @ Animacy" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                 InflectionData.Animacy
+  InflectionData.$fEqExpress @ InflectionData.Animacy $dEq
+  = Translate.$s$fEqExpress
+"SPEC/Translate $fEqExpress @ Aspect" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                InflectionData.Aspect
+  InflectionData.$fEqExpress @ InflectionData.Aspect $dEq
+  = Translate.$s$fEqExpress3
+"SPEC/Translate $fEqExpress @ Case" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                              InflectionData.Case
+  InflectionData.$fEqExpress @ InflectionData.Case $dEq
+  = Translate.$s$fEqExpress5
+"SPEC/Translate $fEqExpress @ Definiteness" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                      InflectionData.Definiteness
+  InflectionData.$fEqExpress @ InflectionData.Definiteness $dEq
+  = Translate.$s$fEqExpress7
+"SPEC/Translate $fEqExpress @ Evidentiality" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                       InflectionData.Evidentiality
+  InflectionData.$fEqExpress @ InflectionData.Evidentiality $dEq
+  = Translate.$s$fEqExpress9
+"SPEC/Translate $fEqExpress @ Gender" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                InflectionData.Gender
+  InflectionData.$fEqExpress @ InflectionData.Gender $dEq
+  = Translate.$s$fEqExpress11
+"SPEC/Translate $fEqExpress @ Honorific" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                   InflectionData.Honorific
+  InflectionData.$fEqExpress @ InflectionData.Honorific $dEq
+  = Translate.$s$fEqExpress13
+"SPEC/Translate $fEqExpress @ Mood" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                              InflectionData.Mood
+  InflectionData.$fEqExpress @ InflectionData.Mood $dEq
+  = Translate.$s$fEqExpress15
+"SPEC/Translate $fEqExpress @ Number" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                InflectionData.Number
+  InflectionData.$fEqExpress @ InflectionData.Number $dEq
+  = Translate.$s$fEqExpress17
+"SPEC/Translate $fEqExpress @ Person" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                InflectionData.Person
+  InflectionData.$fEqExpress @ InflectionData.Person $dEq
+  = Translate.$s$fEqExpress19
+"SPEC/Translate $fEqExpress @ Polarity" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                  InflectionData.Polarity
+  InflectionData.$fEqExpress @ InflectionData.Polarity $dEq
+  = Translate.$s$fEqExpress21
+"SPEC/Translate $fEqExpress @ Specificity" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                     InflectionData.Specificity
+  InflectionData.$fEqExpress @ InflectionData.Specificity $dEq
+  = Translate.$s$fEqExpress23
+"SPEC/Translate $fEqExpress @ Tense" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                               InflectionData.Tense
+  InflectionData.$fEqExpress @ InflectionData.Tense $dEq
+  = Translate.$s$fEqExpress25
+"SPEC/Translate $fEqExpress @ Topic" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                               InflectionData.Topic
+  InflectionData.$fEqExpress @ InflectionData.Topic $dEq
+  = Translate.$s$fEqExpress27
+"SPEC/Translate $fEqExpress @ Transitivity" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                      InflectionData.Transitivity
+  InflectionData.$fEqExpress @ InflectionData.Transitivity $dEq
+  = Translate.$s$fEqExpress29
+"SPEC/Translate $fEqExpress @ Voice" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                               InflectionData.Voice
+  InflectionData.$fEqExpress @ InflectionData.Voice $dEq
+  = Translate.$s$fEqExpress31
+"SPEC/Translate $fEqExpress @ Volition" [ALWAYS] forall $dEq :: GHC.Classes.Eq
+                                                                  InflectionData.Volition
+  InflectionData.$fEqExpress @ InflectionData.Volition $dEq
+  = Translate.$s$fEqExpress2
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

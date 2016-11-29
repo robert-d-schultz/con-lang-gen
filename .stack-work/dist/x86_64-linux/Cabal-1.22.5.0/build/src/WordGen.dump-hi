@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-10 18:42:09.649214 UTC
+2016-11-27 12:05:49.319762 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:WordGen 7103
-  interface hash: 890d073fc62907fdf1c08f1f286e302a
-  ABI hash: df6d57f99346b4db10ec1e481003cffb
-  export-list hash: caa25443cdbc9cab7d4ddf5c6024201b
+  interface hash: 0f809fdbc214b24ae62aaac188b0589e
+  ABI hash: 6d1731145d8f1940f5f2d3ba043fbabf
+  export-list hash: f463cb1e49f3795359af4ee853c2eb03
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -97,15 +97,15 @@ import  -/  base-4.8.2.0:GHC.Read b423b4506a014855edbd329b567629f3
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  base-4.8.2.0:Text.Read ef0ef92fb7358ae94bab089940adfd2a
-import  -/  GrammarData f95f1692a0522ba4f2ab8e4cff233a36
-  exports: 0e046bef964de644bb5bb5f62ec92514
-import  -/  InflectionData 316dc8b65cfd739af6e59de9ad59bbc6
-  exports: 24640cf62a9c3b7f4d5b0c718698bf0c
-  Adj b6a8748ebc7c8a127004065f39281bf7
-  Adpo 7302a0de0ff3a9e61c27a9a3a99c24d5
-  LexCat 669f64eab1a11feac3c6144dd5c31025
-  Noun 4b3ff1753c1b5bd5340401062ce8e9e3
-  Verb 9421dc5b8cf6821456c38e572093888e
+import  -/  GrammarData 8ac8d86b6b864664f180483e73ce823b
+  exports: 5138522a0c1403d2fee44ad2a2f3e5a1
+import  -/  InflectionData 1d3c9a42a800e5c12f0b2505845bd490
+  exports: 14704a3a2d793893d80490c9a5c3fd3e
+  Adj bdb85266b516c6d465d0ae35628bdd32
+  Adpo f2851efffd9470f86f77b62dde491078
+  LexCat 406c10c56e8fc899b6f590771b3372e0
+  Noun 03f9541569971afcd548f453c7b56f6a
+  Verb 7a8d9ab245a1af778cdf2e6e44f34c3a
 import  -/  OtherData 37db5ddc38f8875c91a0806c561b30cd
   exports: f505dec72f229982fb85e59b44566731
 import  -/  PhonemeData 408b6488aa28ce44ef05793241013f6f
@@ -200,7 +200,7 @@ a5f287419e665bf09af7fe1eef93ebd4
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, WordGen.MeaningData #)
   {- Arity: 1, Strictness: <L,U> -}
-2380f8d0ec14a4a0595eaaf74cb108d4
+fbc86729895e29f2c43cc461d47f4e60
   makeDictionary ::
     WordGen.MeaningData
     -> [PhonemeData.Phoneme]

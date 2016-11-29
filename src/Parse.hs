@@ -225,7 +225,7 @@ parseSonHier vows cons = "\n\nSonority hierarchy: " ++ "\n/" ++ cListv ++ "/\n/"
 
 -- Parse inflection system (per lex cat)
 parseLCInflection :: InflectionSystem -> String
-parseLCInflection inflSys = concatMap (parseInflectionSystem inflSys) [Subj, Obj, Adj, Adv, Adpo, Verb]
+parseLCInflection inflSys = concatMap (parseInflectionSystem inflSys) [Noun, Adj, Adv, Adpo, Verb]
 
 -- Parse inflection system (gives summary)
 parseInflectionSystem :: InflectionSystem -> LexCat -> String
@@ -322,8 +322,8 @@ parseManifestSystem manSys gens anis cass nums defs spes tops pers hons pols ten
 
   parseSystemType :: ManifestSystem -> String
   parseSystemType (ManifestSystem _ Particle _) = "Particle"
-  parseSystemType (ManifestSystem _ Prefix _)    = "Prefix"
-  parseSystemType (ManifestSystem _ Suffix _)    = "Suffix"
+  parseSystemType (ManifestSystem _ Prefix _)   = "Prefix"
+  parseSystemType (ManifestSystem _ Suffix _)   = "Suffix"
 
   -- header
   horLabels = [map parseCase2 cass, map parseGender2 gens, map parseAnimacy2 anis, map parseNumber2 nums, map parseHonorific2 hons, map parseTransitivity2 tras, map parseEvidentiality2 evis, map parseVoice2 vois, map parseVolition2 vols]
@@ -335,11 +335,12 @@ parseManifestSystem manSys gens anis cass nums defs spes tops pers hons pols ten
 
   makeLabel :: Int -> [String] -> [Int] -> String
   makeLabel i ls hls = "\n\t<tr>\n\t\t<th colspan=\"9\">"
-                 ++ concat (replicate (product $ take (9-i) hls) ("</th>\n\t\t<th colspan=\"" ++ show (product $ drop (10-i) hls) ++ "\">" ++ intercalate ("</th>\n\t\t<th colspan=\"" ++ show (product $ drop (10-i) hls) ++ "\">") ls ++ "</th>\n\t"))
+                 ++ concat (replicate (product $ take (9-i) hls) ("</th>\n\t\t<th colspan=\"" ++ show (product $ drop (10-i) hls) ++ "\">" ++ intercalate ("</th>\n\t\t<th colspan=\"" ++ show (product $ drop (10-i) hls) ++ "\">") ls))
+                 ++ "</th>\n\t"
                  ++ "</tr>"
 
   -- mega rows
-  vls = [length tens,length asps,length moos,length pers,length defs,length spes,length pols,length tops]
+  vls = [length tens,length asps,length moos,length pers,1,length defs,length spes,length pols,length tops]
 
   exarows = concatMap (makeExaRow manSys vls asps moos pers defs spes pols tops cass gens anis nums hons tras evis vois vols) tens
 
@@ -521,6 +522,7 @@ parseVolitions NoManifest = ""
 
 parseGender :: Gender -> String
 parseGender gen
+  | gen == UGEN = "Unknown"
   | gen == M   = "Masculine"
   | gen == F   = "Feminine"
   | gen == COM = "Common"
@@ -528,6 +530,7 @@ parseGender gen
 
 parseAnimacy :: Animacy -> String
 parseAnimacy ani
+  | ani == UANI = "Unknown"
   | ani == AN   = "Animate"
   | ani == HUM  = "Human"
   | ani == NHUM = "Non-Human"
@@ -536,6 +539,7 @@ parseAnimacy ani
 
 parseCase :: Case -> String
 parseCase cas
+  | cas == UCAS = "Unknown"
   | cas == INTR = "Intransitive"
   | cas == ACC = "Accusative"
   | cas `elem` [ERG, ERG2] = "Ergative"
@@ -558,6 +562,7 @@ parseCase cas
 
 parseNumber :: Number -> String
 parseNumber num
+  | num == UNUM = "Unknown"
   | num == SG  = "Singular"
   | num == DU  = "Dual"
   | num == TRI = "Trial"
@@ -566,21 +571,25 @@ parseNumber num
 
 parseDefiniteness :: Definiteness -> String
 parseDefiniteness def
+  | def == UDEF = "Unknown"
   | def == DEF  = "Definite"
   | def == INDF = "Indefinite"
 
 parseSpecificity :: Specificity -> String
 parseSpecificity spe
+  | spe == USPE = "Unknown"
   | spe == SPEC  = "Specific"
   | spe == NSPEC = "Nonspecific"
 
 parseTopic :: Topic -> String
 parseTopic top
+  | top == UTOP = "Unknown"
   | top == TOP  = "Topic"
   | top == NTOP = "Not topic"
 
 parsePerson :: Person -> String
 parsePerson per
+  | per == UPER = "Unknown"
   | per == FIRST  = "First"
   | per == FSTINCL = "First inclusive"
   | per == FSTEXCL = "First exclusive"
@@ -591,17 +600,20 @@ parsePerson per
 
 parseHonorific :: Honorific -> String
 parseHonorific hon
+  | hon == UHON  = "Unknown"
   | hon == FAM   = "Informal"
   | hon == NEU   = "Neutral"
   | hon == FORM  = "Formal"
 
 parsePolarity :: Polarity -> String
 parsePolarity pol
+  | pol == UPOL = "Unknown"
   | pol == AFF = "Affirmative"
   | pol == NEG = "Negative"
 
 parseTense :: Tense -> String
 parseTense ten
+  | ten == UTEN = "Unknown"
   | ten == PST  = "Simple past"
   | ten == PRS  = "Simple present"
   | ten == FUT  = "Simple future"
@@ -617,6 +629,7 @@ parseTense ten
 
 parseAspect :: Aspect -> String
 parseAspect asp
+  | asp == UASP = "Unknown"
   | asp == NNPROG = "Not progressive"
   | asp == PFV  = "Perfective"
   | asp == IPFV = "Imperfective"
@@ -628,6 +641,7 @@ parseAspect asp
 
 parseMood :: Mood -> String
 parseMood moo
+  | moo == UMOO = "Unknown"
   | moo == IND  = "Indicative"
   | moo == IRR  = "Irrealis"
   | moo == DEO  = "Deontic"
@@ -641,12 +655,14 @@ parseMood moo
 
 parseVoice :: Voice -> String
 parseVoice voi
+  | voi == UVOI = "Unknown"
   | voi == ACTIVE  = "Active"
   | voi == MIDDLE  = "Middle"
   | voi == PASSIVE = "Passive"
 
 parseEvidentiality :: Evidentiality -> String
 parseEvidentiality evi
+  | evi == UEVI  = "Unknown"
   | evi == EXP   = "Witness"
   | evi == VIS   = "Visual"
   | evi == NVIS  = "Non-visual"
@@ -659,13 +675,15 @@ parseEvidentiality evi
 
 parseTransitivity :: Transitivity -> String
 parseTransitivity tra
+  | tra == UTRA    = "Unknown"
   | tra == NTRANS  = "Intransitive"
   | tra == TRANS   = "Transitive"
-  | tra == MTRANS = "Monotransitive"
+  | tra == MTRANS  = "Monotransitive"
   | tra == DITRANS = "Ditransitive"
 
 parseVolition :: Volition -> String
 parseVolition vol
+  | vol == UVOL = "Unknown"
   | vol == VOL  = "Intended"
   | vol == NVOL = "Unintended"
 
@@ -741,6 +759,7 @@ parseLexCat :: LexCat -> String
 parseLexCat lc
   | lc == Subj = "Subject"
   | lc == Obj  = "Object"
+  | lc == Noun = "Noun"
   | lc == Adj  = "Adjective"
   | lc == Adv  = "Adverb"
   | lc == Adpo = "Adposition"

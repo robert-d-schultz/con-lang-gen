@@ -46,7 +46,8 @@ deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, E
 -- Exponent - manifests by changing the word
 
 data Manifest a = NoManifest | Manifest [(LexCat, ManifestType, Int)] a deriving (Eq, Show, Read)
-data Express a  = NoExpress  | Express a deriving (Eq, Show, Read)
+data Express a  = NoExpress
+                | Express { getExp :: a } deriving (Eq, Show, Read)
 
 data ManifestType = Particle | Prefix | Suffix deriving (Eq, Show, Read)
 
@@ -75,9 +76,9 @@ data InflectionSystem = InflectionSystem
 
 -- Grammatical categories
 -- For nouns
-data Gender        = M | F | COM | N  deriving (Eq, Show, Read)
-data Animacy       = AN | HUM | NHUM | ZO | INAN deriving (Eq, Show, Read)
-data Case          = INTR | ACC | ERG | PEG | INDIR | SEC
+data Gender        = UGEN | M | F | COM | N  deriving (Eq, Show, Read)
+data Animacy       = UANI | AN | HUM | NHUM | ZO | INAN deriving (Eq, Show, Read)
+data Case          = UCAS | INTR | ACC | ERG | PEG | INDIR | SEC
                    | NOM | ABS | MTR | DIR | PRIM | ERG2
                    | NOM2 | ABS2 | ABS3 | DTR | OBJ | DRT1
                    | TR
@@ -90,27 +91,27 @@ data Case          = INTR | ACC | ERG | PEG | INDIR | SEC
                    | CAUS | DISTR
                    | GEN | POSS | PART
                    | VOC deriving (Eq, Show, Read)
-data Number        = SG | DU | TRI | PA | PL deriving (Eq, Show, Read)
-data Definiteness  = DEF | INDF deriving (Eq, Show, Read)
-data Specificity   = SPEC | NSPEC deriving (Eq, Show, Read)
-data Topic         = TOP | NTOP deriving (Eq, Show, Read)
-data Person        = FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THRDOBV deriving (Eq, Show, Read)
+data Number        = UNUM | SG | DU | TRI | PA | PL deriving (Eq, Show, Read)
+data Definiteness  = UDEF | DEF | INDF deriving (Eq, Show, Read)
+data Specificity   = USPE | SPEC | NSPEC deriving (Eq, Show, Read)
+data Topic         = UTOP | TOP | NTOP deriving (Eq, Show, Read)
+data Person        = UPER | FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THRDOBV deriving (Eq, Show, Read)
 -- For nouns and verbs
-data Honorific     = FAM | NEU | FORM deriving (Eq, Show, Read)
-data Polarity      = AFF | NEG deriving (Eq, Show, Read)
+data Honorific     = UHON | FAM | NEU | FORM deriving (Eq, Show, Read)
+data Polarity      = UPOL | AFF | NEG deriving (Eq, Show, Read)
 -- For verbs
-data Tense         = PST | PRS | FUT
+data Tense         = UTEN | PST | PRS | FUT
                    | APRS | APST
                    | AFUT | AFUT1 | AFUT2 | AFUT3
                    | PPRS | PFUT
                    | PPST | PPST1 | PPST2 | PPST3
                    | PSTPER | PRSPER | FUTPER deriving (Eq, Show, Read)
-data Aspect        = NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Eq, Show, Read)
-data Mood          = IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Eq, Show, Read)
-data Voice         = ACTIVE | MIDDLE | PASSIVE deriving (Eq, Show, Read)
-data Evidentiality = EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Eq, Show, Read)
-data Transitivity  = NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Show, Read)
-data Volition      = VOL | NVOL deriving (Eq, Show, Read)
+data Aspect        = UASP | NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Eq, Show, Read)
+data Mood          = UMOO | IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Eq, Show, Read)
+data Voice         = UVOI | ACTIVE | MIDDLE | PASSIVE deriving (Eq, Show, Read)
+data Evidentiality = UEVI | EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Eq, Show, Read)
+data Transitivity  = UTRA | NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Show, Read)
+data Volition      = UVOL | VOL | NVOL deriving (Eq, Show, Read)
 
 -- Particle/Affix system
 data ManifestSystem = ManifestSystem
