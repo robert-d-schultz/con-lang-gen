@@ -74,6 +74,11 @@ data InflectionSystem = InflectionSystem
                       , volSys :: Manifest [Volition]
                       }  deriving (Eq, Show, Read)
 
+-- Hierarchy bullshit
+-- Groupings of values...\
+-- [("Name", "Group...")]
+-- data CaseHier = [(Case, [Case])]
+
 -- Grammatical categories
 -- For nouns
 data Gender        = UGEN | M | F | COM | N  deriving (Eq, Show, Read)

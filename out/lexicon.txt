@@ -1,1738 +1,1753 @@
 Lexicon
-mrorg (/mɾúɾɡ/)
-	n. chalk
-mrire (/mɾy̌.ɾí/)
-	v. follow
-mrengbhar (/mɾîŋ.bʰâɾ/)
-	n. muscle
-mronb (/mɾɒ́nb̪/)
-	n. force
-mrornorirorn (/mɾɒ́ɾ.nú.ɾŷ.ɾɯ᷉ɾn/)
-	adj. round
-mi (/mý/)
-	n. tray
-midh (/mýdʰ/)
-	n. law
-mirngghorormar (/mŷɾŋ.ɡʰɯ̂.ɾɯ́ɾ.mǎɾ/)
-	n. need
-mer (/míɾ/)
-	n. memory
-merghbornaroa (/mîɾɡʰ.b̪ɒ̂ɾ.nɶ̌.ɾûɶ̯̌/)
-	n. help
-merongbhenga (/mǐ.ɾɯ̂ŋ.b̪ʰí.ŋɑ́/)
-	n. book
-mera (/mi᷉.ɾɶ́/)
-	n. profit
-mong (/mɒ̂ŋ/)
-	n. design
-mobh (/mɒ̌b̪ʰ/)
-	n. place
-mo (/mɒ᷉/)
-	n. dress
-mabhbna (/mɑ᷉bʰ.bɱɑ᷉/)
-	adj. loud
-mabghanorbarbh (/mɶ̌.bɡʰɶ̌.ɱɒ̂ɾ.bɶ́ɾbʰ/)
-	adj. bright
-marane (/má.ɾɶ̂.ɱî/)
-	v. find
-marorndharoar (/mâ.ɾǔɾn.dʰɑ᷉.ɾɒ̌ɶ̯́ɾ/)
-	n. grip
-ma (/ma᷉/)
-	v. need
-bmongdergodhro (/bmǔŋ.díɾ.ɡɯ̌.dʰɾǔ/)
-	adj. restrained
-bmeghodhedi (/bmi᷉.ɡʰɯ́.dʰi᷉.dý/)
-	adj. manmade
-bmorgarng (/bmɒ̂ɾ.ɡɶ᷉ɾŋ/)
-	n. mind
-bmabbhnoangbhabhrir (/bmɑ᷉.b̪b̪ʰnûɶ̯̌ŋ.b̪ʰɶ᷉.bʰɾy᷉ɾ/)
-	n. industry
-bmaromor (/bmɶ̌.ɾɒ̌.mɯ̌ɾ/)
-	n. approval
-bbhibnodhmirn (/bbʰŷ.b̪ɱɯ́.dʰmy̌ɾɱ/)
-	n. start
-bbherdbhabhar (/bbʰi᷉ɾ.db̪ʰɶ̂.b̪ʰɑ́ɾ/)
-	n. ant
-bbhanangddhe (/bbʰɶ́.ɱɶ́ŋ.ddʰǐ/)
-	adj. cheap
-bnor (/bɱɯ́ɾ/)
-	n. root
-bne (/bɱǐ/)
-	n. flame
-bna (/bɱɶ̌/)
-	v. pay
-bnoaddharnda (/bɱûɶ̯̌.ddʰɶ́ɾn.dá/)
-	n. ship
-bnoardonbhar (/bɱûɶ̯̌ɾ.dɒ́ɱ.bʰáɾ/)
-	n. current
-bbhorenor (/bb̪ʰû.ɾi᷉.nɯ̂ɾ/)
-	n. cart
-bbhiri (/bb̪ʰy̌.ɾý/)
-	n. basket
-bnarngobngor (/bnɑ̂ɾ.ŋú.b̪ŋɒ́ɾ/)
-	adj. waiting
-bnarbbhenbamga (/bnɑ̌ɾ.b̪b̪ʰǐɱ.bám.ɡɶ́/)
-	n. experience
-bnaronrodhg (/bna᷉.ɾû.nɾɒ́dʰɡ/)
-	n. harbor
-bdhobhor (/bdʰǔ.bʰǔɾ/)
-	n. smell
-bdhondambharaa (/bdʰu᷉n.dɑ̌m.b̪ʰɶ̂.ɾɶ᷉ɑ̯᷉/)
-	n. wound
-bdhi'er (/bdʰŷ.i᷉ɾ/)
-	adj. like
-bdhomgranbhan (/bdʰɒ̌m.ɡɾa᷉n.b̪ʰɑ́n/)
-	n. wall
-bdhardhornabhnrorbh (/bdʰâɾ.dʰu᷉ɾ.nɑ᷉.bʰnɾɯ́ɾb̪ʰ/)
-	adj. dead
-bdhaamdhdhoangbh (/bdʰɶ᷉ɑ̯᷉m.dʰdʰɒ̌ɶ̯́ŋbʰ/)
-	n. meal
-bdhaonnonbhe (/bdʰáɯ̯̂.ɱnɯ̂ɱ.b̪ʰǐ/)
-	n. flag
-bdhaobhgarnbo (/bdʰáɯ̯̂b̪ʰ.ɡɑ̂ɾɱ.bɒ́/)
-	n. floor
-brerdharbhna (/bɾîɾ.dʰɑ́ɾ.bʰnâ/)
-	v. sell
-bngibhao (/bŋy̌.b̪ʰáɯ̯̂/)
-	n. rice
-bngamarmorar (/bŋǎ.mǎɾ.mɯ̌.ɾɶ́ɾ/)
-	n. cork
-bngaa (/bŋɶ᷉ɑ̯᷉/)
-	n. pen
-bghornbhonb (/bɡʰɯ᷉ɾn.b̪ʰɒ᷉nb/)
-	n. price
-bghirbabhan (/bɡʰŷɾ.bɑ̂.bʰɑ̂n/)
-	adj. cruel
-bghibhibhdar (/bɡʰy̌.bʰŷbʰ.dáɾ/)
-	n. wind
-bghanordhero (/bɡʰɶ̌.ɱɯ̌ɾ.dʰǐ.ɾɯ̂/)
-	n. wool
-bomdoaidh (/búm.dɒ̌ɶ̯́.y᷉dʰ/)
-	n. knife
-borirbhdimdhe (/bǔ.ɾy᷉ɾb̪ʰ.dým.dʰǐ/)
-	v. know
-bogho (/bǔ.ɡʰɯ̌/)
-	n. view
-bongbhorngori (/bɯ́ŋ.b̪ʰúɾ.ŋu᷉.ɾy̌/)
-	n. knot
-bonbhornba (/bɯ̂n.bʰɯ̂ɾn.bá/)
-	n. meeting
-borghormbedh (/bɯ̂ɾ.ɡʰu᷉ɾm.b̪ǐdʰ/)
-	n. crime
-bora (/bɯ̂.ɾɑ̂/)
-	v. move
-bor (/bɯ̌ɾ/)
-	n. leather
-boghbor (/bɯ̌ɡʰ.bɒ᷉ɾ/)
-	v. bring
-bornidhabhoa (/bɯ᷉ɾ.ný.dʰâ.bʰɒ̌ɶ̯́/)
-	n. mine
-bim (/bým/)
-	n. payment
-binghnomar (/bŷɱ.ɡʰnǔ.ma᷉ɾ/)
-	n. system
-bidhdngoaroghdhanggh (/by̌dʰ.dŋɒ̌ɶ̯́.ɾɒ̌.ɡʰdʰáŋɡʰ/)
-	n. band
-bemarano (/bí.mɶ̌.ɾa᷉.nɒ́/)
-	n. school
-berngrongdhon (/bi᷉ɾ.ŋɾɯ᷉ŋ.dʰɒ̌n/)
-	n. measure
-berghamghbhabh (/bi᷉ɾ.ɡʰɑ̂m.ɡʰbʰɑ́b̪ʰ/)
-	v. cover
-bonono (/bɒ́.nɯ̌.nɯ᷉/)
-	n. meat
-bormbhin (/bɒ́ɾm.bʰy᷉ɱ/)
-	n. answer
-bonarm (/bɒ̂.nâɾm/)
-	n. property
-borghomaobnrandh (/bɒ̂ɾ.ɡʰɯ̂.máɯ̯̂.b̪nɾɑ́ɱdʰ/)
-	n. water
-bo (/bɒ᷉/)
-	n. taste
-barbharar (/bɑ́ɾ.bʰɶ̂.ɾáɾ/)
-	n. food
-bara (/bɑ́.ɾɑ́/)
-	n. salt
-ba (/bɑ̂/)
-	n. grain
-ban (/bɑ̂ɱ/)
-	n. stone
-barbghoarmbha (/bɑ̌ɾ.b̪ɡʰûɶ̯̌ɾm.b̪ʰɶ᷉/)
-	n. paper
-bardhaghdher (/bɑ̌ɾ.dʰɑ̂.ɡʰdʰǐɾ/)
-	n. attack
-banabhmor (/bɑ᷉.nâ.bʰmɒ᷉ɾ/)
-	n. kiss
-barnroragdhrarn (/bɶ́ɾ.ɱɾɒ̌.ɾá.ɡdʰɾâɾɱ/)
-	n. disease
-baghaarongbh (/bɶ́.ɡʰɶ᷉ɑ̯᷉.ɾɒ᷉ŋbʰ/)
-	n. bit
-bangbhangemradh (/bɶ̌ŋ.b̪ʰá.ŋǐ.mɾɶ́dʰ/)
-	n. picture
-banardhbha (/bɶ᷉.nɶ̌ɾ.dʰbʰɑ́/)
-	v. make
-bangir (/bâ.ŋýɾ/)
-	n. sleep
-barngdhaarnoroarbh (/bǎɾŋ.dʰɶ᷉ɑ̯᷉ɾ.ɱɒ̌.ɾûɶ̯̌ɾb̪ʰ/)
-	n. egg
-barnirdhre (/ba᷉ɾ.ɱýɾ.dʰɾi᷉/)
-	n. war
-boanbangboab (/bûɶ̯̌ɱ.bǎŋ.b̪ûɶ̯̌b/)
-	adj. acidic
-baobhnormobghngo (/báɯ̯̂.b̪ʰnɒ́ɾ.mɯ́.bɡʰŋɒ̌/)
-	adj. separate
-bhmanberngdhobhgdhar (/bʰmɑ᷉n.bi᷉ɾŋ.dʰɯ᷉bʰ.ɡdʰâɾ/)
-	n. manager
-bhmarb (/bʰmɶ̌ɾb/)
-	n. selection
-bhmarng (/bʰma᷉ɾŋ/)
-	v. hit
-bhnonaor (/bʰɱú.ɱáɯ̯̂ɾ/)
-	n. stop
-bhnongboa (/bʰɱúŋ.bɒ̌ɶ̯́/)
-	n. glove
-bhnangbherrarmbhabh (/bʰɱɶ́ŋ.b̪ʰǐ.ɾɾa᷉ɾm.b̪ʰâb̪ʰ/)
-	adj. impossible
-bhnanogh (/bʰɱɶ̂.ɱɒ᷉ɡʰ/)
-	n. rule
-bhnoamoabhbrarma (/bʰnûɶ̯̌.mɒ̌ɶ̯́bʰ.bɾɶ̂ɾ.mǎ/)
-	n. burst
-bhrondhanga (/bʰɾún.dʰɑ̂.ŋɶ̌/)
-	n. reason
-bhrirbhanighb (/bʰɾýɾ.bʰɶ᷉.ɱýɡʰb̪/)
-	adj. clean
-bhrag (/bʰɾɑ́ɡ/)
-	v. understand
-bhngibhoagbhngadghra (/bʰŋŷ.bʰɒ̌ɶ̯́.ɡb̪ʰŋɶ́.dɡʰɾa᷉/)
-	adj. first
-bho (/bʰú/)
-	adj. clear
-bhobhb (/bʰúbʰb̪/)
-	adj. thin
-bhonbhorngaon (/bʰúɱ.bʰǔɾ.ŋáɯ̯̂ɱ/)
-	n. train
-bhordhoaronaorn (/bʰúɾ.dʰɒ̌ɶ̯́.ɾɯ̂.ɱáɯ̯̂ɾɱ/)
-	n. night
-bhorbhoarbneghrar (/bʰûɾ.b̪ʰɒ̌ɶ̯́ɾ.b̪ɱî.ɡʰɾǎɾ/)
-	n. father
-bhobhbhaa (/bʰɯ̂.b̪ʰb̪ʰɶ᷉ɑ̯᷉/)
-	n. shade
-bhiredhboro (/bʰy̌.ɾǐdʰ.b̪ú.ɾǔ/)
-	n. pain
-bhi (/bʰy᷉/)
-	n. adjustment
-bhererngoanghar (/bʰí.ɾǐɾ.ŋɒ̌ɶ̯́ɱ.ɡʰɶ̂ɾ/)
-	n. church
-bhe (/bʰî/)
-	adj. conscious
-bherdonarn (/bʰîɾ.dû.ɱɶ́ɾn/)
-	n. slope
-bhem (/bʰǐm/)
-	n. land
-bher (/bʰi᷉ɾ/)
-	n. flower
-bhonginbhboro (/bʰɒ̂.ŋy᷉ɱbʰ.b̪ɒ̂.ɾǔ/)
-	n. cotton
-bharbh (/bʰɑ́ɾbʰ/)
-	n. nose
-bhandhdhoardh (/bʰɶ̌ɱ.dʰdʰûɶ̯̌ɾdʰ/)
-	v. agree
-bharnaor (/bʰáɾ.náɯ̯̂ɾ/)
-	v. have
-bharirbhernadh (/bʰá.ɾýɾ.bʰi᷉ɾ.nɑ̂dʰ/)
-	n. attraction
-bhanggomogho (/bʰáŋ.ɡɯ́.mú.ɡʰú/)
-	n. head
-bharnbha (/bʰâɾɱ.bʰa᷉/)
-	adj. tall
-bha (/bʰa᷉/)
-	n. insurance
-bhanraabhngaan (/bʰa᷉.ɱɾɶ᷉ɑ̯᷉.b̪ʰŋɶ᷉ɑ̯᷉ɱ/)
-	adj. tired
-bhar (/bʰa᷉ɾ/)
-	n. development
-nrornbheghi (/ɱɾúɾn.b̪ʰǐ.ɡʰy̌/)
-	adj. fixed
-nribdhreghardo (/ɱɾy̌.bdʰɾi᷉.ɡʰɶ́ɾ.dɯ́/)
-	v. cut
-nrang (/ɱɾɑ᷉ŋ/)
-	n. sea
-nroabhdnabhdhirgh (/ɱɾɒ̌ɶ̯́bʰ.dnɶ᷉.b̪ʰdʰýɾɡʰ/)
-	adj. warm
-nondhonbh (/ɱûn.dʰǔɱb̪ʰ/)
-	n. feeling
-nornggher (/ɱǔɾŋ.ɡʰîɾ/)
-	n. box
-nodbhobhbermdha (/ɱɯ́.dbʰɒ̂bʰ.b̪íɾm.dʰǎ/)
-	n. receipt
-norbh (/ɱɯ́ɾb̪ʰ/)
-	adj. military
-nongbhrimder (/ɱɯ᷉ŋ.bʰɾy̌m.dîɾ/)
-	n. skin
-nindhangoangg (/ɱýn.dʰâ.ŋûɶ̯̌ŋɡ/)
-	adj. correct
-nirmbharndho (/ɱŷɾm.bʰɶ̂ɾn.dʰɒ̂/)
-	n. noise
-norirerdh (/ɱɒ̂.ɾý.ɾîɾdʰ/)
-	n. range
-norngi (/ɱɒ̌ɾ.ŋy̌/)
-	n. hospital
-nardanghbhenor (/ɱɑ᷉ɾ.dáɱ.ɡʰbʰǐ.nu᷉ɾ/)
-	n. statement
-nabdhirara (/ɱǎ.bdʰŷ.ɾɶ̂.ɾâ/)
-	n. song
-noangobhghrong (/ɱɒ̌ɶ̯́ɱ.ɡɒ᷉.bʰɡʰɾɒ̂ŋ/)
-	v. happen
-naabor (/ɱɶ᷉ɑ̯᷉.b̪ɒ᷉ɾ/)
-	n. line
-bmobhnoro (/b̪mu᷉.b̪ʰɱɯ᷉.ɾɯ̌/)
-	n. request
-bmernaragh (/b̪mǐɾ.ɱá.ɾa᷉ɡʰ/)
-	n. parcel
-bmar (/b̪mɶ̂ɾ/)
-	n. tin
-bbhagnarmgorm (/b̪bʰɑ̂.ɡɱǎɾm.ɡɒ̌ɾm/)
-	n. map
-bbhar (/b̪bʰâɾ/)
-	n. rod
-bbherer (/b̪b̪ʰí.ɾi᷉ɾ/)
-	n. butter
-bbhembarn (/b̪b̪ʰîm.b̪ɶ̌ɾɱ/)
-	n. wing
-bdhograrbbhorbh (/b̪dʰɯ᷉.ɡɾâɾ.b̪bʰu᷉ɾb̪ʰ/)
-	v. produce
-bdhoni (/b̪dʰɒ́.ɱy̌/)
-	v. grow
-bdharng (/b̪dʰɶ́ɾŋ/)
-	v. break
-bromaorda (/b̪ɾu᷉.máɯ̯̂ɾ.dɑ̌/)
-	adj. chemical
-bronbhemar (/b̪ɾɯ̂ɱ.b̪ʰí.mɑ̂ɾ/)
-	n. test
-brombhorbhoadha (/b̪ɾɯ᷉m.b̪ʰɒ́ɾ.bʰûɶ̯̌.dʰɶ᷉/)
-	v. receive
-bringbh (/b̪ɾy᷉ŋb̪ʰ/)
-	adj. irregular
-brarghorerngha (/b̪ɾɶ᷉ɾ.ɡʰɒ́.ɾîɾɱ.ɡʰǎ/)
-	n. growth
-bngirodoambh (/b̪ŋy̌.ɾɯ᷉.dûɶ̯̌mb̪ʰ/)
-	n. shake
-bngighebhoamghir (/b̪ŋy̌.ɡʰî.b̪ʰûɶ̯̌m.ɡʰŷɾ/)
-	n. body
-bngengha (/b̪ŋín.ɡʰɑ᷉/)
-	adj. wrong
-bnge (/b̪ŋi᷉/)
-	n. roll
-bghinggorbranorng (/b̪ɡʰy̌ŋ.ɡûɾ.bɾɑ᷉.nu᷉ɾŋ/)
-	adj. common
-bghi (/b̪ɡʰy᷉/)
-	n. laugh
-bghirm (/b̪ɡʰy᷉ɾm/)
-	n. fold
-bghorbhid (/b̪ɡʰɒ᷉ɾ.bʰy̌d/)
-	n. hope
-bghoarbhdebrao (/b̪ɡʰûɶ̯̌ɾb̪ʰ.dî.b̪ɾáɯ̯̂/)
-	adj. wet
-bomraraorm (/b̪û.mɾɶ̌.ɾáɯ̯̂ɾm/)
-	adj. angry
-bornnenbharon (/b̪ûɾ.ɱnǐn.bʰɶ̌.ɾɯ̌n/)
-	n. bath
-borgmornbhana (/b̪ûɾ.ɡmu᷉ɾɱ.bʰɶ᷉.ɱɑ̂/)
-	n. stitch
-bor (/b̪ɯ́ɾ/)
-	n. shelf
-bongbhmao (/b̪ɯ̂ŋ.b̪ʰmáɯ̯̂/)
-	n. spade
-boghdobhmaorbhar (/b̪ɯ̂ɡʰ.dɒ̂.b̪ʰmáɯ̯̂ɾ.bʰɑ̂ɾ/)
-	n. snow
-bogharaorer (/b̪ɯ̂.ɡʰá.ɾáɯ̯̂.ɾíɾ/)
-	n. language
-bodbhore (/b̪ɯ᷉.db̪ʰû.ɾi᷉/)
-	n. attempt
-bongbhbodhngrabh (/b̪ɯ᷉ŋbʰ.b̪u᷉.dʰŋɾɑ́b̪ʰ/)
-	n. liquid
-bibh (/b̪ýbʰ/)
-	n. carriage
-birbno (/b̪ýɾ.b̪ɱɒ́/)
-	n. seed
-birnoadhorbhnordh (/b̪ýɾ.nɒ̌ɶ̯́.dʰɯ᷉ɾ.b̪ʰɱɒ᷉ɾdʰ/)
-	n. bread
-bibharnaarmoand (/b̪y̌.b̪ʰɑ᷉ɾ.nɶ᷉ɑ̯᷉ɾ.mɒ̌ɶ̯́ɱd/)
-	n. behavior
-bidhbhmongaangghror (/b̪y̌.dʰbʰmǔ.ŋɶ᷉ɑ̯᷉ŋ.ɡʰɾɒ́ɾ/)
-	n. bee
-birboghbobhde (/b̪y᷉ɾ.bɯ̌ɡʰ.bɒ̂b̪ʰ.dî/)
-	n. touch
-bengbdharor (/b̪îŋ.bdʰɑ̂.ɾɒ̌ɾ/)
-	n. protest
-bernardhar (/b̪ǐɾ.ɱa᷉ɾ.dʰɑ̂ɾ/)
-	n. unit
-berormdorng (/b̪ǐ.ɾɒ̂ɾm.dɯ̌ɾŋ/)
-	n. distance
-berardi (/b̪i᷉.ɾɑ᷉ɾ.dy᷉/)
-	n. smoke
-borarormdhan (/b̪ɒ́.ɾɑ́.ɾɒ̌ɾm.dʰɑ̌ɱ/)
-	n. idea
-bomgh (/b̪ɒ̂mɡʰ/)
-	n. theory
-bobhbengbrorngar (/b̪ɒ᷉bʰ.bǐŋ.b̪ɾúɾ.ŋǎɾ/)
-	v. send
-bobhghanbarnordh (/b̪ɒ᷉.b̪ʰɡʰâɱ.b̪ɑ̂ɾ.nɯ̌ɾdʰ/)
-	n. error
-barorb (/b̪ɑ́.ɾúɾb/)
-	n. rail
-bam (/b̪ɑ̂m/)
-	n. market
-barbhebhdami (/b̪ɑ̂ɾ.bʰîb̪ʰ.da᷉.mý/)
-	n. harmony
-baroma (/b̪ɑ̂.ɾu᷉.mɑ̂/)
-	n. sponge
-banbhor (/b̪ɑ᷉n.bʰɒ̌ɾ/)
-	n. trouble
-bangarborbhar (/b̪ɶ́.ŋǎɾ.b̪ǔɾ.b̪ʰɑ́ɾ/)
-	v. create
-barngindh (/b̪ɶ̂ɾɱ.ɡýndʰ/)
-	n. machine
-ba (/b̪ɶ̌/)
-	adj. medical
-baron (/b̪ɶ᷉.ɾɒ̌n/)
-	adj. opposite
-bar (/b̪áɾ/)
-	n. birth
-barm (/b̪áɾm/)
-	v. spend
-barobharorm (/b̪á.ɾû.bʰɶ᷉.ɾɒ̂ɾm/)
-	p. on
-bangobhd (/b̪â.ŋɒ̂b̪ʰd/)
-	v. speak
-baddhor (/b̪ǎ.ddʰúɾ/)
-	v. want
-boab (/b̪ûɶ̯̌b̪/)
-	n. fall
-boar (/b̪ûɶ̯̌ɾ/)
-	n. amusement
-boarnrim (/b̪ûɶ̯̌ɾ.nɾým/)
-	n. ray
-baarndhoarbha (/b̪ɶ᷉ɑ̯᷉ɾɱ.dʰûɶ̯̌ɾ.bʰɶ́/)
-	n. finger
-bhming (/b̪ʰmy᷉ŋ/)
-	n. pump
-bhmaraa (/b̪ʰmâ.ɾɶ᷉ɑ̯᷉/)
-	adj. sweet
-bhnobhgdhornon (/b̪ʰɱɯ̂bʰ.ɡdʰɯ́ɾ.ɱǔɱ/)
-	adj. sharp
-bhnor (/b̪ʰnɒ́ɾ/)
-	adj. late
-bhrobhinorbhen (/b̪ʰɾɯ̂.bʰy̌.ɱu᷉ɾ.bʰîɱ/)
-	v. change
-bhroroa (/b̪ʰɾɯ̌.ɾɒ̌ɶ̯́/)
-	n. comfort
-bhrono (/b̪ʰɾɯ᷉.ɱɒ̌/)
-	n. work
-bhrirbinganbhir (/b̪ʰɾy᷉ɾ.bý.ŋǎn.b̪ʰy̌ɾ/)
-	n. week
-bhronghgha (/b̪ʰɾɒ̂n.ɡʰɡʰɶ̂/)
-	n. brush
-bhroarmab (/b̪ʰɾɒ̌ɶ̯́ɾ.mɶ̌b/)
-	adj. mechanical
-bhroaghrora (/b̪ʰɾɒ̌ɶ̯́.ɡʰɾɯ̂.ɾɶ̌/)
-	n. division
-bhoranbhoarnaa (/b̪ʰû.ɾɶ̂ɱ.bʰûɶ̯̌ɾ.nɶ᷉ɑ̯᷉/)
-	adj. last
-bhorgmorarom (/b̪ʰɯ̂ɾ.ɡmû.ɾɶ̌.ɾɒ̂m/)
-	adj. thick
-bhirng (/b̪ʰýɾŋ/)
-	v. lead
-bhingngara (/b̪ʰŷ.ŋŋa᷉.ɾɑ̂/)
-	n. horn
-bhebhdhirdhmonang (/b̪ʰi᷉.b̪ʰdʰýɾ.dʰmɒ̂.nɑ̂ŋ/)
-	n. stretch
-bhernbhorbgha (/b̪ʰi᷉ɾn.b̪ʰúɾ.b̪ɡʰǎ/)
-	adj. tough
-bhordhornorn (/b̪ʰɒ́ɾ.dʰɒ̌ɾ.ɱɯ̂ɾn/)
-	n. process
-bhomgherghorag (/b̪ʰɒ̂m.ɡʰi᷉ɾ.ɡʰǔ.ɾɑ̌ɡ/)
-	n. brass
-bhodhnra (/b̪ʰɒ᷉.dʰɱɾɶ̂/)
-	n. tendency
-bhongghaarm (/b̪ʰɒ᷉ŋ.ɡʰɶ᷉ɑ̯᷉ɾm/)
-	n. education
-bhamgembobh (/b̪ʰɑ̌m.ɡi᷉m.bûb̪ʰ/)
-	adj. sticky
-bhabhmror (/b̪ʰɶ̂.bʰmɾûɾ/)
-	v. see
-bhabhb (/b̪ʰǎbʰb/)
-	n. door
-bharnighmaar (/b̪ʰǎɾ.ɱý.ɡʰmɶ᷉ɑ̯᷉ɾ/)
-	adj. frequent
-bharonghrobho (/b̪ʰǎ.ɾɯ̌n.ɡʰɾɒ́.b̪ʰɯ᷉/)
-	n. name
-bhoangdherma (/b̪ʰûɶ̯̌ɱ.ɡdʰîɾ.mɶ᷉/)
-	v. go
-bhaaroarombho (/b̪ʰɶ᷉ɑ̯᷉.ɾɒ̌ɶ̯́.ɾúm.b̪ʰɯ᷉/)
-	adj. tight
-bhao (/b̪ʰáɯ̯̂/)
-	n. story
-nrongarngirbraorn (/nɾɯ̌.ŋɶ᷉ɾɱ.ɡy᷉ɾ.bɾáɯ̯̂ɾn/)
-	n. mother
-nrer (/nɾîɾ/)
-	n. day
-nrar (/nɾɑ́ɾ/)
-	adj. different
-nroanb (/nɾûɶ̯̌nb/)
-	n. steam
-nonghombhongghbhaarn (/nûɱ.ɡʰǔm.b̪ʰɯ̌ŋ.ɡʰb̪ʰɶ᷉ɑ̯᷉ɾn/)
-	v. read
-nirngbhag (/nŷɾŋ.bʰɑ̂ɡ/)
-	adj. long
-norngnarbh (/nɒ᷉ɾ.ŋɱɶ́ɾb̪ʰ/)
-	n. purpose
-narbhog (/nɑ̂ɾ.b̪ʰɒ́ɡ/)
-	n. middle
-naghbangdhror (/nɶ̌ɡʰ.bɑ̌ŋ.dʰɾɒ̌ɾ/)
-	n. top
-narbhor (/nɶ᷉ɾ.bʰɯ᷉ɾ/)
-	n. fear
-narn (/nɶ᷉ɾɱ/)
-	v. support
-nama (/na᷉.mɶ́/)
-	n. surprise
-nabhbhidhd (/na᷉.b̪ʰbʰŷdʰd/)
-	n. pencil
-dminbnanab (/dmy᷉ɱ.b̪ɱɶ̌.ɱáb̪/)
-	n. teaching
-dmarborbhgho (/dmɑ̂ɾ.bɯ̂ɾ.bʰɡʰɯ́/)
-	adj. political
-dbhirbobbhaanghranb (/dbʰýɾ.bú.bb̪ʰɶ᷉ɑ̯᷉ɱ.ɡʰɾɶ̂ɱb̪/)
-	n. pocket
-dnombhrarngbhirnghorng (/dɱɒ̂m.bʰɾɶ᷉ɾŋ.bʰŷɾn.ɡʰɒ̂ɾŋ/)
-	n. list
-dnarbhnangghbaarngbhor (/dɱɑ̂ɾ.b̪ʰna᷉ŋɡʰ.bɶ᷉ɑ̯᷉ɾŋ.b̪ʰɒ́ɾ/)
-	n. art
-dnadh (/dɱa᷉dʰ/)
-	adj. bad
-dnoarabhondhe (/dɱûɶ̯̌.ɾɶ̂.bʰu᷉ɱ.dʰi᷉/)
-	n. screw
-dnaadha (/dɱɶ᷉ɑ̯᷉.dʰɶ̂/)
-	n. expert
-dbhorbhongbhaarnghobh (/db̪ʰɯ̌ɾ.bʰɒ̂ŋ.b̪ʰɶ᷉ɑ̯᷉ɾɱ.ɡʰɯ́bʰ/)
-	v. put
-dbhore (/db̪ʰɒ̂.ɾî/)
-	adj. mixed
-dbharn (/db̪ʰɶ́ɾn/)
-	adj. dark
-dningbhmarar (/dny̌ŋ.b̪ʰmɑ̌.ɾɶ̌ɾ/)
-	n. seat
-dnagbhorghbhadhdha (/dnɑ᷉.ɡbʰɒ́ɾ.ɡʰb̪ʰɶ̌.dʰdʰɶ̂/)
-	n. milk
-dnarmghoarngonga (/dnɶ̂ɾm.ɡʰɒ̌ɶ̯́ɾ.ŋún.ɡɶ̂/)
-	n. thunder
-dnam (/dnâm/)
-	n. shock
-ddhornbhoabh (/ddʰɯ́ɾɱ.b̪ʰûɶ̯̌bʰ/)
-	n. store
-ddho (/ddʰɯ̂/)
-	n. air
-ddhidhghor (/ddʰy᷉.dʰɡʰûɾ/)
-	n. discovery
-ddheraamghar (/ddʰǐ.ɾɶ᷉ɑ̯᷉m.ɡʰâɾ/)
-	adj. deep
-ddharn (/ddʰɑ́ɾɱ/)
-	n. river
-drerbhoa (/dɾi᷉ɾ.bʰɒ̌ɶ̯́/)
-	adj. old
-dro (/dɾɒ᷉/)
-	n. bottle
-drabh (/dɾa᷉b̪ʰ/)
-	n. cover
-dngoraa (/dŋǔ.ɾɶ᷉ɑ̯᷉/)
-	n. hat
-dngoghbgha (/dŋɯ̂ɡʰ.bɡʰɶ́/)
-	v. get
-dnginggghobhbni (/dŋy̌ŋ.ɡɡʰɯ̌b̪ʰ.bɱŷ/)
-	n. record
-dngeraddhob (/dŋî.ɾǎ.ddʰɒ᷉b/)
-	n. learning
-dghobhbaorarnge (/dɡʰúb̪ʰ.b̪áɯ̯̂.ɾɑ᷉ɾ.ŋǐ/)
-	n. prose
-dghorndhoarngao (/dɡʰǔɾɱ.dʰɒ̌ɶ̯́ɾ.ŋáɯ̯̂/)
-	n. weather
-dghongbhoabhb (/dɡʰɯ᷉ŋ.b̪ʰɒ̌ɶ̯́b̪ʰb/)
-	n. ball
-dghe (/dɡʰí/)
-	n. cause
-dghebhg (/dɡʰíbʰɡ/)
-	n. toe
-dgho (/dɡʰɒ́/)
-	adj. low
-dghombhon (/dɡʰɒ́m.b̪ʰɯ̌ɱ/)
-	n. brick
-dghomaghdharng (/dɡʰɒ̌.má.ɡʰdʰɶ̌ɾŋ/)
-	v. stand
-domghrorgh (/dúm.ɡʰɾɯ́ɾɡʰ/)
-	n. destruction
-dormon (/dúɾ.mɯ̌n/)
-	n. grass
-doranghorer (/dû.ɾán.ɡʰɯ̂.ɾîɾ/)
-	n. rhythm
-do (/dǔ/)
-	v. return
-dobh (/dǔbʰ/)
-	adj. complete
-dorg (/du᷉ɾɡ/)
-	n. basin
-dongdhirbhado (/du᷉ŋ.dʰy᷉ɾ.bʰɑ̂.dɯ̂/)
-	n. cord
-dorgho (/dɯ́ɾ.ɡʰɯ᷉/)
-	n. control
-doroaghbhabrob (/dɯ́.ɾûɶ̯̌.ɡʰb̪ʰɑ̂.bɾɯ̂b/)
-	n. verse
-dono (/dɯ̂.ɱɯ́/)
-	adj. dull
-dorindrogngri (/dɯ̂.ɾy̌ɱ.dɾɯ́.ɡŋɾy̌/)
-	v. fall
-donb (/dɯ̌ɱb̪/)
-	n. note
-dimdh (/dy̌mdʰ/)
-	n. pig
-dingor (/dy̌.ŋûɾ/)
-	n. drawer
-dighbhagh (/dy̌.ɡʰbʰâɡʰ/)
-	n. mist
-debh (/díbʰ/)
-	adj. rough
-degdhem (/dî.ɡdʰím/)
-	adj. solid
-derbhdha (/di᷉ɾ.b̪ʰdʰɑ́/)
-	n. throat
-dernoghar (/di᷉ɾ.nǔ.ɡʰâɾ/)
-	n. fish
-doramobhmirn (/dɒ̂.ɾa᷉.mɒ᷉.bʰmy᷉ɾɱ/)
-	n. vessel
-danerng (/dɑ́.ɱîɾŋ/)
-	v. open
-danoardhabdhordh (/dɑ̂.nɒ̌ɶ̯́ɾ.dʰɑ᷉.b̪dʰɒ̂ɾdʰ/)
-	n. letter
-da (/dɑ̌/)
-	n. boy
-darbarorg (/dɶ́ɾ.b̪ɑ́.ɾûɾɡ/)
-	adj. smooth
-daraabrormadh (/dɶ̌.ɾɶ᷉ɑ̯᷉.b̪ɾûɾ.mádʰ/)
-	n. engine
-damdhan (/dɶ᷉m.dʰɑ̂ɱ/)
-	v. leave
-damirabdhabh (/dá.my᷉.ɾâ.bdʰɶ᷉bʰ/)
-	adj. boiling
-dad (/dâd/)
-	n. society
-daribhe (/dǎ.ɾy̌.b̪ʰǐ/)
-	n. cloth
-dar (/da᷉ɾ/)
-	n. driving
-daranbhdamo (/da᷉.ɾa᷉ɱbʰ.dâ.mú/)
-	n. month
-doaneghb (/dûɶ̯̌.ɱîɡʰb/)
-	n. produce
-doargh (/dûɶ̯̌ɾɡʰ/)
-	n. science
-doannrerbh (/dɒ̌ɶ̯́.ɱɱɾíɾbʰ/)
-	v. develop
-daarbherng (/dɶ᷉ɑ̯᷉ɾ.b̪ʰǐɾŋ/)
-	n. debt
-daangarerro (/dɶ᷉ɑ̯᷉.ŋɶ̂.ɾi᷉.ɾɾɒ̂/)
-	n. desire
-daobhdoadhir (/dáɯ̯̂b̪ʰ.dɒ̌ɶ̯́.dʰŷɾ/)
-	n. organization
-dhmanghormbingbhdhabh (/dʰmɑ̌n.ɡʰɯ᷉ɾm.by᷉ŋ.b̪ʰdʰɑ̂bʰ/)
-	n. run
-dhmanghgaghorbhngoag (/dʰmɑ᷉ɱɡʰ.ɡɑ́.ɡʰɯ᷉ɾ.bʰŋɒ̌ɶ̯́ɡ/)
-	n. interest
-dhnorber (/dʰɱúɾ.b̪ǐɾ/)
-	n. son
-dhnemrog (/dʰɱǐ.mɾûɡ/)
-	n. frame
-dhnaroangghorngerm (/dʰɱɑ̌.ɾɒ̌ɶ̯́ŋ.ɡʰɒ́ɾn.ɡíɾm/)
-	adj. serious
-dhna (/dʰɱɑ᷉/)
-	n. damage
-dhnirbhobhghmaron (/dʰny̌ɾ.bʰɒ᷉.b̪ʰɡʰmɑ́.ɾɒ̂n/)
-	n. hook
-dhneror (/dʰnǐ.ɾɯ̂ɾ/)
-	n. bucket
-dhnegh (/dʰnǐɡʰ/)
-	adj. free
-dhnabhonbhobhag (/dʰnɶ̌.b̪ʰɯ̌ɱ.bʰɒ᷉.b̪ʰɑ̂ɡ/)
-	adj. electric
-dhro (/dʰɾɯ̂/)
-	v. help
-dhronmardbhime (/dʰɾɯ᷉.nma᷉ɾ.db̪ʰy̌.mí/)
-	n. copy
-dhrarg (/dʰɾɑ̌ɾɡ/)
-	n. copper
-dhroarnonggho (/dʰɾûɶ̯̌ɾ.ɱɯ᷉ŋ.ɡʰɯ́/)
-	adj. empty
-dhroarbhodh (/dʰɾɒ̌ɶ̯́ɾ.b̪ʰɒ̂dʰ/)
-	n. office
-dhngengdnamaa (/dʰŋi᷉ŋ.dɱɶ̌.mɶ᷉ɑ̯᷉/)
-	n. change
-dhnga (/dʰŋɑ̌/)
-	n. rain
-dhngangob (/dʰŋɑ᷉.ŋɯ̂b/)
-	n. move
-dhongar (/dʰún.ɡɶ́ɾ/)
-	n. death
-dhorbroabhdernroa (/dʰu᷉ɾ.bɾɒ̌ɶ̯́b̪ʰ.di᷉ɾ.ɱɾɒ̌ɶ̯́/)
-	adj. broken
-dhoghgirmadhgghaong (/dʰɯ́ɡʰ.ɡy̌ɾ.mɑ̂dʰ.ɡɡʰáɯ̯̂ŋ/)
-	n. example
-dhobbhanbhaar (/dʰɯ̌.bb̪ʰɶ᷉ɱ.bʰɶ᷉ɑ̯᷉ɾ/)
-	n. berry
-dhongghbaa (/dʰɯ̌ŋɡʰ.b̪ɶ᷉ɑ̯᷉/)
-	n. slip
-dhinondhom (/dʰŷ.nɒ᷉ɱ.dʰǔm/)
-	n. sort
-dhighroanggh (/dʰŷ.ɡʰɾɒ̌ɶ̯́ŋɡʰ/)
-	n. coal
-dhirror (/dʰy̌.ɾɾu᷉ɾ/)
-	n. suggestion
-dhirnghoa (/dʰy᷉ɾn.ɡʰûɶ̯̌/)
-	n. stem
-dher (/dʰǐɾ/)
-	n. pot
-dherda (/dʰǐɾ.dâ/)
-	adj. slow
-dhornengaob (/dʰɒ́ɾ.ɱi᷉.ŋáɯ̯̂b/)
-	n. danger
-dhorbroraarnraan (/dʰɒ́ɾ.b̪ɾu᷉.ɾɶ᷉ɑ̯᷉ɾ.ɱɾɶ᷉ɑ̯᷉n/)
-	n. business
-dhorerangg (/dʰɒ́.ɾí.ɾáŋɡ/)
-	v. buy
-dho (/dʰɒ̂/)
-	v. decide
-dhodmaro (/dʰɒ᷉.dmɶ̌.ɾú/)
-	v. win
-dhorn (/dʰɒ᷉ɾɱ/)
-	n. relation
-dhorn (/dʰɒ᷉ɾn/)
-	n. friend
-dharmo (/dʰɶ́ɾ.mɒ̂/)
-	n. baby
-dhaborrodhbe (/dʰɶ̂.b̪û.ɾɾɯ̌dʰ.bǐ/)
-	n. impulse
-dha (/dʰá/)
-	v. think
-dhagbhmangaar (/dʰâ.ɡb̪ʰmɑ̌.ŋɶ᷉ɑ̯᷉ɾ/)
-	n. committee
-dhoabhir (/dʰɒ̌ɶ̯́.b̪ʰŷɾ/)
-	v. eat
-dhoabhaa (/dʰɒ̌ɶ̯́.b̪ʰɶ᷉ɑ̯᷉/)
-	n. bell
-rorbhde (/ɾúɾb̪ʰ.di᷉/)
-	n. number
-rorng (/ɾûɾŋ/)
-	adj. right
-ron (/ɾu᷉ɱ/)
-	adj. same
-rorgha (/ɾu᷉ɾ.ɡʰɶ̂/)
-	v. hope
-rombhdorn (/ɾɯ̂mbʰ.dɯ̂ɾɱ/)
-	n. cough
-ro (/ɾɯ̌/)
-	n. breath
-	v. show
-rorm (/ɾɯ̌ɾm/)
-	adj. short
-rirbar (/ɾýɾ.b̪âɾ/)
-	n. drink
-rirbaarnombhbi (/ɾŷɾ.b̪ɶ᷉ɑ̯᷉ɾ.ɱúmbʰ.bŷ/)
-	adj. able
-rirngghaamirba (/ɾŷɾŋ.ɡʰɶ᷉ɑ̯᷉.mŷɾ.b̪â/)
-	v. tell
-ridnroarorn (/ɾy᷉.dɱɾûɶ̯̌.ɾu᷉ɾɱ/)
-	adj. left
-riroranern (/ɾy᷉.ɾu᷉.ɾɶ̌.ɱǐɾɱ/)
-	n. trousers
-rebhonngern (/ɾî.bʰɒ᷉.ɱŋǐɾɱ/)
-	adj. natural
-redhghonan (/ɾî.dʰɡʰɒ́.ɱɑ̂n/)
-	v. learn
-reroarnorghor (/ɾî.ɾɒ̌ɶ̯́ɾ.ɱúɾ.ɡʰɯ́ɾ/)
-	v. catch
-ro (/ɾɒ̌/)
-	adj. dependent
-rondi (/ɾɒ᷉n.dy̌/)
-	v. do
-rorghbo (/ɾɒ᷉ɾɡʰ.b̪ɯ̂/)
-	n. sex
-ra (/ɾɑ̂/)
-	n. lead
-rangornedgha (/ɾɑ̂ɱ.ɡu᷉ɾ.ɱǐ.dɡʰɑ̌/)
-	n. fruit
-rarm (/ɾɑ̂ɾm/)
-	adj. unnecessary
-rargimdhor (/ɾɑ̂ɾ.ɡy᷉m.dʰɯ̌ɾ/)
-	adj. poor
-rarnam (/ɾɑ̌ɾ.ɱɑ᷉m/)
-	adj. probable
-radhnorno (/ɾɑ᷉.dʰnɯ́ɾ.ɱɒ̌/)
-	adj. manual
-rardhabhdghar (/ɾɑ᷉ɾ.dʰâb̪ʰ.dɡʰâɾ/)
-	n. observation
-ramor (/ɾɶ́.mu᷉ɾ/)
-	n. shame
-rarbhbondhgoghba (/ɾɶ̂ɾbʰ.bɯ̂ɱdʰ.ɡɯ᷉ɡʰ.bɑ̌/)
-	n. match
-rabhmarino (/ɾɶ̌.b̪ʰmá.ɾy̌.nɒ̌/)
-	adj. stiff
-ranbhdorgorar (/ɾɶ̌nb̪ʰ.dɒ̂ɾ.ɡɒ́.ɾɑ̌ɾ/)
-	n. whistle
-ranbardhngaa (/ɾɶ᷉n.ba᷉ɾ.dʰŋɶ᷉ɑ̯᷉/)
-	adj. true
-rardhodhnemdh (/ɾɶ᷉ɾ.dʰu᷉.dʰɱímdʰ/)
-	adj. parallel
-radh (/ɾâdʰ/)
-	adj. shut
-rari (/ɾâ.ɾŷ/)
-	n. step
-raraarbam (/ɾâ.ɾɶ᷉ɑ̯᷉ɾ.bɶ́m/)
-	adj. peaceful
-rangdhangdhnarna (/ɾâŋ.dʰɶ̌ŋ.dʰnɑ̂ɾ.na᷉/)
-	adj. dear
-roarongarn (/ɾɒ̌ɶ̯́.ɾǔ.ŋɶ́ɾn/)
-	adj. private
-roanger (/ɾɒ̌ɶ̯́.ŋîɾ/)
-	adj. certain
-raanbhmaranb (/ɾɶ᷉ɑ̯᷉ɱ.bʰmɑ̂.ɾɑ̂nb/)
-	n. leaf
-raor (/ɾáɯ̯̂ɾ/)
-	n. nut
-	n. quality
-raorgon (/ɾáɯ̯̂ɾ.ɡɯ̂ɱ/)
-	v. come
-raori (/ɾáɯ̯̂.ɾy᷉/)
-	n. wave
-ngrirarn (/ŋɾŷ.ɾɶ́ɾn/)
-	n. family
-ngrarbghorni (/ŋɾɑ̂ɾ.bɡʰǔɾ.ɱy᷉/)
-	adj. necessary
-ngrararghraamg (/ŋɾɶ́.ɾɑ̂ɾ.ɡʰɾɶ᷉ɑ̯᷉mɡ/)
-	n. judge
-ngranonghir (/ŋɾa᷉.ɱɒ᷉ɱ.ɡʰŷɾ/)
-	adj. dirty
-ngirre (/ŋy᷉.ɾɾî/)
-	adj. living
-ngebhboa (/ŋǐbʰ.b̪ɒ̌ɶ̯́/)
-	n. religion
-ngedharmongbroanbh (/ŋǐ.dʰǎɾ.mɯ̂ŋ.bɾɒ̌ɶ̯́ɱb̪ʰ/)
-	n. morning
-nga (/ŋɑ̂/)
-	adj. good
-ngagharnarbha (/ŋɶ́.ɡʰâɾ.ɱáɾ.b̪ʰɑ́/)
-	n. pipe
-nga (/ŋɶ̂/)
-	adj. unconscious
-ngarndoarngor (/ŋɶ̂ɾn.dûɶ̯̌ɾ.ŋɒ̌ɾ/)
-	n. net
-nganoabhrerdhni (/ŋɶ᷉.ɱɒ̌ɶ̯́.b̪ʰɾi᷉ɾ.dʰɱy̌/)
-	v. run
-ngan (/ŋɶ᷉n/)
-	v. stop
-ngangordham (/ŋɶ᷉.ŋǔɾ.dʰám/)
-	n. metal
-nganbhrarghnonab (/ŋǎɱ.b̪ʰɾɶ̌ɾ.ɡʰɱɯ̂.nɑ᷉b̪/)
-	n. leg
-ngaara (/ŋɶ᷉ɑ̯᷉.ɾɑ̂/)
-	n. town
-ngaangbharbhbhogha (/ŋɶ᷉ɑ̯᷉ŋ.b̪ʰǎɾ.bʰbʰɒ̂.ɡʰɶ᷉/)
-	n. smile
-ngaorbhborbdha (/ŋáɯ̯̂ɾb̪ʰ.bɒ́ɾ.bdʰɑ᷉/)
-	n. care
-gmor (/ɡmúɾ/)
-	v. say
-gmodhon (/ɡmɒ́.dʰɯ́ɱ/)
-	adj. open
-gmanbghinodhb (/ɡmɑ̌ɱ.b̪ɡʰy̌.ɱɯ᷉dʰb̪/)
-	n. humor
-gbhodhb (/ɡbʰɒ̂dʰb/)
-	n. scissors
-gbharomgherdharng (/ɡbʰɑ́.ɾúm.ɡʰǐɾ.dʰa᷉ɾŋ/)
-	n. jelly
-gbhagroghongbhor (/ɡbʰɑ̌.ɡɾɒ̂.ɡʰɯ́ŋ.b̪ʰûɾ/)
-	n. trick
-gnor (/ɡɱúɾ/)
-	adj. straight
-gnobh (/ɡɱɒ́bʰ/)
-	adj. unable
-gbhordhoaghbor (/ɡb̪ʰǔɾ.dʰɒ̌ɶ̯́ɡʰ.bǔɾ/)
-	n. fork
-gbho (/ɡb̪ʰu᷉/)
-	n. spoon
-gbhorbhbaonama (/ɡb̪ʰɯ̂ɾb̪ʰ.báɯ̯̂.ɱɶ᷉.mɶ̌/)
-	n. color
-gbhi (/ɡb̪ʰý/)
-	adj. uncertain
-gbhirg (/ɡb̪ʰŷɾɡ/)
-	n. circle
-gbhora (/ɡb̪ʰɒ́.ɾɑ́/)
-	n. shoe
-gbharbhngarnbhirar (/ɡb̪ʰɑ̌ɾ.bʰŋa᷉ɾɱ.bʰý.ɾɑ᷉ɾ/)
-	adj. elastic
-gbhadheminor (/ɡb̪ʰɶ̌.dʰí.mý.nɒ᷉ɾ/)
-	n. lip
-gbha (/ɡb̪ʰǎ/)
-	n. event
-gbhabhro (/ɡb̪ʰa᷉.b̪ʰɾɒ̌/)
-	n. lock
-gnor (/ɡnɒ̂ɾ/)
-	n. blood
-gnoghan (/ɡnɒ̂.ɡʰa᷉n/)
-	n. thought
-gna (/ɡnɶ᷉/)
-	n. paste
-gdhornbharngheb (/ɡdʰûɾn.b̪ʰɶ́ɾɱ.ɡʰǐb̪/)
-	n. watch
-gdhomghbor (/ɡdʰɒ̌mɡʰ.b̪ûɾ/)
-	n. ornament
-grorbhaanghorme (/ɡɾɒ̂ɾ.bʰɶ᷉ɑ̯᷉ɱ.ɡʰûɾ.mî/)
-	n. print
-grarani (/ɡɾɑ̂.ɾa᷉.nŷ/)
-	v. draw
-groanbhboabongnro (/ɡɾɒ̌ɶ̯́nbʰ.bûɶ̯̌.b̪ɯ̌.ŋɱɾɒ̌/)
-	n. button
-graa (/ɡɾɶ᷉ɑ̯᷉/)
-	n. account
-graararo (/ɡɾɶ᷉ɑ̯᷉.ɾɑ́.ɾɒ᷉/)
-	n. end
-gghoghbhornbaghdar (/ɡɡʰɯ᷉.ɡʰbʰɒ̂ɾn.b̪ɑ́ɡʰ.dɑ̂ɾ/)
-	n. doubt
-gghenghbhangharnbhorn (/ɡɡʰîn.ɡʰbʰa᷉ɱ.ɡʰa᷉ɾɱ.b̪ʰǔɾn/)
-	n. word
-gomre (/ɡú.mɾí/)
-	adj. violent
-gondo (/ɡún.dú/)
-	n. instrument
-go (/ɡu᷉/)
-	n. sense
-gornaghbargoang (/ɡɯ́ɾ.nɑ᷉ɡʰ.bâɾ.ɡûɶ̯̌ŋ/)
-	n. insect
-gomdhandhbarar (/ɡɯ̂m.dʰɑ̌ɱdʰ.bǎ.ɾɶ́ɾ/)
-	n. wax
-gomirdh (/ɡɯ̂.my᷉ɾdʰ/)
-	n. mountain
-gobhnrengngonbbha (/ɡɯ̂.b̪ʰɱɾîn.ɡŋɒ́n.b̪b̪ʰɑ᷉/)
-	n. pleasure
-gobhi (/ɡɯ̌.bʰy̌/)
-	adj. safe
-gorghbandhabhg (/ɡɯ᷉ɾɡʰ.bân.dʰɶ̂bʰɡ/)
-	n. orange
-gonggh (/ɡɯ᷉ŋɡʰ/)
-	v. remember
-gi (/ɡŷ/)
-	n. cat
-ginarirngordh (/ɡy̌.nɑ᷉.ɾŷɾ.ŋu᷉ɾdʰ/)
-	n. fight
-germbhinngig (/ɡǐɾm.bʰy̌.nŋŷɡ/)
-	n. offer
-gerbhrirmdhe (/ɡǐɾ.b̪ʰɾy̌ɾm.dʰî/)
-	n. decision
-gor (/ɡɒ́ɾ/)
-	n. building
-gonbhdhonirbh (/ɡɒ̌n.bʰdʰú.ɱy᷉ɾbʰ/)
-	n. increase
-goghb (/ɡɒ̌ɡʰb̪/)
-	adj. dangerous
-gor (/ɡɒ᷉ɾ/)
-	n. stamp
-ga (/ɡɑ̌/)
-	n. thumb
-	v. include
-garberngbhadhb (/ɡɑ᷉ɾ.bíɾŋ.bʰɑ᷉dʰb̪/)
-	n. operation
-gadghenngoab (/ɡɶ̌.dɡʰî.nŋûɶ̯̌b̪/)
-	adj. beautiful
-gangbongbh (/ɡɶ̌ŋ.bɯ̂ŋbʰ/)
-	v. choose
-ganangdha (/ɡɶ᷉.ɱɶ᷉ŋ.dʰâ/)
-	v. mean
-garir (/ɡɶ᷉.ɾŷɾ/)
-	n. limit
-gabhrarorni (/ɡá.b̪ʰɾɶ̌.ɾɯ̌ɾ.ɱy᷉/)
-	n. flight
-garorbh (/ɡa᷉.ɾǔɾb̪ʰ/)
-	adj. material
-goanbhodh (/ɡûɶ̯̌ɱ.bʰɒ̌dʰ/)
-	n. fact
-gaam (/ɡɶ᷉ɑ̯᷉m/)
-	v. feel
-gaoraombharoad (/ɡáɯ̯̂.ɾáɯ̯̂m.bʰɶ̌.ɾɒ̌ɶ̯́d/)
-	n. sign
-ghnaa (/ɡʰɱɶ᷉ɑ̯᷉/)
-	n. invention
-ghnaangor (/ɡʰɱɶ᷉ɑ̯᷉.ŋǔɾ/)
-	v. be
-ghroragha (/ɡʰɾɯ́.ɾɶ́.ɡʰɶ̌/)
-	n. ring
-ghrormgar (/ɡʰɾɯ̂ɾm.ɡɶ̂ɾ/)
-	n. linen
-ghrabharem (/ɡʰɾɶ̂.bʰɶ́.ɾi᷉m/)
-	n. attention
-ghrangbharbhbhoda (/ɡʰɾâŋ.bʰáɾ.bʰbʰɯ̌.da᷉/)
-	adj. possible
-ghngenbharordhag (/ɡʰŋi᷉ɱ.bʰɑ᷉.ɾɯ́ɾ.dʰɶ᷉ɡ/)
-	n. apparatus
-ghngorngdhorngrobh (/ɡʰŋɒ̂ɾŋ.dʰúɾ.ŋɾu᷉bʰ/)
-	n. light
-ghngor (/ɡʰŋɒ̌ɾ/)
-	n. year
-ghngamghdi (/ɡʰŋɶ̂mɡʰ.dŷ/)
-	v. work
-ghngarb (/ɡʰŋɶ᷉ɾb̪/)
-	v. carry
-ghobhnoaraomg (/ɡʰǔ.b̪ʰɱɒ̌ɶ̯́.ɾáɯ̯̂mɡ/)
-	n. dog
-ghongghongbnarng (/ɡʰǔŋ.ɡʰɯ́ŋ.b̪ɱǎɾŋ/)
-	adj. ready
-ghorgharo (/ɡʰu᷉ɾ.ɡʰâ.ɾɒ̌/)
-	n. use
-ghonoghbadhgha (/ɡʰɯ́.núɡʰ.bá.dʰɡʰâ/)
-	adj. fertile
-ghorbhbagh (/ɡʰɯ̂ɾbʰ.bɶ̌ɡʰ/)
-	v. raise
-ghorningodh (/ɡʰɯ̂ɾ.nŷ.ŋûdʰ/)
-	n. point
-ghori (/ɡʰɯ̂.ɾý/)
-	n. card
-ghirgagh (/ɡʰŷɾ.ɡɶ́ɡʰ/)
-	adj. soft
-gherb (/ɡʰíɾb/)
-	adj. expensive
-gherdnarbharm (/ɡʰíɾ.dɱáɾ.bʰɶ᷉ɾm/)
-	n. army
-gherg (/ɡʰíɾɡ/)
-	v. stay
-ghemghobhar (/ɡʰi᷉m.ɡʰǔ.bʰǎɾ/)
-	v. lose
-ghorng (/ɡʰɒ̌ɾŋ/)
-	n. bed
-ghorngoreghgma (/ɡʰɒ̌ɾ.ŋɒ́.ɾǐɡʰ.ɡmɑ᷉/)
-	n. hate
-gho (/ɡʰɒ᷉/)
-	n. stage
-gha (/ɡʰɑ́/)
-	n. existence
-ghani (/ɡʰɑ̂.ný/)
-	n. skirt
-ghanerbhbarngdha (/ɡʰɑ̂.nîɾbʰ.b̪áɾŋ.dʰa᷉/)
-	n. sky
-ghardenmorraa (/ɡʰɑ̌ɾ.dǐ.ɱmɯ̂.ɾɾɶ᷉ɑ̯᷉/)
-	n. iron
-gharo (/ɡʰɶ̂.ɾɯ́/)
-	adj. normal
-ghangha (/ɡʰɶ̌n.ɡʰɑ̂/)
-	adj. flat
-ghangbhbhodharndhen (/ɡʰɶ̌ŋ.bʰbʰɯ̌.dʰɶ̂ɾn.dʰi᷉ɱ/)
-	n. mark
-ghabhni (/ɡʰɶ᷉.b̪ʰny̌/)
-	n. wash
-ghabhbhorob (/ɡʰá.bʰbʰɯ̌.ɾǔb̪/)
-	adj. wise
-ghadhgbhoroamor (/ɡʰádʰ.ɡb̪ʰɯ́.ɾɒ̌ɶ̯́.mɯ̂ɾ/)
-	adj. single
-gharar (/ɡʰá.ɾɑ̂ɾ/)
-	adj. female
-gha (/ɡʰâ/)
-	n. digestion
-ghanbhi (/ɡʰâɱ.b̪ʰy᷉/)
-	n. earth
-ghang (/ɡʰa᷉ŋ/)
-	n. field
-ghoa (/ɡʰɒ̌ɶ̯́/)
-	v. offer
-o (/ú/)
-	n. journey
-	n. potato
-obhbraarmdobh (/úbʰ.b̪ɾɶ᷉ɑ̯᷉ɾm.dɒ̂b̪ʰ/)
-	adj. high
-obhngadhda (/ú.bʰŋɶ̌dʰ.dɑ᷉/)
-	n. history
-onornonagh (/ú.ɱɒ᷉ɾ.ɱu᷉.nɶ᷉ɡʰ/)
-	n. level
-od (/úd/)
-	n. jump
-odham (/ú.dʰâm/)
-	n. motion
-ornodbhno (/úɾ.ɱɯ᷉.dbʰnû/)
-	adj. public
-orbhar (/úɾ.b̪ʰɑ̂ɾ/)
-	n. thread
-ornombhormghobh (/úɾ.nɒ̂m.b̪ʰu᷉ɾm.ɡʰɯ̂b̪ʰ/)
-	v. consider
-ongghdoarnoghngrang (/úŋɡʰ.dɒ̌ɶ̯́ɾ.ɱɯ̌.ɡʰŋɾɑ̌ŋ/)
-	adj. general
-ogab (/ú.ɡɶ̌b/)
-	n. plant
-o (/û/)
-	n. dust
-ondhmirn (/ûn.dʰmŷɾɱ/)
-	n. scale
-orn (/ûɾn/)
-	n. reaction
-orng (/ûɾŋ/)
-	n. direction
-orngghernarbhgor (/ûɾŋ.ɡʰíɾ.ɱa᷉ɾb̪ʰ.ɡu᷉ɾ/)
-	adj. hanging
-ora (/û.ɾɑ᷉/)
-	n. time
-oroarangghnga (/û.ɾɒ̌ɶ̯́.ɾɑ̂ŋ.ɡʰŋɑ᷉/)
-	adj. equal
-ongbarmbogaa (/ûŋ.bɶ̂ɾm.b̪ɯ̂.ɡɶ᷉ɑ̯᷉/)
-	n. smash
-ogaarorer (/û.ɡɶ᷉ɑ̯᷉.ɾɯ᷉.ɾǐɾ/)
-	n. credit
-omgho (/ǔm.ɡʰu᷉/)
-	n. twist
-obana (/ǔ.b̪á.nɶ̌/)
-	n. sock
-ondh (/ǔndʰ/)
-	v. teach
-onir (/ǔ.nŷɾ/)
-	n. play
-odherighba (/ǔ.dʰî.ɾŷɡʰ.b̪â/)
-	n. edge
-orna (/ǔɾ.nɑ᷉/)
-	n. mouth
-ornoarbogh (/ǔɾ.nɒ̌ɶ̯́ɾ.bǔɡʰ/)
-	n. apple
-orrorngarbhmaargh (/ǔ.ɾɾu᷉ɾɱ.ɡɑ᷉ɾ.bʰmɶ᷉ɑ̯᷉ɾɡʰ/)
-	adj. independent
-oromaraar (/ǔ.ɾɯ̂.mɑ̌.ɾɶ᷉ɑ̯᷉ɾ/)
-	n. minute
-o (/u᷉/)
-	n. company
-	v. call
-	adj. bitter
-omi (/u᷉.mŷ/)
-	n. blow
-omarnorbob (/u᷉.máɾ.nɒ᷉ɾ.bɒ̂b̪/)
-	adj. unready
-obhdindoargh (/u᷉bʰ.dy̌n.dûɶ̯̌ɾɡʰ/)
-	n. sun
-obhd (/u᷉b̪ʰd/)
-	n. branch
-obhraronb (/u᷉.b̪ʰɾɶ̌.ɾu᷉nb/)
-	n. tongue
-obhoredhb (/u᷉.b̪ʰɯ᷉.ɾǐdʰb/)
-	n. ice
-or (/u᷉ɾ/)
-	adj. happy
-orbhar (/u᷉ɾ.bʰɶ̂ɾ/)
-	adj. cold
-ornghandhaormaar (/u᷉ɾn.ɡʰɶ᷉ɱ.dʰáɯ̯̂ɾ.mɶ᷉ɑ̯᷉ɾ/)
-	n. cloud
-orngaarbobhbang (/u᷉ɾ.ŋɶ᷉ɑ̯᷉ɾ.bɒ̂bʰ.b̪âŋ/)
-	n. form
-ongbbhobingoa (/u᷉ŋ.bbʰɯ̌.b̪ŷ.ŋûɶ̯̌/)
-	adj. future
-oghda (/u᷉ɡʰ.dâ/)
-	n. foot
-o (/ɯ́/)
-	n. tooth
-	v. serve
-	adj. infertile
-obhngarbbharrar (/ɯ́.bʰŋa᷉ɾ.b̪b̪ʰɑ᷉.ɾɾáɾ/)
-	n. umbrella
-onirbhgarghngan (/ɯ́.nýɾbʰ.ɡɶ̂ɾ.ɡʰŋa᷉n/)
-	n. face
-ormarnghagbhrorgh (/ɯ́ɾ.mɶ̌ɾɱ.ɡʰǎ.ɡb̪ʰɾɒ̂ɾɡʰ/)
-	v. write
-ordhadhra (/ɯ́ɾ.dʰɶ̌.dʰɾɶ̌/)
-	adj. small
-origh (/ɯ́.ɾýɡʰ/)
-	n. reading
-ondnaroraorn (/ɯ̂ɱ.dɱǎ.ɾɯ̌.ɾáɯ̯̂ɾn/)
-	n. detail
-odhnoreri (/ɯ̂.dʰɱɒ᷉.ɾǐ.ɾy᷉/)
-	n. swim
-or (/ɯ̂ɾ/)
-	n. love
-	adj. responsible
-orbbhaghgmabhrirdh (/ɯ̂ɾ.bbʰɑ́ɡʰ.ɡmɑ᷉.bʰɾýɾdʰ/)
-	n. respect
-ornbhorngo (/ɯ̂ɾɱ.b̪ʰûɾ.ŋɒ́/)
-	n. moon
-orng (/ɯ̂ɾŋ/)
-	adj. great
-ora (/ɯ̂.ɾá/)
-	adj. regular
-o (/ɯ̌/)
-	adj. fat
-ombhbhorerri (/ɯ̌m.b̪ʰbʰɒ́.ɾǐ.ɾɾý/)
-	v. begin
-obhobhghabh (/ɯ̌.b̪ʰu᷉.b̪ʰɡʰɑ᷉b̪ʰ/)
-	n. money
-onghbeno (/ɯ̌nɡʰ.bi᷉.ɱǔ/)
-	v. kill
-od (/ɯ̌d/)
-	n. wine
-or (/ɯ̌ɾ/)
-	n. oven
-ormerghenir (/ɯ̌ɾ.mi᷉ɾ.ɡʰî.nýɾ/)
-	n. room
-ormare (/ɯ̌ɾ.mɶ̂.ɾǐ/)
-	n. rat
-ornbarodhnrarm (/ɯ̌ɾɱ.bɶ᷉.ɾɒ́.dʰnɾɑ́ɾm/)
-	n. talk
-orerard (/ɯ̌.ɾǐ.ɾɶ̌ɾd/)
-	adj. feeble
-ogh (/ɯ̌ɡʰ/)
-	adj. strong
-oghnobmardo (/ɯ̌.ɡʰnɒ̌.b̪máɾ.du᷉/)
-	n. waste
-oghabhbnge (/ɯ̌.ɡʰâb̪ʰ.b̪ŋi᷉/)
-	adj. chief
-o (/ɯ᷉/)
-	n. man
-	n. structure
-obbhngarngir (/ɯ᷉.bbʰŋɑ́ɾ.ŋýɾ/)
-	n. push
-obhribh (/ɯ᷉.bʰɾŷbʰ/)
-	n. trade
-obhger (/ɯ᷉b̪ʰ.ɡi᷉ɾ/)
-	n. comparison
-onbhonerng (/ɯ᷉n.bʰǔ.nîɾŋ/)
-	n. cow
-onare (/ɯ᷉.nɶ̌.ɾí/)
-	n. walk
-ormdhendh (/ɯ᷉ɾm.dʰǐɱdʰ/)
-	v. die
-ornghonghgiraa (/ɯ᷉ɾn.ɡʰɒ̂ɱɡʰ.ɡŷ.ɾɶ᷉ɑ̯᷉/)
-	n. person
-orghbhor (/ɯ᷉ɾ.ɡʰbʰɒ̂ɾ/)
-	n. street
-orabhgirar (/ɯ᷉.ɾɶ́b̪ʰ.ɡŷ.ɾɑ̂ɾ/)
-	n. horse
-orararngoa (/ɯ᷉.ɾɶ̂.ɾɑ́ɾɱ.ɡɒ̌ɶ̯́/)
-	adj. sudden
-i (/ý/)
-	n. space
-ir (/ýɾ/)
-	n. nation
-irmoghbo (/ýɾ.mɒ́ɡʰ.b̪û/)
-	n. polish
-irnaoghmoa (/ýɾ.ɱáɯ̯̂.ɡʰmûɶ̯̌/)
-	n. collar
-irighoar (/ý.ɾŷ.ɡʰûɶ̯̌ɾ/)
-	v. ask
-ire (/ý.ɾî/)
-	n. plate
-iraodhnaonbhror (/ý.ɾáɯ̯̂.dʰɱáɯ̯̂ɱ.b̪ʰɾɯ᷉ɾ/)
-	n. arch
-ingdeghor (/ýŋ.dǐ.ɡʰɯ̂ɾ/)
-	n. stocking
-ighbor (/ýɡʰ.bɯ̌ɾ/)
-	v. seem
-i (/ŷ/)
-	n. feather
-	n. fire
-	n. news
-	v. believe
-ibhbhoraor (/ŷ.b̪ʰbʰɯ̂.ɾáɯ̯̂ɾ/)
-	n. amount
-in (/ŷn/)
-	n. look
-idrabh (/ŷ.dɾǎbʰ/)
-	n. library
-irn (/ŷɾɱ/)
-	n. competition
-irinbhorir (/ŷ.ɾýɱ.b̪ʰû.ɾy̌ɾ/)
-	n. transport
-ira (/ŷ.ɾa᷉/)
-	adj. physical
-ibh (/y̌b̪ʰ/)
-	v. build
-ir (/y̌ɾ/)
-	n. sail
-	adj. perpendicular
-irmbaredhor (/y̌ɾm.ba᷉.ɾí.dʰu᷉ɾ/)
-	n. bone
-irmorbhir (/y̌ɾ.mɒ̌ɾ.bʰŷɾ/)
-	n. bag
-irnoa (/y̌ɾ.ɱɒ̌ɶ̯́/)
-	n. kick
-irghongh (/y̌ɾ.ɡʰǔɱɡʰ/)
-	n. sister
-ing (/y̌ŋ/)
-	v. keep
-i (/y᷉/)
-	n. curve
-	v. take
-inbirdh (/y᷉ɱ.b̪ŷɾdʰ/)
-	adj. wide
-inbhararngen (/y᷉ɱ.b̪ʰɑ̌.ɾɑ̂ɾ.ŋín/)
-	adj. past
-inbhir (/y᷉n.bʰýɾ/)
-	n. road
-inbdhamenbh (/y᷉n.b̪dʰɶ᷉.mǐnb̪ʰ/)
-	n. fowl
-ir (/y᷉ɾ/)
-	n. act
-	n. substance
-irm (/y᷉ɾm/)
-	v. give
-irmgherbhro (/y᷉ɾm.ɡʰǐɾ.bʰɾɯ̌/)
-	n. connection
-iror (/y᷉.ɾûɾ/)
-	n. tail
-iroa (/y᷉.ɾûɶ̯̌/)
-	n. hour
-ighe (/y᷉.ɡʰí/)
-	n. order
-embbharn (/ím.bb̪ʰɑ᷉ɾɱ/)
-	n. turn
-emanbhda (/í.mɑ᷉ɱbʰ.dɑ᷉/)
-	n. plow
-ebhdghingbanbhdhi (/íb̪ʰ.dɡʰy̌ŋ.b̪ɶ̂n.b̪ʰdʰy̌/)
-	v. sit
-ebhor (/í.b̪ʰɒ᷉ɾ/)
-	n. size
-er (/íɾ/)
-	adj. opaque
-ermera (/íɾ.mí.ɾɑ̂/)
-	adj. hard
-ermom (/íɾ.mɒ́m/)
-	n. fiction
-erbhraghgngibhghri (/íɾ.bʰɾɑ̌ɡʰ.ɡŋý.bʰɡʰɾŷ/)
-	adj. infrequent
-erdhghenghdarnor (/íɾ.dʰɡʰínɡʰ.dɑ᷉ɾ.ɱɒ᷉ɾ/)
-	n. side
-erorm (/í.ɾɯ̂ɾm/)
-	n. silver
-eghoamb (/í.ɡʰɒ̌ɶ̯́mb/)
-	n. animal
-e (/î/)
-	n. lift
-	adj. awake
-en (/îɱ/)
-	adj. married
-ebaoghbhmomghnar (/î.b̪áɯ̯̂.ɡʰbʰmúm.ɡʰɱɶ́ɾ/)
-	n. stomach
-enbghadhoarbh (/în.bɡʰǎ.dʰûɶ̯̌ɾb̪ʰ/)
-	adj. simple
-er (/îɾ/)
-	n. thing
-ernbhonghbe (/îɾɱ.b̪ʰɯ́ɱɡʰ.b̪í/)
-	n. base
-erd (/îɾd/)
-	n. ink
-e (/ǐ/)
-	n. porter
-emnarmorborm (/ǐ.mɱɶ̌ɾ.mɒ̂ɾ.b̪úɾm/)
-	n. camera
-endhobhdhngarnger (/ǐɱ.dʰɯ́.bʰdʰŋɶ̂ɾɱ.ɡíɾ/)
-	n. crush
-endhimrom (/ǐɱ.dʰý.mɾɒ̂m/)
-	adj. apolitical
-ebdhmirare (/ǐ.b̪dʰmy᷉.ɾɑ̂.ɾî/)
-	n. expansion
-edhbamir (/ǐdʰ.b̪ɑ̌.mýɾ/)
-	v. reach
-erngbiroranbh (/ǐɾŋ.bý.ɾɒ̂.ɾɶ́ɱbʰ/)
-	v. try
-erngbhar (/ǐɾŋ.bʰɶ᷉ɾ/)
-	n. hearing
-engbodhdorongdh (/ǐŋ.bu᷉dʰ.dɒ̌.ɾɯ᷉ŋdʰ/)
-	n. power
-engadh (/ǐ.ŋǎdʰ/)
-	n. hair
-e (/i᷉/)
-	n. cup
-enongna (/i᷉.nǔ.ŋɱǎ/)
-	n. rest
-edh (/i᷉dʰ/)
-	n. owner
-erno (/i᷉ɾ.ɱɒ̌/)
-	n. brain
-erdigormror (/i᷉ɾ.dy̌.ɡɯ̂ɾ.mɾɒ́ɾ/)
-	n. country
-erghbhir (/i᷉ɾ.ɡʰbʰy᷉ɾ/)
-	n. glass
-eronbhangongh (/i᷉.ɾún.b̪ʰá.ŋɒ́nɡʰ/)
-	n. chain
-erorngdhar (/i᷉.ɾǔɾŋ.dʰɑ́ɾ/)
-	n. question
-eronbhobhboan (/i᷉.ɾɒ́ɱ.bʰɒ̌b̪ʰ.bɒ̌ɶ̯́ɱ/)
-	n. tree
-eranbgho (/i᷉.ɾɑ́n.bɡʰɯ́/)
-	v. meet
-eraminga (/i᷉.ɾɑ᷉.my̌.ŋɑ᷉/)
-	n. peace
-eghgaarmorn (/i᷉ɡʰ.ɡɶ᷉ɑ̯᷉ɾ.mɒ᷉ɾn/)
-	adj. bent
-onadhbhe (/ɒ́.ɱǎ.dʰb̪ʰí/)
-	n. woman
-or (/ɒ́ɾ/)
-	n. government
-	n. poison
-ormbo (/ɒ́ɾm.bú/)
-	n. heat
-ormroghonna (/ɒ́ɾ.mɾɒ́.ɡʰu᷉.nɱɑ̌/)
-	adj. brief
-orbhbir (/ɒ́ɾbʰ.b̪y̌ɾ/)
-	n. discussion
-orngonorn (/ɒ́ɾ.ŋɯ́.nɒ̂ɾɱ/)
-	v. live
-orongor (/ɒ́.ɾɯ́ɱ.ɡɯ᷉ɾ/)
-	n. stick
-ongaghgeram (/ɒ́.ŋɶ̌ɡʰ.ɡí.ɾɑ̂m/)
-	n. snake
-o (/ɒ̂/)
-	n. exchange
-	n. silk
-obhbharng (/ɒ̂.bʰbʰɑ᷉ɾŋ/)
-	n. sand
-onongor (/ɒ̂.ɱɯ᷉.ŋɯ̌ɾ/)
-	n. position
-onernganbhang (/ɒ̂.ɱîɾ.ŋɑ́n.bʰɑ́ŋ/)
-	n. angle
-onaorom (/ɒ̂.ɱáɯ̯̂.ɾɯ́m/)
-	n. rate
-odhmrororm (/ɒ̂.dʰmɾú.ɾɯ᷉ɾm/)
-	n. ticket
-ormirnnin (/ɒ̂ɾ.mýɾ.ɱny̌n/)
-	n. window
-orn (/ɒ̂ɾn/)
-	n. condition
-ornrang (/ɒ̂ɾ.nɾɶ̌ŋ/)
-	n. square
-orngaaran (/ɒ̂ɾ.ŋɶ᷉ɑ̯᷉.ɾɶ̂n/)
-	n. farm
-orongaar (/ɒ̂.ɾǔ.ŋɶ᷉ɑ̯᷉ɾ/)
-	n. writing
-ororbhbhengdho (/ɒ̂.ɾɯ᷉ɾ.bʰbʰǐŋ.dʰu᷉/)
-	n. sound
-oghang (/ɒ̂.ɡʰɑ̂ŋ/)
-	n. star
-o (/ɒ̌/)
-	v. let
-ombhordh (/ɒ̌m.bʰɒ̂ɾdʰ/)
-	adj. improbable
-obhorirno (/ɒ̌.bʰú.ɾýɾ.nɯ̂/)
-	adj. foolish
-ondhebhermbharb (/ɒ̌ɱ.dʰí.b̪ʰîɾm.b̪ʰɑ᷉ɾb̪/)
-	adj. automatic
-onngar (/ɒ̌.ɱŋɑ̌ɾ/)
-	adj. important
-obhaarormor (/ɒ̌.b̪ʰɶ᷉ɑ̯᷉.ɾɒ̌ɾ.mu᷉ɾ/)
-	n. summer
-orbamghebmar (/ɒ̌ɾ.b̪ɑ́m.ɡʰi᷉.b̪mɶ̂ɾ/)
-	n. value
-ordhbhebhbaa (/ɒ̌ɾ.dʰbʰîb̪ʰ.b̪ɶ᷉ɑ̯᷉/)
-	adj. sad
-orgadnoroa (/ɒ̌ɾ.ɡɑ᷉.dnɯ̂.ɾɒ̌ɶ̯́/)
-	adj. false
-orghdorngonambh (/ɒ̌ɾɡʰ.dɒ̌ɾ.ŋu᷉.nɑ̌mb̪ʰ/)
-	v. hear
-ona (/ɒ᷉.ɱɑ̂/)
-	adj. shallow
-obhgombhnor (/ɒ᷉b̪ʰ.ɡɒ́m.b̪ʰɱɒ̌ɾ/)
-	n. part
-onghngorbharan (/ɒ᷉n.ɡʰŋɒ́ɾ.b̪ʰɑ̌.ɾán/)
-	adj. fast
-or (/ɒ᷉ɾ/)
-	n. station
-ong (/ɒ᷉ŋ/)
-	adj. rare
-ongorngabhghi (/ɒ᷉.ŋúɾ.ŋá.b̪ʰɡʰy̌/)
-	adj. early
-ababam (/ɑ́.bɑ́.ba᷉m/)
-	n. bridge
-ar (/ɑ́ɾ/)
-	n. steel
-armgherngon (/ɑ́ɾm.ɡʰi᷉ɾ.ŋɯ̂ɱ/)
-	n. coat
-argbharar (/ɑ́ɾ.ɡbʰɶ̂.ɾɑ̌ɾ/)
-	n. monkey
-arebho (/ɑ́.ɾí.bʰu᷉/)
-	n. garden
-arardhdho (/ɑ́.ɾǎɾ.dʰdʰɒ̂/)
-	n. crack
-angghoa (/ɑ́ŋ.ɡʰûɶ̯̌/)
-	n. rub
-angamordhao (/ɑ́.ŋɶ́.mɒ̂ɾ.dʰáɯ̯̂/)
-	adj. cut
-agbhirbhaghngo (/ɑ́.ɡb̪ʰy᷉ɾ.b̪ʰǎ.ɡʰŋu᷉/)
-	n. neck
-a (/ɑ̂/)
-	n. girl
-adhibhdhngengha (/ɑ̂.dʰŷ.bʰdʰŋi᷉n.ɡʰɑ̌/)
-	n. guide
-ar (/ɑ̂ɾ/)
-	n. chin
-	n. reward
-arbhombnorn (/ɑ̂ɾ.b̪ʰɯ̌m.b̪ɱu᷉ɾn/)
-	adj. loose
-arombhimdgherdh (/ɑ̂.ɾǔm.bʰým.dɡʰǐɾdʰ/)
-	n. knee
-ang (/ɑ̂ŋ/)
-	n. blade
-angbhoaringbibh (/ɑ̂ŋ.bʰɒ̌ɶ̯́.ɾy᷉ŋ.býbʰ/)
-	n. whip
-a (/ɑ̌/)
-	n. belief
-anarnggorbhe (/ɑ̌.ɱǎɾŋ.ɡǔɾ.b̪ʰi᷉/)
-	adj. special
-ar (/ɑ̌ɾ/)
-	n. wheel
-armodhor (/ɑ̌ɾ.mû.dʰɯ᷉ɾ/)
-	adj. silly
-arbharn (/ɑ̌ɾ.bʰɶ̌ɾɱ/)
-	n. sneeze
-arbherenmra (/ɑ̌ɾ.b̪ʰi᷉.ɾǐ.ɱmɾɑ᷉/)
-	adj. young
-agaorghoarbh (/ɑ̌.ɡáɯ̯̂ɾ.ɡʰɒ̌ɶ̯́ɾb̪ʰ/)
-	n. plane
-amghorngghar (/ɑ᷉m.ɡʰǔɾŋ.ɡʰɶ̌ɾ/)
-	n. tax
-abibhbagmra (/ɑ᷉.býbʰ.bɶ᷉.ɡmɾâ/)
-	n. voice
-aniro (/ɑ᷉.nŷ.ɾɯ̂/)
-	n. cook
-arbhdarm (/ɑ᷉ɾbʰ.da᷉ɾm/)
-	n. fly
-arngnirghnarngar (/ɑ᷉ɾ.ŋɱŷɾ.ɡʰɱɑ́ɾ.ŋɶ̂ɾ/)
-	adj. quiet
-arngodhdmib (/ɑ᷉ɾ.ŋɒ̌dʰ.dmy̌b/)
-	adj. gradual
-arghborarbhgab (/ɑ᷉ɾɡʰ.bú.ɾǎɾb̪ʰ.ɡáb/)
-	n. regret
-araongo (/ɑ᷉.ɾáɯ̯̂n.ɡɯ᷉/)
-	n. back
-angrerord (/ɑ᷉.ŋɾî.ɾúɾd/)
-	adj. incomplete
-agghngaarnar (/ɑ᷉.ɡɡʰŋɶ᷉ɑ̯᷉ɾ.ɱáɾ/)
-	n. clock
-agharaonb (/ɑ᷉.ɡʰǎ.ɾáɯ̯̂ɱb̪/)
-	adj. ugly
-a (/ɶ́/)
-	n. servant
-ambharndhobho (/ɶ́m.bʰɶ᷉ɾn.dʰɒ᷉.bʰú/)
-	v. set
-anbigongobh (/ɶ́ɱ.bŷ.ɡɒ́.ŋɒ᷉b̪ʰ/)
-	adj. male
-anghgho (/ɶ́n.ɡʰɡʰǔ/)
-	n. cry
-adh (/ɶ́dʰ/)
-	n. daughter
-adhbhngarnar (/ɶ́.dʰb̪ʰŋɶ̂ɾ.nâɾ/)
-	n. mass
-arnghomango (/ɶ́ɾɱ.ɡʰɯ̌.mǎ.ŋu᷉/)
-	n. balance
-arbhdadhborngorng (/ɶ́ɾb̪ʰ.dɑ᷉dʰ.b̪ɯ̌ɾ.ŋúɾŋ/)
-	n. weight
-arngirngbhabhgho (/ɶ́ɾn.ɡy̌ɾŋ.bʰɑ̂.b̪ʰɡʰû/)
-	n. jewel
-arnirnbinga (/ɶ́ɾ.ny̌ɾn.bŷ.ŋa᷉/)
-	n. hand
-arngdhaornera (/ɶ́ɾŋ.dʰáɯ̯̂ɾ.ɱí.ɾɑ᷉/)
-	n. powder
-agham (/ɶ́.ɡʰɑ̂m/)
-	n. opinion
-a (/ɶ̂/)
-	n. pin
-amebhb (/ɶ̂.míbʰb/)
-	v. use
-anbraobhrorin (/ɶ̂n.bɾáɯ̯̂.b̪ʰɾɒ́.ɾy᷉ɱ/)
-	v. explain
-ar (/ɶ̂ɾ/)
-	n. hole
-armongamb (/ɶ̂ɾ.mɒ̂.ŋa᷉mb/)
-	adj. healthy
-arbhroraro (/ɶ̂ɾ.bʰɾɒ̂.ɾɑ̌.ɾû/)
-	n. cheese
-arnbir (/ɶ̂ɾɱ.b̪y̌ɾ/)
-	n. goat
-arngoangerarbh (/ɶ̂ɾ.ŋûɶ̯̌n.ɡí.ɾɶ᷉ɾb̪ʰ/)
-	n. curtain
-arab (/ɶ̂.ɾa᷉b̪/)
-	n. way
-ang (/ɶ̂ŋ/)
-	n. heart
-aghorn (/ɶ̂.ɡʰɯ᷉ɾɱ/)
-	v. walk
-a (/ɶ̌/)
-	n. join
-	v. continue
-amdhaorgha (/ɶ̌m.dʰáɯ̯̂ɾ.ɡʰɑ́/)
-	adj. full
-anarndhoarghbharn (/ɶ̌.nɑ̌ɾn.dʰûɶ̯̌ɾ.ɡʰb̪ʰɶ́ɾn/)
-	n. comb
-anarngghanggod (/ɶ̌.na᷉ɾŋ.ɡʰǎŋ.ɡɒ̂d/)
-	n. advertisement
-arbhngo (/ɶ̌ɾ.b̪ʰŋɯ́/)
-	n. punishment
-arnorbhirndharn (/ɶ̌ɾ.nu᷉ɾ.bʰýɾn.dʰɶ̂ɾɱ/)
-	n. winter
-aringbherbomb (/ɶ̌.ɾy᷉ŋ.b̪ʰíɾ.bɯ᷉mb̪/)
-	n. loss
-arangarghraar (/ɶ̌.ɾǎn.ɡɶ́ɾ.ɡʰɾɶ᷉ɑ̯᷉ɾ/)
-	adj. hollow
-arar (/ɶ̌.ɾa᷉ɾ/)
-	adj. dry
-araorb (/ɶ̌.ɾáɯ̯̂ɾb/)
-	n. support
-angarmbhoandho (/ɶ̌.ŋâɾm.bʰûɶ̯̌n.dʰû/)
-	n. roof
-agnga (/ɶ̌.ɡŋâ/)
-	n. bite
-aghmrerbherghang (/ɶ̌.ɡʰmɾîɾ.bʰíɾ.ɡʰǎŋ/)
-	n. worm
-aghgobhbngarghonb (/ɶ̌ɡʰ.ɡu᷉bʰ.bŋɶ̂ɾ.ɡʰɯ᷉ɱb̪/)
-	n. board
-abhnogbhngan (/ɶ᷉.bʰnɒ̌.ɡb̪ʰŋâɱ/)
-	n. music
-abhader (/ɶ᷉.bʰɑ̌.dǐɾ/)
-	n. eye
-anarbhabhgmangh (/ɶ᷉.ɱǎɾ.b̪ʰâbʰ.ɡmɑ᷉nɡʰ/)
-	n. cushion
-armondhin (/ɶ᷉ɾ.mûn.dʰýɱ/)
-	n. canvas
-arnarbh (/ɶ᷉ɾ.na᷉ɾbʰ/)
-	n. boat
-arghnoraang (/ɶ᷉ɾ.ɡʰɱɒ̌.ɾɶ᷉ɑ̯᷉ŋ/)
-	n. spring
-angaghbo (/ɶ᷉.ŋɑ̂ɡʰ.bú/)
-	adj. present
-a (/á/)
-	n. disgust
-	n. nail
-andon (/áɱ.dɯ̌ɱ/)
-	n. gold
-anbar (/án.bɑ́ɾ/)
-	n. table
-adhmir (/á.dʰmy᷉ɾ/)
-	n. key
-arbngoabhbbhobhdhngon (/áɾ.bŋûɶ̯̌bʰ.bbʰǔ.bʰdʰŋɯ́n/)
-	n. gun
-arnarnrarbh (/áɾ.nɑ̌ɾ.ɱɾɶ̂ɾb̪ʰ/)
-	p. at
-argngoamb (/áɾ.ɡŋûɶ̯̌mb̪/)
-	n. group
-anbhobhbhnendghar (/âɱ.bʰǔ.b̪ʰbʰɱîn.dɡʰɶ᷉ɾ/)
-	v. watch
-anrorgnobhdon (/â.ɱɾɒ́ɾ.ɡnɒ᷉bʰ.du᷉n/)
-	adj. delicate
-abharobhg (/â.b̪ʰɑ̂.ɾûb̪ʰɡ/)
-	adj. strange
-angharnar (/ân.ɡʰɑ᷉ɾ.nɑ̌ɾ/)
-	n. chance
-arbhmonbhona (/âɾ.bʰmɯ́ɱ.b̪ʰɒ̂.nɶ̌/)
-	adj. skinny
-argbhidha (/âɾ.ɡb̪ʰý.dʰa᷉/)
-	n. front
-arenber (/â.ɾǐɱ.b̪ǐɾ/)
-	n. wood
-arangdhangdhbhar (/â.ɾɶ᷉ŋ.dʰɶ̂ŋ.dʰb̪ʰa᷉ɾ/)
-	n. island
-agonbhdomo (/â.ɡǔɱb̪ʰ.dɒ᷉.mɯ́/)
-	n. boot
-a (/ǎ/)
-	adj. irresponsible
-	adj. rich
-ambhonobhar (/ǎm.b̪ʰû.nɒ᷉.b̪ʰɑ́ɾ/)
-	n. page
-ab (/ǎb/)
-	n. prison
-abhghnoanbhoarnga (/ǎ.b̪ʰɡʰnûɶ̯̌n.b̪ʰûɶ̯̌ɾ.ŋâ/)
-	n. bird
-armghirnang (/ǎɾm.ɡʰŷɾ.ɱɶ̂ŋ/)
-	n. paint
-arn (/ǎɾɱ/)
+pralblaahhahhay (/pɹɑ᷉ʟ̥.bʎ̥ɑ̄ɶ̯᷉h̞.ɻ̠̟̊ɑ᷄.ɣh̞ɑ᷄j̊/)
 	adj. unimportant
-arna (/ǎɾ.ɱɶ̌/)
-	n. kettle
-arrarngbhighbrer (/ǎ.ɾɾɶ̌ɾŋ.bʰýɡʰ.b̪ɾîɾ/)
-	n. soap
-argghadh (/ǎɾ.ɡɡʰɑ̂dʰ/)
-	n. effect
-arorbhbo'o (/ǎ.ɾɒ̂ɾb̪ʰ.b̪ɯ́.ɯ́/)
-	n. addition
-a (/a᷉/)
-	n. burn
-abhnagh (/a᷉.b̪ʰnɶ᷉ɡʰ/)
-	n. sugar
-adhdhngobhddher (/a᷉.dʰdʰŋǔb̪ʰ.ddʰíɾ/)
-	n. secretary
-armbhoghormi (/a᷉ɾm.bʰɯ̂.ɡʰɯ᷉ɾ.mŷ/)
-	n. soup
-arnoror (/a᷉ɾ.nu᷉.ɾɒ̌ɾ/)
-	adj. unequal
-oa (/ûɶ̯̌/)
-	n. agreement
-	v. pass
-oanbh (/ûɶ̯̌nbʰ/)
-	n. pull
-oarngbharbhog (/ûɶ̯̌ɾŋ.bʰɶ́ɾ.bʰúɡ/)
-	n. shirt
-oarodhgre (/ûɶ̯̌.ɾǔdʰ.ɡɾǐ/)
-	n. brake
-oarordhbhaadorn (/ûɶ̯̌.ɾɯ̌ɾ.dʰb̪ʰɶ᷉ɑ̯᷉.dɒ᷉ɾn/)
-	n. arm
-oari (/ûɶ̯̌.ɾy᷉/)
-	v. play
-oanged (/ûɶ̯̌.ŋîd/)
-	adj. narrow
-oaghbnern (/ûɶ̯̌ɡʰ.b̪ɱíɾn/)
-	n. authority
-oaghi (/ûɶ̯̌.ɡʰý/)
-	n. nerve
-oambhemarng (/ɒ̌ɶ̯́m.b̪ʰí.mɑ᷉ɾŋ/)
-	n. cake
-oanbhabho (/ɒ̌ɶ̯́ɱ.bʰâ.b̪ʰɯ́/)
-	n. drop
-oanbh (/ɒ̌ɶ̯́ɱb̪ʰ/)
-	n. distribution
-oangnomarbhna (/ɒ̌ɶ̯́ɱ.ɡɱû.mɑ̂ɾ.b̪ʰɱá/)
-	adj. ill
-oab (/ɒ̌ɶ̯́b̪/)
-	n. oil
-oadhbo (/ɒ̌ɶ̯́dʰ.b̪ɒ́/)
-	n. argument
-oarbhanngernga (/ɒ̌ɶ̯́ɾ.bʰɑ́.ɱŋíɾ.ŋɑ̌/)
-	v. become
-oarndhi (/ɒ̌ɶ̯́ɾn.dʰy̌/)
-	n. ear
-oarnin (/ɒ̌ɶ̯́ɾ.ny᷉ɱ/)
-	n. sheep
-oarng (/ɒ̌ɶ̯́ɾŋ/)
-	n. needle
-oaghobhbornghe (/ɒ̌ɶ̯́.ɡʰɒ́bʰ.b̪ɯ̌ɾɱ.ɡʰi᷉/)
-	n. brother
-aa (/ɶ᷉ɑ̯᷉/)
+plalhiiybooylaay (/pʎ̟ɑ᷉ʎ̥.hȳːɻ̠.b̪ɯ᷆ːj̊.ʎ̟̊ ɶ᷉ːɻ̠̊/)
+	v. go
+pharilh (/pʝɶ̄.β̞y᷄ʟβ/)
+	n. support
+phiiyaraywaar (/pxy᷆ː.ɻ̠̊ɶ̄.ɸ̝ɶ̄.ɻ̠ɰɶ᷉ːβ̞/)
+	n. card
+phioh (/pɦȳɯ̯᷆h/)
+	n. sock
+po (/pɯ̄/)
+	n. language
+payolifiol (/pɑ᷆.ɻ̠ɯ̄.ʟȳ.fȳɯ̯᷆ʟ/)
 	n. representative
-aamghrar (/ɶ᷉ɑ̯᷉m.ɡʰɾɶ́ɾ/)
-	n. degree
-aabhnor (/ɶ᷉ɑ̯᷉.bʰɱɯ̌ɾ/)
-	adj. large
-aanbhdangh (/ɶ᷉ɑ̯᷉ɱbʰ.dǎɱɡʰ/)
+palhhiih (/pɑ᷆ʎ.ɣçy᷄ːɦ̞/)
+	n. eye
+blaaylahhlil (/bʎɶ᷆ːɻ̠̊.ʎ̟̊ ɑ̄.ɟ̟ʰʟ̠̊ȳʎ/)
+	adj. tight
+bhaayo (/bxɑ᷄ː.ɻ̠ɯ̄/)
+	n. love
+bhaawghioloosghlaal (/bxɑ̄ɶ̯᷉ɰ.ɡʰȳɯ̯᷆.l̥ɯːɹ̟̊.ɡʰʎ̟̊ ɑ᷉ːl̥/)
+	n. branch
+brarwohaayl (/bʁ̞̊ɑ᷆.ɹ̊ɰ̊ɯ.βɶːjʟ̠/)
+	n. table
+bhoriigh (/bɦ̞ɯ̄.ʁ̞̊y᷆ːɟʰ/)
+	n. sky
+boklaawilhi (/bɯ᷉.kʟɑ̄ɶ̯᷉.ɰy᷉l̥.ʁȳ/)
+	n. opinion
+barrolhlayl (/bɑ᷄ʁ̞̊.ɹ̊ɯ᷉ʟ̥.βʎ̟̊ ɑjʟ̥/)
+	n. credit
+bhhiyhhhii (/bʰɸȳɻ̠χ.ɟ̟ʰy᷆ː/)
+	n. nation
+bhliylaa (/bʰlȳɻ̠̊.ʟɶ᷉ː/)
+	n. mine
+bhiwaawhiiw (/bʰy.ɰɑ᷉ːɰ̊.çy᷆ːɰ̊/)
+	n. lip
+bhawhkaa (/bʰɑ̄ɰɸ.kɶ̄ː/)
+	v. lose
+bhahr (/bʰɶ᷄ɦ̞β̞/)
+	v. need
+bhaa (/bʰɶ᷉ːɑ᷄ː̯/)
+	adj. unable
+hrayhrorl (/ɸβ̞ɑj̊.ʝɸ̝ɯ᷆ʁ̞ʟ̠/)
+	n. taste
+hlaarhdhaalalaar (/ɸʎ̟ɑ̄ːɹʝ.dʰɑ̄ɶ̯᷉.ʟ̠̊ɶ᷄.l̥ɶ᷉ːʁ̞/)
+	n. nose
+hhiirlooyiihr (/ɸh̞yː.ʋʟ̥ɯ᷄ː.jy᷄ːɦ̞ʋ/)
+	v. build
+hawlaayl (/ɸɑ̄ɰ̊.ʟ̠ɶ᷄ːɻ̠ʟ̠/)
+	n. cover
+haalhahla (/ɸɑːʟ̠.hɑ᷆h̞.ʎɶ/)
+	n. fly
+haalzghiwrhaaw (/ɸɑ̄ːʎɹ̟.ɟʰy᷉ɰ̊ʋ̥.xɶ᷉ːɰ/)
+	adj. loose
+hri (/βɹy᷉/)
+	n. line
+hloowlgioraa (/βlɯ᷆ːɰ̊ʎ̟̊ .qȳɯ̯᷆.ʁ̞ɑ᷉ː/)
+	v. reach
+hwa'ilvaawaa (/βɰɑ᷉.y᷉ʟ̠̊.vɶ᷉ːɑ᷄ː̯.ɰɶ᷄ː/)
+	n. wave
+hraawloihrilghahb (/βʁ̞̊ɶ᷉ːɑ᷄ː̯ɰ̊.ʎ̟̊ ɯ᷆y̯.ɻ̠̟̊ʁ̞ȳʟ̥.ʡʰɶ̄ʁb̪/)
+	n. paste
+hil (/βyʟ̥/)
+	n. hair
+hilhara (/βy᷆ʎ̥.ʁɑ.ʁ̞ɑ̄/)
+	n. law
+hiilf (/βȳːʎ̟̊ f/)
+	adj. general
+haawii (/βɑ̄ː.ɰ̊y᷉ː/)
+	n. trouble
+halhhaahpowhoh (/βɶ̄ʎ̟.ɟ̟ʰɑ̄ɶ̯᷉χ.pɯ᷉ɰ.ʁɯ᷆ɦ̞/)
+	n. trousers
+hayoiyrilar (/βɶ᷄.ɻ̠̊ɯ᷆y̯ɻ̠̊.β̞ȳ.ʟ̠̊ɑʁ̞̊/)
+	adj. mechanical
+haahblaarlho (/βɑ̄ɶ̯᷉h̞.b̪ʟɑ᷆ːʁ̞ʎ.ʝɯ/)
+	v. fall
+haayg (/βɶ᷉ːɑ᷄ː̯jɟ/)
+	n. soap
+rrii (/ɸ̝ʁ̞y᷆ː/)
+	n. distance
+rhi (/ɸ̝h̞y᷉/)
+	adj. quiet
+rhaayghhoowalhiiwl (/ɸ̝ɦ̞ɑ̄ːj.ɡʰʝɯ᷉ː.ɰ̊ɑʟ.hȳːɰ̊ʎ̟̊ /)
+	adj. peaceful
+riyloorhhhiilaawh (/ɸ̝ȳj.ʟ̠ɯ᷉ːɹβ.ɟ̟ʰy᷆ː.ʎɶːɰc̟/)
+	n. space
+ray (/ɸ̝ɑ᷉j̊/)
+	n. man
+raashilhfiibhyaah (/ɸ̝ɑː.ɹ̟̊ʝy᷆ʎ̟.ɣfyː.b̪ʝj̊ɶ᷉ːɑ᷄ː̯ɟ̟/)
+	v. pass
+raahdaawki (/ɸ̝ɑ᷆ːɻ̠̟̊.dɑːɰ̊.cy᷉/)
+	n. stitch
+raalaayayaa (/ɸ̝ɑ᷄ː.ʎ̥ɑ̄ː.j̊ɑ᷆.ɻ̠ɑ᷆ː/)
+	v. receive
+ralhihogoh (/ɸ̝ɶ᷄ʎ.ɸy᷉.βɯ᷉.ɢɯχ/)
+	v. stay
+rar (/ɸ̝ɶ᷉β̞/)
+	n. answer
+raakhaadhiiyiih (/ɸ̝ɶː.chɶ᷆ː.dʰy᷉ː.ɻ̠ȳːɸ/)
+	n. sneeze
+raark (/ɸ̝ɶ᷄ːʋk/)
+	adj. common
+ryay (/β̞jɑ᷆j/)
+	adj. irregular
+rhih (/β̞ɦ̞yh̞/)
+	n. error
+rooy (/β̞ɯ᷄ːj̊/)
+	n. coal
+riil (/β̞y᷄ːʟ̠/)
+	n. oven
+rio (/β̞ȳɯ̯᷆/)
+	v. feel
+psaal (/p̪ɹ̟̊ɑːʎ̟̊ /)
+	n. money
+plii (/p̪ʎ̥y᷉ː/)
+	n. sail
+pharlarhiirrhiig (/p̪ɣɶ̄ʁ̞̊.ʟ̠ɶ᷄ʋ̥.ʝy᷉ːʁ̞ɹ.βyːʔ/)
+	adj. full
+pliiraahryaa (/p̪ʟ̥ȳː.ʁ̞ɑː.xɹɻ̠ɶː/)
+	n. snake
+poylvoohil (/p̪ɯ᷆j̊ʎ̟.vɯ̄ː.ɦ̞y᷉ʎ̟/)
+	v. happen
+polbhisklii (/p̪ɯ᷄ʟ̠.b̪ʰy᷄ɹ̟̊.cʟ̠̊ȳː/)
+	adj. probable
+pihlyaalay (/p̪y᷆.ɸʟ̥jɑ᷆ː.ʎɶɻ̠/)
+	n. measure
+piysool (/p̪y᷆ɻ̠̊.ɹ̟̊ɯ᷆ːʎ̟/)
+	n. hook
+pii (/p̪yː/)
+	n. walk
+piirhoohsrayr (/p̪y᷆ːβ̞.ʝɯ̄ː.ʁɹ̟̊ɹ̊ɶɻ̠̊ʋ̥/)
+	n. paper
+paa (/p̪ɶ᷆ː/)
+	n. steam
+bziiyadhawoir (/b̪ɹ̟y᷄ː.ɻ̠̊ɑ.dʰɑ̄.ɰ̊ɯ᷆y̯ʁ̞̊/)
+	n. existence
+bzaarpaa (/b̪ɹ̟ɑ̄ɶ̯᷉ɸ̝.p̪ɑː/)
+	v. pay
+bhoyphaarhha (/b̪çɯ᷉ɻ̠̊.p̪çɑ᷉ːɹ.xɦɑ᷄/)
+	n. face
+bhaw (/b̪ʝɶ᷄ɰ/)
+	n. sponge
+bworloi (/b̪ɰɯ̄ʁ̞.ʟ̠ɯ᷆y̯/)
+	n. record
+bholawwaahr (/b̪ɦɯ.lɶ.ɰ̊ɰ̊ɶ᷉ːɑ᷄ː̯ɦ̞ʋ/)
+	adj. broken
+biwglooyooh (/b̪ȳɰ.qʎɯ᷆ː.ɻ̠ɯ᷆ːɸ/)
+	adj. correct
+bahlhaahaawh (/b̪ɑh̞ʎ.ʝɶ̄ː.ʁɶ᷄ːɰɻ̠̟/)
+	n. judge
+baylaalaay (/b̪ɑ᷄ɻ̠̊.ʎ̟̊ ɶ᷉ːɑ᷄ː̯.l̥ɶ᷆ːj/)
+	n. range
+baahhho (/b̪ɑ᷉ːʝ.ɟ̟ʰɯ᷄/)
+	n. tongue
+baghhyoorawhraaz (/b̪ɶ᷆.ɟʰʁj̊ɯ᷄ː.ɹ̊ɑɰ̊.xβ̞ɶːɹ̟/)
+	n. hour
+biodsaharlhhaa (/b̪ȳɯ̯᷆.dɹ̟̊ɶ̄.ɦ̞ɑ̄ʁ̞l.ɟ̟ʰɑː/)
+	adj. parallel
+bhfaaydhhayrhigh (/b̪ʰfɶ᷉ːɻ̠.dʰβɶ̄ɻ̠̊.ʋ̥h̞yɡʰ/)
+	adj. good
+bhvooh (/b̪ʰvɯ᷄ːɦ̞/)
+	n. jump
+bhhaarhiiyhghoihaayh (/b̪ʰχɶ᷄ːɹ̊.çyːj̊ɻ̠̟̊.ɡʰɯ᷆y̯.xɑːɻ̠ɸ/)
+	adj. angry
+bhhiih (/b̪ʰh̞y᷉ːɣ/)
+	n. bit
+bholyaa (/b̪ʰɯ.l̥j̊ɑ̄ː/)
+	n. care
+bho (/b̪ʰɯ᷄/)
+	n. behavior
+bhoohgawsool (/b̪ʰɯːɻ̠̟.ɢɑ̄ɰ̊.ɹ̟̊ɯ᷄ːʎ̥/)
+	n. pocket
+bhaahii (/b̪ʰɑː.h̞y᷄ː/)
+	v. spend
+bharbaayiihtsoohr (/b̪ʰɶʋ.b̪ɶ᷄ː.jy᷄ːɦ̞.tɹ̟̊ɯ᷄ːɦ̞ɹ̊/)
 	n. house
-aandhad (/ɶ᷉ɑ̯᷉ɱ.dʰǎd/)
-	n. bulb
-aarobhborna (/ɶ᷉ɑ̯᷉.ɾɯ́bʰ.bu᷉ɾ.ɱɑ᷉/)
-	adj. complex
-aarannengghber (/ɶ᷉ɑ̯᷉.ɾǎ.nɱǐŋɡʰ.b̪i᷉ɾ/)
-	n. chest
-aaghbnodhdorn (/ɶ᷉ɑ̯᷉ɡʰ.b̪ɱɯ̌dʰ.dɯ᷉ɾɱ/)
-	n. hammer
-aagharorbh (/ɶ᷉ɑ̯᷉.ɡʰɑ᷉.ɾǔɾb̪ʰ/)
-	n. drain
-ao (/áɯ̯̂/)
+frohbaa (/fʋ̥ɯ᷄h.bɶ᷉ːɑ᷄ː̯/)
+	adj. rich
+frahhohir (/fʁ̞ɑ̄ɦ̞.χɯ᷄.ɦ̞yɹ/)
+	adj. last
+flara (/fʟ̠ɑ̄.ʁ̞̊ɶ̄/)
+	adj. loud
+fo (/fɯ/)
+	adj. conscious
+fihrohgaalaa (/fȳɦ̞.ɹɯ᷄ɻ̠̟.ʔɶ᷉ːɑ᷄ː̯.ʎɑː/)
+	n. work
+fii (/fy᷆ː/)
+	n. match
+fargolfyaay (/fɶ᷉ʁ̞.qɯ̄ʟ.fɻ̠̊ɑ᷉ːj/)
+	n. knee
+vraallaalhaasow (/vɹ̊ɶ᷄ː.ʟ̠ʟ̥ɑ̄ɶ̯᷉ʟ̠.ɦɑː.ɹ̟̊ɯ᷉ɰ/)
+	n. reward
+vyii (/vɻ̠y᷉ː/)
+	n. ear
+vlaaw (/vʎ̟̊ ɶːɰ/)
+	adj. sweet
+vyoorkalbhlarl (/vjɯ᷉ːɹ.kɑl.b̪ʰʎ̥ɶ᷆ʁ̞̊ʎ̟̊ /)
+	adj. manmade
+vlaabhhaa (/vʟ̠̊ɶ᷄ː.bʰɸɑ̄ː/)
+	n. tail
+vhaahbharghoo (/vh̞ɑ᷆ːɻ̠̟.b̪ʰɑ᷉ʁ̞̊.ɡʰɯ᷆ː/)
+	v. bring
+viriiyrhaawho (/vȳ.ʁ̞y᷄ːjɹ.xɶ᷉ːɰ.hɯ᷄/)
+	n. request
+vahioybhvo (/vɑ̄.βȳɯ̯᷆ɻ̠̊.bʰvɯ᷄/)
+	adj. dark
+varawrhoohb (/vɶ̄.ʁ̞ɑɰ̊ɹ̊.c̟ɯ̄ːh̞b/)
+	adj. medical
+ryahhiyliftaahl (/ʋ̥jɶɦ̞.ɦy᷄j̊.ʟy᷉f.tɑ᷆ːh̞ʟ̠̊/)
+	v. offer
+rwaa (/ʋ̥ɰɑ̄ɶ̯᷉/)
+	n. insect
+rroowoorg (/ʋ̥ʁ̞̊ɯ̄ː.ɰɯ᷆ːʁ̞ʔ/)
+	n. interest
+rroolg (/ʋ̥ʁ̞̊ɯ᷉ːʎ̟ʔ/)
+	n. rub
+rohaargriw (/ʋ̥ɯ᷉.ʁɶ̄ːʁ̞̊.ɟʋ̥y᷉ɰ̊/)
+	n. damage
+riiy (/ʋ̥yːj/)
+	n. town
+ralsloorayaah (/ʋ̥ɶʎ̟̊ .ɹ̟̊ʎ̟̊ ɯ̄ː.ʁ̞̊ɑ.jɑ᷄ːh̞/)
+	n. help
+raahii (/ʋ̥ɶ̄ː.ɦ̞yː/)
+	n. quality
+raawhhhaa (/ʋ̥ɶ᷆ːɰɦ.ɟ̟ʰɶ᷆ː/)
+	n. land
+raahg (/ʋ̥ɑ̄ɶ̯᷉ɦ̞ɢ/)
+	n. hate
+raalyoi (/ʋɶː.ʟ̠̊jɯ᷆y̯/)
+	n. music
+thoyl (/tɸɯ᷉ɻ̠̊ʎ/)
+	n. need
+thar (/tβɑ̄ɹ̊/)
+	n. fact
+tzaagwooh (/tɹ̟ɑ᷉ː.ɢɰɯ̄ːh̞/)
+	n. list
+thaawrawil (/tɻ̠̟ɶ᷄ːɰ̊.ʋɑ᷉.ɰy᷄ʎ̟̊ /)
+	n. fall
+tyahayhi (/tj̊ɶ.ɦ̞ɑ᷉ɻ̠̊.çy᷄/)
+	n. seat
+tyiliz (/tjy᷆.ʟ̥y᷆ɹ̟/)
+	adj. shut
+tliilaashooyro (/tʟ̥y᷄ː.ʟ̠ɶ᷉ː.ɹ̟̊ɦ̞ɯ̄ːɻ̠.ɹ̊ɯ/)
+	n. circle
+tohdha (/tɯ᷆ɻ̠̟̊.dxɶ/)
+	v. follow
+tolooyrvoohlwaalbh (/tɯ᷆.ʟ̥ɯ᷆ːɻ̠̊β̞.vɯ̄ːh̞.ʎ̟ɰɶ᷉ːʎb̪ʰ/)
+	n. comb
+tiwliiw (/tyɰ.l̥yːɰ/)
+	v. put
+tilaalhoihiogh (/tȳ.ʟ̠̊ɶ̄ːʎ.ɣɯ᷆y̯.h̞ȳɯ̯᷆ɢʰ/)
+	adj. military
+ti (/ty᷆/)
+	adj. physical
+tiis (/ty᷄ːɹ̟̊/)
+	n. run
+tahlayarh (/tɑ᷄h̞.ʟ̠̊ɶ᷄.j̊ɑ᷉ʁ̞ɻ̠̟/)
+	n. direction
+taalyaa (/tɑ̄ː.ʟ̠̊ɻ̠ɶ̄ː/)
+	adj. thick
+taalfghahh (/tɑ᷆ːʎ̥f.ʡʰɶ᷉ɦ̞ɦ/)
+	adj. cut
+talraarkha (/tɶ.ʎ̥ʋɑ᷆ːɸ̝.cxɑ̄/)
+	v. break
+dhahgagi (/dɸɑ᷄ɸ.ɟɑ᷉.ɟy/)
+	n. bread
+dhaarhgiiyha (/dβɑ᷆ːʁ̞̊x.ɡȳːj̊.ʝɶ/)
+	adj. bitter
+drayroor (/dɸ̝ɶ᷄j̊.ʋ̥ɯ̄ːβ̞/)
+	n. copper
+drarbiiraa (/dɹɑ᷄ɹ.by᷄ː.β̞ɶ᷆ː/)
+	n. humor
+dhayoowor (/dɻ̠̟̊ɶ᷄.ɻ̠ɯ᷉ː.ɰ̊ɯ̄ɹ/)
+	n. screw
+dhaayvsilfgaa (/dɻ̠̟ɶ᷉ːj̊.vɹ̟̊y᷉ʎ̟f.ɡɑː/)
+	n. whip
+dliihrviihg (/dʟ̥yːɦ̞β̞.vy᷄ːβʔ/)
+	n. ice
+dhalzga (/dh̞ɶ᷉ʟ̠̊ɹ̟.qɶ᷆/)
+	n. harbor
+doyllah (/dɯ᷄ɻ̠.ʟ̠ʎ̟ɶ᷄h̞/)
+	n. company
+diyviiy (/dyj̊.vȳːj/)
+	n. angle
+dalhlalhraawv (/dɑʟ̠̊.ʁʎɑl.ɻ̠̟ʋɑ᷉ːɰ̊v/)
 	n. knowledge
-	adj. kind
-aobhbbhorghdharargh (/áɯ̯̂b̪ʰ.b̪bʰɯ̌ɾ.ɡʰdʰɑ᷉.ɾâɾɡʰ/)
-	v. appear
-aorndornobhb (/áɯ̯̂ɾɱ.dûɾ.nɯ̌bʰb/)
-	n. self
-aorg (/áɯ̯̂ɾɡ/)
+daraayraa (/dɑ̄.ʁ̞ɶ᷉ːɻ̠.ʋ̥ɶ᷄ː/)
+	n. organization
+daa (/dɶ᷉ː/)
+	n. discovery
+dhhii (/dʰβyː/)
+	n. stone
+dhfiiylroowh (/dʰfȳːj̊.lɹɯ̄ːɰ̊x/)
+	n. chance
+dhza (/dʰɹ̟ɶ̄/)
+	n. middle
+dhraayl (/dʰɹɶ᷉ːjʎ̟/)
+	n. food
+dhhoofaar (/dʰʝɯ᷉ː.fɑ̄ɶ̯᷉ʋ̥/)
+	v. speak
+dhhayaaroohroo (/dʰʝɑ᷉.jɑ᷉ː.ɹ̊ɯ̄ːh̞.ɹ̊ɯ̄ː/)
+	n. prison
+dholhaayrhawaayl (/dʰɯʎ̟̊ .ɦɑːj̊ʋ.ʝɑ᷄.ɰ̊ɑ᷉ːɻ̠l̥/)
+	n. crime
+dhool (/dʰɯ᷆ːʎ/)
+	n. egg
+dhoor (/dʰɯ᷄ːʁ̞/)
+	n. blade
+dhiwrho (/dʰy᷄ɰɸ̝.βɯ᷉/)
+	n. system
+dhiiwiyrziiho (/dʰyː.ɰy᷄j̊ɹ.ɹ̟y᷄ː.c̟ɯ᷆/)
+	n. person
+dharl (/dʰɑʁ̞ʎ/)
+	adj. true
+dhaawb (/dʰɑːɰb/)
+	n. art
+dhoirhhooylbhihaa (/dʰɯ᷆y̯ʋ.ɣʁɯ᷆ːjʟ̠.b̪ʰȳ.ɣɶː/)
+	adj. right
+dhaarhihgaayhwiiyl (/dʰɶ᷉ːɑ᷄ː̯ʁ̞̊.çy᷄β.ɡɶ̄ːɻ̠.ɦɰȳːjʟ̠̊/)
+	v. stand
+slow (/ɹ̟̊ʎ̟̊ ɯɰ̊/)
+	n. look
+syaah (/ɹ̟̊j̊ɶ̄ːɦ̞/)
+	adj. single
+slaagrahdaa (/ɹ̟̊ʟɑ̄ɶ̯᷉.qɹ̊ɶ᷆h̞.dɑː/)
+	n. industry
+sobo (/ɹ̟̊ɯ.b̪ɯ᷉/)
+	adj. ill
+soo (/ɹ̟̊ɯ᷉ː/)
+	v. find
+sooyoodoohfoog (/ɹ̟̊ɯ᷉ː.jɯː.dɯ̄ː.hfɯ᷆ːɟ/)
+	n. market
+siihi (/ɹ̟̊y᷄ː.h̞y/)
+	n. way
+saayoohzliyro (/ɹ̟̊ɑ᷆ː.jɯ᷄ː.ʁɹ̟ʎȳɻ̠.ʋɯ᷉/)
+	adj. dead
+saalhghawaay (/ɹ̟̊ɶ᷆ːʟ̠̊χ.ɟʰɑ᷆.ɰ̊ɑ̄ɶ̯᷉ɻ̠̊/)
+	n. book
+zrohhooyfah (/ɹ̟ɸ̝ɯ̄.ɻ̠̟h̞ɯ᷄ːɻ̠̊.fɶh/)
+	adj. large
+zlihool (/ɹ̟ʎy.h̞ɯ᷆ːl/)
+	n. lift
+zlilooylaagriiwr (/ɹ̟ʟ̥y᷉.ʟ̥ɯ᷄ːj̊.lɑ᷉ː.ʡɹ̊yːɰʋ̥/)
+	n. knot
+ziwsralhoohaahb (/ɹ̟yɰ.ɹ̟̊ɹɶʟ̠̊.ɦɯ᷄ː.h̞ɶ᷉ːɑ᷄ː̯ɻ̠̟b/)
+	n. wood
+ziirhlaarh (/ɹ̟yːʁ̞̊.xl̥ɶːɹh/)
+	n. weight
+ziirpyaayhhoorg (/ɹ̟y᷉ːʋ̥.pjɶ᷄ːjɣ.ɟ̟ɯ᷄ːʁ̞̊ɡ/)
+	adj. complete
+zaloorhziirhir (/ɹ̟ɑ.ʟɯ᷆ːɹ̊.ɻ̠̟̊ɹ̟ȳːʁ̞.χy᷆ʁ̞̊/)
+	n. dog
+rwa (/ɹ̊ɰɶ᷉/)
+	v. support
+ro (/ɹ̊ɯ᷆/)
+	n. road
+ralz (/ɹ̊ɑʟɹ̟/)
 	adj. secret
-aorenggh (/áɯ̯̂.ɾîŋɡʰ/)
+rah (/ɹ̊ɶh̞/)
+	adj. poor
+raal (/ɹ̊ɶ᷄ːʟ̥/)
+	n. rice
+raartalho (/ɹ̊ɶ᷉ːʁ̞̊.tɶʟ.ʝɯ̄/)
+	n. hammer
+ryiihghaayaayghha (/ɹj̊y᷆ːʁ.ʡʰɑ᷄ː.ɻ̠̊ɶ᷉ːɑ᷄ː̯j.ɢʰɦɶ᷉/)
+	n. room
+ror (/ɹɯ̄ɹ̊/)
+	adj. happy
+rorhlorlhio (/ɹɯ᷉ɹ̊.c̟ʎɯ᷄ʁ̞̊ʎ̥.ɦȳɯ̯᷆/)
+	v. serve
+rok (/ɹɯ᷉c/)
+	n. mouth
+roolohraa (/ɹɯ᷆ː.ʟ̠̊ɯɦ̞.ɸ̝ɑ̄ː/)
+	n. smell
+lwaazooyzrii (/l̥ɰɑ̄ː.ɹ̟ɯːj̊.ɹ̟ɸ̝y᷉ː/)
+	n. surprise
+lorhgaah (/l̥ɯʋç.ʔɶ᷆ːh̞/)
+	n. board
+looylaar (/l̥ɯ᷉ːɻ̠.ʟ̠ɶ᷄ːɹ̊/)
+	n. verse
+laliilaawag (/l̥ɑ.l̥y᷄ː.lɑ᷉ː.ɰ̊ɑɟ/)
+	n. vessel
+lyawlayhoorhharh (/lɻ̠̊ɶɰ.ʎ̟̊ ɑ᷆j̊.βɯ᷆ːɹ.ɻ̠̟̊ʁɑ̄ʁ̞ɸ/)
+	n. note
+lroir (/lʁ̞̊ɯ᷆y̯ʋ̥/)
+	n. bird
+loyarhhoolh (/lɯ᷆.ɻ̠̊ɑβ̞.xɻ̠̟ɯ᷉ːl̥ç/)
+	n. night
+lihlhiirawl (/lyɦ̞ʟ̠.ɟ̟y᷄ː.β̞ɑ̄ɰ̊ʟ/)
+	n. writing
+liyhkohloorhboiy (/ly᷆jç.cɯɦ̞.ʟ̠ɯ̄ːβ̞ʁ.bɯ᷆y̯j̊/)
+	n. grip
+lilbhvaaphaa (/ly᷆ʟ̠̊.bʰvɑ᷆ː.pɻ̠̟̊ɑ᷉ː/)
+	n. smile
+larl (/lɑ̄ʁ̞̊l/)
+	v. produce
+laayhii (/lɑ᷆ːɻ̠̊.ʝyː/)
+	adj. waiting
+larl (/lɶ᷄ʁ̞̊ʎ̟/)
+	n. woman
+laah (/lɶːh̞/)
+	n. history
+laahoo (/lɑ̄ɶ̯᷉.ɦ̞ɯ᷄ː/)
+	n. mind
+hhaaylaarhaylaa (/c̟ɸɶ᷄ːj̊.ʎ̟ɶ᷆ːʁ̞.ʝɶ᷉ɻ̠̊.ʎɑ᷉ː/)
+	n. door
+hfiihhaa (/c̟fȳː.ʝçɑː/)
+	adj. tall
+hrayrso (/c̟ʋɶɻ̠̊ʋ̥.ɹ̟̊ɯ/)
+	n. roof
+hlaalplo (/c̟l̥ɶ᷉ːɑ᷄ː̯ʟ̥.p̪ʟ̠ɯ̄/)
+	adj. unnecessary
+hhaaraal (/c̟ɻ̠̟̊ɶː.ʁ̞̊ɶ᷆ːʟ̠̊/)
+	n. position
+hhiilhah (/c̟çy᷉ːʟ̥.ɣɶ᷆ɸ/)
+	v. watch
+hlaahghihhhi (/c̟ʎɑ̄ɶ̯᷉ʝ.ʡʰy᷉.ɟ̟ʰɻ̠̟̊y᷆/)
+	n. basin
+hhaaroorawbaa (/c̟xɑ᷄ː.ʋ̥ɯː.ɸ̝ɶ᷄ɰ.bɶ᷆ː/)
+	n. flower
+hhaarghvoy (/c̟ɣɶːɸ̝.ɢʰvɯ᷆ɻ̠̊/)
+	n. flag
+hhohharrhowh (/c̟h̞ɯ̄.ɦçɶʁ̞ɹ̊.χɯ̄ɰ̊c̟/)
+	adj. sticky
+hayaav (/c̟ɑ.j̊ɑ᷉ːv/)
+	n. metal
+haahva (/c̟ɑ᷆ːɦ̞.vɶ/)
+	n. level
+haayrayoo (/c̟ɶ̄ːɻ̠.ɹ̊ɶ̄.ɻ̠ɯː/)
+	adj. important
+haalgh (/c̟ɶ᷉ːɑ᷄ː̯ʟ̥ʡʰ/)
+	n. cushion
+hraa (/ɟ̟ʋɑ᷉ː/)
+	n. attraction
+hsiwrhihhlaawaay (/ɟ̟ɹ̟̊ȳɰ̊ɹ̊.βy᷄.ɸχʟ̠̊ɑ̄ɶ̯᷉.ɰɶ᷆ːɻ̠̊/)
+	n. reaction
+hhaayl (/ɟ̟ɻ̠̟̊ɑ᷉ːjʎ/)
+	n. letter
+hya (/ɟ̟jɑ᷆/)
+	n. office
+hliyrhaahaahool (/ɟ̟ʎy᷆ɻ̠̊ʋ̥.hɑ᷉ː.ɦ̞ɑ᷄ː.ɦ̞ɯ᷄ːʟ̠̊/)
+	adj. uncertain
+hlaayhharhiiy (/ɟ̟ʎɶ᷆ːj.xɣɶ̄ɸ̝.ɣȳːɻ̠/)
+	n. curtain
+hliolhaa (/ɟ̟ʎȳɯ̯᷆ʟ̠̊.ɻ̠̟ɶ᷉ː/)
+	n. worm
+hlooyliihs (/ɟ̟ʟ̥ɯ̄ːj.ʟ̠ȳːɦ̞ɹ̟̊/)
+	n. chin
+hlohgihhliy (/ɟ̟ʟ̠̊ɯ᷉ʝ.ɟy᷄h̞.çʎ̟y᷉ɻ̠̊/)
+	v. continue
+holiyhbal (/ɟ̟ɯ.ʟ̠ȳj̊ɦ.b̪ɑ᷆ʟ/)
+	n. sound
+hooyariovii (/ɟ̟ɯ̄ː.jɶ.ʁ̞̊ȳɯ̯᷆.vy᷆ː/)
+	n. water
+hilfa (/ɟ̟y᷉ʎ̟̊ .fɑ᷄/)
+	adj. opposite
+halhaarh (/ɟ̟ɑl.hɑːɹ̊ɦ/)
+	n. toe
+haraarohhghaa (/ɟ̟ɑ᷆.ʁ̞̊ɶː.ɹ̊ɯ᷄ɦ̞ɣ.ɟʰɑ̄ː/)
+	n. chest
+haaylhay (/ɟ̟ɑːj̊ʎ̟.βɶj/)
+	adj. open
+haayoohhirh (/ɟ̟ɑː.jɯ᷉ː.ɟ̟ʰȳʋ̥ʁ/)
+	n. burst
+haawriyoiyloorh (/ɟ̟ɑ᷄ːɰ̊.ɹ̊y᷆.ɻ̠ɯ᷆y̯j.ʎ̟ɯːʋ̥x/)
+	v. ask
+halarii (/ɟ̟ɶ᷆.ʎ̥ɑ᷆.ʁ̞̊y᷄ː/)
+	n. brake
+hhhaayii (/ɟ̟ʰʁɶ᷉ː.ɻ̠̊y᷆ː/)
+	n. stomach
+hhorodhiiygii (/ɟ̟ʰɯ᷉.ɹ̊ɯ.dʰyːɻ̠.qy᷄ː/)
+	n. rule
+hhihhlaayo (/ɟ̟ʰy᷄.xʁʟɑ᷆ː.ɻ̠̊ɯ᷄/)
+	n. clock
+hhaaylaahaafoor (/ɟ̟ʰɑ᷆ːɻ̠̊.ʎɶ᷆ː.h̞ɑ̄ɶ̯᷉.fɯːʋ̥/)
+	n. week
+hhaalfawh (/ɟ̟ʰɶːl̥.fɶɰɻ̠̟/)
+	n. destruction
+hhaahlaarhhar (/ɟ̟ʰɶ᷉ːɦ̞.lɑ̄ːɹ̊.ɣxɑ᷉ʁ̞/)
+	n. stem
+hrizbforhhaayool (/ɻ̠̟̊ɹy᷉ɹ̟.bfɯ̄β̞.ɻ̠̟̊βɶː.j̊ɯ᷄ːʎ̟̊ /)
+	adj. wide
+hlaalii (/ɻ̠̟̊l̥ɶ᷉ːɑ᷄ː̯.ʎ̟yː/)
+	n. secretary
+hlaa (/ɻ̠̟̊ʎ̟̊ ɶ᷄ː/)
+	n. start
+hwiihiliw (/ɻ̠̟̊ɰy᷆ː.xȳ.l̥y᷄ɰ/)
+	n. bucket
+hasor (/ɻ̠̟̊ɑ̄.ɹ̟̊ɯ᷆ʁ̞/)
+	v. cut
+harfoharrhaals (/ɻ̠̟̊ɑ᷄ɹ̊.fɯ̄.βɶ᷄ʁ̞̊ʋ̥.ʝɑ̄ːʎ̥ɹ̟̊/)
+	adj. mixed
+hahhaaylhaa (/ɻ̠̟̊ɶ.χɻ̠̟ɑ̄ːj̊ʎ̥.ɻ̠̟̊ɶ̄ː/)
+	p. at
+hra (/ɻ̠̟ʋ̥ɶ̄/)
+	adj. electric
+hraraioyhghihr (/ɻ̠̟ɹ̊ɑ᷆.ɹɶ᷆.ȳɯ̯᷆ɻ̠̊χ.ɢʰy᷆h̞ɹ̊/)
+	adj. manual
+hlaarirwo (/ɻ̠̟ʎ̟ɑ᷄ː.ʁ̞y᷉.ʁ̞̊ɰɯ/)
+	n. division
+hwoohg (/ɻ̠̟ɰ̊ɯ᷆ːɻ̠̟̊ʔ/)
+	n. rod
+hloo (/ɻ̠̟ʟ̥ɯ᷆ː/)
+	v. become
+hlorrdaasowoy (/ɻ̠̟ʟɯ᷄ʁ̞β̞.dɶ᷆ː.ɹ̟̊ɯ᷄.ɰɯɻ̠̊/)
+	n. adjustment
+hayliirliilh (/ɻ̠̟ɑj̊.ʟ̠y᷉ːʁ̞.ʎ̟y᷉ːl̥ɦ/)
+	n. mass
+haawaalhhhiiror (/ɻ̠̟ɑ̄ː.ɰɶ᷆ːʟ̥ɣ.ɟ̟ʰy᷉ː.ʁ̞̊ɯ᷄ʁ̞̊/)
+	adj. past
+haarlaayoo (/ɻ̠̟ɶ᷉ːɑ᷄ː̯ʁ̞̊.l̥ɑ̄ː.j̊ɯ᷆ː/)
+	adj. dry
+yilviihlooydh (/ɻ̠̊y᷄l.vy᷄ː.ɻ̠̟l̥ɯ᷉ːɻ̠dʰ/)
+	n. hospital
+yiirawoiyli (/ɻ̠̊y᷉ː.ʁ̞ɑ᷄.ɰ̊ɯ᷆y̯j.ʟ̠y᷉/)
+	v. raise
+yoirg (/ɻ̠̊ɯ᷆y̯β̞q/)
+	v. eat
+yaalaahkwaay (/ɻ̠̊ɑ̄ɶ̯᷉.ʟɑ᷆ːχ.kɰɶ᷆ːɻ̠̊/)
+	n. government
+yayhilh (/ɻ̠ɶ᷉j̊.hy᷆ʎ̟ʁ/)
+	n. girl
+yaahlos (/ɻ̠ɶ᷆ːɦ̞.ʟɯ᷆ɹ̟̊/)
+	adj. solid
+lyoothioyrbhoh (/ʎ̟̊ ɻ̠ɯ᷉ː.tɻ̠̟ȳɯ̯᷆jɹ̊.bʰɯ᷄χ/)
+	adj. round
+liirooros (/ʎ̟̊ yː.ʁ̞ɯ᷉ː.ɹɯ᷉ɹ̟̊/)
+	n. amusement
+lii (/ʎ̟̊ ȳː/)
+	n. rest
+laallaawrfaawloort (/ʎ̟̊ ɶ᷄ː.ʎ̥lɑ᷆ːɰ̊ʋ.fɑ̄ɶ̯᷉ɰ.ʟɯ᷉ːʁ̞̊t/)
+	n. turn
+laasiilaah (/ʎ̟̊ ɑ̄ɶ̯᷉.ɹ̟̊y᷄ː.ʎ̟ɶːɦ̞/)
+	n. net
+lirawoohlhiiwl (/ʎ̟ȳ.ʁ̞̊ɑ᷉.ɰ̊ɯ᷄ːh̞ʎ.ɣy᷆ːɰ̊ʟ/)
+	v. mean
+layhpiiyrha (/ʎ̟ɑ̄jɻ̠̟.p̪y᷉ːɻ̠.β̞ɦ̞ɑ᷄/)
+	adj. foolish
+laarhihha (/ʎ̟ɑ᷆ːʁ̞.βy᷄h̞.ɦɑ/)
+	n. substance
+la (/ʎ̟ɶ᷄/)
+	n. stamp
+laadh (/ʎ̟ɶ᷉ːdʰ/)
+	n. connection
+loiyv (/ʎ̟ɯ᷆y̯ɻ̠̊v/)
+	n. payment
+kraayaah (/cʋɶ᷆ː.ɻ̠ɶːχ/)
+	v. have
+krolriloolhaag (/cɹɯ᷄.ʎ̟̊ ɹ̊y᷄.ʎ̥ɯ᷆ːʎ.ɸɶ᷉ːɡ/)
+	v. hit
+kolaa (/cɯ.lɶ᷄ː/)
+	n. frame
+koowaayhaa (/cɯː.ɰ̊ɶ᷉ːj.ʝɑ᷄ː/)
+	v. change
+koowl (/cɯːɰl/)
+	n. soup
+kilriorlyaahil (/cȳ.ʎʁ̞ȳɯ̯᷆ʁ̞̊.ʎ̟̊ ɻ̠̊ɑ᷄ː.ɻ̠̟yʎ̟̊ /)
+	v. learn
+kaagoylhaa (/cɑː.ɢɯ᷆ɻ̠̊ʟ.c̟ɶː/)
+	v. make
+kaa (/cɑ̄ː/)
+	n. debt
+kaayayloihow (/cɑ̄ː.ɻ̠ɑ᷆j.ʟɯ᷆y̯.xɯɰ/)
+	n. train
+kaah (/cɑ᷉ːʝ/)
+	n. jelly
+gsootarha (/ɟɹ̟̊ɯː.tɑ᷆ʁ̞̊.ɻ̠̟̊ɑ᷆/)
+	n. price
+graahliihhaarhloh (/ɟɹ̊ɶ᷄ː.ɣʟ̠y᷆ːɦ̞.ɣɑ̄ːʋ̥.ɣʎ̥ɯh̞/)
+	n. foot
+giiwriil (/ɟyːɰ.ʋ̥ȳːʎ/)
+	n. animal
+giiyaahl (/ɟȳː.j̊ɶ᷉ːɑ᷄ː̯h̞ʟ̠/)
+	n. drain
+giihlaahhaarar (/ɟy᷆ːɦ̞.ʟ̠ɶ᷄ː.ɣɻ̠̟̊ɑː.ɹɑʁ̞̊/)
+	adj. equal
+garahyo (/ɟɑ᷉.ʁ̞ɑ.ɻ̠̟̊jɯ᷉/)
+	n. invention
+gaafhilaaloo (/ɟɑ̄ː.fʁȳ.ʎɶ᷉ːɑ᷄ː̯.ʎ̟ɯ᷆ː/)
+	n. nut
+gaahhaalhhawl (/ɟɑ᷄ː.ɦ̞h̞ɑːʎ̟̊ .ββɶ̄ɰ̊ʎ̥/)
+	n. argument
+gardh (/ɟɶʁ̞dʰ/)
+	n. receipt
+garl (/ɟɶ᷆ʁ̞̊l/)
+	n. shock
+goifa (/ɟɯ᷆y̯.fɶ᷄/)
+	n. skirt
+ghraazlyivgoolgh (/ɟʰɹ̊ɑ᷄ː.ɹ̟ʎ̟ɻ̠̊y᷄v.qɯ᷄ːʟ̠̊ɡʰ/)
+	n. instrument
+ghhaylbhoor (/ɟʰɻ̠̟ɑɻ̠ʎ̥.b̪ʰɯ̄ːʋ/)
+	n. arch
+ghhaa'oorhghozwaag (/ɟʰɻ̠̟ɶː.ɯ᷉ːʋ̥ʝ.ʡʰɯ᷆.ɹ̟ɰ̊ɶ᷉ːɡ/)
+	v. give
+ghhiirviil (/ɟʰçyːɹ̊.vyːʎ̟̊ /)
+	n. army
+ghha (/ɟʰʝɶ/)
+	n. blood
+ghyaaylsahgh (/ɟʰjɶ᷉ːɑ᷄ː̯j̊ʎ̟̊ .ɹ̟̊ɶ᷉βɟʰ/)
+	n. push
+ghoolsil (/ɟʰɯːʎ.ɹ̟̊yʎ/)
+	n. religion
+ghiiylyaa'a (/ɟʰy᷉ːj.l̥j̊ɑ᷆ː.ɶ᷄/)
+	adj. narrow
+ghalhka (/ɟʰɑlɦ.kɑ̄/)
+	n. spoon
+ghayroyvarglooh (/ɟʰɑ᷄ɻ̠.ʋ̥ɯ᷆ɻ̠̊.vɶ̄ʋ̥.qʎɯ̄ːh/)
+	adj. straight
+ghaalpyayho (/ɟʰɑːʎ̥.p̪ɻ̠̊ɶ᷆ɻ̠.ɻ̠̟̊ɯ/)
+	adj. sad
+ghaar (/ɟʰɑ᷉ːβ̞/)
+	n. limit
+gharlhaayraawhiil (/ɟʰɶ᷆ʁ̞l.ɦɶ᷆ːj̊.ɹɑ̄ːɰ.ɣy᷉ːl/)
+	n. wool
+ghaarhbhoihooyr (/ɟʰɶ᷄ːɹ̊χ.b̪ʰɯ᷆y̯.ɦ̞ɯːjɸ̝/)
+	n. disease
+ghoiyaalyaaykay (/ɟʰɯ᷆y̯.j̊ɑː.ʟ̠̊j̊ɶːɻ̠̊.kɶ᷄ɻ̠̊/)
+	n. band
+hyaahbhraal (/çɻ̠̊ɑːɻ̠̟̊.b̪ʰʁ̞ɑ᷄ːʟ̥/)
+	n. watch
+hwiillaaraa (/çɰyː.lʟ̥ɑ̄ː.ʁ̞̊ɶ᷆ː/)
+	n. tray
+hlaayl (/çʟ̠ɶ᷆ːɻ̠ʎ̥/)
+	n. sister
+hohlhoohf (/çɯ᷄h̞l̥.ɻ̠̟ɯ̄ːh̞f/)
+	n. bell
+hiirliraayohk (/çy᷉ːʁ̞̊.ʎ̟y᷉.ʋɶ᷉ːɑ᷄ː̯.ɻ̠ɯ᷉xc/)
+	adj. elastic
+haalo (/çɶ̄ː.l̥ɯ᷆/)
+	n. kettle
+haalti (/çɑ̄ɶ̯᷉ʟ̠̊.ty᷄/)
+	n. prose
+hraaghvio (/ʝɸ̝ɑ᷆ː.ɡʰvȳɯ̯᷆/)
+	n. balance
+hraal (/ʝɸ̝ɶ᷆ːl̥/)
+	n. blow
+hroohyarlhaa (/ʝɹɯ᷆ː.ɻ̠̟̊ɻ̠ɑ̄.ɹʟɦ̞ɶ᷉ː/)
+	v. remember
+hyiivwoohtoo (/ʝɻ̠̊ȳː.vɰɯ̄ːx.tɯ̄ː/)
+	n. flight
+hoohaah (/ʝɯ᷄ː.h̞ɶ̄ːβ/)
+	n. glass
+hihiyaw (/ʝy᷄.c̟y.ɻ̠ɑ᷆ɰ/)
+	n. fear
+haayhharbhi (/ʝɑ᷆ːɻ̠.ɻ̠̟ɦ̞ɑ᷉ɹ.b̪ʰy᷉/)
+	adj. slow
+hayfghaalawl (/ʝɶ᷉j̊f.ɟʰɑ᷆ː.ʎɑ᷆ɰ̊ʎ̥/)
+	n. print
+haahhiylihl (/ʝɶː.ɸχyɻ̠̊.ʟ̠yɦ̞ʟ̠̊/)
+	n. daughter
+haa (/ʝɶ̄ː/)
+	n. statement
+yaawhgiiyrfahhoo (/j̊ɑ᷄ːɰɦ.qy᷉ːɻ̠̊β̞.fɶ᷆.βh̞ɯ᷄ː/)
+	adj. great
+yiiyrpiihriibhhiilh (/jȳːɻ̠̊ɹ̊.pyː.ɦʁ̞y᷉ː.b̪ʰɣȳːʟɻ̠̟/)
+	n. plate
+yayhiifdhiral (/jɑ᷄ɻ̠̊.ʁyːf.dʰy᷆.ʋ̥ɑl̥/)
+	n. potato
+yaarhiohahii (/jɑ᷆ːʁ̞̊.ɣȳɯ̯᷆.ɦ̞ɶ̄.ɸyː/)
+	v. live
+lyaa (/ʎ̥ɻ̠̊ɶ᷉ː/)
+	n. spring
+lyaafaahliyghlay (/ʎ̥jɑ᷆ː.fɑ̄ɶ̯᷉h̞.ʟ̥ȳj̊.ɟʰʟɑ̄j/)
+	n. square
+loolshohiiwl (/ʎ̥ɯ᷄ːʎ̟.ɹ̟̊ɦ̞ɯ.ɸy᷉ːɰʎ̥/)
+	n. driving
+lyi (/ʎɻ̠̊y᷆/)
+	adj. free
+lraahlaa (/ʎʁ̞ɑ᷄ːh̞.ʟ̥ɶ̄ː/)
+	adj. married
+loowraw (/ʎɯ᷄ːɰ.ʋ̥ɑ᷄ɰ̊/)
+	n. coat
+laahii (/ʎɑ᷆ː.βȳː/)
+	n. brother
+laarsi (/ʎɶ᷆ːʁ̞̊.ɹ̟̊y᷄/)
+	n. suggestion
+khalghfoolaayi (/kχɶʟ̠.ʡʰfɯ᷄ː.ʎ̟̊ ɑ᷉ː.j̊ȳ/)
+	n. year
+krara (/kʁ̞ɶ̄.ʋɶ᷄/)
+	n. baby
+khaar (/khɑ̄ːʁ̞/)
+	n. society
+ko (/kɯ/)
+	adj. beautiful
+	adj. shallow
+kooyharrya (/kɯːj.ɟ̟ɑ᷉.ɹɹɻ̠̊ɑ᷆/)
+	adj. fertile
+ka (/kɑ᷉/)
+	n. country
+kaa (/kɑ᷉ː/)
+	v. let
+kaarlzohiilhiy (/kɑ᷉ːʁ̞̊ʎ̟̊ .ɹ̟ɯ᷉.ɦ̞y᷉ːl̥.ɸyj/)
+	n. thing
+gviivoyfoyh (/ɡvȳː.vɯ᷉j̊.fɯ̄ɻ̠ç/)
+	n. bottle
+graawlhaawhaarviilh (/ɡɹɶ᷉ːɰ̊l.ʁɶ᷉ːɑ᷄ː̯ɰ̊.βɶ᷄ːʁ̞̊.vȳːʟ̠̊ʁ/)
+	n. reason
+ghoolyararay (/ɡɻ̠̟̊ɯː.ʟjɶ᷉.ʁ̞̊ɑ᷉.ɹɶ᷄j̊/)
+	n. son
+ghawhaaw (/ɡʝɶ᷄ɰ.ɣɑ̄ːɰ̊/)
+	n. liquid
+ghaa (/ɡɣɶ᷄ː/)
+	n. growth
+gwaaghwaahliy (/ɡɰ̊ɶ᷄ː.qʁɰɶ̄ːɦ̞.ʟ̥y᷉ɻ̠/)
+	n. number
+glaarghiivgla (/ɡʟɶ᷉ːʁ̞̊.ʔɦy᷉ːv.ʡʎ̟̊ ɑ᷆/)
+	n. finger
+ghaay (/ɡχɑːɻ̠/)
+	v. help
+gostak (/ɡɯ᷉ɹ̟̊.tɑ᷆k/)
+	n. cork
+gooybh (/ɡɯ᷆ːɻ̠b̪ʰ/)
+	v. develop
+giirg (/ɡy᷄ːɹ̊ɡ/)
+	n. change
+gii (/ɡy᷉ː/)
+	adj. dangerous
+gafhaarraa (/ɡɑ᷉.fɻ̠̟ɶ᷉ː.ʋʋ̥ɑ̄ɶ̯᷉/)
+	n. pump
+garaa (/ɡɶ.ʁ̞̊ɑ᷉ː/)
+	adj. thin
+giohayoogir (/ɡȳɯ̯᷆.h̞ɶ᷆.jɯ᷄ː.ɢy᷉ʋ/)
+	adj. possible
+ghrii (/ɡʰʋ̥ȳː/)
+	v. work
+ghsiiyloohiiwh (/ɡʰɹ̟̊yːj.ʟɯ̄ː.h̞y᷄ːɰ̊h/)
+	adj. first
+ghwarh (/ɡʰɰ̊ɑ᷄ɹ̊ʝ/)
+	n. laugh
+ghlaayaa (/ɡʰʟɑ᷉ː.ɻ̠ɑː/)
+	n. insurance
+ghhaahaarhhhahir (/ɡʰχɶ᷉ː.xɶ᷉ːɑ᷄ː̯ʋ̥.ɟ̟ʰhɑ̄.ɸy᷄ɹ̊/)
+	adj. bright
+ghaayghaagh (/ɡʰɶ᷆ːɻ̠.ɡʰɑ̄ːɟʰ/)
+	n. base
+ghaahghooybhaalaw (/ɡʰɶ᷆ːx.ɟçɯ᷄ːj̊.bʰɶ᷆ː.ʟɶ̄ɰ/)
+	n. butter
+hra (/xβ̞ɶ᷆/)
+	n. bite
+hlalhghagwoy (/xʎ̥ɶʎ̥h.ɢʰɶ̄.ɢɰɯ᷄ɻ̠/)
+	n. school
+hliirhlawprahhhaa (/xʎȳːʋ.xlɶ᷄ɰ.pɹɶ᷉.ɟ̟ʰɸɶː/)
+	adj. complex
+hloow (/xʟ̥ɯːɰ̊/)
+	adj. sudden
+holt (/xɯ̄ʎ̟̊ t/)
+	n. selection
+halhasyaaraa (/xɑ̄ʎ.xɑ̄.ɹ̟̊ɻ̠̊ɑ̄ɶ̯᷉.ʁ̞ɑ̄ː/)
+	n. manager
+haawii (/xɑ᷉ː.ɰ̊yː/)
+	v. hear
+haayloizrorgoh (/xɶ̄ːj̊.ʎɯ᷆y̯.ɹ̟ʋ̥ɯ̄ʋ̥.ʡɯ᷆ɦ̞/)
+	adj. future
+haaldhhiizbhharrah (/xɶ᷄ːʟ.dʰʝy᷄ːɹ̟.b̪ʰçɶ᷉ʁ̞̊.ʋ̥ɑh̞/)
+	adj. like
+hiohs (/xȳɯ̯᷆ɦ̞ɹ̟̊/)
+	n. cotton
+hlii (/ɣʎ̟̊ yː/)
+	adj. small
+hloriyrhoolh (/ɣʎɯ̄.ʁ̞y᷄ɻ̠̊ʋ̥.xɯ̄ːlʁ/)
+	n. doubt
+hola (/ɣɯ.ʟ̠̊ɑ/)
+	n. ant
+hiyaay (/ɣy.ɻ̠̊ɶ᷉ːɑ᷄ː̯j̊/)
+	n. profit
+hiy (/ɣyj̊/)
+	v. send
+wohd (/ɰ̊ɯ᷄xd/)
+	n. tin
+wohaarbhiiy (/ɰ̊ɯ᷉.ɦ̞ɑ᷉ːʁ̞.bɸy᷉ːj/)
+	n. mountain
+waab (/ɰ̊ɑ᷉ːb̪/)
+	n. heat
+waylhaahrlawii (/ɰ̊ɶ᷆jʎ.ɻ̠̟ɑ᷉ːh̞.ɸ̝ʎ̟ɶ̄.ɰ̊y᷉ː/)
+	n. muscle
+waalgilb (/ɰ̊ɶːl̥.qy᷄ʟ̠b/)
+	n. orange
+wohhaayooh (/ɰɯ᷄.ɻ̠̟̊hɶ᷆ː.ɻ̠ɯ᷄ːç/)
+	adj. late
+wiiywoir (/ɰy᷉ː.ɻ̠ɰɯ᷆y̯ʁ̞̊/)
+	adj. young
+waalhal (/ɰɑ᷉ːʟ̠̊.hɶ̄ʟ̠/)
+	n. smoke
+wala (/ɰɶ᷆.ʎ̟̊ ɑ᷆/)
+	adj. fast
+lyaaylhoohoofhaa (/ʟ̥ɻ̠̊ɑːɻ̠̊ʎ̟.ɣɯ᷉ː.h̞ɯː.fɻ̠̟ɑ̄ɶ̯᷉/)
+	n. stretch
+lyaa (/ʟ̥ɻ̠ɑ᷉ː/)
+	n. regret
+lraloiy (/ʟ̥ʁ̞̊ɶ.ʎ̥ɯ᷆y̯ɻ̠̊/)
+	n. use
+liyarboo (/ʟ̥y᷄.j̊ɑ̄ɹ.bɯ̄ː/)
+	n. hand
+lahoghooylsoih (/ʟ̥ɑ᷄.ɻ̠̟̊ɯ.ʡʰɯ̄ːɻ̠ʟ.ɹ̟̊ɯ᷆y̯x/)
+	n. body
+layhihvlirlkar (/ʟ̥ɑ᷄ɻ̠̊.ʁy᷆.xvʎ̥y᷉ʁ̞ʟ̠.kɶ᷉ʋ/)
+	n. committee
+laaylhaayasbiigh (/ʟ̥ɑːɻ̠ʟ̥.ʝɑ̄ː.jɶ᷄ɹ̟̊.b̪y᷄ːɟʰ/)
+	n. pipe
+laalpaaviiha (/ʟ̥ɑːʟ̥.p̪ɶː.vy᷉ː.ʝɶ/)
+	n. scale
+laahlaskhi (/ʟ̥ɑ᷄ːɦ̞.ʎ̟ɑ̄ɹ̟̊.ch̞ȳ/)
+	n. addition
+loorriilool (/ʟɯː.ʋ̥ʋ̥ȳː.l̥ɯ᷉ːʎ/)
+	n. stocking
+li (/ʟy᷆/)
+	n. burn
+layalhaylvoolh (/ʟɶ᷆.jɶʎ̟.ɣɶ᷄ɻ̠ʎ̟.vɯ᷄ːʟ̠ɻ̠̟/)
+	n. ship
+lawloorl (/ʟɶ᷉ɰ̊.ʟ̠̊ɯ̄ːʁ̞ʎ̥/)
+	n. fowl
+glaayaahhzaawliil (/qʎ̟̊ ɑ᷉ː.ɻ̠̊ɑ̄ɶ̯᷉.ɟ̟ʰɹ̟ɑ᷉ːɰ̊.ʎy᷄ːl̥/)
+	adj. strong
+graaliylhaalh (/qʁ̞̊ɑː.l̥yj̊ʟ̠̊.hɶːʟç/)
+	adj. skinny
+gowsarhkiiliiw (/qɯ᷆ɰ.ɹ̟̊ɑ̄ʋɻ̠̟.kȳː.lyːɰ/)
+	n. poison
+goyhaalhoghyooh (/qɯ᷄ɻ̠̊.ɦɑː.l̥h̞ɯ᷄.ɢʰɻ̠ɯ᷆ːh̞/)
+	adj. clear
+goolgol (/qɯ̄ːl̥.ɢɯ̄ʟ/)
+	n. ring
+goohiiwoothiiy (/qɯ᷄ː.h̞yː.ɰ̊ɯ̄ː.thy᷉ːɻ̠̊/)
+	n. business
+girihyiilh (/qy.β̞y᷆.ɻ̠̟̊jy᷄ːʎ̟̊ ʝ/)
+	n. rat
+giihay (/qy᷆ː.c̟ɶj/)
+	n. offer
+gafaliigliih (/qɑ᷉.fɶ.ʎ̟y᷆ː.ʡʟ̠yːh̞/)
+	n. drop
+ga (/qɶ᷆/)
+	v. set
+gaarg (/qɶ᷆ːʋɢ/)
+	n. kick
+gaahbhahhiiylaa (/qɑ̄ɶ̯᷉h.bʁɑ᷉h̞.ʁy᷄ːj.ʟ̥ɶ᷆ː/)
+	v. keep
+gfighaahiyii (/ɢfy᷄.ɢʰɑ̄ɶ̯᷉.ɸy᷄.jȳː/)
+	adj. deep
+glo (/ɢʎ̟̊ ɯ̄/)
+	adj. rough
+ghofiiharalh (/ɢhɯ.fyː.ɻ̠̟ɑ᷉.ʁ̞̊ɑlç/)
+	adj. bent
+ghaahl (/ɢhɑ̄ːɦ̞ʟ/)
+	n. camera
+goyroolaa (/ɢɯ᷄j̊.ʋɯ᷉ː.ʟɶː/)
+	adj. living
+gii (/ɢy᷄ː/)
+	n. effect
+giibhhifalaa (/ɢy᷄ː.b̪ʰβy᷄.fɶ᷄.ʟ̠̊ɑː/)
+	n. island
+garlraraahlow (/ɢɑ᷆ʁ̞̊.ʟ̠̊ʋ̥ɶ᷄.ʁ̞̊ɑ᷉ː.çlɯ᷉ɰ̊/)
+	n. church
+gaarbhoyhpiirh (/ɢɑ᷆ːβ̞.bʰɯ᷉ɻ̠̊ɸ.py᷄ːβ̞ɻ̠̟/)
+	v. run
+gaalolhgahlhaar (/ɢɶ᷆ː.ʟ̠̊ɯ᷉ʟɻ̠̟̊.ʔɶh̞l̥.ʝɶːɸ̝/)
+	n. nerve
+ghrarhihrhiy (/ɢʰβ̞ɑ᷆ɹ.ʁy᷉ɦ̞ɸ̝.ɣy᷆ɻ̠/)
+	adj. gradual
+ghyaayv (/ɢʰɻ̠̊ɶ᷄ːj̊v/)
+	v. buy
+ghyaahiwlaahhriih (/ɢʰjɶ᷉ːɑ᷄ː̯.h̞y᷉ɰ.ʟ̠̊ɑ᷆ː.ɟ̟ʝʁ̞̊y᷄ːɦ̞/)
+	n. swim
+ghhaaral (/ɢʰχɑ᷉ː.ʁ̞ɑ᷄ʎ/)
+	n. carriage
+ghilzgoilooh (/ɢʰyʟ̠ɹ̟.ɟɯ᷆y̯.ʎɯ᷉ːɻ̠̟̊/)
+	n. teaching
+ghihyalhayhhiy (/ɢʰy᷄.ɦ̞jɶ᷆ʎ.χɶ᷄ɻ̠̊x.ɟ̟y᷄ɻ̠/)
+	v. use
+ghaalhoihhaa (/ɢʰɑːʟ̠.ɻ̠̟ɯ᷆y̯h̞.χɶ᷉ː/)
+	n. nail
+ghaayli (/ɢʰɑ᷄ːɻ̠̊.ʟy/)
+	n. slope
+hlow (/χl̥ɯ᷉ɰ̊/)
+	adj. expensive
+hlah (/χl̥ɶʝ/)
+	n. farm
+hlaayhaasdhah (/χl̥ɶ̄ːj.ɣɶ᷆ːɹ̟̊.dʰɑ᷆c̟/)
+	adj. frequent
+hliylaagoorhaah (/χʎy᷆ɻ̠.l̥ɶ᷆ː.ʔɯ̄ːβ̞.çɑːɦ̞/)
+	v. kill
+hooghakaypaa (/χɯː.ɢʝɑ̄.kɶ᷉j̊.p̪ɑː/)
+	v. call
+havaaka (/χɑ.vɶ᷉ː.cɶ̄/)
+	n. order
+halayaaf (/χɶ᷉.ʎ̥ɶ᷉.ɻ̠ɑ᷄ːf/)
+	adj. false
+haarlalsloohl (/χɶ᷉ːʁ̞.lɑʎ̥.ɹ̟̊ʎ̟ɯ᷉ːɦ̞ʎ̟̊ /)
+	n. design
+hraawh (/ʁβ̞ɶ᷆ːɰʝ/)
+	v. begin
+hroowghraalfaaw (/ʁʋɯ̄ːɰ.ɢʰʋ̥ɶ᷉ːɑ᷄ː̯ʟ̥.fɑ᷄ːɰ/)
+	n. fire
+hwa (/ʁɰ̊ɑ᷉/)
+	v. decide
+hliihhaahrwahah (/ʁʟy᷉ːɦ̞.βɑ᷆ː.ɣβ̞ɰɶ᷄.ɸɶ̄ɣ/)
+	n. rate
+hoylhawiy (/ʁɯ᷆jʎ̟.ʁɑ̄.ɰy᷆j̊/)
+	n. detail
+hooraara (/ʁɯ᷆ː.β̞ɶː.ʁ̞̊ɶ᷄/)
+	n. flame
+hiha (/ʁȳ.h̞ɶ̄/)
+	n. birth
+hiiyafiiyfaagh (/ʁy᷉ː.jɑ᷉.fȳːj̊.fɑ᷆ːɢʰ/)
+	n. wind
+haalaa (/ʁɶ̄ː.lɑ̄ɶ̯᷉/)
+	v. draw
+haalhyohlhok (/ʁɶ̄ːʟ̥.ɻ̠̟̊jɯh̞l.βɯ᷆k/)
+	n. cake
+rorloihlaa (/ʁ̞̊ɯ᷆ʁ̞.lɯ᷆y̯h̞.ʟɑ̄ɶ̯᷉/)
+	v. create
+riyolzdhaarfhoir (/ʁ̞̊y᷄.jɯ᷉ʟ̠̊ɹ̟.dʰɶ᷄ːɹ̊.fʁɯ᷆y̯ʁ̞̊/)
+	n. theory
+rayhawrkiirltioh (/ʁ̞̊ɑj.ɻ̠̟ɶ᷉ɰʋ̥.ky᷉ːʁ̞̊ʎ.tȳɯ̯᷆ɦ/)
+	n. time
+raa (/ʁ̞̊ɑ᷆ː/)
+	n. bag
+raarlhaalaahrohh (/ʁ̞̊ɶ᷆ːʁ̞ʟ.βɶ᷉ːɑ᷄ː̯.ʎ̟ɶ̄ː.xɹɯ᷉ɟ̟ʰ/)
+	n. spade
+rosploohgsaa (/ʁ̞ɯɹ̟̊.pl̥ɯːβ.ɡɹ̟̊ɑ᷉ː/)
+	v. play
+riybhzaawl (/ʁ̞y᷉ɻ̠̊.b̪ʰɹ̟ɑ̄ːɰʟ̠̊/)
+	n. distribution
+riiyr (/ʁ̞ȳːj̊ɹ̊/)
+	n. thread
+ralhaa (/ʁ̞ɑ᷆ʟ̠̊.ɸɑ᷉ː/)
+	adj. automatic
+ralvavoih (/ʁ̞ɑ᷄ʎ.vɶ᷄.vɯ᷆y̯χ/)
+	n. self
+raar (/ʁ̞ɑːɹ̊/)
+	n. sheep
+rarlararv (/ʁ̞ɶ̄ʁ̞̊.ʎ̟̊ ɶ᷄.ʁ̞̊ɶ᷄ɸ̝v/)
+	n. observation
+lraaylihlaa (/ʟ̠̊ʁ̞̊ɑ᷆ːɻ̠̊.l̥y᷉ɦ̞.ʟ̠̊ɑː/)
+	n. comfort
+lorrya (/ʟ̠̊ɯ.ɸ̝ɹj̊ɶ/)
+	n. chalk
+lii (/ʟ̠̊ȳː/)
+	n. force
+lalfo (/ʟ̠̊ɑ᷆ʎ.fɯ̄/)
+	n. pig
+laallwiilhih (/ʟ̠̊ɶ̄ː.ʟʟ̥ɰ̊y᷄ːʟ̠̊.xy᷉h̞/)
+	n. gun
+lhozoowlhaal (/ʟ̠ɦ̞ɯ᷉.ɹ̟ɯ᷉ːɰʎ̥.ɸɶ̄ːʟ/)
+	n. brass
+lawrhaadhrih (/ʟ̠ɶɰ̊ɹ̊.βɶ᷆ː.dʰɹ̊y᷆ɦ̞/)
+	v. teach
+laalsorhayhgoh (/ʟ̠ɶːl.ɹ̟̊ɯɸ̝.ʝɶjɻ̠̟̊.qɯɦ̞/)
+	n. waste
+ghaawlaa (/ʔʝɶ᷆ːɰ.ʟ̠ɶ̄ː/)
+	n. fight
+gyowaarhaha (/ʔjɯ᷆.ɰɑːɸ̝.hɶ.ɦɶ̄/)
+	n. tax
+ghaalaaloolhil (/ʔxɑ̄ː.ʎ̟ɶ᷄ː.l̥ɯ᷄ːʎ̟.hyl̥/)
+	n. collar
+gliiyho (/ʔʟ̥y᷄ːɻ̠.ɻ̠̟̊ɯ᷄/)
+	n. arm
+ghoy (/ʔχɯ᷆ɻ̠̊/)
+	n. approval
+ghiiyraarbloyoiy (/ʔɦy᷄ːj̊.ɸ̝ɑ̄ɶ̯᷉ɹ̊.b̪ʎ̟̊ ɯ᷉.jɯ᷆y̯j/)
+	n. brick
+gohaah (/ʔɯ̄.h̞ɶ᷉ːɑ᷄ː̯β/)
+	n. moon
+go (/ʔɯ᷆/)
+	adj. hanging
+golhlazg (/ʔɯ᷉ʟ̠̊.ɻ̠̟̊ʟɑ̄ɹ̟q/)
+	adj. healthy
+giyrila (/ʔy᷄ɻ̠̊.ɸ̝y᷆.ʎ̟ɑ᷄/)
+	n. gold
+gaawrbhaalhraarh (/ʔɶ᷆ːɰɸ̝.b̪ʰɑːʎ.ɦɹɑ̄ɶ̯᷉ɸ̝ʝ/)
+	n. sense
+gaararhoohgyaah (/ʔɑ̄ɶ̯᷉.ʁ̞ɑʋ̥.ɻ̠̟̊ɯ̄ːɻ̠̟̊.ɟɻ̠̊ɶ̄ːh̞/)
+	n. meeting
+gharahwaaylharh (/ʡʝɶ᷉.β̞ɑ᷉.hɰ̊ɑ᷆ːj̊l̥.ɻ̠̟ɑβ̞h/)
+	n. wound
+gyahow (/ʡj̊ɑ.ʝɯ᷆ɰ̊/)
 	n. wire
+gyoohlowbhawlhaarl (/ʡjɯ̄ː.ɸʎ̟̊ ɯ᷆ɰ.b̪ʰɶɰ̊ʎ̥.hɑ᷆ːʁ̞̊ʟ̠̊/)
+	v. be
+ghaayvohaahhlawr (/ʡh̞ɑ̄ɶ̯᷉j̊.vɯ᷄.h̞ɶ̄ːh̞.çʟ̥ɶ᷄ɰɸ̝/)
+	adj. silly
+goowlhorhhaaliirh (/ʡɯːɰ̊l̥.ɻ̠̟̊ɯ᷉ʋ̥.ɣɦ̞ɑː.ʟ̥y᷄ːʁ̞x/)
+	n. decision
+giyh (/ʡy᷄j̊ɸ/)
+	n. pleasure
+gaa (/ʡɶː/)
+	n. summer
+gaay (/ʡɶ᷉ːɑ᷄ː̯j/)
+	n. parcel
+ghvohaawhooy (/ʡʰvɯ᷉.ɦ̞ɶ᷉ːɰ̊.ɻ̠̟ɯ᷉ːɻ̠/)
+	n. plant
+ghvaahh (/ʡʰvɑ̄ɶ̯᷉χc̟/)
+	n. memory
+ghriola (/ʡʰʋȳɯ̯᷆.ʎ̟ɑ᷆/)
+	adj. warm
+ghsayharaylhaa (/ʡʰɹ̟̊ɑ̄.j̊ɦ̞ɶ᷆.ʁ̞̊ɶ᷄ɻ̠̊ʎ̟̊ .ɸɶ᷉ː/)
+	n. rhythm
+ghlaylo (/ʡʰl̥ɶ᷆j.ʎ̥ɯ/)
+	n. amount
+ghyaayliohbhha (/ʡʰɻ̠̊ɶːɻ̠.ʎ̟̊ ȳɯ̯᷆χ.b̪ʰɻ̠̟ɶ᷆/)
+	n. cook
+ghyayaahlhorhrii (/ʡʰɻ̠ɑ᷄.jɑ᷄ː.βʟh̞ɯ̄ʁ̞.ɻ̠̟̊ʋy᷉ː/)
+	v. explain
+ghlaliyaarli (/ʡʰʎ̥ɶ᷆.ly᷉.ɻ̠̊ɑ᷄ːʁ̞.ʟ̠y/)
+	n. agreement
+ghhaahh (/ʡʰɣɑ̄ɶ̯᷉ɦ̞h/)
+	adj. independent
+ghhoozroihhralfiir (/ʡʰʁɯː.ɹ̟β̞ɯ᷆y̯.ɸɦʁ̞ɶ᷆ʟ̠.fy᷆ːʋ/)
+	n. current
+ghhoooiwlliiyr (/ʡʰhɯː.ɯ᷆y̯ɰ.ʟ̠̊ʟ̠y᷆ːj̊ɹ/)
+	adj. unready
+ghow (/ʡʰɯ᷉ɰ̊/)
+	v. appear
+ghiriraay (/ʡʰy᷄.ɸ̝y.ɹ̊ɑːj/)
+	n. side
+ghaahiirroowl (/ʡʰɑ᷆ː.ɣy᷄ːʁ̞̊.ʋɯ᷉ːɰʎ̟/)
+	n. tree
+ghayprow (/ʡʰɶ᷉j̊.p̪ɸ̝ɯ᷆ɰ/)
+	n. plow
+ghaahowrhaarayr (/ʡʰɶː.χɯ᷆ɰ̊ʋ.βɑ̄ɶ̯᷉.ʋ̥ɑ᷉ɻ̠ɹ̊/)
+	v. leave
+ghaay (/ʡʰɶ᷄ːɻ̠̊/)
+	n. bulb
+ghaaral (/ʡʰɶ᷄ː.ʁ̞̊ɶ᷆ʟ̥/)
+	n. boy
+ghaarsvaah (/ʡʰɶ᷉ːɑ᷄ː̯ɹ̊.ɹ̟̊vɑ̄ɶ̯᷉ɦ̞/)
+	adj. empty
+hraa (/hβ̞ɶ᷉ːɑ᷄ː̯/)
+	n. wax
+hyiisghhiiyala (/hɻ̠y᷉ːɹ̟̊.ɟʰçy᷉ː.j̊ɶ᷆.l̥ɑ᷄/)
+	n. war
+hraagh (/hʁ̞ɑ᷉ːʡʰ/)
+	n. account
+hhiig (/hh̞y᷄ːq/)
+	n. competition
+hooyaalaahlaa (/hɯ̄ː.ɻ̠ɶː.ʎ̟ɶ᷄ː.çʎ̥ɶ᷆ː/)
+	n. morning
+hooysdhil (/hɯ᷆ːjɹ̟̊.dʰyʎ̥/)
+	n. monkey
+hoowhhalloolol (/hɯ᷉ːɰ.ʁhɑ᷄.ʎʎ̟̊ ɯ᷉ː.ʟ̠̊ɯʎ̟/)
+	v. understand
+halhliilhyayra (/hɶ̄ʟ̠.βʟȳːʟ̠.ʝjɶ᷆j.ɹ̊ɶ᷄/)
+	n. lead
+haahlhoiy (/hɶ̄ːɦ̞l.xɯ᷆y̯j/)
+	n. porter
+hlaayloo (/ɦl̥ɶ̄ːj̊.ʎ̥ɯː/)
+	n. drink
+hyowaylii (/ɦjɯ᷉.ɰ̊ɑ̄ɻ̠.ʎ̟̊ y᷄ː/)
+	n. seed
+hlorsowsir (/ɦʟ̥ɯ᷉ɹ.ɹ̟̊ɯ᷄ɰ.ɹ̟̊ȳʋ/)
+	n. thought
+howar (/h̞ɯ᷄.ɰɑ᷄ʋ̥/)
+	adj. fixed
+hayrfaahagaayr (/h̞ɑ᷆ɻ̠ɸ̝.fɶ᷄ː.xɶ᷆.ʡɶ̄ːɻ̠ɸ̝/)
+	n. day
+harhiiyha (/h̞ɑ᷆ʁ̞̊.xyːj̊.βɶ᷉/)
+	n. attention
+haythaahraa (/h̞ɑ᷉ɻ̠.tɣɶ̄ː.xβ̞ɶ᷆ː/)
+	v. take
+hiivhritaayaa (/ɦ̞ȳː.vxɸ̝y᷄.tɶː.j̊ɑ᷉ː/)
+	n. street
+hiiyhiil (/ɦ̞y᷉ːɻ̠.ɻ̠̟̊ȳːʎ̟/)
+	n. kiss
+haa (/ɦ̞ɑ᷉ː/)
+	v. include
+halzaw (/ɦ̞ɶ᷆ʟ̠̊.ɹ̟ɶ᷆ɰ/)
+	n. punishment
+o (/ɯ/)
+	n. slip
+obroohawhilp (/ɯ.b̪ʁ̞̊ɯ᷄ː.ɦ̞ɑ᷆ɰ.ɣy᷄ʎp̪/)
+	n. boot
+ol (/ɯʎ̟/)
+	n. paint
+oyaariir (/ɯ.j̊ɑ᷉ː.ɸ̝y᷆ːʁ̞/)
+	n. fish
+oyr (/ɯjɹ̊/)
+	n. hat
+ow (/ɯɰ/)
+	n. berry
+oldfaaha (/ɯʟ̠.dfɶː.ɦ̞ɑ᷆/)
+	n. basket
+ohr (/ɯɦ̞ɹ̊/)
+	adj. wise
+o (/ɯ̄/)
+	adj. apolitical
+ohlyiih (/ɯ̄.ɻ̠̟ʎ̥jy᷄ːh̞/)
+	adj. hard
+oyoliiyr (/ɯ̄.j̊ɯ.ʎ̥ȳːj̊ʋ̥/)
+	adj. normal
+owoha (/ɯ̄.ɰ̊ɯ᷆.ɦɶ/)
+	n. oil
+owiiwlhaar (/ɯ̄.ɰȳːɰl̥.çɶ̄ːβ̞/)
+	n. experience
+ohryoltraa (/ɯ̄.ʁʋ̥jɯ̄ʎ.tʋɑ᷄ː/)
+	n. polish
+orlhiiypooy (/ɯ̄ʁ̞̊ʟ.ɻ̠̟ȳːj.pɯ᷉ːj/)
+	n. idea
+ol (/ɯ̄ʟ̠̊/)
+	v. do
+olhghiila (/ɯ̄ʟ̠h.ʡʰyː.ʟ̠̊ɑ/)
+	n. structure
+ohahzghayr (/ɯ̄.h̞ɶ᷉h̞ɹ̟.ɢʰɑ᷉ɻ̠ɹ̊/)
+	adj. fat
+oh (/ɯ̄ɦ̞/)
+	n. thumb
+olfalhii (/ɯ᷆l.fɑʟ.ʝȳː/)
+	n. key
+olaaharhor (/ɯ᷆.ʎ̟̊ ɑ̄ː.ɦ̞ɑ̄ʁ̞.ɦɯ᷆ʋ/)
+	v. lead
+owrghigaahg (/ɯ᷆ɰβ̞.ɟʰy᷆.ɡɶ᷄ːɻ̠̟̊ɡ/)
+	n. whistle
+ohsavkaalhaah (/ɯ᷆.ɦɹ̟̊ɑ᷄v.kɶ᷉ːɑ᷄ː̯ʟ̠̊.ʁɶ᷉ːh̞/)
+	n. loss
+o (/ɯ᷄/)
+	n. expansion
+ohdhhayshov (/ɯ᷄β.dʰɻ̠̟̊ɶ᷉ɻ̠̊.ɹ̟̊βɯ᷉v/)
+	n. roll
+oyrhaar (/ɯ᷄ɻ̠ɸ̝.hɑːβ̞/)
+	n. rain
+olh (/ɯ᷄ʟ̠x/)
+	n. shoe
+orhayghhooygoo (/ɯ᷉β̞.ɸɑɻ̠.ʡʰɻ̠̟ɯːj̊.ɟɯː/)
+	n. top
+ofghilayf (/ɯ᷉f.ɡβȳ.l̥ɶ᷉jf/)
+	n. cause
+ov (/ɯ᷉v/)
+	v. open
+ovoi (/ɯ᷉.vɯ᷆y̯/)
+	n. neck
+oh (/ɯ᷉ɻ̠̟/)
+	n. process
+oyiyliophoiy (/ɯ᷉.ɻ̠ȳj.lȳɯ̯᷆.pχɯ᷆y̯j/)
+	adj. certain
+oyolkaay (/ɯ᷉.j̊ɯʎ̟.kɶ᷉ːɑ᷄ː̯j̊/)
+	n. family
+owlhayghahlha (/ɯ᷉ɰl̥.ʁɶ̄j̊.ɟʰɑɦ̞l.ʁɶ/)
+	n. death
+olaga (/ɯ᷉.ʟɑ᷉.qɑ᷆/)
+	n. learning
+ohlaa'oovghi (/ɯ᷉h̞.ʟ̠ɑ᷉ː.ɯ᷆ːv.ʡʰy᷉/)
+	n. test
+oo (/ɯː/)
+	adj. soft
+ooroylooyroolg (/ɯː.ɸ̝ɯ̄ɻ̠̊.ʟ̠ɯ᷉ːɻ̠.ɹɯ᷆ːlɟ/)
+	n. example
+oofbhhoorhii (/ɯːf.b̪ʰɸɯ̄ːʁ̞̊.χyː/)
+	n. journey
+oorhah (/ɯːʋ.ɻ̠̟̊ɶ᷉ɦ̞/)
+	n. place
+ooshhoorbhaalziol (/ɯːɹ̟̊.ɟ̟ɻ̠̟ɯ̄ːʁ̞̊.b̪ʰɶ᷄ːl.ɹ̟ȳɯ̯᷆l̥/)
+	adj. clean
+ooha (/ɯː.ɻ̠̟̊ɑ᷄/)
+	n. father
+ooyrhaaw (/ɯːɻ̠ɸ̝.ʝɑ᷆ːɰ/)
+	adj. stiff
+oolyay (/ɯː.ʎ̟j̊ɑ̄ɻ̠/)
+	n. stick
+oog (/ɯːɟ/)
+	adj. left
+ooylhaawghzaarkhah (/ɯːj̊l.ɣɑːɰ.ɢʰɹ̟ɑ᷆ːɸ̝.chɶ᷉ɦ̞/)
+	n. box
+oowlhaalsaghwaah (/ɯːɰʟ.çɑ᷄ːʟ̥.ɹ̟̊ɑ᷉.qɻ̠̟ɰ̊ɑ᷄ːh̞/)
+	n. cloud
+oorariirr (/ɯː.ʁ̞ɶ.ʁ̞̊yːʁ̞̊ʋ/)
+	v. want
+oorbhooy (/ɯ̄ːʋ̥.bʰɯ᷆ːɻ̠̊/)
+	n. fold
+oohoilhaalhaa (/ɯ̄ː.ɟ̟ɯ᷆y̯ʎ̟.χɶ̄ːʎ̥.χɶ᷉ː/)
+	n. smash
+ooyhlaraaooyl (/ɯ̄ːj̊.c̟ʎ̟̊ ɑ.ʋ̥ɑ̄ɶ̯᷉.ɯ᷉ːj̊ʎ̥/)
+	n. bed
+oohgrii (/ɯ̄ːʁ.ʔʁ̞ȳː/)
+	n. sleep
+oorhhawoowg (/ɯ̄ːʁ̞̊.ɻ̠̟̊hɶ.ɰ̊ɯ᷉ːɰq/)
+	n. form
+ooraarlghaawzaa (/ɯ̄ː.ʁ̞̊ɑːʁ̞ʎ.ɢʰɶ̄ːɰ̊.ɹ̟ɶ᷉ː/)
+	v. come
+oorgaayiyhhiir (/ɯ̄ːʁ̞.ɡɑ̄ɶ̯᷉.j̊y᷉j.ɟ̟ʰy᷆ːʁ̞/)
+	adj. political
+ooghvaalhliiyhhaaf (/ɯ̄ː.ʡʰvɑ̄ɶ̯᷉ʟ̥.xʟ̠̊ȳːj̊.ʝɻ̠̟̊ɶ᷄ːf/)
+	n. reading
+oohir (/ɯ̄ː.h̞y᷄β̞/)
+	n. science
+oohiiyawiir (/ɯ̄ː.h̞ȳː.jɶ.ɰy᷆ːʁ̞/)
+	adj. dirty
+oorlho'iiwlbaa (/ɯ᷆ː.β̞ʟ̠h̞ɯ.ȳːɰl.b̪ɑː/)
+	adj. infrequent
+ool (/ɯ᷆ːʎ̟/)
+	adj. wet
+oowlwaahraayl (/ɯ᷆ːɰ̊.ʟɰ̊ɑːh̞.ɸ̝ɶ̄ːj̊ʟ/)
+	adj. short
+oowr (/ɯ᷆ːɰʋ/)
+	n. skin
+oohg (/ɯ᷆ːχq/)
+	adj. dull
+oohayhaarhal (/ɯ᷆ː.χɑ᷄ɻ̠̊.ɣɑ᷄ːʋ̥.ɦɶʟ̥/)
+	n. power
+oohii (/ɯ᷆ː.ɦ̞ȳː/)
+	adj. necessary
+oohadyawh (/ɯ᷆ː.ɦ̞ɶ.dɻ̠̊ɑ̄ɰɻ̠̟/)
+	n. cat
+oo (/ɯ᷄ː/)
+	n. danger
+	v. see
+ooyhihoil (/ɯ᷄ːɻ̠̊.ɻ̠̟y.ɸɯ᷆y̯ʎ/)
+	adj. impossible
+ooyorlhaayhaargh (/ɯ᷄ː.ɻ̠̊ɯ̄ʁ̞̊ʟ̠̊.βɑ᷉ːj.çɑːʁ̞̊ɢʰ/)
+	adj. tired
+ooylhiirhaaha (/ɯ᷄ːɻ̠ʎ.hyːʁ̞.ɟ̟ɑ᷄ː.βɑ̄/)
+	n. group
+ooyoolhaaydaay (/ɯ᷄ː.jɯ᷉ːl.ʝɶ᷆ːj.dɶːɻ̠/)
+	v. get
+ooghlhaarhiwghaa (/ɯ᷄ː.ɢʰʟɦ̞ɶːʁ̞.χy᷆ɰ.ʡʰɶ̄ː/)
+	n. pin
+oohriilrwotiw (/ɯ᷄ː.ʁɹȳː.ʎ̟̊ ʋ̥ɰ̊ɯ᷄.tyɰ̊/)
+	n. fruit
+ooyiiwiilaa (/ɯ᷉ː.ɻ̠y᷄ː.ɰ̊y᷆ː.ʎ̟̊ ɶ᷉ː/)
+	n. view
+ooyhoohaarh (/ɯ᷉ːj.ɸɯ̄ː.ɦ̞ɶ᷄ːʁ̞̊ɦ/)
+	n. noise
+oolzaagaalhlaa (/ɯ᷉ːʎ.ɹ̟ɑ᷄ː.ʡɶ̄ːʟ̥.βʟ̠ɶ᷆ː/)
+	n. silk
+oowalhoo (/ɯ᷉ː.ɰɶ̄ʎ̥.βɯː/)
+	n. ornament
+oohrooylooyih (/ɯ᷉ːɦ̞.ɸ̝ɯ᷄ːj̊.l̥ɯː.ɻ̠y᷄ɦ̞/)
+	n. dress
+oohhihiihhhalh (/ɯ᷉ːɦ̞.ʁy.h̞ȳːh̞.ɣɦɑ᷄ʎ̥β/)
+	n. wheel
+ibvil (/y.bvy᷄ʟ/)
+	n. join
+iyaayorag (/y.ɻ̠̊ɶ᷉ː.ɻ̠ɯ.β̞ɶ᷄ɢ/)
+	adj. ready
+iyoh (/y.ɻ̠ɯ᷄h̞/)
+	n. star
+iyaaliiyor (/y.ɻ̠ɶ᷉ːɑ᷄ː̯.lȳː.ɻ̠ɯ᷉ʁ̞̊/)
+	n. word
+ilghhaayrhal (/yʟ.ɟʰxɑ̄ːɻ̠̊β̞.ɻ̠̟̊ɶ̄ʟ̠̊/)
+	v. consider
+ihharhihrhir (/y.ʁçɶɸ̝.ɦy᷉ɦ̞ʋ.ɟ̟y᷉ʋ̥/)
+	v. agree
+iraalshaaylhaw (/y.ʁ̞̊ɶ᷄ːl.ɹ̟̊ɻ̠̟ɑ̄ːj̊ʟ̥.çɑ̄ɰ/)
+	v. sell
+i (/ȳ/)
+	n. harmony
+ihfiiwaroo (/ȳ.ɸfȳː.ɰɶ.ʁ̞̊ɯ᷆ː/)
+	n. property
+ir (/ȳβ̞/)
+	n. curve
+ilaawlolb (/ȳ.l̥ɶ᷉ːɰ̊.ʎ̟ɯ᷄ʎ̟̊ b/)
+	n. wash
+ih (/ȳh̞/)
+	n. air
+i (/y᷆/)
+	n. goat
+iraarhloorar (/y᷆.ɸ̝ɶːʁ̞.ɦʎ̥ɯ̄ː.ɹ̊ɑ᷉ɸ̝/)
+	n. cup
+isgho (/y᷆ɹ̟̊.qβɯ᷉/)
+	adj. private
+irhhaawlii (/y᷆ɹ.ɸɦ̞ɶ̄ːɰ.ʟȳː/)
+	n. apparatus
+iyharaa (/y᷆ɻ̠.ɻ̠̟ɑ᷆.ɹ̊ɶː/)
+	n. comparison
+iyhoo (/y᷆ɻ̠.ʁɯ̄ː/)
+	adj. separate
+iyiiya (/y᷆.j̊y᷄ː.j̊ɶ̄/)
+	n. umbrella
+ihra (/y᷆.ɣɹɑ᷄/)
+	n. salt
+iwoowaawliiy (/y᷆.ɰ̊ɯ̄ː.ɰɶ᷆ːɰ.ʎ̥y᷉ːj̊/)
+	n. color
+iwaa (/y᷆.ɰ̊ɶ̄ː/)
+	adj. special
+iliirraayhayl (/y᷆.ʟ̥y᷄ː.ɹʋ̥ɑ̄ɶ̯᷉ɻ̠̊.ʝɶ̄j̊ʟ̠/)
+	n. knife
+ilaark (/y᷆.ʟ̥ɑ᷆ːʁ̞̊k/)
+	n. front
+iraayl (/y᷆.ʁ̞̊ɑ̄ɶ̯᷉ɻ̠̊ʎ̟̊ /)
+	n. desire
+ihryaaliiwoolh (/y᷆.ɦβ̞jɶ᷉ːɑ᷄ː̯.l̥y᷉ː.ɰ̊ɯːl̥c̟/)
+	n. impulse
+ih (/y᷆h̞/)
+	n. station
+ihlaah (/y᷆ɦ̞.ʟ̥ɶ᷉ːɑ᷄ː̯h̞/)
+	adj. same
+ihiiyaa (/y᷆.ɦ̞y᷆ː.ɻ̠ɶ᷉ːɑ᷄ː̯/)
+	adj. cheap
+i (/y᷄/)
+	n. development
+	v. die
+ivoohhaawlhi (/y᷄.vɯː.βʝɑ̄ɶ̯᷉ɰl.hy᷄/)
+	v. believe
+iyloolgh (/y᷄ɻ̠̊.ʟ̥ɯ᷄ːʎ̟ʡʰ/)
+	n. discussion
+ihooghhoih (/y᷄.ɣɯ̄ː.ɡʰʝɯ᷆y̯ɻ̠̟̊/)
+	n. sun
+iw (/y᷄ɰ̊/)
+	n. cart
+i (/y᷉/)
+	n. field
+	v. try
+ih (/y᷉ɸ/)
+	n. store
+ilhiil (/y᷉l.hy᷉ːʎ̟̊ /)
+	n. trick
+iylsarla (/y᷉ɻ̠̊ʎ.ɹ̟̊ɶ̄ʁ̞̊.ʟɑ᷆/)
+	n. river
+iy (/y᷉j̊/)
+	p. on
+iwirg (/y᷉.ɰȳʋɡ/)
+	n. button
+ih (/y᷉χ/)
+	v. carry
+iihrya (/yː.ɟ̟ʋ̥jɶ᷄/)
+	n. crack
+iiy (/yːj̊/)
+	adj. feeble
+iiwhayi (/yːɰ.ɦɑ᷄.ɻ̠̊ȳ/)
+	n. voice
+iiwoowl (/yː.ɰɯːɰ̊ʎ̟/)
+	n. hope
+ii (/ȳː/)
+	n. part
+iiholsaalh (/ȳː.ɻ̠̟ɯ᷆ʟ̠̊.ɹ̟̊ɑ᷄ːʟ̠̊x/)
+	adj. responsible
+iiyr (/ȳːj̊ɹ̊/)
+	n. trade
+iiw (/ȳːɰ̊/)
+	n. mother
+iillaa (/ȳː.ʟ̠̊l̥ɶ̄ː/)
+	n. point
+ii (/y᷆ː/)
+	adj. wrong
+iirgriorahiirr (/y᷆ːʋ̥.ɟβ̞ȳɯ̯᷆.ʋɑ᷆.çy᷄ːʁ̞ʋ/)
+	n. grass
+iiraalh (/y᷆ː.ɹ̊ɑ᷆ːʎʁ/)
+	v. meet
+iilahh (/y᷆ː.l̥ɑ᷄çɟ̟/)
+	adj. smooth
+iiylhiibhlyaahip (/y᷆ːɻ̠ʟ.ɸȳː.b̪ʰʎ̥ɻ̠̊ɑ̄ɶ̯᷉.ɻ̠̟̊yp/)
+	n. hole
+iiyhooyaaw (/y᷆ːj.ɣɯː.ɻ̠̊ɑ̄ːɰ̊/)
+	n. attack
+iilraaraag (/y᷆ː.ʎ̥ʋɶ᷉ː.ʁ̞̊ɑ̄ːʔ/)
+	n. weather
+iiwthoo (/y᷆ːɰ.tɸɯ᷄ː/)
+	n. rail
+iiliifaalh (/y᷆ː.ʟ̠yː.fɶ̄ːlɣ/)
+	adj. acidic
+iilaawhiil (/y᷆ː.ʟ̠ɶ᷉ːɑ᷄ː̯ɰ̊.ʝȳːl/)
+	n. ray
+iifoorlawaa (/y᷄ː.fɯ᷆ːʁ̞̊.lɑ.ɰɑ̄ɶ̯᷉/)
+	adj. incomplete
+iil (/y᷄ːʎ̥/)
+	adj. improbable
+iir (/y᷄ːʁ̞̊/)
+	n. play
+iiroiyliraal (/y᷄ː.ʁ̞̊ɯ᷆y̯ɻ̠.l̥y᷉.ɸ̝ɶ᷉ːɑ᷄ː̯ʎ̟̊ /)
+	n. month
+iirlawhbaay (/y᷄ːʁ̞.ʟ̠ɑ̄ɰɦ.b̪ɶ᷆ːj̊/)
+	n. shame
+iihraythaa (/y᷄ːɦ̞.ɹ̊ɑ᷉j̊.tɻ̠̟̊ɶ᷉ːɑ᷄ː̯/)
+	n. act
+ii (/y᷉ː/)
+	n. leg
+iirhaahawlhooybh (/y᷉ːʋ̥.ʁɶ̄ː.ɦ̞ɶ᷉ɰʟ.hɯ᷄ːjbʰ/)
+	n. throat
+iiroorhiiro (/y᷉ː.ʋ̥ɯːʁ̞̊.ɦy᷆ː.ʁ̞̊ɯ̄/)
+	adj. natural
+iiyhhayiisri (/y᷉ːɻ̠.ɻ̠̟̊ɦ̞ɑ᷄.jy᷉ː.ɹ̟̊ɹy᷄/)
+	n. owner
+iiliihilh (/y᷉ː.ʎ̟̊ y᷉ː.ɸy᷉ʟ̥x/)
+	n. iron
+iihgaarhiihbhhoorl (/y᷉ːç.ʡɶ᷄ːʋ̥.χyːɻ̠̟.bʰɦɯːʁ̞̊ʎ̟/)
+	n. advertisement
+iih (/y᷉ːʝ/)
+	n. brush
+iihslaa (/y᷉ːh̞.ɹ̟̊ʟ̥ɶ᷄ː/)
+	adj. public
+a (/ɑ/)
+	adj. irresponsible
+abih (/ɑ.b̪ȳh̞/)
+	n. winter
+aylaarpaayh (/ɑɻ̠̊.ʎ̥ɑ᷆ːɹ̊.p̪ɑːjβ/)
+	adj. serious
+al (/ɑʎ̟/)
+	adj. opaque
+	adj. unequal
+aylaaloh (/ɑj̊.ʟɑː.ʎ̥ɯ̄ɟ̟/)
+	n. move
+ahyalfirlhoo (/ɑ.xɻ̠ɶ᷄ʟ̠.fy᷄ʁ̞̊ʎ̟.ɦɯ᷉ː/)
+	n. sea
+ar (/ɑʁ̞/)
+	n. step
+arv (/ɑ̄ɸ̝v/)
+	v. know
+arh (/ɑ̄ɸ̝ɣ/)
+	adj. chief
+abhhiowlharaahr (/ɑ̄.b̪ʰχȳɯ̯᷆ɰʟ̥.çɶ᷉.ɹɑ̄ːh̞ʋ/)
+	v. stop
+ay (/ɑ̄ɻ̠/)
+	n. steel
+aw (/ɑ̄ɰ/)
+	n. dust
+allih (/ɑ̄.ʟ̠̊ʎy᷆ɸ/)
+	n. produce
+ahvoolhhororh (/ɑ̄h̞.vɯ᷉ːʎ.ʝβɯ̄.β̞ɯ᷉ɹh/)
+	adj. awake
+abhaaybaaraa (/ɑ᷆.b̪χɑ̄ɶ̯᷉ɻ̠.b̪ɶ᷄ː.ʋɑ᷉ː/)
+	adj. present
+arrowlah (/ɑ᷆.ʋʁ̞ɯ̄ɰ̊.ʎ̟̊ ɶh̞/)
+	n. peace
+ayrhaahr (/ɑ᷆jʋ.χɶːh̞ɸ̝/)
+	v. grow
+ayla (/ɑ᷆j.ʟ̠̊ɑ᷆/)
+	n. shelf
+ahalhghaalhhoo (/ɑ᷆.h̞ɑ᷉ʎç.ɟʰɑ᷉ːʟ.ʁɦɯ̄ː/)
+	n. mist
+ahaa (/ɑ᷆.h̞ɶ᷉ː/)
+	n. purpose
+ahaay (/ɑ᷆.h̞ɑ̄ɶ̯᷉j̊/)
+	n. head
+afroohviyv (/ɑ᷄.fɸ̝ɯ̄ːɦ̞.vy᷄ɻ̠̊v/)
+	n. brain
+ay (/ɑ᷄ɻ̠/)
+	n. floor
+ayhaawaal (/ɑ᷄j̊.ɦɑː.ɰɑ᷄ːʎ̟̊ /)
+	n. needle
+ay (/ɑ᷄j/)
+	n. scissors
+araayl (/ɑ᷄.ʁ̞̊ɶ̄ːjʎ̟̊ /)
+	n. exchange
+a (/ɑ᷉/)
+	v. walk
+arki (/ɑ᷉ɸ̝.kȳ/)
+	n. sand
+arraazgiihfaahl (/ɑ᷉.ʋ̥ʁ̞ɑ᷄ːɹ̟.ʡy᷄ː.c̟fɑ̄ːh̞ʟ̥/)
+	adj. early
+aylhawiiyzi (/ɑ᷉j̊ʟ̠.βɶ᷆.ɰ̊y᷆ːj.ɹ̟y᷆/)
+	adj. restrained
+ayarh (/ɑ᷉.j̊ɑ̄β̞ɻ̠̟/)
+	v. write
+ahrahgh (/ɑ᷉.ʁɸ̝ɑ᷄ʁɟʰ/)
+	v. hope
+ahdhaa (/ɑ᷉h.dʰɑ̄ː/)
+	adj. male
+ahlpooyklo (/ɑ᷉h̞l̥.p̪ɯ᷉ːj̊.klɯ᷆/)
+	n. silver
+a'olhraa (/ɑ᷉.ɯʎ̟̊ .xβ̞ɑː/)
+	n. milk
+aa (/ɑː/)
+	n. back
+aahdh (/ɑːʝdʰ/)
+	n. touch
+aawla (/ɑːɰ̊.ʎɶ̄/)
+	n. heart
+aarloo (/ɑːʁ̞̊.lɯ᷆ː/)
+	adj. high
+aarl (/ɑːʁ̞̊ʎ̟/)
+	n. cloth
+aalorahvliol (/ɑː.ʟ̠ɯ᷆.ɹ̊ɶ᷉.çvʎ̟ȳɯ̯᷆ʟ̠̊/)
+	adj. tough
+aahii (/ɑː.ɦy᷉ː/)
+	adj. sharp
+aahhdhawriw (/ɑːh̞ç.dʰɶ᷆ɰ̊.ʋy᷆ɰ̊/)
+	adj. able
+aayyaayowh (/ɑ̄ː.ɻ̠j̊ɑ᷄ː.jɯ̄ɰɻ̠̟̊/)
+	v. sit
+aal (/ɑ̄ːʟ̥/)
+	n. bone
+aalvgarhaaw (/ɑ̄ːʟv.ʡɶ᷆ʁ̞̊.çɶ᷆ːɰ/)
+	adj. cold
+aahahhaa (/ɑ̄ː.χɑ᷆h̞.ʝɑ᷄ː/)
+	adj. violent
+aaraawhayiyv (/ɑ᷆ː.ʋɶ̄ːɰ̊.ɸɑ᷆.ɻ̠̊y᷄ɻ̠v/)
+	n. question
+aaraarahor (/ɑ᷆ː.ɹ̊ɑ̄ː.ɸ̝ɑ᷄.ʁɯ᷄β̞/)
+	n. tooth
+aay (/ɑ᷆ːɻ̠/)
+	adj. old
+aayraayaaylhaal (/ɑ᷆ːɻ̠.β̞ɶ᷆ː.ɻ̠ɑ̄ːɻ̠̊l.xɶ᷉ːɑ᷄ː̯l/)
+	n. lock
+aaw (/ɑ᷆ːɰ̊/)
+	n. control
+aaw (/ɑ᷆ːɰ/)
+	n. powder
+aahlarsaa (/ɑ᷆ːh̞.ʟ̠ɶ᷄ɹ̊.ɹ̟̊ɶ᷉ːɑ᷄ː̯/)
+	n. feather
+aahlaah (/ɑ᷆ːɦ̞.ʟɶ᷉ːɑ᷄ː̯x/)
+	n. map
+aaysbhariyr (/ɑ᷄ːɻ̠̊ɹ̟̊.bʰɶ᷉.ʁ̞̊yj̊ɸ̝/)
+	n. expert
+aayaalhi (/ɑ᷄ː.jɑ᷆ːl̥.ɦy᷄/)
+	n. garden
+aalhhayiw (/ɑ᷄ːʎ̥ɻ̠̟.ɟ̟ɶ̄.ɻ̠yɰ/)
+	v. cover
+aahol (/ɑ᷄ː.ɦɯ̄ʟ/)
+	n. drawer
+aa (/ɑ᷉ː/)
+	n. relation
+aar (/ɑ᷉ːʋ/)
+	adj. hollow
+aaylaay (/ɑ᷉ːɻ̠̊.ʟ̥ɑ̄ːɻ̠̊/)
+	adj. kind
+aayr (/ɑ᷉ːɻ̠ʋ̥/)
+	v. choose
+aaysaa (/ɑ᷉ːj.ɹ̟̊ɶ̄ː/)
+	adj. material
+aahhih (/ɑ᷉ː.xβyɦ̞/)
+	n. apple
+aaw (/ɑ᷉ːɰ̊/)
+	n. hearing
+aawslawhlalp (/ɑ᷉ːɰ̊.ɹ̟̊ʟɑ̄ɰ.ʝʎɶ᷄ʟ̠̊p̪/)
+	n. servant
+aawirh (/ɑ᷉ː.ɰ̊y᷉β̞ɣ/)
+	n. talk
+aalsfiiyghyoyga (/ɑ᷉ːʟ̥.ɹ̟̊fy᷉ːɻ̠.ʡʰjɯ᷆ɻ̠̊.ɟɶ᷄/)
+	n. grain
+aahloi (/ɑ᷉ːh̞.ʟɯ᷆y̯/)
+	n. guide
+aahoohs (/ɑ᷉ː.ɦ̞ɯːɦ̞ɹ̟̊/)
+	n. disgust
+aro (/ɶ.ɸ̝ɯ̄/)
+	n. page
+ahlyoolhay (/ɶ.ɟ̟ʟ̠̊ɻ̠̊ɯ᷄ːʟ̠.βɶ̄j̊/)
+	adj. ugly
+ayyoyhoo (/ɶ.ɻ̠̊ɻ̠̊ɯ᷉ɻ̠.χɯ̄ː/)
+	n. size
+aghawiirryiyg (/ɶ.ɟʰɶ᷆.ɰy᷉ːʁ̞̊.ɸ̝ɻ̠yj̊ɢ/)
+	adj. dependent
+alhvatyohraayl (/ɶʟ̠̊.çvɑ.tɻ̠̊ɯ᷉.xβ̞ɑːɻ̠ʎ/)
+	n. pain
+a (/ɶ̄/)
+	n. meal
+arf (/ɶ̄ɸ̝f/)
+	n. picture
+avaahiyh (/ɶ̄.vɶ᷄ː.h̞yɻ̠β/)
+	adj. simple
+alaaylarz (/ɶ̄.lɑ᷄ːj.ʎ̥ɑ᷉ʋ̥ɹ̟/)
+	n. cheese
+alaah (/ɶ̄.ʎ̟ɶ᷄ːɦ̞/)
+	n. story
+ahhi (/ɶ̄ɣ.c̟y/)
+	n. pull
+araylahayh (/ɶ̄.ʁ̞̊ɶ᷉j̊.ʎɶ᷆.h̞ɶ̄jɦ/)
+	n. event
+arhdooyhhiiya (/ɶ̄ʁ̞χ.dɯ᷉ːɻ̠̊.ʁβȳː.ɻ̠ɑ᷆/)
+	adj. long
+ahrrara (/ɶ̄ɦ̞.ɹʋɑ̄.β̞ɑ/)
+	n. edge
+ahaaswaa (/ɶ̄.ɦ̞ɑ̄ː.ɹ̟̊ɰ̊ɑ̄ː/)
+	adj. dear
+asghlooyrhiiyhawl (/ɶ᷆ɹ̟̊.ʡʰʟ̥ɯ᷄ːj̊ɹ.χyːj̊.çɑ᷉ɰ̊ʟ/)
+	adj. low
+a (/ɶ᷄/)
+	n. cry
+	adj. female
+arorooh (/ɶ᷄.ɸ̝ɯ᷆.ɸ̝ɯːç/)
+	v. say
+ar (/ɶ᷄ʋ̥/)
+	n. protest
+akayr (/ɶ᷄.cɑ᷉ɻ̠̊ɹ̊/)
+	adj. strange
+aw (/ɶ᷄ɰ̊/)
+	n. earth
+awo (/ɶ᷄.ɰɯ᷆/)
+	n. window
+awaahd (/ɶ᷄.ɰɶːɣd/)
+	n. friend
+arldhiwr (/ɶ᷄ʁ̞ʎ̟̊ .dʰyɰɸ̝/)
+	adj. infertile
+ahgi (/ɶ᷉β.ɢy᷉/)
+	n. feeling
+afbhoyrohhlaay (/ɶ᷉f.b̪ʰɯ᷄j.ʋ̥ɯ᷄ɣ.c̟ʟ̠̊ɶ᷄ːj̊/)
+	n. linen
+ahb (/ɶ᷉ɻ̠̟̊b̪/)
+	n. minute
+ahbiroo (/ɶ᷉ɻ̠̟.b̪y.ʁ̞ɯ᷆ː/)
+	n. fiction
+awarr (/ɶ᷉.ɰ̊ɑ᷆ʁ̞̊ɸ̝/)
+	n. wine
+aw (/ɶ᷉ɰ/)
+	n. mark
+arh (/ɶ᷉ʁ̞χ/)
+	n. meat
+ahloofhoo (/ɶ᷉.ɦlɯ̄ː.fhɯ̄ː/)
+	n. bee
+ahii (/ɶ᷉.ɦ̞y᷉ː/)
+	v. show
+aa (/ɶː/)
+	n. ink
+	adj. brief
+aafhhvaarhlol (/ɶːf.ɟ̟ʰvɑːɸ̝.ʝʟ̠̊ɯ᷄ʟ̥/)
+	v. catch
+aarhihyaal (/ɶːʋ̥.ʁȳ.xj̊ɶ᷉ːɑ᷄ː̯l/)
+	n. cord
+aashral (/ɶː.ɹ̟̊χβ̞ɶʟ̥/)
+	n. operation
+aarhrar (/ɶːɹ.ɸʋɶ̄ɹ̊/)
+	adj. regular
+aalsar (/ɶːʎ̟̊ .ɹ̟̊ɑβ̞/)
+	v. read
+aallhawriiwzhih (/ɶː.ʎ̟l̥h̞ɑ᷆ɰ.β̞y᷉ːɰ.ɹ̟hyɻ̠̟/)
+	n. canvas
+aarryoyhaar (/ɶːʁ̞.ʋjɯ᷄ɻ̠̊.ʝɑ᷉ːʋ̥/)
+	n. wing
+aarlhaarhiolh (/ɶːʁ̞ʟ̠̊.βɶ᷆ːɸ̝.ɣȳɯ̯᷆ʎ̟̊ ɻ̠̟̊/)
+	v. move
+aalaay (/ɶː.ʟ̠ɶ᷉ːɑ᷄ː̯ɻ̠̊/)
+	n. machine
+aahv (/ɶːh̞v/)
+	adj. chemical
+aa (/ɶ̄ː/)
+	n. boat
+	adj. bad
+aapha (/ɶ̄ː.p̪ɦ̞ɑ̄/)
+	n. shirt
+aahghoy (/ɶ̄ːχ.ɢʰɯ̄ɻ̠/)
+	n. shake
+aarliy (/ɶ̄ːʁ̞̊.ʎ̟̊ y᷄ɻ̠/)
+	n. degree
+aa (/ɶ᷆ː/)
+	n. increase
+aahhilglaawl (/ɶ᷆ː.βʝȳʟ̠.ɟʟ̥ɑ᷉ːɰ̊ʎ/)
+	n. respect
+aarhohhwa (/ɶ᷆ːʋ̥.ɻ̠̟ɯ᷄.ɻ̠̟̊ɻ̠̟̊ɰɶ᷆/)
+	v. seem
+aalhiihara (/ɶ᷆ːl.ɣy᷉ː.h̞ɑ.ɹ̊ɑ/)
+	v. tell
+aalhiiyl (/ɶ᷆ːl.ɦyːj̊ʎ̟/)
+	n. pot
+aayhhaarl (/ɶ᷆ːɻ̠̊.ʝɻ̠̟̊ɑ̄ːʁ̞ʎ̟̊ /)
+	n. transport
+aaylaawhlaahwaa (/ɶ᷆ːɻ̠.ʟ̠̊ɶːɰ.xʎ̟ɶ᷆ː.xɰɑ̄ː/)
+	n. news
+aayalhbiih (/ɶ᷆ː.j̊ɶ᷆ʎ̟ɦ.by᷉ːɦ̞/)
+	v. win
+aawayarhghoo (/ɶ᷆ː.ɰɑ᷉.j̊ɶ᷆β̞β.ɡʰɯ᷆ː/)
+	n. wall
+aahiiwlafyo (/ɶ᷆ː.hyːɰ̊.ʟɑ.fj̊ɯ/)
+	n. snow
+aa (/ɶ᷄ː/)
+	n. plane
+aaylbhiiwrhay (/ɶ᷄ːɻ̠̊ʎ̟̊ .bʰy᷉ːɰ̊β̞.xɶ᷄j/)
+	n. horse
+aayohzooy (/ɶ᷄ː.ɻ̠̊ɯ᷄h̞.ɹ̟ɯ᷄ːj̊/)
+	v. return
+aayaa (/ɶ᷄ː.ɻ̠̊ɑ̄ː/)
+	n. crush
+aal (/ɶ᷄ːʎ̟̊ /)
+	n. sex
+aahhoohlaay (/ɶ᷄ː.ʝʝɯ᷄ːh̞.lɶ᷉ːɑ᷄ː̯j/)
+	n. building
+aayihawlirh (/ɶ᷄ː.j̊y᷄.h̞ɶɰ̊.ly᷄ʁ̞ç/)
+	adj. safe
+aayryoo (/ɶ᷄ːj.ʋ̥ɻ̠̊ɯ᷉ː/)
+	n. copy
+aaraals (/ɶ᷄ː.ʁ̞ɶ᷉ːlɹ̟̊/)
+	n. leaf
+aalav (/ɶ᷄ː.ʟ̠̊ɑv/)
+	v. think
+aaldak (/ɶ᷄ːʟ̠.dɶ᷄c/)
+	n. end
+aa (/ɶ᷉ː/)
+	n. authority
+aayrgo (/ɶ᷉ːɻ̠ɹ̊.ɢɯ᷉/)
+	n. twist
+aaliiyyazhar (/ɶ᷉ː.ʟ̥y᷆ː.j̊j̊ɑ᷉.ɹ̟h̞ɑ̄ɹ/)
+	n. light
+aarloylhiiy (/ɶ᷉ːʁ̞̊.ʟɯ̄ɻ̠ʟ̠̊.ɦy᷄ːɻ̠/)
+	n. root
+aararoorhhaa (/ɶ᷉ː.ʁ̞̊ɶ᷉.ʁ̞̊ɯ᷉ːʋ.ɣʝɶ᷉ːɑ᷄ː̯/)
+	n. pencil
+aahhaahhaayaa (/ɶ᷉ːɦ̞.ɻ̠̟ɶːh̞.ɦɶ̄ː.ɻ̠̊ɶː/)
+	n. sign
+oi (/ɯ᷆y̯/)
+	n. condition
+	adj. unconscious
+oibhii (/ɯ᷆y̯.bʰyː/)
+	adj. perpendicular
+oihraaraahp (/ɯ᷆y̯.ɸɸ̝ɑ᷉ː.ʁ̞ɶ᷉ːɻ̠̟̊p̪/)
+	n. bath
+oisohghloiwrkii (/ɯ᷆y̯.ɹ̟̊ɯɸ.ɢʰʟ̠̊ɯ᷆y̯ɰɹ̊.cȳː/)
+	n. fork
+oiyhgahohroil (/ɯ᷆y̯ɻ̠̊ɻ̠̟.qɑ.çɯ᷉.xʋɯ᷆y̯ʟ̠/)
+	n. pen
+oilh (/ɯ᷆y̯ʎ̥c̟/)
+	adj. rare
+oighyoiwlhaawla (/ɯ᷆y̯.ɡxɻ̠̊ɯ᷆y̯ɰʟ̥.ʁɑ᷆ːɰ.ʟ̠̊ɶ᷉/)
+	n. thunder
+oirpoohh (/ɯ᷆y̯ʁ̞.pɯ᷆ːh̞β/)
+	n. sort
+oilraa (/ɯ᷆y̯.ʟ̠β̞ɑ᷆ː/)
+	n. cough
+oigh (/ɯ᷆y̯ʡʰ/)
+	n. sugar
+oihhhhoorarzli (/ɯ᷆y̯ɦ̞β.ɟ̟ʰɯ̄ː.β̞ɶʋ̥.ɹ̟ʎ̥y᷄/)
+	n. education
+io (/ȳɯ̯᷆/)
+	n. stage
+	n. value
+iohfaahlyioh (/ȳɯ̯᷆.ɸfɶ᷄ː.çʟ̠̊ɻ̠̊ȳɯ̯᷆h̞/)
+	adj. cruel
+ioraghii (/ȳɯ̯᷆.ɹɶ᷉.ɡʁy᷆ː/)
+	n. shade
+iolhhaaylghiiya (/ȳɯ̯᷆lɻ̠̟.ɟ̟ɶ᷉ːjʎ.ɡʰy᷆ː.j̊ɶ̄/)
+	n. unit
+iolkaysooyooh (/ȳɯ̯᷆ʎ̥.cɶ̄j.ɹ̟̊ɯ̄ː.ɻ̠ɯ᷄ːh/)
+	n. cow
+iowaylah (/ȳɯ̯᷆.ɰ̊ɶɻ̠.ʟ̠ɑ᷆h̞/)
+	n. horn
+iowalyaalg (/ȳɯ̯᷆.ɰ̊ɶ᷆.l̥ɻ̠̊ɑ᷄ːʟ̠ɢ/)
+	adj. boiling
+iowrayih (/ȳɯ̯᷆ɰ.ɹɶ.j̊y᷉h̞/)
+	n. chain
+iorabhya (/ȳɯ̯᷆.ʁ̞̊ɑ̄.bʰjɑ̄/)
+	n. belief
+aara (/ɑ̄ɶ̯᷉.β̞ɑ᷉/)
+	n. library
+aayliyroohhwiwr (/ɑ̄ɶ̯᷉ɻ̠̊.ʟ̥y᷄j.β̞ɯ᷄ː.ɟ̟ʰɰ̊y᷄ɰɹ̊/)
+	n. ticket
+aahaaharhla (/ɑ̄ɶ̯᷉.ɣɶ᷆ː.ʝɑ᷆ʁ̞̊.ɦʎ̥ɶ̄/)
+	n. ball
+aawlaahliihaahgh (/ɑ̄ɶ̯᷉ɰ̊.ʎ̟ɑːɦ̞.ʎyː.ɸɑ̄ɶ̯᷉ʁʡʰ/)
+	n. attempt
+aawlhiw (/ɑ̄ɶ̯᷉ɰʎ̥.ɸyɰ/)
+	n. song
+aalahgii (/ɑ̄ɶ̯᷉.ʟ̠̊ɶ᷉ç.ɢȳː/)
+	n. leather
+aa (/ɶ᷉ːɑ᷄ː̯/)
+	n. motion
+aarhfiwlayoos (/ɶ᷉ːɑ᷄ː̯ɹ̊.ɻ̠̟fȳɰ̊.l̥ɑ᷄.ɻ̠̊ɯ̄ːɹ̟̊/)
+	n. name
+aalaariraa (/ɶ᷉ːɑ᷄ː̯.l̥ɑ᷉ː.ɹ̊y᷄.ʁ̞ɶ̄ː/)
+	n. bridge
+aahhooykaahhiw (/ɶ᷉ːɑ᷄ː̯.ɟ̟ʰɯ᷉ːj̊.kɑ᷄ːh̞.çy᷉ɰ̊/)
+	adj. delicate
+aayhaarha (/ɶ᷉ːɑ᷄ː̯ɻ̠.hɑ᷄ːβ̞.ʝɑ᷄/)
+	n. digestion
+aayhogh (/ɶ᷉ːɑ᷄ː̯j̊.βɯɟʰ/)
+	n. glove
+aayhhaarbal (/ɶ᷉ːɑ᷄ː̯jχ.ɟ̟ɑːʁ̞.b̪ɶ᷆ʟ/)
+	n. tendency
+aalp (/ɶ᷉ːɑ᷄ː̯ʎ̥p̪/)
+	n. engine
+aawahrsaa (/ɶ᷉ːɑ᷄ː̯.ɰ̊ɑ᷆h̞ʋ̥.ɹ̟̊ɶ᷉ːɑ᷄ː̯/)
+	adj. flat
+aawloowh (/ɶ᷉ːɑ᷄ː̯ɰ.ʟ̠̊ɯ᷄ːɰɻ̠̟̊/)
+	adj. different
+aaro (/ɶ᷉ːɑ᷄ː̯.ʁ̞ɯ᷆/)
+	n. jewel
+aallalhharaawz (/ɶ᷉ːɑ᷄ː̯.ʟ̠̊ʟ̠̊ɶl̥.ɻ̠̟ʝɑ᷉.ɹ̊ɑ᷉ːɰɹ̟/)
+	n. breath
+aalaarho (/ɶ᷉ːɑ᷄ː̯.ʟ̠ɶ᷉ːɸ̝.ɦɯ᷆/)
+	n. stop

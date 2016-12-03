@@ -1,9 +1,9 @@
 Grammar
-Grammar {getSI = SubInitial, getOF = ObjInitial, getCI = CompInitial, getVtoI = OblVtoIMove, getAH = NoAffixHop, getNS = NoNullSub, getObT = OblTopic, getNT = OptNullTop, getTM = NoTopMark, getItoC = NoItoCMove, getWHM = NoWHMove, getPP = PiedPipe, getQI = NoQuesInv}
+Grammar {getSI = SubInitial, getOF = ObjFinal, getCI = CompFinal, getVtoI = OblVtoIMove, getAH = NoAffixHop, getNS = NoNullSub, getObT = OptTopic, getNT = OptNullTop, getTM = NoTopMark, getItoC = OblItoCMove, getWHM = OblWHMove, getPP = PiedPipe, getQI = NoQuesInv}
 
 
-dhorbroraarnraan<UNK> <UNK> ddheraamghar dhnirbhobhghmaron<UNK> <UNK> dha<UNK> <UNK>
-/m̩.bb̪ʰ̩.bb̪ʰdʰɒ́ɾ.b̪ɾu᷉.ɾɶ᷉ɑ̯᷉ɾ.ɱɾɶ᷉ɑ̯᷉n.bm̩/ /ûɾ.b̪ʰǐ/ /u᷉ɾɱ/ /ddʰǐ.ɾɶ᷉ɑ̯᷉m.ɡʰâɾ/ /m̩.bb̪ʰ̩.bb̪ʰdʰny̌ɾ.bʰɒ᷉.b̪ʰɡʰmɑ́.ɾɒ̂n.bm̩/ /bʰɒ́ɾn/ /u᷉ɾɱ/ /bu᷉.ɡbʰǎ.dʰán/ /nǔɾ.bûb/ /ǎ.b̪ʰdʰɑ᷉/
-UTRA.UCAS-DEF-UPOL-business-UEVI.UMOO.USPE TOP UPER deep UTRA.UCAS-DEF-UPOL-hook-UEVI.UMOO.USPE NTOP UPER UTRA.UPER.UDEF-UEVI-think-IND UCAS USPE
-business the deep hook the thinked will have
-"the business will have thinked the deep hook"
+loowoo bhairii gii rbhhrwa loowoo bhalyaafaahliyghlayh
+/ʎɯ᷄ː.ɰɯ̄ː/ /bʰɑ.ȳ.ʁ̞yː/ /ɡy᷉ː/ /ɹ̩̊.b̪ʰχɹ̊ɰɶ᷉/ /ʎɯ᷄ː.ɰɯ̄ː/ /bʰɑ.ʎ̥jɑ᷆ː.fɑ̄ɶ̯᷉h̞.ʟ̥ȳj̊.ɟʰʟɑ̄jʁ/
+UPOL.DEF UASP.SG-harmony-UTRA.TOP.UGEN UTRA UEVI.UASP.UTOP.SG-UDEF-support UPOL.DEF UASP.SG-square-UTRA.NTOP.UGEN
+the harmony will have supported the square
+"the harmony will have supported the square"

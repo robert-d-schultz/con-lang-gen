@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-28 15:14:49.916244 UTC
+2016-12-03 17:02:53.209404 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Translate 7103
-  interface hash: 03cfb746462e7980d42050c37930c390
+  interface hash: 4411e93ee93fe76cbeaaf607188937a2
   ABI hash: 3e60e97091828d8c3b29e268a4f520de
   export-list hash: 6d6599ab3235034f57cb477d03e147c1
   orphan hash: 4b5b45ffcd86c10bb58a9f436cf6457d
@@ -181,7 +181,7 @@ import  -/  InflectionData 1d3c9a42a800e5c12f0b2505845bd490
   Volition 3a73fa2d976f240c7ba768b809a25328
   getExp e8d8ee9a1de81f506aa3491726d1f060
   manSysCombos c4e6f673c4760d3721cbfe0ccf301060
-import  -/  Parse 0bcbb2cb6453c6fc238bc86a01cb46bf
+import  -/  Parse a9b5d1bf50d8b53e8bf3e5b4a63267af
   exports: 5ea6cd786088df35daa0ad64e1cdd1d8
   parseWord a5e79c59071bc0faf05b870b949d95ac
 import  -/  PhonemeData 408b6488aa28ce44ef05793241013f6f

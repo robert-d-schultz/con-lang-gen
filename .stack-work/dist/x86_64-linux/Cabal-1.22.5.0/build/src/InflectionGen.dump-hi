@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-27 12:05:50.254909 UTC
+2016-12-03 17:40:45.275136 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:InflectionGen 7103
-  interface hash: 27b9f15c1b05b0176345f690bc684dfe
+  interface hash: 63ce66631f5da74ae9ace6913d9d3a79
   ABI hash: 9e818894ecef9e42111de8410cca4bc4
   export-list hash: 9827b70a94b04c8621de93f7b6ea3c79
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -116,14 +116,13 @@ import  -/  InflectionData 1d3c9a42a800e5c12f0b2505845bd490
   ManifestType 339a9cc5bd8d02624186a930ed6d9c71
   Mood 987f478754e08db3236fd0a739247bf9
   NoManifest ef9f93e4a4d3f65314ca388f1e754598
+  Noun 03f9541569971afcd548f453c7b56f6a
   Number 111b9dd7881655400daece83d7690898
-  Obj 109002d27304823acda744ce5c24defa
   Particle 6ce29bede09feb22319ca6ecd1e3f608
   Person cbc274f5b3d6239101cd9764b7773be5
   Polarity 961c5eb0bc4c139961b0a440a23b769f
   Prefix 6b0d4faa751777a71e8042659ab6b9f5
   Specificity 6c3fc67424127bb4feb2d92b23a30da0
-  Subj 15a215e8dbc8b9c2167dddaaf41cad61
   Suffix 7b772f49c77983d500993b93b36cc935
   Tense 5f476bea2da27cbe0ffe1e5cde3d9551
   Topic f2502f7485a2c7bc47bb080f20b26aeb

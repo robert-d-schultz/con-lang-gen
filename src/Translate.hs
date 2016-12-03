@@ -21,7 +21,7 @@ parseParseTree :: [[Phoneme]] -> [((String, LexCat), Word)] -> [(LexCat, [Manife
 parseParseTree sonHier dict systems g pt = "\n\n" ++ roman ++ "\n" ++ native ++ "\n" ++ gloss ++ "\n" ++ literal ++ "\n\"" ++ english ++ "\"" where
   leaves   = filter (not.all leafIsNull) (filter (not.null) (parsePhrase g pt))
   eLeaves  = filter (not.all leafIsNull) (filter (not.null) (parsePhrase englishGrammar pt))
-  roman    = romanizeLeaves dict leaves
+  roman    = romanizeLeaves g dict systems leaves
   native   = translateLeaves g sonHier dict systems leaves
   gloss    = glossLeaves systems leaves
   literal  = leavesToEnglish leaves
@@ -192,14 +192,41 @@ translate :: [[Phoneme]] -> [((String, LexCat), Word)] -> (String, LexCat) -> St
 translate sonHier dict ent = fromMaybe "<UNK>" (parseWord sonHier <$> lookup ent dict)
 
 -- to romanized
-romanizeLeaves :: [((String, LexCat), Word)] -> [[Leaf]] -> String
-romanizeLeaves dict leaves = unwords $ map (concatMap $ romanizeLeaf dict) leaves
-
 romanizeLeaf :: [((String, LexCat), Word)] -> Leaf -> String
 romanizeLeaf _ LeafNull{} = ""
 romanizeLeaf dict (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeWord <$> lookup (str, lc) dict)
-romanizeLeaf _ (LeafInfl lc infl) = "<UNK>" --we'll get there...
+romanizeLeaf _ _ = "ERROR"
 
+romanizeLeaves :: Grammar -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [[Leaf]] -> String
+romanizeLeaves g dict systems leaves = unwords $ map (romanizeLeaves2 g dict systems) leaves
+
+romanizeLeaves2 :: Grammar -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
+romanizeLeaves2 g dict systems leaves
+  | any leafIsInfl leaves = romanizeInfl g dict systems leaves
+  | otherwise             = concatMap (romanizeLeaf dict) leaves
+
+romanizeInfl :: Grammar -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
+romanizeInfl g dict systems leaves = out where
+  (others, inflLeaves) = break leafIsInfl leaves
+  infls = map leafInfl inflLeaves
+
+  -- retrieve the relevent particles/prefixes/suffixes from the manifest systems
+  (_, mparts, mprefs, msuffs) = fromMaybe (Infl, [], [], []) (find (\(lc, _, _, _) -> lc == leafLC (head inflLeaves)) systems)
+  partCombos = map manSysCombos mparts
+  prefCombos = map manSysCombos mprefs
+  suffCombos = map manSysCombos msuffs
+  parts = concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) partCombos
+  prefs = concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) prefCombos
+  suffs = concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos
+
+  -- syllabify the output properly
+  partOut = map (romanizeWord . Word . (:[])) parts
+  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe ((romanizeWord . Word) suffs ++ "<UNK>" ++ (romanizeWord . Word) prefs) ((romanizeWord . Word) <$> ((++ suffs) . (prefs ++) . getMorphemes <$> lookup (str, lc) dict))
+                                   (LeafNull _) -> "") others
+
+  out
+    | null others          = unwords partOut
+    | otherwise            = unwords othersOut
 
 -- parse phrase
 parsePhrase :: Grammar -> Phrase -> [[Leaf]]

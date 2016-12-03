@@ -1,44 +1,123 @@
 Phonology<br>
 <table border=1>
 	<tr>
-		<th colspan="9">Consonant Inventory</th>
+		<th colspan="25">Consonant Inventory</th>
 	</tr>
 	<tr>
 		<th></th>
-		<th colspan="2">Bilabial</th>
-		<th colspan="2">Labiodental</th>
-		<th colspan="2">Coronal</th>
-		<th colspan="2">Dorsal</th>
+		<th colspan="3">Bilabial</th>
+		<th colspan="3">Labiodental</th>
+		<th colspan="3">Coronal</th>
+		<th colspan="3">Velar</th>
+		<th colspan="3">Alveolo-palatal</th>
+		<th colspan="3">Palatal</th>
+		<th colspan="3">Uvular</th>
+		<th colspan="3">Laryngeal</th>
 	</tr>
 	<tr>
 		<th>Stop</th>
+		<td>p</td>
 		<td>b</td>
 		<td>bʰ</td>
+		<td>p̪</td>
 		<td>b̪</td>
 		<td>b̪ʰ</td>
+		<td>t</td>
 		<td>d</td>
 		<td>dʰ</td>
+		<td>k</td>
 		<td>ɡ</td>
 		<td>ɡʰ</td>
+		<td>c̟</td>
+		<td>ɟ̟</td>
+		<td>ɟ̟ʰ</td>
+		<td>c</td>
+		<td>ɟ</td>
+		<td>ɟʰ</td>
+		<td>q</td>
+		<td>ɢ</td>
+		<td>ɢʰ</td>
+		<td>ʔ</td>
+		<td>ʡ</td>
+		<td>ʡʰ</td>
 	</tr>
 	<tr>
-		<th>Nasal</th>
-		<td>m</td>
+		<th>Fricative</th>
+		<td>ɸ</td>
+		<td>β</td>
 		<td></td>
-		<td>ɱ</td>
+		<td>f</td>
+		<td>v</td>
 		<td></td>
-		<td>n</td>
+		<td>ɹ̟̊</td>
+		<td>ɹ̟</td>
 		<td></td>
-		<td>ŋ</td>
+		<td>x</td>
+		<td>ɣ</td>
+		<td></td>
+		<td>ɻ̠̟̊</td>
+		<td>ɻ̠̟</td>
+		<td></td>
+		<td>ç</td>
+		<td>ʝ</td>
+		<td></td>
+		<td>χ</td>
+		<td>ʁ</td>
+		<td></td>
+		<td>h</td>
+		<td>ɦ</td>
 		<td></td>
 	</tr>
 	<tr>
-		<th>Flap</th>
+		<th>Approximant</th>
+		<td>ɸ̝</td>
+		<td>β̞</td>
+		<td></td>
+		<td>ʋ̥</td>
+		<td>ʋ</td>
+		<td></td>
+		<td>ɹ̊</td>
+		<td>ɹ</td>
+		<td></td>
+		<td>ɰ̊</td>
+		<td>ɰ</td>
+		<td></td>
+		<td>ɻ̠̊</td>
+		<td>ɻ̠</td>
+		<td></td>
+		<td>j̊</td>
+		<td>j</td>
+		<td></td>
+		<td>ʁ̞̊</td>
+		<td>ʁ̞</td>
+		<td></td>
+		<td>h̞</td>
+		<td>ɦ̞</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Lateral approximant</th>
 		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
-		<td>ɾ</td>
+		<td></td>
+		<td></td>
+		<td>l̥</td>
+		<td>l</td>
+		<td></td>
+		<td>ʟ̥</td>
+		<td>ʟ</td>
+		<td></td>
+		<td>ʎ̟̊ </td>
+		<td>ʎ̟</td>
+		<td></td>
+		<td>ʎ̥</td>
+		<td>ʎ</td>
+		<td></td>
+		<td>ʟ̠̊</td>
+		<td>ʟ̠</td>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -47,31 +126,35 @@ Phonology<br>
 <br>
 <table border=1>
 	<tr>
-		<th colspan="5">Vowel Inventory</th>
+		<th colspan="3">Vowel Inventory</th>
 	</tr>
 	<tr>
 		<th></th>
-		<th colspan="2">Front</th>
-		<th colspan="2">Back</th>
+		<th colspan="1">Front</th>
+		<th colspan="1">Back</th>
 	</tr>
 	<tr>
-		<th rowspan="2">Close</th>
+		<th rowspan="3">Close</th>
 		<tr>
-			<td>í</td>
-			<td>ý</td>
-			<td>ɯ́</td>
-			<td>ú</td>
+			<td>ȳ</td>
+			<td>ɯ̄</td>
+		</tr>
+		<tr>
+			<td>ȳː</td>
+			<td>ɯ̄ː</td>
 		</tr>
 	</tr>
 	<tr>
-		<th rowspan="2">Open</th>
+		<th rowspan="3">Open</th>
 		<tr>
-			<td>á</td>
-			<td>ɶ́</td>
-			<td>ɑ́</td>
-			<td>ɒ́</td>
+			<td>ɶ̄</td>
+			<td>ɑ̄</td>
+		</tr>
+		<tr>
+			<td>ɶ̄ː</td>
+			<td>ɑ̄ː</td>
 		</tr>
 	</tr>
 </table>
 <br>
-Diphthongs: /ûɶ̯̌/, /ɒ̌ɶ̯́/, /ɶ᷉ɑ̯᷉/, and /áɯ̯̂/
+Diphthongs: /ɶ᷉ːɑ᷄ː̯/, /ɯ᷆y̯/, /ȳɯ̯᷆/, and /ɑ̄ɶ̯᷉/

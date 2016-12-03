@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-27 12:05:52.886006 UTC
+2016-12-03 17:02:51.536594 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Parse 7103
-  interface hash: 4a73370f04852eb09b50189b10e9ea0b
-  ABI hash: 0bcbb2cb6453c6fc238bc86a01cb46bf
+  interface hash: f621903bfd3b9b03e6d87ca2cdce9a96
+  ABI hash: a9b5d1bf50d8b53e8bf3e5b4a63267af
   export-list hash: 5ea6cd786088df35daa0ad64e1cdd1d8
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 9b5f0a9c5ab937702e8736ae3b06ccc6
@@ -400,7 +400,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
     -> (# [(GHC.Base.String, InflectionData.LexCat)],
           [PhonemeData.Word] #)
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
-3efbecef6dff3802df1725589fae304d
+5a3bf0ba6cea83d5a11c3bb045a49441
   $wparseLexicalSystems ::
     InflectionData.InflectionSystem
     -> InflectionData.LexCat
@@ -418,37 +418,28 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                    ww3 :: [InflectionData.ManifestSystem] ->
                  GHC.CString.unpackAppendCString#
                    "<br>\n"#
-                   (let {
-                      a :: [GHC.Types.Char]
-                      = case GHC.List.$wlenAcc
-                               @ InflectionData.ManifestSystem
-                               ww1
-                               0 of ww4 { DEFAULT ->
-                        GHC.Base.++
-                          @ GHC.Types.Char
-                          (Parse.$wparseManifestSystems ww1 ww4 w)
-                          (case GHC.List.$wlenAcc
-                                  @ InflectionData.ManifestSystem
-                                  ww2
-                                  0 of ww5 { DEFAULT ->
-                           GHC.Base.++
-                             @ GHC.Types.Char
-                             (Parse.$wparseManifestSystems ww2 ww5 w)
-                             (case GHC.List.$wlenAcc
-                                     @ InflectionData.ManifestSystem
-                                     ww3
-                                     0 of ww6 { DEFAULT ->
-                              Parse.$wparseManifestSystems ww3 ww6 w }) }) }
-                    } in
-                    case GHC.Prim.dataToTag# @ InflectionData.LexCat ww of wild {
-                      DEFAULT -> Parse.parseLexicalSystems7
-                      2 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems6 a
-                      5 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems5 a
-                      6 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems4 a
-                      7 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems3 a
-                      8 -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems2 a
-                      9
-                      -> GHC.Base.++ @ GHC.Types.Char Parse.parseLexicalSystems1 a })) -}
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      (Parse.parseLexCat ww)
+                      (case GHC.List.$wlenAcc
+                              @ InflectionData.ManifestSystem
+                              ww1
+                              0 of ww4 { DEFAULT ->
+                       GHC.Base.++
+                         @ GHC.Types.Char
+                         (Parse.$wparseManifestSystems ww1 ww4 w)
+                         (case GHC.List.$wlenAcc
+                                 @ InflectionData.ManifestSystem
+                                 ww2
+                                 0 of ww5 { DEFAULT ->
+                          GHC.Base.++
+                            @ GHC.Types.Char
+                            (Parse.$wparseManifestSystems ww2 ww5 w)
+                            (case GHC.List.$wlenAcc
+                                    @ InflectionData.ManifestSystem
+                                    ww3
+                                    0 of ww6 { DEFAULT ->
+                             Parse.$wparseManifestSystems ww3 ww6 w }) }) }))) -}
 5bc33d0ba47f45cdbd982757d2bf48ae
   $wparseManifestSystems ::
     [InflectionData.ManifestSystem]
@@ -637,7 +628,20 @@ a266eeee44fca22deb8650790cb42b14
     InflectionData.InflectionSystem -> GHC.Base.String
   {- Arity: 1,
      Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)> -}
-611d1828a986a3f156476cf880f69b38
+4d9a9823c3458f1f88c3b55daa804259
+  parseLexCat :: InflectionData.LexCat -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ lc :: InflectionData.LexCat ->
+                 case GHC.Prim.dataToTag# @ InflectionData.LexCat lc of wild {
+                   DEFAULT -> Parse.parseLexicalSystems8
+                   2 -> Parse.parseLexicalSystems7
+                   4 -> Parse.parseLexicalSystems6
+                   5 -> Parse.parseLexicalSystems5
+                   6 -> Parse.parseLexicalSystems4
+                   7 -> Parse.parseLexicalSystems3
+                   8 -> Parse.parseLexicalSystems2
+                   9 -> Parse.parseLexicalSystems1 }) -}
+580f8a094c5aca29adafc04e5224eacb
   parseLexicalSystems ::
     InflectionData.InflectionSystem
     -> (InflectionData.LexCat,
@@ -671,11 +675,14 @@ d29e6ab72e70d57f5520cdc00c507a70
 6eab7133448fd81a487718e1922c1137
   parseLexicalSystems5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Adposition"#) -}
-e7137246f7d0b2b7e102189ee76350ba
+4d9e2369ab581ace3203cbe6ef85cb26
   parseLexicalSystems6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Noun"#) -}
+22f1691ed38ed2dfc17a5b83e0e16a34
+  parseLexicalSystems7 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Verb"#) -}
-1389583c8d482058f492c425d252dde9
-  parseLexicalSystems7 :: GHC.Base.String
+f0eef13beafc1b464553b49b1a32bd7b
+  parseLexicalSystems8 :: GHC.Base.String
   {- Strictness: b -}
 cc4466bcec68df2a1b6bdaaa027a56f5
   parsePhoneme :: PhonemeData.Phoneme -> GHC.Base.String
