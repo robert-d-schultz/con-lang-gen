@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-27 12:05:46.287947 UTC
+2016-12-06 20:49:03.777659 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:GrammarGen 7103
-  interface hash: e854bbbc073142d3e83b9145aa821e34
-  ABI hash: fc5ee71b9a82b768f05ef237e5850287
-  export-list hash: 528f028f4f5a8bd8ccd1aa9ab9350965
+  interface hash: 66c598d7067fd4dd606ebd39c8280d1b
+  ABI hash: 99ef3a726cc9c9b2f55e8783b1db226f
+  export-list hash: 7e9bb15c9e437510f701d6dab4c5503b
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
@@ -83,8 +83,8 @@ family instance modules: base-4.8.2.0:Control.Applicative
 import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
 import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  GrammarData 8ac8d86b6b864664f180483e73ce823b
-  exports: 5138522a0c1403d2fee44ad2a2f3e5a1
+import  -/  GrammarData 3ac8f2b878a3acac75da28c3be99b3ac
+  exports: fca5595c19286020653fdf4f375d962b
   CompFinal 4218b98d2cad94623d418f06c7daaf74
   CompInitial 8b5437a083d2f9791daaa4f92c16bab9
   Grammar bccd6a89e638f4c95f4a5fa907674242

@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-27 12:05:45.099612 UTC
+2016-12-06 20:49:02.494678 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:GrammarData 7103
-  interface hash: 4db35f7c599578700e79cd2efa523597
-  ABI hash: 8ac8d86b6b864664f180483e73ce823b
-  export-list hash: 5138522a0c1403d2fee44ad2a2f3e5a1
-  orphan hash: 3c534a5b9757a823c12584d084af6e8e
+  interface hash: 84cfd2361791c1335c171d990456c943
+  ABI hash: 3ac8f2b878a3acac75da28c3be99b3ac
+  export-list hash: fca5595c19286020653fdf4f375d962b
+  orphan hash: 8a9c341e4a66f197947c3afd89ca02a7
   flag hash: 962af636f8e927040c7daa9c21457292
   sig of: Nothing
   used TH splices: False
@@ -44,27 +44,27 @@ import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:GHC.Read b423b4506a014855edbd329b567629f3
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  InflectionData 1d3c9a42a800e5c12f0b2505845bd490
-  exports: 14704a3a2d793893d80490c9a5c3fd3e
-  Animacy 91fb0b41f9ef14c662c70b3629b6b5fe
-  Aspect 8bbea98a3b619c1fafa2f31c2f747273
-  Case 6c10cc277989f00ac96ff5f8d0b9d977
-  Definiteness 69e12afea565be2617200bf9671a6c0d
-  Evidentiality 1261593b396b3f8b4367998b51bf6d8a
-  Express 7e958650c7791002a2540390e3aca90e
-  Gender e443e52c146978100c75258afee70577
-  Honorific 9f709bf4194f93c1f39907f3dcd0aede
-  LexCat 406c10c56e8fc899b6f590771b3372e0
-  Mood 987f478754e08db3236fd0a739247bf9
-  Number 111b9dd7881655400daece83d7690898
-  Person cbc274f5b3d6239101cd9764b7773be5
-  Polarity 961c5eb0bc4c139961b0a440a23b769f
-  Specificity 6c3fc67424127bb4feb2d92b23a30da0
-  Tense 5f476bea2da27cbe0ffe1e5cde3d9551
-  Topic f2502f7485a2c7bc47bb080f20b26aeb
-  Transitivity 8463dae3116062b076dc25e0f6b8c749
-  Voice 66f849eb0df273279725c8472ced02cc
-  Volition 3a73fa2d976f240c7ba768b809a25328
+import  -/  InflectionData 3d10fd8ebdfb88f2d9b18403b3318120
+  exports: bbf9a431e828cdbe291def24777d4f2e
+  Animacy 3fb8f806ac431419336914d62e0692e1
+  Aspect 3260581e2888098e95013c9746eb2927
+  Case ed810d7ab6970052c9ee31d75d4a74f7
+  Definiteness f57cbd9dbed35919833216936d0e066e
+  Evidentiality 8c39249ddb7859f10b018a2526e04a45
+  Express ce522c1d99b503cc50c6a04abbeb7ec2
+  Gender 8b595aff125f95a2b35fe330b0ba7fad
+  Honorific 38ff9a9c45f96d99123b457fda219bfb
+  LexCat b0a24ad20939906e8d87ed3073f32603
+  Mood 170a49091e965c69ca2b81c9942aa234
+  Number c1e8fbfb7380effdacb7c7c192e40bf5
+  Person 02346c3aafaeac9909a5db7a01e8ca09
+  Polarity ad1fe4829d26ee371daeb2b0168138e4
+  Specificity a4a6522da9f32c4a22fdcdb048233e77
+  Tense b64289664290fdc9c5510c85a7afdd78
+  Topic 91b970df1d2f65a770d84bd1b0e168b5
+  Transitivity c432d94948e8418512e7b069e8d02e7a
+  Voice 1f59333afb1b3b92a8af1e5489e1e630
+  Volition 91017ab7ea71228801f74c069cd5baf7
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 da5bcd429ecfbb71b847767f8ed9569d
   $fEnumAffixHopping :: GHC.Enum.Enum GrammarData.AffixHopping
@@ -3619,7 +3619,7 @@ da5bcd429ecfbb71b847767f8ed9569d
                    -> case ds1 of wild1 {
                         GrammarData.NoAffixHop -> GHC.Types.False
                         GrammarData.OblAffixHop -> GHC.Types.True } }) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fEqBar :: GHC.Classes.Eq GrammarData.Bar
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -3627,7 +3627,7 @@ da5bcd429ecfbb71b847767f8ed9569d
                   @ GrammarData.Bar
                   GrammarData.$fEqBar_$c==
                   GrammarData.$fEqBar_$c/= -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fEqBar_$c/= ::
     GrammarData.Bar -> GrammarData.Bar -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -3636,7 +3636,7 @@ da5bcd429ecfbb71b847767f8ed9569d
                  case GrammarData.$fEqBar_$c== a13 b of wild {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False }) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fEqBar_$c== ::
     GrammarData.Bar -> GrammarData.Bar -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
@@ -3770,7 +3770,7 @@ be5e38a33a1f6f8dedf69a22bff6d6f1
                    -> case ds1 of wild1 {
                         GrammarData.NoItoCMove -> GHC.Types.False
                         GrammarData.OblItoCMove -> GHC.Types.True } }) -}
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   $fEqLeaf :: GHC.Classes.Eq GrammarData.Leaf
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -3778,7 +3778,7 @@ c45a9487dc1554c122459c27a0c0c7a2
                   @ GrammarData.Leaf
                   GrammarData.$fEqLeaf_$c==
                   GrammarData.$fEqLeaf_$c/= -}
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   $fEqLeaf_$c/= ::
     GrammarData.Leaf -> GrammarData.Leaf -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -3787,7 +3787,7 @@ c45a9487dc1554c122459c27a0c0c7a2
                  case GrammarData.$fEqLeaf_$c== a13 b of wild {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False }) -}
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   $fEqLeaf_$c== ::
     GrammarData.Leaf -> GrammarData.Leaf -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -4002,7 +4002,7 @@ c2c0ea9981f3d6eed112f850f7ea6beb
                    -> case ds1 of wild1 {
                         GrammarData.OblTopic -> GHC.Types.False
                         GrammarData.OptTopic -> GHC.Types.True } }) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fEqPhrase :: GHC.Classes.Eq GrammarData.Phrase
   DFunId[0]
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -4010,7 +4010,7 @@ c2c0ea9981f3d6eed112f850f7ea6beb
                   @ GrammarData.Phrase
                   GrammarData.$fEqPhrase_$c==
                   GrammarData.$fEqPhrase_$c/= -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fEqPhrase_$c/= ::
     GrammarData.Phrase -> GrammarData.Phrase -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
@@ -4019,7 +4019,7 @@ c2c0ea9981f3d6eed112f850f7ea6beb
                  case GrammarData.$fEqPhrase_$c== a13 b of wild {
                    GHC.Types.False -> GHC.Types.True
                    GHC.Types.True -> GHC.Types.False }) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fEqPhrase_$c== ::
     GrammarData.Phrase -> GrammarData.Phrase -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
@@ -6971,7 +6971,7 @@ da5bcd429ecfbb71b847767f8ed9569d
                            n
                            GrammarData.$fReadAffixHopping8)
                         eta }) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowBar :: GHC.Show.Show GrammarData.Bar
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -6980,12 +6980,12 @@ da5bcd429ecfbb71b847767f8ed9569d
                   GrammarData.$fShowBar_$cshowsPrec
                   GrammarData.$fShowBar_$cshow
                   GrammarData.$fShowBar_$cshowList -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowBar1 :: GrammarData.Bar -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ w :: GrammarData.Bar ->
                  GrammarData.$w$cshowsPrec 0 w) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowBar_$cshow :: GrammarData.Bar -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -6994,13 +6994,13 @@ da5bcd429ecfbb71b847767f8ed9569d
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowBar_$cshowList :: [GrammarData.Bar] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ GrammarData.Bar
                    GrammarData.$fShowBar1) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowBar_$cshowsPrec ::
     GHC.Types.Int -> GrammarData.Bar -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U(U)><S,1*U>, Inline: INLINE[0],
@@ -7301,7 +7301,7 @@ be5e38a33a1f6f8dedf69a22bff6d6f1
                            n
                            GrammarData.$fReadItoCMovement8)
                         eta }) -}
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   $fShowLeaf :: GHC.Show.Show GrammarData.Leaf
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -7310,12 +7310,12 @@ c45a9487dc1554c122459c27a0c0c7a2
                   GrammarData.$fShowLeaf_$cshowsPrec
                   GrammarData.$fShowLeaf_$cshow
                   GrammarData.$fShowLeaf_$cshowList -}
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   $fShowLeaf1 :: GrammarData.Leaf -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ w :: GrammarData.Leaf ->
                  GrammarData.$w$cshowsPrec3 0 w) -}
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   $fShowLeaf_$cshow :: GrammarData.Leaf -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -7324,13 +7324,13 @@ c45a9487dc1554c122459c27a0c0c7a2
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   $fShowLeaf_$cshowList :: [GrammarData.Leaf] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ GrammarData.Leaf
                    GrammarData.$fShowLeaf1) -}
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   $fShowLeaf_$cshowsPrec ::
     GHC.Types.Int -> GrammarData.Leaf -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U(U)><S,1*U>, Inline: INLINE[0],
@@ -7674,7 +7674,7 @@ c2c0ea9981f3d6eed112f850f7ea6beb
                            n
                            GrammarData.$fReadObligatoryTopic8)
                         eta }) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowPhrase :: GHC.Show.Show GrammarData.Phrase
   DFunId[0]
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -7683,7 +7683,7 @@ c2c0ea9981f3d6eed112f850f7ea6beb
                   GrammarData.$fShowPhrase_$cshowsPrec
                   GrammarData.$fShowPhrase_$cshow
                   GrammarData.$fShowPhrase_$cshowList -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowPhrase1 :: GrammarData.Phrase -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (GrammarData.$fShowPhrase_$cshowsPrec
@@ -7691,7 +7691,7 @@ c2c0ea9981f3d6eed112f850f7ea6beb
 9c902e91da4fbff14d137c765fe242ab
   $fShowPhrase2 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowPhrase_$cshow :: GrammarData.Phrase -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -7700,13 +7700,13 @@ c2c0ea9981f3d6eed112f850f7ea6beb
                    GHC.Show.shows18
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowPhrase_$cshowList :: [GrammarData.Phrase] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ GrammarData.Phrase
                    GrammarData.$fShowPhrase1) -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $fShowPhrase_$cshowsPrec ::
     GHC.Types.Int -> GrammarData.Phrase -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <L,1*U(U)><S,1*U> -}
@@ -8221,21 +8221,21 @@ e7236c5b74ef163c5dcac13e97f6961e
                            n
                            GrammarData.$fReadWHMovementObligatory8)
                         eta }) -}
-43f7e6ea711f75ebd10c4bc6d1c2247e
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1 ::
-    [InflectionData.Express InflectionData.Volition] -> GHC.Show.ShowS
+9776a3b2d25ceb7c1ba01a8690fb53c0
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec10 ::
+    [InflectionData.Express InflectionData.Honorific] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
-                (\ eta :: [InflectionData.Express InflectionData.Volition]
+                (\ eta :: [InflectionData.Express InflectionData.Honorific]
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
-                   @ (InflectionData.Express InflectionData.Volition)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec1
-                      InflectionData.$fShowExpress2)
+                   @ (InflectionData.Express InflectionData.Honorific)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec7
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-4709779eed599950da50b095d8588e73
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec10 ::
+c5f637e8072a9efa3118d56b3b389ef0
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec11 ::
     [InflectionData.Express InflectionData.Person] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8243,12 +8243,12 @@ e7236c5b74ef163c5dcac13e97f6961e
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Person)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec10
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec8
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-96aa713faa4663da4b07643e4d7b3316
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec11 ::
+35bda45ad9021ca15ebac9830553659b
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec12 ::
     [InflectionData.Express InflectionData.Topic] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8256,12 +8256,12 @@ e7236c5b74ef163c5dcac13e97f6961e
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Topic)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec11
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec9
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-76438b7b60dc29a176735104cc470b23
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec12 ::
+b42418e2503ed2a64ec4144f103eacd0
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec13 ::
     [InflectionData.Express InflectionData.Specificity]
     -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
@@ -8270,12 +8270,12 @@ e7236c5b74ef163c5dcac13e97f6961e
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Specificity)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec12
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec10
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-65c53d562825d289596ac860028ca34a
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec13 ::
+f9852fcf8e8f8dd438000f6f3a65da1c
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec14 ::
     [InflectionData.Express InflectionData.Definiteness]
     -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
@@ -8284,12 +8284,14 @@ e7236c5b74ef163c5dcac13e97f6961e
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Definiteness)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec13
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                      @ InflectionData.Definiteness
+                      InflectionData.$fShowDefiniteness
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-7c1ee7ec4deff05cc5c3fbd2e7947c96
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec14 ::
+1e01526d90466d5a6eaf8f2166781ab0
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec15 ::
     [InflectionData.Express InflectionData.Number] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8297,12 +8299,12 @@ e7236c5b74ef163c5dcac13e97f6961e
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Number)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec14
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec11
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-76f430a3f6c18cfb2ff534358f52d8d3
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec15 ::
+6cc7ac2187028f1a28e3a041450b553e
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec16 ::
     [InflectionData.Express InflectionData.Case] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8310,12 +8312,14 @@ e7236c5b74ef163c5dcac13e97f6961e
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Case)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec15
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                      @ InflectionData.Case
+                      InflectionData.$fShowCase
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-56d06c592f80be00271de56be93de710
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec16 ::
+528f8ce545ef2078ce1f6851e61d4c0c
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec17 ::
     [InflectionData.Express InflectionData.Animacy] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8323,12 +8327,14 @@ e7236c5b74ef163c5dcac13e97f6961e
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Animacy)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec16
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                      @ InflectionData.Animacy
+                      InflectionData.$fShowAnimacy
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-901666520dde053ebb40aab0d8cd4fa7
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec17 ::
+91ee02d927616152e1bb62d4304833bb
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec18 ::
     [InflectionData.Express InflectionData.Gender] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8336,12 +8342,222 @@ e7236c5b74ef163c5dcac13e97f6961e
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Gender)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec17
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec12
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-d577c09a8668200247d6cd566aeac847
+1ca67ea5fd8dba0e2ea3210519b47d71
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Volition)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Volition)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec1
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Volition
+                     InflectionData.$fShowVolition)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec2 -}
+0ae291948ab0d8329d8b0c00b3e4ce8a
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress1 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Transitivity)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Transitivity)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec2
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Transitivity
+                     InflectionData.$fShowTransitivity)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec3 -}
+b333fa2421fb0258012e9d720a4e5e3a
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress10 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Topic)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Topic)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec9
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Topic
+                     InflectionData.$fShowTopic)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec12 -}
+45444f31eb051f995e612ee595b451ac
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress11 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Specificity)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Specificity)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec10
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Specificity
+                     InflectionData.$fShowSpecificity)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec13 -}
+b298a33a7ffcbef9cd91772b6b70f1db
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress12 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Definiteness)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Definiteness)
+                  (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                     @ InflectionData.Definiteness
+                     InflectionData.$fShowDefiniteness)
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Definiteness
+                     InflectionData.$fShowDefiniteness)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec14 -}
+84c4f6efc7ca947ceb563b9ad8835f81
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress13 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Number)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Number)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec11
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Number
+                     InflectionData.$fShowNumber)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec15 -}
+ff32638366a3c572daeeb8f2155ede15
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress14 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Case)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Case)
+                  (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                     @ InflectionData.Case
+                     InflectionData.$fShowCase)
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Case
+                     InflectionData.$fShowCase)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec16 -}
+9995c35d87cbe47307704f3d5fd1d5dc
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress15 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Animacy)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Animacy)
+                  (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                     @ InflectionData.Animacy
+                     InflectionData.$fShowAnimacy)
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Animacy
+                     InflectionData.$fShowAnimacy)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec17 -}
+7b44d80842bee4089f813f55a56f1d14
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress16 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Gender)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Gender)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec12
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Gender
+                     InflectionData.$fShowGender)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec18 -}
+cde82c9d754b7f1fb61e4dad117e609b
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress2 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Evidentiality)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Evidentiality)
+                  (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                     @ InflectionData.Evidentiality
+                     InflectionData.$fShowEvidentiality)
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Evidentiality
+                     InflectionData.$fShowEvidentiality)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec4 -}
+f6c56c46f5f187811fc5348682d85bea
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress3 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Voice)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Voice)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec3
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Voice
+                     InflectionData.$fShowVoice)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec5 -}
+27ec112cb4dcd1f5ceccf4a0314dc770
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress4 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Mood)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Mood)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec4
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Mood
+                     InflectionData.$fShowMood)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec6 -}
+b0904dfbbe551f4e0b5a863f8b32c386
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress5 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Aspect)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Aspect)
+                  (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                     @ InflectionData.Aspect
+                     InflectionData.$fShowAspect)
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Aspect
+                     InflectionData.$fShowAspect)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec7 -}
+3a8041fc9e2b2438bfc2c5304a5d98e4
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress6 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Tense)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Tense)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec5
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Tense
+                     InflectionData.$fShowTense)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec8 -}
+d91abdd248038d5b5be6d1d9c7f6adb2
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress7 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Polarity)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Polarity)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec6
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Polarity
+                     InflectionData.$fShowPolarity)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec9 -}
+d6aaf563d44d9d659c0fd0224409728a
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress8 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Honorific)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Honorific)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec7
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Honorific
+                     InflectionData.$fShowHonorific)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec10 -}
+93b0fa5c07c7adeb2aeba8df695b615e
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress9 ::
+    GHC.Show.Show (InflectionData.Express InflectionData.Person)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (InflectionData.Express InflectionData.Person)
+                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec8
+                  (InflectionData.$fShowExpress_$cshow
+                     @ InflectionData.Person
+                     InflectionData.$fShowPerson)
+                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec11 -}
+716edc8c9fd2ff198b67fc851dbbbe8f
   $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec2 ::
+    [InflectionData.Express InflectionData.Volition] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [InflectionData.Express InflectionData.Volition]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (InflectionData.Express InflectionData.Volition)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec1
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
+                   eta
+                   eta1) -}
+1d610e355195b936f373fc5ec08b0776
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec3 ::
     [InflectionData.Express InflectionData.Transitivity]
     -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
@@ -8351,11 +8567,11 @@ d577c09a8668200247d6cd566aeac847
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Transitivity)
                    (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec2
-                      InflectionData.$fShowExpress2)
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-4b64b501aa4797962cb140aebec6824e
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec3 ::
+3933cfdcf888463ac001a1b3b0ed8a3a
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec4 ::
     [InflectionData.Express InflectionData.Evidentiality]
     -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
@@ -8364,12 +8580,14 @@ d577c09a8668200247d6cd566aeac847
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Evidentiality)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec3
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                      @ InflectionData.Evidentiality
+                      InflectionData.$fShowEvidentiality
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-a0252468aac5e7d54962144b4c4434fa
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec4 ::
+c1f7325a803924f85c1bfcb4e481ce6a
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec5 ::
     [InflectionData.Express InflectionData.Voice] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8377,12 +8595,12 @@ a0252468aac5e7d54962144b4c4434fa
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Voice)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec4
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec3
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-0636a588a5ef2d2aa5508435be41997f
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec5 ::
+2bfe095be729e333db0d9b42b6972620
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec6 ::
     [InflectionData.Express InflectionData.Mood] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8390,12 +8608,12 @@ a0252468aac5e7d54962144b4c4434fa
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Mood)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec5
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec4
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-66d2da61f79f2cb1c397e01b49fc9f6b
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec6 ::
+e8bb4364448e3f6bc42c30d60c74d2a1
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec7 ::
     [InflectionData.Express InflectionData.Aspect] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8403,12 +8621,14 @@ a0252468aac5e7d54962144b4c4434fa
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Aspect)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec6
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec
+                      @ InflectionData.Aspect
+                      InflectionData.$fShowAspect
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-fc8a772264278b9e5ab72efb44dac6aa
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec7 ::
+94c67fe4275a9f1ffc50ec153f87fa3a
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec8 ::
     [InflectionData.Express InflectionData.Tense] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8416,12 +8636,12 @@ fc8a772264278b9e5ab72efb44dac6aa
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Tense)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec7
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec5
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-61bc9a3f7ff6f0e770bb10c387b7adc2
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec8 ::
+f072344e77eeb725878060282b4dc83e
+  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec9 ::
     [InflectionData.Express InflectionData.Polarity] -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,1*U><L,U>,
      Unfolding: InlineRule (2, True, False)
@@ -8429,211 +8649,11 @@ fc8a772264278b9e5ab72efb44dac6aa
                    eta1 :: GHC.Base.String ->
                  GHC.Show.showList__
                    @ (InflectionData.Express InflectionData.Polarity)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec8
-                      InflectionData.$fShowExpress2)
+                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec6
+                      InflectionData.$fShow(,,,,,,,,,,,,,,,,)7)
                    eta
                    eta1) -}
-c23f1dbb813f83a6ff438773056bccdc
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec9 ::
-    [InflectionData.Express InflectionData.Honorific] -> GHC.Show.ShowS
-  {- Arity: 2, Strictness: <S,1*U><L,U>,
-     Unfolding: InlineRule (2, True, False)
-                (\ eta :: [InflectionData.Express InflectionData.Honorific]
-                   eta1 :: GHC.Base.String ->
-                 GHC.Show.showList__
-                   @ (InflectionData.Express InflectionData.Honorific)
-                   (InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec9
-                      InflectionData.$fShowExpress2)
-                   eta
-                   eta1) -}
-24e1fffa579f69c992fe086329a45d8d
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Volition)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Volition)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec1
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Volition
-                     InflectionData.$fShowVolition)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1 -}
-6a03d804b9fd9f55ab8208a7791bbe5d
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress1 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Transitivity)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Transitivity)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec2
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Transitivity
-                     InflectionData.$fShowTransitivity)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec2 -}
-50f01b79a984691b85c02ff63b5443c5
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress10 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Topic)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Topic)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec11
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Topic
-                     InflectionData.$fShowTopic)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec11 -}
-84d4dde353892017a849bd57cfacc5df
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress11 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Specificity)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Specificity)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec12
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Specificity
-                     InflectionData.$fShowSpecificity)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec12 -}
-5fe1d7c1054ad1223a4ae0b05fe3de20
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress12 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Definiteness)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Definiteness)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec13
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Definiteness
-                     InflectionData.$fShowDefiniteness)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec13 -}
-a855761225ebf89855074bdb1bfdc81e
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress13 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Number)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Number)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec14
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Number
-                     InflectionData.$fShowNumber)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec14 -}
-be68c4ace66093c52a0a798579f31af2
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress14 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Case)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Case)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec15
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Case
-                     InflectionData.$fShowCase)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec15 -}
-497c03473262219f2f69a7a2c34cb61f
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress15 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Animacy)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Animacy)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec16
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Animacy
-                     InflectionData.$fShowAnimacy)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec16 -}
-4d050290c7247132c5388122924b6482
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress16 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Gender)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Gender)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec17
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Gender
-                     InflectionData.$fShowGender)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec17 -}
-e08e34415f1e7bef2e407e1d82e10c71
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress2 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Evidentiality)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Evidentiality)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec3
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Evidentiality
-                     InflectionData.$fShowEvidentiality)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec3 -}
-9a9a2adc4757d1d84f5368de30f248f5
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress3 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Voice)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Voice)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec4
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Voice
-                     InflectionData.$fShowVoice)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec4 -}
-f34e74e4835295dbad39c49b15a88fc7
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress4 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Mood)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Mood)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec5
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Mood
-                     InflectionData.$fShowMood)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec5 -}
-9fb68f60122a3210dfee56ef506e4824
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress5 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Aspect)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Aspect)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec6
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Aspect
-                     InflectionData.$fShowAspect)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec6 -}
-4ef89c39926908775fb6d35280422a47
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress6 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Tense)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Tense)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec7
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Tense
-                     InflectionData.$fShowTense)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec7 -}
-edefb780614005f5fa480e2e191c25c5
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress7 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Polarity)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Polarity)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec8
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Polarity
-                     InflectionData.$fShowPolarity)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec8 -}
-cb7ea65876382b803de7b43143f2705e
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress8 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Honorific)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Honorific)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec9
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Honorific
-                     InflectionData.$fShowHonorific)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec9 -}
-e06e349b110657b463f6f3c148eee217
-  $s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress9 ::
-    GHC.Show.Show (InflectionData.Express InflectionData.Person)
-  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
-     Unfolding: DFun:.
-                  @ (InflectionData.Express InflectionData.Person)
-                  InflectionData.$fShow(,,,,,,,,,,,,,,,,)_$s$cshowsPrec10
-                  (InflectionData.$fShowExpress_$cshow
-                     @ InflectionData.Person
-                     InflectionData.$fShowPerson)
-                  GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec10 -}
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   $w$cshowsPrec :: GHC.Prim.Int# -> GrammarData.Bar -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
 05c528fd36e6fa402da1ba5657c7bc2f
@@ -8671,7 +8691,7 @@ e06e349b110657b463f6f3c148eee217
                    -> GHC.Base.++ @ GHC.Types.Char GrammarData.$fShowIlloc2 w1
                    GrammarData.Imper
                    -> GHC.Base.++ @ GHC.Types.Char GrammarData.$fShowIlloc1 w1 }) -}
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   $w$cshowsPrec3 ::
     GHC.Prim.Int# -> GrammarData.Leaf -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
@@ -8892,7 +8912,7 @@ c2c0ea9981f3d6eed112f850f7ea6beb
 da5bcd429ecfbb71b847767f8ed9569d
   data AffixHopping = NoAffixHop | OblAffixHop
     Promotable
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   data Bar
     = XBarA {barLC :: InflectionData.LexCat,
              barIl :: GrammarData.Illoc,
@@ -8927,7 +8947,7 @@ b8946e12084618f63d7bf871f8615ccb
 be5e38a33a1f6f8dedf69a22bff6d6f1
   data ItoCMovement = NoItoCMove | OblItoCMove
     Promotable
-c45a9487dc1554c122459c27a0c0c7a2
+0c62203b93e11b844f77275212ff8c48
   data Leaf
     = LeafNull GrammarData.Illoc
     | LeafInfl {leafLC :: InflectionData.LexCat,
@@ -8963,7 +8983,7 @@ c2c0ea9981f3d6eed112f850f7ea6beb
 69babcc57bbc447bbcd2b156d19a1d60
   data ObligatoryTopic = OblTopic | OptTopic
     Promotable
-9659e0c80a113c431b9ceeaca174dd69
+04a49f52bfdb87c5c968d67f70ef7770
   data Phrase
     = XPNull
     | XP {phraseLC :: InflectionData.LexCat,
@@ -8988,7 +9008,7 @@ e395809ab97655f1b03dc514ea8c035c
 e7236c5b74ef163c5dcac13e97f6961e
   data WHMovementObligatory = NoWHMove | OblWHMove
     Promotable
-bdec499405d8be36e3621c80702bb59f
+67a38e350a23b25cf81dfbbb03cb94b7
   adjunct :: GrammarData.Bar -> GrammarData.Phrase
   RecSel GrammarData.Bar
   {- Arity: 1, Strictness: <S,1*U>,
@@ -8997,10 +9017,10 @@ bdec499405d8be36e3621c80702bb59f
                  case ds of wild {
                    GrammarData.XBarA ds1 ds2 ds3 ds4 -> ds3
                    GrammarData.XBarC ipv ipv1 ipv2 ipv3 -> GrammarData.adjunct1 }) -}
-6fc79b241432ced30b2ebf98bdbaf8d6
+0ef5732925ff33f0ccca6a745d6b55bc
   adjunct1 :: GrammarData.Phrase
   {- Strictness: b -}
-6061064e5df3cc4839f83697b940bf0e
+6a3d2fd6bef96ff7f0ecbe748745abd9
   barBar :: GrammarData.Bar -> GrammarData.Bar
   RecSel GrammarData.Bar
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9009,10 +9029,10 @@ bdec499405d8be36e3621c80702bb59f
                  case ds of wild {
                    GrammarData.XBarA ds1 ds2 ds3 ds4 -> ds4
                    GrammarData.XBarC ipv ipv1 ipv2 ipv3 -> GrammarData.barBar1 }) -}
-d8448e87acd8276c1a9491a522faf74f
+f766043d598a7acd8fe1e0710c3914fe
   barBar1 :: GrammarData.Bar
   {- Strictness: b -}
-4f8a7ff1b7ad066871003c7c20e1f448
+db987ef944bc9db93d02ce81ea381a48
   barIl :: GrammarData.Bar -> GrammarData.Illoc
   RecSel GrammarData.Bar
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
@@ -9021,7 +9041,7 @@ d8448e87acd8276c1a9491a522faf74f
                  case ds of wild {
                    GrammarData.XBarA ds1 ds2 ds3 ds4 -> ds2
                    GrammarData.XBarC ds1 ds2 ds3 ds4 -> ds2 }) -}
-ef197cb54417572bd2e47bc583915bec
+f7a5bfcc38b86459be0a5e167332dc4c
   barLC :: GrammarData.Bar -> InflectionData.LexCat
   RecSel GrammarData.Bar
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
@@ -9030,7 +9050,7 @@ ef197cb54417572bd2e47bc583915bec
                  case ds of wild {
                    GrammarData.XBarA ds1 ds2 ds3 ds4 -> ds1
                    GrammarData.XBarC ds1 ds2 ds3 ds4 -> ds1 }) -}
-37708b01ff0e2b3767eaeb96c2f96b04
+fc6708907b2164ea52c21d6a36251182
   compliment :: GrammarData.Bar -> GrammarData.Phrase
   RecSel GrammarData.Bar
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9039,7 +9059,7 @@ ef197cb54417572bd2e47bc583915bec
                  case ds of wild {
                    GrammarData.XBarA ipv ipv1 ipv2 ipv3 -> GrammarData.compliment1
                    GrammarData.XBarC ds1 ds2 ds3 ds4 -> ds4 }) -}
-3b6d6c2284fee4727cc9fbb8efb58855
+1363cfd26ebe052726a1324353a7d721
   compliment1 :: GrammarData.Phrase
   {- Strictness: b -}
 8921262fa73de9c65a89f59c3b0fc8c3
@@ -9159,7 +9179,7 @@ dc8454ca703345b8e77193e6ca2e9ef6
                 (\ ds :: GrammarData.Grammar ->
                  case ds of wild { GrammarData.Grammar ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
                  ds11 }) -}
-09b1e3a69e14427acda2a28bf8742b86
+e216b5feda2d8ab4745a0bad44f3bf8b
   leaf :: GrammarData.Bar -> GrammarData.Leaf
   RecSel GrammarData.Bar
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9168,10 +9188,10 @@ dc8454ca703345b8e77193e6ca2e9ef6
                  case ds of wild {
                    GrammarData.XBarA ipv ipv1 ipv2 ipv3 -> GrammarData.leaf1
                    GrammarData.XBarC ds1 ds2 ds3 ds4 -> ds3 }) -}
-d8333dc4c8f08c04b024fb4f13ba12a3
+fc9251dc389b27a1ef781dd36ea5c9b6
   leaf1 :: GrammarData.Leaf
   {- Strictness: b -}
-9c0981ef6c3179e891b306986b3a9d37
+073219ff22a6d35d51bf96f3d34e90a7
   leafIl :: GrammarData.Leaf -> GrammarData.Illoc
   RecSel GrammarData.Leaf
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9183,7 +9203,7 @@ d8333dc4c8f08c04b024fb4f13ba12a3
 42b03a9e64744b9a50f40c6b9276765b
   leafIl1 :: GrammarData.Illoc
   {- Strictness: b -}
-2c0e24de7dc9bbe6bb849935762a7609
+464f6a5249211005047c50b8063bcadc
   leafInfl ::
     GrammarData.Leaf
     -> (InflectionData.Express InflectionData.Gender,
@@ -9210,7 +9230,7 @@ d8333dc4c8f08c04b024fb4f13ba12a3
                  case ds of wild {
                    DEFAULT -> GrammarData.leafInfl1
                    GrammarData.LeafInfl ds1 ds2 -> ds2 }) -}
-74d56a05176868e8c52c93b0e257419e
+6ef7ae38b27677388c616f3f49124c03
   leafInfl1 ::
     (InflectionData.Express InflectionData.Gender,
      InflectionData.Express InflectionData.Animacy,
@@ -9230,7 +9250,7 @@ d8333dc4c8f08c04b024fb4f13ba12a3
      InflectionData.Express InflectionData.Transitivity,
      InflectionData.Express InflectionData.Volition)
   {- Strictness: b -}
-b1aa92a5e35ba084c7327ab431896724
+45cba8eff52ea59f47ae232ba851460c
   leafLC :: GrammarData.Leaf -> InflectionData.LexCat
   RecSel GrammarData.Leaf
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9240,10 +9260,10 @@ b1aa92a5e35ba084c7327ab431896724
                    GrammarData.LeafNull ipv -> GrammarData.leafLC1
                    GrammarData.LeafInfl ds1 ds2 -> ds1
                    GrammarData.Leaf ds1 ds2 ds3 -> ds1 }) -}
-777fdaa1d5d410a18f626f8c3e307705
+396973b8ef41294046c8cb4f584311ab
   leafLC1 :: InflectionData.LexCat
   {- Strictness: b -}
-386a7723e5a02295db419b5e81061fbe
+603a4b50c0ac1c32b8732a87fa67e95c
   leafStr :: GrammarData.Leaf -> GHC.Base.String
   RecSel GrammarData.Leaf
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9255,7 +9275,7 @@ b1aa92a5e35ba084c7327ab431896724
 c7d4170496eccc39a945c1a014ea1c24
   leafStr1 :: GHC.Base.String
   {- Strictness: b -}
-210337de415c4cff64717663fbaf13be
+4edaca52688cbd4c058cf176c449e975
   phraseBar :: GrammarData.Phrase -> GrammarData.Bar
   RecSel GrammarData.Phrase
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9264,10 +9284,10 @@ c7d4170496eccc39a945c1a014ea1c24
                  case ds of wild {
                    GrammarData.XPNull -> GrammarData.phraseBar1
                    GrammarData.XP ds1 ds2 ds3 ds4 -> ds4 }) -}
-8f98318e89df83480f5aeedb57b622c7
+eecb2fb7607f3b38225c7aebf24a2a3c
   phraseBar1 :: GrammarData.Bar
   {- Strictness: b -}
-350e37a4ca742e7890e9c65709851df8
+3bbfae639db157f0fc356843d528f5d4
   phraseIl :: GrammarData.Phrase -> GrammarData.Illoc
   RecSel GrammarData.Phrase
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9279,7 +9299,7 @@ c7d4170496eccc39a945c1a014ea1c24
 67986ad9d5b2a710a806f7641aa8611d
   phraseIl1 :: GrammarData.Illoc
   {- Strictness: b -}
-0cd95a1bdde91cdbf3c44e8c4c7ad1bf
+3f23d0f80af86e20f7a6858d6c9da4f3
   phraseLC :: GrammarData.Phrase -> InflectionData.LexCat
   RecSel GrammarData.Phrase
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9288,10 +9308,10 @@ c7d4170496eccc39a945c1a014ea1c24
                  case ds of wild {
                    GrammarData.XPNull -> GrammarData.phraseLC1
                    GrammarData.XP ds1 ds2 ds3 ds4 -> ds1 }) -}
-9843a922190b75ba6f430ffc998d53a5
+424d14fbd9f56d3cf0bc259e4ce43a54
   phraseLC1 :: InflectionData.LexCat
   {- Strictness: b -}
-35b854b85ac2b7bb9a9cb862dfd969d9
+f0295776d6c0586c9cce2b66a62278e7
   specifier :: GrammarData.Phrase -> GrammarData.Phrase
   RecSel GrammarData.Phrase
   {- Arity: 1, Strictness: <S,1*U>,
@@ -9300,7 +9320,7 @@ c7d4170496eccc39a945c1a014ea1c24
                  case ds of wild {
                    GrammarData.XPNull -> GrammarData.specifier1
                    GrammarData.XP ds1 ds2 ds3 ds4 -> ds3 }) -}
-e12ad60232070db7fc574ed8e41cb1ff
+b8d6be802e9c57288ad00de8241762ab
   specifier1 :: GrammarData.Phrase
   {- Strictness: b -}
 instance GHC.Enum.Enum [GrammarData.AffixHopping]
@@ -9477,71 +9497,71 @@ instance GHC.Show.Show [GrammarData.WHMovementObligatory]
 "SPEC/GrammarData $fShowExpress @ Animacy" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                        InflectionData.Animacy
   InflectionData.$fShowExpress @ InflectionData.Animacy $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress15
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress15
 "SPEC/GrammarData $fShowExpress @ Aspect" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                       InflectionData.Aspect
   InflectionData.$fShowExpress @ InflectionData.Aspect $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress5
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress5
 "SPEC/GrammarData $fShowExpress @ Case" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                     InflectionData.Case
   InflectionData.$fShowExpress @ InflectionData.Case $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress14
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress14
 "SPEC/GrammarData $fShowExpress @ Definiteness" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                             InflectionData.Definiteness
   InflectionData.$fShowExpress @ InflectionData.Definiteness $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress12
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress12
 "SPEC/GrammarData $fShowExpress @ Evidentiality" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                              InflectionData.Evidentiality
   InflectionData.$fShowExpress @ InflectionData.Evidentiality $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress2
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress2
 "SPEC/GrammarData $fShowExpress @ Gender" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                       InflectionData.Gender
   InflectionData.$fShowExpress @ InflectionData.Gender $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress16
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress16
 "SPEC/GrammarData $fShowExpress @ Honorific" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                          InflectionData.Honorific
   InflectionData.$fShowExpress @ InflectionData.Honorific $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress8
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress8
 "SPEC/GrammarData $fShowExpress @ Mood" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                     InflectionData.Mood
   InflectionData.$fShowExpress @ InflectionData.Mood $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress4
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress4
 "SPEC/GrammarData $fShowExpress @ Number" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                       InflectionData.Number
   InflectionData.$fShowExpress @ InflectionData.Number $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress13
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress13
 "SPEC/GrammarData $fShowExpress @ Person" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                       InflectionData.Person
   InflectionData.$fShowExpress @ InflectionData.Person $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress9
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress9
 "SPEC/GrammarData $fShowExpress @ Polarity" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                         InflectionData.Polarity
   InflectionData.$fShowExpress @ InflectionData.Polarity $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress7
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress7
 "SPEC/GrammarData $fShowExpress @ Specificity" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                            InflectionData.Specificity
   InflectionData.$fShowExpress @ InflectionData.Specificity $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress11
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress11
 "SPEC/GrammarData $fShowExpress @ Tense" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                      InflectionData.Tense
   InflectionData.$fShowExpress @ InflectionData.Tense $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress6
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress6
 "SPEC/GrammarData $fShowExpress @ Topic" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                      InflectionData.Topic
   InflectionData.$fShowExpress @ InflectionData.Topic $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress10
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress10
 "SPEC/GrammarData $fShowExpress @ Transitivity" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                             InflectionData.Transitivity
   InflectionData.$fShowExpress @ InflectionData.Transitivity $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress1
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress1
 "SPEC/GrammarData $fShowExpress @ Voice" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                      InflectionData.Voice
   InflectionData.$fShowExpress @ InflectionData.Voice $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress3
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress3
 "SPEC/GrammarData $fShowExpress @ Volition" [ALWAYS] forall $dShow :: GHC.Show.Show
                                                                         InflectionData.Volition
   InflectionData.$fShowExpress @ InflectionData.Volition $dShow
-  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec_$s$fShowExpress
+  = GrammarData.$s$fShow(,,,,,,,,,,,,,,,,)_$cshowsPrec1_$s$fShowExpress
 "SPEC/GrammarData readListDefault @ AffixHopping" [ALWAYS] forall $dRead :: GHC.Read.Read
                                                                               GrammarData.AffixHopping
   GHC.Read.readListDefault @ GrammarData.AffixHopping $dRead

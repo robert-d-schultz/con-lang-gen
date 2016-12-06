@@ -1,122 +1,66 @@
 Phonology<br>
 <table border=1>
 	<tr>
-		<th colspan="25">Consonant Inventory</th>
+		<th colspan="7">Consonant Inventory</th>
 	</tr>
 	<tr>
 		<th></th>
-		<th colspan="3">Bilabial</th>
-		<th colspan="3">Labiodental</th>
-		<th colspan="3">Coronal</th>
-		<th colspan="3">Velar</th>
-		<th colspan="3">Alveolo-palatal</th>
-		<th colspan="3">Palatal</th>
-		<th colspan="3">Uvular</th>
-		<th colspan="3">Laryngeal</th>
+		<th colspan="1">Labial</th>
+		<th colspan="1">Coronal</th>
+		<th colspan="1">Dorsal</th>
+		<th colspan="1">Pharyngeal</th>
+		<th colspan="1">Epiglottal</th>
+		<th colspan="1">Glottal</th>
 	</tr>
 	<tr>
 		<th>Stop</th>
-		<td>p</td>
-		<td>b</td>
-		<td>bʰ</td>
-		<td>p̪</td>
-		<td>b̪</td>
-		<td>b̪ʰ</td>
-		<td>t</td>
-		<td>d</td>
-		<td>dʰ</td>
-		<td>k</td>
-		<td>ɡ</td>
-		<td>ɡʰ</td>
-		<td>c̟</td>
-		<td>ɟ̟</td>
-		<td>ɟ̟ʰ</td>
-		<td>c</td>
-		<td>ɟ</td>
-		<td>ɟʰ</td>
-		<td>q</td>
-		<td>ɢ</td>
-		<td>ɢʰ</td>
-		<td>ʔ</td>
-		<td>ʡ</td>
-		<td>ʡʰ</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr>
-		<th>Fricative</th>
-		<td>ɸ</td>
-		<td>β</td>
+		<th>Nasal</th>
 		<td></td>
-		<td>f</td>
-		<td>v</td>
 		<td></td>
-		<td>ɹ̟̊</td>
-		<td>ɹ̟</td>
 		<td></td>
-		<td>x</td>
-		<td>ɣ</td>
 		<td></td>
-		<td>ɻ̠̟̊</td>
-		<td>ɻ̠̟</td>
 		<td></td>
-		<td>ç</td>
-		<td>ʝ</td>
 		<td></td>
-		<td>χ</td>
-		<td>ʁ</td>
+	</tr>
+	<tr>
+		<th>Flap</th>
 		<td></td>
-		<td>h</td>
-		<td>ɦ</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
 		<td></td>
 	</tr>
 	<tr>
 		<th>Approximant</th>
-		<td>ɸ̝</td>
-		<td>β̞</td>
 		<td></td>
-		<td>ʋ̥</td>
-		<td>ʋ</td>
 		<td></td>
-		<td>ɹ̊</td>
-		<td>ɹ</td>
 		<td></td>
-		<td>ɰ̊</td>
-		<td>ɰ</td>
 		<td></td>
-		<td>ɻ̠̊</td>
-		<td>ɻ̠</td>
 		<td></td>
-		<td>j̊</td>
-		<td>j</td>
-		<td></td>
-		<td>ʁ̞̊</td>
-		<td>ʁ̞</td>
-		<td></td>
-		<td>h̞</td>
 		<td>ɦ̞</td>
-		<td></td>
 	</tr>
 	<tr>
 		<th>Lateral approximant</th>
 		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td>l̥</td>
 		<td>l</td>
-		<td></td>
-		<td>ʟ̥</td>
 		<td>ʟ</td>
 		<td></td>
-		<td>ʎ̟̊ </td>
-		<td>ʎ̟</td>
 		<td></td>
-		<td>ʎ̥</td>
-		<td>ʎ</td>
 		<td></td>
-		<td>ʟ̠̊</td>
-		<td>ʟ̠</td>
+	</tr>
+	<tr>
+		<th>Trill</th>
+		<td></td>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -126,35 +70,178 @@ Phonology<br>
 <br>
 <table border=1>
 	<tr>
-		<th colspan="3">Vowel Inventory</th>
+		<th colspan="11">Vowel Inventory</th>
 	</tr>
 	<tr>
 		<th></th>
-		<th colspan="1">Front</th>
-		<th colspan="1">Back</th>
+		<th colspan="2">Front</th>
+		<th colspan="2">Near-front</th>
+		<th colspan="2">Central</th>
+		<th colspan="2">Near-back</th>
+		<th colspan="2">Back</th>
 	</tr>
 	<tr>
 		<th rowspan="3">Close</th>
 		<tr>
-			<td>ȳ</td>
-			<td>ɯ̄</td>
+			<td>ī̆</td>
+			<td>ȳ̆</td>
+			<td>ɪ̝̄̆</td>
+			<td>ʏ̝̄̆</td>
+			<td>ɨ̄̆</td>
+			<td>ʉ̄̆</td>
+			<td>ɯ̟̄̆</td>
+			<td>ʊ̝̄̆</td>
+			<td>ɯ̄̆</td>
+			<td>ū̆</td>
 		</tr>
 		<tr>
-			<td>ȳː</td>
-			<td>ɯ̄ː</td>
+			<td>ī</td>
+			<td>ȳ</td>
+			<td>ɪ̝̄</td>
+			<td>ʏ̝̄</td>
+			<td>ɨ̄</td>
+			<td>ʉ̄</td>
+			<td>ɯ̟̄</td>
+			<td>ʊ̝̄</td>
+			<td>ɯ̄</td>
+			<td>ū</td>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="3">Near-close</th>
+		<tr>
+			<td>ɪ̟̄̆</td>
+			<td>ʏ̟̄̆</td>
+			<td>ɪ̄̆</td>
+			<td>ʏ̄̆</td>
+			<td>ɪ̈̄̆</td>
+			<td>ʊ̈̄̆</td>
+			<td>ɯ̽̄̆</td>
+			<td>ʊ̄̆</td>
+			<td>ɯ̞̄̆</td>
+			<td>ʊ̠̄̆</td>
+		</tr>
+		<tr>
+			<td>ɪ̟̄</td>
+			<td>ʏ̟̄</td>
+			<td>ɪ̄</td>
+			<td>ʏ̄</td>
+			<td>ɪ̈̄</td>
+			<td>ʊ̈̄</td>
+			<td>ɯ̽̄</td>
+			<td>ʊ̄</td>
+			<td>ɯ̞̄</td>
+			<td>ʊ̠̄</td>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="3">Close-mid</th>
+		<tr>
+			<td>ē̆</td>
+			<td>ø̄̆</td>
+			<td>ë̄̆</td>
+			<td>ø̈̄̆</td>
+			<td>ɘ̄̆</td>
+			<td>ɵ̄̆</td>
+			<td>ɤ̈̄̆</td>
+			<td>ȫ̆</td>
+			<td>ɤ̄̆</td>
+			<td>ō̆</td>
+		</tr>
+		<tr>
+			<td>ē</td>
+			<td>ø̄</td>
+			<td>ë̄</td>
+			<td>ø̈̄</td>
+			<td>ɘ̄</td>
+			<td>ɵ̄</td>
+			<td>ɤ̈̄</td>
+			<td>ȫ</td>
+			<td>ɤ̄</td>
+			<td>ō</td>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="3">Open-mid</th>
+		<tr>
+			<td>ɛ̄̆</td>
+			<td>œ̄̆</td>
+			<td>ɛ̈̄̆</td>
+			<td>œ̈̄̆</td>
+			<td>ɜ̄̆</td>
+			<td>ɞ̄̆</td>
+			<td>ʌ̈̄̆</td>
+			<td>ɔ̈̄̆</td>
+			<td>ʌ̄̆</td>
+			<td>ɔ̄̆</td>
+		</tr>
+		<tr>
+			<td>ɛ̄</td>
+			<td>œ̄</td>
+			<td>ɛ̈̄</td>
+			<td>œ̈̄</td>
+			<td>ɜ̄</td>
+			<td>ɞ̄</td>
+			<td>ʌ̈̄</td>
+			<td>ɔ̈̄</td>
+			<td>ʌ̄</td>
+			<td>ɔ̄</td>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="3">Near-open</th>
+		<tr>
+			<td>ǣ̆</td>
+			<td>œ̞̄̆</td>
+			<td>a̽̄̆</td>
+			<td>ɶ̽̄̆</td>
+			<td>ɐ̄̆</td>
+			<td>ɞ̞̄̆</td>
+			<td>ɑ̽̄̆</td>
+			<td>ɒ̽̄̆</td>
+			<td>ʌ̞̄̆</td>
+			<td>ɔ̞̄̆</td>
+		</tr>
+		<tr>
+			<td>ǣ</td>
+			<td>œ̞̄</td>
+			<td>a̽̄</td>
+			<td>ɶ̽̄</td>
+			<td>ɐ̄</td>
+			<td>ɞ̞̄</td>
+			<td>ɑ̽̄</td>
+			<td>ɒ̽̄</td>
+			<td>ʌ̞̄</td>
+			<td>ɔ̞̄</td>
 		</tr>
 	</tr>
 	<tr>
 		<th rowspan="3">Open</th>
 		<tr>
-			<td>ɶ̄</td>
-			<td>ɑ̄</td>
+			<td>ā̆</td>
+			<td>ɶ̄̆</td>
+			<td>ā̠̆</td>
+			<td>ɶ̠̄̆</td>
+			<td>ǟ̆</td>
+			<td>ɒ̈̄̆</td>
+			<td>ɑ̟̄̆</td>
+			<td>ɒ̟̄̆</td>
+			<td>ɑ̄̆</td>
+			<td>ɒ̄̆</td>
 		</tr>
 		<tr>
-			<td>ɶ̄ː</td>
-			<td>ɑ̄ː</td>
+			<td>ā</td>
+			<td>ɶ̄</td>
+			<td>ā̠</td>
+			<td>ɶ̠̄</td>
+			<td>ǟ</td>
+			<td>ɒ̈̄</td>
+			<td>ɑ̟̄</td>
+			<td>ɒ̟̄</td>
+			<td>ɑ̄</td>
+			<td>ɒ̄</td>
 		</tr>
 	</tr>
 </table>
 <br>
-Diphthongs: /ɶ᷉ːɑ᷄ː̯/, /ɯ᷆y̯/, /ȳɯ̯᷆/, and /ɑ̄ɶ̯᷉/
+Diphthongs: /ɔ̀ɑ̯̽̂/, /ɔ̞̌ý̯/, /ø̈̂̆ɤ̯̈̂̆/, and /ɯ̽̂ʊ̝̯̌/

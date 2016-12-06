@@ -51,7 +51,7 @@ main = do
   grammar <- sampleRVar makeGrammar
 
   -- parse trees
-  ptExamples <- sampleRVar (replicateM 1 (makeParseTree mData))
+  ptExamples <- sampleRVar (replicateM 10 (makeParseTree mData))
 
   -- outputs
   writeFile "out/phonology.txt" $ "Phonology"
@@ -70,5 +70,5 @@ main = do
                              ++ parseDictionary sonHier roots
 
   writeFile "out/grammar.txt" $ "Grammar\n"
-                             ++ show grammar ++ "\n"
+                            -- ++ show grammar ++ "\n"
                              ++ concatMap (parseParseTree sonHier roots systems grammar) ptExamples

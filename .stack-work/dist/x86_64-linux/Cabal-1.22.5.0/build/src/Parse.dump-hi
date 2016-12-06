@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-03 17:02:51.536594 UTC
+2016-12-06 20:49:08.514484 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Parse 7103
-  interface hash: f621903bfd3b9b03e6d87ca2cdce9a96
-  ABI hash: a9b5d1bf50d8b53e8bf3e5b4a63267af
-  export-list hash: 5ea6cd786088df35daa0ad64e1cdd1d8
+  interface hash: c6753c3e02a75b29d67f8bef784ed4a9
+  ABI hash: 21f02fd1f7656f1d7acaa140c89a2697
+  export-list hash: 7d5a300813558f11558e3844f3efe942
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 9b5f0a9c5ab937702e8736ae3b06ccc6
   sig of: Nothing
@@ -99,198 +99,198 @@ import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  GrammarData 8ac8d86b6b864664f180483e73ce823b
-  exports: 5138522a0c1403d2fee44ad2a2f3e5a1
-import  -/  InflectionData 1d3c9a42a800e5c12f0b2505845bd490
-  exports: 14704a3a2d793893d80490c9a5c3fd3e
-  ABS 3de193a57d08eb4351bed516e6915528
-  ABS2 3e72915a8cfbfb992e01b0acfd6699b1
-  ABS3 75d3ee571aaf44be9d49667f34c6e7a1
-  ACC f9fe0513f13b7f15887119e74825036e
-  ACTIVE bdd276611010fd4e7de9ef1a1eb64ba9
-  ADP c4ca4407dd6893e7441f1ce202c32e54
-  AFF ae570bc629df54df19786415b4661552
-  AFUT cd6f8019527ffbc153f8c77960cc33d1
-  AFUT1 79702db120892e2bf4944d906def231c
-  AFUT2 b39120adadb82b75fd72f19ed5692615
-  AFUT3 e31b9b08368c17d22253139b0da0b426
-  AN 92d255f01c7022d8623f4eb26caa9568
-  APRS c0f13628b6446aaba3aaeb0c78888f88
-  APST 673ec114cce65a30148960a069d0f28c
-  ASS cca9deef8bd9fae1b96f7f25af37e467
-  AUD b7dbc69b867571baebeded679a2437c9
-  Adj bdb85266b516c6d465d0ae35628bdd32
-  Adpo f2851efffd9470f86f77b62dde491078
-  Adv 5688552fbc7a8afea35cc72a794a7244
-  Animacy 91fb0b41f9ef14c662c70b3629b6b5fe
-  Aspect 8bbea98a3b619c1fafa2f31c2f747273
-  COM 14285a8bd125835e9a4b92645c176f8b
-  COND d143e05241e44cb2565c9df57ef72714
-  CONT f74194ddc9e9dd9a43c60797c19c3d2f
-  Case 6c10cc277989f00ac96ff5f8d0b9d977
-  DEF 94577d41c082bfb6d7437e550a05f28b
-  DEO 454f614867c42e6835c63a7dd26a7bae
-  DIR 949df7ea1abcd1e4c9adfdd16e78622f
-  DITRANS ad136d19a01b1f0b1bf542248b65a93f
-  DRT1 a8c5136b763d34e8482e3b7516f69a97
-  DRT2 80558148f814d1ce846831e7908db008
-  DTR 1d0a9c60c30a12be644785e2c8ed7e5e
-  DU 6fcf402c01ede31f9d226f6d41131824
-  Definiteness 69e12afea565be2617200bf9671a6c0d
-  EPIS bea782e40a2c86afea4f5459e8db1d68
-  ERG b1bd2899d1abdce529801130ef254930
-  ERG2 9e992c00faadd17e09b87296adbb85c3
-  EXP 13d176bfea76f2773a1a0766ee818473
-  Evidentiality 1261593b396b3f8b4367998b51bf6d8a
-  Express 1ae0c46a8b58a514f38dd5171a3e67a3
-  Express 7e958650c7791002a2540390e3aca90e
-  F 1c55637fe9b6e56a577f0d5216b5f4a3
-  FAM 0d9c7fb5a8d0b4ec8801ef51d7835373
-  FIRST cecc12c628a98db7318233eb29fbb2dd
-  FORM ab05c8d9d13b8ec99593f9c8d9ada58a
-  FSTEXCL 0da196c000be44460b42081eed192cf9
-  FSTINCL 68f283f29000647e6a1508b4bc3aba10
-  FUT bc7512bb77499fdbb5effa29c415c5ac
-  FUTPER baf82a24c7b12c8cd220d7aa38c532e4
-  Gender e443e52c146978100c75258afee70577
-  HAB a9f003f92f9733bd836b5f41f72dc091
-  HSY d93f689da4136a8801cb56c7492096f2
-  HUM 2b6d059c88724fb8c0dd01511a7c90ee
-  Honorific 9f709bf4194f93c1f39907f3dcd0aede
-  IMP 342a30926a4cfbb7c8b0aa9f60b77a06
-  INAN 534ea7f9bb452328203d1afde724b24f
-  IND dfb9ff36bc3159333029f14f730a72fa
-  INDF e9056a6f7a66898299cee91b419ba30c
-  INDIR 78dcf96e664c1b456f4aa68606064212
-  INFER bd24608704e53d01dc97184dcccbc91b
-  INTR d873b6527ee24fe6a934656c5344e465
-  IPFV f431cc674036f2bd2c55faa20fb341f9
-  IRR fe6b5122155a7d43631b31f17ab30920
-  InflectionSystem d140bda0afaf2a222d43f8ac1fd40fcf
-  JUS a63d023a6ccc97b09642487d8e39ed5f
-  LexCat 406c10c56e8fc899b6f590771b3372e0
-  M 71c8f0f929cd68ae7df9a9f408a9dc7f
-  MIDDLE 89cf833df2b49cd4446fe9d309cd2833
-  MTR f45056335ad4a49e1ed4153d27a73a1d
-  MTRANS 2452dc8110f39082ea77cf5f51d04669
-  Manifest 114198613dd9ad6edd0d798879c2e985
-  Manifest 402c727bb1d5614cf0c6243ee3fa7337
-  ManifestSystem 68733e867c197ec8e0576f4ed6aafe4d
-  ManifestSystem d00ca9fc0955f2d18fcf424b683d5934
-  Mood 987f478754e08db3236fd0a739247bf9
-  N 0d0fbeb55ed6c22ae03d1cc47ceb58f5
-  NEG c6b4447dff8c91ca4b8da00819560cbb
-  NEU 8281464eb9c43aa8d76af9eadb4dcfe1
-  NHUM 42886d2fb48e96897a0a456faf48a62c
-  NNPROG 9d0019da9229ed3ce73f027ff0eacce5
-  NOM 80075265a7d101140d656b71ae51f56e
-  NOM2 ec989ff9569b0aad07d1272bb6adc37f
-  NPROG 2c76aac3af6f7aa18798779bf91f879c
-  NSPEC 153c18904b98b6eef607249a507c26a3
-  NTOP c00480fd5eca3edda81c8916feaa2ef6
-  NTRANS 39e3db7fda10a6ee1152a26d6e285c32
-  NVIS 32f33c02cb22d3b94d27d66b6ba4d70d
-  NVOL 5070ea1bf2dcde91ae950a1d844eee2a
-  NoExpress 749a51da58ebbc7f9683e59a2088dd1a
-  NoManifest ef9f93e4a4d3f65314ca388f1e754598
-  Noun 03f9541569971afcd548f453c7b56f6a
-  Number 111b9dd7881655400daece83d7690898
-  OBJ ec65273487bcdb942741e597a8a0e97c
-  OBL1 a2619073866e46627b8de992763a66f7
-  OBL2 8bae6ad0d4f2d310f81672f1b866c87a
-  OBL3 c37a2cf6ac896a40c6ea25e91fc021d9
-  OBL4 1365e0e98a46def850b8b7fe24c0b0cc
-  OBL5 0bf5bbf236160b931112e2d2ba7c0e75
-  OBL6 35c93984bbe2bc7aaf84d69d5c7c137a
-  OPT 9788323dd993136b4649e1fe1f148c68
-  Obj 109002d27304823acda744ce5c24defa
-  PA 4b788fc0552e65c24c04cd22b709c086
-  PASSIVE 0ac883fb0d9139b4e6e274005299d735
-  PEG 4d81f27dcc573699e985c0b4512bf220
-  PFUT badcb7662adda8a0a0b15a2cd19cea70
-  PFV 0e29db74af5e1be203bbbe2e1888ab07
-  PL bff5116b266fd996fe31793bea9ccf71
-  POST 4933d2e066fd964549812952ba3f836e
-  POT df7e77c388cdbb25aa5eafa796e20eb9
-  PPRS 58e3a1f794876660dd8c956df409b6e3
-  PPST f1fac1b4bff611a1684617bce2c406d5
-  PPST1 9f64dbc00d326624a44476cb8e06b0f4
-  PPST2 6123d54e3053c4e6cc3416711021055d
-  PPST3 1e20b6705a8057d67b6081db3d1d7094
-  PREP b410e0cb46bb00c14d7325236b9a009d
-  PRIM 056c245d241097e9c872d5ae3d8f9c60
-  PROG 4abd81ce2a8265059fd4142a023b3367
-  PRS c0f62648521118cd6a46b850b64772e4
-  PRSPER 9157de6adf644ccb3b0a9a921f2813be
-  PST 4c6bdc7a09f6a7a036ee91908efff349
-  PSTPER a110595c7249c37a3ba84699533cc386
-  Particle 6ce29bede09feb22319ca6ecd1e3f608
-  Person cbc274f5b3d6239101cd9764b7773be5
-  Polarity 961c5eb0bc4c139961b0a440a23b769f
-  Prefix 6b0d4faa751777a71e8042659ab6b9f5
-  QUO bdb27624d705351c9cdb93132abd04f7
-  REP a2a19d69b7f298965696886da4ac90e9
-  SBJV ef7786a93540b2b0617b511b4ffea553
-  SEC 744670491bffd9e600e9faf6f1a11f55
-  SECOND f525324add25f7fe6455db96da7a6926
-  SG d47eac755ade515ded2f93134be8eb31
-  SPEC e9e1059eddd852097a3721e2756b4b45
-  Specificity 6c3fc67424127bb4feb2d92b23a30da0
-  Subj 15a215e8dbc8b9c2167dddaaf41cad61
-  Suffix 7b772f49c77983d500993b93b36cc935
-  THIRD 38835e8c5db27b156e0d21b0c59b834d
-  THRDOBV 702cb22aad89a9e969c6a4be47251d01
-  THRDPROX a8735d04765686dfb6fc438368296773
-  TOP 861dd87564afa5ae6b84fecf9d2874ae
-  TR eb52ece223ed324a83021d13e350a466
-  TRANS 2097ac8d096ff9e5b89aed1d2b8c8669
-  TRI 03533fff00a562d1d63a4cdfe0258ec2
-  Tense 5f476bea2da27cbe0ffe1e5cde3d9551
-  Topic f2502f7485a2c7bc47bb080f20b26aeb
-  Transitivity 8463dae3116062b076dc25e0f6b8c749
-  UANI 08354aeb3969261d9de26a55068a0fa1
-  UASP 773d25316e79c7fc891e3e97f3619913
-  UCAS 88c3f4f685a030733b2cddc73f08cbe1
-  UDEF d8a3849b48935e4c2b1863f2ba1c7969
-  UEVI 4142f9d71a91d35fbc0cd3dce3c0d73a
-  UGEN 4ac97fbe7cdb98f310f8608fd1922f91
-  UHON a7496ba7fa435301182c3cd09f6bae7f
-  UMOO 94ccf8d6868e980806bf9100284f8a55
-  UNUM 7d54d631811525f9328cec4b4c15dc98
-  UPER 7a65a7b1e677904e4d831a00f9ccc4b0
-  UPOL 3d5ad83d727c6c6d8717a52a1cf18dd0
-  USPE e0474a08c6a31f0091dd505d5cb08389
-  UTEN 895fbb3b1f7a483f819e1a5148c2d9d3
-  UTOP e5f0d5a7d0deb0b6b73b4cc3db430439
-  UTRA 08d328105a5f2dbbe3146874023ff314
-  UVOI fe7da799f695a7aa8a7beb98d2ced112
-  UVOL c39ff1325f8d3ce1ed069e6837785a8b
-  VIS 1e52861a6ab49bd585841ab7729de74a
-  VOL 1bae58924c7aea18a061d001c672f421
-  Verb 7a8d9ab245a1af778cdf2e6e44f34c3a
-  Voice 66f849eb0df273279725c8472ced02cc
-  Volition 3a73fa2d976f240c7ba768b809a25328
-  ZO 902f0446994728cdfe165d30abf48aa3
-  aniSys 77b3a4432edfccebb3b22d1c9b24ac4d
-  aspSys b8fda4d4df735d7364c18984ec33d22d
-  casSys 0742e33feebcc2aedfa503cbac8da46c
-  defSys 32998dbfeb4e34fb6c5d335c07211467
-  eviSys bf96f69c433d29648ef52d67868a021f
-  genSys 9381ca4fedbf8ceed1ccbf87d7c5ea11
-  honSys 0d571c6678cc881fd60d97ead23d7dfc
-  mooSys d90942dd715cf7190a76153b176213fb
-  numSys e3f0341cfb574429476d3eef73dc9b22
-  perSys b556a32261e8c80f3f8a544ec8ca9305
-  polSys dd1e1dde879856f37659781ab72a7cd9
-  speSys db725844404908ae2faa7ea16c653f57
-  tenSys a84f08c83ed8f33a17989dcde7856121
-  topSys 94ae191c7be8b8307ec5a07176b30931
-  traSys 17d7b2e9ec588d6bd99bab7f098f36f7
-  voiSys 629ad62232c211277f83c5bfbea3bcb1
-  volSys 5fdcf2bef393c39136e0bea7f04d5cde
-import  -/  MorphologyGen 01942de38c3aff9c7ed6a59b435af702
-  exports: 8de0d74896901fa8074712836a786dd5
-  cleanGrammarSys 4da66b57f5add59887026d85a40f27b9
+import  -/  GrammarData 3ac8f2b878a3acac75da28c3be99b3ac
+  exports: fca5595c19286020653fdf4f375d962b
+import  -/  InflectionData 3d10fd8ebdfb88f2d9b18403b3318120
+  exports: bbf9a431e828cdbe291def24777d4f2e
+  ABS 4dead81c193708ce2a814eb3a4d4ddae
+  ABS2 98ddc5caa7ab45f8d6bcbeba4997d977
+  ABS3 712ad9c06fc64f66783d809eaed0da47
+  ACC 27faa99710ad21ee514cfc00d95f9a1b
+  ACTIVE 2101f743f9db7f46608da1f8e37d2383
+  ADP 91e9b075ab30d74d5b6ce51763b52a69
+  AFF 9efe716245fedb9ed2dec8ea570f1d62
+  AFUT 45fe1e0e27f08198672a4573179fd695
+  AFUT1 6d3a986d0e5ea8dd1435025dc6929456
+  AFUT2 692125e6bb7dcc1425bfcf420669ed7b
+  AFUT3 280ae922b4e5a0afccc2c749a13c84f7
+  AN a4ecf7d5b2d49348f59efebef8b0ba1d
+  APRS 52c3a54bdbf4b30003c8749ff601b3f9
+  APST bbd6b8caa1b556f89e549255b32c603b
+  ASS 256a4d37ab61c057e27dd587e3737464
+  AUD 559ca18b231cad665168b344047cd47e
+  Adj 2c4b4bb0465dcd03f547481f4ed4e42a
+  Adpo ae6c4eb1603ee2b9293013fe28704b38
+  Adv 1aedcc21fbd7923d97514da458104f03
+  Animacy 3fb8f806ac431419336914d62e0692e1
+  Aspect 3260581e2888098e95013c9746eb2927
+  COM 324d409166ce7d740f657d99dc4a6f71
+  COND 880f07a1a5fc6be56f60255a1911251f
+  CONT eb8443db546e6db508483655d1799abc
+  Case ed810d7ab6970052c9ee31d75d4a74f7
+  DEF 59345594c965174076fb9d14b026ba21
+  DEO 8d8c314df557923e6c3c8e506de247f2
+  DIR 290836bbb25e1c20c17abf0bd8c96f37
+  DITRANS d5e7bbeea916bc6794ce9f53531d322d
+  DRT1 c62b20b2ed43b25b82577d4d07e564d0
+  DRT2 afa0827f4cab264509f7288bc0f5b378
+  DTR 4b09a48d13a7f12b30ea8ef67867102f
+  DU 7c0af01b95deff673d5f3cfbe1bb7813
+  Definiteness f57cbd9dbed35919833216936d0e066e
+  EPIS c612aa214d2a65db992bed7e7dd10553
+  ERG 2308d299d7746723bc868b7ee6d35a85
+  ERG2 eef2a53b1ce0eb0107b43d78a461da9a
+  EXP 96ca0ff5c2986bdbae231b596887a0eb
+  Evidentiality 8c39249ddb7859f10b018a2526e04a45
+  Express eb822898078c54f198699344a3fb2c63
+  Express ce522c1d99b503cc50c6a04abbeb7ec2
+  F 4a881bbbb7603db25f98e6d3dd30d605
+  FAM 976d5d904eaa4afaf92edef5aa16b37a
+  FIRST 60412cccd81842507e48cd90a292cc9c
+  FORM 811c2ce84e5cbbacf0a0887f82ebf102
+  FSTEXCL dd350708b89baba0d7bb532117e8d2c7
+  FSTINCL 00732367eca2e983e4ebff0f3cdbeb91
+  FUT ad15dcd812077fdf0c69236dba050a84
+  FUTPER 25272b1e64eea24c992675bbbff1042d
+  Gender 8b595aff125f95a2b35fe330b0ba7fad
+  HAB 2e4d2bef9cf23bfedbd9ee3e48c55093
+  HSY 13d4bb89df7aaafd4ae2f42ffe1744fa
+  HUM df3df18ee77feb5fe59f8d473db6ee9f
+  Honorific 38ff9a9c45f96d99123b457fda219bfb
+  IMP c3a7fa353536a3f7d384f803604756f5
+  INAN aba998fabec0f6735d1434b66ce4ef99
+  IND fb8ce75c75f3c76ed6bd95c0f1ffb69b
+  INDF 3a863d45605bf5b73006ef1e57f86e39
+  INDIR 4b7d049c49f3c7979919ba233fe78632
+  INFER 9036fc3ebf02f7fdb5d50d7fb2e4de61
+  INTR c2cb3f86d045517dcd3cda32afe4697a
+  IPFV f553431f083b92e53e56a945b73a58b9
+  IRR c3696deda4dc4718aa4310f9946afdb4
+  InflectionSystem e87dedc6ee0613212a8838da9054e9ca
+  JUS 2da05b483c5ba9a9f3ad01f2f72a8492
+  LexCat b0a24ad20939906e8d87ed3073f32603
+  M b8432ba2ca0d14209a48d862dcfbc662
+  MIDDLE e6b3efbe31405a8ffc84ebf26e7010a5
+  MTR 331edaea28c7b432fe868c0abdd359e2
+  MTRANS c06792ac22339e80a642d4208143aa37
+  Manifest 738cfe3686e2d0e5db7ec88faec06acb
+  Manifest f539d8313c5a8ab2854680bd81c6cecb
+  ManifestSystem a7815f6fb4d337722db1ca3aa102d56a
+  ManifestSystem e7fb9cb536022bc8f9fdd7f94d3c9e4a
+  Mood 170a49091e965c69ca2b81c9942aa234
+  N d4bfbda0e4b28d21a7d987dc7d4f1179
+  NEG 7e1328036e37657d633105d519862daf
+  NEU d7eb74e109bf6c4423f631ccaa5f7831
+  NHUM 2fe91a5919d95058eea06271c01bc348
+  NNPROG a399704f6331405908bdf88effe4542b
+  NOM bea0987e59c4e01ea40e7f5e63a3226c
+  NOM2 f24e5fe6d9c10ed9dbb9b466e5f079d3
+  NPROG 64414d0ee00a57c76c50413b18222b77
+  NSPEC 7c67d6660601d450d4dc5b13dc9fbc96
+  NTOP ab46fa0e402db5174650d37804ed831a
+  NTRANS 06b084eb1078e0a4bdeb9a6653c100ca
+  NVIS 10d043bb3859c3478f9fbb691c77f154
+  NVOL 48b56a786922282c6591402cb5f2c1aa
+  NoExpress d6b74cdc58afb01056b09c31a809a97b
+  NoManifest dd0ff7e8ec5d232f1076f24ce0f63386
+  Noun e589ece5d60db99d20ba6977cc50f48e
+  Number c1e8fbfb7380effdacb7c7c192e40bf5
+  OBJ 95795c2b152f89c2aeb9aa45ee1fe814
+  OBL1 2e0d596eda79e4753b4ee143d00e17e0
+  OBL2 96fe752171c9cb76761405d73ce56e78
+  OBL3 896e079d7c6f1533a14bdd083d31e2db
+  OBL4 c455d0a4a0ca65e5ac0381fdc02d672d
+  OBL5 4ce26924c00429fa1d7882a6b5f4c35c
+  OBL6 417052c0224c2ef75ddf4ea862e91d47
+  OPT a857b34c3fa956ad37947d873c4dc8d3
+  Obj 4cc2ce9f1a83011e997646187b006d59
+  PA c366741810f0a72f59142c3e94c7dff6
+  PASSIVE 324a694a9b1f8808b8b8e76d32ff9e0e
+  PEG eddcef585a1b581c9245d277bf6a1e56
+  PFUT 6578014fde97eab5c1279de57af66f03
+  PFV 2419aae8a7ec03cfe93b0a240de1778d
+  PL 21bf195153ab036c5102fed00dc919ee
+  POST 704e248fe6e7fbcbdd9126366292a348
+  POT 45d2997541a18c43da9d65d8ea3788b8
+  PPRS 0c5e51e76b62dba655e3484fec755e3d
+  PPST 131adce45da717bba21c69ae0aa7f434
+  PPST1 673114bb3f1fed6a5c17d8a672d36fd6
+  PPST2 53a10de81a6880ee41095a284ac452ca
+  PPST3 18bc6f86b6cd404ede3315556aaa572b
+  PREP 029af3dad611c2680f7fb20707b7d462
+  PRIM aed3c4a23bf6428e9be3a13b52ed4b72
+  PROG 9133e8302a6eae856074aa92d70f9ed3
+  PRS 5a441bd60218f14122aafdeb6528db27
+  PRSPER 505007d739fae5bd85e46a2906e078ca
+  PST fb527ba17109a06ed91275b28e7672ba
+  PSTPER f87c180d3ad6b70ea35eeb228598677c
+  Particle 0d433f8dbca5042456428720a6fa40c8
+  Person 02346c3aafaeac9909a5db7a01e8ca09
+  Polarity ad1fe4829d26ee371daeb2b0168138e4
+  Prefix d975d35054d32c3efc584cae64fdcf2d
+  QUO f9ef95d1469cb4de92ff451b42067d70
+  REP 5a8c6e0d099545c93b5fc48e211e5361
+  SBJV b7871966e460a2827213fa3692de705c
+  SEC 8f1df9a3aecd01b069f82aae1e457dcc
+  SECOND 8bb4a6ecd6836d4110e9596a966649c8
+  SG a1dd2666c70d64246b309f25b4e48375
+  SPEC eaf66d3c72dee75096907137709c20b4
+  Specificity a4a6522da9f32c4a22fdcdb048233e77
+  Subj c01490973f35adf637b3853e9286313a
+  Suffix 19f496940d721d5db4c05dd382486c54
+  THIRD 5b1c4a233d403661bbcf3d5b19551acf
+  THRDOBV 8800dcccd61670644b094c67768b2d84
+  THRDPROX b058eacdfe118adcde41680c9a9f6ee1
+  TOP 4714b66d77deec9a8969b41f7bd97c3f
+  TR 5eaab2ebce3927962ca078ee4a0a22fa
+  TRANS 143def43ce74eabeeac00563b94f6d61
+  TRI 46e9ce5d88ab769a7a51fc3c69c0cfae
+  Tense b64289664290fdc9c5510c85a7afdd78
+  Topic 91b970df1d2f65a770d84bd1b0e168b5
+  Transitivity c432d94948e8418512e7b069e8d02e7a
+  UANI 0f52e32d71289197f85ca66e7cf31d08
+  UASP c9e55752e739be74cf569e8a1680b5a8
+  UCAS d91ff9a7aafa8dc8ec0d8fe6daba4c0e
+  UDEF d980b1338a696f17d0eb42a47de3f180
+  UEVI eba40e6cf3a32c282c65ef55642af960
+  UGEN 9442e976bcf803ebf60129e8ceb469a4
+  UHON b1c2eefdbb0c5de6131126757921b33a
+  UMOO df44882aeafa40109ff7666c992cb593
+  UNUM 7df66c12348e1482d665394e08c74d04
+  UPER 861bc63c211121db736140ea4f13a1b9
+  UPOL 25cb7ac8f6234bd5dc9fa85a958047c6
+  USPE 180327128dc811f484d47954f86ed279
+  UTEN a3d370ee9e285eb621d131a02319d72a
+  UTOP fe06e926ce923313384b18193d012f4a
+  UTRA 8c0ca851f56438f969c21ce5b0990ae2
+  UVOI a178ca8bc823ecac5648dde065c7bedf
+  UVOL 29d9f9eeebb319660819148d4677e069
+  VIS 226fb2dea05ee0f7c38206f2a4988745
+  VOL 421fceff614532f59ff7aec3985606e7
+  Verb be92a9eca6a47f52d128c949ff565852
+  Voice 1f59333afb1b3b92a8af1e5489e1e630
+  Volition 91017ab7ea71228801f74c069cd5baf7
+  ZO 90e4ec74faf36ac25f21f2fc11997b98
+  aniSys 418312c5fef475f6491ab9b08cc9e4a0
+  aspSys 0bb602290854008e9c49649291652480
+  casSys add19c65cc6f1fe282cd3c5d93eb3390
+  defSys 02c3c8a5fc37888f88295faca73009ab
+  eviSys 9a880a223bbc8d556f96f82b447b0469
+  genSys 29df4b93bb175fe038692cd57442c08d
+  honSys b749addaa4dbab444b3ba6e4c3080482
+  mooSys 69a3f604f4dd42ec545394741ccd60c6
+  numSys 6d879838113991034bac918ebf0b46f8
+  perSys 1b412b277c7edd0b512e13923d1f3e09
+  polSys b6e9b16a59299e448d515504968763fe
+  speSys f120c55cd644627c31ba466e98d24bcf
+  tenSys dd002fbf7a55ef4faacaa94df56435f7
+  topSys 42d673b3b4caa339454fc67e5a805d46
+  traSys ba78580b1a2b852174cdc7b1adf59950
+  voiSys 235151b8b952dd109b6af25a0e063cce
+  volSys 86532736672bf5c58d5f98ce1c39d837
+import  -/  MorphologyGen bb55b305d3c3b9c1dfcf84eae0b8f754
+  exports: 582b44e4b3f5753710978de22ed6645e
+  cleanGrammarSys 0395893f0813fe57fac2d67a08133bf0
 import  -/  OtherData 37db5ddc38f8875c91a0806c561b30cd
   exports: f505dec72f229982fb85e59b44566731
   SyllWord 0624a89133bbff2a1ba0667c167f657d
@@ -394,13 +394,13 @@ import  -/  Syllabification 7281e651cb3d926edd5f51e1c1524b58
   exports: a741c5c7159797f058482789d7878efa
   syllabifyWord 9c41d63e10ca51c04b80d2cc0776e270
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-7db0b9336f3e7f5a7fc76d4fb3bb4f4a
+7d0fb29523d5ab6f851e885fcd49f556
   $wgo ::
     [((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)]
     -> (# [(GHC.Base.String, InflectionData.LexCat)],
           [PhonemeData.Word] #)
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
-5a3bf0ba6cea83d5a11c3bb045a49441
+24674cc12c5f1da7b6fcf1d2752ecbd9
   $wparseLexicalSystems ::
     InflectionData.InflectionSystem
     -> InflectionData.LexCat
@@ -440,7 +440,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
                                     ww3
                                     0 of ww6 { DEFAULT ->
                              Parse.$wparseManifestSystems ww3 ww6 w }) }) }))) -}
-5bc33d0ba47f45cdbd982757d2bf48ae
+a98feac99f9633e80345d0bf4ac5d1e6
   $wparseManifestSystems ::
     [InflectionData.ManifestSystem]
     -> GHC.Prim.Int#
@@ -462,7 +462,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
     -> [PhonemeData.Phoneme]
     -> GHC.Base.String
   {- Arity: 4, Strictness: <L,U><L,1*U><L,U><L,U> -}
-fe358ae264fd236edee94d2749d5dbe9
+986d057059b1f88941e98d89fdc2d7cb
   parseDictionary ::
     [[PhonemeData.Phoneme]]
     -> [((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)]
@@ -551,7 +551,7 @@ fe358ae264fd236edee94d2749d5dbe9
 e767d2f030f0a31a0986b258e08357c0
   parseDictionary1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
-fee3648cd989aa7c56a4a271e051690c
+614bad3d8944aa38255807017a5893c1
   parseDictionary2 ::
     ((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)
     -> ((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)
@@ -570,7 +570,7 @@ fee3648cd989aa7c56a4a271e051690c
                    PhonemeData.$fOrdMorpheme
                    a10
                    b1 } } } }) -}
-a266eeee44fca22deb8650790cb42b14
+8b94a12010aa62abadac25edeb0a667c
   parseDictionary_go ::
     [([GHC.Types.Char], InflectionData.LexCat)] -> [GHC.Types.Char]
   {- Arity: 1, Strictness: <S,1*U> -}
@@ -623,12 +623,12 @@ a266eeee44fca22deb8650790cb42b14
   parseDiphPhonemeInventory_go1 ::
     [PhonemeData.Phoneme] -> [[GHC.Types.Char]]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
-799d93a2eb68563785ca0a4b39c6c334
+09946df8d800ee9a80b395fe0f2a3b5c
   parseLCInflection ::
     InflectionData.InflectionSystem -> GHC.Base.String
   {- Arity: 1,
      Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)> -}
-4d9a9823c3458f1f88c3b55daa804259
+35655403e69f9f3d492e23afe4c5d341
   parseLexCat :: InflectionData.LexCat -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: (\ lc :: InflectionData.LexCat ->
@@ -641,7 +641,7 @@ a266eeee44fca22deb8650790cb42b14
                    7 -> Parse.parseLexicalSystems3
                    8 -> Parse.parseLexicalSystems2
                    9 -> Parse.parseLexicalSystems1 }) -}
-580f8a094c5aca29adafc04e5224eacb
+22980d064629ac40e0d471cde210fbaf
   parseLexicalSystems ::
     InflectionData.InflectionSystem
     -> (InflectionData.LexCat,

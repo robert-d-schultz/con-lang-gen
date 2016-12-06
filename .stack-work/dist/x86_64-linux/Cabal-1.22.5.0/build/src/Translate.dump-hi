@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-03 17:02:53.209404 UTC
+2016-12-06 20:49:10.167546 UTC
 
 interface conla_1eA9qWUPH9nBowcXqqaV8r:Translate 7103
-  interface hash: 4411e93ee93fe76cbeaaf607188937a2
-  ABI hash: 3e60e97091828d8c3b29e268a4f520de
-  export-list hash: 6d6599ab3235034f57cb477d03e147c1
-  orphan hash: 4b5b45ffcd86c10bb58a9f436cf6457d
+  interface hash: 175a39a54cb580fc58d406f7f035853a
+  ABI hash: 5c5a1011f449056418f763ef063e504e
+  export-list hash: b56a6abf5ac51e67e1c954a0693b7f7c
+  orphan hash: 987b803f3953942f391e3e2172151ed2
   flag hash: 5d774d2eb7a24578afae116cd337b129
   sig of: Nothing
   used TH splices: False
@@ -92,20 +92,20 @@ import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
 import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  EnglishStuff 5fece719cf63858fda1956aa00549ab7
-  exports: ac5981334a8e49e87eafd7d2ab80605c
+import  -/  EnglishStuff 30352b0668338860bb3d1043975078bc
+  exports: d870fefb6d32ab7767f4021269761af5
   englishGrammar dac08adaea85885d6d1a879305c73ec7
-  englishManifest 9a47de3d7aa563b0f7fc8ad09d2ad458
-import  -/  GrammarData 8ac8d86b6b864664f180483e73ce823b
-  exports: 5138522a0c1403d2fee44ad2a2f3e5a1
-  Bar 9659e0c80a113c431b9ceeaca174dd69
+  englishManifest d7ce05aa6c43876a3cc3ab74f3ad2e2a
+import  -/  GrammarData 3ac8f2b878a3acac75da28c3be99b3ac
+  exports: fca5595c19286020653fdf4f375d962b
+  Bar 04a49f52bfdb87c5c968d67f70ef7770
   CompFinal 4218b98d2cad94623d418f06c7daaf74
   CompInitial 8b5437a083d2f9791daaa4f92c16bab9
   Grammar 54b1b32e84410d13fc0ab1d24cef787f
-  Leaf 31701f8c84782181aa0c8f6f7bfd67ba
-  Leaf c45a9487dc1554c122459c27a0c0c7a2
-  LeafInfl 0180160270fc8c3dd87799568271edb3
-  LeafNull f670957f8ec8e2f634eb59e8bafc60be
+  Leaf 854b88a1edb0bc7c2616829b2043abca
+  Leaf 0c62203b93e11b844f77275212ff8c48
+  LeafInfl 9e17ad607979bee5b617c85915f0d22b
+  LeafNull 4e9ad3ec990a58beede0acb9204f1cc6
   NoAffixHop e58eeed187ea908b7fa653adc99b562e
   NoVtoIMove fa030db0cac4cf3934fe81872fe328d4
   Null 982ba6ad329ab6ca91933a50f43208f8
@@ -114,13 +114,13 @@ import  -/  GrammarData 8ac8d86b6b864664f180483e73ce823b
   OblItoCMove 471fba2b63cac8f316f9f6c9c4b0c2b7
   OblVtoIMove b9a4dfb51917976a57c9d70a3d84dac5
   OblWHMove 498581a1c6ddb483056a9b23410b61f5
-  Phrase 9659e0c80a113c431b9ceeaca174dd69
+  Phrase 04a49f52bfdb87c5c968d67f70ef7770
   Ques 970ff4399831bbf39b5b29c1f3c50cfd
   SubInitial a5ae71a2fa5a793a64a5571dccaaae89
-  XBarA 20bdda52dcb73abc5c3faa3265ab74de
-  XBarC 5954e8f74c2760627a7181a3ecfab202
-  XP cb49dfeb07dc228963fa3ee033d8e319
-  XPNull 9708383b4997761a04dbefcbfe9d6f6e
+  XBarA f4c6b09a94656da0b2de37249fc61186
+  XBarC 896c497df4e3b343f4d7607367ba9354
+  XP c8723937057217adbac9e39ed4d17e29
+  XPNull b03b5e758af2a98e295b07d4be0c16b7
   getAH 8921262fa73de9c65a89f59c3b0fc8c3
   getCI a0a26fad587439b6dca88a28896fc1c5
   getItoC feb64d2f99e2b23075e3c6828c774513
@@ -128,61 +128,61 @@ import  -/  GrammarData 8ac8d86b6b864664f180483e73ce823b
   getSI 2d1a4ddf9089665b698dfbfb775a671c
   getVtoI c099dcaa803be48944776e61e142ad78
   getWHM dc8454ca703345b8e77193e6ca2e9ef6
-  leafInfl 2c0e24de7dc9bbe6bb849935762a7609
-  leafLC b1aa92a5e35ba084c7327ab431896724
-  phraseIl 350e37a4ca742e7890e9c65709851df8
-  phraseLC 0cd95a1bdde91cdbf3c44e8c4c7ad1bf
-import  -/  InflectionData 1d3c9a42a800e5c12f0b2505845bd490
-  exports: 14704a3a2d793893d80490c9a5c3fd3e
-  Adpo f2851efffd9470f86f77b62dde491078
-  Animacy 91fb0b41f9ef14c662c70b3629b6b5fe
-  Aspect 8bbea98a3b619c1fafa2f31c2f747273
-  Case 6c10cc277989f00ac96ff5f8d0b9d977
-  Comp 100abab7d53e74b334ec4f744ad12241
-  Definiteness 69e12afea565be2617200bf9671a6c0d
-  Det ed9bb9a2c4d189eb76f053da5c479f4a
-  Evidentiality 1261593b396b3f8b4367998b51bf6d8a
-  Express 1ae0c46a8b58a514f38dd5171a3e67a3
-  Express 7e958650c7791002a2540390e3aca90e
-  Gender e443e52c146978100c75258afee70577
-  Honorific 9f709bf4194f93c1f39907f3dcd0aede
-  Infl 63123bd80d07e89b2f24b300b060fb8b
-  LexCat 406c10c56e8fc899b6f590771b3372e0
-  ManifestSystem d00ca9fc0955f2d18fcf424b683d5934
-  Mood 987f478754e08db3236fd0a739247bf9
-  NoExpress 749a51da58ebbc7f9683e59a2088dd1a
-  Noun 03f9541569971afcd548f453c7b56f6a
-  Number 111b9dd7881655400daece83d7690898
-  Person cbc274f5b3d6239101cd9764b7773be5
-  Polarity 961c5eb0bc4c139961b0a440a23b769f
-  Specificity 6c3fc67424127bb4feb2d92b23a30da0
-  Tense 5f476bea2da27cbe0ffe1e5cde3d9551
-  Topic f2502f7485a2c7bc47bb080f20b26aeb
-  Transitivity 8463dae3116062b076dc25e0f6b8c749
-  UANI 08354aeb3969261d9de26a55068a0fa1
-  UASP 773d25316e79c7fc891e3e97f3619913
-  UCAS 88c3f4f685a030733b2cddc73f08cbe1
-  UDEF d8a3849b48935e4c2b1863f2ba1c7969
-  UEVI 4142f9d71a91d35fbc0cd3dce3c0d73a
-  UGEN 4ac97fbe7cdb98f310f8608fd1922f91
-  UHON a7496ba7fa435301182c3cd09f6bae7f
-  UMOO 94ccf8d6868e980806bf9100284f8a55
-  UNUM 7d54d631811525f9328cec4b4c15dc98
-  UPER 7a65a7b1e677904e4d831a00f9ccc4b0
-  UPOL 3d5ad83d727c6c6d8717a52a1cf18dd0
-  USPE e0474a08c6a31f0091dd505d5cb08389
-  UTEN 895fbb3b1f7a483f819e1a5148c2d9d3
-  UTOP e5f0d5a7d0deb0b6b73b4cc3db430439
-  UTRA 08d328105a5f2dbbe3146874023ff314
-  UVOI fe7da799f695a7aa8a7beb98d2ced112
-  UVOL c39ff1325f8d3ce1ed069e6837785a8b
-  Verb 7a8d9ab245a1af778cdf2e6e44f34c3a
-  Voice 66f849eb0df273279725c8472ced02cc
-  Volition 3a73fa2d976f240c7ba768b809a25328
-  getExp e8d8ee9a1de81f506aa3491726d1f060
-  manSysCombos c4e6f673c4760d3721cbfe0ccf301060
-import  -/  Parse a9b5d1bf50d8b53e8bf3e5b4a63267af
-  exports: 5ea6cd786088df35daa0ad64e1cdd1d8
+  leafInfl 464f6a5249211005047c50b8063bcadc
+  leafLC 45cba8eff52ea59f47ae232ba851460c
+  phraseIl 3bbfae639db157f0fc356843d528f5d4
+  phraseLC 3f23d0f80af86e20f7a6858d6c9da4f3
+import  -/  InflectionData 3d10fd8ebdfb88f2d9b18403b3318120
+  exports: bbf9a431e828cdbe291def24777d4f2e
+  Adpo ae6c4eb1603ee2b9293013fe28704b38
+  Animacy 3fb8f806ac431419336914d62e0692e1
+  Aspect 3260581e2888098e95013c9746eb2927
+  Case ed810d7ab6970052c9ee31d75d4a74f7
+  Comp a3fa8e1efc9d38546131e089d8f7066d
+  Definiteness f57cbd9dbed35919833216936d0e066e
+  Det 33acabcfcb31b5ca0b3ffc1c226e1882
+  Evidentiality 8c39249ddb7859f10b018a2526e04a45
+  Express eb822898078c54f198699344a3fb2c63
+  Express ce522c1d99b503cc50c6a04abbeb7ec2
+  Gender 8b595aff125f95a2b35fe330b0ba7fad
+  Honorific 38ff9a9c45f96d99123b457fda219bfb
+  Infl 1f1ae73165bfad127b3752d581548f3c
+  LexCat b0a24ad20939906e8d87ed3073f32603
+  ManifestSystem e7fb9cb536022bc8f9fdd7f94d3c9e4a
+  Mood 170a49091e965c69ca2b81c9942aa234
+  NoExpress d6b74cdc58afb01056b09c31a809a97b
+  Noun e589ece5d60db99d20ba6977cc50f48e
+  Number c1e8fbfb7380effdacb7c7c192e40bf5
+  Person 02346c3aafaeac9909a5db7a01e8ca09
+  Polarity ad1fe4829d26ee371daeb2b0168138e4
+  Specificity a4a6522da9f32c4a22fdcdb048233e77
+  Tense b64289664290fdc9c5510c85a7afdd78
+  Topic 91b970df1d2f65a770d84bd1b0e168b5
+  Transitivity c432d94948e8418512e7b069e8d02e7a
+  UANI 0f52e32d71289197f85ca66e7cf31d08
+  UASP c9e55752e739be74cf569e8a1680b5a8
+  UCAS d91ff9a7aafa8dc8ec0d8fe6daba4c0e
+  UDEF d980b1338a696f17d0eb42a47de3f180
+  UEVI eba40e6cf3a32c282c65ef55642af960
+  UGEN 9442e976bcf803ebf60129e8ceb469a4
+  UHON b1c2eefdbb0c5de6131126757921b33a
+  UMOO df44882aeafa40109ff7666c992cb593
+  UNUM 7df66c12348e1482d665394e08c74d04
+  UPER 861bc63c211121db736140ea4f13a1b9
+  UPOL 25cb7ac8f6234bd5dc9fa85a958047c6
+  USPE 180327128dc811f484d47954f86ed279
+  UTEN a3d370ee9e285eb621d131a02319d72a
+  UTOP fe06e926ce923313384b18193d012f4a
+  UTRA 8c0ca851f56438f969c21ce5b0990ae2
+  UVOI a178ca8bc823ecac5648dde065c7bedf
+  UVOL 29d9f9eeebb319660819148d4677e069
+  Verb be92a9eca6a47f52d128c949ff565852
+  Voice 1f59333afb1b3b92a8af1e5489e1e630
+  Volition 91017ab7ea71228801f74c069cd5baf7
+  getExp c4032392244123b24859852724b5f517
+  manSysCombos 7b847354675f79c9ffb5926dc973e8b1
+import  -/  Parse 21f02fd1f7656f1d7acaa140c89a2697
+  exports: 7d5a300813558f11558e3844f3efe942
   parseWord a5e79c59071bc0faf05b870b949d95ac
 import  -/  PhonemeData 408b6488aa28ce44ef05793241013f6f
   exports: c711b36c9b7415c6d00ea9681146dbcb
@@ -194,7 +194,7 @@ import  -/  Romanization 804bca94f08cbe6d41992a68b525e575
   exports: 71e3484a4b1fb5c752fcd3291232e7ff
   romanizeWord 7f9c217ededf0559d0727e8e0fd891e3
 import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
-c4786023f94679de879349c5d441e03d
+b7f80f07e50c3deb5891a57e728bc282
   $s$fEq(,) ::
     GHC.Classes.Eq ([GHC.Types.Char], InflectionData.LexCat)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -210,7 +210,7 @@ c4786023f94679de879349c5d441e03d
                      @ InflectionData.LexCat
                      GHC.Classes.$fEq[]_$s$fEq[]1
                      InflectionData.$fEqLexCat) -}
-ddd6a98c95d2f4b12e4b569386a14c90
+8bb0943afe6c751a265bf806bc71274f
   $s$fEqExpress ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Animacy)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -220,7 +220,7 @@ ddd6a98c95d2f4b12e4b569386a14c90
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Animacy
                      InflectionData.$fEqAnimacy) -}
-4e73a982471f25f2def2359c704a66ce
+11112fd4ae14ac62f4f0fd848661e481
   $s$fEqExpress1 ::
     InflectionData.Express InflectionData.Animacy
     -> InflectionData.Express InflectionData.Animacy -> GHC.Types.Bool
@@ -233,12 +233,12 @@ ddd6a98c95d2f4b12e4b569386a14c90
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqAnimacy_$c== a42 b1 } }) -}
-f7bd4a7b3685ab520a998d5ae6050191
+                        -> InflectionData.$fEqAnimacy_$c== a41 b1 } }) -}
+2d402dcb087de5d3b0edd26639387023
   $s$fEqExpress10 ::
     InflectionData.Express InflectionData.Evidentiality
     -> InflectionData.Express InflectionData.Evidentiality
@@ -252,12 +252,12 @@ f7bd4a7b3685ab520a998d5ae6050191
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqEvidentiality_$c== a42 b1 } }) -}
-3abc12e400a1a365ba49c1bd23a2c700
+                        -> InflectionData.$fEqEvidentiality_$c== a41 b1 } }) -}
+1709f492f55dbb8f3c9e4abe5e920c50
   $s$fEqExpress11 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Gender)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -267,7 +267,7 @@ f7bd4a7b3685ab520a998d5ae6050191
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Gender
                      InflectionData.$fEqGender) -}
-60a9d6bedf71eb10e2cb075ee244d73c
+a62e6b24032a5bf6fde83b07ec25e093
   $s$fEqExpress12 ::
     InflectionData.Express InflectionData.Gender
     -> InflectionData.Express InflectionData.Gender -> GHC.Types.Bool
@@ -280,12 +280,12 @@ f7bd4a7b3685ab520a998d5ae6050191
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqExpress_$c== a42 b1 } }) -}
-2e20333be665285590cc272eafacf8ba
+                        -> InflectionData.$fEqExpress_$c== a41 b1 } }) -}
+9ed040ae0c1ab4b74a460321005c5833
   $s$fEqExpress13 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Honorific)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -295,7 +295,7 @@ f7bd4a7b3685ab520a998d5ae6050191
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Honorific
                      InflectionData.$fEqHonorific) -}
-1384db7286676681d8e3575ad1d7cfe6
+ec4666caf73dd8e05608c8f1f8dadc1e
   $s$fEqExpress14 ::
     InflectionData.Express InflectionData.Honorific
     -> InflectionData.Express InflectionData.Honorific
@@ -309,12 +309,12 @@ f7bd4a7b3685ab520a998d5ae6050191
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqExpress_$c==5 a42 b1 } }) -}
-23adf9636b148b8a32c76a8391ee6cc3
+                        -> InflectionData.$fEqExpress_$c==1 a41 b1 } }) -}
+dec891e49a4d74f55aea862b64408a39
   $s$fEqExpress15 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Mood)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -324,7 +324,7 @@ f7bd4a7b3685ab520a998d5ae6050191
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Mood
                      InflectionData.$fEqMood) -}
-301ea71e2665ab79c46ff6925e702085
+5806606b9e8e081330562ce1b8869d26
   $s$fEqExpress16 ::
     InflectionData.Express InflectionData.Mood
     -> InflectionData.Express InflectionData.Mood -> GHC.Types.Bool
@@ -337,12 +337,12 @@ f7bd4a7b3685ab520a998d5ae6050191
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqMood_$c== a42 b1 } }) -}
-dca0a6b3a7da472ec79ec8ddadc2bac2
+                        -> InflectionData.$fEqMood_$c== a41 b1 } }) -}
+06ad7d85415f517d588f4100ce0be968
   $s$fEqExpress17 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Number)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -352,7 +352,7 @@ dca0a6b3a7da472ec79ec8ddadc2bac2
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Number
                      InflectionData.$fEqNumber) -}
-504e42cb9cdba7d8b3efa1754f98a7fa
+1296102ffdd2b059e8a7e8e3c1e4f807
   $s$fEqExpress18 ::
     InflectionData.Express InflectionData.Number
     -> InflectionData.Express InflectionData.Number -> GHC.Types.Bool
@@ -365,12 +365,12 @@ dca0a6b3a7da472ec79ec8ddadc2bac2
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqExpress_$c==1 a42 b1 } }) -}
-174bfd6b4803c1a869a0744edfcb9b8c
+                        -> InflectionData.$fEqExpress_$c==2 a41 b1 } }) -}
+45b75cb5610e68e61d277cb3f54763d0
   $s$fEqExpress19 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Person)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -380,17 +380,17 @@ dca0a6b3a7da472ec79ec8ddadc2bac2
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Person
                      InflectionData.$fEqPerson) -}
-4004e3c9ab1341890f495c3615ec5f65
+1f838007f89553aaa2cdd6cc04838015
   $s$fEqExpress2 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Volition)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
                   @ (InflectionData.Express InflectionData.Volition)
-                  InflectionData.$fEqExpress_$s$c==13
+                  InflectionData.$fEqExpress_$s$c==9
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Volition
                      InflectionData.$fEqVolition) -}
-87778ea36a3535e6e7ce87670d2a4364
+38937dae83ea6ce72b226fc141d7580a
   $s$fEqExpress20 ::
     InflectionData.Express InflectionData.Person
     -> InflectionData.Express InflectionData.Person -> GHC.Types.Bool
@@ -403,12 +403,12 @@ dca0a6b3a7da472ec79ec8ddadc2bac2
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqExpress_$c==4 a42 b1 } }) -}
-0fd4d8f2b6aa5b9ee9a073dd468e7fe6
+                        -> InflectionData.$fEqExpress_$c==3 a41 b1 } }) -}
+341b353cf1d280dc7ca058433dccd35c
   $s$fEqExpress21 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Polarity)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -418,7 +418,7 @@ dca0a6b3a7da472ec79ec8ddadc2bac2
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Polarity
                      InflectionData.$fEqPolarity) -}
-bce4824ca949e424300bb72d62f6e39c
+3363f524290b6775f518ed1168dd4562
   $s$fEqExpress22 ::
     InflectionData.Express InflectionData.Polarity
     -> InflectionData.Express InflectionData.Polarity -> GHC.Types.Bool
@@ -431,12 +431,12 @@ bce4824ca949e424300bb72d62f6e39c
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqExpress_$c==6 a42 b1 } }) -}
-a59d290bf0378c5144e602c1aeae61c6
+                        -> InflectionData.$fEqExpress_$c==4 a41 b1 } }) -}
+7f8c1106fbef29384b3cc5947c469d01
   $s$fEqExpress23 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Specificity)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -446,7 +446,7 @@ a59d290bf0378c5144e602c1aeae61c6
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Specificity
                      InflectionData.$fEqSpecificity) -}
-8cb75eb9d0d2cd1f146d783baab18fb9
+5f2b530a9578ea51f51860709e85c73d
   $s$fEqExpress24 ::
     InflectionData.Express InflectionData.Specificity
     -> InflectionData.Express InflectionData.Specificity
@@ -460,12 +460,12 @@ a59d290bf0378c5144e602c1aeae61c6
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqExpress_$c==2 a42 b1 } }) -}
-bf26ce0ab7600dddfdf421c9996d5831
+                        -> InflectionData.$fEqExpress_$c==5 a41 b1 } }) -}
+0d1d23e10d7d069d425ffb86874644a4
   $s$fEqExpress25 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Tense)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -475,7 +475,7 @@ bf26ce0ab7600dddfdf421c9996d5831
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Tense
                      InflectionData.$fEqTense) -}
-7908653911ea53eb4fb8b9a761ba262e
+b09cd60875ce142a13283b95996f8f58
   $s$fEqExpress26 ::
     InflectionData.Express InflectionData.Tense
     -> InflectionData.Express InflectionData.Tense -> GHC.Types.Bool
@@ -488,12 +488,12 @@ bf26ce0ab7600dddfdf421c9996d5831
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqTense_$c== a42 b1 } }) -}
-2d24abaaa216ac4cba33506377d1e6c6
+                        -> InflectionData.$fEqTense_$c== a41 b1 } }) -}
+831c0707f8e48695d39f2475b4954d06
   $s$fEqExpress27 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Topic)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -503,7 +503,7 @@ bf26ce0ab7600dddfdf421c9996d5831
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Topic
                      InflectionData.$fEqTopic) -}
-6d8b0322913e267573a98ac4ce83f852
+d43b1bb2a3f1dd58acd18e6116997f76
   $s$fEqExpress28 ::
     InflectionData.Express InflectionData.Topic
     -> InflectionData.Express InflectionData.Topic -> GHC.Types.Bool
@@ -516,12 +516,12 @@ bf26ce0ab7600dddfdf421c9996d5831
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqExpress_$c==3 a42 b1 } }) -}
-6b26e5773164066ae2d5ee147b913234
+                        -> InflectionData.$fEqExpress_$c==6 a41 b1 } }) -}
+2aa7d7dd4639fb917080b98c0de5d77c
   $s$fEqExpress29 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Transitivity)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -531,7 +531,7 @@ bf26ce0ab7600dddfdf421c9996d5831
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Transitivity
                      InflectionData.$fEqTransitivity) -}
-dccca67c607d9fa9178fd21547e5e484
+05c244aed822362709e0ef1002f69f0c
   $s$fEqExpress3 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Aspect)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -541,7 +541,7 @@ dccca67c607d9fa9178fd21547e5e484
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Aspect
                      InflectionData.$fEqAspect) -}
-740f8550b4dbbae9f5680f1ac02269bb
+1d0a64f91ba3f52926fa3b694453fe41
   $s$fEqExpress30 ::
     InflectionData.Express InflectionData.Transitivity
     -> InflectionData.Express InflectionData.Transitivity
@@ -555,12 +555,12 @@ dccca67c607d9fa9178fd21547e5e484
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqExpress_$c==8 a42 b1 } }) -}
-a6aa530e25f45579c1862c1d8576d478
+                        -> InflectionData.$fEqExpress_$c==7 a41 b1 } }) -}
+1d1b054a5182729e1be8436c2c9e25c0
   $s$fEqExpress31 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Voice)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -570,7 +570,7 @@ a6aa530e25f45579c1862c1d8576d478
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Voice
                      InflectionData.$fEqVoice) -}
-1d4624b06c57bdaaecebf9f71e20104b
+a36a43213eeac5c2719f544dbdf55f65
   $s$fEqExpress32 ::
     InflectionData.Express InflectionData.Voice
     -> InflectionData.Express InflectionData.Voice -> GHC.Types.Bool
@@ -583,12 +583,12 @@ a6aa530e25f45579c1862c1d8576d478
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqExpress_$c==7 a42 b1 } }) -}
-65470904de595edb829971d0f60ecd2b
+                        -> InflectionData.$fEqExpress_$c==8 a41 b1 } }) -}
+6fd9f3e34f4fcc01626ebcae3ea41770
   $s$fEqExpress4 ::
     InflectionData.Express InflectionData.Aspect
     -> InflectionData.Express InflectionData.Aspect -> GHC.Types.Bool
@@ -601,12 +601,12 @@ a6aa530e25f45579c1862c1d8576d478
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqAspect_$c== a42 b1 } }) -}
-875995a9bfa4bc52ba60463f52c9c88c
+                        -> InflectionData.$fEqAspect_$c== a41 b1 } }) -}
+aaee1e276a0d639450414def2ce28836
   $s$fEqExpress5 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Case)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -616,7 +616,7 @@ a6aa530e25f45579c1862c1d8576d478
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Case
                      InflectionData.$fEqCase) -}
-5ccd6fea658389bdf794953c885c1106
+e9b5720a0d1bbb5c9df36722e14d45ba
   $s$fEqExpress6 ::
     InflectionData.Express InflectionData.Case
     -> InflectionData.Express InflectionData.Case -> GHC.Types.Bool
@@ -629,12 +629,12 @@ a6aa530e25f45579c1862c1d8576d478
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqCase_$c== a42 b1 } }) -}
-5e2e20ba6a26b0de0c44018cc013cb75
+                        -> InflectionData.$fEqCase_$c== a41 b1 } }) -}
+402681e16b92dfeeb1079171cd0b2577
   $s$fEqExpress7 ::
     GHC.Classes.Eq (InflectionData.Express InflectionData.Definiteness)
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -644,7 +644,7 @@ a6aa530e25f45579c1862c1d8576d478
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Definiteness
                      InflectionData.$fEqDefiniteness) -}
-226adc380cd1c4a6dfc4b352a81121e2
+246bf76e6b03ead875f366bf078c8133
   $s$fEqExpress8 ::
     InflectionData.Express InflectionData.Definiteness
     -> InflectionData.Express InflectionData.Definiteness
@@ -658,12 +658,12 @@ a6aa530e25f45579c1862c1d8576d478
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.True
                         InflectionData.Express ipv -> GHC.Types.False }
-                   InflectionData.Express a42
+                   InflectionData.Express a41
                    -> case ds1 of wild1 {
                         InflectionData.NoExpress -> GHC.Types.False
                         InflectionData.Express b1
-                        -> InflectionData.$fEqDefiniteness_$c== a42 b1 } }) -}
-51ab7ac04f5bd5a56dc54d4fb1e891bb
+                        -> InflectionData.$fEqDefiniteness_$c== a41 b1 } }) -}
+d05f5e571ccd2cdfc59d7532b1f47fbc
   $s$fEqExpress9 ::
     GHC.Classes.Eq
       (InflectionData.Express InflectionData.Evidentiality)
@@ -674,7 +674,7 @@ a6aa530e25f45579c1862c1d8576d478
                   (InflectionData.$fEqExpress_$c/=
                      @ InflectionData.Evidentiality
                      InflectionData.$fEqEvidentiality) -}
-76355108e53bf2b1ce63767b125a4326
+8c90471441b09e1c99ef31587e27c3a3
   parseParseTree ::
     [[PhonemeData.Phoneme]]
     -> [((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)]
@@ -687,7 +687,7 @@ a6aa530e25f45579c1862c1d8576d478
     -> GHC.Base.String
   {- Arity: 5,
      Strictness: <L,U><L,U><L,U><L,1*U(U,U,U,U,U,A,A,A,A,U,U,A,A)><L,U> -}
-6b7ff749bb2fc15535f160da8747ecd3
+1c36ce780ca836d58553d4e382eb4f53
   parsePhrase ::
     GrammarData.Grammar -> GrammarData.Phrase -> [[GrammarData.Leaf]]
   {- Arity: 2,

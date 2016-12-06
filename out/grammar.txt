@@ -1,9 +1,62 @@
 Grammar
-Grammar {getSI = SubInitial, getOF = ObjFinal, getCI = CompFinal, getVtoI = OblVtoIMove, getAH = NoAffixHop, getNS = NoNullSub, getObT = OptTopic, getNT = OptNullTop, getTM = NoTopMark, getItoC = OblItoCMove, getWHM = OblWHMove, getPP = PiedPipe, getQI = NoQuesInv}
 
 
-loowoo bhairii gii rbhhrwa loowoo bhalyaafaahliyghlayh
-/ʎɯ᷄ː.ɰɯ̄ː/ /bʰɑ.ȳ.ʁ̞yː/ /ɡy᷉ː/ /ɹ̩̊.b̪ʰχɹ̊ɰɶ᷉/ /ʎɯ᷄ː.ɰɯ̄ː/ /bʰɑ.ʎ̥jɑ᷆ː.fɑ̄ɶ̯᷉h̞.ʟ̥ȳj̊.ɟʰʟɑ̄jʁ/
-UPOL.DEF UASP.SG-harmony-UTRA.TOP.UGEN UTRA UEVI.UASP.UTOP.SG-UDEF-support UPOL.DEF UASP.SG-square-UTRA.NTOP.UGEN
-the harmony will have supported the square
-"the harmony will have supported the square"
+ al lhehohloli lhohhaleho  lheoli  laohhoa ho  ahl lheulolli
+ /àʟ/ /ʟɦ̞ǿ.ɦ̞ūɦ̞.ʟɪ̈́.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ǿ.ʊ̈̄̆.ʟʏ̟̄/  /ʟɛ̈́̆.ɪ̈́̆.ɦ̞ɦ̞ù̆.ɔ̞̂̆/ /ɦ̞ɯ̞̀̆/  /ɑ̟̄ɦ̞l/ /ʟɦ̞ǿ.ɘ̄̆.lʊ̈̀.lʟʏ̟̄/
+ open UASP.UPOL.USPE-clock-UMOO.SG.UCAS-DEF at  UASP.UPOL.USPE-ticket-UMOO.SG.UCAS-DEF  IND-create-USPE.UCAS-UASP on  violent UASP.UPOL.USPE-color-UMOO.SG.UCAS-DEF
+the open clock at the ticket will have createed on the violent color
+"the open clock at the ticket will have createed on the violent color"
+
+ al lheihohohlli  lalu'eha lhohhaleho  lho'ahlo'uh lhelili
+ /ɒ̽̌l/ /ʟɦ̞ǿ.ʏ́̆.ɦ̞ʊ̠̀.ɦ̞ū̆ɦ̞.ʟʟʏ̟̄/  /ʟɛ̈́̆.ʟɔ́̆.è.ɦ̞ɔ̞̂̆/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ɯ̞̌̆.ǟ̆ɦ̞.ʟɯ̞́.ö̀ɦ̞/ /ʟɦ̞ǿ.ʟʏ̝̀̆.ʟʏ̟̄/
+ low UASP.UPOL.USPE-sister-UMOO.SG.UCAS-DEF  IND-need-USPE.UCAS-UASP at  elastic UASP.UPOL.USPE-turn-UMOO.SG.UCAS-DEF
+the low sister will have needed at the elastic turn
+"the low sister will have needed at the elastic turn"
+
+ hah lheuhuli lhohhaleho  ahlah lhehahehli lhohhaleho  lheuhloli lhohhaleho  lheali lhohhaleho  o lhehuhohli ho  lahalahhoh lheahalholi  lalohha'eloha  lho lheahhahli lhohhaleho  aleh lheuhhohili ho  ahalahl lhelaholhohali
+ /ɦ̞à̠̆ɦ̞/ /ʟɦ̞ǿ.ɘ̂̆.ɦ̞ɘ́̆.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ɶ̠̄̆ɦ̞.ʟā̠̆ɦ̞/ /ʟɦ̞ǿ.ɦ̞ɑ̌̆.ɦ̞íɦ̞.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ǿ.ɵ̀ɦ̞.ʟʊ̈̀.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ǿ.ɶ̽̀.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʊ̈̌̆/ /ʟɦ̞ǿ.ɦ̞ö́̆.ɦ̞ɯ̽́ɦ̞.ʟʏ̟̄/ /ɦ̞ɯ̞̀̆/  /ʟɑ̟̄.ɦ̞ɶ́̆.ʟɞ̀.ɦ̞ɦ̞ɤ̂̆ɦ̞/ /ʟɦ̞ǿ.ɑ̄.ɦ̞ɞ̂̆.ʟɦ̞ɪ̈̄̆.ʟʏ̟̄/  /ʟɛ̈́̆.ʟɤ́.ɦ̞ɦ̞ɑ̀.ī̆.lʊ̠̄̆.ɦ̞ɔ̞̂̆/  /ʟɦ̞ʊ̝̌/ /ʟɦ̞ǿ.ɐ̄̆.ɦ̞ɦ̞ɐ̀ɦ̞.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʌ̈̌.léɦ̞/ /ʟɦ̞ǿ.ë̀̆.ɦ̞ɦ̞ɤ̀̆.ɦ̞ʏ̂.ʟʏ̟̄/ /ɦ̞ɯ̞̀̆/  /œ̞̂.ɦ̞œ̞̂.ʟǣ̆ɦ̞l/ /ʟɦ̞ǿ.lɒ̽̂̆.ɦ̞ʊ̄̆.ʟɦ̞ɯ̟̀.ɦ̞ɒ̽̀.ʟʏ̟̄/
+ dark UASP.UPOL.USPE-stomach-UMOO.SG.UCAS-DEF at  male UASP.UPOL.USPE-attention-UMOO.SG.UCAS-DEF at  UASP.UPOL.USPE-bag-UMOO.SG.UCAS-DEF at  UASP.UPOL.USPE-cover-UMOO.SG.UCAS-DEF at  same UASP.UPOL.USPE-cloud-UMOO.SG.UCAS-DEF on  opaque UASP.UPOL.USPE-minute-UMOO.SG.UCAS-DEF  IND-happen-USPE.UCAS-UASP  cold UASP.UPOL.USPE-pocket-UMOO.SG.UCAS-DEF at  perpendicular UASP.UPOL.USPE-substance-UMOO.SG.UCAS-DEF on  regular UASP.UPOL.USPE-brush-UMOO.SG.UCAS-DEF
+the dark stomach at the male attention at the bag at the cover at the same cloud on the opaque minute will have happened the cold pocket at the perpendicular substance on the regular brush
+"the dark stomach at the male attention at the bag at the cover at the same cloud on the opaque minute will have happened the cold pocket at the perpendicular substance on the regular brush"
+
+ lhuh lhelohli ho  lhelhali  lalhe'ahalahla lhohhaleho  il lhelilali
+ /lɦ̞ö̀ɦ̞/ /ʟɦ̞ǿ.lò̆ɦ̞.ʟʏ̟̄/ /ɦ̞ɯ̞̀̆/  /ʟɦ̞ǿ.ʟɦ̞ä̀̆.ʟʏ̟̄/  /ʟɛ̈́̆.ʟɦ̞è.ɑ̂̆.ɦ̞œ̈̂̆.lœ̈̌̆ɦ̞.ʟɔ̞̂̆/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ȳ̆ʟ/ /ʟɦ̞ǿ.ʟʏ̌.lɒ̈̀.ʟʏ̟̄/
+ physical UASP.UPOL.USPE-surprise-UMOO.SG.UCAS-DEF on  UASP.UPOL.USPE-comfort-UMOO.SG.UCAS-DEF  IND-help-USPE.UCAS-UASP at  bad UASP.UPOL.USPE-egg-UMOO.SG.UCAS-DEF
+the physical surprise on the comfort will have helped at the bad egg
+"the physical surprise on the comfort will have helped at the bad egg"
+
+ lhealohalli  laiha ho  o lhealalli
+ /ʟɦ̞ǿ.ʌ̞̄.lʊ̠́̆.ɦ̞ʌ̞́̆.lʟʏ̟̄/  /ʟɛ̈́̆.ŷ.ɦ̞ɔ̞̂̆/ /ɦ̞ɯ̞̀̆/  /ɨ̂̆/ /ʟɦ̞ǿ.œ̈̌̆.ʟœ̞̌̆.ʟʟʏ̟̄/
+ UASP.UPOL.USPE-group-UMOO.SG.UCAS-DEF  IND-try-USPE.UCAS-UASP on  loose UASP.UPOL.USPE-reaction-UMOO.SG.UCAS-DEF
+the group will have tryed on the loose reaction
+"the group will have tryed on the loose reaction"
+
+ lhih lheahhohahli  lalu'eha  ah lhelhalli
+ /lɦ̞ɪ̟̌ɦ̞/ /ʟɦ̞ǿ.ʌ̈̄.ɦ̞ɦ̞ǒ̆.ɦ̞ɑ̀ɦ̞.ʟʏ̟̄/  /ʟɛ̈́̆.ʟɔ́̆.è.ɦ̞ɔ̞̂̆/  /ɜ̌ɦ̞/ /ʟɦ̞ǿ.lɦ̞ɶ̠̌.lʟʏ̟̄/
+ short UASP.UPOL.USPE-hour-UMOO.SG.UCAS-DEF  IND-need-USPE.UCAS-UASP  thick UASP.UPOL.USPE-transport-UMOO.SG.UCAS-DEF
+the short hour will have needed the thick transport
+"the short hour will have needed the thick transport"
+
+ ol lheahahli  laahlaa  ohi lhelohohli
+ /ǒ̆l/ /ʟɦ̞ǿ.à̠̆.ɦ̞ʌ̈̀ɦ̞.ʟʏ̟̄/  /ʟɛ̈́̆.ɒ̟̄̆ɦ̞.ʟá̆.ɔ̞̂̆/  /ʊ̠̀.ɦ̞ʏ̝́̆/ /ʟɦ̞ǿ.lò.ɦ̞ǔɦ̞.ʟʏ̟̄/
+ old UASP.UPOL.USPE-feeling-UMOO.SG.UCAS-DEF  IND-include-USPE.UCAS-UASP  good UASP.UPOL.USPE-discovery-UMOO.SG.UCAS-DEF
+the old feeling will have includeed the good discovery
+"the old feeling will have includeed the good discovery"
+
+ lheuhhohili  lauluhhihloha lhohhaleho  lheholihali
+ /ʟɦ̞ǿ.ë̀̆.ɦ̞ɦ̞ɤ̀̆.ɦ̞ʏ̂.ʟʏ̟̄/  /ʟɛ̈́̆.ɔ̀.ʟɔ́.ɦ̞ɦ̞ʏ̌̆ɦ̞.lʉ̄̆.ɦ̞ɔ̞̂̆/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ǿ.ɦ̞ʊ̈̄.lɪ̝̌.ɦ̞ʌ̞̌.ʟʏ̟̄/
+ UASP.UPOL.USPE-substance-UMOO.SG.UCAS-DEF  IND-stay-USPE.UCAS-UASP at  UASP.UPOL.USPE-record-UMOO.SG.UCAS-DEF
+the substance will have stayed at the record
+"the substance will have stayed at the record"
+
+ lhelilhuhhahali  laahahla  lheoli
+ /ʟɦ̞ǿ.ʟɪ́̆.lɦ̞ɘ̂.ɦ̞ɦ̞ʌ̞̌̆.ɦ̞ɒ̽̂.ʟʏ̟̄/  /ʟɛ̈́̆.á̆.ɦ̞a̽̀̆ɦ̞.ʟɔ̞̂̆/  /ʟɦ̞ǿ.ɯ̟̂.ʟʏ̟̄/
+ UASP.UPOL.USPE-sky-UMOO.SG.UCAS-DEF  IND-raise-USPE.UCAS-UASP  UASP.UPOL.USPE-fire-UMOO.SG.UCAS-DEF
+the sky will have raiseed the fire
+"the sky will have raiseed the fire"
+
+ ahehoha lheahluli  lau'ahlula  lheahlahhuli lhohhaleho  a'a'ah lheo'ehahholi
+ /ɞ̞̄̆.ɦ̞ê.ɦ̞ɤ̀̆.ɦ̞ɒ̟̄̆/ /ʟɦ̞ǿ.ɞ̀̆ɦ̞.lë̀.ʟʏ̟̄/  /ʟɛ̈́̆.ɤ̈̌.a̽̄̆ɦ̞.lɤ̈́.ʟɔ̞̂̆/  /ʟɦ̞ǿ.ǟɦ̞.lɒ̽̌̆.ɦ̞ɦ̞ø̈̄̆.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ɶ̀.a̽́.ǽɦ̞/ /ʟɦ̞ǿ.ɯ̌̆.ɛ̄.ɦ̞ʌ̞̄̆.ɦ̞ɦ̞ɤ̄.ʟʏ̟̄/
+ ill UASP.UPOL.USPE-roll-UMOO.SG.UCAS-DEF  IND-consider-USPE.UCAS-UASP  UASP.UPOL.USPE-prose-UMOO.SG.UCAS-DEF at  rich UASP.UPOL.USPE-mountain-UMOO.SG.UCAS-DEF
+the ill roll will have considered the prose at the rich mountain
+"the ill roll will have considered the prose at the rich mountain"
