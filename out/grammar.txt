@@ -1,62 +1,75 @@
 Grammar
+Parameters:
+	*Specifier final
+	*Object initial
+	*(Non-object) Head final
+	*Obligatory V to I movement
+	*No affix hoping
+	*No null subject
+	*Obligatory topic
+	*Optional null topic
+	*Obligatory topic marking
+	*No I to C movement
+	*No WH-movement
+	*Piedpiping
+	*No question inversion
 
+kah tek hhragehogpagogo uhbuh htdglehrbuppudgh aho tdtdoggakorderpudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.rɜ.ɡê.ʕ̞̟ɒʡ̠.pä̂.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖ̩.ʡ̥̠ʟ̆ɛɦ̞ɻ̊.bɔ.ppɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /tɖ̩.tɖɨ.ʡ̥̠ɡɑ.kûʙ.ɖœ᷈ɰ̊.pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-learn-UTEN UHON.NTOP.DEF ACC-sex-SG-UVOI-UTRA UHON.TOP.DEF UCAS-sea-SG-UVOI-UTRA
+will have learned the sex the sea
+"the sea will have learned the sex"
 
- al lhehohloli lhohhaleho  lheoli  laohhoa ho  ahl lheulolli
- /àʟ/ /ʟɦ̞ǿ.ɦ̞ūɦ̞.ʟɪ̈́.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ǿ.ʊ̈̄̆.ʟʏ̟̄/  /ʟɛ̈́̆.ɪ̈́̆.ɦ̞ɦ̞ù̆.ɔ̞̂̆/ /ɦ̞ɯ̞̀̆/  /ɑ̟̄ɦ̞l/ /ʟɦ̞ǿ.ɘ̄̆.lʊ̈̀.lʟʏ̟̄/
- open UASP.UPOL.USPE-clock-UMOO.SG.UCAS-DEF at  UASP.UPOL.USPE-ticket-UMOO.SG.UCAS-DEF  IND-create-USPE.UCAS-UASP on  violent UASP.UPOL.USPE-color-UMOO.SG.UCAS-DEF
-the open clock at the ticket will have createed on the violent color
-"the open clock at the ticket will have createed on the violent color"
+kah tek hhehrehgogogo gardarakeh uhbuh htdpgorpudgh aho <UNK> tdtdklealopudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞ɛ᷈ʕ̞.ⱱ̟̊ø.ʔʡu᷈.ɡɒ.ɡɒ/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖ̩.pɡɨ̂ɽ͡r̥.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /tɖ̩.tɖ̩.kɺ̢̊ø᷈ä̯̂.ʟ̥ɒ̂.pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-write-UTEN at UHON.NTOP.DEF ACC-balance-SG-UVOI-UTRA UHON.TOP.DEF chief UCAS-event-SG-UVOI-UTRA
+will have writeed at the balance the chief event
+"the chief event will have writeed at the balance"
 
- al lheihohohlli  lalu'eha lhohhaleho  lho'ahlo'uh lhelili
- /ɒ̽̌l/ /ʟɦ̞ǿ.ʏ́̆.ɦ̞ʊ̠̀.ɦ̞ū̆ɦ̞.ʟʟʏ̟̄/  /ʟɛ̈́̆.ʟɔ́̆.è.ɦ̞ɔ̞̂̆/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ɯ̞̌̆.ǟ̆ɦ̞.ʟɯ̞́.ö̀ɦ̞/ /ʟɦ̞ǿ.ʟʏ̝̀̆.ʟʏ̟̄/
- low UASP.UPOL.USPE-sister-UMOO.SG.UCAS-DEF  IND-need-USPE.UCAS-UASP at  elastic UASP.UPOL.USPE-turn-UMOO.SG.UCAS-DEF
-the low sister will have needed at the elastic turn
-"the low sister will have needed at the elastic turn"
+kah tek hhgbaggaldgagogo uhbuh htdlohalprugpudgh aho <UNK> tdtdtehguhrohklopudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʡ̥bɑʡ̠.ʡ̥̠ä̂ɺɖ.ʡ̥ɒ̈᷈.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖl̥ɤ.ħ̞ɑ᷈l̥.pɻɔ᷈ɡ.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /tɖ̩.tɖ̩.ʈɛ᷈ħ̞̟.ʡɵ᷈ʕ̞̟.ɽ͡r̥uʡ̮̠.kɺ̢ɨ̂.pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-leave-UTEN UHON.NTOP.DEF ACC-horn-SG-UVOI-UTRA UHON.TOP.DEF round UCAS-note-SG-UVOI-UTRA
+will have leaveed the horn the round note
+"the round note will have leaveed the horn"
 
- hah lheuhuli lhohhaleho  ahlah lhehahehli lhohhaleho  lheuhloli lhohhaleho  lheali lhohhaleho  o lhehuhohli ho  lahalahhoh lheahalholi  lalohha'eloha  lho lheahhahli lhohhaleho  aleh lheuhhohili ho  ahalahl lhelaholhohali
- /ɦ̞à̠̆ɦ̞/ /ʟɦ̞ǿ.ɘ̂̆.ɦ̞ɘ́̆.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ɶ̠̄̆ɦ̞.ʟā̠̆ɦ̞/ /ʟɦ̞ǿ.ɦ̞ɑ̌̆.ɦ̞íɦ̞.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ǿ.ɵ̀ɦ̞.ʟʊ̈̀.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ǿ.ɶ̽̀.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʊ̈̌̆/ /ʟɦ̞ǿ.ɦ̞ö́̆.ɦ̞ɯ̽́ɦ̞.ʟʏ̟̄/ /ɦ̞ɯ̞̀̆/  /ʟɑ̟̄.ɦ̞ɶ́̆.ʟɞ̀.ɦ̞ɦ̞ɤ̂̆ɦ̞/ /ʟɦ̞ǿ.ɑ̄.ɦ̞ɞ̂̆.ʟɦ̞ɪ̈̄̆.ʟʏ̟̄/  /ʟɛ̈́̆.ʟɤ́.ɦ̞ɦ̞ɑ̀.ī̆.lʊ̠̄̆.ɦ̞ɔ̞̂̆/  /ʟɦ̞ʊ̝̌/ /ʟɦ̞ǿ.ɐ̄̆.ɦ̞ɦ̞ɐ̀ɦ̞.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʌ̈̌.léɦ̞/ /ʟɦ̞ǿ.ë̀̆.ɦ̞ɦ̞ɤ̀̆.ɦ̞ʏ̂.ʟʏ̟̄/ /ɦ̞ɯ̞̀̆/  /œ̞̂.ɦ̞œ̞̂.ʟǣ̆ɦ̞l/ /ʟɦ̞ǿ.lɒ̽̂̆.ɦ̞ʊ̄̆.ʟɦ̞ɯ̟̀.ɦ̞ɒ̽̀.ʟʏ̟̄/
- dark UASP.UPOL.USPE-stomach-UMOO.SG.UCAS-DEF at  male UASP.UPOL.USPE-attention-UMOO.SG.UCAS-DEF at  UASP.UPOL.USPE-bag-UMOO.SG.UCAS-DEF at  UASP.UPOL.USPE-cover-UMOO.SG.UCAS-DEF at  same UASP.UPOL.USPE-cloud-UMOO.SG.UCAS-DEF on  opaque UASP.UPOL.USPE-minute-UMOO.SG.UCAS-DEF  IND-happen-USPE.UCAS-UASP  cold UASP.UPOL.USPE-pocket-UMOO.SG.UCAS-DEF at  perpendicular UASP.UPOL.USPE-substance-UMOO.SG.UCAS-DEF on  regular UASP.UPOL.USPE-brush-UMOO.SG.UCAS-DEF
-the dark stomach at the male attention at the bag at the cover at the same cloud on the opaque minute will have happened the cold pocket at the perpendicular substance on the regular brush
-"the dark stomach at the male attention at the bag at the cover at the same cloud on the opaque minute will have happened the cold pocket at the perpendicular substance on the regular brush"
+kah tek hhtagogo gardarakeh uhbuh gardarakeh uhbuh <UNK> htdulhlorpudgh htddardgahduhgragpudgh aho <UNK> tdtdgrahohlgahrahpudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.tɞ.ɡɒ.ɡɒ/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖɵ᷈ɭ.ʔʟ̆ɤ᷈ɾ.pɘ̂d.ʡ̥ʕ̞̟̩/ /h̞̩.tɖdɜɽ͡r̥.ɖɡɑ̂ʢ̠.ɖɘ̂h̞.ʡ̠ɻ̊ɶ.ʡ̥pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /tɖ̩.tɖʡ̠ɾ̥ɜ.ʔʌ̂ʕ̞̟ʟ.ɡɶɦ̞.ɰ̊ä̂ʕ̞̟.pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-say-UTEN at UHON.NTOP.DEF at UHON.NTOP.DEF open ACC-unit-SG-UVOI-UTRA ACC-stitch-SG-UVOI-UTRA UHON.TOP.DEF kind UCAS-agreement-SG-UVOI-UTRA
+will have sayed at the at the open unit stitch the kind agreement
+"the kind agreement will have sayed at the stitch at the open unit"
 
- lhuh lhelohli ho  lhelhali  lalhe'ahalahla lhohhaleho  il lhelilali
- /lɦ̞ö̀ɦ̞/ /ʟɦ̞ǿ.lò̆ɦ̞.ʟʏ̟̄/ /ɦ̞ɯ̞̀̆/  /ʟɦ̞ǿ.ʟɦ̞ä̀̆.ʟʏ̟̄/  /ʟɛ̈́̆.ʟɦ̞è.ɑ̂̆.ɦ̞œ̈̂̆.lœ̈̌̆ɦ̞.ʟɔ̞̂̆/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ȳ̆ʟ/ /ʟɦ̞ǿ.ʟʏ̌.lɒ̈̀.ʟʏ̟̄/
- physical UASP.UPOL.USPE-surprise-UMOO.SG.UCAS-DEF on  UASP.UPOL.USPE-comfort-UMOO.SG.UCAS-DEF  IND-help-USPE.UCAS-UASP at  bad UASP.UPOL.USPE-egg-UMOO.SG.UCAS-DEF
-the physical surprise on the comfort will have helped at the bad egg
-"the physical surprise on the comfort will have helped at the bad egg"
+kah tek hhtehagogo uhbuh <UNK> htddhehoggepudgh aho <UNK> tdtdapudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ti᷈.ERRORä̂.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖdħ̞î.h̞ɒ̂.ʡ̠ɡɛ.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /tɖ̩.tɖɜ.pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-give-UTEN UHON.NTOP.DEF healthy ACC-nut-SG-UVOI-UTRA UHON.TOP.DEF secret UCAS-son-SG-UVOI-UTRA
+will have giveed the healthy nut the secret son
+"the secret son will have giveed the healthy nut"
 
- lhealohalli  laiha ho  o lhealalli
- /ʟɦ̞ǿ.ʌ̞̄.lʊ̠́̆.ɦ̞ʌ̞́̆.lʟʏ̟̄/  /ʟɛ̈́̆.ŷ.ɦ̞ɔ̞̂̆/ /ɦ̞ɯ̞̀̆/  /ɨ̂̆/ /ʟɦ̞ǿ.œ̈̌̆.ʟœ̞̌̆.ʟʟʏ̟̄/
- UASP.UPOL.USPE-group-UMOO.SG.UCAS-DEF  IND-try-USPE.UCAS-UASP on  loose UASP.UPOL.USPE-reaction-UMOO.SG.UCAS-DEF
-the group will have tryed on the loose reaction
-"the group will have tryed on the loose reaction"
+kah tek hhtehghalkehregogo gardarakeh uhbuh htdortohhapudgh aho <UNK> rhobblohra uhbuh htdihpudgh tdtdpgohrpudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.tɛ᷈h̞.ɡɦ̞ɒ̈l.kø̂ʕ̞̟.ɽ͡r̥e᷈.ɡɒ.ɡɒ/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖôɽ.tɨ᷈ħ̞̟.ʜ̠ɒ̈᷈.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /rħ̞̟ʉ̂.bbɭ̥ûʕ̞̟.ɽɞ᷈/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖŷɦ̞.pɘ̂d.ʡ̥ʕ̞̟̩/ /tɖ̩.tɖ̩.pɡɯ᷈ħ̞ɹ̊.pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-teach-UTEN at UHON.NTOP.DEF ACC-waste-SG-UVOI-UTRA UHON.TOP.DEF married on UHON.NTOP.DEF ACC-taste-SG-UVOI-UTRA UCAS-rhythm-SG-UVOI-UTRA
+will have teached at the waste the married on the taste rhythm
+"the married rhythm on the taste will have teached at the waste"
 
- lhih lheahhohahli  lalu'eha  ah lhelhalli
- /lɦ̞ɪ̟̌ɦ̞/ /ʟɦ̞ǿ.ʌ̈̄.ɦ̞ɦ̞ǒ̆.ɦ̞ɑ̀ɦ̞.ʟʏ̟̄/  /ʟɛ̈́̆.ʟɔ́̆.è.ɦ̞ɔ̞̂̆/  /ɜ̌ɦ̞/ /ʟɦ̞ǿ.lɦ̞ɶ̠̌.lʟʏ̟̄/
- short UASP.UPOL.USPE-hour-UMOO.SG.UCAS-DEF  IND-need-USPE.UCAS-UASP  thick UASP.UPOL.USPE-transport-UMOO.SG.UCAS-DEF
-the short hour will have needed the thick transport
-"the short hour will have needed the thick transport"
+kah tek hhtihgohdhogogo uhbuh <UNK> htdpohlahrahgohhpudgh aho tdtdhlegpudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʈŷɦ̞.ʡ̥ɨ̂ʜ̠d.ʔɒ᷈.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖ̩.pu᷈ʕ̞̟.ʟ̆ɞħ̞̟.ɾɶʜ.ɡɨ᷈ħ̞ʜ̠.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /tɖ̩.tɖ̩.ʔɺ̢ɛ᷈.ʡ̥pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-buy-UTEN UHON.NTOP.DEF certain ACC-distance-SG-UVOI-UTRA UHON.TOP.DEF UCAS-sugar-SG-UVOI-UTRA
+will have buyed the certain distance the sugar
+"the sugar will have buyed the certain distance"
 
- ol lheahahli  laahlaa  ohi lhelohohli
- /ǒ̆l/ /ʟɦ̞ǿ.à̠̆.ɦ̞ʌ̈̀ɦ̞.ʟʏ̟̄/  /ʟɛ̈́̆.ɒ̟̄̆ɦ̞.ʟá̆.ɔ̞̂̆/  /ʊ̠̀.ɦ̞ʏ̝́̆/ /ʟɦ̞ǿ.lò.ɦ̞ǔɦ̞.ʟʏ̟̄/
- old UASP.UPOL.USPE-feeling-UMOO.SG.UCAS-DEF  IND-include-USPE.UCAS-UASP  good UASP.UPOL.USPE-discovery-UMOO.SG.UCAS-DEF
-the old feeling will have includeed the good discovery
-"the old feeling will have includeed the good discovery"
+kah tek hhgedrarertrougogo uhbuh <UNK> htdhrahbbegkohrahppudgh aho tdtdeahrhoddhegrahlpudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʡ̥ɛ᷈.ɖʙɑ᷈.r̥ø̂ɽ̊.tɹ̊o᷈ɵ̯.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖ̩.ʔɹɒ̈̂h̞.bbø̂ʡ.kɯʕ̞̟.ɹɞɦ̞.ppɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /tɖ̩.tɖø᷈ä̯̂ɦ̞.ʙħ̞û.ɖdʕ̞̟ɛ.ʡ̠ⱱ̟ä᷈ɦ̞ɺ.pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-think-UTEN UHON.NTOP.DEF expensive ACC-flag-SG-UVOI-UTRA UHON.TOP.DEF UCAS-stop-SG-UVOI-UTRA
+will have thinked the expensive flag the stop
+"the stop will have thinked the expensive flag"
 
- lheuhhohili  lauluhhihloha lhohhaleho  lheholihali
- /ʟɦ̞ǿ.ë̀̆.ɦ̞ɦ̞ɤ̀̆.ɦ̞ʏ̂.ʟʏ̟̄/  /ʟɛ̈́̆.ɔ̀.ʟɔ́.ɦ̞ɦ̞ʏ̌̆ɦ̞.lʉ̄̆.ɦ̞ɔ̞̂̆/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ʟɦ̞ǿ.ɦ̞ʊ̈̄.lɪ̝̌.ɦ̞ʌ̞̌.ʟʏ̟̄/
- UASP.UPOL.USPE-substance-UMOO.SG.UCAS-DEF  IND-stay-USPE.UCAS-UASP at  UASP.UPOL.USPE-record-UMOO.SG.UCAS-DEF
-the substance will have stayed at the record
-"the substance will have stayed at the record"
+kah tek hhgohrerboglehhgogo gardarakeh uhbuh <UNK> htdglapudgh aho rhobblohra uhbuh htduhrirbohuhgpudgh tdtdgupudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʡ̥ɯ᷈h̞.ɰøɽ͡r.bʌ.ɡɺɛ̂ɦ̞ʢ.ɡɒ.ɡɒ/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖɡʟ̆ɞ̂.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /rħ̞̟ʉ̂.bbɭ̥ûʕ̞̟.ɽɞ᷈/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖɔ̂ħ̞̟.r̥y᷈ɾ̥.bɤ᷈.ħ̞̟ɘʕ̞ʡ.pɘ̂d.ʡ̥ʕ̞̟̩/ /tɖ̩.tɖʡɘ᷈.pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-happen-UTEN at UHON.NTOP.DEF serious ACC-canvas-SG-UVOI-UTRA UHON.TOP.DEF on UHON.NTOP.DEF ACC-space-SG-UVOI-UTRA UCAS-use-SG-UVOI-UTRA
+will have happened at the serious canvas the on the space use
+"the use on the space will have happened at the serious canvas"
 
- lhelilhuhhahali  laahahla  lheoli
- /ʟɦ̞ǿ.ʟɪ́̆.lɦ̞ɘ̂.ɦ̞ɦ̞ʌ̞̌̆.ɦ̞ɒ̽̂.ʟʏ̟̄/  /ʟɛ̈́̆.á̆.ɦ̞a̽̀̆ɦ̞.ʟɔ̞̂̆/  /ʟɦ̞ǿ.ɯ̟̂.ʟʏ̟̄/
- UASP.UPOL.USPE-sky-UMOO.SG.UCAS-DEF  IND-raise-USPE.UCAS-UASP  UASP.UPOL.USPE-fire-UMOO.SG.UCAS-DEF
-the sky will have raiseed the fire
-"the sky will have raiseed the fire"
-
- ahehoha lheahluli  lau'ahlula  lheahlahhuli lhohhaleho  a'a'ah lheo'ehahholi
- /ɞ̞̄̆.ɦ̞ê.ɦ̞ɤ̀̆.ɦ̞ɒ̟̄̆/ /ʟɦ̞ǿ.ɞ̀̆ɦ̞.lë̀.ʟʏ̟̄/  /ʟɛ̈́̆.ɤ̈̌.a̽̄̆ɦ̞.lɤ̈́.ʟɔ̞̂̆/  /ʟɦ̞ǿ.ǟɦ̞.lɒ̽̌̆.ɦ̞ɦ̞ø̈̄̆.ʟʏ̟̄/ /ʟɦ̞ɨ̌̆.ɦ̞ɦ̞ā̆.lǿ.ɦ̞ʊ̠̂/  /ɶ̀.a̽́.ǽɦ̞/ /ʟɦ̞ǿ.ɯ̌̆.ɛ̄.ɦ̞ʌ̞̄̆.ɦ̞ɦ̞ɤ̄.ʟʏ̟̄/
- ill UASP.UPOL.USPE-roll-UMOO.SG.UCAS-DEF  IND-consider-USPE.UCAS-UASP  UASP.UPOL.USPE-prose-UMOO.SG.UCAS-DEF at  rich UASP.UPOL.USPE-mountain-UMOO.SG.UCAS-DEF
-the ill roll will have considered the prose at the rich mountain
-"the ill roll will have considered the prose at the rich mountain"
+kah tek hhhapehlkehugogo uhbuh htdgrehupudgh aho tdtdplohgehgtoripudgh
+/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʔâ.pɛh̞l̥.kø᷈.ʕ̞ɵ̂.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖɡɸ̝ɛ.ħ̞ɘ̂.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /tɖ̩.tɖ̩.pɭ̥oERROR.ʡ̠ɛ᷈ħ̞ʡ̠.ʈɨ᷈.ɹŷ.pɘ̂d.ʡ̥ʕ̞̟̩/
+UTRA.UDEF ACTIVE UVOL-get-UTEN UHON.NTOP.DEF ACC-design-SG-UVOI-UTRA UHON.TOP.DEF UCAS-hate-SG-UVOI-UTRA
+will have geted the design the hate
+"the hate will have geted the design"

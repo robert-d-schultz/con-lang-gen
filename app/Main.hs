@@ -5,15 +5,23 @@ import Data.Random hiding (sample)
 import Data.RVar
 import Control.Monad
 
-import PhonemeGen
-import PhonotacticsGen
-import WordGen
-import Parse
-import InflectionGen
-import MorphologyGen
-import GrammarGen
-import Translate
-import ParseTreeGen
+import LoadStuff
+
+import Gen.Phoneme
+import Gen.Phonotactics
+import Gen.Root
+import Gen.Word
+import Gen.Inflection
+import Gen.Morphology
+import Gen.Grammar
+import Gen.ParseTree
+
+import Out.Other
+import Out.Phonology
+import Out.Inflection
+import Out.Lexicon
+import Out.Sentence
+import Out.Grammar
 
 main :: IO ()
 main = do
@@ -45,7 +53,10 @@ main = do
 
   -- root morphemes
   mData <- loadMeaningData
-  roots <- sampleRVar (makeDictionary mData (inventoryV ++ inventoryD) sonHier ((1, 4), (0, 2), (1, 3), (0, 2)))
+  roots <- sampleRVar (makeRootDictionary mData (inventoryV ++ inventoryD) sonHier ((1, 4), (0, 2), (1, 3), (0, 2)))
+
+  -- full Lexicon
+  let dict = makeDictionary systems roots
 
   -- grammar
   grammar <- sampleRVar makeGrammar
@@ -64,11 +75,11 @@ main = do
 
   writeFile "out/inflection.txt" $ "Inflection"
                                 ++ parseLCInflection inflSys
-                                ++ concatMap (parseLexicalSystems inflSys) systems
+                                ++ concatMap (parseLexicalSystems inflSys sonHier) systems
 
   writeFile "out/lexicon.txt" $ "Lexicon"
-                             ++ parseDictionary sonHier roots
+                             ++ parseDictionary sonHier dict
 
-  writeFile "out/grammar.txt" $ "Grammar\n"
-                            -- ++ show grammar ++ "\n"
-                             ++ concatMap (parseParseTree sonHier roots systems grammar) ptExamples
+  writeFile "out/grammar.txt" $ "Grammar"
+                             ++ parseGrammar grammar
+                             ++ concatMap (parseParseTree sonHier dict systems grammar) ptExamples

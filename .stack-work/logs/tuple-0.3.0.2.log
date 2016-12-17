@@ -1,12 +1,11 @@
 Configuring tuple-0.3.0.2...
 Building tuple-0.3.0.2...
 Preprocessing library tuple-0.3.0.2...
-[1 of 5] Compiling Data.Tuple.Update ( src/Data/Tuple/Update.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Tuple/Update.o )
-[2 of 5] Compiling Data.Tuple.Sequence ( src/Data/Tuple/Sequence.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Tuple/Sequence.o )
-[3 of 5] Compiling Data.Tuple.Select ( src/Data/Tuple/Select.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Tuple/Select.o )
-[4 of 5] Compiling Data.Tuple.Curry ( src/Data/Tuple/Curry.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Tuple/Curry.o )
-[5 of 5] Compiling Data.Tuple.All   ( src/Data/Tuple/All.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/Data/Tuple/All.o )
-In-place registering tuple-0.3.0.2...
+[1 of 5] Compiling Data.Tuple.Update ( src/Data/Tuple/Update.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Tuple/Update.o )
+[2 of 5] Compiling Data.Tuple.Sequence ( src/Data/Tuple/Sequence.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Tuple/Sequence.o )
+[3 of 5] Compiling Data.Tuple.Select ( src/Data/Tuple/Select.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Tuple/Select.o )
+[4 of 5] Compiling Data.Tuple.Curry ( src/Data/Tuple/Curry.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Tuple/Curry.o )
+[5 of 5] Compiling Data.Tuple.All   ( src/Data/Tuple/All.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Tuple/All.o )
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/tuple-0.3.0.2-0P5GlwXwirn97NAX2TWlIC
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/tuple-0.3.0.2-LxXprlXSEKAHzmaGBcjTQ
 Registering tuple-0.3.0.2...

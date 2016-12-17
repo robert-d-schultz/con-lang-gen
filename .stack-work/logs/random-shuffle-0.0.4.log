@@ -1,24 +1,11 @@
 Configuring random-shuffle-0.0.4...
 Building random-shuffle-0.0.4...
 Preprocessing library random-shuffle-0.0.4...
-[1 of 1] Compiling System.Random.Shuffle ( src/System/Random/Shuffle.hs, .stack-work/dist/x86_64-linux/Cabal-1.22.5.0/build/System/Random/Shuffle.o )
+[1 of 1] Compiling System.Random.Shuffle ( src/System/Random/Shuffle.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/System/Random/Shuffle.o )
 
-src/System/Random/Shuffle.hs:59:1: Warning: Tab character
-
-src/System/Random/Shuffle.hs:70:1: Warning: Tab character
-
-src/System/Random/Shuffle.hs:71:1: Warning: Tab character
-
-src/System/Random/Shuffle.hs:74:1: Warning: Tab character
-
-src/System/Random/Shuffle.hs:77:1: Warning: Tab character
-
-src/System/Random/Shuffle.hs:78:1: Warning: Tab character
-
-src/System/Random/Shuffle.hs:79:1: Warning: Tab character
-
-src/System/Random/Shuffle.hs:80:1: Warning: Tab character
-In-place registering random-shuffle-0.0.4...
+src/System/Random/Shuffle.hs:59:1: warning: [-Wtabs]
+    Tab character found here, and in 10 further locations.
+    Please use spaces instead.
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-6.14/7.10.3/lib/x86_64-linux-ghc-7.10.3/random-shuffle-0.0.4-9kOz9tEn1526ShtWz8x59X
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
 Registering random-shuffle-0.0.4...

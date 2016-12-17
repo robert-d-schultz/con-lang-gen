@@ -1,359 +1,160 @@
 Inflection<br>
 Grammatical categories manifest for Nouns in the following ways:
 <ul>
+	<li>With particles:</li>
+		<ul>
+			<li>Definiteness (Unknown, Definite, and Indefinite)</li>
+			<li>Topic (Unknown, Topic, and Not topic)</li>
+			<li>Honorific (Unknown, Informal, Neutral, and Formal)</li>
+		</ul>
 	<li>With prefixes:</li>
 		<ul>
-			<li>Specificity (Unknown, Specific, and Nonspecific)</li>
-			<li>Polarity (Unknown, Affirmative, and Negative)</li>
-			<li>Aspect (Unknown, Perfective, and Imperfective)</li>
+			<li>Case (Unknown, Nominative, Accusative, Secundative, and Oblique)</li>
 		</ul>
 	<li>With suffixes:</li>
 		<ul>
-			<li>Case (Unknown, Nominative, Directive, and Oblique)</li>
-			<li>Number (Unknown, Singular, Dual, Trial, and Plural)</li>
-			<li>Definiteness (Unknown, Definite, and Indefinite)</li>
-			<li>Mood (Unknown, Indicative, Imperative, Jussive, and Potential)</li>
+			<li>Number (Unknown, Singular, and Plural)</li>
+			<li>Voice (Unknown, Active, and Passive)</li>
+			<li>Transitivity (Unknown, Intransitive, and Transitive)</li>
 		</ul></ul>
 <br>
 Grammatical categories manifest for Adjectives in the following ways:
 <ul>
 	<li>With particles:</li>
 		<ul>
-			<li>Number (Unknown, Singular, Dual, Trial, and Plural)</li>
-			<li>Specificity (Unknown, Specific, and Nonspecific)</li>
+			<li>Definiteness (Unknown, Definite, and Indefinite)</li>
 		</ul>
-	<li>With suffixes:</li>
+	<li>With prefixes:</li>
 		<ul>
-			<li>Case (Unknown, Nominative, Directive, and Oblique)</li>
+			<li>Topic (Unknown, Topic, and Not topic)</li>
 		</ul></ul>
 <br>
 Grammatical categories manifest for Adverbs in the following ways:
 <ul>
-	<li>With particles:</li>
-		<ul>
-			<li>Mood (Unknown, Indicative, Imperative, Jussive, and Potential)</li>
-		</ul>
-	<li>With prefixes:</li>
-		<ul>
-			<li>Aspect (Unknown, Perfective, and Imperfective)</li>
-		</ul></ul>
-<br>
-Grammatical categories manifest for Adpositions in the following ways:
-<ul>
 	<li>With suffixes:</li>
 		<ul>
-			<li>Polarity (Unknown, Affirmative, and Negative)</li>
+			<li>Transitivity (Unknown, Intransitive, and Transitive)</li>
 		</ul></ul>
+<br>
+No grammatical categories manifest for Adpositions.
 <br>
 Grammatical categories manifest for Verbs in the following ways:
 <ul>
+	<li>With particles:</li>
+		<ul>
+			<li>Definiteness (Unknown, Definite, and Indefinite)</li>
+			<li>Voice (Unknown, Active, and Passive)</li>
+			<li>Transitivity (Unknown, Intransitive, and Transitive)</li>
+		</ul>
 	<li>With prefixes:</li>
 		<ul>
-			<li>Mood (Unknown, Indicative, Imperative, Jussive, and Potential)</li>
+			<li>Volition (Unknown, Intended, and Unintended)</li>
 		</ul>
 	<li>With suffixes:</li>
 		<ul>
-			<li>Case (Unknown, Nominative, Directive, and Oblique)</li>
-			<li>Specificity (Unknown, Specific, and Nonspecific)</li>
-			<li>Aspect (Unknown, Perfective, and Imperfective)</li>
+			<li>Tense (Unknown, Simple past, Simple present, Simple future, Anterior present, Anterior past, Anterior future, Posterior present, Posterior future, and Posterior past)</li>
 		</ul></ul>
 <br>
-Noun<br>
+Verb<br>
 <table border=1>
 	<tr>
-		<th colspan="10">Prefix</th>
+		<th colspan="12">Particle</th>
 	</tr>
 	<tr>
 		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1">Unknown</th>
+		<th colspan="1">Intransitive</th>
+		<th colspan="1">Transitive</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
 		<th colspan="1"></th>
 	</tr>
 	<tr>
 		<th colspan="9"></th>
 		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
+		<th colspan="1"></th>
 		<th colspan="1"></th>
 	</tr>
 	<tr>
 		<th colspan="9"></th>
 		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
+		<th colspan="1"></th>
 		<th colspan="1"></th>
 	</tr>
 	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="79"></th>
+		<th rowspan="17"></th>
 		<tr>
-			<th rowspan="26">Unknown</th>
+			<th rowspan="16"></th>
 			<tr>
-				<th rowspan="25"></th>
+				<th rowspan="15"></th>
 				<tr>
-					<th rowspan="24"></th>
+					<th rowspan="14"></th>
 					<tr>
-						<th rowspan="23"></th>
+						<th rowspan="13"></th>
 						<tr>
-							<th rowspan="22"></th>
+							<th rowspan="4">Unknown</th>
 							<tr>
-								<th rowspan="7">Unknown</th>
+								<th rowspan="3"></th>
 								<tr>
-									<th rowspan="2">Unknown</th>
+									<th rowspan="2"></th>
 									<tr>
 										<th rowspan="1"></th>
-										<td>ʟɦ̞ǿ–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞ö̂̆–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞–</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="7">Specific</th>
-								<tr>
-									<th rowspan="2">Unknown</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>l–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟɦ̞ʊ̌̆–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞–</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="7">Nonspecific</th>
-								<tr>
-									<th rowspan="2">Unknown</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɶ̽̄–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>l–</td>
+										<td>/kɒ̈ʕ̞̟/</td>
+										<td>/tɑ᷈h̞/</td>
+										<td>/ʌ᷈ɡ.ʈʉ/</td>
 									</tr>
 								</tr>
 							</tr>
 						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-		<tr>
-			<th rowspan="26">Perfective</th>
-			<tr>
-				<th rowspan="25"></th>
-				<tr>
-					<th rowspan="24"></th>
-					<tr>
-						<th rowspan="23"></th>
 						<tr>
-							<th rowspan="22"></th>
+							<th rowspan="4">Definite</th>
 							<tr>
-								<th rowspan="7">Unknown</th>
+								<th rowspan="3"></th>
 								<tr>
-									<th rowspan="2">Unknown</th>
+									<th rowspan="2"></th>
 									<tr>
 										<th rowspan="1"></th>
-										<td>–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>lɤ̌–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟ–</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="7">Specific</th>
-								<tr>
-									<th rowspan="2">Unknown</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>lʌ̌̆–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞ʏ̟̂–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɔ̂̆–</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="7">Nonspecific</th>
-								<tr>
-									<th rowspan="2">Unknown</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞ʊ̄̆–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>è–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟ–</td>
+										<td>/ɔ̂.ʕ̞̟ʉ᷈ʕ̞ʈ/</td>
+										<td>/ʌ̂.h̞ɯʔ/</td>
+										<td>/ʡ̠ⱱ̟oʜ/</td>
 									</tr>
 								</tr>
 							</tr>
 						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-		<tr>
-			<th rowspan="26">Imperfective</th>
-			<tr>
-				<th rowspan="25"></th>
-				<tr>
-					<th rowspan="24"></th>
-					<tr>
-						<th rowspan="23"></th>
 						<tr>
-							<th rowspan="22"></th>
+							<th rowspan="4">Indefinite</th>
 							<tr>
-								<th rowspan="7">Unknown</th>
+								<th rowspan="3"></th>
 								<tr>
-									<th rowspan="2">Unknown</th>
+									<th rowspan="2"></th>
 									<tr>
 										<th rowspan="1"></th>
-										<td>ʟɦ̞–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟɔ̞̄–</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="7">Specific</th>
-								<tr>
-									<th rowspan="2">Unknown</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>l–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟʌ́̆–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>l–</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="7">Nonspecific</th>
-								<tr>
-									<th rowspan="2">Unknown</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟɦ̞–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞–</td>
+										<td>/ʔɘ̂.ERRORɨʕ̞ʟ̆/</td>
+										<td>/ʡ̥ɭ̥a.ʕ̞ɜ̂ɡ/</td>
+										<td>/ɤ̂.rɤ᷈ʕ̞ʡ̠/</td>
 									</tr>
 								</tr>
 							</tr>
@@ -367,173 +168,54 @@ Noun<br>
 <br>
 <table border=1>
 	<tr>
-		<th colspan="29">Suffix</th>
+		<th colspan="12">Particle</th>
 	</tr>
 	<tr>
 		<th colspan="9"></th>
-		<th colspan="5">Unknown</th>
-		<th colspan="5">Nominative</th>
-		<th colspan="5">Directive</th>
-		<th colspan="5">Oblique</th>
+		<th colspan="3"></th>
 	</tr>
 	<tr>
 		<th colspan="9"></th>
-		<th colspan="5"></th>
-		<th colspan="5"></th>
-		<th colspan="5"></th>
-		<th colspan="5"></th>
+		<th colspan="3"></th>
 	</tr>
 	<tr>
 		<th colspan="9"></th>
-		<th colspan="5"></th>
-		<th colspan="5"></th>
-		<th colspan="5"></th>
-		<th colspan="5"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
 	</tr>
 	<tr>
 		<th colspan="9"></th>
 		<th colspan="1">Unknown</th>
-		<th colspan="1">Singular</th>
-		<th colspan="1">Dual</th>
-		<th colspan="1">Trial</th>
-		<th colspan="1">Plural</th>
-		<th colspan="1">Unknown</th>
-		<th colspan="1">Singular</th>
-		<th colspan="1">Dual</th>
-		<th colspan="1">Trial</th>
-		<th colspan="1">Plural</th>
-		<th colspan="1">Unknown</th>
-		<th colspan="1">Singular</th>
-		<th colspan="1">Dual</th>
-		<th colspan="1">Trial</th>
-		<th colspan="1">Plural</th>
-		<th colspan="1">Unknown</th>
-		<th colspan="1">Singular</th>
-		<th colspan="1">Dual</th>
-		<th colspan="1">Trial</th>
-		<th colspan="1">Plural</th>
+		<th colspan="1">Active</th>
+		<th colspan="1">Passive</th>
 	</tr>
 	<tr>
 		<th colspan="9"></th>
 		<th colspan="1"></th>
 		<th colspan="1"></th>
 		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
 	</tr>
 	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="37"></th>
+		<th rowspan="9"></th>
 		<tr>
-			<th rowspan="36"></th>
+			<th rowspan="8"></th>
 			<tr>
-				<th rowspan="7">Unknown</th>
+				<th rowspan="7"></th>
 				<tr>
 					<th rowspan="6"></th>
 					<tr>
@@ -546,26 +228,9 @@ Noun<br>
 									<th rowspan="2"></th>
 									<tr>
 										<th rowspan="1"></th>
-										<td>–lʉ́̆</td>
-										<td>–</td>
-										<td>–ʟ</td>
-										<td>–</td>
-										<td>–ø̌̆</td>
-										<td>–l</td>
-										<td>–lɒ̽̀̆</td>
-										<td>–l</td>
-										<td>–ɦ̞</td>
-										<td>–lɤ̈̂̆</td>
-										<td>–ɦ̞</td>
-										<td>–ɦ̞ɛ̈́̆</td>
-										<td>–ɦ̞</td>
-										<td>–ɦ̞œ̞́̆</td>
-										<td>–ɯ̀̆</td>
-										<td>–ʟɨ̀</td>
-										<td>–ʟɯ̽́</td>
-										<td>–ø̈̌̆</td>
-										<td>–ʟɦ̞ɘ̀̆</td>
-										<td>–lɨ̄̆</td>
+										<td>/ɭ̥oʕ̞̟.ɡɛ/</td>
+										<td>/ʈek/</td>
+										<td>/ä᷈l/</td>
 									</tr>
 								</tr>
 							</tr>
@@ -573,8 +238,58 @@ Noun<br>
 					</tr>
 				</tr>
 			</tr>
+		</tr>
+	</tr>
+</table>
+<br>
+<table border=1>
+	<tr>
+		<th colspan="12">Prefix</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1">Unknown</th>
+		<th colspan="1">Intended</th>
+		<th colspan="1">Unintended</th>
+	</tr>
+	<tr>
+		<th rowspan="9"></th>
+		<tr>
+			<th rowspan="8"></th>
 			<tr>
-				<th rowspan="7">Indicative</th>
+				<th rowspan="7"></th>
 				<tr>
 					<th rowspan="6"></th>
 					<tr>
@@ -587,149 +302,9 @@ Noun<br>
 									<th rowspan="2"></th>
 									<tr>
 										<th rowspan="1"></th>
-										<td>–ɦ̞</td>
-										<td>–ɦ̞á</td>
-										<td>–l</td>
-										<td>–ɦ̞ɛ̈́̆</td>
-										<td>–ʟ</td>
-										<td>–lë̌̆</td>
-										<td>–lɨ̂̆</td>
-										<td>–ʟ</td>
-										<td>–lɑ̽́</td>
-										<td>–ɦ̞ɛ̈̀̆</td>
-										<td>–lɦ̞</td>
-										<td>–ɒ̽̀̆</td>
-										<td>–ɦ̞</td>
-										<td>–ɛ̈̌</td>
-										<td>–ɦ̞ë́</td>
-										<td>–</td>
-										<td>–ɐ̄</td>
-										<td>–ɦ̞</td>
-										<td>–ɦ̞ɒ̀̆</td>
-										<td>–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Imperative</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–</td>
-										<td>–l</td>
-										<td>–ɦ̞</td>
-										<td>–lɦ̞ɯ́</td>
-										<td>–</td>
-										<td>–ʟɦ̞ɤ̈́̆</td>
-										<td>–</td>
-										<td>–ɦ̞</td>
-										<td>–ɦ̞</td>
-										<td>–ɦ̞ɪ́̆</td>
-										<td>–ʟɑ̽̂</td>
-										<td>–</td>
-										<td>–lʊ̝́</td>
-										<td>–ɦ̞</td>
-										<td>–lɤ̈́</td>
-										<td>–ɦ̞a̽̄̆</td>
-										<td>–l</td>
-										<td>–ʟɪ̝̄̆</td>
-										<td>–</td>
-										<td>–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Jussive</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–</td>
-										<td>–ʟ</td>
-										<td>–</td>
-										<td>–ɦ̞</td>
-										<td>–ɒ̟̂</td>
-										<td>–ʟɦ̞ɪ̟̀</td>
-										<td>–ʟǣ̆</td>
-										<td>–ɪ̈̂̆</td>
-										<td>–ɦ̞ɜ̀̆</td>
-										<td>–lɦ̞</td>
-										<td>–ɦ̞</td>
-										<td>–ʟʊ̠̄̆</td>
-										<td>–ɦ̞</td>
-										<td>–lɦ̞ɔ̞̂</td>
-										<td>–ʟ</td>
-										<td>–ɦ̞</td>
-										<td>–ɦ̞</td>
-										<td>–l</td>
-										<td>–ʟ</td>
-										<td>–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Potential</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–ʟ</td>
-										<td>–ʟɑ̽̀</td>
-										<td>–ɦ̞</td>
-										<td>–ɦ̞ɜ̂̆</td>
-										<td>–ʟ</td>
-										<td>–ʟɦ̞</td>
-										<td>–ɑ̟̂</td>
-										<td>–ɦ̞ɘ̂̆</td>
-										<td>–ʟʌ̈̌̆</td>
-										<td>–ɦ̞</td>
-										<td>–ɦ̞</td>
-										<td>–ʟë̌</td>
-										<td>–ʟɦ̞ʊ̈̂̆</td>
-										<td>–ɦ̞ǎ̠</td>
-										<td>–ʟɶ̽̂̆</td>
-										<td>–l</td>
-										<td>–</td>
-										<td>–lɦ̞</td>
-										<td>–ʟ</td>
-										<td>–ɦ̞</td>
+										<td>/ɦ̞̩/–</td>
+										<td>/r̥â/–</td>
+										<td>/ɡɽɞ᷈/–</td>
 									</tr>
 								</tr>
 							</tr>
@@ -744,6 +319,923 @@ Noun<br>
 <table border=1>
 	<tr>
 		<th colspan="10">Suffix</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th rowspan="9">Unknown</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ɡɒ/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="9">Simple past</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ʡ̥ʟ̥ɔ᷈/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="9">Simple present</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ʔbɵ̂/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="9">Simple future</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/k̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="9">Anterior present</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/kʕ̞̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="9">Anterior past</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/l̥̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="9">Anterior future</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ħ̞̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="9">Posterior present</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ʡ̥̠̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="9">Posterior future</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ʈɡ̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+	<tr>
+		<th rowspan="9">Posterior past</th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ʔ̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+</table>
+<br>
+Noun<br>
+<table border=1>
+	<tr>
+		<th colspan="13">Particle</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="4"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="4"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="4"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="4"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1">Unknown</th>
+		<th colspan="1">Informal</th>
+		<th colspan="1">Neutral</th>
+		<th colspan="1">Formal</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th rowspan="23"></th>
+		<tr>
+			<th rowspan="22"></th>
+			<tr>
+				<th rowspan="21"></th>
+				<tr>
+					<th rowspan="20"></th>
+					<tr>
+						<th rowspan="19"></th>
+						<tr>
+							<th rowspan="6">Unknown</th>
+							<tr>
+								<th rowspan="5"></th>
+								<tr>
+									<th rowspan="4"></th>
+									<tr>
+										<th rowspan="1">Unknown</th>
+										<td>/h̞ɑʔ/</td>
+										<td>/ŷ/</td>
+										<td>/dʟ̆îħ̞ʡ̮̠/</td>
+										<td>/ʡ̠ɒ̈̂.ɦ̞ʌ̂/</td>
+									</tr>
+									<tr>
+										<th rowspan="1">Topic</th>
+										<td>/œʕ̞̟.ɖɨ᷈h̞ɺ̢/</td>
+										<td>/ʢʕ̞ä᷈/</td>
+										<td>/ʡ̠ɸ̝ɯ̂.h̞ʉ/</td>
+										<td>/ʡ̠e᷈ɦ̞/</td>
+									</tr>
+									<tr>
+										<th rowspan="1">Not topic</th>
+										<td>/ɘʜ.ʡ̠ä̂ɺ̢̊ʔ/</td>
+										<td>/ɡu᷈ħ̞.ʢ̠yɹ̊/</td>
+										<td>/pœ᷈.ʡ̠ʡ̠oħ̞̟/</td>
+										<td>/ERRORɜ̂ʕ̞̟.tɘ᷈ʡ̠/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+						<tr>
+							<th rowspan="6">Definite</th>
+							<tr>
+								<th rowspan="5"></th>
+								<tr>
+									<th rowspan="4"></th>
+									<tr>
+										<th rowspan="1">Unknown</th>
+										<td>/ʡ̥̠ʡ̮̠ɔ/</td>
+										<td>/ø̂ħ̞.dœ᷈/</td>
+										<td>/ɖʌ᷈ʕ̞.ʟ̆ɘʡ̥/</td>
+										<td>/ʈʡɑħ̞̟ɡ/</td>
+									</tr>
+									<tr>
+										<th rowspan="1">Topic</th>
+										<td>/ɶ᷈.ʡ̮̠ɤ᷈/</td>
+										<td>/e᷈ɖ/</td>
+										<td>/ɤ̂ɡʈ/</td>
+										<td>/i᷈ħ̞̟.tɒ̈̂r̥/</td>
+									</tr>
+									<tr>
+										<th rowspan="1">Not topic</th>
+										<td>/ɘ̂ħ̞̟.bɵ̂ħ̞/</td>
+										<td>/ʡ̥ɒ̂.ħ̞o/</td>
+										<td>/ʡ̠ɔ᷈/</td>
+										<td>/tɡô.ʡø̂ʟ̆t/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+						<tr>
+							<th rowspan="6">Indefinite</th>
+							<tr>
+								<th rowspan="5"></th>
+								<tr>
+									<th rowspan="4"></th>
+									<tr>
+										<th rowspan="1">Unknown</th>
+										<td>/ʡ̥ʕ̞ʉ᷈/</td>
+										<td>/uħ̞̟.ɡy/</td>
+										<td>/y/</td>
+										<td>/tʕ̞̟ɔ̂.ɽ͡rɞ̂ħ̞̟/</td>
+									</tr>
+									<tr>
+										<th rowspan="1">Topic</th>
+										<td>/ɞ᷈ʕ̞̟/</td>
+										<td>/ʔʟ̆ɘɦ̞/</td>
+										<td>/ɘ.ʕ̞ɶʕ̞/</td>
+										<td>/ʔʡɛ̂ʈ/</td>
+									</tr>
+									<tr>
+										<th rowspan="1">Not topic</th>
+										<td>/ʡ̥ɒɻ̊.ʡ̥̠ɒħ̞̟ɡ/</td>
+										<td>/ʕ̞ä̂ʕ̞̟t/</td>
+										<td>/ʡ̥ɵ.ʡ̠ɛ/</td>
+										<td>/ky.ɺ̥ɯr̥/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+</table>
+<br>
+<table border=1>
+	<tr>
+		<th colspan="14">Prefix</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1">Unknown</th>
+		<th colspan="1">Nominative</th>
+		<th colspan="1">Accusative</th>
+		<th colspan="1">Secundative</th>
+		<th colspan="1">Oblique</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th rowspan="9"></th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>/tɖ̩/–</td>
+										<td>/β̞ɒ/–</td>
+										<td>/h̞̩/–</td>
+										<td>/ʔʡ̮̩/–</td>
+										<td>/ɡERROR̩/–</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+</table>
+<br>
+<table border=1>
+	<tr>
+		<th colspan="12">Suffix</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1">Unknown</th>
+		<th colspan="1">Singular</th>
+		<th colspan="1">Plural</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th rowspan="9"></th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/pɘ̂/</td>
+										<td>–/d̩/</td>
+										<td>–/ʔ̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+</table>
+<br>
+<table border=1>
+	<tr>
+		<th colspan="12">Suffix</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1">Unknown</th>
+		<th colspan="1">Active</th>
+		<th colspan="1">Passive</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th rowspan="9"></th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ʡ̥̩/</td>
+										<td>–/ʡ̥̩/</td>
+										<td>–/ʡ̥ʕ̞̟̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+</table>
+<br>
+<table border=1>
+	<tr>
+		<th colspan="12">Suffix</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1">Unknown</th>
+		<th colspan="1">Intransitive</th>
+		<th colspan="1">Transitive</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th rowspan="9"></th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ʕ̞̟̩/</td>
+										<td>–/ʡ̥dɞ̂/</td>
+										<td>–/dħ̞̟̩/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+</table>
+<br>
+Adverb<br>
+<table border=1>
+	<tr>
+		<th colspan="12">Suffix</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="3"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1">Unknown</th>
+		<th colspan="1">Intransitive</th>
+		<th colspan="1">Transitive</th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th colspan="9"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+		<th colspan="1"></th>
+	</tr>
+	<tr>
+		<th rowspan="9"></th>
+		<tr>
+			<th rowspan="8"></th>
+			<tr>
+				<th rowspan="7"></th>
+				<tr>
+					<th rowspan="6"></th>
+					<tr>
+						<th rowspan="5"></th>
+						<tr>
+							<th rowspan="4"></th>
+							<tr>
+								<th rowspan="3"></th>
+								<tr>
+									<th rowspan="2"></th>
+									<tr>
+										<th rowspan="1"></th>
+										<td>–/ʈa/</td>
+										<td>–/ʕ̞̟̩/</td>
+										<td>–/ɖɨ/</td>
+									</tr>
+								</tr>
+							</tr>
+						</tr>
+					</tr>
+				</tr>
+			</tr>
+		</tr>
+	</tr>
+</table>
+<br>
+Adjective<br>
+<table border=1>
+	<tr>
+		<th colspan="10">Particle</th>
 	</tr>
 	<tr>
 		<th colspan="9"></th>
@@ -799,7 +1291,7 @@ Noun<br>
 									<th rowspan="2"></th>
 									<tr>
 										<th rowspan="1"></th>
-										<td>–ʟë́̆</td>
+										<td>/ɤ̂.krɯ̂/</td>
 									</tr>
 								</tr>
 							</tr>
@@ -812,7 +1304,7 @@ Noun<br>
 									<th rowspan="2"></th>
 									<tr>
 										<th rowspan="1"></th>
-										<td>–ʟʏ̟̄</td>
+										<td>/ʉ᷈ɖ/</td>
 									</tr>
 								</tr>
 							</tr>
@@ -825,166 +1317,7 @@ Noun<br>
 									<th rowspan="2"></th>
 									<tr>
 										<th rowspan="1"></th>
-										<td>–ɦ̞</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-	</tr>
-</table>
-<br>
-Adverb<br>
-<table border=1>
-	<tr>
-		<th colspan="10">Particle</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="37"></th>
-		<tr>
-			<th rowspan="36"></th>
-			<tr>
-				<th rowspan="7">Unknown</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>lè̆</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Indicative</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞ö̀ʟœ̈́̆</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Imperative</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>lë̀ɦ̞l</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Jussive</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟǟɦ̞ú̆ɦ̞</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Potential</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>lɛ̂̆ā</td>
+										<td>/ʡ̥̠œ.ɦ̞ʕ̞̟ɒ/</td>
 									</tr>
 								</tr>
 							</tr>
@@ -1037,853 +1370,32 @@ Adverb<br>
 		<th colspan="1"></th>
 	</tr>
 	<tr>
-		<th rowspan="25"></th>
+		<th rowspan="11"></th>
 		<tr>
-			<th rowspan="8">Unknown</th>
+			<th rowspan="10"></th>
 			<tr>
-				<th rowspan="7"></th>
+				<th rowspan="9"></th>
 				<tr>
-					<th rowspan="6"></th>
+					<th rowspan="8"></th>
 					<tr>
-						<th rowspan="5"></th>
+						<th rowspan="7"></th>
 						<tr>
-							<th rowspan="4"></th>
+							<th rowspan="6"></th>
 							<tr>
-								<th rowspan="3"></th>
+								<th rowspan="5"></th>
 								<tr>
-									<th rowspan="2"></th>
+									<th rowspan="4"></th>
 									<tr>
-										<th rowspan="1"></th>
-										<td>l–</td>
+										<th rowspan="1">Unknown</th>
+										<td>/ħ̞ɔ᷈/–</td>
 									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-		<tr>
-			<th rowspan="8">Perfective</th>
-			<tr>
-				<th rowspan="7"></th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
 									<tr>
-										<th rowspan="1"></th>
-										<td>ë̀̆–</td>
+										<th rowspan="1">Topic</th>
+										<td>/ɽ͡r̩/–</td>
 									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-		<tr>
-			<th rowspan="8">Imperfective</th>
-			<tr>
-				<th rowspan="7"></th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
 									<tr>
-										<th rowspan="1"></th>
-										<td>l–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-	</tr>
-</table>
-<br>
-Verb<br>
-<table border=1>
-	<tr>
-		<th colspan="10">Prefix</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="37"></th>
-		<tr>
-			<th rowspan="36"></th>
-			<tr>
-				<th rowspan="7">Unknown</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>l–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Indicative</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟɛ̈́̆–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Imperative</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟɯ̞̂–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Jussive</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>l–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-			<tr>
-				<th rowspan="7">Potential</th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-	</tr>
-</table>
-<br>
-<table border=1>
-	<tr>
-		<th colspan="13">Suffix</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1">Unknown</th>
-		<th colspan="1">Nominative</th>
-		<th colspan="1">Directive</th>
-		<th colspan="1">Oblique</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="15"></th>
-		<tr>
-			<th rowspan="14"></th>
-			<tr>
-				<th rowspan="13"></th>
-				<tr>
-					<th rowspan="12"></th>
-					<tr>
-						<th rowspan="11"></th>
-						<tr>
-							<th rowspan="10"></th>
-							<tr>
-								<th rowspan="3">Unknown</th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–ɔ̞̂̆</td>
-										<td>–ʟʌ̌̆</td>
-										<td>–ʟʊ̠́</td>
-										<td>–lɦ̞ɯ̞̌</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="3">Specific</th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–</td>
-										<td>–ɦ̞</td>
-										<td>–l</td>
-										<td>–ʟ</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="3">Nonspecific</th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–ʟɛ̂̆</td>
-										<td>–l</td>
-										<td>–</td>
-										<td>–ɦ̞</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-	</tr>
-</table>
-<br>
-<table border=1>
-	<tr>
-		<th colspan="10">Suffix</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="25"></th>
-		<tr>
-			<th rowspan="8">Unknown</th>
-			<tr>
-				<th rowspan="7"></th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-		<tr>
-			<th rowspan="8">Perfective</th>
-			<tr>
-				<th rowspan="7"></th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–lɯ̂</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-		<tr>
-			<th rowspan="8">Imperfective</th>
-			<tr>
-				<th rowspan="7"></th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–ʟä́</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-	</tr>
-</table>
-<br>
-Adposition<br>
-<table border=1>
-	<tr>
-		<th colspan="10">Suffix</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="13"></th>
-		<tr>
-			<th rowspan="12"></th>
-			<tr>
-				<th rowspan="11"></th>
-				<tr>
-					<th rowspan="10"></th>
-					<tr>
-						<th rowspan="9"></th>
-						<tr>
-							<th rowspan="8"></th>
-							<tr>
-								<th rowspan="7"></th>
-								<tr>
-									<th rowspan="2">Unknown</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–ɦ̞ʊ̌̆</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Affirmative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–lɦ̞œ̈̄</td>
-									</tr>
-								</tr>
-								<tr>
-									<th rowspan="2">Negative</th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–lɞ̞̄</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-	</tr>
-</table>
-<br>
-Adjective<br>
-<table border=1>
-	<tr>
-		<th colspan="14">Particle</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="5"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="5"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="5"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1">Unknown</th>
-		<th colspan="1">Singular</th>
-		<th colspan="1">Dual</th>
-		<th colspan="1">Trial</th>
-		<th colspan="1">Plural</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="9"></th>
-		<tr>
-			<th rowspan="8"></th>
-			<tr>
-				<th rowspan="7"></th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʟɯ̽̂ʟǐ</td>
-										<td>ö̀̆ɦ̞ʟ</td>
-										<td>lɦ̞ɯ̂̆ɦ̞ɒ̟́̆l</td>
-										<td>ɑ̽̂̆ɦ̞ɒ̀̆ɦ̞</td>
-										<td>ɦ̞ʊ̠̂̆</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-	</tr>
-</table>
-<br>
-<table border=1>
-	<tr>
-		<th colspan="10">Particle</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="15"></th>
-		<tr>
-			<th rowspan="14"></th>
-			<tr>
-				<th rowspan="13"></th>
-				<tr>
-					<th rowspan="12"></th>
-					<tr>
-						<th rowspan="11"></th>
-						<tr>
-							<th rowspan="10"></th>
-							<tr>
-								<th rowspan="3">Unknown</th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ɦ̞ɛ̈́̆ɦ̞lʊ̝̀̆ɦ̞</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="3">Specific</th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>ʊ̈̄ɦ̞ø̈̌ʟ</td>
-									</tr>
-								</tr>
-							</tr>
-							<tr>
-								<th rowspan="3">Nonspecific</th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>lɒ̽̄ɦ̞</td>
-									</tr>
-								</tr>
-							</tr>
-						</tr>
-					</tr>
-				</tr>
-			</tr>
-		</tr>
-	</tr>
-</table>
-<br>
-<table border=1>
-	<tr>
-		<th colspan="13">Suffix</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1">Unknown</th>
-		<th colspan="1">Nominative</th>
-		<th colspan="1">Directive</th>
-		<th colspan="1">Oblique</th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th colspan="9"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-		<th colspan="1"></th>
-	</tr>
-	<tr>
-		<th rowspan="9"></th>
-		<tr>
-			<th rowspan="8"></th>
-			<tr>
-				<th rowspan="7"></th>
-				<tr>
-					<th rowspan="6"></th>
-					<tr>
-						<th rowspan="5"></th>
-						<tr>
-							<th rowspan="4"></th>
-							<tr>
-								<th rowspan="3"></th>
-								<tr>
-									<th rowspan="2"></th>
-									<tr>
-										<th rowspan="1"></th>
-										<td>–ɦ̞ɪ̈́</td>
-										<td>–ø̈́̆</td>
-										<td>–ʟɶ̠́</td>
-										<td>–ɤ̀̆</td>
+										<th rowspan="1">Not topic</th>
+										<td>/ɺħ̞̟̩/–</td>
 									</tr>
 								</tr>
 							</tr>

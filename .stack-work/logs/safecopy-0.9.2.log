@@ -1,0 +1,41 @@
+Configuring safecopy-0.9.2...
+Building safecopy-0.9.2...
+Preprocessing library safecopy-0.9.2...
+[1 of 5] Compiling Data.SafeCopy.SafeCopy ( src/Data/SafeCopy/SafeCopy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/SafeCopy/SafeCopy.o )
+
+src/Data/SafeCopy/SafeCopy.hs:230:1: warning: [-Wredundant-constraints]
+    • Redundant constraint: SafeCopy a
+    • In the type signature for:
+           extension :: (SafeCopy a, Migrate a) => Kind a
+
+src/Data/SafeCopy/SafeCopy.hs:382:1: warning: [-Wredundant-constraints]
+    • Redundant constraint: SafeCopy a
+    • In the type signature for:
+           versionFromReverseKind :: (SafeCopy a,
+                                      SafeCopy (MigrateFrom (Reverse a))) =>
+                                     Kind a -> Version (MigrateFrom (Reverse a))
+[2 of 5] Compiling Data.SafeCopy.Derive ( src/Data/SafeCopy/Derive.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/SafeCopy/Derive.o )
+[3 of 5] Compiling Data.SafeCopy.Internal ( src/Data/SafeCopy/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/SafeCopy/Internal.o )
+[4 of 5] Compiling Data.SafeCopy.Instances ( src/Data/SafeCopy/Instances.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/SafeCopy/Instances.o )
+
+src/Data/SafeCopy/Instances.hs:81:10: warning: [-Wredundant-constraints]
+    • Redundant constraint: Ord a
+    • In the instance declaration for ‘SafeCopy (Set.Set a)’
+
+src/Data/SafeCopy/Instances.hs:86:10: warning: [-Wredundant-constraints]
+    • Redundant constraint: Ord a
+    • In the instance declaration for ‘SafeCopy (Map.Map a b)’
+
+src/Data/SafeCopy/Instances.hs:428:15: warning: [-Wdeprecations]
+    In the use of type constructor or class ‘Typeable1’
+    (imported from Data.Typeable, but defined in Data.Typeable.Internal):
+    Deprecated: "renamed to 'Typeable'"
+
+src/Data/SafeCopy/Instances.hs:431:15: warning: [-Wdeprecations]
+    In the use of type constructor or class ‘Typeable2’
+    (imported from Data.Typeable, but defined in Data.Typeable.Internal):
+    Deprecated: "renamed to 'Typeable'"
+[5 of 5] Compiling Data.SafeCopy    ( src/Data/SafeCopy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/SafeCopy.o )
+Installing library in
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/safecopy-0.9.2-HXa80pqemsb4stzngyEdH9
+Registering safecopy-0.9.2...

@@ -1,0 +1,380 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-09 19:39:42.286754 UTC
+
+interface con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:MorphologyGen 8001
+  interface hash: 4ac012af540ea275625c0175bc491158
+  ABI hash: 64676c5dfc9fec960e62b3a768413a3a
+  export-list hash: 980783f52164c7a7a41ddbc7d00febd8
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: b159a15c55fa7c6870cb2eb79bbae5a5
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  MorphologyGen.cleanGrammarSys
+  MorphologyGen.makeLexicalInflection
+module dependencies: GrammarData InflectionData InflectionGen
+                     OtherData PhonemeData PhonemeGen PhonotacticsGen WordGen
+package dependencies: MonadPrompt-1.0.0.5@MonadPrompt-1.0.0.5-DSJ4febv4ITH7w1gOjdDZE
+                      MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      erf-2.0.0.0@erf-2.0.0.0-9HTdBV7htNjASgIJAT55AC
+                      flexible-defaults-0.0.1.2@flexible-defaults-0.0.1.2-1H2pkAjuTF1KghZBVsL2zl
+                      ghc-boot-th-8.0.1@ghc-boot-th-8.0.1 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh
+                      mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs
+                      monad-loops-0.4.3@monad-loops-0.4.3-1xZFtRVMQPC4X8bjTBWqNi
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb
+                      old-locale-1.0.0.7@old-locale-1.0.0.7-6glXNhHF891B41ZfuI8hU8
+                      old-time-1.1.0.3@old-time-1.1.0.3-IcvdkJUsE9M8t3io8peAEp
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd
+                      random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx
+                      random-shuffle-0.0.4@random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
+                      random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8
+                      rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF
+                      stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq
+                      stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
+                      syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj template-haskell-2.11.0.0
+                      th-extras-0.0.0.4@th-extras-0.0.0.4-65k7Dg54W2KxpzDoCAUbA
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
+orphans: MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov:Control.Monad.Random
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:InflectionData
+         mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.IO
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.MWC
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.PureMT
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.StdGen
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
+         syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj:Data.Generics.Instances
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.1@ghc-boot-th-8.0.1:GHC.LanguageExtensions.Type
+                         math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh:Numeric.RootFinding
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb:System.Random.MWC
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed.Base
+import  -/  base-4.9.0.0:Control.Monad 7767aebfd53f0b584cef2fe66ad3986c
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:Data.Functor 6fc476505db88d678632a4a838125f13
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  GrammarData b3f1b629a10fd7ab7130c02c0a41c76e
+  exports: 548dc15ef6450fdf930313fe49b6bb09
+import  -/  InflectionData 8acf7dbedb4c8763319b881883494d75
+  exports: ab2a6241f04be9eb006c9d0f78ca26d5
+  Animacy 4e33e0bcf50cecb3bec919a410a917b8
+  Aspect cc1d01770048a1b059770fc511c26180
+  Case c7ab55970bdd5f1f3c2a1893488ee946
+  Definiteness 13bfeba0cb3001719a9764357d888c67
+  Evidentiality d496e50507466d81d95f22dd4857ca16
+  Express 5a53784fb2e8996dcb53a9511f7de364
+  Express 63d70c4f2d77c644511c6d588663f39e
+  Gender 64c563e614d6b39e628a87a4b86c4bcb
+  Honorific 87a0680d1783cb156a72782bde86c25f
+  InflectionSystem 6316452e39bc49500385d38be925e2a3
+  LexCat 3578a365ab634279655cb91c03a19c28
+  Manifest 74dafe13f2c52bb824dc5f3ab0397c73
+  Manifest a1f6ea453f44aabd626528c4893e70e2
+  ManifestSystem 7a7a8b0f52dcdada4666087c0c4946b5
+  ManifestSystem e5b6dc9a3e9edcf983171cd7d8ba6306
+  ManifestType 677e71acbe1d0c53534632b1806c94f3
+  Mood a933e005d0b61de32dcb62fc71171e9c
+  NoExpress a32363343bbec49f09041c15dfe146a2
+  NoManifest 6b208fff72e7dcb3257c55ab4c049e21
+  Number 819df3b7803a0b6e1c638b12031d1054
+  Particle e93d6bfd9c766c236483efd808d258b4
+  Person 9a6bbd54f38dfeb1bf3b7d7991f3da1c
+  Polarity 969cd5a99a727ddd44430477f29dd629
+  Prefix 0d59830aee534fec8b219ebfc0d54be5
+  Specificity 6fb3d15dec5a1fd023a4704d57cac2a0
+  Suffix 56627ef128b24af5829ceef67f47e345
+  Tense a794f63e2da02424ad65302f61d49d0d
+  Topic d8981f1670fc020ebc5d708b5dd733da
+  Transitivity fbfbb10e2c2bf7855f3005c5f582ce67
+  Voice 8a5a669af2386e102c8f50cb27f7b624
+  Volition 3559279b2cc9168c42f1489c451a8e43
+  aniSys 54c757caf6df5b43beb9e25534aa884f
+  aspSys e08ee438eb6f59d49c711f68f337cb0c
+  casSys b828d3ab5869f967e6490a44bae850c9
+  defSys 3397aeb82ba18976429cbf728c947a30
+  eviSys 168f523a3a01bcf7fb22900702cb7e4c
+  genSys 318c9a0732a9580752bd7127aaf8a5f0
+  honSys 5cd9def220db579e733772134b63d6fd
+  mooSys 157616105aa19e6649633c8313d7d6ec
+  numSys e83f2fe42687da5422aaf3b493ee8c77
+  perSys 105c1deb153093d2254afa2aba450908
+  polSys 994e2324a22103a3911bc52e4e6ac359
+  speSys f87a1009a1838c9ef1244a98d601bbbc
+  tenSys 1b6a144580cda0a43c6c3181bc4fab82
+  topSys 676fb55f6d328d3554e6b91f98da59d9
+  traSys 5bc89fcfed80c0ce0223c818627d29e1
+  voiSys f704f82fd9f3ca5a605cd25e89e3dd01
+  volSys 8cca46643aaa93795b2eea40e62718f1
+import  -/  InflectionGen a99cd8d77d4803dc45f6301ef9088bbe
+  exports: ad7a9bd73393960e8bed80fb53c71f3f
+import  -/  PhonemeData c5c8f3da2226ff98b75ea8cff0a9f4e3
+  exports: c443d5b5be953d18447401b2674c832d
+  Phoneme a99d82394cccf94f6dc3580d7da31e00
+import  -/  WordGen 21b9eba7c67336812e35d9534369097d
+  exports: fac4322126fda6684395add50fd212dd
+  makeMorpheme 7f78e57e6963830239919803e40a6c0c
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd:Data.Random.Extras 29c24169732e6d9b861a3e34bb12d853
+import  -/  random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx:Data.Random 8883d063189e353ce779cba72d37ba19
+import  -/  rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF:Data.RVar af4b152c68035decd69925a9162e78b3
+fc42c6f7e5d1a65448a28327b769e180
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   MorphologyGen.$trModule2
+                   MorphologyGen.$trModule1) -}
+edeba6dd2c4c02de009945dc6528bd62
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "MorphologyGen"#) -}
+1777a2c65e9a34c1460f97704d8fffab
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"#) -}
+d4b6ed5feaaace05c91db56f6ba51006
+  $wmakeLexicalInflection ::
+    [PhonemeData.Phoneme]
+    -> [[PhonemeData.Phoneme]]
+    -> InflectionData.InflectionSystem
+    -> InflectionData.LexCat
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> Data.RVar.RVar
+         (InflectionData.LexCat, [InflectionData.ManifestSystem],
+          [InflectionData.ManifestSystem], [InflectionData.ManifestSystem])
+  {- Arity: 7,
+     Strictness: <L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><L,U><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (w :: [PhonemeData.Phoneme])
+                   (w1 :: [[PhonemeData.Phoneme]])
+                   (w2 :: InflectionData.InflectionSystem)
+                   (ww :: InflectionData.LexCat)
+                   (ww1 :: GHC.Types.Int)
+                   (ww2 :: GHC.Types.Int)
+                   (ww3 :: GHC.Types.Int) ->
+                 let {
+                   m1 :: Data.RVar.RVarT
+                           Data.Functor.Identity.Identity [InflectionData.ManifestSystem]
+                   = case ww1 of ww4 { GHC.Types.I# ww5 ->
+                     MorphologyGen.$wmakeParticleSystems ww ww5 w w1 w2 }
+                 } in
+                 let {
+                   m2 :: Data.RVar.RVarT
+                           Data.Functor.Identity.Identity [InflectionData.ManifestSystem]
+                   = case ww2 of ww4 { GHC.Types.I# ww5 ->
+                     MorphologyGen.$wmakePrefixSystems ww ww5 w w1 w2 }
+                 } in
+                 let {
+                   m4 :: Data.RVar.RVarT
+                           Data.Functor.Identity.Identity [InflectionData.ManifestSystem]
+                   = case ww3 of ww4 { GHC.Types.I# ww5 ->
+                     MorphologyGen.$wmakeSuffixSystems ww ww5 w w1 w2 }
+                 } in
+                 (\ @ b1
+                    (eta :: (InflectionData.LexCat, [InflectionData.ManifestSystem],
+                             [InflectionData.ManifestSystem], [InflectionData.ManifestSystem])
+                            -> b1)
+                    (eta1 :: forall a1.
+                             Control.Monad.Prompt.Lift
+                               Data.Random.Source.Internal.Prim.Prim
+                               Data.Functor.Identity.Identity
+                               a1
+                             -> (a1 -> b1) -> b1) ->
+                  m1
+                    `cast`
+                  (Trans
+                       (Trans
+                            (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                            (Control.Monad.Prompt.N:PromptT[0]
+                                 <Data.Random.Source.Internal.Prim.Prim>_R
+                                 <Data.Functor.Identity.Identity>_R) <[InflectionData.ManifestSystem]>_N)
+                       (Control.Monad.Prompt.N:Prompt[0]
+                            <Control.Monad.Prompt.Lift
+                               Data.Random.Source.Internal.Prim.Prim
+                               Data.Functor.Identity.Identity>_R
+                            <[InflectionData.ManifestSystem]>_R))
+                    @ b1
+                    (\ (x :: [InflectionData.ManifestSystem]) ->
+                     case x of x1 { DEFAULT ->
+                     m2
+                       `cast`
+                     (Trans
+                          (Trans
+                               (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                               (Control.Monad.Prompt.N:PromptT[0]
+                                    <Data.Random.Source.Internal.Prim.Prim>_R
+                                    <Data.Functor.Identity.Identity>_R) <[InflectionData.ManifestSystem]>_N)
+                          (Control.Monad.Prompt.N:Prompt[0]
+                               <Control.Monad.Prompt.Lift
+                                  Data.Random.Source.Internal.Prim.Prim
+                                  Data.Functor.Identity.Identity>_R
+                               <[InflectionData.ManifestSystem]>_R))
+                       @ b1
+                       (\ (x2 :: [InflectionData.ManifestSystem]) ->
+                        case x2 of x3 { DEFAULT ->
+                        m4
+                          `cast`
+                        (Trans
+                             (Trans
+                                  (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                  (Control.Monad.Prompt.N:PromptT[0]
+                                       <Data.Random.Source.Internal.Prim.Prim>_R
+                                       <Data.Functor.Identity.Identity>_R) <[InflectionData.ManifestSystem]>_N)
+                             (Control.Monad.Prompt.N:Prompt[0]
+                                  <Control.Monad.Prompt.Lift
+                                     Data.Random.Source.Internal.Prim.Prim
+                                     Data.Functor.Identity.Identity>_R
+                                  <[InflectionData.ManifestSystem]>_R))
+                          @ b1
+                          (\ (x4 :: [InflectionData.ManifestSystem]) ->
+                           case x4 of x5 { DEFAULT -> eta (ww, x1, x3, x5) })
+                          eta1 })
+                       eta1 })
+                    eta1)
+                   `cast`
+                 (Trans
+                      (Sym (Control.Monad.Prompt.N:Prompt[0]
+                                <Control.Monad.Prompt.Lift
+                                   Data.Random.Source.Internal.Prim.Prim
+                                   Data.Functor.Identity.Identity>_R
+                                <(InflectionData.LexCat, [InflectionData.ManifestSystem],
+                                  [InflectionData.ManifestSystem],
+                                  [InflectionData.ManifestSystem])>_R))
+                      (Trans
+                           (Sym (Control.Monad.Prompt.N:PromptT[0]
+                                     <Data.Random.Source.Internal.Prim.Prim>_R
+                                     <Data.Functor.Identity.Identity>_R))
+                           (Sym (Data.RVar.N:RVarT[0]) <Data.Functor.Identity.Identity>_N) <(InflectionData.LexCat,
+                                                                                             [InflectionData.ManifestSystem],
+                                                                                             [InflectionData.ManifestSystem],
+                                                                                             [InflectionData.ManifestSystem])>_N))) -}
+58be9fbbdcc5bcddaef39889df6a2fa8
+  $wmakeParticleSystems ::
+    InflectionData.LexCat
+    -> GHC.Prim.Int#
+    -> [PhonemeData.Phoneme]
+    -> [[PhonemeData.Phoneme]]
+    -> InflectionData.InflectionSystem
+    -> Data.RVar.RVar [InflectionData.ManifestSystem]
+  {- Arity: 5,
+     Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+     Inline: [0] -}
+68fc34e5d314b474e8b0435d4f373b98
+  $wmakePrefixSystems ::
+    InflectionData.LexCat
+    -> GHC.Prim.Int#
+    -> [PhonemeData.Phoneme]
+    -> [[PhonemeData.Phoneme]]
+    -> InflectionData.InflectionSystem
+    -> Data.RVar.RVar [InflectionData.ManifestSystem]
+  {- Arity: 5,
+     Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+     Inline: [0] -}
+ee699fe1a19cd868de15331e37eabe1b
+  $wmakeSuffixSystems ::
+    InflectionData.LexCat
+    -> GHC.Prim.Int#
+    -> [PhonemeData.Phoneme]
+    -> [[PhonemeData.Phoneme]]
+    -> InflectionData.InflectionSystem
+    -> Data.RVar.RVar [InflectionData.ManifestSystem]
+  {- Arity: 5,
+     Strictness: <L,U><S,U><L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+     Inline: [0] -}
+8791ee769958f19355fa0ccf908fc1cc
+  cleanGrammarSys ::
+    InflectionData.InflectionSystem
+    -> InflectionData.LexCat
+    -> InflectionData.ManifestType
+    -> GHC.Types.Int
+    -> ([InflectionData.Express InflectionData.Gender],
+        [InflectionData.Express InflectionData.Animacy],
+        [InflectionData.Express InflectionData.Case],
+        [InflectionData.Express InflectionData.Number],
+        [InflectionData.Express InflectionData.Definiteness],
+        [InflectionData.Express InflectionData.Specificity],
+        [InflectionData.Express InflectionData.Topic],
+        [InflectionData.Express InflectionData.Person],
+        [InflectionData.Express InflectionData.Honorific],
+        [InflectionData.Express InflectionData.Polarity],
+        [InflectionData.Express InflectionData.Tense],
+        [InflectionData.Express InflectionData.Aspect],
+        [InflectionData.Express InflectionData.Mood],
+        [InflectionData.Express InflectionData.Voice],
+        [InflectionData.Express InflectionData.Evidentiality],
+        [InflectionData.Express InflectionData.Transitivity],
+        [InflectionData.Express InflectionData.Volition])
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U)><L,U><L,U><L,U(U)> -}
+584a8920ac1698afa234343a1ae9fda4
+  makeLexicalInflection ::
+    [PhonemeData.Phoneme]
+    -> [[PhonemeData.Phoneme]]
+    -> InflectionData.InflectionSystem
+    -> (InflectionData.LexCat, GHC.Types.Int, GHC.Types.Int,
+        GHC.Types.Int)
+    -> Data.RVar.RVar
+         (InflectionData.LexCat, [InflectionData.ManifestSystem],
+          [InflectionData.ManifestSystem], [InflectionData.ManifestSystem])
+  {- Arity: 4,
+     Strictness: <L,U><L,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><S,1*U(U,1*U(U),1*U(U),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ (w :: [PhonemeData.Phoneme])
+                   (w1 :: [[PhonemeData.Phoneme]])
+                   (w2 :: InflectionData.InflectionSystem)
+                   (w3 :: (InflectionData.LexCat, GHC.Types.Int, GHC.Types.Int,
+                           GHC.Types.Int)) ->
+                 case w3 of ww { (,,,) ww1 ww2 ww3 ww4 ->
+                 MorphologyGen.$wmakeLexicalInflection w w1 w2 ww1 ww2 ww3 ww4 }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

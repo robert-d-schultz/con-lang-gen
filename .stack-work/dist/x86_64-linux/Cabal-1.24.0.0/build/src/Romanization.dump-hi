@@ -1,0 +1,144 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-09 19:39:36.535049 UTC
+
+interface con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:Romanization 8001
+  interface hash: 777337a3bb0085b9a6f038969b84c821
+  ABI hash: 74fbc5a705b7d7fbc4320eff00540445
+  export-list hash: 90df890f5ce6e0dc67ddf39950a975c7
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: b159a15c55fa7c6870cb2eb79bbae5a5
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Romanization.romanizeMorpheme
+  Romanization.romanizePhoneme
+  Romanization.romanizeWord
+module dependencies: PhonemeData
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  PhonemeData c5c8f3da2226ff98b75ea8cff0a9f4e3
+  exports: c443d5b5be953d18447401b2674c832d
+  AFFRICATE 5ca186774ccd5d36b3b63dd085d1bcec
+  ALVEOLAR ef721b6f310d3853bfbc0970496272f1
+  ALVEOLOPALATAL 72ff753dc60ecf0dc54668a4f0122f3b
+  APPROXIMANT 0c9cf873aa49341a9f3bbbae0be331e9
+  ASPIRATED 0670485a031e484eb95a674ed59d0a7a
+  BACK b632c9ac6a998242341c8dda58ec0eb3
+  BILABIAL 5c93cd50796772a51f281fa5f6ddb789
+  BREATHY 90ab5f98625c6c44494b56f13d42d5ee
+  CENTRAL c48febbe2de0f01159888bf0ba56f10d
+  CLOSE 9868043b0a50cb6bf957befa7d45fb99
+  CLOSEMID 3dd99ce2d51813b5b5b96f7701ad8993
+  CORONAL 707e6561314e4d54ca119a77ffdd1549
+  CREAKY ff39d73cb9fe3361b406a0e8d5b3023c
+  Consonant 75e0f2dc077c8b434bdd2ab120b56e11
+  DEFAULT 4109f078012be9c637b04337f449535c
+  DENTAL b66873894fe74511a0eeaf94b0272b1c
+  DENTIALVEOLAR 21011d6e727f4670b344e530f4780fed
+  DORSAL 7cb308234daad9868fa4ccf8d7c2f104
+  Diphthong 68a5aed36465de1b7a464b5c9037a12e
+  EPIGLOTTAL 39e139c61973245d34510be1a299bbfe
+  EPIPHARYNGEAL 418e38426949f0a4b46b16e7239f6321
+  FLAP c56a3834e787b88fc8649dd3262e2f07
+  FRICATIVE b8c4cebe970ce9b7278b4f775bf75027
+  FRONT 82b585f90542b18fea9c90a2178c4174
+  GLOTTAL 2c8d3d832aa76fdf3ecbf68587b2a739
+  LABIAL 9fbd61e3708c1755de05d383cd11b806
+  LABIODENTAL 3040e8aaa129f670ca98314a21db05b9
+  LAFFRICATE f43b22a664519fefaef143e531d318fb
+  LAPPROXIMANT ed71beab1196f873504ecea68fe1fbdd
+  LARYNGEAL 70934cb36a8c751d053c4ec248cf6812
+  LFLAP 73bc0a31bb5eddf4f8cb44f57cc76460
+  LFRICATIVE a3a3463685e56790bf8a83e852dfbc65
+  LONG c0ba9c7d22ef8a581c9f1df99b281dcb
+  MID 98a38c1e960372b6c764271622c8c1f9
+  MODAL 106c8c7d99880956cd6e38d418f1cc54
+  Morpheme 0bc95c8013cf2b08d898dd0b8e720fbd
+  Morpheme 8d3162e814627ae5597b1f6cf9209b2d
+  NASAL 375c17c0a6c22cf51869be64baa56351
+  NEARBACK 1af902816636464bfb9396e7fde7423d
+  NEARCLOSE 2b0cdb176b9399b1cf2a5494aebac532
+  NEARFRONT 1dec6583a4e7d1834acee34e522f36bf
+  NEAROPEN 729b47db8230fa7ec04c0f3e04f64161
+  NORMAL a167e3999701f0cd3dd7eef92f7c9f4e
+  OPEN 5c42a3f1b3aef52f6d69b20d1df7edc4
+  OPENMID dea16eefd16858aebce4110c967999c1
+  PALATAL 13adb8abe5e47940d48d35280e83cb25
+  PHARYNGEAL 1846268b428dabdb09b14ac7d25693dd
+  POSTALVEOLAR e583237c03f7bc2fdc3c7605bf1b5bad
+  Phoneme a99d82394cccf94f6dc3580d7da31e00
+  RETROFLEX 89fa739e6c003efa365c279dd492194d
+  ROUNDED 19d9e8942db0d21fe2708b075bb3740c
+  SAFFRICATE 67fc3716c04b1bf9e7489053725a8e28
+  SHORT 823155f79d7cef4f489a57ec2cc78a95
+  SILIBANT 4340ae8c72ff0f44723e3f09c828a742
+  SLACK 80cc465787e51f2b50b1624aabbfdb82
+  STIFF 38054554575f310f6b4cf4f26354bfd9
+  STOP efefb67453b6e5dcc079b8968b2a8b69
+  TRILL 334bfc78d9bd34491dacfe3faf1c711a
+  UNROUNDED 2e0b535e0433b4003177994c7fe788b8
+  UVULAR d563c821c487019637b434384c7d8276
+  VELAR 0671e2d5add30fb912b820d61be1de58
+  VOICELESS e33fcf9d1422dc34677ead1250c8cf5b
+  Vowel e11a100b03eaf0d77f4e5e9f7ce36cf3
+  Word 8cbbabc9cbacbb95d641eec8ff251bde
+  Word 3bda176bb325231b683f164bd205b115
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+d469b2bf5d23d6794359fb3f32302b7f
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Romanization.$trModule2
+                   Romanization.$trModule1) -}
+cdd0e98ff44430b73f3506f1355805d0
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Romanization"#) -}
+73f305bfd911328cf6e5517511703b82
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"#) -}
+79c3e4c23daa07cdd94cefced1dee6f3
+  romanizeMorpheme :: PhonemeData.Morpheme -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(S),1*U(1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: PhonemeData.Morpheme) ->
+                 case ds of wild { PhonemeData.Morpheme phonemes ->
+                 Romanization.romanizePhonemes phonemes }) -}
+4f83dde622b1948245d8bb652d51fb72
+  romanizePhoneme :: PhonemeData.Phoneme -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U> -}
+a371fd0e6507ce7e018a4fa6810c113b
+  romanizePhonemes :: [PhonemeData.Phoneme] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U> -}
+ac3fc82a1d75860a5b2f6dc3d7bab7c6
+  romanizeWord :: PhonemeData.Word -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(S),1*U(1*U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: PhonemeData.Word) ->
+                 case w of ww { PhonemeData.Word ww1 ->
+                 Romanization.romanizeWord_go ww1 }) -}
+f497548a38531dde6725835b5d49f162
+  romanizeWord_go :: [PhonemeData.Morpheme] -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

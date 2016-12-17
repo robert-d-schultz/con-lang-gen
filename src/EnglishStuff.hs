@@ -4,8 +4,8 @@ module EnglishStuff
 , englishManifest
 ) where
 
-import GrammarData
-import InflectionData
+import Data.Grammar
+import Data.Inflection
 
 englishGrammar :: Grammar
 englishGrammar = Grammar SubInitial ObjFinal CompFinal NoVtoIMove OblAffixHop NoNullSub OptTopic NoNullTop NoTopMark OblItoCMove OblWHMove PiedPipe OblQuesInv

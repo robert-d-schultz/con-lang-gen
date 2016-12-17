@@ -1,0 +1,24 @@
+Configuring math-functions-0.2.1.0...
+Building math-functions-0.2.1.0...
+Preprocessing library math-functions-0.2.1.0...
+[ 1 of 10] Compiling Numeric.Sum      ( Numeric/Sum.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/Sum.o )
+
+Numeric/Sum.hs:59:1: warning: [-Wunused-imports]
+    The import of ‘Data.Vector.Generic.Mutable’ is redundant
+      except perhaps to import instances from ‘Data.Vector.Generic.Mutable’
+    To import instances alone, use: import Data.Vector.Generic.Mutable()
+[ 2 of 10] Compiling Numeric.Polynomial.Chebyshev ( Numeric/Polynomial/Chebyshev.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/Polynomial/Chebyshev.o )
+[ 3 of 10] Compiling Numeric.Polynomial ( Numeric/Polynomial.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/Polynomial.o )
+[ 4 of 10] Compiling Numeric.MathFunctions.Comparison ( Numeric/MathFunctions/Comparison.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/MathFunctions/Comparison.o )
+[ 5 of 10] Compiling Numeric.RootFinding ( Numeric/RootFinding.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/RootFinding.o )
+[ 6 of 10] Compiling Numeric.MathFunctions.Constants ( Numeric/MathFunctions/Constants.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/MathFunctions/Constants.o )
+[ 7 of 10] Compiling Numeric.Series   ( Numeric/Series.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/Series.o )
+[ 8 of 10] Compiling Numeric.SpecFunctions.Internal ( Numeric/SpecFunctions/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/SpecFunctions/Internal.o )
+
+Numeric/SpecFunctions/Internal.hs:24:1: warning: [-Wunused-imports]
+    The import of ‘expm1’ from module ‘GHC.Float’ is redundant
+[ 9 of 10] Compiling Numeric.SpecFunctions ( Numeric/SpecFunctions.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/SpecFunctions.o )
+[10 of 10] Compiling Numeric.SpecFunctions.Extra ( Numeric/SpecFunctions/Extra.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Numeric/SpecFunctions/Extra.o )
+Installing library in
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh
+Registering math-functions-0.2.1.0...

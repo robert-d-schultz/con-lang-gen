@@ -1,0 +1,625 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-09 19:39:34.351979 UTC
+
+interface con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:GrammarGen 8001
+  interface hash: 0d708bae62185195ba1fd57e3177d57b
+  ABI hash: 6846630e7c0633ae427d3c2387cb0f5a
+  export-list hash: 78b55121642a702c225c751785968bd8
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: b159a15c55fa7c6870cb2eb79bbae5a5
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  GrammarGen.makeGrammar
+module dependencies: GrammarData InflectionData OtherData
+                     PhonemeData
+package dependencies: MonadPrompt-1.0.0.5@MonadPrompt-1.0.0.5-DSJ4febv4ITH7w1gOjdDZE
+                      MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      erf-2.0.0.0@erf-2.0.0.0-9HTdBV7htNjASgIJAT55AC
+                      flexible-defaults-0.0.1.2@flexible-defaults-0.0.1.2-1H2pkAjuTF1KghZBVsL2zl
+                      ghc-boot-th-8.0.1@ghc-boot-th-8.0.1 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh
+                      mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs
+                      monad-loops-0.4.3@monad-loops-0.4.3-1xZFtRVMQPC4X8bjTBWqNi
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb
+                      old-locale-1.0.0.7@old-locale-1.0.0.7-6glXNhHF891B41ZfuI8hU8
+                      old-time-1.1.0.3@old-time-1.1.0.3-IcvdkJUsE9M8t3io8peAEp
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd
+                      random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx
+                      random-shuffle-0.0.4@random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
+                      random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8
+                      rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF
+                      stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq
+                      stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
+                      syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj template-haskell-2.11.0.0
+                      th-extras-0.0.0.4@th-extras-0.0.0.4-65k7Dg54W2KxpzDoCAUbA
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
+orphans: MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov:Control.Monad.Random
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:InflectionData
+         mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.IO
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.MWC
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.PureMT
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.StdGen
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
+         syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj:Data.Generics.Instances
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.1@ghc-boot-th-8.0.1:GHC.LanguageExtensions.Type
+                         math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh:Numeric.RootFinding
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb:System.Random.MWC
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed.Base
+import  -/  base-4.9.0.0:Data.Functor 6fc476505db88d678632a4a838125f13
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  GrammarData b3f1b629a10fd7ab7130c02c0a41c76e
+  exports: 548dc15ef6450fdf930313fe49b6bb09
+  CompFinal 82d8d8e793da300b428c9fb20f2a6d0a
+  CompInitial 4593faa24f72667d5254d7739e4bcca7
+  Grammar d281d6bedb388705210270ce83d6b18d
+  Grammar 3c8e9da2521354a7dedc4e101001aa77
+  NoAffixHop 26287c2c42a7d929fdd4503d6c4f2a23
+  NoItoCMove ab900ee1828072cdbcb147cf73793641
+  NoNullSub f34661243f612bc2315fc71a207e5440
+  NoNullTop 715b91c5286aa1cc9ad89f8ee6423a75
+  NoQuesInv 71c94e2b60e34f1f1d3910a89270eea1
+  NoTopMark d19eaf80622d76d52cf8e48a20ba9653
+  NoVtoIMove b5721cca311f56be557f9a7cc8dff6c9
+  NoWHMove 19e8b9e427961ec7917cf50e0ae6b7dd
+  ObjFinal 73987f59c9fd910ae3b7e71d48edf516
+  ObjInitial 6c000ebb79d633c69b5abb138cdb2674
+  OblAffixHop 41a1600df121cc731be30ee37a49b31c
+  OblItoCMove 03a0a34a6e840e6972ccb5d96345d05c
+  OblQuesInv 9e884bab93ef2d6bfa6486d60dea4bbc
+  OblTopMark 58c32c13e7e22c5ce7ac6ad69bc44083
+  OblTopic 8d4ab54f9b57986f25d863e38c723811
+  OblVtoIMove 3a18ac841d114e3392febbd7c748193f
+  OblWHMove 39d545ae70ef6e5cf4d5252eb6fa0b05
+  OptNullSub 9b113c45ae201630b57347dc928cceee
+  OptNullTop 5c7440b0531131b4cfb20c72d57abe5b
+  OptTopic 215b50d236ea31dd0881c1e15e05f0f8
+  PiedPipe 1e8207b99cb7a633cc4ab82ed81aad06
+  PrepStrand 7b67670d925bf668792678a73c37f7b3
+  SubFinal e999cff8ca36d17c1319f91390f9cbd0
+  SubInitial 497da79eb557cd0fdefd3f29194fd41b
+import  -/  random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd:Data.Random.Extras 29c24169732e6d9b861a3e34bb12d853
+import  -/  random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx:Data.Random 8883d063189e353ce779cba72d37ba19
+import  -/  rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF:Data.RVar af4b152c68035decd69925a9162e78b3
+6c085416852a8c990f9d094adeb0f56a
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   GrammarGen.$trModule2
+                   GrammarGen.$trModule1) -}
+2c6a9e8a2971474f8d7bcbaa28414254
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "GrammarGen"#) -}
+2a1ad6104df50d232981bf257c2f6d3e
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"#) -}
+47d95117025e7c9716a396964d815d4f
+  makeGrammar :: Data.RVar.RVar GrammarData.Grammar
+  {- Arity: 2, Strictness: <L,C(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                GrammarGen.makeGrammar1
+                  `cast`
+                (Trans
+                     (Sym (Control.Monad.Prompt.N:Prompt[0]
+                               <Control.Monad.Prompt.Lift
+                                  Data.Random.Source.Internal.Prim.Prim
+                                  Data.Functor.Identity.Identity>_R
+                               <GrammarData.Grammar>_R))
+                     (Trans
+                          (Sym (Control.Monad.Prompt.N:PromptT[0]
+                                    <Data.Random.Source.Internal.Prim.Prim>_R
+                                    <Data.Functor.Identity.Identity>_R))
+                          (Sym (Data.RVar.N:RVarT[0]) <Data.Functor.Identity.Identity>_N) <GrammarData.Grammar>_N)) -}
+146801116406df0ebf2c788c99258a19
+  makeGrammar1 ::
+    (GrammarData.Grammar -> b1)
+    -> (forall a1.
+        Control.Monad.Prompt.Lift
+          Data.Random.Source.Internal.Prim.Prim
+          Data.Functor.Identity.Identity
+          a1
+        -> (a1 -> b1) -> b1)
+    -> b1
+  {- Arity: 2, Strictness: <L,C(U)><L,U>,
+     Unfolding: (\ @ b1
+                   (eta :: GrammarData.Grammar -> b1)
+                   (eta1 :: forall a1.
+                            Control.Monad.Prompt.Lift
+                              Data.Random.Source.Internal.Prim.Prim
+                              Data.Functor.Identity.Identity
+                              a1
+                            -> (a1 -> b1) -> b1) ->
+                 GrammarGen.makeGrammar35
+                   `cast`
+                 (Trans
+                      (Trans
+                           (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                           (Control.Monad.Prompt.N:PromptT[0]
+                                <Data.Random.Source.Internal.Prim.Prim>_R
+                                <Data.Functor.Identity.Identity>_R) <GrammarData.SubjectInitial>_N)
+                      (Control.Monad.Prompt.N:Prompt[0]
+                           <Control.Monad.Prompt.Lift
+                              Data.Random.Source.Internal.Prim.Prim
+                              Data.Functor.Identity.Identity>_R
+                           <GrammarData.SubjectInitial>_R))
+                   @ b1
+                   (\ (x :: GrammarData.SubjectInitial) ->
+                    case x of x1 { DEFAULT ->
+                    GrammarGen.makeGrammar32
+                      `cast`
+                    (Trans
+                         (Trans
+                              (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                              (Control.Monad.Prompt.N:PromptT[0]
+                                   <Data.Random.Source.Internal.Prim.Prim>_R
+                                   <Data.Functor.Identity.Identity>_R) <GrammarData.ObjectFinal>_N)
+                         (Control.Monad.Prompt.N:Prompt[0]
+                              <Control.Monad.Prompt.Lift
+                                 Data.Random.Source.Internal.Prim.Prim
+                                 Data.Functor.Identity.Identity>_R
+                              <GrammarData.ObjectFinal>_R))
+                      @ b1
+                      (\ (x2 :: GrammarData.ObjectFinal) ->
+                       case x2 of x3 { DEFAULT ->
+                       GrammarGen.makeGrammar29
+                         `cast`
+                       (Trans
+                            (Trans
+                                 (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                 (Control.Monad.Prompt.N:PromptT[0]
+                                      <Data.Random.Source.Internal.Prim.Prim>_R
+                                      <Data.Functor.Identity.Identity>_R) <GrammarData.ComplementizerInitial>_N)
+                            (Control.Monad.Prompt.N:Prompt[0]
+                                 <Control.Monad.Prompt.Lift
+                                    Data.Random.Source.Internal.Prim.Prim
+                                    Data.Functor.Identity.Identity>_R
+                                 <GrammarData.ComplementizerInitial>_R))
+                         @ b1
+                         (\ (x4 :: GrammarData.ComplementizerInitial) ->
+                          case x4 of x5 { DEFAULT ->
+                          GrammarGen.makeGrammar22
+                            `cast`
+                          (Trans
+                               (Trans
+                                    (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                    (Control.Monad.Prompt.N:PromptT[0]
+                                         <Data.Random.Source.Internal.Prim.Prim>_R
+                                         <Data.Functor.Identity.Identity>_R) <(GrammarData.VtoIMovement,
+                                                                               GrammarData.AffixHopping)>_N)
+                               (Control.Monad.Prompt.N:Prompt[0]
+                                    <Control.Monad.Prompt.Lift
+                                       Data.Random.Source.Internal.Prim.Prim
+                                       Data.Functor.Identity.Identity>_R
+                                    <(GrammarData.VtoIMovement, GrammarData.AffixHopping)>_R))
+                            @ b1
+                            (\ (x6 :: (GrammarData.VtoIMovement, GrammarData.AffixHopping)) ->
+                             case x6 of x7 { (,) ipv ipv1 ->
+                             GrammarGen.makeGrammar17
+                               `cast`
+                             (Trans
+                                  (Trans
+                                       (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                       (Control.Monad.Prompt.N:PromptT[0]
+                                            <Data.Random.Source.Internal.Prim.Prim>_R
+                                            <Data.Functor.Identity.Identity>_R) <(GrammarData.ObligatoryTopic,
+                                                                                  GrammarData.NullSubject,
+                                                                                  GrammarData.NullTopic)>_N)
+                                  (Control.Monad.Prompt.N:Prompt[0]
+                                       <Control.Monad.Prompt.Lift
+                                          Data.Random.Source.Internal.Prim.Prim
+                                          Data.Functor.Identity.Identity>_R
+                                       <(GrammarData.ObligatoryTopic, GrammarData.NullSubject,
+                                         GrammarData.NullTopic)>_R))
+                               @ b1
+                               (\ (x8 :: (GrammarData.ObligatoryTopic, GrammarData.NullSubject,
+                                          GrammarData.NullTopic)) ->
+                                case x8 of x9 { (,,) ipv2 ipv3 ipv4 ->
+                                GrammarGen.makeGrammar14
+                                  `cast`
+                                (Trans
+                                     (Trans
+                                          (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                          (Control.Monad.Prompt.N:PromptT[0]
+                                               <Data.Random.Source.Internal.Prim.Prim>_R
+                                               <Data.Functor.Identity.Identity>_R) <GrammarData.TopicMarking>_N)
+                                     (Control.Monad.Prompt.N:Prompt[0]
+                                          <Control.Monad.Prompt.Lift
+                                             Data.Random.Source.Internal.Prim.Prim
+                                             Data.Functor.Identity.Identity>_R
+                                          <GrammarData.TopicMarking>_R))
+                                  @ b1
+                                  (\ (x10 :: GrammarData.TopicMarking) ->
+                                   case x10 of x11 { DEFAULT ->
+                                   GrammarGen.makeGrammar11
+                                     `cast`
+                                   (Trans
+                                        (Trans
+                                             (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                             (Control.Monad.Prompt.N:PromptT[0]
+                                                  <Data.Random.Source.Internal.Prim.Prim>_R
+                                                  <Data.Functor.Identity.Identity>_R) <GrammarData.ItoCMovement>_N)
+                                        (Control.Monad.Prompt.N:Prompt[0]
+                                             <Control.Monad.Prompt.Lift
+                                                Data.Random.Source.Internal.Prim.Prim
+                                                Data.Functor.Identity.Identity>_R
+                                             <GrammarData.ItoCMovement>_R))
+                                     @ b1
+                                     (\ (x12 :: GrammarData.ItoCMovement) ->
+                                      case x12 of x13 { DEFAULT ->
+                                      GrammarGen.makeGrammar8
+                                        `cast`
+                                      (Trans
+                                           (Trans
+                                                (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                (Control.Monad.Prompt.N:PromptT[0]
+                                                     <Data.Random.Source.Internal.Prim.Prim>_R
+                                                     <Data.Functor.Identity.Identity>_R) <GrammarData.WHMovementObligatory>_N)
+                                           (Control.Monad.Prompt.N:Prompt[0]
+                                                <Control.Monad.Prompt.Lift
+                                                   Data.Random.Source.Internal.Prim.Prim
+                                                   Data.Functor.Identity.Identity>_R
+                                                <GrammarData.WHMovementObligatory>_R))
+                                        @ b1
+                                        (\ (x14 :: GrammarData.WHMovementObligatory) ->
+                                         case x14 of x15 { DEFAULT ->
+                                         GrammarGen.makeGrammar5
+                                           `cast`
+                                         (Trans
+                                              (Trans
+                                                   (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                   (Control.Monad.Prompt.N:PromptT[0]
+                                                        <Data.Random.Source.Internal.Prim.Prim>_R
+                                                        <Data.Functor.Identity.Identity>_R) <GrammarData.PiedPiping>_N)
+                                              (Control.Monad.Prompt.N:Prompt[0]
+                                                   <Control.Monad.Prompt.Lift
+                                                      Data.Random.Source.Internal.Prim.Prim
+                                                      Data.Functor.Identity.Identity>_R
+                                                   <GrammarData.PiedPiping>_R))
+                                           @ b1
+                                           (\ (x16 :: GrammarData.PiedPiping) ->
+                                            case x16 of x17 { DEFAULT ->
+                                            GrammarGen.makeGrammar2
+                                              `cast`
+                                            (Trans
+                                                 (Trans
+                                                      (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                                      (Control.Monad.Prompt.N:PromptT[0]
+                                                           <Data.Random.Source.Internal.Prim.Prim>_R
+                                                           <Data.Functor.Identity.Identity>_R) <GrammarData.QuestionInversion>_N)
+                                                 (Control.Monad.Prompt.N:Prompt[0]
+                                                      <Control.Monad.Prompt.Lift
+                                                         Data.Random.Source.Internal.Prim.Prim
+                                                         Data.Functor.Identity.Identity>_R
+                                                      <GrammarData.QuestionInversion>_R))
+                                              @ b1
+                                              (\ (x18 :: GrammarData.QuestionInversion) ->
+                                               case x18 of x19 { DEFAULT ->
+                                               eta
+                                                 (GrammarData.Grammar
+                                                    x1
+                                                    x3
+                                                    x5
+                                                    ipv
+                                                    ipv1
+                                                    ipv3
+                                                    ipv2
+                                                    ipv4
+                                                    x11
+                                                    x13
+                                                    x15
+                                                    x17
+                                                    x19) })
+                                              eta1 })
+                                           eta1 })
+                                        eta1 })
+                                     eta1 })
+                                  eta1 })
+                               eta1 })
+                            eta1 })
+                         eta1 })
+                      eta1 })
+                   eta1) -}
+3a0e6df7e562cd985e1a87d989932822
+  makeGrammar10 :: [GrammarData.WHMovementObligatory]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.WHMovementObligatory
+                   GrammarData.OblWHMove
+                   (GHC.Types.[] @ GrammarData.WHMovementObligatory)) -}
+15a1a6ba5d46a571501d43ad00b34f22
+  makeGrammar11 :: Data.RVar.RVar GrammarData.ItoCMovement
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ GrammarData.ItoCMovement
+                   GrammarGen.makeGrammar12) -}
+ad5c7c2b620c4936a649e871fed2713c
+  makeGrammar12 :: [GrammarData.ItoCMovement]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.ItoCMovement
+                   GrammarData.NoItoCMove
+                   GrammarGen.makeGrammar13) -}
+5a176b71150bd419cff3f8dc854d1f72
+  makeGrammar13 :: [GrammarData.ItoCMovement]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.ItoCMovement
+                   GrammarData.OblItoCMove
+                   (GHC.Types.[] @ GrammarData.ItoCMovement)) -}
+aa1364de3d5d08e97f8a98ea4c31d03e
+  makeGrammar14 :: Data.RVar.RVar GrammarData.TopicMarking
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ GrammarData.TopicMarking
+                   GrammarGen.makeGrammar15) -}
+a48bf62e5d01e795a5dd980ce9e1a3d7
+  makeGrammar15 :: [GrammarData.TopicMarking]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.TopicMarking
+                   GrammarData.NoTopMark
+                   GrammarGen.makeGrammar16) -}
+5746d9e9f1e1a14bc040c55d5ad90818
+  makeGrammar16 :: [GrammarData.TopicMarking]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.TopicMarking
+                   GrammarData.OblTopMark
+                   (GHC.Types.[] @ GrammarData.TopicMarking)) -}
+e6a87b8680e0aa9abbb1f3cabfa95d7c
+  makeGrammar17 ::
+    Data.RVar.RVarT
+      Data.Functor.Identity.Identity
+      (GrammarData.ObligatoryTopic, GrammarData.NullSubject,
+       GrammarData.NullTopic)
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ (GrammarData.ObligatoryTopic, GrammarData.NullSubject,
+                      GrammarData.NullTopic)
+                   GrammarGen.makeGrammar18) -}
+4e764ba1cec247a11744904f40b725b0
+  makeGrammar18 ::
+    [(GrammarData.ObligatoryTopic, GrammarData.NullSubject,
+      GrammarData.NullTopic)]
+  {- Unfolding: (GHC.Types.:
+                   @ (GrammarData.ObligatoryTopic, GrammarData.NullSubject,
+                      GrammarData.NullTopic)
+                   GrammarGen.makeGrammar21
+                   GrammarGen.makeGrammar19) -}
+23d7aaa0f6c2dfcf64f0757e35e4fd5e
+  makeGrammar19 ::
+    [(GrammarData.ObligatoryTopic, GrammarData.NullSubject,
+      GrammarData.NullTopic)]
+  {- Unfolding: (GrammarGen.makeGrammar_go
+                   GrammarGen.makeGrammar_xs) -}
+fc9fe0e89a891ad903ee426b058fd5b8
+  makeGrammar2 :: Data.RVar.RVar GrammarData.QuestionInversion
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ GrammarData.QuestionInversion
+                   GrammarGen.makeGrammar3) -}
+a1c33a7c79396b21db83466f24cc6359
+  makeGrammar20 :: [GrammarData.NullSubject]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.NullSubject
+                   GrammarData.OptNullSub
+                   (GHC.Types.[] @ GrammarData.NullSubject)) -}
+8f38816cb327773628ba4ae36f6a914d
+  makeGrammar21 ::
+    (GrammarData.ObligatoryTopic, GrammarData.NullSubject,
+     GrammarData.NullTopic)
+  {- HasNoCafRefs,
+     Unfolding: ((GrammarData.OblTopic, GrammarData.NoNullSub,
+                  GrammarData.NoNullTop)) -}
+04e49f71893c226d8dc6c05061a483db
+  makeGrammar22 ::
+    Data.RVar.RVarT
+      Data.Functor.Identity.Identity
+      (GrammarData.VtoIMovement, GrammarData.AffixHopping)
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ (GrammarData.VtoIMovement, GrammarData.AffixHopping)
+                   GrammarGen.makeGrammar23) -}
+585838f3e735deb8ee18ab0cf62a8fcb
+  makeGrammar23 ::
+    [(GrammarData.VtoIMovement, GrammarData.AffixHopping)]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GrammarData.VtoIMovement, GrammarData.AffixHopping)
+                   GrammarGen.makeGrammar28
+                   GrammarGen.makeGrammar24) -}
+b29ff1dd9310f16301b28e330737f80a
+  makeGrammar24 ::
+    [(GrammarData.VtoIMovement, GrammarData.AffixHopping)]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GrammarData.VtoIMovement, GrammarData.AffixHopping)
+                   GrammarGen.makeGrammar27
+                   GrammarGen.makeGrammar25) -}
+4de582e3df335071d2b833014c09fea1
+  makeGrammar25 ::
+    [(GrammarData.VtoIMovement, GrammarData.AffixHopping)]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ (GrammarData.VtoIMovement, GrammarData.AffixHopping)
+                   GrammarGen.makeGrammar26
+                   (GHC.Types.[]
+                      @ (GrammarData.VtoIMovement, GrammarData.AffixHopping))) -}
+b60d565b2f647f4c83f86b1d20747e9b
+  makeGrammar26 ::
+    (GrammarData.VtoIMovement, GrammarData.AffixHopping)
+  {- HasNoCafRefs,
+     Unfolding: ((GrammarData.NoVtoIMove, GrammarData.OblAffixHop)) -}
+cace1fc795cb08e472fe35c5f6523ea5
+  makeGrammar27 ::
+    (GrammarData.VtoIMovement, GrammarData.AffixHopping)
+  {- HasNoCafRefs,
+     Unfolding: ((GrammarData.NoVtoIMove, GrammarData.NoAffixHop)) -}
+50f2b65d925e45c8149d93a186a5e435
+  makeGrammar28 ::
+    (GrammarData.VtoIMovement, GrammarData.AffixHopping)
+  {- HasNoCafRefs,
+     Unfolding: ((GrammarData.OblVtoIMove, GrammarData.NoAffixHop)) -}
+80cde09cea55cdc31a0eb9f71180bfce
+  makeGrammar29 :: Data.RVar.RVar GrammarData.ComplementizerInitial
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ GrammarData.ComplementizerInitial
+                   GrammarGen.makeGrammar30) -}
+2b2ebaf44e419a64f1a918444f632fe1
+  makeGrammar3 :: [GrammarData.QuestionInversion]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.QuestionInversion
+                   GrammarData.NoQuesInv
+                   GrammarGen.makeGrammar4) -}
+005336eb46fba42e842a8c56b8f784ea
+  makeGrammar30 :: [GrammarData.ComplementizerInitial]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.ComplementizerInitial
+                   GrammarData.CompInitial
+                   GrammarGen.makeGrammar31) -}
+c5ab79d0a344c744b41a67704f94776c
+  makeGrammar31 :: [GrammarData.ComplementizerInitial]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.ComplementizerInitial
+                   GrammarData.CompFinal
+                   (GHC.Types.[] @ GrammarData.ComplementizerInitial)) -}
+912c196add2f9945c35c65101f658870
+  makeGrammar32 :: Data.RVar.RVar GrammarData.ObjectFinal
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ GrammarData.ObjectFinal
+                   GrammarGen.makeGrammar33) -}
+cde20740a1f0e1f0f7ffa1c9da96b70f
+  makeGrammar33 :: [GrammarData.ObjectFinal]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.ObjectFinal
+                   GrammarData.ObjFinal
+                   GrammarGen.makeGrammar34) -}
+af8d3caa4cc53c6d0e035af7d3722339
+  makeGrammar34 :: [GrammarData.ObjectFinal]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.ObjectFinal
+                   GrammarData.ObjInitial
+                   (GHC.Types.[] @ GrammarData.ObjectFinal)) -}
+7f3e8057ea196cbc6266e0592a3ef66d
+  makeGrammar35 :: Data.RVar.RVar GrammarData.SubjectInitial
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ GrammarData.SubjectInitial
+                   GrammarGen.makeGrammar36) -}
+f5f3c8eec8f5513e0943e43c0c4e0a47
+  makeGrammar36 :: [GrammarData.SubjectInitial]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.SubjectInitial
+                   GrammarData.SubInitial
+                   GrammarGen.makeGrammar37) -}
+333c98220c50df8511a7c2a9387225b9
+  makeGrammar37 :: [GrammarData.SubjectInitial]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.SubjectInitial
+                   GrammarData.SubFinal
+                   (GHC.Types.[] @ GrammarData.SubjectInitial)) -}
+5096ae3fc328625d60d782d47f4d3d89
+  makeGrammar4 :: [GrammarData.QuestionInversion]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.QuestionInversion
+                   GrammarData.OblQuesInv
+                   (GHC.Types.[] @ GrammarData.QuestionInversion)) -}
+e33d1a08e4ad6464a4f29ac6afa712c4
+  makeGrammar5 :: Data.RVar.RVar GrammarData.PiedPiping
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ GrammarData.PiedPiping
+                   GrammarGen.makeGrammar6) -}
+da0182dac164cb27cf29f85d5ee2eda3
+  makeGrammar6 :: [GrammarData.PiedPiping]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.PiedPiping
+                   GrammarData.PiedPipe
+                   GrammarGen.makeGrammar7) -}
+35a4282d6b4a14ca0be0dd4a48e6542d
+  makeGrammar7 :: [GrammarData.PiedPiping]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.PiedPiping
+                   GrammarData.PrepStrand
+                   (GHC.Types.[] @ GrammarData.PiedPiping)) -}
+d83f6d3327412c26fa961c1637752b25
+  makeGrammar8 :: Data.RVar.RVar GrammarData.WHMovementObligatory
+  {- Unfolding: (Data.Random.Extras.choice
+                   @ GrammarData.WHMovementObligatory
+                   GrammarGen.makeGrammar9) -}
+e1879ea066a32962ae511a1abc675a6b
+  makeGrammar9 :: [GrammarData.WHMovementObligatory]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.WHMovementObligatory
+                   GrammarData.NoWHMove
+                   GrammarGen.makeGrammar10) -}
+f6b5e63e8b1d8b8cbd22cdb881e71896
+  makeGrammar_go ::
+    [GrammarData.NullSubject]
+    -> [(GrammarData.ObligatoryTopic, GrammarData.NullSubject,
+         GrammarData.NullTopic)]
+  {- Arity: 1, Strictness: <S,1*U> -}
+1fb8562fa1a349e2c0d7ae32819d1a01
+  makeGrammar_xs :: [GrammarData.NullSubject]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GrammarData.NullSubject
+                   GrammarData.NoNullSub
+                   GrammarGen.makeGrammar20) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

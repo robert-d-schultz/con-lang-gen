@@ -1,0 +1,476 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-09 19:39:39.634811 UTC
+
+interface con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:WordGen 8001
+  interface hash: 3a3ea4f9ffd0776ec58c53f807b67c0f
+  ABI hash: 21b9eba7c67336812e35d9534369097d
+  export-list hash: fac4322126fda6684395add50fd212dd
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: b159a15c55fa7c6870cb2eb79bbae5a5
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  WordGen.loadMeaningData
+  WordGen.makeDictionary
+  WordGen.makeMorpheme
+  WordGen.MeaningData{WordGen.MeaningData inputAdjs inputAdpos inputNouns inputVerbs}
+module dependencies: GrammarData InflectionData OtherData
+                     PhonemeData PhonemeGen PhonotacticsGen
+package dependencies: MonadPrompt-1.0.0.5@MonadPrompt-1.0.0.5-DSJ4febv4ITH7w1gOjdDZE
+                      MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      erf-2.0.0.0@erf-2.0.0.0-9HTdBV7htNjASgIJAT55AC
+                      flexible-defaults-0.0.1.2@flexible-defaults-0.0.1.2-1H2pkAjuTF1KghZBVsL2zl
+                      ghc-boot-th-8.0.1@ghc-boot-th-8.0.1 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh
+                      mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs
+                      monad-loops-0.4.3@monad-loops-0.4.3-1xZFtRVMQPC4X8bjTBWqNi
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb
+                      old-locale-1.0.0.7@old-locale-1.0.0.7-6glXNhHF891B41ZfuI8hU8
+                      old-time-1.1.0.3@old-time-1.1.0.3-IcvdkJUsE9M8t3io8peAEp
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd
+                      random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx
+                      random-shuffle-0.0.4@random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
+                      random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8
+                      rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF
+                      stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq
+                      stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
+                      syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj template-haskell-2.11.0.0
+                      th-extras-0.0.0.4@th-extras-0.0.0.4-65k7Dg54W2KxpzDoCAUbA
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
+orphans: MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov:Control.Monad.Random
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:InflectionData
+         mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.IO
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.MWC
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.PureMT
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.StdGen
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
+         syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj:Data.Generics.Instances
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.1@ghc-boot-th-8.0.1:GHC.LanguageExtensions.Type
+                         math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh:Numeric.RootFinding
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb:System.Random.MWC
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed.Base
+import  -/  base-4.9.0.0:Control.Monad 7767aebfd53f0b584cef2fe66ad3986c
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:Data.Functor 6fc476505db88d678632a4a838125f13
+import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
+import  -/  base-4.9.0.0:Data.OldList 0058409f994fb13ae0616e3f1e5b4dae
+import  -/  base-4.9.0.0:Data.Traversable 7ce5b7ee67475ac3d03ae825b86efd9f
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.IO 7ddc7086a7fc3b7d7043cc7bc59a04ba
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Read 817c914615ac8e308afc0c675fb3f671
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  base-4.9.0.0:System.IO eb1d40aa793a4047069a5023f2ebcfe3
+import  -/  base-4.9.0.0:Text.Read 9c1be14f7e5eac8b18bcb566c5763677
+import  -/  GrammarData b3f1b629a10fd7ab7130c02c0a41c76e
+  exports: 548dc15ef6450fdf930313fe49b6bb09
+import  -/  InflectionData 8acf7dbedb4c8763319b881883494d75
+  exports: ab2a6241f04be9eb006c9d0f78ca26d5
+  Adj ffd740a073733c1bebc803dc525d36f6
+  Adpo e0fe997ec969777896f460489cec1502
+  LexCat 3578a365ab634279655cb91c03a19c28
+  Noun bf84f3f73d0d1726fde0e6d160b05190
+  Verb a16c54cbea24934000ba5f80dd9ad3e2
+import  -/  OtherData df5604537cb8f3523635a22cc664b290
+  exports: bf22fe2bed584fddd0df87b95eb5a320
+import  -/  PhonemeData c5c8f3da2226ff98b75ea8cff0a9f4e3
+  exports: c443d5b5be953d18447401b2674c832d
+  Morpheme 0bc95c8013cf2b08d898dd0b8e720fbd
+  Morpheme 8d3162e814627ae5597b1f6cf9209b2d
+  Phoneme a99d82394cccf94f6dc3580d7da31e00
+  Word 8cbbabc9cbacbb95d641eec8ff251bde
+  Word 3bda176bb325231b683f164bd205b115
+import  -/  PhonemeGen 9ef4397691f89ead4de0bc767e9934c4
+  exports: 3942bec7681d5e50116e27ae55536a75
+import  -/  PhonotacticsGen 358f711ac9ac74a291afb188dfc7fba9
+  exports: 0c954bf65e92dab407ddbf5b06f33e7a
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd:Data.Random.Extras 29c24169732e6d9b861a3e34bb12d853
+import  -/  random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx:Data.Random 8883d063189e353ce779cba72d37ba19
+import  -/  random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx:Data.Random.Distribution.Uniform ce0adaf8d18b3032f5eb8601b73b7de8
+import  -/  rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF:Data.RVar af4b152c68035decd69925a9162e78b3
+497dae52250c51ef1caf9248c8dd5095
+  $s$wreplicateM1 ::
+    GHC.Prim.Int#
+    -> Data.RVar.RVarT Data.Functor.Identity.Identity a
+    -> forall b.
+       ([a] -> b)
+       -> (forall a1.
+           Control.Monad.Prompt.Lift
+             Data.Random.Source.Internal.Prim.Prim
+             Data.Functor.Identity.Identity
+             a1
+           -> (a1 -> b) -> b)
+       -> b
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,U><L,C(C1(U))><L,C(U)><L,U>,
+     Unfolding: (\ @ a
+                   (ww :: GHC.Prim.Int#)
+                   (w1 :: Data.RVar.RVarT Data.Functor.Identity.Identity a)
+                   @ b
+                   (eta :: [a] -> b)
+                   (eta1 :: forall a1.
+                            Control.Monad.Prompt.Lift
+                              Data.Random.Source.Internal.Prim.Prim
+                              Data.Functor.Identity.Identity
+                              a1
+                            -> (a1 -> b) -> b) ->
+                 letrec {
+                   $wloop :: GHC.Prim.Int#
+                             -> forall b1.
+                                ([a] -> b1)
+                                -> (forall a1.
+                                    Control.Monad.Prompt.Lift
+                                      Data.Random.Source.Internal.Prim.Prim
+                                      Data.Functor.Identity.Identity
+                                      a1
+                                    -> (a1 -> b1) -> b1)
+                                -> b1
+                     {- Arity: 3, Strictness: <S,U><L,C(U)><L,U>, Inline: [0] -}
+                   = \ (ww1 :: GHC.Prim.Int#)
+                       @ b1
+                       (w :: [a] -> b1)
+                       (w2 :: forall a1.
+                              Control.Monad.Prompt.Lift
+                                Data.Random.Source.Internal.Prim.Prim
+                                Data.Functor.Identity.Identity
+                                a1
+                              -> (a1 -> b1) -> b1) ->
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<=# ww1 0#) of wild1 {
+                       GHC.Types.False
+                       -> let {
+                            m2 :: GHC.Prim.Int# = GHC.Prim.-# ww1 1#
+                          } in
+                          w1
+                            `cast`
+                          (Trans
+                               (Trans
+                                    (Data.RVar.N:RVarT[0] <Data.Functor.Identity.Identity>_N)
+                                    (Control.Monad.Prompt.N:PromptT[0]
+                                         <Data.Random.Source.Internal.Prim.Prim>_R
+                                         <Data.Functor.Identity.Identity>_R) <a>_N)
+                               (Control.Monad.Prompt.N:Prompt[0]
+                                    <Control.Monad.Prompt.Lift
+                                       Data.Random.Source.Internal.Prim.Prim
+                                       Data.Functor.Identity.Identity>_R
+                                    <a>_R))
+                            @ b1
+                            (\ (x :: a) ->
+                             case x of x1 { DEFAULT ->
+                             $wloop
+                               m2
+                               @ b1
+                               (\ (x2 :: [a])[OneShot] ->
+                                case x2 of x3 { DEFAULT -> w (GHC.Types.: @ a x1 x3) })
+                               w2 })
+                            w2
+                       GHC.Types.True -> w (GHC.Types.[] @ a) }
+                 } in
+                 $wloop ww @ b eta eta1) -}
+82e40995562fc350b3d2d38d1c5adc22
+  $tc'MeaningData :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17919510634161843172##
+                   9626086949515955734##
+                   WordGen.$trModule
+                   WordGen.$tc'MeaningData1) -}
+5a5fc389451a575a574139186065516c
+  $tc'MeaningData1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'MeaningData"#) -}
+6977ee5713c42599bca662902812e3fa
+  $tcMeaningData :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13522497509624477734##
+                   12098336528099318012##
+                   WordGen.$trModule
+                   WordGen.$tcMeaningData1) -}
+1ac0ce43a896e5ac6d383e8d58231dc0
+  $tcMeaningData1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "MeaningData"#) -}
+54ec7ddbfc8e3a83252b5468eca32485
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   WordGen.$trModule2
+                   WordGen.$trModule1) -}
+12cf747de3689ff0a33364e5bed72f20
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "WordGen"#) -}
+3137d4ab5afbfa8e4b1e5a665fef420f
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"#) -}
+f91957dd13b3fd2b6c7bee6621055d94
+  $wmakeMorpheme ::
+    [PhonemeData.Phoneme]
+    -> [[PhonemeData.Phoneme]]
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> Data.RVar.RVar PhonemeData.Morpheme
+  {- Arity: 10,
+     Strictness: <L,U><L,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)>,
+     Inline: [0] -}
+6e54cd851c813efb7e97ca0f04f1592e
+  data MeaningData
+    = MeaningData {inputNouns :: [GHC.Base.String],
+                   inputVerbs :: [GHC.Base.String],
+                   inputAdjs :: [GHC.Base.String],
+                   inputAdpos :: [GHC.Base.String]}
+903450cf9c7f84efe74b49aef7eed503
+  inputAdjs :: WordGen.MeaningData -> [GHC.Base.String]
+  RecSel Left WordGen.MeaningData
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLSL),1*U(A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: WordGen.MeaningData) ->
+                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 ds4 -> ds3 }) -}
+4b2ebf5b545bd746222b8c979d42e84e
+  inputAdpos :: WordGen.MeaningData -> [GHC.Base.String]
+  RecSel Left WordGen.MeaningData
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLS),1*U(A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: WordGen.MeaningData) ->
+                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 ds4 -> ds4 }) -}
+7fe5d6f5c55a314b224795444646ddc2
+  inputNouns :: WordGen.MeaningData -> [GHC.Base.String]
+  RecSel Left WordGen.MeaningData
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLLL),1*U(1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: WordGen.MeaningData) ->
+                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 ds4 -> ds1 }) -}
+1e86b429901d665fc448b7a3d8f234be
+  inputVerbs :: WordGen.MeaningData -> [GHC.Base.String]
+  RecSel Left WordGen.MeaningData
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLL),1*U(A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: WordGen.MeaningData) ->
+                 case ds of wild { WordGen.MeaningData ds1 ds2 ds3 ds4 -> ds2 }) -}
+bf495c1710d5e6cbca41ff5c9b9c1a1e
+  loadMeaningData :: GHC.Types.IO WordGen.MeaningData
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                WordGen.loadMeaningData1
+                  `cast`
+                (Sym (GHC.Types.N:IO[0] <WordGen.MeaningData>_R)) -}
+f034524ce22438e742d7525c657a38ca
+  loadMeaningData1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, WordGen.MeaningData #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (eta :: GHC.Prim.State#
+                             GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        WordGen.loadMeaningData8
+                        GHC.IO.IOMode.ReadMode
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds { (#,#) ipv2 ipv3 ->
+                 case GHC.IO.Handle.FD.openFile1
+                        WordGen.loadMeaningData7
+                        GHC.IO.IOMode.ReadMode
+                        ipv2 of ds2 { (#,#) ipv4 ipv5 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv5
+                        ipv4 of ds3 { (#,#) ipv6 ipv7 ->
+                 case GHC.IO.Handle.FD.openFile1
+                        WordGen.loadMeaningData6
+                        GHC.IO.IOMode.ReadMode
+                        ipv6 of ds4 { (#,#) ipv8 ipv9 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv9
+                        ipv8 of ds5 { (#,#) ipv10 ipv11 ->
+                 case GHC.IO.Handle.FD.openFile1
+                        WordGen.loadMeaningData5
+                        GHC.IO.IOMode.ReadMode
+                        ipv10 of ds6 { (#,#) ipv12 ipv13 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv13
+                        ipv12 of ds7 { (#,#) ipv14 ipv15 ->
+                 (# ipv14,
+                    WordGen.MeaningData
+                      (case Text.Read.readEither6
+                              @ [GHC.Base.String]
+                              (Text.ParserCombinators.ReadP.run
+                                 @ [GHC.Base.String]
+                                 WordGen.loadMeaningData4
+                                 ipv3) of wild {
+                         [] -> WordGen.loadMeaningData3
+                         : x ds8
+                         -> case ds8 of wild1 {
+                              [] -> x : ipv16 ipv17 -> WordGen.loadMeaningData2 } })
+                      (case Text.Read.readEither6
+                              @ [GHC.Base.String]
+                              (Text.ParserCombinators.ReadP.run
+                                 @ [GHC.Base.String]
+                                 WordGen.loadMeaningData4
+                                 ipv7) of wild {
+                         [] -> WordGen.loadMeaningData3
+                         : x ds8
+                         -> case ds8 of wild1 {
+                              [] -> x : ipv16 ipv17 -> WordGen.loadMeaningData2 } })
+                      (case Text.Read.readEither6
+                              @ [GHC.Base.String]
+                              (Text.ParserCombinators.ReadP.run
+                                 @ [GHC.Base.String]
+                                 WordGen.loadMeaningData4
+                                 ipv11) of wild {
+                         [] -> WordGen.loadMeaningData3
+                         : x ds8
+                         -> case ds8 of wild1 {
+                              [] -> x : ipv16 ipv17 -> WordGen.loadMeaningData2 } })
+                      (case Text.Read.readEither6
+                              @ [GHC.Base.String]
+                              (Text.ParserCombinators.ReadP.run
+                                 @ [GHC.Base.String]
+                                 WordGen.loadMeaningData4
+                                 ipv15) of wild {
+                         [] -> WordGen.loadMeaningData3
+                         : x ds8
+                         -> case ds8 of wild1 {
+                              [] -> x
+                              : ipv16 ipv17
+                              -> WordGen.loadMeaningData2 } }) #) } } } } } } } }) -}
+2b48686332d476001bfaa4baa6c29f4e
+  loadMeaningData2 :: [GHC.Base.String]
+  {- Strictness: x -}
+3d28eb692825a55daf26a6f4aab1dd72
+  loadMeaningData3 :: [GHC.Base.String]
+  {- Strictness: x -}
+bfe03eaa3eb5988929306f6de37214c4
+  loadMeaningData4 ::
+    Text.ParserCombinators.ReadP.P [GHC.Base.String]
+  {- Unfolding: (GHC.Read.$wlist
+                   @ [GHC.Types.Char]
+                   GHC.Read.$fReadChar1
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                       <GHC.Base.String>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                  <GHC.Base.String>_R)))
+                   @ [GHC.Base.String]
+                   (Text.Read.readEither5 @ [GHC.Base.String])) -}
+76b3d4ea5edc3510081525704f5e2670
+  loadMeaningData5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "raw/meanings/adpositions.txt"#) -}
+39b0acdb42f3a306e89bcf4a30c9cdb2
+  loadMeaningData6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "raw/meanings/adjectives.txt"#) -}
+9fefbe7af1f44e9ca4cc857b37db6b5b
+  loadMeaningData7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "raw/meanings/verbs.txt"#) -}
+204dbf51fe541479f93ddeab3fa7f8fa
+  loadMeaningData8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "raw/meanings/nouns.txt"#) -}
+21e0db853f217f0f2b9048362f30238f
+  makeDictionary ::
+    WordGen.MeaningData
+    -> [PhonemeData.Phoneme]
+    -> [[PhonemeData.Phoneme]]
+    -> ((GHC.Types.Int, GHC.Types.Int), (GHC.Types.Int, GHC.Types.Int),
+        (GHC.Types.Int, GHC.Types.Int), (GHC.Types.Int, GHC.Types.Int))
+    -> Data.RVar.RVar
+         [((GHC.Base.String, InflectionData.LexCat), PhonemeData.Word)]
+  {- Arity: 4,
+     Strictness: <L,U(1*U,1*U,1*U,1*U)><L,U><L,U><L,U(U(U(U),U(U)),U(U(U),U(U)),U(U(U),U(U)),U(U(U),U(U)))> -}
+7f78e57e6963830239919803e40a6c0c
+  makeMorpheme ::
+    [PhonemeData.Phoneme]
+    -> [[PhonemeData.Phoneme]]
+    -> ((GHC.Types.Int, GHC.Types.Int), (GHC.Types.Int, GHC.Types.Int),
+        (GHC.Types.Int, GHC.Types.Int), (GHC.Types.Int, GHC.Types.Int))
+    -> Data.RVar.RVar PhonemeData.Morpheme
+  {- Arity: 3,
+     Strictness: <L,U><L,U><S(SSSS),1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: [PhonemeData.Phoneme])
+                   (w1 :: [[PhonemeData.Phoneme]])
+                   (w2 :: ((GHC.Types.Int, GHC.Types.Int),
+                           (GHC.Types.Int, GHC.Types.Int), (GHC.Types.Int, GHC.Types.Int),
+                           (GHC.Types.Int, GHC.Types.Int))) ->
+                 case w2 of ww { (,,,) ww1 ww2 ww3 ww4 ->
+                 case ww1 of ww5 { (,) ww6 ww7 ->
+                 case ww2 of ww8 { (,) ww9 ww10 ->
+                 case ww3 of ww11 { (,) ww12 ww13 ->
+                 case ww4 of ww14 { (,) ww15 ww16 ->
+                 WordGen.$wmakeMorpheme
+                   w
+                   w1
+                   ww6
+                   ww7
+                   ww9
+                   ww10
+                   ww12
+                   ww13
+                   ww15
+                   ww16 } } } } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
