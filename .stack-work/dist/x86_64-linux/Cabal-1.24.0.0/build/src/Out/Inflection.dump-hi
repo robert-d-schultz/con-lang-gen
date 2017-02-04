@@ -1,0 +1,540 @@
+
+==================== FINAL INTERFACE ====================
+2017-01-03 22:54:43.003961 UTC
+
+interface con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:Out.Inflection 8001
+  interface hash: ce2e279498f4da6d4e793cac4f920ab6
+  ABI hash: fde43c9736fa1323b7244615b62fc14e
+  export-list hash: 6dff3993fb6865e1454cbb1d181eac92
+  orphan hash: 791b349e9c0164039c5104a4df683c15
+  flag hash: 4f23aa816b7efc84f38d8512760fc2ec
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Out.Inflection.parseLCInflection
+  Out.Inflection.parseLexicalSystems
+module dependencies: Data.Grammar Data.Inflection Data.Other
+                     Data.Phoneme Gen.Inflection Gen.Morphology Gen.Phoneme
+                     Gen.Phonotactics Gen.Root LoadStuff Out.Lexicon Out.Roman
+                     Out.Syllable
+package dependencies: MonadPrompt-1.0.0.5@MonadPrompt-1.0.0.5-DSJ4febv4ITH7w1gOjdDZE
+                      MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      erf-2.0.0.0@erf-2.0.0.0-9HTdBV7htNjASgIJAT55AC
+                      flexible-defaults-0.0.1.2@flexible-defaults-0.0.1.2-1H2pkAjuTF1KghZBVsL2zl
+                      ghc-boot-th-8.0.1@ghc-boot-th-8.0.1 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh
+                      mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs
+                      monad-loops-0.4.3@monad-loops-0.4.3-1xZFtRVMQPC4X8bjTBWqNi
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb
+                      old-locale-1.0.0.7@old-locale-1.0.0.7-6glXNhHF891B41ZfuI8hU8
+                      old-time-1.1.0.3@old-time-1.1.0.3-IcvdkJUsE9M8t3io8peAEp
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd
+                      random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx
+                      random-shuffle-0.0.4@random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
+                      random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8
+                      rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF
+                      stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq
+                      stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
+                      syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj template-haskell-2.11.0.0
+                      th-extras-0.0.0.4@th-extras-0.0.0.4-65k7Dg54W2KxpzDoCAUbA
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
+orphans: MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov:Control.Monad.Random
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:Data.Inflection
+         mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.IO
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.MWC
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.PureMT
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.StdGen
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
+         syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj:Data.Generics.Instances
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.1@ghc-boot-th-8.0.1:GHC.LanguageExtensions.Type
+                         math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh:Numeric.RootFinding
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb:System.Random.MWC
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed.Base
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
+import  -/  base-4.9.0.0:Data.OldList 0058409f994fb13ae0616e3f1e5b4dae
+import  -/  base-4.9.0.0:Data.Tuple acb0ed10307ed88df6c81b8589f4de16
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  Data.Inflection f266f0dbc95b0bc603741fea34af6d4b
+  exports: 3959414e78500c5c160744df7b5d22d7
+  ABS 17a0716e077d5547746bc4329264cf98
+  ABS2 619b9cde6d000e57542142e928295344
+  ABS3 64f754588d9bfba694a2680d1a6b9034
+  ACC 6107576844cc2992a4f5c56b78cc21ca
+  ACTIVE 4d620c976ad54b1c6ab734e58e28245d
+  ADP 0f7f5da733aba3f3cc8d3691d5983883
+  AFF 6460deb424c42527e55da73a051089d5
+  AFUT 52fe8f9d58ce49c13e56351d256942a9
+  AFUT1 96678e07aa23947afee55f421816a321
+  AFUT2 952d43f87604eb119a92a596c293eb8b
+  AFUT3 ab9aec690c953869479036f27a6453e1
+  AN 048e43625c60e0543396f0de62476bc4
+  APRS 86bb374eed046433b33d19b2d0a10094
+  APST 99d98a16d3f27ceb33a152cd7d149309
+  ASS 3aa0444a6e6a4b2df9ad26b465018703
+  AUD 4c1f3faa1e271e8da47acb61416962e8
+  Adj e22b8a29c2b36729bbd8bb65a666313f
+  Adpo 9829130ab1bec46aff1f967edf49b31f
+  Adv f229caf470e5736a09d9743697103eda
+  Animacy 1f555085a72acd0be7c2a6de830d5d03
+  Aspect 73f9fcce4a2a405b233176b51f525cb2
+  COM efd538e66841916b6cfdbb80ef7ff147
+  COND c8dac941a63f2306ccd432d6b94e7d5f
+  CONT 63c8ced9aada1b089e033d77a4d23fd6
+  Case 476440af125c1822cd0b767cc8ac9f95
+  DEF c833727f8ad3ba364b34a339f3d4571f
+  DEO d33c74f2170f6972597ead71c51428e2
+  DIR 6eab2f745612486377a9e8982b86d30f
+  DITRANS 68de52a8db088e8bd4fef315232f8da0
+  DRT1 7a08c5a495a7f7f4c690b105eb813f9f
+  DRT2 385a55ad56b9f51486b92c551429a7c9
+  DTR 861ae215f7ef331deff733422d855767
+  DU 4a109d747b15517d0e9ec8ead8593444
+  Definiteness 1de448f2aa68251f2e0f9da9901aa214
+  EPIS 660a542d85c0c140137c7f0d3d3fe3cf
+  ERG fd0ff046612cda47ed03a382b1f15b08
+  ERG2 3fa4c5c6015fda29d78f091ac63160b5
+  EXP c975621a208adff81dbcb88e49e7057c
+  Evidentiality 18aae8850f4e0825a5c83b6a39cdd02c
+  Express 5b9a30e57907153c9d73916e653e1523
+  Express 215fe38755b3229d5abb86dd2bfcfba2
+  F feb0fb1e08e44b1407df94395bc7b5b4
+  FAM b80dfc6e6e416e8ba4f5249d77e26433
+  FIRST 20119824f2237e1376da63d69d60af7e
+  FORM 1369db2d1eb441987e533247fd3abc68
+  FSTEXCL 7b890cfd94af06925fb9c9521c67b69d
+  FSTINCL d579ae2d4a60a7eb424fe0023102b739
+  FUT 9df89fe7a24371169b2c3cb89bda2218
+  FUTPER 5afc44ed8d13da3aad68581dd88ccc03
+  Gender 8099e7e810494d6db288b5ee6338a850
+  HAB 9f64b5cc51826c97beab12c2d7119ada
+  HSY 28af3e649fb033e265b0a126eada0f83
+  HUM aa70d313026a2e194ff112361317b1d4
+  Honorific fb068a739b47969783c008d0c5ccdfb8
+  IMP ff91b598f5ddbe7d99c0d2f48ce2d752
+  INAN 4bd57348d9a1a1b37f80157706c7a40e
+  IND 0c8705bced22c5aa10ab581ed81ac6e1
+  INDF bc17c3e70e33059fed8a3252d485b7a6
+  INDIR c959162cb999eb84029ce3fefa5aeb30
+  INFER 558a7a2b3c422c29807074380443f2d0
+  INTR edb38bc999a29d445f0213403cc79694
+  IPFV 0e5093d6733e38ba9bf0d3bc157aa46d
+  IRR d822d6eca03679edab1c59f938ea5bbe
+  InflectionSystem 4d85e0faa8b64608c6b72704c2fa6a55
+  JUS c1a70ed1c2fb7ca8a6d529403324e5d0
+  LexCat ae7b63f8f02a08f901ccdfd454a411ac
+  M 3b2552ee0c3d80c957820718961124f5
+  MIDDLE 7471d2606f424a68f67e2c8ebb1d5d90
+  MTR 1d594177420083b33b91091c16b3bc4f
+  MTRANS 7ce98f0798c32029fcc7180925e2babe
+  Manifest db16baca5a5ac6cca78d6394672bf28b
+  Manifest 7ddf4c335f657c49b9e10fc56a6bbdf0
+  ManifestSystem 09abdffa07215df3f31d690df29bcb1e
+  ManifestSystem bbcb171ae6dead0cd5095e2d02b10d22
+  Mood 72dcb6eb4442b59226b0ba8f6714f13e
+  N 6866142f3ab6f9834ccc0979cddb6985
+  NEG 0dc71204377278091d8c6940ff8eaa57
+  NEU e29f9da8c860ad2d43168151782a4d50
+  NHUM a9a04b863ef0c2c8fb28a92396507212
+  NNPROG a5014b2451f13624a998360c3cc1e045
+  NOM c0f54eae1315b963692c91ece5044f75
+  NOM2 4a9bf8c114522d6016cbff033cf0646e
+  NPROG 1d119a5499a8dfa7485e2103d4a3bc4d
+  NSPEC 13bfb4fbd9d029e49698159a1d298e2b
+  NTOP 75ece8a6da62f61f9699d7321ebf2943
+  NTRANS 60e5b0fe6fc43bd6d841622eaa4fc5f3
+  NVIS 08c81ace6d93fcc3211bec54544a2a8a
+  NVOL ef8c255c600783e36520593ea685e8ae
+  NoExpress 676d50f85f9d9eb78082cdcfaafad173
+  NoManifest 7a3af5f4d574b9acc62f1eec06c97f74
+  Noun 53147e303af8b8d9270e2843acb727ca
+  Number 7465cc747c74e065f91b84b3f135a27f
+  OBJ 7c3ae7f9776637ec1584fbe22c7fe465
+  OBL1 2ad7deb823a49a60ff7b4715b40c71a5
+  OBL2 d689d0e125487e3221825c8bfed5108e
+  OBL3 c22d63bd2291e621f41742bb4e8f21ec
+  OBL4 40f1de0d7fca4bc3c7be81c527722139
+  OBL5 c52627911d2ef3291076b608f7d84431
+  OBL6 c1c99f5070deb591b2b85be89bc76273
+  OPT a6b4dd6079448b7e20eb095ef639d7b7
+  Obj bb64785f8513da80c43652dddd1ccc2a
+  PA 5fa080e35ae3a351a8768f2d7b0783cb
+  PASSIVE 1fd50a820826ec14c21fb3548015d923
+  PEG d67db143975d2f784e21662bc39538e5
+  PFUT 54f160c2a2ed4cf00e680b480b99a6db
+  PFV 1659531fd0e593784281781c3ab02d4c
+  PL 8f6619240c01eb90c921f6e0c1f5d685
+  POST bf040ca79306f302281ab78bea17f75e
+  POT dd5e339bf9cc38d326a2e15b13ed9a89
+  PPRS 1088d2434a32db678f7edda69d59c2d7
+  PPST baa84885a4e66c27c9b721cc4b3ec92c
+  PPST1 0b0f20ec11cab636cbde9b3e04da9720
+  PPST2 51329b55db7f9f57dd8a5904fc4d4f15
+  PPST3 8b4dad8df81d4c370e75f2069114e13d
+  PREP e40e5889707e6359181f659d011e6d65
+  PRIM 860529163bdf214e85b8a98130f7ad0d
+  PROG 924082f2e955113778ec45df627595a5
+  PRS bddd465c512b1d24a74d6926a0068beb
+  PRSPER 491c6565e1c2ebc5f75393b7417513e7
+  PST 03f8b9309abd4102d68af9f8bb9438d4
+  PSTPER e2b5b7779349951e1598d05880a33066
+  Particle 2fa5cb80a24f5e646f936d04ea2f3db9
+  Person 45fed2402e7ed2b24c1d66ccdfd878c7
+  Polarity 1c2c61816b840e25aed576544ed551f7
+  Prefix d2dd02b340fd8373cb43a40ab82f9f2c
+  QUO 7f42d062bd9bcf264cf1f6fb763ec621
+  REP 3078d35b4d60231fa3fc2a04ab2a161d
+  SBJV a40af47f75e4cb049a02a55bb55faf68
+  SEC 75182b802acd44dadc1e46329c152726
+  SECOND b4d72d60cacf017b465d5aefe76dc6d6
+  SG e224ba92545cd83720aed952453b60fb
+  SPEC 77d7b3e13fe9a7917df9b059e3f989c0
+  Specificity 160b967a8965f1dbfdfeda3e8d2f734a
+  Subj 3b71ca49575bb3e97e786c9c64cb73d1
+  Suffix 36323275ad7faf274e168f817b713186
+  THIRD 9cea83c7f6b971e7c64a11401f79f3a4
+  THRDOBV 867140e71e97978f6e8f8fc31679406a
+  THRDPROX 479ac1289f2c53bcada5ea5f1b5fc2bf
+  TOP 025447bcd71a4cbb7525d2028221ca82
+  TR c6135897a61b33076c35bbdb75633b21
+  TRANS 9873667e50e95444bcbd1f97c27b8f94
+  TRI 99c20966f36c8474d252d9affee7661f
+  Tense 66acf52fe96ad50a10594fa2d12d699d
+  Topic f6776b7675319519d06c9aea2dc03bf9
+  Transitivity 7302fbe55b71c04bf146a8a39e883cde
+  UANI 2a1d6b3fe23fbfa4332f9111f63f37b5
+  UASP f7c34a2559e46398066b9c4e6cb69d53
+  UCAS 861674aa99fd4296bda0f2becaec7db6
+  UDEF a4cbb6a1ce90d981215aa7119b033443
+  UEVI 769271c70354d37d60eb749b02014bbc
+  UGEN 2784702236ae9a52db51a2433699a0f0
+  UHON a3d7b027ed36eadc575c5eb8fc832d64
+  UMOO 28d5ab3b584ea8bfae03b745398c6a23
+  UNUM caa5f9bd7bcf515b22d07dc0d4684400
+  UPER 3655af026b4c4b817c3f541687765812
+  UPOL 2946e710f885e224dc0c8fc27f376961
+  USPE c5b5dd1eb3c4f8c6fb786dfc2dc0687a
+  UTEN 81486981d3a1607c7e3522089f8d9787
+  UTOP b859ba834a167d88626b14c01ba15610
+  UTRA ff3ef7833dc85ff4c94c6213e8f12ad8
+  UVOI 96bd1a5db5e4a6c82c6a8ce07d33517b
+  UVOL a906708de3baafe6407565e363c082cc
+  VIS ac99437127854d4e096d12a93fdace5c
+  VOL 781a32668da54eb39b669e8195900e1e
+  Verb 7c78db69105adfc8ac6e2f45ad086918
+  Voice 82e4499831c335865b73c47901c341b5
+  Volition 637cf4191464029f30da46ab81b77985
+  ZO 0aa9ed4b47b1a5f9e1a19bece0dd9824
+  aniSys 79a2b46a74c5e9ae76d8c7634583213b
+  aspSys 7ea174a878cf4cc3f4ccad891d2c4ce2
+  casSys 96d7cbb903d2b6e71868d12838ba0d70
+  defSys dc152fde80a2e6f012cf4cad582a2732
+  eviSys ba916281d5929eaf21b2b4dbc19fd461
+  genSys ea995e3825971508f2aef47b7550c556
+  honSys 9dcd5fdd3f0dd4ebf99c95af86399d6d
+  mooSys df674e58ca0ddd582eb68a75885f07bb
+  numSys 6f1d055c7fee29154991fce9f0ddc2d4
+  perSys 8261318a5d413dda1b6ecd848164a496
+  polSys 85fed7288f15cf731822518b2d41374b
+  speSys 5917e534ba91b2cc97198856ad200b98
+  tenSys bf08155923431e8d2e27a195481f9cdb
+  topSys 30e34761aee375966b983c6f27c8f9dc
+  traSys da6fafe1dba73683286fe8af7a6970ef
+  voiSys 1705c258669e74d07b6e1c6313b0b585
+  volSys bc0df6fcb6268478bd400fea067efb89
+import  -/  Data.Phoneme 8d8abfca47f36976b4a493acc97ddf5b
+  exports: cf7e229a8d1eca731bf27cf39a54d5d4
+  Phoneme 83c67fc806e8317ebba4d84ed8aa040f
+import  -/  Gen.Morphology 3b65e69a4ca803f3d8f7ba4f9964cd06
+  exports: 75616a0bc3467e620c5b8decff64d75a
+  cleanGrammarSys cbbb959f65fa35bd7529fc3e8667b339
+import  -/  Out.Lexicon 09b5066c222fbebe39f5d44bc6bcb394
+  exports: fbca99da44ffb1b9ed5638fc5f8ebf06
+  parseMorphemeIPA 2673cc7e002bb22f251c010f011dbe38
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+1cf99149a1d90cdca32e986c2aa229da
+  $s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress ::
+    GHC.Classes.Eq (Data.Inflection.Express Data.Inflection.Mood)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Data.Inflection.Express Data.Inflection.Mood)
+                  Out.Inflection.$s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress_$c==10
+                  (Data.Inflection.$fEqExpress_$c/=
+                     @ Data.Inflection.Mood
+                     Data.Inflection.$fEqMood) -}
+605f7dd6f3bff07298fc03051327d752
+  $s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress1 ::
+    GHC.Classes.Eq (Data.Inflection.Express Data.Inflection.Tense)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Data.Inflection.Express Data.Inflection.Tense)
+                  Out.Inflection.$s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress_$c==1
+                  (Data.Inflection.$fEqExpress_$c/=
+                     @ Data.Inflection.Tense
+                     Data.Inflection.$fEqTense) -}
+bd399039c541c2772f667dc9a3a675e5
+  $s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress2 ::
+    GHC.Classes.Eq (Data.Inflection.Express Data.Inflection.Case)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Data.Inflection.Express Data.Inflection.Case)
+                  Out.Inflection.$s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress_$c==2
+                  (Data.Inflection.$fEqExpress_$c/=
+                     @ Data.Inflection.Case
+                     Data.Inflection.$fEqCase) -}
+975ac6f16918acbe3c1f3a147ec79390
+  $s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress_$c==1 ::
+    Data.Inflection.Express Data.Inflection.Tense
+    -> Data.Inflection.Express Data.Inflection.Tense -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Data.Inflection.Express Data.Inflection.Tense)
+                   (ds1 :: Data.Inflection.Express Data.Inflection.Tense) ->
+                 case ds of wild {
+                   Data.Inflection.NoExpress
+                   -> case ds1 of wild1 {
+                        Data.Inflection.NoExpress -> GHC.Types.True
+                        Data.Inflection.Express ipv -> GHC.Types.False }
+                   Data.Inflection.Express a1
+                   -> case ds1 of wild1 {
+                        Data.Inflection.NoExpress -> GHC.Types.False
+                        Data.Inflection.Express b1
+                        -> Data.Inflection.$fEqTense_$c== a1 b1 } }) -}
+92c373bb5a22c97b70bfe31546526839
+  $s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress_$c==10 ::
+    Data.Inflection.Express Data.Inflection.Mood
+    -> Data.Inflection.Express Data.Inflection.Mood -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Data.Inflection.Express Data.Inflection.Mood)
+                   (ds1 :: Data.Inflection.Express Data.Inflection.Mood) ->
+                 case ds of wild {
+                   Data.Inflection.NoExpress
+                   -> case ds1 of wild1 {
+                        Data.Inflection.NoExpress -> GHC.Types.True
+                        Data.Inflection.Express ipv -> GHC.Types.False }
+                   Data.Inflection.Express a1
+                   -> case ds1 of wild1 {
+                        Data.Inflection.NoExpress -> GHC.Types.False
+                        Data.Inflection.Express b1
+                        -> Data.Inflection.$fEqMood_$c== a1 b1 } }) -}
+be99f46bf251029e5c2d9f0b91383d89
+  $s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress_$c==2 ::
+    Data.Inflection.Express Data.Inflection.Case
+    -> Data.Inflection.Express Data.Inflection.Case -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Data.Inflection.Express Data.Inflection.Case)
+                   (ds1 :: Data.Inflection.Express Data.Inflection.Case) ->
+                 case ds of wild {
+                   Data.Inflection.NoExpress
+                   -> case ds1 of wild1 {
+                        Data.Inflection.NoExpress -> GHC.Types.True
+                        Data.Inflection.Express ipv -> GHC.Types.False }
+                   Data.Inflection.Express a1
+                   -> case ds1 of wild1 {
+                        Data.Inflection.NoExpress -> GHC.Types.False
+                        Data.Inflection.Express b1
+                        -> Data.Inflection.$fEqCase_$c== a1 b1 } }) -}
+84bcd548c35a08e0bcab0bbf497dd8a0
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Out.Inflection.$trModule2
+                   Out.Inflection.$trModule1) -}
+e526678becea551ec1f9823bc0f41e9d
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Out.Inflection"#) -}
+bd626e22c46640419fdf0665b1764a15
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"#) -}
+1b2ae4d3dadb7ef8dd83dd394f217d5d
+  $wparseLexicalSystems ::
+    Data.Inflection.InflectionSystem
+    -> [[Data.Phoneme.Phoneme]]
+    -> Data.Inflection.LexCat
+    -> [Data.Inflection.ManifestSystem]
+    -> [Data.Inflection.ManifestSystem]
+    -> [Data.Inflection.ManifestSystem]
+    -> GHC.Base.String
+  {- Arity: 6,
+     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><L,U><L,1*U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ (w :: Data.Inflection.InflectionSystem)
+                   (w1 :: [[Data.Phoneme.Phoneme]])
+                   (ww :: Data.Inflection.LexCat)
+                   (ww1 :: [Data.Inflection.ManifestSystem])
+                   (ww2 :: [Data.Inflection.ManifestSystem])
+                   (ww3 :: [Data.Inflection.ManifestSystem]) ->
+                 GHC.CString.unpackAppendCString#
+                   "<br>\n"#
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      (Out.Inflection.parseLexCat ww)
+                      (case GHC.List.$wlenAcc
+                              @ Data.Inflection.ManifestSystem
+                              ww1
+                              0# of ww4 { DEFAULT ->
+                       GHC.Base.++
+                         @ GHC.Types.Char
+                         (Out.Inflection.$wparseManifestSystems ww1 w1 ww4 w)
+                         (case GHC.List.$wlenAcc
+                                 @ Data.Inflection.ManifestSystem
+                                 ww2
+                                 0# of ww5 { DEFAULT ->
+                          GHC.Base.++
+                            @ GHC.Types.Char
+                            (Out.Inflection.$wparseManifestSystems ww2 w1 ww5 w)
+                            (case GHC.List.$wlenAcc
+                                    @ Data.Inflection.ManifestSystem
+                                    ww3
+                                    0# of ww6 { DEFAULT ->
+                             Out.Inflection.$wparseManifestSystems ww3 w1 ww6 w }) }) }))) -}
+e6b20366d5f8361f63af2e2cb873024f
+  $wparseManifestSystems ::
+    [Data.Inflection.ManifestSystem]
+    -> [[Data.Phoneme.Phoneme]]
+    -> GHC.Prim.Int#
+    -> Data.Inflection.InflectionSystem
+    -> GHC.Base.String
+  {- Arity: 4,
+     Strictness: <L,1*U><L,U><S,U><L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)>,
+     Inline: [0] -}
+0e835e448e9c932481c0427a08a23b20
+  parseLCInflection ::
+    Data.Inflection.InflectionSystem -> GHC.Base.String
+  {- Arity: 1,
+     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)> -}
+e9f19ba52622404fe0586ef666887cb0
+  parseLexCat :: Data.Inflection.LexCat -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (lc :: Data.Inflection.LexCat) ->
+                 case GHC.Prim.dataToTag# @ Data.Inflection.LexCat lc of wild {
+                   DEFAULT -> Out.Inflection.parseLexicalSystems8
+                   2# -> Out.Inflection.parseLexicalSystems7
+                   4# -> Out.Inflection.parseLexicalSystems6
+                   5# -> Out.Inflection.parseLexicalSystems5
+                   6# -> Out.Inflection.parseLexicalSystems4
+                   7# -> Out.Inflection.parseLexicalSystems3
+                   8# -> Out.Inflection.parseLexicalSystems2
+                   9# -> Out.Inflection.parseLexicalSystems1 }) -}
+c1d87ab8ef7e520530ee8b0b59af505d
+  parseLexicalSystems ::
+    Data.Inflection.InflectionSystem
+    -> [[Data.Phoneme.Phoneme]]
+    -> (Data.Inflection.LexCat, [Data.Inflection.ManifestSystem],
+        [Data.Inflection.ManifestSystem], [Data.Inflection.ManifestSystem])
+    -> GHC.Base.String
+  {- Arity: 3,
+     Strictness: <L,U(U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U,U)><L,U><S,1*U(1*U,U,U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: Data.Inflection.InflectionSystem)
+                   (w1 :: [[Data.Phoneme.Phoneme]])
+                   (w2 :: (Data.Inflection.LexCat, [Data.Inflection.ManifestSystem],
+                           [Data.Inflection.ManifestSystem],
+                           [Data.Inflection.ManifestSystem])) ->
+                 case w2 of ww { (,,,) ww1 ww2 ww3 ww4 ->
+                 Out.Inflection.$wparseLexicalSystems w w1 ww1 ww2 ww3 ww4 }) -}
+fbf568ba8f78dffa18625422567bf417
+  parseLexicalSystems1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Subject"#) -}
+05a374e6a6e13aa1ea49a8a4a49fd47a
+  parseLexicalSystems2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Object"#) -}
+c94073112a15422cbdbfaeb33bfe28c6
+  parseLexicalSystems3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Adverb"#) -}
+18c364ce59d9ecb3fb8de1370370abca
+  parseLexicalSystems4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Adjective"#) -}
+c37b69e0461a0e30edbd7e2279188c2c
+  parseLexicalSystems5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Adposition"#) -}
+4904fa89da99f7ecb7796e15d7387ba4
+  parseLexicalSystems6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Noun"#) -}
+68e4a026dcb0db9ff69e37827c64a152
+  parseLexicalSystems7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Verb"#) -}
+7e00c211b5c350fa6aa8b75f5e12da10
+  parseLexicalSystems8 :: GHC.Base.String
+  {- Strictness: x -}
+"SPEC/Out.Inflection $fEqExpress @ Case" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                                    Data.Inflection.Case)
+  Data.Inflection.$fEqExpress @ Data.Inflection.Case $dEq
+  = Out.Inflection.$s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress2
+"SPEC/Out.Inflection $fEqExpress @ Mood" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                                    Data.Inflection.Mood)
+  Data.Inflection.$fEqExpress @ Data.Inflection.Mood $dEq
+  = Out.Inflection.$s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress
+"SPEC/Out.Inflection $fEqExpress @ Tense" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                                     Data.Inflection.Tense)
+  Data.Inflection.$fEqExpress @ Data.Inflection.Tense $dEq
+  = Out.Inflection.$s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress1
+"SPEC/Out.Inflection $fEqExpress_$c==10 @ Case" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                                           Data.Inflection.Case)
+  Data.Inflection.$fEqExpress_$c==10 @ Data.Inflection.Case $dEq
+  = Out.Inflection.$s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress_$c==2
+"SPEC/Out.Inflection $fEqExpress_$c==10 @ Mood" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                                           Data.Inflection.Mood)
+  Data.Inflection.$fEqExpress_$c==10 @ Data.Inflection.Mood $dEq
+  = Out.Inflection.$s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress_$c==10
+"SPEC/Out.Inflection $fEqExpress_$c==10 @ Tense" [ALWAYS] forall ($dEq :: GHC.Classes.Eq
+                                                                            Data.Inflection.Tense)
+  Data.Inflection.$fEqExpress_$c==10 @ Data.Inflection.Tense $dEq
+  = Out.Inflection.$s$fEq(,,,,,,,,,,,,,,,,)_$c==_$s$fEqExpress_$c==1
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

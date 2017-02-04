@@ -28,11 +28,17 @@ syllabifyMorpheme sonhier morpheme = SyllWord sylls where
 
 -- Given a group of phones, make a proper syllable structure
 makeSyllable :: [[Phoneme]] -> [Phoneme] -> Syllable
-makeSyllable sonhier phonemes = Syllable onset nucleus coda where
+makeSyllable sonhier phonemes = out where
   nucleus = maximumBy (comparing (retrieveSon sonhier)) phonemes
+  out
+    | null $ elemIndices nucleus phonemes = Syllable phonemes Blank [Blank]
+    | otherwise = function2 nucleus phonemes
+
+function2 :: Phoneme -> [Phoneme] -> Syllable
+function2 nucleus phonemes = Syllable onset nucleus coda where
   i = last $ elemIndices nucleus phonemes
-  (onset, _)= splitAt i phonemes
-  (_, coda)= splitAt (i+1) phonemes
+  (onset, _) = splitAt i phonemes
+  (_, coda) = splitAt (i+1) phonemes
 
 -- Input the raw string of phones, output groups of phones that correspond to syllables
 breakWord :: [Phoneme] -> [Phoneme] -> [[Phoneme]] -> [[Phoneme]]

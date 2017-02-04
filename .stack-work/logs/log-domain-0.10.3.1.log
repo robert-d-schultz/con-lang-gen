@@ -1,10 +1,10 @@
-[1 of 1] Compiling Main             ( /tmp/stack5553/log-domain-0.10.3.1/Setup.lhs, /tmp/stack5553/log-domain-0.10.3.1/.stack-work/dist/x86_64-linux/Cabal-1.24.0.0/setup/Main.o )
+[1 of 1] Compiling Main             ( /tmp/stack11291/log-domain-0.10.3.1/Setup.lhs, /tmp/stack11291/log-domain-0.10.3.1/.stack-work/dist/x86_64-linux/Cabal-1.24.0.0/setup/Main.o )
 
-/tmp/stack5553/log-domain-0.10.3.1/Setup.lhs:51:69: warning: [-Wdeprecations]
+/tmp/stack11291/log-domain-0.10.3.1/Setup.lhs:51:69: warning: [-Wdeprecations]
     In the use of type constructor or class ‘InstalledPackageId’
     (imported from Distribution.Package):
     Deprecated: "Use UnitId instead"
-Linking /tmp/stack5553/log-domain-0.10.3.1/.stack-work/dist/x86_64-linux/Cabal-1.24.0.0/setup/setup ...
+Linking /tmp/stack11291/log-domain-0.10.3.1/.stack-work/dist/x86_64-linux/Cabal-1.24.0.0/setup/setup ...
 Configuring log-domain-0.10.3.1...
 Building log-domain-0.10.3.1...
 Preprocessing library log-domain-0.10.3.1...
@@ -29,5 +29,5 @@ src/Numeric/Log/Signed.hs:87:10: warning: [-Wredundant-constraints]
     • Redundant constraint: Fractional a
     • In the instance declaration for ‘Read (SignedLog a)’
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/log-domain-0.10.3.1-K9XvNTuNETnI9DADYpqaEt
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/log-domain-0.10.3.1-K9XvNTuNETnI9DADYpqaEt
 Registering log-domain-0.10.3.1...

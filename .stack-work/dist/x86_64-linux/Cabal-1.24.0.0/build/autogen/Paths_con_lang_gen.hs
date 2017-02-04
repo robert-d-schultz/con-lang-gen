@@ -29,11 +29,11 @@ version :: Version
 version = Version [0,0,0,1] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.12/8.0.1/bin"
-libdir     = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"
-datadir    = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.12/8.0.1/share/x86_64-linux-ghc-8.0.1/con-lang-gen-0.0.0.1"
-libexecdir = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.12/8.0.1/libexec"
-sysconfdir = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.12/8.0.1/etc"
+bindir     = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.14/8.0.1/bin"
+libdir     = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"
+datadir    = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.14/8.0.1/share/x86_64-linux-ghc-8.0.1/con-lang-gen-0.0.0.1"
+libexecdir = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.14/8.0.1/libexec"
+sysconfdir = "/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.14/8.0.1/etc"
 
 getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "con_lang_gen_bindir") (\_ -> return bindir)

@@ -92,7 +92,8 @@ parseLexicalSystems inflSys sonHier (lc, parts, prefs, suffs) = "<br>\n" ++ pars
                                                          ++ parseManifestSystems suffs sonHier (length suffs) inflSys
 
 parseManifestSystems :: [ManifestSystem] -> [[Phoneme]] -> Int -> InflectionSystem -> String
-parseManifestSystems expSyss sonHier 0 gramSys = ""
+parseManifestSystems _ _ 0 _ = ""
+parseManifestSystems [] _ _ _ = ""
 parseManifestSystems expSyss sonHier i gramSys = parseManifestSystems (init expSyss) sonHier (i-1) gramSys ++ parseManifestSystem (last expSyss) sonHier gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol where
   ManifestSystem lc mt xs = last expSyss
   (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc mt i
@@ -119,7 +120,7 @@ parseManifestSystem manSys sonHier gens anis cass nums defs spes tops pers hons 
   header = makeHeader horLabels hls
 
   makeHeader :: [[String]] -> [Int] -> String
-  makeHeader [] hls = ""
+  makeHeader [] _ = ""
   makeHeader lss hls = makeLabel (length lss) (head lss) hls ++ makeHeader (tail lss) hls
 
   makeLabel :: Int -> [String] -> [Int] -> String
@@ -211,18 +212,18 @@ parseManifestSystem manSys sonHier gens anis cass nums defs spes tops pers hons 
   getMorpheme (ManifestSystem _ Particle combos) sonHier ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = output where
     filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
     output
-      | not.null $ filt = parseMorphemeIPA sonHier (fst $ head filt)
-      | otherwise = ""
+      | null filt = ""
+      | otherwise = parseMorphemeIPA sonHier (fst $ head filt)
   getMorpheme (ManifestSystem _ Prefix combos) sonHier ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = output where
     filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
     output
-      | not.null $ filt = parseMorphemeIPA sonHier (fst $ head filt) ++ "–"
-      | otherwise = ""
+      | null filt = ""
+      | otherwise = parseMorphemeIPA sonHier (fst $ head filt) ++ "–"
   getMorpheme (ManifestSystem _ Suffix combos) sonHier ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = output where
     filt = filter (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
     output
-      | not.null $ filt = "–" ++ parseMorphemeIPA sonHier (fst $ head filt)
-      | otherwise = ""
+      | null filt = ""
+      | otherwise = "–" ++ parseMorphemeIPA sonHier (fst $ head filt)
 
 parseGenders :: Manifest [Gender] -> String
 parseGenders (Manifest _ gens) = "Gender (" ++ intercalate ", " (init strs) ++ ", and " ++ last strs ++ ")" where

@@ -13,5 +13,5 @@ src/Data/RVar.hs:47:1: warning: [-Wunused-imports]
       except perhaps to import instances from ‘Control.Monad.Identity’
     To import instances alone, use: import Control.Monad.Identity()
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF
 Registering rvar-0.2.0.3...

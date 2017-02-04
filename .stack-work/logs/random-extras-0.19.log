@@ -17,5 +17,5 @@ Data/Random/Distribution/Uniform/Exclusive.hs:69:10: warning: [-Wredundant-const
     • In the instance declaration for ‘Excludable (Fixed r)’
 [5 of 5] Compiling Data.Random.Shuffle.Weighted ( Data/Random/Shuffle/Weighted.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Shuffle/Weighted.o )
 Installing library in
-/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd
+/home/chaosrobie/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd
 Registering random-extras-0.19...

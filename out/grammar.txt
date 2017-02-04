@@ -1,75 +1,15 @@
 Grammar
 Parameters:
-	*Specifier final
+	*Specifier initial
 	*Object initial
-	*(Non-object) Head final
-	*Obligatory V to I movement
+	*(Non-object) Head initial
+	*No V to I movement
 	*No affix hoping
 	*No null subject
-	*Obligatory topic
+	*Optional topic
 	*Optional null topic
 	*Obligatory topic marking
-	*No I to C movement
+	*Obligatory I to C movement
 	*No WH-movement
 	*Piedpiping
 	*No question inversion
-
-kah tek hhragehogpagogo uhbuh htdglehrbuppudgh aho tdtdoggakorderpudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.rɜ.ɡê.ʕ̞̟ɒʡ̠.pä̂.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖ̩.ʡ̥̠ʟ̆ɛɦ̞ɻ̊.bɔ.ppɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /tɖ̩.tɖɨ.ʡ̥̠ɡɑ.kûʙ.ɖœ᷈ɰ̊.pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-learn-UTEN UHON.NTOP.DEF ACC-sex-SG-UVOI-UTRA UHON.TOP.DEF UCAS-sea-SG-UVOI-UTRA
-will have learned the sex the sea
-"the sea will have learned the sex"
-
-kah tek hhehrehgogogo gardarakeh uhbuh htdpgorpudgh aho <UNK> tdtdklealopudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞ɛ᷈ʕ̞.ⱱ̟̊ø.ʔʡu᷈.ɡɒ.ɡɒ/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖ̩.pɡɨ̂ɽ͡r̥.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /tɖ̩.tɖ̩.kɺ̢̊ø᷈ä̯̂.ʟ̥ɒ̂.pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-write-UTEN at UHON.NTOP.DEF ACC-balance-SG-UVOI-UTRA UHON.TOP.DEF chief UCAS-event-SG-UVOI-UTRA
-will have writeed at the balance the chief event
-"the chief event will have writeed at the balance"
-
-kah tek hhgbaggaldgagogo uhbuh htdlohalprugpudgh aho <UNK> tdtdtehguhrohklopudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʡ̥bɑʡ̠.ʡ̥̠ä̂ɺɖ.ʡ̥ɒ̈᷈.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖl̥ɤ.ħ̞ɑ᷈l̥.pɻɔ᷈ɡ.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /tɖ̩.tɖ̩.ʈɛ᷈ħ̞̟.ʡɵ᷈ʕ̞̟.ɽ͡r̥uʡ̮̠.kɺ̢ɨ̂.pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-leave-UTEN UHON.NTOP.DEF ACC-horn-SG-UVOI-UTRA UHON.TOP.DEF round UCAS-note-SG-UVOI-UTRA
-will have leaveed the horn the round note
-"the round note will have leaveed the horn"
-
-kah tek hhtagogo gardarakeh uhbuh gardarakeh uhbuh <UNK> htdulhlorpudgh htddardgahduhgragpudgh aho <UNK> tdtdgrahohlgahrahpudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.tɞ.ɡɒ.ɡɒ/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖɵ᷈ɭ.ʔʟ̆ɤ᷈ɾ.pɘ̂d.ʡ̥ʕ̞̟̩/ /h̞̩.tɖdɜɽ͡r̥.ɖɡɑ̂ʢ̠.ɖɘ̂h̞.ʡ̠ɻ̊ɶ.ʡ̥pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /tɖ̩.tɖʡ̠ɾ̥ɜ.ʔʌ̂ʕ̞̟ʟ.ɡɶɦ̞.ɰ̊ä̂ʕ̞̟.pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-say-UTEN at UHON.NTOP.DEF at UHON.NTOP.DEF open ACC-unit-SG-UVOI-UTRA ACC-stitch-SG-UVOI-UTRA UHON.TOP.DEF kind UCAS-agreement-SG-UVOI-UTRA
-will have sayed at the at the open unit stitch the kind agreement
-"the kind agreement will have sayed at the stitch at the open unit"
-
-kah tek hhtehagogo uhbuh <UNK> htddhehoggepudgh aho <UNK> tdtdapudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ti᷈.ERRORä̂.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖdħ̞î.h̞ɒ̂.ʡ̠ɡɛ.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /tɖ̩.tɖɜ.pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-give-UTEN UHON.NTOP.DEF healthy ACC-nut-SG-UVOI-UTRA UHON.TOP.DEF secret UCAS-son-SG-UVOI-UTRA
-will have giveed the healthy nut the secret son
-"the secret son will have giveed the healthy nut"
-
-kah tek hhtehghalkehregogo gardarakeh uhbuh htdortohhapudgh aho <UNK> rhobblohra uhbuh htdihpudgh tdtdpgohrpudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.tɛ᷈h̞.ɡɦ̞ɒ̈l.kø̂ʕ̞̟.ɽ͡r̥e᷈.ɡɒ.ɡɒ/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖôɽ.tɨ᷈ħ̞̟.ʜ̠ɒ̈᷈.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ <UNK> /rħ̞̟ʉ̂.bbɭ̥ûʕ̞̟.ɽɞ᷈/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖŷɦ̞.pɘ̂d.ʡ̥ʕ̞̟̩/ /tɖ̩.tɖ̩.pɡɯ᷈ħ̞ɹ̊.pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-teach-UTEN at UHON.NTOP.DEF ACC-waste-SG-UVOI-UTRA UHON.TOP.DEF married on UHON.NTOP.DEF ACC-taste-SG-UVOI-UTRA UCAS-rhythm-SG-UVOI-UTRA
-will have teached at the waste the married on the taste rhythm
-"the married rhythm on the taste will have teached at the waste"
-
-kah tek hhtihgohdhogogo uhbuh <UNK> htdpohlahrahgohhpudgh aho tdtdhlegpudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʈŷɦ̞.ʡ̥ɨ̂ʜ̠d.ʔɒ᷈.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖ̩.pu᷈ʕ̞̟.ʟ̆ɞħ̞̟.ɾɶʜ.ɡɨ᷈ħ̞ʜ̠.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /tɖ̩.tɖ̩.ʔɺ̢ɛ᷈.ʡ̥pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-buy-UTEN UHON.NTOP.DEF certain ACC-distance-SG-UVOI-UTRA UHON.TOP.DEF UCAS-sugar-SG-UVOI-UTRA
-will have buyed the certain distance the sugar
-"the sugar will have buyed the certain distance"
-
-kah tek hhgedrarertrougogo uhbuh <UNK> htdhrahbbegkohrahppudgh aho tdtdeahrhoddhegrahlpudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʡ̥ɛ᷈.ɖʙɑ᷈.r̥ø̂ɽ̊.tɹ̊o᷈ɵ̯.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖ̩.ʔɹɒ̈̂h̞.bbø̂ʡ.kɯʕ̞̟.ɹɞɦ̞.ppɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /tɖ̩.tɖø᷈ä̯̂ɦ̞.ʙħ̞û.ɖdʕ̞̟ɛ.ʡ̠ⱱ̟ä᷈ɦ̞ɺ.pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-think-UTEN UHON.NTOP.DEF expensive ACC-flag-SG-UVOI-UTRA UHON.TOP.DEF UCAS-stop-SG-UVOI-UTRA
-will have thinked the expensive flag the stop
-"the stop will have thinked the expensive flag"
-
-kah tek hhgohrerboglehhgogo gardarakeh uhbuh <UNK> htdglapudgh aho rhobblohra uhbuh htduhrirbohuhgpudgh tdtdgupudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʡ̥ɯ᷈h̞.ɰøɽ͡r.bʌ.ɡɺɛ̂ɦ̞ʢ.ɡɒ.ɡɒ/ /ʡ̥a᷈ɽ͡r̥.da᷈.ɰ̊ɒ̈᷈.kœ᷈h̞/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ <UNK> /h̞̩.tɖɡʟ̆ɞ̂.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /rħ̞̟ʉ̂.bbɭ̥ûʕ̞̟.ɽɞ᷈/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖɔ̂ħ̞̟.r̥y᷈ɾ̥.bɤ᷈.ħ̞̟ɘʕ̞ʡ.pɘ̂d.ʡ̥ʕ̞̟̩/ /tɖ̩.tɖʡɘ᷈.pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-happen-UTEN at UHON.NTOP.DEF serious ACC-canvas-SG-UVOI-UTRA UHON.TOP.DEF on UHON.NTOP.DEF ACC-space-SG-UVOI-UTRA UCAS-use-SG-UVOI-UTRA
-will have happened at the serious canvas the on the space use
-"the use on the space will have happened at the serious canvas"
-
-kah tek hhhapehlkehugogo uhbuh htdgrehupudgh aho tdtdplohgehgtoripudgh
-/kɒ̈ʕ̞̟/ /ʈek/ /ɦ̞ɦ̞̩.ʔâ.pɛh̞l̥.kø᷈.ʕ̞ɵ̂.ɡɒ.ɡɒ/ /ɘ̂ħ̞̟.bɵ̂ħ̞/ /h̞̩.tɖɡɸ̝ɛ.ħ̞ɘ̂.pɘ̂d.ʡ̥ʕ̞̟̩/ /ɶ᷈.ʡ̮̠ɤ᷈/ /tɖ̩.tɖ̩.pɭ̥oERROR.ʡ̠ɛ᷈ħ̞ʡ̠.ʈɨ᷈.ɹŷ.pɘ̂d.ʡ̥ʕ̞̟̩/
-UTRA.UDEF ACTIVE UVOL-get-UTEN UHON.NTOP.DEF ACC-design-SG-UVOI-UTRA UHON.TOP.DEF UCAS-hate-SG-UVOI-UTRA
-will have geted the design the hate
-"the hate will have geted the design"

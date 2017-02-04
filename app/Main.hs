@@ -4,6 +4,7 @@ import Data.Random.Extras
 import Data.Random hiding (sample)
 import Data.RVar
 import Control.Monad
+import Data.List
 
 import LoadStuff
 
@@ -15,6 +16,8 @@ import Gen.Inflection
 import Gen.Morphology
 import Gen.Grammar
 import Gen.ParseTree
+
+import Gen.Grapheme
 
 import Out.Other
 import Out.Phonology
@@ -56,13 +59,16 @@ main = do
   roots <- sampleRVar (makeRootDictionary mData (inventoryV ++ inventoryD) sonHier ((1, 4), (0, 2), (1, 3), (0, 2)))
 
   -- full Lexicon
-  let dict = makeDictionary systems roots
+  -- let dict = makeDictionary systems roots
 
   -- grammar
   grammar <- sampleRVar makeGrammar
 
   -- parse trees
   ptExamples <- sampleRVar (replicateM 10 (makeParseTree mData))
+
+  -- characters
+  chracterSVGs <- sampleRVar (makeCharacters 5)
 
   -- outputs
   writeFile "out/phonology.txt" $ "Phonology"
@@ -78,8 +84,10 @@ main = do
                                 ++ concatMap (parseLexicalSystems inflSys sonHier) systems
 
   writeFile "out/lexicon.txt" $ "Lexicon"
-                             ++ parseDictionary sonHier dict
+                             -- ++ parseDictionary sonHier dict
 
   writeFile "out/grammar.txt" $ "Grammar"
                              ++ parseGrammar grammar
-                             ++ concatMap (parseParseTree sonHier dict systems grammar) ptExamples
+                            -- ++ concatMap (parseParseTree sonHier roots systems grammar) ptExamples
+
+  writeFile "out/character.svg" $  intercalate "\n" chracterSVGs

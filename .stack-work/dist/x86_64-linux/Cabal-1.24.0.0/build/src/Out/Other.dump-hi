@@ -1,0 +1,202 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-21 17:41:40.480745 UTC
+
+interface con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:Out.Other 8001
+  interface hash: 709818bc2d83e8f59994dc1d313d0966
+  ABI hash: 860f1be0deda53038e41424789b23153
+  export-list hash: 119cbfe568c79082519dcc554220b6a7
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: ec5283bfe8e9c622a846a29979b370ac
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Out.Other.parseSonHier
+module dependencies: Data.Inflection Data.Other Data.Phoneme
+                     Gen.Phonotactics Out.Lexicon Out.Roman Out.Syllable
+package dependencies: MonadPrompt-1.0.0.5@MonadPrompt-1.0.0.5-DSJ4febv4ITH7w1gOjdDZE
+                      MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      erf-2.0.0.0@erf-2.0.0.0-9HTdBV7htNjASgIJAT55AC
+                      flexible-defaults-0.0.1.2@flexible-defaults-0.0.1.2-1H2pkAjuTF1KghZBVsL2zl
+                      ghc-boot-th-8.0.1@ghc-boot-th-8.0.1 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh
+                      mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs
+                      monad-loops-0.4.3@monad-loops-0.4.3-1xZFtRVMQPC4X8bjTBWqNi
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb
+                      old-locale-1.0.0.7@old-locale-1.0.0.7-6glXNhHF891B41ZfuI8hU8
+                      old-time-1.1.0.3@old-time-1.1.0.3-IcvdkJUsE9M8t3io8peAEp
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd
+                      random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx
+                      random-shuffle-0.0.4@random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
+                      random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8
+                      rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF
+                      stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq
+                      stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
+                      syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj template-haskell-2.11.0.0
+                      th-extras-0.0.0.4@th-extras-0.0.0.4-65k7Dg54W2KxpzDoCAUbA
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
+orphans: MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov:Control.Monad.Random
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:Data.Inflection
+         mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.IO
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.MWC
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.PureMT
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.StdGen
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
+         syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj:Data.Generics.Instances
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.1@ghc-boot-th-8.0.1:GHC.LanguageExtensions.Type
+                         math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh:Numeric.RootFinding
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb:System.Random.MWC
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed.Base
+import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
+import  -/  base-4.9.0.0:Data.OldList 0058409f994fb13ae0616e3f1e5b4dae
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  Data.Phoneme 8d8abfca47f36976b4a493acc97ddf5b
+  exports: cf7e229a8d1eca731bf27cf39a54d5d4
+  Phoneme 83c67fc806e8317ebba4d84ed8aa040f
+import  -/  Out.Lexicon 09b5066c222fbebe39f5d44bc6bcb394
+  exports: fbca99da44ffb1b9ed5638fc5f8ebf06
+  parsePhonemeIPA 2edfaf837d4bc016821f1c64f45d425e
+e63add458c28897750a738227bae2b4a
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Out.Other.$trModule2
+                   Out.Other.$trModule1) -}
+f26723a480f49d8ec410e42717e32393
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Out.Other"#) -}
+73eff8f39f5826cda2effd081ec9fcea
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"#) -}
+1cf0739d85f7b3d93f02b9c0ef46b8d2
+  parseSonHier ::
+    [Data.Phoneme.Phoneme]
+    -> [[Data.Phoneme.Phoneme]] -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,1*U><L,1*U>,
+     Unfolding: (\ (vows :: [Data.Phoneme.Phoneme])
+                   (cons :: [[Data.Phoneme.Phoneme]]) ->
+                 GHC.CString.unpackAppendCString#
+                   "\n\
+                   \\n\
+                   \Sonority hierarchy: \n\
+                   \/"#
+                   (let {
+                      arg :: [GHC.Types.Char]
+                      = GHC.CString.unpackAppendCString#
+                          "/\n\
+                          \/"#
+                          (case GHC.Base.map
+                                  @ [Data.Phoneme.Phoneme]
+                                  @ [GHC.Types.Char]
+                                  Out.Other.parseSonHier4
+                                  cons of wild {
+                             [] -> Out.Other.parseSonHier3
+                             : x xs1
+                             -> GHC.Base.++
+                                  @ GHC.Types.Char
+                                  (Data.OldList.intercalate_$spoly_go
+                                     @ GHC.Types.Char
+                                     x
+                                     (Data.OldList.prependToAll
+                                        @ [GHC.Types.Char]
+                                        Out.Other.parseSonHier2
+                                        xs1))
+                                  Out.Other.parseSonHier3 })
+                    } in
+                    case GHC.Base.map
+                           @ Data.Phoneme.Phoneme
+                           @ [GHC.Types.Char]
+                           Out.Lexicon.parsePhonemeIPA
+                           vows of wild {
+                      [] -> arg
+                      : x xs1
+                      -> GHC.Base.++
+                           @ GHC.Types.Char
+                           (Data.OldList.intercalate_$spoly_go
+                              @ GHC.Types.Char
+                              x
+                              (Data.OldList.prependToAll
+                                 @ [GHC.Types.Char]
+                                 Out.Other.parseSonHier1
+                                 xs1))
+                           arg })) -}
+ebaff60302b8d6519af97d0dd3eaf39f
+  parseSonHier1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/, /"#) -}
+1950a5abe096a955444e065707a4be0f
+  parseSonHier2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "/\n\
+                   \/"#) -}
+81950b3ef5bdecc9eb1be6cce0f67343
+  parseSonHier3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/\n"#) -}
+7e0af50ce46423f13e0984f2d86dcd30
+  parseSonHier4 :: [Data.Phoneme.Phoneme] -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (x :: [Data.Phoneme.Phoneme]) ->
+                 case GHC.Base.map
+                        @ Data.Phoneme.Phoneme
+                        @ [GHC.Types.Char]
+                        Out.Lexicon.parsePhonemeIPA
+                        x of wild {
+                   [] -> GHC.Types.[] @ GHC.Types.Char
+                   : x1 xs1
+                   -> Data.OldList.intercalate_$spoly_go
+                        @ GHC.Types.Char
+                        x1
+                        (Data.OldList.prependToAll
+                           @ [GHC.Types.Char]
+                           Out.Other.parseSonHier1
+                           xs1) }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -25,5 +25,5 @@ src/Language/Haskell/TH/FlexibleDefaults.hs:28:1: warning: [-Wunused-imports]
       except perhaps to import instances from ‘Data.Monoid’
     To import instances alone, use: import Data.Monoid()
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/flexible-defaults-0.0.1.2-1H2pkAjuTF1KghZBVsL2zl
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/flexible-defaults-0.0.1.2-1H2pkAjuTF1KghZBVsL2zl
 Registering flexible-defaults-0.0.1.2...

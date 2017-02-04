@@ -37,5 +37,5 @@ src/Data/SafeCopy/Instances.hs:431:15: warning: [-Wdeprecations]
     Deprecated: "renamed to 'Typeable'"
 [5 of 5] Compiling Data.SafeCopy    ( src/Data/SafeCopy.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/SafeCopy.o )
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/safecopy-0.9.2-HXa80pqemsb4stzngyEdH9
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/safecopy-0.9.2-HXa80pqemsb4stzngyEdH9
 Registering safecopy-0.9.2...

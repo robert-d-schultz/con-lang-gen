@@ -7,5 +7,5 @@ src/System/Random/Shuffle.hs:59:1: warning: [-Wtabs]
     Tab character found here, and in 10 further locations.
     Please use spaces instead.
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
 Registering random-shuffle-0.0.4...

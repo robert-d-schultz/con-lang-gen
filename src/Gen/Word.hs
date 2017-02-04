@@ -1,5 +1,6 @@
 module Gen.Word
 ( makeDictionary
+, someFunction
 ) where
 
 import Prelude hiding (Word)
@@ -32,4 +33,11 @@ makeRootWord mans ((str, lc), morph)
   | otherwise = (,) <$> [(str,lc)] <*> map Word wrds where
   foo = filter (\(x,_,_,_) -> x == lc) mans
   (_,part,pref,suff) = head foo
-  wrds = (\x y z -> [x,y,z]) <$> map fst (concatMap manSysCombos pref) <*> [morph] <*> map fst (concatMap manSysCombos suff)
+  wrds = (\x y z -> x ++ y ++ z) <$> prefCombos <*> [[morph]] <*> suffCombos
+  prefCombos = someFunction $ map (map fst . manSysCombos) pref
+  suffCombos = someFunction $ map (map fst . manSysCombos) suff
+
+someFunction :: [[Morpheme]] -> [[Morpheme]]
+someFunction input
+  | null input = [[]]
+  | otherwise  = (:) <$> head input <*> someFunction (tail input)

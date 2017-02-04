@@ -201,5 +201,5 @@ internal/unbox-tuple-instances:1066:1: warning: [-Wredundant-constraints]
 [20 of 21] Compiling Data.Vector.Mutable ( Data/Vector/Mutable.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Vector/Mutable.o )
 [21 of 21] Compiling Data.Vector      ( Data/Vector.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Vector.o )
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.12/8.0.1/lib/x86_64-linux-ghc-8.0.1/vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
+/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
 Registering vector-0.11.0.0...

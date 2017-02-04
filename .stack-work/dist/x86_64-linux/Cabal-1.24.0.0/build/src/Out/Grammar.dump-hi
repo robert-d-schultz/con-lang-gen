@@ -1,0 +1,336 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-23 20:26:28.004693 UTC
+
+interface con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:Out.Grammar 8001
+  interface hash: 00c88d0474fec49c9ec726e773755f10
+  ABI hash: 38ec9c1172714c9f005e138efadc0196
+  export-list hash: dec9ee32dc18f69ece5d49b5e7199ed4
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: ec5283bfe8e9c622a846a29979b370ac
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Out.Grammar.parseGrammar
+module dependencies: Data.Grammar Data.Inflection Data.Other
+                     Data.Phoneme
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:Data.Inflection
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
+import  -/  base-4.9.0.0:Data.OldList 0058409f994fb13ae0616e3f1e5b4dae
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  Data.Grammar e3bdf85eebd04aee9ead3a06df4aad28
+  exports: 0062e624f7e52b2eec78ca7e68e0f617
+  AffixHopping 0ff7119050f64558eef1b9b6c65db897
+  CompFinal 4cf50c45067614dbe810800371910c54
+  CompInitial dbf7eff80c59ffa9d6f8f0ad61fed4b4
+  ComplementizerInitial 7bb064b4bffb830da7136c6d5d4c2457
+  Grammar cd4b04e0a0814c95a5c272a9bf89080f
+  Grammar 68da53a8367c3a884597fdcc112c08c3
+  ItoCMovement cbddba4252cc4aa21ee5ba8ddf36dc91
+  NoAffixHop d680fdd3178a55d293a785870d7d9e97
+  NoItoCMove f5fb6b7e3c790f3974ca998bc691f7e4
+  NoNullSub c1bac951278f11466f6d2d7a15ed2fbe
+  NoNullTop 11dd10f19754694116b7c03e3b2a99eb
+  NoQuesInv efeb33d3c76cba1b6942ad00bb0f506c
+  NoTopMark 7b9d043b64d8d86f106d38a20fe70f39
+  NoVtoIMove ef956689d9bedff617bedd69e0128778
+  NoWHMove 59c40d00a4e3f693a50a80c84877eb43
+  NullSubject c268ade9ae4c288b84a762a1c162513f
+  NullTopic 052b3f964abdaf4269e4020caa0083ce
+  ObjFinal e8e697626807d5e14b20e9c3d0c8dbe2
+  ObjInitial 117be17860a0eacdfd564f7b5733c45d
+  ObjectFinal 5690ac32557ef5d251bb18590690680b
+  OblAffixHop ce4831a583c5c129ca2d71b63fc0f00e
+  OblItoCMove 595bf5ad375055ba6dd13be3f664cbee
+  OblQuesInv 2ed2df11b7d924d5dcf9895d83538004
+  OblTopMark 0a9f45a1b010feeee685aabf6fb78479
+  OblTopic dba6a8c66a7dba9dd2dd905bcbbd77ad
+  OblVtoIMove ff2c6bb9a8168626da69f63a662ccd9a
+  OblWHMove 4fd96600e50bde0d0aa8fd90a9b0f7e0
+  ObligatoryTopic 934ac344d29b59a815d4a00caa639ae9
+  OptNullSub d8c61a7ad973787261c5e096ca7bd06c
+  OptNullTop c4f5fcf7f03b67f2028516157becf3e1
+  OptTopic a3224037cee23f0fdb64f320324df254
+  PiedPipe 621eaecaaaab83cdfb04979962e95910
+  PiedPiping efd6ae426d6ff2280c8ec984c80efbcf
+  PrepStrand efd8d4acbba15f5b15c3bde26b193708
+  QuestionInversion dee16e043daf097681c2796c283f597a
+  SubFinal 15e4a8491b70e36e928d9f6c94bf18ad
+  SubInitial 65abc5a07f19660bb7ac6866c4d77497
+  SubjectInitial 872e11e1b82c550480a8f63d2a4025ab
+  TopicMarking a9a25ae4e38a6e1434a8bb1dfbea28b6
+  VtoIMovement 26726f546091d6e0b9a4e728fd464566
+  WHMovementObligatory b81b310f32810f84d11d228d1654c597
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+5821e43e35c00029b29c6c843787ec6a
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Out.Grammar.$trModule2
+                   Out.Grammar.$trModule1) -}
+709e154370691870326ec8fc816ba4e2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Out.Grammar"#) -}
+eb676d81f9b82e6a6f641ada0a04e281
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"#) -}
+c33a176a22dbc32f7bf9022b25a1ad36
+  $wparseGrammar ::
+    Data.Grammar.SubjectInitial
+    -> Data.Grammar.ObjectFinal
+    -> Data.Grammar.ComplementizerInitial
+    -> Data.Grammar.VtoIMovement
+    -> Data.Grammar.AffixHopping
+    -> Data.Grammar.NullSubject
+    -> Data.Grammar.ObligatoryTopic
+    -> Data.Grammar.NullTopic
+    -> Data.Grammar.TopicMarking
+    -> Data.Grammar.ItoCMovement
+    -> Data.Grammar.WHMovementObligatory
+    -> Data.Grammar.PiedPiping
+    -> Data.Grammar.QuestionInversion
+    -> GHC.Base.String
+  {- Arity: 13,
+     Strictness: <L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: Data.Grammar.SubjectInitial)
+                   (ww1 :: Data.Grammar.ObjectFinal)
+                   (ww2 :: Data.Grammar.ComplementizerInitial)
+                   (ww3 :: Data.Grammar.VtoIMovement)
+                   (ww4 :: Data.Grammar.AffixHopping)
+                   (ww5 :: Data.Grammar.NullSubject)
+                   (ww6 :: Data.Grammar.ObligatoryTopic)
+                   (ww7 :: Data.Grammar.NullTopic)
+                   (ww8 :: Data.Grammar.TopicMarking)
+                   (ww9 :: Data.Grammar.ItoCMovement)
+                   (ww10 :: Data.Grammar.WHMovementObligatory)
+                   (ww11 :: Data.Grammar.PiedPiping)
+                   (ww12 :: Data.Grammar.QuestionInversion) ->
+                 GHC.CString.unpackAppendCString#
+                   "\n\
+                   \Parameters:"#
+                   (GHC.CString.unpackAppendCString#
+                      "\n\
+                      \\t*"#
+                      (Data.OldList.intercalate_$spoly_go
+                         @ GHC.Types.Char
+                         (case ww of wild {
+                            Data.Grammar.SubInitial -> Out.Grammar.parseGrammar27
+                            Data.Grammar.SubFinal -> Out.Grammar.parseGrammar26 })
+                         (Data.OldList.prependToAll
+                            @ [GHC.Types.Char]
+                            Out.Grammar.parseGrammar25
+                            (GHC.Types.:
+                               @ [GHC.Types.Char]
+                               (case ww1 of wild {
+                                  Data.Grammar.ObjFinal -> Out.Grammar.parseGrammar24
+                                  Data.Grammar.ObjInitial -> Out.Grammar.parseGrammar23 })
+                               (GHC.Types.:
+                                  @ [GHC.Types.Char]
+                                  (case ww2 of wild {
+                                     Data.Grammar.CompInitial -> Out.Grammar.parseGrammar22
+                                     Data.Grammar.CompFinal -> Out.Grammar.parseGrammar21 })
+                                  (GHC.Types.:
+                                     @ [GHC.Types.Char]
+                                     (case ww3 of wild {
+                                        Data.Grammar.NoVtoIMove -> Out.Grammar.parseGrammar20
+                                        Data.Grammar.OblVtoIMove -> Out.Grammar.parseGrammar19 })
+                                     (GHC.Types.:
+                                        @ [GHC.Types.Char]
+                                        (case ww4 of wild {
+                                           Data.Grammar.NoAffixHop -> Out.Grammar.parseGrammar18
+                                           Data.Grammar.OblAffixHop -> Out.Grammar.parseGrammar17 })
+                                        (GHC.Types.:
+                                           @ [GHC.Types.Char]
+                                           (case ww5 of wild {
+                                              Data.Grammar.NoNullSub -> Out.Grammar.parseGrammar16
+                                              Data.Grammar.OptNullSub
+                                              -> Out.Grammar.parseGrammar15 })
+                                           (GHC.Types.:
+                                              @ [GHC.Types.Char]
+                                              (case ww6 of wild {
+                                                 Data.Grammar.OblTopic -> Out.Grammar.parseGrammar14
+                                                 Data.Grammar.OptTopic
+                                                 -> Out.Grammar.parseGrammar13 })
+                                              (GHC.Types.:
+                                                 @ [GHC.Types.Char]
+                                                 (case ww7 of wild {
+                                                    Data.Grammar.NoNullTop
+                                                    -> Out.Grammar.parseGrammar12
+                                                    Data.Grammar.OptNullTop
+                                                    -> Out.Grammar.parseGrammar11 })
+                                                 (GHC.Types.:
+                                                    @ [GHC.Types.Char]
+                                                    (case ww8 of wild {
+                                                       Data.Grammar.NoTopMark
+                                                       -> Out.Grammar.parseGrammar10
+                                                       Data.Grammar.OblTopMark
+                                                       -> Out.Grammar.parseGrammar9 })
+                                                    (GHC.Types.:
+                                                       @ [GHC.Types.Char]
+                                                       (case ww9 of wild {
+                                                          Data.Grammar.NoItoCMove
+                                                          -> Out.Grammar.parseGrammar8
+                                                          Data.Grammar.OblItoCMove
+                                                          -> Out.Grammar.parseGrammar7 })
+                                                       (GHC.Types.:
+                                                          @ [GHC.Types.Char]
+                                                          (case ww10 of wild {
+                                                             Data.Grammar.NoWHMove
+                                                             -> Out.Grammar.parseGrammar6
+                                                             Data.Grammar.OblWHMove
+                                                             -> Out.Grammar.parseGrammar5 })
+                                                          (GHC.Types.:
+                                                             @ [GHC.Types.Char]
+                                                             (case ww11 of wild {
+                                                                Data.Grammar.PiedPipe
+                                                                -> Out.Grammar.parseGrammar4
+                                                                Data.Grammar.PrepStrand
+                                                                -> Out.Grammar.parseGrammar3 })
+                                                             (GHC.Types.:
+                                                                @ [GHC.Types.Char]
+                                                                (case ww12 of wild {
+                                                                   Data.Grammar.NoQuesInv
+                                                                   -> Out.Grammar.parseGrammar2
+                                                                   Data.Grammar.OblQuesInv
+                                                                   -> Out.Grammar.parseGrammar1 })
+                                                                (GHC.Types.[]
+                                                                   @ [GHC.Types.Char]))))))))))))))))) -}
+30c77f76bde53b3dbddcd1c8d52643bf
+  parseGrammar :: Data.Grammar.Grammar -> GHC.Base.String
+  {- Arity: 1,
+     Strictness: <S,1*U(1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Data.Grammar.Grammar) ->
+                 case w of ww { Data.Grammar.Grammar ww1 ww2 ww3 ww4 ww5 ww6 ww7 ww8 ww9 ww10 ww11 ww12 ww13 ->
+                 Out.Grammar.$wparseGrammar
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   ww6
+                   ww7
+                   ww8
+                   ww9
+                   ww10
+                   ww11
+                   ww12
+                   ww13 }) -}
+fa5ac2c9f9b27f7feb7eef37788ea6c4
+  parseGrammar1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Obligatory question inversion"#) -}
+5d50a5a98bcd3f0648bb9d93cd6a9596
+  parseGrammar10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No topic marking"#) -}
+f71f8882ea73f09fba013188fa2544f0
+  parseGrammar11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Optional null topic"#) -}
+696fd79052866a4ae60c34ec4a6e96c1
+  parseGrammar12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No null topic"#) -}
+4214b522a2951e77548f39fbbfcb0428
+  parseGrammar13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Optional topic"#) -}
+965584438099b12ae6fbd857fc0c8fff
+  parseGrammar14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Obligatory topic"#) -}
+8c308961dd3f94ac3e0803c83ac52332
+  parseGrammar15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Optional null subject"#) -}
+77c223bdeb337f4bf710129c44cae1d9
+  parseGrammar16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No null subject"#) -}
+2687a6784b6fe686a1bc3527d66c5ca8
+  parseGrammar17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Obligatory affix hoping"#) -}
+7450bb0f04dc97878568c9becd6e5ef2
+  parseGrammar18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No affix hoping"#) -}
+3a94bf9a1a9ad12d54539fe89536040b
+  parseGrammar19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Obligatory V to I movement"#) -}
+b07ad0d183c9e78ecc007714bcebe1bb
+  parseGrammar2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "No question inversion"#) -}
+134d4fe899cba84b17f4bc5f24c280ed
+  parseGrammar20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No V to I movement"#) -}
+43d6759ec071d65057530e8b8d0c66f8
+  parseGrammar21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "(Non-object) Head final"#) -}
+fac4f88420c2b19ab96408d2b5f4a564
+  parseGrammar22 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "(Non-object) Head initial"#) -}
+30fa51d11ec39737500263b2e410c714
+  parseGrammar23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Object initial"#) -}
+317c59b6012de8b565dd7065929cdc55
+  parseGrammar24 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Object final"#) -}
+0b8717452f6330e831867c211de115a8
+  parseGrammar25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "\n\
+                   \\t*"#) -}
+e666a13f90c8be660771b939166a0fcd
+  parseGrammar26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Specifier final"#) -}
+8159ad8df6969798ee3801d1daceaaaf
+  parseGrammar27 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Specifier initial"#) -}
+dc359287ffda65f5c93a71eaf9cdc41b
+  parseGrammar3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Preposition stranding"#) -}
+1061d497d762cd326bcf9410dcda56f8
+  parseGrammar4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Piedpiping"#) -}
+f9ceda25d7d4db09f8eb227e373d276a
+  parseGrammar5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Obligatory WH-movement"#) -}
+dfb5504b534a0a1ba4df06e62fb58f4c
+  parseGrammar6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No WH-movement"#) -}
+c426d82dfaa8e8327ed9bf235ec54a1b
+  parseGrammar7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Obligatory I to C movement"#) -}
+8766e89ce446d063ddb37d9d581bb1af
+  parseGrammar8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No I to C movement"#) -}
+0aea12993fa91ef275eacd10d45d2bb1
+  parseGrammar9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Obligatory topic marking"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

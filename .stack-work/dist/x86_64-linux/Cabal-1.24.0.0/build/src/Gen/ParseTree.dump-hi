@@ -1,0 +1,162 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-23 20:26:28.393948 UTC
+
+interface con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:Gen.ParseTree 8001
+  interface hash: d6ba91b26130044b8519d6fee4bd3c5d
+  ABI hash: 0bf3c1738d1b721d1768068f17718220
+  export-list hash: 96248bb842d6090b1dcb8bb743219301
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: fbb7bb6b86ae8faca780181c3078ce45
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Gen.ParseTree.makeParseTree
+module dependencies: Data.Grammar Data.Inflection Data.Other
+                     Data.Phoneme LoadStuff
+package dependencies: MonadPrompt-1.0.0.5@MonadPrompt-1.0.0.5-DSJ4febv4ITH7w1gOjdDZE
+                      MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      erf-2.0.0.0@erf-2.0.0.0-9HTdBV7htNjASgIJAT55AC
+                      flexible-defaults-0.0.1.2@flexible-defaults-0.0.1.2-1H2pkAjuTF1KghZBVsL2zl
+                      ghc-boot-th-8.0.1@ghc-boot-th-8.0.1 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh
+                      mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs
+                      monad-loops-0.4.3@monad-loops-0.4.3-1xZFtRVMQPC4X8bjTBWqNi
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb
+                      old-locale-1.0.0.7@old-locale-1.0.0.7-6glXNhHF891B41ZfuI8hU8
+                      old-time-1.1.0.3@old-time-1.1.0.3-IcvdkJUsE9M8t3io8peAEp
+                      pretty-1.1.3.3@pretty-1.1.3.3
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd
+                      random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx
+                      random-shuffle-0.0.4@random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l
+                      random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8
+                      rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF
+                      stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq
+                      stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
+                      syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj template-haskell-2.11.0.0
+                      th-extras-0.0.0.4@th-extras-0.0.0.4-65k7Dg54W2KxpzDoCAUbA
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
+orphans: MonadRandom-0.4.2.3@MonadRandom-0.4.2.3-8TfCm6PGvGYB7omozORhov:Control.Monad.Random
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39:Data.Inflection
+         mersenne-random-pure64-0.2.0.5@mersenne-random-pure64-0.2.0.5-F5a2mcFFCTQJXAM4TYDSBs:System.Random.Mersenne.Pure64
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.IO
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.MWC
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.PureMT
+         random-source-0.3.0.6@random-source-0.3.0.6-9Kd6KhtNNMs92HTzA5obc8:Data.Random.Source.StdGen
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances
+         stateref-0.3@stateref-0.3-3PlselgQchu2fixnOT7uWq:Data.StateRef.Instances.STM
+         stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
+         syb-0.6@syb-0.6-C65vWCsht6A8uLstpQIXyj:Data.Generics.Instances
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         ghc-boot-th-8.0.1@ghc-boot-th-8.0.1:GHC.LanguageExtensions.Type
+                         math-functions-0.2.1.0@math-functions-0.2.1.0-JE0wcV77zWeIiF13ulGtAh:Numeric.RootFinding
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-LMmPnBqFcyXKNTZwO31mEb:System.Random.MWC
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.3@pretty-1.1.3.3:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed.Base
+import  -/  base-4.9.0.0:Control.Monad 7767aebfd53f0b584cef2fe66ad3986c
+import  -/  base-4.9.0.0:Data.Functor 6fc476505db88d678632a4a838125f13
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  Data.Grammar e3bdf85eebd04aee9ead3a06df4aad28
+  exports: 0062e624f7e52b2eec78ca7e68e0f617
+  Leaf 90af80bcca5066d836ccd20b1a58d79c
+  LeafInfl 06deec79466c0ff02146adbc799f9f85
+  LeafNull e3654e40d66c0e11a14453d0175311ad
+  Null d627117265e1b02da18b8871504f6a6a
+  Phrase d6598f8664fde92fcfbb5ae52ff0b346
+  XBarA c7cb615764fb49af653c235477272390
+  XBarC 13daed8b816476290a57f69a3d501b9a
+  XP 9ebf8c936ad6f5d895a8a1bae884e23b
+  XPNull ded09e99c3801a748ba334859ac8592d
+import  -/  Data.Inflection f266f0dbc95b0bc603741fea34af6d4b
+  exports: 3959414e78500c5c160744df7b5d22d7
+  ACC 6107576844cc2992a4f5c56b78cc21ca
+  ACTIVE 4d620c976ad54b1c6ab734e58e28245d
+  Adj e22b8a29c2b36729bbd8bb65a666313f
+  Adpo 9829130ab1bec46aff1f967edf49b31f
+  Comp 5e1ef90d0994529034c673dbbbbd8bb0
+  DEF c833727f8ad3ba364b34a339f3d4571f
+  Det e1ad05a43ed400271b476ffb24cf8785
+  Express 5b9a30e57907153c9d73916e653e1523
+  FUTPER 5afc44ed8d13da3aad68581dd88ccc03
+  IND 0c8705bced22c5aa10ab581ed81ac6e1
+  Infl dcd250bfbf4af02ea13702bdc1fb3ae4
+  NNPROG a5014b2451f13624a998360c3cc1e045
+  NOM c0f54eae1315b963692c91ece5044f75
+  NTOP 75ece8a6da62f61f9699d7321ebf2943
+  NoExpress 676d50f85f9d9eb78082cdcfaafad173
+  Noun 53147e303af8b8d9270e2843acb727ca
+  SG e224ba92545cd83720aed952453b60fb
+  THIRD 9cea83c7f6b971e7c64a11401f79f3a4
+  TOP 025447bcd71a4cbb7525d2028221ca82
+  Verb 7c78db69105adfc8ac6e2f45ad086918
+import  -/  LoadStuff 52b30a31121fa9ff1df53e3779483f3b
+  exports: 1aacee6a2d33dfd56110673072210ea2
+  MeaningData 664d2a17243f6f5fb93d9b672bc27a2a
+  inputAdjs 135dbd36de40aef0ea9eea4b11c6f38f
+  inputAdpos 0490ee49919188da696b5dabeae53c93
+  inputNouns 7ea717e1588eb453fe177f08046d12df
+  inputVerbs 364a7b8927f8eb89c2c419006150230b
+import  -/  random-extras-0.19@random-extras-0.19-CVrKkFX7Wr28Gjqnh35lrd:Data.Random.Extras 29c24169732e6d9b861a3e34bb12d853
+import  -/  random-fu-0.2.7.0@random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx:Data.Random 8883d063189e353ce779cba72d37ba19
+import  -/  rvar-0.2.0.3@rvar-0.2.0.3-830TjBaI3UX5PWiddvPaWF:Data.RVar af4b152c68035decd69925a9162e78b3
+6a8877e3049291d220257c559030c6dc
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Gen.ParseTree.$trModule2
+                   Gen.ParseTree.$trModule1) -}
+3ceee36c6db64f2b6d7d1efafeed17f1
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Gen.ParseTree"#) -}
+2e4ef55c798301e01fc3e713214b9998
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "con-lang-gen-0.0.0.1-JpecSLrjfNmG1CUMEdSr39"#) -}
+372e8c03b2f64c0307302623cc73cc10
+  makeParseTree ::
+    LoadStuff.MeaningData -> Data.RVar.RVar Data.Grammar.Phrase
+  {- Arity: 1, Strictness: <L,U(1*U,1*U,1*U,1*U)> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

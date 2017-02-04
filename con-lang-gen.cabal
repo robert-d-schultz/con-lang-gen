@@ -19,6 +19,7 @@ library
                      , Data.Phoneme
                      , Gen.Phonotactics
                      , Gen.Word
+                     , Gen.Root
                      , Data.Other
                      , Gen.Inflection
                      , Data.Inflection
@@ -32,6 +33,9 @@ library
                      , Out.Lexicon
                      , Out.Phonology
                      , Out.Other
+                     , Out.Grammar
+                     , Gen.ParseTree
+                     , LoadStuff
   build-depends:       base >= 4.7 && < 5
                      , rvar -any
                      , random-fu -any
