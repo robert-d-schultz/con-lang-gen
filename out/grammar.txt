@@ -1,15 +1,15 @@
 Grammar
 Parameters:
-	*Specifier initial
-	*Object initial
-	*(Non-object) Head initial
-	*No V to I movement
+	*Specifier final
+	*Object final
+	*(Non-object) Head final
+	*Obligatory V to I movement
 	*No affix hoping
 	*No null subject
-	*Optional topic
-	*Optional null topic
-	*Obligatory topic marking
+	*Obligatory topic
+	*No null topic
+	*No topic marking
 	*Obligatory I to C movement
-	*No WH-movement
+	*Obligatory WH-movement
 	*Piedpiping
-	*No question inversion
+	*Obligatory question inversion

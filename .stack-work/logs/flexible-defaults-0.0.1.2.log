@@ -1,13 +1,13 @@
 Configuring flexible-defaults-0.0.1.2...
 Building flexible-defaults-0.0.1.2...
 Preprocessing library flexible-defaults-0.0.1.2...
-[1 of 3] Compiling Language.Haskell.TH.FlexibleDefaults.Solve ( src/Language/Haskell/TH/FlexibleDefaults/Solve.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Language/Haskell/TH/FlexibleDefaults/Solve.o )
+[1 of 3] Compiling Language.Haskell.TH.FlexibleDefaults.Solve ( src/Language/Haskell/TH/FlexibleDefaults/Solve.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Language/Haskell/TH/FlexibleDefaults/Solve.o )
 
 src/Language/Haskell/TH/FlexibleDefaults/Solve.hs:13:1: warning: [-Wunused-imports]
     The import of ‘Data.Monoid’ is redundant
       except perhaps to import instances from ‘Data.Monoid’
     To import instances alone, use: import Data.Monoid()
-[2 of 3] Compiling Language.Haskell.TH.FlexibleDefaults.DSL ( src/Language/Haskell/TH/FlexibleDefaults/DSL.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Language/Haskell/TH/FlexibleDefaults/DSL.o )
+[2 of 3] Compiling Language.Haskell.TH.FlexibleDefaults.DSL ( src/Language/Haskell/TH/FlexibleDefaults/DSL.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Language/Haskell/TH/FlexibleDefaults/DSL.o )
 
 src/Language/Haskell/TH/FlexibleDefaults/DSL.hs:4:1: warning: [-Wunused-imports]
     The import of ‘Control.Applicative’ is redundant
@@ -18,12 +18,12 @@ src/Language/Haskell/TH/FlexibleDefaults/DSL.hs:9:1: warning: [-Wunused-imports]
     The import of ‘Data.Monoid’ is redundant
       except perhaps to import instances from ‘Data.Monoid’
     To import instances alone, use: import Data.Monoid()
-[3 of 3] Compiling Language.Haskell.TH.FlexibleDefaults ( src/Language/Haskell/TH/FlexibleDefaults.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Language/Haskell/TH/FlexibleDefaults.o )
+[3 of 3] Compiling Language.Haskell.TH.FlexibleDefaults ( src/Language/Haskell/TH/FlexibleDefaults.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Language/Haskell/TH/FlexibleDefaults.o )
 
 src/Language/Haskell/TH/FlexibleDefaults.hs:28:1: warning: [-Wunused-imports]
     The import of ‘Data.Monoid’ is redundant
       except perhaps to import instances from ‘Data.Monoid’
     To import instances alone, use: import Data.Monoid()
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/flexible-defaults-0.0.1.2-1H2pkAjuTF1KghZBVsL2zl
+/home/robert/.stack/snapshots/x86_64-linux/lts-8.2/8.0.2/lib/x86_64-linux-ghc-8.0.2/flexible-defaults-0.0.1.2-9e0YNI9EQIc9ezyDFAXTI
 Registering flexible-defaults-0.0.1.2...

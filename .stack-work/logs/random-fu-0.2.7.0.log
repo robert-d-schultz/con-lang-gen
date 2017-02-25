@@ -1,27 +1,32 @@
 Configuring random-fu-0.2.7.0...
 Building random-fu-0.2.7.0...
 Preprocessing library random-fu-0.2.7.0...
-[ 1 of 30] Compiling Data.Random.Internal.Find ( src/Data/Random/Internal/Find.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Internal/Find.o )
-[ 2 of 30] Compiling Data.Random.Internal.Fixed ( src/Data/Random/Internal/Fixed.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Internal/Fixed.o )
-[ 3 of 30] Compiling Data.Random.Internal.TH ( src/Data/Random/Internal/TH.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Internal/TH.o )
-[ 4 of 30] Compiling Data.Random.Lift ( src/Data/Random/Lift.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Lift.o )
-[ 5 of 30] Compiling Data.Random.RVar ( src/Data/Random/RVar.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/RVar.o )
-[ 6 of 30] Compiling Data.Random.Distribution ( src/Data/Random/Distribution.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution.o )
-[ 7 of 30] Compiling Data.Random.Distribution.Uniform ( src/Data/Random/Distribution/Uniform.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Uniform.o )
+[ 1 of 30] Compiling Data.Random.Lift ( src/Data/Random/Lift.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Lift.o )
+[ 2 of 30] Compiling Data.Random.RVar ( src/Data/Random/RVar.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/RVar.o )
+[ 3 of 30] Compiling Data.Random.Internal.TH ( src/Data/Random/Internal/TH.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Internal/TH.o )
+[ 4 of 30] Compiling Data.Random.Internal.Fixed ( src/Data/Random/Internal/Fixed.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Internal/Fixed.o )
+[ 5 of 30] Compiling Data.Random.Internal.Find ( src/Data/Random/Internal/Find.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Internal/Find.o )
+[ 6 of 30] Compiling Data.Random.Distribution ( src/Data/Random/Distribution.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution.o )
+[ 7 of 30] Compiling Data.Random.Distribution.Uniform ( src/Data/Random/Distribution/Uniform.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Uniform.o )
+[ 8 of 30] Compiling Data.Random.Distribution.Bernoulli ( src/Data/Random/Distribution/Bernoulli.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Bernoulli.o )
+[ 9 of 30] Compiling Data.Random.Distribution.Categorical ( src/Data/Random/Distribution/Categorical.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Categorical.o )
 
-src/Data/Random/Distribution/Uniform.hs:197:1: warning: [-Wredundant-constraints]
-    • Redundant constraint: HasResolution r
-    • In the type signature for:
-           fixedUniform :: HasResolution r =>
-                           Fixed r -> Fixed r -> RVarT m (Fixed r)
+src/Data/Random/Distribution/Categorical.hs:24:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[10 of 30] Compiling Data.Random.Distribution.Exponential ( src/Data/Random/Distribution/Exponential.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Exponential.o )
+[11 of 30] Compiling Data.Random.Distribution.Rayleigh ( src/Data/Random/Distribution/Rayleigh.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Rayleigh.o )
+[12 of 30] Compiling Data.Random.Distribution.Simplex ( src/Data/Random/Distribution/Simplex.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Simplex.o )
 
-src/Data/Random/Distribution/Uniform.hs:259:1: warning: [-Wredundant-constraints]
-    • Redundant constraint: Eq a
-    • In the type signature for:
-           stdUniformNonneg :: (Distribution StdUniform a, Num a, Eq a) =>
-                               RVarT m a
-[ 8 of 30] Compiling Data.Random.List ( src/Data/Random/List.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/List.o )
-[ 9 of 30] Compiling Data.Random.Vector ( src/Data/Random/Vector.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Vector.o )
+src/Data/Random/Distribution/Simplex.hs:14:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[13 of 30] Compiling Data.Random.Distribution.StretchedExponential ( src/Data/Random/Distribution/StretchedExponential.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/StretchedExponential.o )
+[14 of 30] Compiling Data.Random.Distribution.Triangular ( src/Data/Random/Distribution/Triangular.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Triangular.o )
+[15 of 30] Compiling Data.Random.List ( src/Data/Random/List.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/List.o )
+[16 of 30] Compiling Data.Random.Vector ( src/Data/Random/Vector.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Vector.o )
 
 src/Data/Random/Vector.hs:6:1: warning: [-Wunused-imports]
     The import of ‘Control.Applicative’ is redundant
@@ -31,31 +36,10 @@ src/Data/Random/Vector.hs:6:1: warning: [-Wunused-imports]
 src/Data/Random/Vector.hs:10:15: warning: [-Wname-shadowing]
     This binding for ‘words’ shadows the existing binding
       imported from ‘Prelude’ at src/Data/Random/Vector.hs:1:8-25
-      (and originally defined in ‘base-4.9.0.0:Data.OldList’)
-[10 of 30] Compiling Data.Random.Distribution.Bernoulli ( src/Data/Random/Distribution/Bernoulli.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Bernoulli.o )
-
-src/Data/Random/Distribution/Bernoulli.hs:33:1: warning: [-Wredundant-constraints]
-    • Redundant constraint: Fractional a
-    • In the type signature for:
-           boolBernoulli :: (Fractional a, Ord a,
-                             Distribution StdUniform a) =>
-                            a -> RVarT m Bool
-[11 of 30] Compiling Data.Random.Distribution.Categorical ( src/Data/Random/Distribution/Categorical.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Categorical.o )
-
-src/Data/Random/Distribution/Categorical.hs:24:1: warning: [-Wunused-imports]
-    The import of ‘Control.Applicative’ is redundant
-      except perhaps to import instances from ‘Control.Applicative’
-    To import instances alone, use: import Control.Applicative()
-
-src/Data/Random/Distribution/Categorical.hs:240:1: warning: [-Wredundant-constraints]
-    • Redundant constraint: Ord p
-    • In the type signature for:
-           collectEvents :: (Ord e, Num p, Ord p) =>
-                            Categorical p e -> Categorical p e
-[12 of 30] Compiling Data.Random.Distribution.Exponential ( src/Data/Random/Distribution/Exponential.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Exponential.o )
-[13 of 30] Compiling Data.Random.Distribution.StretchedExponential ( src/Data/Random/Distribution/StretchedExponential.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/StretchedExponential.o )
-[14 of 30] Compiling Data.Random.Distribution.Ziggurat ( src/Data/Random/Distribution/Ziggurat.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Ziggurat.o )
-[15 of 30] Compiling Data.Random.Distribution.Normal ( src/Data/Random/Distribution/Normal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Normal.o )
+      (and originally defined in ‘base-4.9.1.0:Data.OldList’)
+[17 of 30] Compiling Data.Random.Distribution.Weibull ( src/Data/Random/Distribution/Weibull.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Weibull.o )
+[18 of 30] Compiling Data.Random.Distribution.Ziggurat ( src/Data/Random/Distribution/Ziggurat.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Ziggurat.o )
+[19 of 30] Compiling Data.Random.Distribution.Normal ( src/Data/Random/Distribution/Normal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Normal.o )
 
 src/Data/Random/Distribution/Normal.hs:202:46: warning: [-Wtype-defaults]
     • Defaulting the following constraints to type ‘Integer’
@@ -118,30 +102,17 @@ src/Data/Random/Distribution/Normal.hs:211:14: warning: [-Wtype-defaults]
               + ((- ((realToFrac x) - (realToFrac mu)) ^ 2) / (2 * sigma2))
             where
                 sigma2 = realToFrac sigma ^ 2
-
-src/Data/Random/Distribution/Normal.hs:236:10: warning: [-Wredundant-constraints]
-    • Redundant constraint: Floating a
-    • In the instance declaration for ‘PDF Normal a’
-[16 of 30] Compiling Data.Random.Distribution.Gamma ( src/Data/Random/Distribution/Gamma.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Gamma.o )
-[17 of 30] Compiling Data.Random.Distribution.Beta ( src/Data/Random/Distribution/Beta.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Beta.o )
-[18 of 30] Compiling Data.Random.Distribution.Binomial ( src/Data/Random/Distribution/Binomial.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Binomial.o )
-[19 of 30] Compiling Data.Random.Distribution.Multinomial ( src/Data/Random/Distribution/Multinomial.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Multinomial.o )
-[20 of 30] Compiling Data.Random.Distribution.ChiSquare ( src/Data/Random/Distribution/ChiSquare.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/ChiSquare.o )
-[21 of 30] Compiling Data.Random.Distribution.Dirichlet ( src/Data/Random/Distribution/Dirichlet.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Dirichlet.o )
-[22 of 30] Compiling Data.Random.Distribution.Poisson ( src/Data/Random/Distribution/Poisson.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Poisson.o )
-[23 of 30] Compiling Data.Random.Distribution.Rayleigh ( src/Data/Random/Distribution/Rayleigh.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Rayleigh.o )
-[24 of 30] Compiling Data.Random.Distribution.Simplex ( src/Data/Random/Distribution/Simplex.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Simplex.o )
-
-src/Data/Random/Distribution/Simplex.hs:14:1: warning: [-Wunused-imports]
-    The import of ‘Control.Applicative’ is redundant
-      except perhaps to import instances from ‘Control.Applicative’
-    To import instances alone, use: import Control.Applicative()
-[25 of 30] Compiling Data.Random.Distribution.T ( src/Data/Random/Distribution/T.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/T.o )
-[26 of 30] Compiling Data.Random.Distribution.Triangular ( src/Data/Random/Distribution/Triangular.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Triangular.o )
-[27 of 30] Compiling Data.Random.Distribution.Weibull ( src/Data/Random/Distribution/Weibull.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Weibull.o )
-[28 of 30] Compiling Data.Random.Sample ( src/Data/Random/Sample.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Sample.o )
-[29 of 30] Compiling Data.Random      ( src/Data/Random.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random.o )
-[30 of 30] Compiling Data.Random.Distribution.Pareto ( src/Data/Random/Distribution/Pareto.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.0.0/build/Data/Random/Distribution/Pareto.o )
+[20 of 30] Compiling Data.Random.Distribution.Gamma ( src/Data/Random/Distribution/Gamma.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Gamma.o )
+[21 of 30] Compiling Data.Random.Distribution.Beta ( src/Data/Random/Distribution/Beta.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Beta.o )
+[22 of 30] Compiling Data.Random.Distribution.Binomial ( src/Data/Random/Distribution/Binomial.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Binomial.o )
+[23 of 30] Compiling Data.Random.Distribution.Multinomial ( src/Data/Random/Distribution/Multinomial.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Multinomial.o )
+[24 of 30] Compiling Data.Random.Distribution.ChiSquare ( src/Data/Random/Distribution/ChiSquare.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/ChiSquare.o )
+[25 of 30] Compiling Data.Random.Distribution.Dirichlet ( src/Data/Random/Distribution/Dirichlet.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Dirichlet.o )
+[26 of 30] Compiling Data.Random.Distribution.Poisson ( src/Data/Random/Distribution/Poisson.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Poisson.o )
+[27 of 30] Compiling Data.Random.Distribution.T ( src/Data/Random/Distribution/T.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/T.o )
+[28 of 30] Compiling Data.Random.Sample ( src/Data/Random/Sample.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Sample.o )
+[29 of 30] Compiling Data.Random      ( src/Data/Random.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random.o )
+[30 of 30] Compiling Data.Random.Distribution.Pareto ( src/Data/Random/Distribution/Pareto.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Random/Distribution/Pareto.o )
 Installing library in
-/home/chaosrobie/.stack/snapshots/x86_64-linux/lts-7.14/8.0.1/lib/x86_64-linux-ghc-8.0.1/random-fu-0.2.7.0-CQ0Lr6a3wRjKfR0NneZKnx
+/home/robert/.stack/snapshots/x86_64-linux/lts-8.2/8.0.2/lib/x86_64-linux-ghc-8.0.2/random-fu-0.2.7.0-L4ATAJ1Lhr64eB0p6zRV33
 Registering random-fu-0.2.7.0...

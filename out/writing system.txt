@@ -1,0 +1,1764 @@
+Writing System
+
+"account"
+ <svg title="U983040" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 10 Q11 10 4 0 Q6 4 8 6 Q10 7 9 2 Q0 1 2 7 Q7 6 8 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"act"
+ <svg title="U983041" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L3 2 H10 V0 H3 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"addition"
+ <svg title="U983042" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 0 Q0 9 10 9 H5 H8 V7 L11 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"adjustment"
+ <svg title="U983043" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 9 V0 L11 9 L0 5 L10 11 V2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"advertisement"
+ <svg title="U983044" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 L6 0 L8 11 Q11 6 0 5 L1 8 Q7 6 9 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"agreement"
+ <svg title="U983045" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 H0 V0 1 V0 11 H0 L0 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"air"
+ <svg title="U983046" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 8 Q11 11 2 0 H11 Q6 8 11 6 H9 L0 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"amount"
+ <svg title="U983047" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 V0 V11 H11 H11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"amusement"
+ <svg title="U983048" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 4 L11 4 V4 H0 L1 0 Q8 11 9 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"angle"
+ <svg title="U983049" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 Q11 6 10 6 L1 2 L1 11 H11 H3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"animal"
+ <svg title="U983050" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V0 L2 11 H11 V9 H9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"answer"
+ <svg title="U983051" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 L11 11 L9 0 H7 L7 7 V2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"ant"
+ <svg title="U983052" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 V0 V3 L0 11 H10 Q11 0 4 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"apparatus"
+ <svg title="U983053" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 11 L11 7 V4 L0 7 Q1 11 6 0 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"apple"
+ <svg title="U983054" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 7 Q7 2 11 6 H0 Q0 10 6 0 Q11 11 11 5 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"approval"
+ <svg title="U983055" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 0 V8 H2 Q11 9 0 2 V11 H6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"arch"
+ <svg title="U983056" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H7 L6 5 L6 0 L0 6 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"argument"
+ <svg title="U983057" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 8 Q9 10 0 7 H10 Q0 9 7 0 H0 L9 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"arm"
+ <svg title="U983058" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 9 V8 Q11 4 6 11 Q6 0 11 11 L4 11 Q0 10 3 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"army"
+ <svg title="U983059" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V0 H0 L3 6 H6 H2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"art"
+ <svg title="U983060" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 Q0 4 11 1 V11 Q7 10 8 7 V3 Q10 4 10 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"attack"
+ <svg title="U983061" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 9 V11 V4 H7 L11 2 Q11 4 6 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"attempt"
+ <svg title="U983062" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 H7 H10 V0 L11 11 Q7 7 7 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"attention"
+ <svg title="U983063" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 V0 V11 L11 4 V10 L0 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"attraction"
+ <svg title="U983064" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 V8 Q9 0 5 3 Q3 11 0 3 H3 L3 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"authority"
+ <svg title="U983065" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 H11 H0 H10 L1 0 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"baby"
+ <svg title="U983066" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 Q9 11 0 11 Q0 7 7 10 V10 H11 V3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"back"
+ <svg title="U983067" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 Q4 8 1 3 L10 11 H11 Q3 9 3 11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bag"
+ <svg title="U983068" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 10 L8 3 H11 Q1 11 1 7 Q0 3 1 1 Q3 0 7 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"balance"
+ <svg title="U983069" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V6 H11 H5 H9 Q10 0 9 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"ball"
+ <svg title="U983070" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 V11 V8 H0 L7 9 Q9 2 9 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"band"
+ <svg title="U983071" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 5 Q8 2 0 9 H1 Q1 4 6 10 H9 Q11 11 10 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"base"
+ <svg title="U983072" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 L1 3 V0 L11 6 Q8 11 0 6 Q8 1 10 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"basin"
+ <svg title="U983073" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 4 L0 0 Q1 4 10 9 V9 H11 L1 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"basket"
+ <svg title="U983074" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 Q0 2 11 0 H9 H0 H0 Q4 11 2 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"bath"
+ <svg title="U983075" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 0 H0 H11 L0 11 V11 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"bed"
+ <svg title="U983076" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H3 Q9 0 11 6 H1 L2 0 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"bee"
+ <svg title="U983077" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 9 L11 11 L3 8 Q10 6 8 6 Q6 0 0 3 Q11 2 0 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"behavior"
+ <svg title="U983078" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 Q0 5 6 11 V10 V0 H7 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"belief"
+ <svg title="U983079" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 10 L2 4 Q2 4 6 8 L0 8 Q11 3 9 0 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"bell"
+ <svg title="U983080" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 Q9 7 2 0 V9 V11 V1 L11 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"berry"
+ <svg title="U983081" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 H11 V4 Q5 0 0 3 L3 11 L0 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bird"
+ <svg title="U983082" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 11 H0 L11 1 H2 V0 L1 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"birth"
+ <svg title="U983083" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 10 V9 H9 V6 L0 0 L11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bit"
+ <svg title="U983084" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 10 L7 2 V11 V8 Q11 3 0 1 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bite"
+ <svg title="U983085" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 7 H7 L3 11 H0 H11 L3 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"blade"
+ <svg title="U983086" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 Q3 3 5 0 Q2 11 11 1 H8 H2 V3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"blood"
+ <svg title="U983087" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 L2 3 V10 V11 H11 Q7 10 0 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"blow"
+ <svg title="U983088" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 7 V1 H0 H11 V11 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"board"
+ <svg title="U983089" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 11 H10 L0 8 L6 0 H1 L11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"boat"
+ <svg title="U983090" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 3 L1 0 L3 1 L11 3 Q1 4 7 11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"body"
+ <svg title="U983091" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 0 L9 5 H10 Q0 1 11 11 Q7 8 8 9 H7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bone"
+ <svg title="U983092" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 3 Q10 7 11 11 L0 11 L0 0 H1 V1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"book"
+ <svg title="U983093" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 V11 V0 V7 H11 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"boot"
+ <svg title="U983094" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 1 L0 11 H9 L10 8 Q10 0 11 1 L0 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"bottle"
+ <svg title="U983095" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 V11 Q0 1 11 0 V7 V5 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"box"
+ <svg title="U983096" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 11 L0 0 H11 L8 7 H9 V5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"boy"
+ <svg title="U983097" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V2 H3 V11 H7 L0 2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"brain"
+ <svg title="U983098" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 H11 H0 Q1 9 11 11 Q11 1 7 1 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"brake"
+ <svg title="U983099" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 V10 H11 V9 Q6 0 10 11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"branch"
+ <svg title="U983100" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H0 V3 Q0 9 2 0 V0 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"brass"
+ <svg title="U983101" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 0 V3 L1 0 V8 Q11 11 1 8 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bread"
+ <svg title="U983102" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 V0 L11 0 Q4 2 7 11 V7 Q7 7 0 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"breath"
+ <svg title="U983103" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 11 H2 Q5 7 7 1 L1 5 Q11 9 0 0 Q0 5 7 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"brick"
+ <svg title="U983104" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 11 V10 Q8 1 0 0 Q8 9 9 9 Q11 6 6 10 L9 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bridge"
+ <svg title="U983105" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 0 L11 7 H6 L6 4 L0 0 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"brother"
+ <svg title="U983106" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 H2 L11 0 Q3 6 4 11 L3 8 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"brush"
+ <svg title="U983107" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 H6 V9 H7 H11 Q0 10 4 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"bucket"
+ <svg title="U983108" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 10 V10 L11 0 V4 Q2 0 0 5 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"building"
+ <svg title="U983109" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 8 L6 7 Q6 1 3 0 Q0 11 11 4 H0 Q8 9 4 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bulb"
+ <svg title="U983110" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 Q5 4 11 11 Q7 5 10 10 Q8 11 3 6 H0 Q11 10 10 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"burn"
+ <svg title="U983111" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H3 Q6 11 3 0 H8 H0 V7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"burst"
+ <svg title="U983112" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 L11 0 Q7 11 0 3 H8 H8 Q3 8 5 2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"business"
+ <svg title="U983113" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 3 Q10 0 3 2 L10 9 H2 H1 Q11 11 0 9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"butter"
+ <svg title="U983114" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 V7 L7 2 Q11 0 7 11 L0 0 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"button"
+ <svg title="U983115" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 0 L11 11 Q2 11 7 11 H5 Q6 9 0 0 H10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cake"
+ <svg title="U983116" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V0 Q3 2 8 3 V11 H2 L0 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"camera"
+ <svg title="U983117" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V5 V11 L11 5 H11 V8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"canvas"
+ <svg title="U983118" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 V0 0 V0 10 Q0 11 0 1 V0 8 V0 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"card"
+ <svg title="U983119" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H11 L2 2 L10 4 Q1 6 6 0 Q6 4 10 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"care"
+ <svg title="U983120" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V11 L4 11 Q7 0 0 11 H0 V10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"carriage"
+ <svg title="U983121" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 V10 V10 Q4 5 0 10 H11 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cart"
+ <svg title="U983122" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 5 V0 H10 V11 L8 1 Q0 5 11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cat"
+ <svg title="U983123" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 H11 H0 Q9 0 5 11 H8 V9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cause"
+ <svg title="U983124" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 0 L10 11 Q1 6 0 1 H11 H7 Q6 10 0 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"chain"
+ <svg title="U983125" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V2 V5 Q9 0 1 10 H4 L11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"chalk"
+ <svg title="U983126" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 V6 H11 V6 L0 0 H10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"chance"
+ <svg title="U983127" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 V5 H0 H3 Q3 11 11 6 L11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"change"
+ <svg title="U983128" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 9 H10 V11 Q11 7 0 11 Q4 2 2 0 V2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cheese"
+ <svg title="U983129" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 7 V4 V0 H0 H9 Q7 11 11 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"chest"
+ <svg title="U983130" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 10 L1 1 L11 0 Q0 5 8 11 L10 0 Q1 10 8 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"chin"
+ <svg title="U983131" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 2 L4 0 Q0 1 7 1 L11 4 L2 11 L11 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"church"
+ <svg title="U983132" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 L3 2 Q3 9 11 8 L1 0 H7 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"circle"
+ <svg title="U983133" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 0 V10 V10 Q6 11 11 11 H0 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"clock"
+ <svg title="U983134" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 V9 L11 0 V4 Q0 2 10 4 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cloth"
+ <svg title="U983135" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 4 H2 H6 L10 11 Q11 0 5 11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cloud"
+ <svg title="U983136" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V1 L9 2 Q0 0 6 7 V11 H5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"coal"
+ <svg title="U983137" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 Q8 9 5 2 H6 L11 11 L5 7 Q0 9 3 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"coat"
+ <svg title="U983138" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 2 H7 L11 4 V0 Q0 2 11 11 Q7 11 2 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"collar"
+ <svg title="U983139" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 L1 0 L5 11 Q0 0 1 3 H11 L4 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"color"
+ <svg title="U983140" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 Q6 2 7 1 Q6 10 0 7 L7 11 Q11 7 0 4 L2 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"comb"
+ <svg title="U983141" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 10 H8 V0 H3 V10 Q4 11 0 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"comfort"
+ <svg title="U983142" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V11 V1 L7 6 H6 L11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"committee"
+ <svg title="U983143" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 7 L0 8 Q1 8 3 11 L11 2 Q2 1 9 0 V1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"company"
+ <svg title="U983144" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 1 Q2 11 11 0 H2 L11 2 L0 5 V1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"comparison"
+ <svg title="U983145" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 3 V9 H8 L0 9 V5 Q11 0 9 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"competition"
+ <svg title="U983146" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 V5 H11 V7 V0 Q11 11 11 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"condition"
+ <svg title="U983147" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 9 V1 L9 7 Q11 6 9 7 Q2 9 0 11 L9 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"connection"
+ <svg title="U983148" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 11 Q11 8 8 0 H6 Q0 1 8 1 L8 2 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"control"
+ <svg title="U983149" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 V0 Q11 6 3 2 Q9 11 0 9 Q1 8 11 9 L2 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cook"
+ <svg title="U983150" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 7 Q11 11 4 8 L3 1 L5 9 L0 10 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"copper"
+ <svg title="U983151" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 H9 H3 H9 L0 11 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"copy"
+ <svg title="U983152" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 H5 V0 Q11 4 10 11 V10 H7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cord"
+ <svg title="U983153" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 V1 L2 1 V11 Q8 0 11 4 V7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cork"
+ <svg title="U983154" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 8 H7 H11 Q11 9 0 0 Q11 11 7 6 L6 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cotton"
+ <svg title="U983155" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 9 L0 2 Q11 6 7 11 V0 L4 6 L7 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cough"
+ <svg title="U983156" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 H11 L2 6 L0 11 Q11 4 4 7 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"country"
+ <svg title="U983157" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 9 Q1 7 11 8 H0 V4 L9 11 Q9 0 0 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cover"
+ <svg title="U983158" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 V10 Q9 2 11 0 Q10 5 2 0 H6 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cow"
+ <svg title="U983159" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 8 Q0 2 1 3 V3 Q4 0 11 0 L3 11 H10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"crack"
+ <svg title="U983160" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 1 Q2 0 0 3 Q11 9 4 0 L11 2 H0 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"credit"
+ <svg title="U983161" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 9 H11 L9 11 L0 0 H10 V7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"crime"
+ <svg title="U983162" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 L11 2 L0 0 H0 V11 V5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"crush"
+ <svg title="U983163" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 Q0 0 11 9 V0 H0 L11 11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cry"
+ <svg title="U983164" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V4 V11 V4 H0 Q6 4 3 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cup"
+ <svg title="U983165" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 V11 V6 V9 L11 6 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"current"
+ <svg title="U983166" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 L0 2 L2 1 Q11 10 7 11 Q11 11 9 11 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"curtain"
+ <svg title="U983167" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 L8 0 L11 7 H0 H1 H9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"curve"
+ <svg title="U983168" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 L3 0 H3 V0 H11 L3 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cushion"
+ <svg title="U983169" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 10 V0 L10 11 L4 7 Q8 2 8 11 L11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"damage"
+ <svg title="U983170" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 10 L10 7 Q7 11 11 4 V0 L6 8 H5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"danger"
+ <svg title="U983171" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 0 L2 6 H11 H4 Q8 8 10 11 L0 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"daughter"
+ <svg title="U983172" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 4 Q8 11 11 0 Q8 10 10 3 Q0 1 4 3 L10 8 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"day"
+ <svg title="U983173" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H7 Q9 1 11 0 H0 Q3 5 8 10 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"death"
+ <svg title="U983174" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 6 V1 Q0 7 4 1 L11 0 Q10 4 7 7 Q7 2 3 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"debt"
+ <svg title="U983175" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H9 L0 5 H11 L11 2 L7 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"decision"
+ <svg title="U983176" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 L7 2 V0 L11 9 L7 11 L1 5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"degree"
+ <svg title="U983177" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 5 Q10 4 1 11 V6 Q11 3 2 1 Q0 0 9 10 Q8 2 7 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"design"
+ <svg title="U983178" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 Q0 4 7 10 V11 H7 Q8 1 11 11 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"desire"
+ <svg title="U983179" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 V5 L11 2 Q8 5 10 0 V7 Q3 1 0 9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"destruction"
+ <svg title="U983180" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 L4 3 Q0 11 7 11 H11 H0 H9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"detail"
+ <svg title="U983181" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 V11 L11 8 V0 V7 Q0 9 11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"development"
+ <svg title="U983182" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 5 V11 L8 0 V11 H0 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"digestion"
+ <svg title="U983183" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H1 H5 H9 H0 L2 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"direction"
+ <svg title="U983184" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 V9 L9 0 Q4 2 4 10 V1 Q10 11 0 5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"discovery"
+ <svg title="U983185" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 L3 11 Q9 4 6 0 Q11 8 3 7 H2 L0 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"discussion"
+ <svg title="U983186" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 V11 V0 Q0 7 10 0 Q1 7 11 0 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"disease"
+ <svg title="U983187" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H10 Q1 0 2 5 H11 V6 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"disgust"
+ <svg title="U983188" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 4 Q8 10 9 7 L0 11 V0 L10 9 Q0 3 11 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"distance"
+ <svg title="U983189" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 3 H0 V0 H0 Q0 3 10 4 L11 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"distribution"
+ <svg title="U983190" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 Q11 0 4 4 V8 L0 0 H6 L6 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"division"
+ <svg title="U983191" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 H0 H4 L7 9 L7 0 Q7 0 7 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"dog"
+ <svg title="U983192" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 H0 V11 V3 H8 Q1 4 11 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"door"
+ <svg title="U983193" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 10 H8 L5 11 L0 1 Q5 0 11 2 V10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"doubt"
+ <svg title="U983194" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 Q1 2 0 0 H11 H8 H1 V6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"drain"
+ <svg title="U983195" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 V8 V6 L3 11 H11 L0 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"drawer"
+ <svg title="U983196" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 Q0 11 9 1 V3 H9 V2 L7 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"dress"
+ <svg title="U983197" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V9 H4 L0 2 L7 7 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"drink"
+ <svg title="U983198" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 10 V3 V11 L11 0 H6 L0 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"driving"
+ <svg title="U983199" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 6 L7 11 Q7 2 3 0 L0 9 H7 Q10 2 11 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"drop"
+ <svg title="U983200" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 L6 8 L6 7 L11 6 H6 L6 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"dust"
+ <svg title="U983201" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 6 V11 L4 9 L0 9 Q3 7 11 0 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"ear"
+ <svg title="U983202" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 9 L7 2 L11 1 Q8 11 0 0 V2 H6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"earth"
+ <svg title="U983203" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 Q0 0 5 2 L11 9 H10 H0 Q2 11 0 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"edge"
+ <svg title="U983204" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 L7 6 Q0 8 0 1 Q11 0 10 4 L8 8 H10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"education"
+ <svg title="U983205" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 L8 3 V0 L0 6 Q9 0 11 1 L10 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"effect"
+ <svg title="U983206" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 10 V7 Q11 6 6 0 H9 V11 Q3 6 3 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"egg"
+ <svg title="U983207" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 9 Q9 11 10 1 H0 H11 H7 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"end"
+ <svg title="U983208" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 9 Q4 11 0 6 Q2 5 3 2 Q3 11 9 2 Q9 0 10 10 Q9 4 11 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"engine"
+ <svg title="U983209" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 6 H11 L0 5 Q0 3 8 0 H3 L1 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"error"
+ <svg title="U983210" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 H9 Q11 2 0 0 H9 Q10 11 2 7 L1 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"event"
+ <svg title="U983211" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 10 Q2 8 0 3 V11 V3 L11 3 L4 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"example"
+ <svg title="U983212" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 11 H11 H10 V0 L0 8 L4 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"exchange"
+ <svg title="U983213" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V0 H7 V10 Q11 4 4 10 L4 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"existence"
+ <svg title="U983214" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V0 L10 0 H2 H8 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"expansion"
+ <svg title="U983215" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 H6 L2 0 V11 V11 Q0 6 11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"experience"
+ <svg title="U983216" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 8 L11 0 Q0 5 7 7 L4 6 V11 Q6 2 5 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"expert"
+ <svg title="U983217" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V10 L3 0 Q0 11 4 11 H6 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"eye"
+ <svg title="U983218" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 L10 4 H11 V11 V7 H2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"face"
+ <svg title="U983219" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 L7 8 Q0 6 2 11 L6 6 H11 H2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fact"
+ <svg title="U983220" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 8 L11 0 L11 9 Q2 11 6 11 L0 3 H10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fall"
+ <svg title="U983221" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 L10 9 L6 9 Q0 0 4 4 V11 L9 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"family"
+ <svg title="U983222" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 H0 V0 L10 11 L9 8 V3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"farm"
+ <svg title="U983223" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V11 V7 H9 Q11 2 8 10 H6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"father"
+ <svg title="U983224" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 Q2 8 9 10 V9 L7 11 L11 2 L0 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fear"
+ <svg title="U983225" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 9 V9 H2 Q11 11 0 0 H4 H7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"feather"
+ <svg title="U983226" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 2 L4 11 L11 0 H10 H10 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"feeling"
+ <svg title="U983227" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 7 H11 H10 V0 V11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"fiction"
+ <svg title="U983228" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 L7 0 H11 H7 L4 3 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"field"
+ <svg title="U983229" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 H4 Q11 4 0 4 H0 Q0 7 11 11 L11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"fight"
+ <svg title="U983230" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 8 L4 6 V3 Q0 7 10 11 Q10 4 0 4 Q11 1 10 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"finger"
+ <svg title="U983231" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 6 L11 10 H10 Q7 11 2 4 H0 L1 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fire"
+ <svg title="U983232" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 9 H10 H3 L7 11 V0 Q11 9 0 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fish"
+ <svg title="U983233" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 10 H11 Q6 8 0 3 V1 V0 Q10 11 8 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"flag"
+ <svg title="U983234" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H6 Q11 11 3 6 Q3 0 3 10 H0 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"flame"
+ <svg title="U983235" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 6 H9 L0 11 L3 6 L8 4 Q11 3 8 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"flight"
+ <svg title="U983236" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 V0 H1 L11 2 V10 Q0 7 4 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"floor"
+ <svg title="U983237" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 4 L7 11 L11 0 H0 Q11 11 4 6 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"flower"
+ <svg title="U983238" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 H6 L6 4 Q4 11 4 2 Q11 9 6 9 Q0 9 3 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fly"
+ <svg title="U983239" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V10 L7 8 V4 V10 Q11 10 11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fold"
+ <svg title="U983240" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 H6 V0 L0 7 V9 Q3 11 9 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"food"
+ <svg title="U983241" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 H11 H0 H6 Q7 0 3 7 H3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"foot"
+ <svg title="U983242" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 7 L0 0 H8 H7 H11 Q10 6 9 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"force"
+ <svg title="U983243" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 3 Q3 2 11 11 L9 0 H11 H0 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"fork"
+ <svg title="U983244" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 11 H0 L3 6 H11 Q1 0 10 10 V2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"form"
+ <svg title="U983245" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 L7 4 Q4 2 11 11 V4 Q0 9 2 0 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fowl"
+ <svg title="U983246" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 2 V6 H0 V11 Q11 0 0 0 L2 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"frame"
+ <svg title="U983247" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 L11 4 L10 10 V10 L7 0 L11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"friend"
+ <svg title="U983248" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H10 H1 Q5 3 6 11 Q0 8 5 1 L5 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"front"
+ <svg title="U983249" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 1 V0 Q8 10 11 11 H0 H0 Q6 5 11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fruit"
+ <svg title="U983250" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H6 Q2 0 11 4 H2 V9 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"garden"
+ <svg title="U983251" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 9 V11 H9 L6 3 L11 8 Q7 11 0 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"girl"
+ <svg title="U983252" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V7 Q1 8 8 1 L11 0 V4 Q6 5 1 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"glass"
+ <svg title="U983253" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 H11 L2 2 H11 H0 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"glove"
+ <svg title="U983254" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 L10 11 L2 0 L4 0 L0 2 L6 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"goat"
+ <svg title="U983255" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 L6 9 H1 Q11 0 3 4 H0 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"gold"
+ <svg title="U983256" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 H8 H1 L1 9 L0 0 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"government"
+ <svg title="U983257" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 L9 10 L2 0 Q4 11 11 1 H0 H9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"grain"
+ <svg title="U983258" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 4 L6 0 V1 Q1 8 0 11 H2 L2 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"grass"
+ <svg title="U983259" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 9 H1 Q11 0 7 11 H2 V3 Q6 5 9 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"grip"
+ <svg title="U983260" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 H11 L0 11 L2 3 L10 2 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"group"
+ <svg title="U983261" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 4 L7 3 H0 V11 V11 Q4 0 10 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"growth"
+ <svg title="U983262" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 H9 H0 Q11 10 0 5 H2 L8 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"guide"
+ <svg title="U983263" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 L11 0 Q7 8 0 2 Q6 2 3 8 H10 L6 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"gun"
+ <svg title="U983264" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 L11 11 V6 V0 Q10 11 10 1 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"hair"
+ <svg title="U983265" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 9 V5 V0 Q1 11 0 8 L11 6 V5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hammer"
+ <svg title="U983266" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 4 Q2 0 5 11 L11 9 L0 11 V7 H5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hand"
+ <svg title="U983267" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 Q6 1 4 0 V11 Q0 4 4 10 L11 4 L3 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"harbor"
+ <svg title="U983268" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 H7 Q11 0 9 5 Q4 10 7 6 L0 7 V8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"harmony"
+ <svg title="U983269" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 0 V11 V6 H11 L4 8 Q0 8 3 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"hat"
+ <svg title="U983270" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 9 V7 L11 2 Q0 0 0 4 V11 L9 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hate"
+ <svg title="U983271" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 Q2 11 7 3 L10 4 Q7 1 0 0 L11 8 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"head"
+ <svg title="U983272" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H3 V2 L11 6 V6 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hearing"
+ <svg title="U983273" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 Q10 11 4 6 V3 Q7 4 0 6 L11 11 L9 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"heart"
+ <svg title="U983274" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 5 L6 11 H11 L0 6 V0 V6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"heat"
+ <svg title="U983275" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 Q6 11 5 0 H6 V0 H0 V9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"help"
+ <svg title="U983276" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V6 L9 11 L0 11 H2 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"history"
+ <svg title="U983277" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 V11 H0 Q9 6 11 1 H10 L11 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hole"
+ <svg title="U983278" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 11 H5 L0 0 H2 H2 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hook"
+ <svg title="U983279" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 Q6 11 6 1 V0 V10 L3 9 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"hope"
+ <svg title="U983280" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 11 Q2 3 0 9 H4 H2 L11 8 Q4 8 3 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"horn"
+ <svg title="U983281" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 4 H9 L11 0 V11 Q7 0 0 6 H1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"horse"
+ <svg title="U983282" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 L2 11 L8 0 H2 L11 7 Q0 11 3 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hospital"
+ <svg title="U983283" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 8 H2 L11 0 V11 H9 V9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"hour"
+ <svg title="U983284" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 7 Q10 2 0 1 V9 Q11 11 7 0 Q4 0 2 10 L1 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"house"
+ <svg title="U983285" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 Q11 4 1 4 V4 V11 V11 Q4 9 0 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"humor"
+ <svg title="U983286" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 V5 V0 H7 Q8 1 3 11 Q6 10 11 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"ice"
+ <svg title="U983287" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H6 L11 0 V10 L11 7 L8 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"idea"
+ <svg title="U983288" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 L1 9 L11 7 H6 L0 0 Q10 4 6 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"impulse"
+ <svg title="U983289" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 H7 H11 Q0 0 0 7 V11 L11 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"increase"
+ <svg title="U983290" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 2 Q7 11 0 2 Q6 3 10 0 Q11 1 9 5 L11 11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"industry"
+ <svg title="U983291" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V11 L3 3 H0 H11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"ink"
+ <svg title="U983292" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V4 Q2 10 9 4 Q2 0 5 8 H0 L0 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"insect"
+ <svg title="U983293" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 L0 11 V0 L3 0 V0 L3 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"instrument"
+ <svg title="U983294" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 7 H8 Q11 0 0 9 L6 5 H8 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"insurance"
+ <svg title="U983295" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 V1 L10 0 Q8 5 11 9 Q0 3 8 11 V8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"interest"
+ <svg title="U983296" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 10 Q9 0 0 0 L4 11 H2 Q11 3 4 0 L0 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"invention"
+ <svg title="U983297" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 4 Q10 1 4 8 Q11 11 4 4 Q0 6 0 7 H3 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"iron"
+ <svg title="U983298" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 4 Q0 4 0 0 L2 9 V9 Q9 11 11 11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"island"
+ <svg title="U983299" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 0 Q4 6 3 11 H8 Q11 11 3 5 L0 9 H10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"jelly"
+ <svg title="U983300" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 L1 11 V9 H0 Q11 9 7 5 Q3 0 1 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"jewel"
+ <svg title="U983301" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 5 Q7 11 0 2 Q11 3 9 0 L7 8 L2 4 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"join"
+ <svg title="U983302" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 L11 6 V9 Q11 0 11 3 V9 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"journey"
+ <svg title="U983303" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 H11 V0 V6 H0 Q1 11 8 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"judge"
+ <svg title="U983304" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 8 V0 H0 L3 4 Q4 11 7 3 Q2 4 11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"jump"
+ <svg title="U983305" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 8 Q6 3 0 11 V0 Q3 7 11 11 H9 L11 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"kettle"
+ <svg title="U983306" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 5 L5 11 H9 Q11 5 6 0 Q0 0 2 6 Q0 7 4 2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"key"
+ <svg title="U983307" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 11 V10 V8 Q0 5 9 3 V3 Q11 0 6 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"kick"
+ <svg title="U983308" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 Q2 2 11 9 Q6 2 0 11 H4 L10 9 H9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"kiss"
+ <svg title="U983309" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 4 V0 L0 11 Q4 11 11 11 Q3 1 1 9 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"knee"
+ <svg title="U983310" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 10 L6 0 H5 L11 11 H0 L2 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"knife"
+ <svg title="U983311" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 10 V0 L11 9 H8 L0 7 L6 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"knot"
+ <svg title="U983312" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 Q1 11 11 6 V1 L7 10 Q0 8 11 0 L2 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"knowledge"
+ <svg title="U983313" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 L7 11 L2 0 L0 8 V6 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"land"
+ <svg title="U983314" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 V0 V0 L9 4 Q0 2 0 2 Q3 9 11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"language"
+ <svg title="U983315" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 9 V0 L10 11 H0 Q4 10 4 10 L11 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"laugh"
+ <svg title="U983316" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 V0 Q0 10 4 11 V0 V0 Q2 9 7 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"law"
+ <svg title="U983317" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 V11 Q11 2 11 0 H2 H11 L0 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"lead"
+ <svg title="U983318" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V8 V0 H6 H0 H3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"leaf"
+ <svg title="U983319" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 L0 7 V0 H2 H4 L9 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"learning"
+ <svg title="U983320" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 9 Q11 2 11 6 H7 H1 V0 Q7 11 0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"leather"
+ <svg title="U983321" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L0 6 L4 11 L8 5 Q10 9 2 8 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"leg"
+ <svg title="U983322" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H8 L3 11 L3 6 Q7 10 6 6 Q11 10 0 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"letter"
+ <svg title="U983323" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 Q1 3 2 0 H0 Q9 7 11 3 L10 11 L2 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"level"
+ <svg title="U983324" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 9 Q3 3 1 1 L7 7 Q0 0 11 4 L8 7 Q3 2 7 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"library"
+ <svg title="U983325" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 Q3 11 0 7 Q11 7 10 10 V11 L1 0 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"lift"
+ <svg title="U983326" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 4 H1 L1 4 Q6 0 0 11 H7 H2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"light"
+ <svg title="U983327" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 H2 V5 L11 11 L0 0 L1 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"limit"
+ <svg title="U983328" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 V10 L1 3 Q1 0 2 11 V2 Q0 8 4 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"line"
+ <svg title="U983329" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 H11 L9 7 V0 V0 L7 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"linen"
+ <svg title="U983330" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 H0 H6 Q8 6 11 0 Q0 11 7 11 L4 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"lip"
+ <svg title="U983331" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 6 Q11 0 4 0 H11 L0 10 V3 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"liquid"
+ <svg title="U983332" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 V3 Q11 11 9 0 V11 H10 L2 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"list"
+ <svg title="U983333" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 Q5 11 0 10 H4 L7 8 Q11 6 11 1 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"lock"
+ <svg title="U983334" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 L2 8 V0 L11 11 V11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"look"
+ <svg title="U983335" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 10 Q7 7 8 2 V11 Q4 7 3 9 Q11 0 0 9 L10 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"loss"
+ <svg title="U983336" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 V6 L2 11 Q6 10 9 10 L11 11 L0 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"love"
+ <svg title="U983337" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 V6 H11 L0 4 L11 11 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"machine"
+ <svg title="U983338" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 V11 H11 Q4 11 0 4 H7 L10 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"man"
+ <svg title="U983339" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 V8 Q11 6 3 3 Q3 8 4 0 H0 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"manager"
+ <svg title="U983340" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 8 L11 3 L0 11 V0 L11 10 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"map"
+ <svg title="U983341" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 4 H2 Q0 0 3 9 H4 H11 Q2 2 2 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"mark"
+ <svg title="U983342" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 L0 0 L7 4 L7 11 V2 L9 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"market"
+ <svg title="U983343" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V1 L11 7 H6 L8 0 Q10 4 0 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"mass"
+ <svg title="U983344" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 4 V5 V0 Q0 9 4 7 Q11 5 2 7 Q5 11 6 5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"match"
+ <svg title="U983345" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 H5 H0 Q11 7 11 11 Q5 10 3 1 L2 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"meal"
+ <svg title="U983346" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 4 V8 Q11 11 11 9 H9 V9 L0 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"measure"
+ <svg title="U983347" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 0 Q3 3 10 11 H11 H0 H3 L3 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"meat"
+ <svg title="U983348" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 H4 V7 Q4 9 11 2 V0 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"meeting"
+ <svg title="U983349" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 8 H0 V0 Q11 11 8 11 V2 L10 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"memory"
+ <svg title="U983350" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 1 L11 11 L2 0 H0 Q11 1 2 1 V4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"metal"
+ <svg title="U983351" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H0 Q11 11 11 7 V10 V10 Q9 8 7 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"middle"
+ <svg title="U983352" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 Q4 11 10 0 V7 H0 V6 V8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"milk"
+ <svg title="U983353" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H0 Q6 11 11 0 V3 H9 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"mind"
+ <svg title="U983354" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 5 Q1 4 0 11 Q0 0 7 1 L11 9 Q10 7 6 10 H10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"mine"
+ <svg title="U983355" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 V11 L0 2 H3 L11 6 V3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"minute"
+ <svg title="U983356" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 L6 8 H7 Q6 4 11 0 Q8 8 0 0 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"mist"
+ <svg title="U983357" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 5 H2 V0 H11 H6 Q1 11 0 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"money"
+ <svg title="U983358" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 H11 L2 1 L2 11 Q9 8 0 2 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"monkey"
+ <svg title="U983359" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 2 H0 H10 Q11 0 1 9 V11 V1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"month"
+ <svg title="U983360" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 L7 4 V0 V11 L6 1 L11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"moon"
+ <svg title="U983361" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H9 0 H9 0 H0 0 H11 0 H8 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"morning"
+ <svg title="U983362" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 10 V4 Q3 4 8 8 Q0 11 3 11 Q1 1 11 0 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"mother"
+ <svg title="U983363" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H6 Q5 5 5 0 L11 11 H5 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"motion"
+ <svg title="U983364" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 2 V0 L11 9 V11 H1 L0 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"mountain"
+ <svg title="U983365" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H11 L2 5 H4 V0 V10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"mouth"
+ <svg title="U983366" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V9 V3 L0 6 V6 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"move"
+ <svg title="U983367" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 10 V6 L6 0 V0 L11 11 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"muscle"
+ <svg title="U983368" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V8 Q8 8 9 0 V2 V7 Q0 3 11 2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"music"
+ <svg title="U983369" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 Q11 4 7 0 V10 L8 11 H10 Q0 6 10 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"nail"
+ <svg title="U983370" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 7 L0 0 V11 Q3 2 11 5 V5 Q8 2 1 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"name"
+ <svg title="U983371" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V10 H0 L8 0 V9 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"nation"
+ <svg title="U983372" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H6 H10 L0 0 V2 L11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"neck"
+ <svg title="U983373" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 0 Q2 0 11 7 Q0 4 2 8 V11 H11 V3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"need"
+ <svg title="U983374" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 4 V1 H2 H11 Q6 3 0 11 L7 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"needle"
+ <svg title="U983375" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 V11 H11 H0 Q9 9 2 0 Q2 11 10 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"nerve"
+ <svg title="U983376" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V7 L9 11 H11 V0 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"net"
+ <svg title="U983377" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 L4 0 Q11 11 0 4 V5 V7 V4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"news"
+ <svg title="U983378" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 5 V11 H1 V11 Q0 0 7 0 H10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"night"
+ <svg title="U983379" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 8 L7 11 V1 V3 Q11 0 7 8 L0 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"noise"
+ <svg title="U983380" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 V9 H8 L0 0 V7 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"nose"
+ <svg title="U983381" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 V8 Q2 11 11 3 V4 V0 H7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"note"
+ <svg title="U983382" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 3 L0 3 V3 H0 Q11 9 2 11 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"number"
+ <svg title="U983383" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 9 V7 V11 Q0 2 4 6 Q11 4 7 0 L9 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"nut"
+ <svg title="U983384" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 5 L6 0 H2 Q10 9 11 11 H0 L3 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"observation"
+ <svg title="U983385" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 7 V11 V3 Q9 6 11 4 Q1 10 1 0 Q7 0 0 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"offer"
+ <svg title="U983386" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L6 5 V0 H0 L2 9 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"office"
+ <svg title="U983387" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 11 H4 Q11 2 10 1 H0 H5 Q7 0 1 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"oil"
+ <svg title="U983388" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 Q3 11 8 8 V0 L11 3 H0 H3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"operation"
+ <svg title="U983389" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 7 L10 11 L11 11 L6 0 H6 Q0 5 4 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"opinion"
+ <svg title="U983390" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 H11 Q0 6 2 0 V6 Q2 8 11 2 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"orange"
+ <svg title="U983391" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 0 Q2 8 6 11 L11 3 L5 0 H5 L0 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"order"
+ <svg title="U983392" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 V0 L9 5 Q1 0 11 0 L8 11 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"organization"
+ <svg title="U983393" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V1 L8 3 Q3 1 11 6 L4 8 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"ornament"
+ <svg title="U983394" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 1 Q0 8 11 11 Q8 7 10 4 H10 Q11 1 2 7 Q1 0 11 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"oven"
+ <svg title="U983395" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 H11 V4 V0 V6 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"owner"
+ <svg title="U983396" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V6 L8 0 L0 1 V4 Q3 2 11 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"page"
+ <svg title="U983397" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 5 H7 Q1 0 7 11 H11 H1 L0 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"pain"
+ <svg title="U983398" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 V2 H6 Q0 8 6 9 H11 L11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"paint"
+ <svg title="U983399" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 H11 H0 L8 10 H0 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"paper"
+ <svg title="U983400" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 11 H0 H4 Q10 9 11 0 H2 V9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"parcel"
+ <svg title="U983401" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 11 L0 2 L11 0 V9 V2 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"part"
+ <svg title="U983402" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 9 Q0 0 11 1 V10 Q10 11 7 6 V3 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"paste"
+ <svg title="U983403" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V3 L6 11 Q0 1 7 1 H11 V8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"payment"
+ <svg title="U983404" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 3 Q9 11 7 7 L6 0 H5 Q7 10 11 0 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"peace"
+ <svg title="U983405" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 8 Q0 10 11 1 L1 6 L2 0 L7 11 L6 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"pen"
+ <svg title="U983406" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 Q0 9 8 8 V0 L11 2 V6 Q2 8 11 9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"pencil"
+ <svg title="U983407" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 H10 H3 V1 Q0 4 8 11 Q11 8 5 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"person"
+ <svg title="U983408" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 Q11 2 0 0 H4 V7 L8 9 V10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"picture"
+ <svg title="U983409" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 8 L7 11 H7 Q9 0 11 3 Q0 4 4 3 L9 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"pig"
+ <svg title="U983410" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 Q1 10 10 6 H9 Q11 9 2 0 V11 V10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"pin"
+ <svg title="U983411" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H4 V0 H11 Q11 4 7 0 Q4 6 7 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"pipe"
+ <svg title="U983412" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 6 V0 Q11 0 11 9 Q11 7 0 11 Q5 4 9 5 L5 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"place"
+ <svg title="U983413" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 Q8 5 5 3 H11 V11 L0 6 L8 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"plane"
+ <svg title="U983414" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 V7 V7 Q1 0 11 0 L1 10 Q7 11 0 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"plant"
+ <svg title="U983415" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 6 L6 11 Q2 4 11 1 Q9 9 0 11 L3 0 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"plate"
+ <svg title="U983416" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 7 H0 Q1 4 11 11 L11 6 H11 Q3 0 3 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"play"
+ <svg title="U983417" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 11 L10 2 Q4 0 0 6 V6 Q4 4 9 4 L11 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"pleasure"
+ <svg title="U983418" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 9 H8 L11 11 Q10 4 1 4 V0 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"plow"
+ <svg title="U983419" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H10 L0 3 Q8 5 4 0 Q3 9 0 9 V2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"pocket"
+ <svg title="U983420" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 Q3 2 8 6 H11 L3 0 L0 3 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"point"
+ <svg title="U983421" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 3 Q4 4 11 11 Q9 1 0 10 H8 H10 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"poison"
+ <svg title="U983422" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 L11 6 H4 L5 0 L0 7 V9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"polish"
+ <svg title="U983423" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 L11 0 V7 H11 V2 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"porter"
+ <svg title="U983424" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 V11 L0 1 L4 5 H11 L2 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"position"
+ <svg title="U983425" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L0 11 Q1 7 10 2 H1 H7 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"pot"
+ <svg title="U983426" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 3 V4 Q0 8 10 0 L5 11 H11 H3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"potato"
+ <svg title="U983427" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 9 Q10 2 4 0 H0 L7 9 L11 11 L8 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"powder"
+ <svg title="U983428" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 Q11 6 6 0 Q5 11 6 9 H0 H11 Q2 3 3 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"power"
+ <svg title="U983429" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 9 Q6 5 0 2 L5 5 Q2 11 6 10 H10 L11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"price"
+ <svg title="U983430" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 5 L3 5 Q11 3 2 11 L5 0 L2 11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"print"
+ <svg title="U983431" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 7 L11 0 V2 L11 11 L4 2 L0 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"prison"
+ <svg title="U983432" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L0 0 H11 V6 H8 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"process"
+ <svg title="U983433" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V2 V11 H4 V8 Q11 2 11 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"produce"
+ <svg title="U983434" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 H9 H11 V0 L11 6 L9 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"profit"
+ <svg title="U983435" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 Q3 2 3 0 V0 Q7 0 0 11 Q11 7 7 4 L1 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"property"
+ <svg title="U983436" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 L11 3 H0 L7 0 V9 L4 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"prose"
+ <svg title="U983437" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 Q10 8 2 11 H9 Q11 0 0 3 V6 H6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"protest"
+ <svg title="U983438" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 3 V4 L0 0 V6 V11 Q11 3 0 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"pull"
+ <svg title="U983439" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V11 V6 V3 L11 7 H10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"pump"
+ <svg title="U983440" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V11 H0 V2 V9 V2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"punishment"
+ <svg title="U983441" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 8 V0 V9 L0 0 V6 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"purpose"
+ <svg title="U983442" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 11 Q0 3 3 3 H6 Q4 0 0 10 L11 7 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"push"
+ <svg title="U983443" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 0 L6 4 V8 H1 Q0 11 11 7 V6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"quality"
+ <svg title="U983444" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 5 L10 6 L0 0 H11 Q9 9 3 11 L9 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"question"
+ <svg title="U983445" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 V9 V11 H0 H11 Q9 11 9 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"rail"
+ <svg title="U983446" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 6 Q11 0 0 9 L6 8 V11 H7 V5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"rain"
+ <svg title="U983447" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 L0 0 Q4 10 10 11 H10 L6 4 L4 9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"range"
+ <svg title="U983448" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 8 V0 H0 H1 H10 L11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"rat"
+ <svg title="U983449" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L11 6 V8 H11 Q8 0 6 0 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"rate"
+ <svg title="U983450" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 L5 3 Q4 0 2 11 L3 8 V9 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"ray"
+ <svg title="U983451" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 V0 H11 H8 Q2 8 0 11 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"reaction"
+ <svg title="U983452" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 L9 11 V1 Q11 3 2 7 H7 L7 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"reading"
+ <svg title="U983453" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 8 Q1 10 1 11 V2 Q5 2 4 7 Q0 4 11 0 L4 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"reason"
+ <svg title="U983454" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 9 H9 H0 L10 3 Q10 0 11 6 Q1 9 7 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"receipt"
+ <svg title="U983455" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 6 Q6 6 0 7 Q6 11 2 9 V6 V0 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"record"
+ <svg title="U983456" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 11 H7 H0 H4 Q7 0 11 6 L9 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"regret"
+ <svg title="U983457" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 L8 11 L0 7 H3 L3 0 H3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"relation"
+ <svg title="U983458" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 6 Q6 5 7 7 V11 Q1 7 0 0 L8 1 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"religion"
+ <svg title="U983459" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 V9 V1 V7 L0 0 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"representative"
+ <svg title="U983460" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 V11 Q2 10 0 1 L2 9 L2 0 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"request"
+ <svg title="U983461" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 Q0 0 2 11 L8 10 H0 V11 H2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"respect"
+ <svg title="U983462" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 0 H11 V1 Q6 11 8 0 L3 1 L0 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"rest"
+ <svg title="U983463" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H0 Q3 4 3 2 V11 H11 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"reward"
+ <svg title="U983464" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 9 Q4 5 0 2 L7 3 V0 Q7 9 11 11 H6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"rhythm"
+ <svg title="U983465" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V11 V6 Q4 9 7 0 V7 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"rice"
+ <svg title="U983466" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 L0 0 H6 V3 H9 L11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"ring"
+ <svg title="U983467" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 L11 8 Q2 0 11 7 V10 H4 Q5 9 6 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"river"
+ <svg title="U983468" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 8 Q0 8 4 1 V0 Q9 11 3 2 V7 Q0 11 4 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"road"
+ <svg title="U983469" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 11 L9 11 Q11 3 0 11 Q4 0 11 10 H4 V3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"rod"
+ <svg title="U983470" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V0 L0 1 H2 L11 11 Q11 5 2 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"roll"
+ <svg title="U983471" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 11 H3 V4 Q10 11 11 11 L0 11 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"roof"
+ <svg title="U983472" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 11 H8 H11 L5 2 Q3 11 0 9 L2 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"room"
+ <svg title="U983473" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H11 H11 V4 H9 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"root"
+ <svg title="U983474" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 7 L9 11 H4 L11 2 L11 2 Q0 4 9 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"rub"
+ <svg title="U983475" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 9 V5 V2 L0 11 V7 Q0 9 11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"rule"
+ <svg title="U983476" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 Q1 0 11 4 L4 4 V4 H0 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"run"
+ <svg title="U983477" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 5 Q4 2 4 11 H11 V0 Q0 9 9 11 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sail"
+ <svg title="U983478" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 8 Q0 6 11 11 Q3 0 11 0 H6 V7 L8 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"salt"
+ <svg title="U983479" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 V0 L11 9 L0 11 Q0 4 6 6 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sand"
+ <svg title="U983480" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 Q11 11 5 6 H5 H5 V11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"scale"
+ <svg title="U983481" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 3 Q8 8 3 11 L11 3 V0 V6 Q6 6 0 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"school"
+ <svg title="U983482" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 7 V9 H0 Q11 4 4 0 L4 2 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"science"
+ <svg title="U983483" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 10 L2 0 Q11 2 6 6 H10 Q2 11 0 10 V7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"scissors"
+ <svg title="U983484" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 Q7 4 7 0 L5 4 L0 4 L9 11 L7 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"screw"
+ <svg title="U983485" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 V7 Q0 4 0 11 L6 11 H11 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sea"
+ <svg title="U983486" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 Q9 1 1 0 H1 Q9 7 11 3 L10 0 Q4 11 2 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"seat"
+ <svg title="U983487" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 H4 H3 Q0 0 7 11 Q2 2 2 4 Q8 4 11 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"secretary"
+ <svg title="U983488" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 9 H8 V5 Q6 0 4 11 V5 L11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"seed"
+ <svg title="U983489" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 Q7 3 6 10 L7 1 Q1 11 3 3 L11 3 L0 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"selection"
+ <svg title="U983490" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 5 L2 7 L2 11 H7 H11 Q4 3 11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"self"
+ <svg title="U983491" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 6 L4 5 Q0 0 1 9 L1 11 H6 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sense"
+ <svg title="U983492" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 10 Q5 0 9 1 H0 V9 L11 11 H8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"servant"
+ <svg title="U983493" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H4 Q9 0 6 6 L0 11 L0 6 Q11 2 4 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sex"
+ <svg title="U983494" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 8 L5 9 Q2 0 0 11 Q11 10 9 2 H7 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"shade"
+ <svg title="U983495" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H4 V5 V9 V0 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"shake"
+ <svg title="U983496" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 V10 V0 Q11 11 4 1 V3 V4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"shame"
+ <svg title="U983497" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 Q2 1 7 7 Q5 1 7 1 Q4 10 2 0 V1 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sheep"
+ <svg title="U983498" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 Q11 4 0 10 Q3 4 7 6 Q3 11 3 11 L6 6 H1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"shelf"
+ <svg title="U983499" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H0 L7 0 V0 H8 Q0 11 11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"ship"
+ <svg title="U983500" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 10 H10 H11 L1 0 Q9 11 0 0 V2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"shirt"
+ <svg title="U983501" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 Q1 8 2 8 L10 11 Q6 4 8 1 Q5 0 0 1 L8 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"shock"
+ <svg title="U983502" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V2 V0 H0 H8 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"shoe"
+ <svg title="U983503" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 2 L11 11 V11 Q0 0 0 9 H5 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"side"
+ <svg title="U983504" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 2 L11 6 Q0 6 4 0 Q8 8 5 8 L6 3 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sign"
+ <svg title="U983505" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 8 L6 6 V2 L5 7 Q6 11 5 4 Q6 8 11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"silk"
+ <svg title="U983506" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 7 L5 5 L5 0 Q0 5 5 9 H11 L8 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"silver"
+ <svg title="U983507" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 Q9 3 0 11 L2 4 Q11 4 0 6 V0 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sister"
+ <svg title="U983508" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 L11 7 H0 H0 Q11 7 3 0 Q3 4 3 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"size"
+ <svg title="U983509" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 Q11 0 11 9 Q7 0 8 11 L9 6 H9 Q0 4 8 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"skin"
+ <svg title="U983510" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 9 H0 Q9 0 11 9 H9 Q7 3 0 11 V4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"skirt"
+ <svg title="U983511" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V11 H0 Q9 11 0 10 H2 Q9 0 2 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sky"
+ <svg title="U983512" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 H0 V11 V0 H9 L11 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sleep"
+ <svg title="U983513" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 9 V0 H0 V0 H11 L7 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"slip"
+ <svg title="U983514" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 V3 H0 Q5 0 9 11 L3 8 H2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"slope"
+ <svg title="U983515" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V6 V11 H10 L11 11 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"smash"
+ <svg title="U983516" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 4 V2 Q0 11 11 0 V11 V7 V6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"smell"
+ <svg title="U983517" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H11 V7 L6 11 V5 V5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"smile"
+ <svg title="U983518" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V6 L2 4 H10 V0 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"smoke"
+ <svg title="U983519" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 3 Q3 11 11 2 Q7 3 0 4 Q10 1 0 7 Q8 0 7 11 H3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"snake"
+ <svg title="U983520" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H0 V1 V1 H9 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sneeze"
+ <svg title="U983521" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 L9 2 Q0 4 1 11 V7 L4 4 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"snow"
+ <svg title="U983522" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 Q9 9 1 0 V5 Q11 0 0 6 Q8 11 5 5 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"soap"
+ <svg title="U983523" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 10 Q11 1 1 0 V6 L1 11 H0 Q1 10 11 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"society"
+ <svg title="U983524" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 Q9 2 0 11 V4 V6 V0 V4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sock"
+ <svg title="U983525" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 H3 L8 0 H2 Q0 11 9 10 Q6 3 3 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"son"
+ <svg title="U983526" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 5 L11 0 Q2 10 6 4 H1 Q10 11 8 11 L3 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"song"
+ <svg title="U983527" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 L11 4 H0 H11 L6 11 H1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sort"
+ <svg title="U983528" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 H2 H11 V0 V11 L2 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sound"
+ <svg title="U983529" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 6 H6 H6 L4 3 Q0 11 10 0 L11 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"soup"
+ <svg title="U983530" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 5 Q5 5 11 0 V7 H10 H7 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"space"
+ <svg title="U983531" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 9 Q0 2 11 11 L3 0 Q0 7 3 9 V3 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"spade"
+ <svg title="U983532" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 H0 Q0 2 7 2 H2 Q6 11 8 2 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sponge"
+ <svg title="U983533" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 9 V2 V11 Q5 3 5 0 V2 Q11 1 0 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"spoon"
+ <svg title="U983534" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 L6 0 H0 L5 3 L11 3 H6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"spring"
+ <svg title="U983535" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 V1 V11 V0 L0 11 H8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"square"
+ <svg title="U983536" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 L4 2 L1 4 Q0 9 11 4 V11 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"stage"
+ <svg title="U983537" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 Q6 0 0 11 V9 Q9 7 0 10 H9 L6 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"stamp"
+ <svg title="U983538" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 L10 4 H11 L3 7 Q6 0 0 5 V9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"star"
+ <svg title="U983539" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 5 Q0 0 7 6 L7 3 H9 Q11 11 1 6 Q7 2 8 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"start"
+ <svg title="U983540" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 H4 V0 L0 6 Q11 11 2 8 L9 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"statement"
+ <svg title="U983541" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 V7 L9 0 Q0 11 7 7 V1 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"station"
+ <svg title="U983542" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V1 Q4 5 6 10 Q3 5 8 0 H11 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"steam"
+ <svg title="U983543" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 Q4 11 10 10 Q2 7 7 9 Q8 0 3 0 H0 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"steel"
+ <svg title="U983544" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 9 L2 0 H7 V9 Q0 9 11 11 L9 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"stem"
+ <svg title="U983545" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 10 L7 0 L0 6 L7 7 Q11 7 7 11 H7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"step"
+ <svg title="U983546" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 9 H7 H1 Q2 0 0 3 L11 10 Q7 11 1 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"stick"
+ <svg title="U983547" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 7 L11 11 Q4 0 0 9 L6 1 L7 10 Q11 4 4 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"stitch"
+ <svg title="U983548" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H0 L6 0 L2 11 H1 V2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"stocking"
+ <svg title="U983549" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V4 Q10 4 2 11 L11 7 Q0 10 6 2 Q8 3 4 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"stomach"
+ <svg title="U983550" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 V4 Q11 2 11 6 Q4 2 11 3 V11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"stone"
+ <svg title="U983551" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 Q2 9 0 0 V4 H11 L7 7 Q2 11 10 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"stop"
+ <svg title="U983552" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 L0 9 V5 Q4 0 8 11 L8 5 V6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"store"
+ <svg title="U983553" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 Q10 1 0 4 L7 11 H10 Q11 6 11 0 L10 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"story"
+ <svg title="U983554" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 H0 V2 H7 V5 Q11 11 0 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"street"
+ <svg title="U983555" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 0 Q0 9 1 2 V9 L11 3 H7 Q3 11 6 9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"stretch"
+ <svg title="U983556" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 L11 11 Q0 0 4 5 L0 4 V5 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"structure"
+ <svg title="U983557" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 Q2 7 6 0 L7 5 L0 7 Q8 0 1 6 Q4 9 0 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"substance"
+ <svg title="U983558" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 V4 V11 L11 4 L11 4 Q3 10 5 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sugar"
+ <svg title="U983559" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 5 Q2 6 11 11 Q8 8 0 9 L1 0 H3 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"suggestion"
+ <svg title="U983560" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 11 V11 Q10 0 11 10 H4 L0 0 L0 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"summer"
+ <svg title="U983561" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 H11 L0 11 Q0 0 2 3 H11 V3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sun"
+ <svg title="U983562" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H0 H8 V4 V5 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"support"
+ <svg title="U983563" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 L4 0 Q11 2 1 2 V0 V11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"surprise"
+ <svg title="U983564" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 L0 0 Q2 6 5 2 Q9 11 2 8 H6 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"swim"
+ <svg title="U983565" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 H1 V0 H10 Q1 11 0 5 L8 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"system"
+ <svg title="U983566" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 Q11 3 7 8 V11 L0 5 H7 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"table"
+ <svg title="U983567" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 7 Q5 7 3 6 Q3 7 0 3 H11 Q1 0 0 11 H5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"tail"
+ <svg title="U983568" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H7 Q11 7 10 3 Q4 3 5 3 V7 Q2 0 0 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"talk"
+ <svg title="U983569" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 L9 9 Q4 9 11 6 H7 V11 L0 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"taste"
+ <svg title="U983570" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 9 Q0 0 8 0 Q0 10 5 10 H11 Q6 1 11 11 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"tax"
+ <svg title="U983571" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 V2 H11 Q9 4 6 0 L3 2 Q2 11 6 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"teaching"
+ <svg title="U983572" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L6 0 H9 V0 L2 9 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"tendency"
+ <svg title="U983573" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 Q4 2 10 5 V11 L4 8 L0 5 L11 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"test"
+ <svg title="U983574" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 Q10 2 6 2 Q6 10 5 11 H11 V0 V10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"theory"
+ <svg title="U983575" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 6 H1 Q0 2 1 0 Q11 9 1 11 L6 6 V10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"thing"
+ <svg title="U983576" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 4 Q0 0 7 2 Q4 4 11 8 L8 9 V6 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"thought"
+ <svg title="U983577" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 10 Q2 11 11 2 Q10 6 5 10 H4 Q0 0 6 11 Q5 0 10 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"thread"
+ <svg title="U983578" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 4 Q9 5 10 0 Q9 9 7 11 L8 2 L0 0 L9 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"throat"
+ <svg title="U983579" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 L11 0 Q10 10 4 1 L9 0 Q1 5 0 11 H2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"thumb"
+ <svg title="U983580" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 4 L0 8 V11 V0 V0 L11 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"thunder"
+ <svg title="U983581" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 10 V11 V7 V0 L8 6 Q8 10 11 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"ticket"
+ <svg title="U983582" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 L11 5 Q4 11 4 1 L10 1 H6 Q0 10 11 2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"time"
+ <svg title="U983583" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 H7 L7 11 V6 H0 Q3 6 11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"tin"
+ <svg title="U983584" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 6 Q0 6 7 6 Q1 5 8 10 H4 V0 Q11 10 2 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"toe"
+ <svg title="U983585" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 4 H3 L0 0 Q11 10 7 11 Q4 8 4 7 Q7 10 1 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"tongue"
+ <svg title="U983586" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 0 H8 L6 3 H0 H11 Q6 3 4 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"tooth"
+ <svg title="U983587" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 2 L11 5 L0 0 H11 H11 Q11 11 9 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"top"
+ <svg title="U983588" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H0 V11 L7 7 H10 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"touch"
+ <svg title="U983589" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 V11 Q3 9 9 3 Q8 2 0 8 H0 Q2 7 11 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"town"
+ <svg title="U983590" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 2 L8 9 H11 H1 Q0 0 1 11 H8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"trade"
+ <svg title="U983591" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H7 V7 V1 Q0 6 0 8 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"train"
+ <svg title="U983592" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 H2 L11 8 Q2 0 10 11 H11 V8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"transport"
+ <svg title="U983593" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 1 Q0 0 11 4 H11 H2 H4 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"tray"
+ <svg title="U983594" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H11 V11 L8 9 L8 1 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"tree"
+ <svg title="U983595" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 H0 L11 11 V7 L10 6 H9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"trick"
+ <svg title="U983596" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H11 V3 V0 V1 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"trouble"
+ <svg title="U983597" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 L11 10 H10 V7 V10 Q4 11 9 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"trousers"
+ <svg title="U983598" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 6 L11 11 H5 Q10 5 0 0 V8 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"turn"
+ <svg title="U983599" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 10 Q11 9 6 1 L3 0 L1 1 L7 5 Q6 11 10 9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"twist"
+ <svg title="U983600" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 0 L9 0 Q4 6 0 1 H11 V3 L1 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"umbrella"
+ <svg title="U983601" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 8 L5 7 Q1 7 0 10 H9 Q0 11 1 0 L11 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"unit"
+ <svg title="U983602" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 11 Q0 11 11 10 L5 7 L5 10 Q1 5 11 5 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"use"
+ <svg title="U983603" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 Q10 2 4 11 Q0 9 2 4 V4 Q1 9 11 7 Q6 6 6 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"value"
+ <svg title="U983604" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 V11 V9 L7 9 L0 11 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"verse"
+ <svg title="U983605" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 7 H11 Q8 11 6 2 L3 3 L0 6 Q2 0 2 2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"vessel"
+ <svg title="U983606" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 Q10 2 0 0 H1 L2 11 L6 4 Q10 10 11 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"view"
+ <svg title="U983607" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H11 H9 H0 Q5 11 10 2 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"voice"
+ <svg title="U983608" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H11 V0 V7 H3 L6 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"walk"
+ <svg title="U983609" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 7 V4 L4 11 Q7 0 11 7 H11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"wall"
+ <svg title="U983610" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V9 V0 L0 4 L1 11 Q10 0 6 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"war"
+ <svg title="U983611" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 H6 V11 V0 H11 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"wash"
+ <svg title="U983612" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V9 L10 0 Q5 4 0 2 L6 11 L5 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"waste"
+ <svg title="U983613" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 9 V0 L9 11 L11 2 Q7 11 9 7 Q0 7 7 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"watch"
+ <svg title="U983614" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 L7 11 Q11 11 5 0 V11 H5 H5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"water"
+ <svg title="U983615" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 10 H11 V4 Q0 11 3 0 V10 V5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"wave"
+ <svg title="U983616" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 6 Q0 6 10 11 Q11 1 9 4 Q5 0 11 9 L10 6 Q6 9 10 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"wax"
+ <svg title="U983617" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 V11 H0 L1 11 H4 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"way"
+ <svg title="U983618" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 4 Q6 3 11 2 L0 0 V8 H0 Q2 11 8 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"weather"
+ <svg title="U983619" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 7 L11 11 L11 0 Q6 2 0 9 H3 H5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"week"
+ <svg title="U983620" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 L0 3 V7 V11 V0 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"weight"
+ <svg title="U983621" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 9 V9 Q11 8 11 2 L6 11 Q10 2 0 0 Q3 4 8 9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"wheel"
+ <svg title="U983622" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 5 Q1 5 7 9 Q0 3 7 5 V8 Q11 8 4 9 Q10 0 0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"whip"
+ <svg title="U983623" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 Q5 1 2 10 H11 Q8 10 0 8 V11 H5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"whistle"
+ <svg title="U983624" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 H8 Q11 11 1 2 L1 6 Q0 5 7 5 H3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"wind"
+ <svg title="U983625" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 Q5 0 0 6 L1 0 H1 L0 11 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"window"
+ <svg title="U983626" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 L7 5 H11 V11 V6 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"wine"
+ <svg title="U983627" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 L3 0 Q4 6 11 0 Q6 2 0 9 H1 L1 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"wing"
+ <svg title="U983628" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 L0 8 L10 11 V6 H11 H10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"winter"
+ <svg title="U983629" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 Q0 0 11 2 H2 H7 L11 3 L10 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"wire"
+ <svg title="U983630" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V11 V11 Q0 0 4 11 L9 2 V4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"woman"
+ <svg title="U983631" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 0 Q2 2 10 11 H0 L9 11 H11 L5 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"wood"
+ <svg title="U983632" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 Q0 11 0 9 L7 3 V0 H7 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"wool"
+ <svg title="U983633" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 V6 V11 V2 Q11 0 6 5 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"word"
+ <svg title="U983634" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 3 Q7 3 5 11 L0 1 L1 9 Q11 0 1 10 L9 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"work"
+ <svg title="U983635" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 6 H10 Q1 11 8 3 Q0 8 11 2 L4 11 L7 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"worm"
+ <svg title="U983636" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H6 0 V0 L2 0 H0 0 H10 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"wound"
+ <svg title="U983637" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 11 Q8 3 9 0 Q10 7 4 11 Q0 3 0 0 H4 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"writing"
+ <svg title="U983638" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 Q2 9 9 11 V4 L11 0 H4 H7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"year"
+ <svg title="U983639" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 2 Q7 7 0 0 V9 V11 V0 L11 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"agree"
+ <svg title="U983640" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 V11 V5 Q11 1 3 5 Q10 11 0 7 V10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"appear"
+ <svg title="U983641" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 10 L0 10 Q9 0 11 6 H10 H0 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"ask"
+ <svg title="U983642" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 Q11 1 7 5 H1 H4 Q9 0 0 11 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"be"
+ <svg title="U983643" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 V4 Q7 7 6 11 L0 4 V0 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"become"
+ <svg title="U983644" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L6 9 V1 L7 0 H0 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"begin"
+ <svg title="U983645" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 V2 Q0 11 5 0 V5 L2 9 L11 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"believe"
+ <svg title="U983646" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 4 V7 Q0 0 11 1 V11 V6 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"break"
+ <svg title="U983647" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 L0 0 V6 H11 V10 L3 9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"bring"
+ <svg title="U983648" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 8 L5 0 V4 Q0 3 5 11 V11 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"build"
+ <svg title="U983649" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 8 Q1 9 11 9 H4 V11 Q0 3 7 1 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"buy"
+ <svg title="U983650" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 9 V7 H0 V0 L0 11 Q10 2 11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"call"
+ <svg title="U983651" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 7 V11 L4 4 Q11 2 4 0 L0 4 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"carry"
+ <svg title="U983652" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 L2 9 V6 Q2 6 11 9 Q9 11 11 9 Q7 0 4 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"catch"
+ <svg title="U983653" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L4 7 H5 H1 Q2 9 2 0 Q8 11 0 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"change"
+ <svg title="U983654" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 V2 H0 H11 H5 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"choose"
+ <svg title="U983655" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 5 H7 L4 11 L9 3 L6 8 Q0 3 11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"come"
+ <svg title="U983656" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 10 L4 2 L6 3 Q0 9 4 11 V0 Q11 7 6 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"consider"
+ <svg title="U983657" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 10 H11 H9 H0 Q0 6 0 11 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"continue"
+ <svg title="U983658" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 1 H9 V1 V0 L11 11 L0 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cover"
+ <svg title="U983659" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 2 L2 3 Q9 3 0 11 Q6 2 0 0 L11 7 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"create"
+ <svg title="U983660" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 4 Q2 4 0 10 H11 L2 0 Q6 11 11 5 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cut"
+ <svg title="U983661" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 11 Q11 3 0 10 V0 V6 H11 H6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"decide"
+ <svg title="U983662" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V11 L2 4 H0 H0 L0 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"develop"
+ <svg title="U983663" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 L1 0 L6 11 L5 3 Q0 3 6 6 L11 8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"die"
+ <svg title="U983664" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 11 Q11 10 5 11 H0 L4 10 Q9 0 6 6 L11 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"do"
+ <svg title="U983665" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 Q3 5 10 11 Q11 0 10 0 H7 L6 0 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"draw"
+ <svg title="U983666" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 V0 V0 L11 7 Q3 9 0 9 H7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"eat"
+ <svg title="U983667" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 6 L11 0 H8 L11 11 V11 Q0 1 8 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"explain"
+ <svg title="U983668" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 9 H11 V0 Q6 7 7 2 L0 11 H9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fall"
+ <svg title="U983669" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 6 V9 Q0 0 11 11 V11 L11 5 Q7 11 11 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"feel"
+ <svg title="U983670" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 11 H11 H6 Q8 0 6 2 V3 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"find"
+ <svg title="U983671" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V0 Q2 0 6 3 L6 3 H9 L0 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"follow"
+ <svg title="U983672" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 L0 11 H0 Q6 1 10 10 L3 8 Q8 4 8 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"get"
+ <svg title="U983673" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 2 H11 Q11 0 2 11 V2 L0 0 L11 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"give"
+ <svg title="U983674" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 1 V11 Q0 0 11 0 L4 10 L0 6 L1 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"go"
+ <svg title="U983675" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 V5 Q7 6 0 0 L0 11 H6 V2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"grow"
+ <svg title="U983676" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H1 V9 H3 Q3 0 7 9 Q7 5 11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"happen"
+ <svg title="U983677" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 Q0 0 2 5 V6 H11 H5 V2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"have"
+ <svg title="U983678" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 Q7 9 9 0 Q4 2 1 1 L11 1 Q2 10 5 11 Q7 2 0 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hear"
+ <svg title="U983679" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 Q4 6 11 8 H7 H11 V11 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"help"
+ <svg title="U983680" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 V0 Q6 1 0 8 Q3 1 7 10 H11 H6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"hit"
+ <svg title="U983681" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 L0 7 L11 0 V0 V0 V4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"hope"
+ <svg title="U983682" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 Q11 3 4 0 V0 V0 L0 1 L9 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"include"
+ <svg title="U983683" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 V0 H8 V11 V0 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"keep"
+ <svg title="U983684" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 V11 L11 0 V11 V2 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"kill"
+ <svg title="U983685" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 8 Q0 11 1 6 V3 L1 0 H2 L11 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"know"
+ <svg title="U983686" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 0 Q11 11 8 3 V0 H4 L0 6 L8 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"lead"
+ <svg title="U983687" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 6 L11 2 L1 11 V10 L4 7 Q6 4 0 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"learn"
+ <svg title="U983688" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 H0 L8 11 H11 L0 0 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"leave"
+ <svg title="U983689" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 8 L11 11 Q7 7 5 0 H0 V7 V1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"let"
+ <svg title="U983690" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L3 0 H0 H0 Q4 0 4 4 V9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"live"
+ <svg title="U983691" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 Q3 0 4 8 L11 9 Q0 4 2 9 V2 Q9 5 9 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"lose"
+ <svg title="U983692" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 V0 H0 Q4 11 4 3 H11 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"make"
+ <svg title="U983693" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V2 H4 V11 H11 Q0 5 4 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"mean"
+ <svg title="U983694" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V0 L0 11 H10 L7 6 H1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"meet"
+ <svg title="U983695" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V0 10 V0 3 V0 7 V0 6 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"move"
+ <svg title="U983696" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 H2 H11 Q1 2 1 9 L0 9 L3 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"need"
+ <svg title="U983697" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 Q0 11 11 10 L4 1 V6 H6 Q6 0 4 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"offer"
+ <svg title="U983698" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 4 Q6 11 6 2 Q0 9 10 4 V0 H6 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"open"
+ <svg title="U983699" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 2 H11 H10 Q0 11 5 6 Q0 9 6 9 Q5 0 3 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"pass"
+ <svg title="U983700" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 4 L2 9 V11 V2 L0 0 L11 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"pay"
+ <svg title="U983701" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 6 L10 3 V2 L0 2 V0 Q11 10 8 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"play"
+ <svg title="U983702" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 9 L0 0 L9 9 V10 L11 6 Q4 11 4 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"produce"
+ <svg title="U983703" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 6 L11 0 L8 3 L8 9 Q8 11 3 3 L0 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"put"
+ <svg title="U983704" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H4 V11 H11 Q2 8 4 9 L10 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"raise"
+ <svg title="U983705" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 Q9 2 11 9 H2 L9 0 V0 L4 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"reach"
+ <svg title="U983706" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 6 V0 L4 0 Q11 11 0 11 V6 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"read"
+ <svg title="U983707" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 V3 H9 L3 0 H0 Q11 9 3 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"receive"
+ <svg title="U983708" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 8 V0 H10 H1 Q0 1 6 9 Q11 0 6 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"remember"
+ <svg title="U983709" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 L0 9 L5 0 L11 10 Q4 6 7 2 L4 5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"return"
+ <svg title="U983710" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 Q8 11 8 9 Q5 4 11 9 L2 1 L5 9 Q0 9 6 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"run"
+ <svg title="U983711" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 H7 H11 H0 L0 11 H8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"say"
+ <svg title="U983712" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 H11 V0 H0 V0 L1 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"see"
+ <svg title="U983713" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 Q10 0 1 8 L11 11 L11 6 H4 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"seem"
+ <svg title="U983714" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 3 V11 L7 0 V8 Q0 3 4 1 L11 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sell"
+ <svg title="U983715" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 8 Q5 3 11 3 L11 0 L0 11 H5 L0 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"send"
+ <svg title="U983716" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 10 V1 V0 Q0 1 11 11 H6 L0 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"serve"
+ <svg title="U983717" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 H8 Q0 10 8 0 L3 11 Q11 3 5 9 H8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"set"
+ <svg title="U983718" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 L11 11 Q6 10 0 2 V4 Q0 5 7 9 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"show"
+ <svg title="U983719" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H4 V6 V11 L10 7 L0 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sit"
+ <svg title="U983720" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 0 L0 5 Q1 11 11 6 H11 V10 V6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"speak"
+ <svg title="U983721" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V4 V11 Q11 10 6 11 L0 1 H1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"spend"
+ <svg title="U983722" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 H0 Q11 11 8 7 H11 H1 L10 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"stand"
+ <svg title="U983723" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 4 Q11 10 2 2 V11 Q0 0 2 11 H4 L8 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"stay"
+ <svg title="U983724" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 3 V11 L4 1 Q3 10 0 0 L5 2 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"stop"
+ <svg title="U983725" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 L7 0 H11 H0 Q11 11 0 11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"support"
+ <svg title="U983726" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 3 V3 L7 0 Q9 8 11 6 V4 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"take"
+ <svg title="U983727" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 V2 Q10 11 4 5 Q0 1 5 6 Q7 4 4 7 Q4 6 11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"teach"
+ <svg title="U983728" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 Q3 1 4 9 H6 L2 0 V0 Q11 11 6 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"tell"
+ <svg title="U983729" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 4 L2 4 H8 Q0 4 9 0 L11 0 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"think"
+ <svg title="U983730" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 10 V7 Q11 6 4 11 V0 Q11 5 0 11 L3 9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"try"
+ <svg title="U983731" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 6 V3 Q0 10 0 0 V7 H11 Q0 7 1 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"understand"
+ <svg title="U983732" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 Q0 6 9 7 V10 Q8 0 3 5 L11 11 V1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"use"
+ <svg title="U983733" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 10 Q9 0 1 3 H11 Q0 7 9 11 Q4 11 11 0 L5 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"walk"
+ <svg title="U983734" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 Q11 2 11 7 V4 H0 L4 0 L4 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"want"
+ <svg title="U983735" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H11 V11 H6 H9 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"watch"
+ <svg title="U983736" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 L10 3 V0 L11 1 V1 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"win"
+ <svg title="U983737" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 L3 9 L11 7 H6 L0 5 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"work"
+ <svg title="U983738" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 H11 V11 H0 L0 7 H3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"write"
+ <svg title="U983739" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 Q1 11 2 2 V0 Q7 6 0 1 V4 H9 " stroke="black" stroke-width="1" fill="none"/></svg>
+"political"
+ <svg title="U983740" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 2 H7 H0 L0 11 H11 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"long"
+ <svg title="U983741" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 Q5 7 5 11 V8 L0 0 H2 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"safe"
+ <svg title="U983742" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 10 Q6 11 8 0 L3 5 L11 11 V1 L7 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"bright"
+ <svg title="U983743" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 2 V0 L2 5 H5 Q2 3 0 3 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"clean"
+ <svg title="U983744" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 11 H0 H11 H9 H6 L5 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sharp"
+ <svg title="U983745" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 8 Q8 1 11 11 Q3 9 0 0 Q10 10 4 9 L7 10 L7 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"full"
+ <svg title="U983746" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 Q11 6 2 8 V11 H2 L0 3 L11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cheap"
+ <svg title="U983747" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 V1 L2 10 L11 8 Q0 11 2 9 Q7 8 11 6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"slow"
+ <svg title="U983748" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 V3 H10 H9 Q1 10 1 11 Q4 0 11 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"broken"
+ <svg title="U983749" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 6 V6 L0 0 V11 V6 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bad"
+ <svg title="U983750" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 V0 V6 H9 L4 11 Q2 4 11 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sudden"
+ <svg title="U983751" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 L3 0 H6 Q11 8 8 11 Q0 2 3 2 V8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"healthy"
+ <svg title="U983752" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 0 L11 0 Q0 8 7 4 L9 2 V11 L7 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"possible"
+ <svg title="U983753" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 Q0 0 2 10 V11 L0 1 Q11 0 2 10 V10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"probable"
+ <svg title="U983754" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 4 L5 11 L0 8 H6 L8 0 Q0 6 11 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"complete"
+ <svg title="U983755" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 7 Q5 10 0 9 L8 3 H2 Q8 11 11 6 Q2 8 0 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"dependent"
+ <svg title="U983756" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 Q10 3 9 1 L11 8 Q0 1 1 10 Q11 11 4 10 V7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fertile"
+ <svg title="U983757" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 4 H0 V4 H11 L6 11 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"frequent"
+ <svg title="U983758" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 4 L1 0 H6 L0 11 H11 H3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"regular"
+ <svg title="U983759" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 4 V0 H11 L1 11 H0 H1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"cruel"
+ <svg title="U983760" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 7 H10 Q4 0 11 7 L8 0 H7 Q0 0 1 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"small"
+ <svg title="U983761" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 0 Q5 11 6 10 Q11 5 0 5 V9 L2 4 V5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"first"
+ <svg title="U983762" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 Q0 9 3 7 H9 V0 V11 V9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"early"
+ <svg title="U983763" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 11 L11 0 L11 8 Q0 9 11 2 L11 10 V8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"dead"
+ <svg title="U983764" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L11 0 L2 11 H0 L11 9 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"high"
+ <svg title="U983765" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 Q6 11 10 0 H0 V6 L11 3 L0 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"female"
+ <svg title="U983766" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 8 Q6 3 7 3 V6 V2 L0 11 L11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"natural"
+ <svg title="U983767" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 8 L3 0 Q11 11 5 3 H4 Q8 9 5 3 Q8 8 0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"automatic"
+ <svg title="U983768" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V10 L0 11 H4 H2 H7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"clear"
+ <svg title="U983769" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 H8 H11 L3 0 H11 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"future"
+ <svg title="U983770" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 9 L11 0 H0 V6 Q0 3 11 11 V9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"violent"
+ <svg title="U983771" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 L6 11 Q9 4 10 0 H11 Q0 7 5 0 L7 3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"parallel"
+ <svg title="U983772" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 L2 0 L4 6 H0 L7 4 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"private"
+ <svg title="U983773" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 2 H6 V2 H8 Q0 0 7 11 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"loud"
+ <svg title="U983774" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H6 H11 V11 H9 H1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"common"
+ <svg title="U983775" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 4 H0 L10 2 H11 H10 Q6 11 10 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"irresponsible"
+ <svg title="U983776" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 5 Q11 0 7 9 H0 L0 6 Q1 6 6 11 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"free"
+ <svg title="U983777" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 11 L9 7 V7 H10 L0 4 Q11 0 7 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"poor"
+ <svg title="U983778" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 11 V1 V9 L0 0 V7 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"left"
+ <svg title="U983779" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 2 V4 Q4 0 11 2 Q0 0 3 2 V11 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"flat"
+ <svg title="U983780" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V10 Q0 11 2 11 Q0 2 0 0 V6 H9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"happy"
+ <svg title="U983781" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H0 L0 11 H4 V6 H7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"different"
+ <svg title="U983782" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 Q0 2 11 0 L5 4 V6 Q2 3 5 0 Q9 9 0 5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"mixed"
+ <svg title="U983783" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 0 H2 L11 11 H9 H9 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"deep"
+ <svg title="U983784" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 V11 L2 2 Q11 4 11 6 V0 L8 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"open"
+ <svg title="U983785" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 V10 Q9 0 11 0 V8 H11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"serious"
+ <svg title="U983786" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H3 H0 V2 V4 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"complex"
+ <svg title="U983787" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 V3 Q0 3 2 8 Q1 11 7 1 H7 L11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"married"
+ <svg title="U983788" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 5 L2 5 Q11 7 8 0 V3 V3 Q8 11 4 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fat"
+ <svg title="U983789" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 11 Q4 0 11 5 H11 Q0 1 11 5 H9 L2 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"rough"
+ <svg title="U983790" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 L7 8 Q9 11 1 9 L1 9 L9 7 Q2 8 11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hard"
+ <svg title="U983791" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H11 H0 H7 H8 L11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hollow"
+ <svg title="U983792" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V0 H0 0 H11 0 H0 0 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"general"
+ <svg title="U983793" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 5 H3 L1 8 V7 Q11 6 11 11 Q8 3 0 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"elastic"
+ <svg title="U983794" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 1 Q1 11 11 0 H0 H3 H7 V4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bent"
+ <svg title="U983795" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 1 Q0 7 3 7 L4 0 Q2 8 11 6 Q3 8 3 11 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"normal"
+ <svg title="U983796" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 11 L2 1 Q4 10 2 3 V11 Q6 0 0 0 L11 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"feeble"
+ <svg title="U983797" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 3 V11 V0 V3 H4 Q11 2 0 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"bitter"
+ <svg title="U983798" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H8 H3 V0 Q1 3 11 1 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"short"
+ <svg title="U983799" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V2 V11 L4 5 Q0 7 2 0 Q4 1 11 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"thick"
+ <svg title="U983800" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 H2 L11 6 V2 V11 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"loose"
+ <svg title="U983801" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 11 V8 H7 L11 0 L11 3 L0 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"awake"
+ <svg title="U983802" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 1 Q10 0 10 11 L0 7 V4 Q11 6 3 10 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"delicate"
+ <svg title="U983803" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 8 L0 11 H4 H11 V0 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"false"
+ <svg title="U983804" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V0 V2 H7 Q5 11 0 0 L6 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"beautiful"
+ <svg title="U983805" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 Q5 5 5 10 V2 L5 10 H0 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"able"
+ <svg title="U983806" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 6 L3 11 H0 H7 L6 2 Q11 0 7 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"certain"
+ <svg title="U983807" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 V11 V0 Q0 0 0 8 V1 V8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"conscious"
+ <svg title="U983808" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 6 Q11 0 11 9 L8 0 V11 H0 V2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"equal"
+ <svg title="U983809" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 7 V11 L9 6 L0 10 Q11 7 1 0 Q11 4 4 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"important"
+ <svg title="U983810" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 6 Q1 8 11 11 L1 8 Q4 0 7 0 L1 7 Q7 2 0 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"necessary"
+ <svg title="U983811" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 L0 6 Q5 9 11 11 Q1 0 0 2 L2 0 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"ready"
+ <svg title="U983812" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V1 L8 2 L1 5 L0 10 Q1 11 1 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cold"
+ <svg title="U983813" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 10 Q2 4 1 5 Q11 1 3 9 Q1 11 0 10 V0 L7 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"dry"
+ <svg title="U983814" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 7 L9 11 H0 L9 6 Q4 7 11 2 Q9 4 11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"narrow"
+ <svg title="U983815" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 H8 Q0 7 3 9 L11 3 Q6 9 0 8 L2 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"foolish"
+ <svg title="U983816" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 9 L0 9 H10 H7 Q4 0 11 2 Q11 11 4 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"correct"
+ <svg title="U983817" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 4 V11 H11 H9 Q0 6 7 0 H5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"old"
+ <svg title="U983818" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 4 V11 H0 H9 H7 Q11 4 9 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"apolitical"
+ <svg title="U983819" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 H3 V6 H9 Q11 2 0 11 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"brief"
+ <svg title="U983820" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 8 Q4 5 0 11 Q10 0 7 6 L6 8 V5 L11 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"dangerous"
+ <svg title="U983821" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 Q11 6 3 10 Q7 4 0 0 V11 H10 V8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"dark"
+ <svg title="U983822" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 V0 V6 V2 H11 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"dirty"
+ <svg title="U983823" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 4 H10 H11 L4 6 V11 L0 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"dull"
+ <svg title="U983824" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 L11 8 L0 7 V11 L0 11 V10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"empty"
+ <svg title="U983825" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 8 Q11 2 6 8 H0 H2 V11 Q7 11 0 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"expensive"
+ <svg title="U983826" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 4 H7 H8 Q0 0 11 11 L3 2 L2 1 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"fast"
+ <svg title="U983827" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 6 V0 L9 7 L7 11 L11 11 L0 4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"fixed"
+ <svg title="U983828" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 5 V3 V0 H0 H6 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"good"
+ <svg title="U983829" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 9 Q4 9 9 7 L11 0 L11 11 V7 Q6 8 0 8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"gradual"
+ <svg title="U983830" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 H6 V11 H11 L0 11 L4 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"ill"
+ <svg title="U983831" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 4 V0 V7 Q9 8 11 0 V8 L9 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"impossible"
+ <svg title="U983832" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 3 Q0 11 3 0 V0 L1 6 H11 H4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"improbable"
+ <svg title="U983833" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 10 V3 L9 10 L11 11 Q0 7 3 0 L6 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"incomplete"
+ <svg title="U983834" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 8 Q2 6 11 2 L0 0 L10 8 V11 L9 2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"independent"
+ <svg title="U983835" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 H2 Q0 9 11 11 Q10 9 10 0 Q9 7 1 2 H8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"infertile"
+ <svg title="U983836" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 Q5 3 11 0 H11 L11 11 H9 Q9 11 2 5 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"infrequent"
+ <svg title="U983837" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 0 Q10 6 11 2 Q10 6 0 11 V11 L4 10 H8 " stroke="black" stroke-width="1" fill="none"/></svg>
+"irregular"
+ <svg title="U983838" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V4 L3 1 H0 L3 0 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"kind"
+ <svg title="U983839" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 1 Q0 0 0 10 Q3 4 11 4 V11 V4 L6 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"large"
+ <svg title="U983840" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 5 V11 Q11 3 2 8 Q10 0 2 5 V8 V6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"last"
+ <svg title="U983841" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 10 L6 1 Q1 3 4 6 Q10 0 9 0 Q1 6 0 11 L0 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"late"
+ <svg title="U983842" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 Q1 4 1 11 H11 H0 V10 L4 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"living"
+ <svg title="U983843" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 Q11 4 8 11 H8 H0 H11 L0 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"low"
+ <svg title="U983844" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 V10 Q8 11 0 10 H11 Q10 10 11 1 V6 " stroke="black" stroke-width="1" fill="none"/></svg>
+"male"
+ <svg title="U983845" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 3 Q3 0 11 2 V9 V5 L0 11 H8 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"manmade"
+ <svg title="U983846" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 9 Q0 1 8 2 Q11 11 5 5 L9 0 H9 L0 4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"manual"
+ <svg title="U983847" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 8 Q5 10 1 7 V7 V8 Q6 8 0 5 Q5 0 11 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"opaque"
+ <svg title="U983848" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V9 V10 V11 H0 V1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"past"
+ <svg title="U983849" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V2 V0 H10 H4 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"peaceful"
+ <svg title="U983850" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 9 Q0 0 11 5 L3 4 V2 V2 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"perpendicular"
+ <svg title="U983851" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 Q6 10 1 11 Q2 1 5 2 Q0 0 9 4 H1 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"public"
+ <svg title="U983852" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 7 L4 11 H3 H1 L0 0 H5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"quiet"
+ <svg title="U983853" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 9 Q6 11 11 8 L0 10 H0 V0 L0 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"rare"
+ <svg title="U983854" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 Q11 8 4 11 L11 11 H7 V4 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"responsible"
+ <svg title="U983855" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 L8 0 V11 Q11 0 0 9 H0 L10 2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"restrained"
+ <svg title="U983856" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 Q7 0 4 1 L4 11 H11 H2 V4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"rich"
+ <svg title="U983857" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 4 V2 L6 0 Q0 11 6 6 Q0 3 11 6 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"right"
+ <svg title="U983858" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 V7 Q0 11 6 3 Q11 3 3 6 V8 Q0 9 11 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"round"
+ <svg title="U983859" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 6 Q11 2 0 7 H7 V1 V0 Q4 0 9 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sad"
+ <svg title="U983860" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 6 H4 Q0 0 1 6 H10 L11 4 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"same"
+ <svg title="U983861" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 L1 11 Q6 0 4 11 L5 7 H0 H2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"separate"
+ <svg title="U983862" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 Q4 8 3 0 V8 V3 Q10 7 3 1 L0 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"shallow"
+ <svg title="U983863" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 L11 4 Q3 4 5 3 H5 H0 L7 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"shut"
+ <svg title="U983864" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 L11 11 H5 L9 5 H8 L0 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"silly"
+ <svg title="U983865" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 2 L4 3 V11 H11 Q0 6 7 0 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"simple"
+ <svg title="U983866" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 5 Q10 9 0 7 Q3 1 1 11 L11 3 V0 V1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"single"
+ <svg title="U983867" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 7 Q11 4 8 0 V6 Q11 11 11 3 V4 L8 10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"skinny"
+ <svg title="U983868" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M5 11 Q0 5 10 6 V6 Q6 8 0 0 L6 3 Q1 0 11 6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"smooth"
+ <svg title="U983869" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 H8 L3 0 H11 Q0 11 9 0 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"soft"
+ <svg title="U983870" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 11 Q0 6 3 0 Q7 2 1 10 Q0 6 4 2 Q10 10 10 9 H11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"solid"
+ <svg title="U983871" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 8 Q0 0 1 6 V11 L6 3 H11 L11 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"special"
+ <svg title="U983872" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M9 0 H0 V3 H11 V11 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"stiff"
+ <svg title="U983873" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 11 Q0 0 1 1 L7 6 H11 L11 11 Q5 1 4 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"straight"
+ <svg title="U983874" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 10 V7 Q11 11 10 1 V7 Q0 4 9 6 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"strange"
+ <svg title="U983875" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 V11 V0 H0 H11 V11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"strong"
+ <svg title="U983876" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 9 Q0 0 11 2 L6 4 L4 7 V0 V11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"sweet"
+ <svg title="U983877" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 L6 6 H6 Q0 0 11 0 L11 11 H2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"tall"
+ <svg title="U983878" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 10 V0 Q0 4 11 6 V11 Q2 4 8 3 V10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"thin"
+ <svg title="U983879" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 V3 V0 L7 2 H11 V9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"tight"
+ <svg title="U983880" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 10 L11 4 L0 1 L0 0 V11 Q4 6 2 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"tired"
+ <svg title="U983881" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 6 L1 11 L6 1 L2 0 L11 1 H0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"tough"
+ <svg title="U983882" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 Q1 0 8 9 L0 11 L3 3 L11 2 H9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"true"
+ <svg title="U983883" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 2 L7 5 L2 9 Q11 11 6 0 H10 L1 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"ugly"
+ <svg title="U983884" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 0 L7 8 V11 H0 Q8 2 1 11 L11 9 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"unable"
+ <svg title="U983885" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 11 H1 Q4 0 4 4 L11 9 L3 6 L7 3 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"uncertain"
+ <svg title="U983886" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H11 V11 L0 7 Q9 9 11 9 Q0 7 11 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"unconscious"
+ <svg title="U983887" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 9 L2 6 V0 L6 3 L0 11 H3 " stroke="black" stroke-width="1" fill="none"/></svg>
+"unequal"
+ <svg title="U983888" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 0 H0 L2 6 H11 Q7 11 2 6 V2 " stroke="black" stroke-width="1" fill="none"/></svg>
+"unimportant"
+ <svg title="U983889" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 5 H7 L0 0 Q1 0 3 5 V11 Q6 5 11 0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"unnecessary"
+ <svg title="U983890" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M4 8 Q4 6 7 0 Q2 6 3 11 Q11 11 10 10 V2 H0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"unready"
+ <svg title="U983891" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H0 V11 H9 V11 H5 " stroke="black" stroke-width="1" fill="none"/></svg>
+"warm"
+ <svg title="U983892" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 1 Q11 0 8 11 H3 H3 H11 Q2 5 0 1 " stroke="black" stroke-width="1" fill="none"/></svg>
+"wet"
+ <svg title="U983893" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 3 H4 L4 0 Q4 6 0 5 V5 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"wide"
+ <svg title="U983894" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 10 Q0 0 11 7 H0 L10 11 Q10 7 0 11 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"wise"
+ <svg title="U983895" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 2 Q11 7 1 9 L0 0 Q8 3 2 7 Q10 11 9 8 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"wrong"
+ <svg title="U983896" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 0 Q0 9 6 5 V9 H11 H1 L7 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"young"
+ <svg title="U983897" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 3 V0 L11 3 Q2 11 9 10 L0 8 H2 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"waiting"
+ <svg title="U983898" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M3 1 Q11 1 10 11 Q7 8 11 10 V0 L0 0 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"sticky"
+ <svg title="U983899" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 1 H4 V10 Q0 7 3 0 L10 7 Q0 0 11 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"secret"
+ <svg title="U983900" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 L8 0 H0 H7 H9 Q11 11 9 7 " stroke="black" stroke-width="1" fill="none"/></svg>
+"present"
+ <svg title="U983901" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 7 Q8 8 11 11 V2 H5 L3 5 Q6 7 0 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"physical"
+ <svg title="U983902" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M2 0 Q6 0 0 7 L3 4 H7 H3 Q11 0 0 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"opposite"
+ <svg title="U983903" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M8 11 V11 Q7 2 11 4 V2 Q0 11 7 0 H10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"military"
+ <svg title="U983904" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 4 V0 H10 H0 Q11 11 2 11 H6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"mechanical"
+ <svg title="U983905" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 8 V7 L0 0 V11 V9 H11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"medical"
+ <svg title="U983906" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V1 H0 V0 V10 L0 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"material"
+ <svg title="U983907" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 H11 V11 V1 L4 8 V4 " stroke="black" stroke-width="1" fill="none"/></svg>
+"like"
+ <svg title="U983908" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 10 H11 Q7 2 6 11 Q7 1 0 0 L4 6 V10 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"hanging"
+ <svg title="U983909" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 4 L1 11 Q11 0 0 9 Q10 10 0 9 Q10 2 11 0 V0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"great"
+ <svg title="U983910" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 11 Q1 6 4 11 L9 10 V0 Q0 1 6 1 Q4 5 11 0 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"electric"
+ <svg title="U983911" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 11 V8 Q3 6 0 7 V8 V3 V0 " stroke="black" stroke-width="1" fill="none"/></svg>
+"dear"
+ <svg title="U983912" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 V4 H0 L9 11 L7 5 V6 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"cut"
+ <svg title="U983913" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 2 L11 1 V4 Q0 1 2 11 V0 L4 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"chief"
+ <svg title="U983914" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M10 7 Q8 0 8 0 H9 Q0 8 11 3 V10 L9 11 " stroke="black" stroke-width="1" fill="none"/></svg>
+"chemical"
+ <svg title="U983915" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M0 0 V6 V0 V8 Q10 11 11 6 H4 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"boiling"
+ <svg title="U983916" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 0 H4 L0 11 L1 4 H6 L0 11 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"angry"
+ <svg title="U983917" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M11 1 Q7 11 2 6 V1 V0 L0 7 V10 " stroke="black" stroke-width="1" fill="none"/></svg>
+"acidic"
+ <svg title="U983918" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M1 4 V0 L11 11 L0 11 L3 4 L3 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"on"
+ <svg title="U983919" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M6 7 L5 6 H6 H11 Q0 2 11 0 Q6 11 6 7 Z" stroke="black" stroke-width="1" fill="none"/></svg>
+"at"
+ <svg title="U983920" x="0" y="0" width="12" height="12" viewBox="0, 0, 12, 12"><path d="M7 11 H0 V0 H11 H7 L11 10 Z" stroke="black" stroke-width="1" fill="none"/></svg>

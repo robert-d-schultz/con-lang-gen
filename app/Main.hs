@@ -18,6 +18,7 @@ import Gen.Grammar
 import Gen.ParseTree
 
 import Gen.Grapheme
+import Gen.WritingSystem
 
 import Out.Other
 import Out.Phonology
@@ -25,6 +26,7 @@ import Out.Inflection
 import Out.Lexicon
 import Out.Sentence
 import Out.Grammar
+import Out.WritingSystem
 
 main :: IO ()
 main = do
@@ -46,17 +48,19 @@ main = do
   -- diphthongs
   inventoryD <- sampleRVar (makeDiphInventory 4 inventoryV)
 
-  -- phonotactics
+  -- phonotactics / consonant clusters
   sonHier <- sampleRVar (makeSonHier inventoryC)
+  onsets <- sampleRVar (makeOnsets sonHier (2, 4))
+  codas <- sampleRVar (makeCodas sonHier (2, 4))
 
   -- inflection / grammatical categories
   idata <- loadInputData
   (inflSys, numPerLexCat) <- sampleRVar (makeInflectionSystem idata)
-  systems <- sampleRVar (mapM (makeLexicalInflection inventoryV sonHier inflSys) numPerLexCat)
+  systems <- sampleRVar (mapM (makeLexicalInflection inventoryV (onsets, codas) inflSys) numPerLexCat)
 
   -- root morphemes
   mData <- loadMeaningData
-  roots <- sampleRVar (makeRootDictionary mData (inventoryV ++ inventoryD) sonHier ((1, 4), (0, 2), (1, 3), (0, 2)))
+  roots <- sampleRVar (makeRootDictionary mData (inventoryV ++ inventoryD) (onsets ++ map (:[]) inventoryC, codas ++ map (:[]) inventoryC) (1, 4))
 
   -- full Lexicon
   -- let dict = makeDictionary systems roots
@@ -67,8 +71,16 @@ main = do
   -- parse trees
   ptExamples <- sampleRVar (replicateM 10 (makeParseTree mData))
 
-  -- characters
-  chracterSVGs <- sampleRVar (makeCharacters 5)
+  -- writing systems
+  let allPhonemes = inventoryD ++ inventoryV ++ inventoryC
+  let allSyllables = makeAllSyllables (onsets ++ map (:[]) inventoryC) (inventoryD ++ inventoryV) (codas ++ map (:[]) inventoryC)
+  let allLogograms = roots
+  (a, s, l) <- sampleRVar (generateWritingSystem allPhonemes allSyllables allLogograms)
+
+  -- chracters
+  (aOut, sOut, lOut) <- sampleRVar $ makeCharacters (a, s, l)
+
+  let characterSVGs = map snd aOut ++ map snd sOut ++ map snd lOut
 
   -- outputs
   writeFile "out/phonology.txt" $ "Phonology"
@@ -78,16 +90,21 @@ main = do
 
   writeFile "out/phonotactics.txt" $ "Phonotactics"
                                   ++ parseSonHier (inventoryV ++ inventoryD) sonHier
+                                  ++ parseCCs onsets codas
 
   writeFile "out/inflection.txt" $ "Inflection"
                                 ++ parseLCInflection inflSys
                                 ++ concatMap (parseLexicalSystems inflSys sonHier) systems
 
   writeFile "out/lexicon.txt" $ "Lexicon"
-                             -- ++ parseDictionary sonHier dict
+                            -- ++ parseDictionary sonHier dict
+                             ++ parseRootDictionary sonHier roots
 
   writeFile "out/grammar.txt" $ "Grammar"
                              ++ parseGrammar grammar
                             -- ++ concatMap (parseParseTree sonHier roots systems grammar) ptExamples
 
-  writeFile "out/character.svg" $  intercalate "\n" chracterSVGs
+  writeFile "out/writing system.txt" $ "Writing System"
+                                    ++ parseWritingSystem (aOut, sOut, lOut)
+  let t = map (\(num, str) -> ("out/characters/U+" ++ show num ++ ".svg", str)) characterSVGs
+  forM_ t $ uncurry writeFile

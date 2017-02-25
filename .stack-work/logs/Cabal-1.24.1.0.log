@@ -1,3 +1,0 @@
-Configuring Cabal-1.24.1.0...
-setup-Simple-Cabal-1.24.0.0-ghc-8.0.1: Encountered missing dependencies:
-base >=4.5 && <5 && <0 && ==4.9.0.0

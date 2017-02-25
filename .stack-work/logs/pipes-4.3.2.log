@@ -1,0 +1,35 @@
+Configuring pipes-4.3.2...
+Building pipes-4.3.2...
+Preprocessing library pipes-4.3.2...
+[1 of 6] Compiling Pipes.Internal   ( src/Pipes/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Pipes/Internal.o )
+
+src/Pipes/Internal.hs:41:1: warning: [-Wunused-imports]
+    The import of ‘MonadMask’
+    from module ‘Control.Monad.Catch’ is redundant
+
+src/Pipes/Internal.hs:47:1: warning: [-Wunused-imports]
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+
+src/Pipes/Internal.hs:53:1: warning: [-Wunused-imports]
+    The qualified import of ‘Control.Monad.Catch’ is redundant
+      except perhaps to import instances from ‘Control.Monad.Catch’
+    To import instances alone, use: import Control.Monad.Catch()
+[2 of 6] Compiling Pipes.Core       ( src/Pipes/Core.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Pipes/Core.o )
+[3 of 6] Compiling Pipes.Lift       ( src/Pipes/Lift.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Pipes/Lift.o )
+[4 of 6] Compiling Pipes            ( src/Pipes.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Pipes.o )
+
+src/Pipes.hs:67:1: warning: [-Wunused-imports]
+    The import of ‘MonadMask’
+    from module ‘Control.Monad.Catch’ is redundant
+
+src/Pipes.hs:92:1: warning: [-Wunused-imports]
+    The qualified import of ‘Control.Monad.Catch’ is redundant
+      except perhaps to import instances from ‘Control.Monad.Catch’
+    To import instances alone, use: import Control.Monad.Catch()
+[5 of 6] Compiling Pipes.Prelude    ( src/Pipes/Prelude.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Pipes/Prelude.o )
+[6 of 6] Compiling Pipes.Tutorial   ( src/Pipes/Tutorial.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Pipes/Tutorial.o )
+Installing library in
+/home/robert/.stack/snapshots/x86_64-linux/lts-8.2/8.0.2/lib/x86_64-linux-ghc-8.0.2/pipes-4.3.2-4tHddPcBGISB6ifjZQ9yT6
+Registering pipes-4.3.2...

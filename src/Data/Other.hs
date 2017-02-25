@@ -6,7 +6,7 @@ module Data.Other
 import Data.Phoneme
 
 -- Used to parse out syllables from a word
-data SyllWord = SyllWord [Syllable] deriving (Eq, Show, Read)
+newtype SyllWord = SyllWord [Syllable] deriving (Eq, Show, Read)
 data Syllable = Syllable
               { getOnset :: [Phoneme]
               , getNucleus :: Phoneme

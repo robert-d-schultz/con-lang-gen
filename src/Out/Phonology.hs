@@ -28,7 +28,7 @@ parseConPhonemeInventory places manners phonations cons = "<br>\n<table border=1
 
   getIPASymbol :: [Phoneme] -> Manner -> Place -> Phonation -> String
   getIPASymbol cons manner place phonation = output where
-    filt = filter (\(Consonant p m h s) -> p == place && m == manner && h == phonation)  cons
+    filt = filter (\(Consonant p m h s) -> p == place && m == manner && h == phonation) cons
     output
       | not.null $ filt = csymbol $ head filt
       | otherwise = ""

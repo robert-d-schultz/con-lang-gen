@@ -3,6 +3,9 @@ module Out.Lexicon
 , parseWordIPA
 , parseMorphemeIPA
 , parsePhonemeIPA
+, parseRootDictionary
+, parseSyllableIPA
+, parseLC
 ) where
 
 import Prelude hiding (Word)
@@ -15,6 +18,16 @@ import Data.Inflection
 import Data.Other
 import Out.Roman
 import Out.Syllable
+
+-- Parse list of roots to string
+parseRootDictionary :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> String
+parseRootDictionary sonHier pairs = "\n" ++ intercalate "\n" (map (parseRootDictionaryEntry sonHier) (reduceHomophones2 pairs))
+
+reduceHomophones2 :: [((String, LexCat), Morpheme)] -> [([(String, LexCat)], Morpheme)]
+reduceHomophones2 pairs = map (second head . unzip) (groupWith snd (sortWith snd pairs))
+
+parseRootDictionaryEntry :: [[Phoneme]] -> ([(String, LexCat)], Morpheme) -> String
+parseRootDictionaryEntry sonHier (means, morph) = romanizeMorpheme morph ++ " (" ++ parseMorphemeIPA sonHier morph ++ ")" ++ concatMap (\(str, lc) -> "\n\t" ++ parseLC lc ++ " " ++ str) means
 
 -- Parse list of words to string
 parseDictionary :: [[Phoneme]] -> [((String, LexCat), Word)] -> String
@@ -39,7 +52,7 @@ parseWordIPA :: [[Phoneme]] -> Word -> String
 parseWordIPA sonHier word = "/" ++ intercalate "." (map parseSyllableIPA sylls) ++ "/" where
   (SyllWord sylls) = syllabifyWord sonHier word
 
--- Parse morpheme for use in exponent table
+-- Parse Morpheme to string (used in exponent table too)
 parseMorphemeIPA :: [[Phoneme]] -> Morpheme -> String
 parseMorphemeIPA sonHier morph = "/" ++ intercalate "." (map parseSyllableIPA sylls) ++ "/" where
   (SyllWord sylls) = syllabifyMorpheme sonHier morph

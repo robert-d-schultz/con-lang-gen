@@ -1,8 +1,11 @@
 module Gen.Phonotactics
 ( makeSonHier
 , retrieveSon
+, makeOnsets
+, makeCodas
 ) where
 
+import Control.Monad
 import Data.List
 import Data.RVar
 import Data.Random.Extras
@@ -60,3 +63,25 @@ retrieveSon :: [[Phoneme]] -> Phoneme -> Int
 retrieveSon sonHier Vowel{} = length sonHier + 1
 retrieveSon sonHier Diphthong{} = length sonHier + 1
 retrieveSon sonhier phone = fromJust (elemIndex True $ map (elem phone) (reverse sonhier))
+
+-- Generate valid onsets
+makeOnsets :: [[Phoneme]] -> (Int, Int) -> RVar [[Phoneme]]
+makeOnsets sonHier (no, xo) = do
+  n <- uniform 5 10
+  replicateM n $ join (makeConsonantCluster <$> uniform no xo <*> return (reverse sonHier) <*> return [])
+
+-- Generate valid codas
+makeCodas :: [[Phoneme]] -> (Int, Int) -> RVar [[Phoneme]]
+makeCodas sonHier (nc, xc) = do
+  n <- uniform 5 10
+  replicateM n $ join (makeConsonantCluster <$> uniform nc xc <*> return sonHier <*> return [])
+
+-- Generate a consonant cluster
+-- Goes through sonority hierarchy taking consonants from each grouping
+makeConsonantCluster :: Int -> [[Phoneme]] -> [Phoneme] -> RVar [Phoneme]
+makeConsonantCluster 0 _ out = return out
+makeConsonantCluster _ [] out = return out
+makeConsonantCluster l sonhier out = do
+  i <- uniform 0 1
+  newCs <- sample i (head sonhier)
+  makeConsonantCluster (l-i) (tail sonhier) (out ++ newCs)

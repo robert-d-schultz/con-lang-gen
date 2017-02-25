@@ -1,0 +1,16 @@
+Configuring fclabels-2.0.3.2...
+Building fclabels-2.0.3.2...
+Preprocessing library fclabels-2.0.3.2...
+[ 1 of 10] Compiling Data.Label.Point ( src/Data/Label/Point.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label/Point.o )
+[ 2 of 10] Compiling Data.Label.Poly  ( src/Data/Label/Poly.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label/Poly.o )
+[ 3 of 10] Compiling Data.Label.Total ( src/Data/Label/Total.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label/Total.o )
+[ 4 of 10] Compiling Data.Label.Partial ( src/Data/Label/Partial.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label/Partial.o )
+[ 5 of 10] Compiling Data.Label.Mono  ( src/Data/Label/Mono.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label/Mono.o )
+[ 6 of 10] Compiling Data.Label.Monadic ( src/Data/Label/Monadic.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label/Monadic.o )
+[ 7 of 10] Compiling Data.Label.Failing ( src/Data/Label/Failing.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label/Failing.o )
+[ 8 of 10] Compiling Data.Label.Derive ( src/Data/Label/Derive.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label/Derive.o )
+[ 9 of 10] Compiling Data.Label       ( src/Data/Label.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label.o )
+[10 of 10] Compiling Data.Label.Base  ( src/Data/Label/Base.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Data/Label/Base.o )
+Installing library in
+/home/robert/.stack/snapshots/x86_64-linux/lts-8.2/8.0.2/lib/x86_64-linux-ghc-8.0.2/fclabels-2.0.3.2-4EezQlp7n1w9uoh5Y3yxAt
+Registering fclabels-2.0.3.2...
