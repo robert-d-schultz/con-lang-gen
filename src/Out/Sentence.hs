@@ -18,7 +18,7 @@ import EnglishStuff
 import Out.Lexicon
 
 -- parse parse tree into a string
-parseParseTree :: [[Phoneme]] -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> Grammar -> Phrase -> String
+parseParseTree :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> Grammar -> Phrase -> String
 parseParseTree sonHier dict systems g pt = "\n\n" ++ roman ++ "\n" ++ native ++ "\n" ++ gloss ++ "\n" ++ literal ++ "\n\"" ++ english ++ "\"" where
   leaves   = filter (not.all leafIsNull) (filter (not.null) (parsePhrase g pt))
   eLeaves  = filter (not.all leafIsNull) (filter (not.null) (parsePhrase englishGrammar pt))
@@ -127,15 +127,15 @@ leafToEnglish2 (Leaf _ _ str) = str
 leafToEnglish2 _ = "ERROR"
 
 -- to new language
-translateLeaves :: Grammar -> [[Phoneme]] -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [[Leaf]] -> String
+translateLeaves :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [[Leaf]] -> String
 translateLeaves g sonHier dict systems leaves = unwords $ map (translateLeaves2 g sonHier dict systems) leaves
 
-translateLeaves2 :: Grammar -> [[Phoneme]] -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
+translateLeaves2 :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
 translateLeaves2 g sonHier dict systems leaves
   | any leafIsInfl leaves = translateInfl g sonHier dict systems leaves
   | otherwise             = concatMap (translateLeaf sonHier dict) leaves
 
-translateInfl :: Grammar -> [[Phoneme]] -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
+translateInfl :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
 translateInfl g sonHier dict systems leaves = out where
   (others, inflLeaves) = break leafIsInfl leaves
   infls = map leafInfl inflLeaves
@@ -151,7 +151,7 @@ translateInfl g sonHier dict systems leaves = out where
 
   -- syllabify the output properly
   partOut = map (parseWordIPA sonHier . Word . (:[])) parts
-  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (parseWordIPA sonHier (Word suffs) ++ "<UNK>" ++ parseWordIPA sonHier (Word prefs)) (parseWordIPA sonHier . Word <$> ((++ suffs) . (prefs ++) . getMorphemes <$> lookup (str, lc) dict))
+  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (parseWordIPA sonHier (Word suffs) ++ "<UNK>" ++ parseWordIPA sonHier (Word prefs)) (parseWordIPA sonHier . Word <$> ((++ suffs) . (prefs ++) . (:[]) <$> lookup (str, lc) dict))
                                    (LeafNull _) -> "") others
 
   out
@@ -184,29 +184,29 @@ compareInfl (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol
       , (vol == vol2 || vol `elem` [Express UVOL, NoExpress])
       ]
 
-translateLeaf :: [[Phoneme]] -> [((String, LexCat), Word)] -> Leaf -> String
+translateLeaf :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> Leaf -> String
 translateLeaf _ _ LeafNull{} = ""
 translateLeaf sonHier dict (Leaf lc _ str) = translate sonHier dict (str,lc)
 translateLeaf _ _ _ = "ERROR"
 
-translate :: [[Phoneme]] -> [((String, LexCat), Word)] -> (String, LexCat) -> String
-translate sonHier dict ent = fromMaybe "<UNK>" (parseWordIPA sonHier <$> lookup ent dict)
+translate :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> (String, LexCat) -> String
+translate sonHier dict ent = fromMaybe "<UNK>" (parseMorphemeIPA sonHier <$> lookup ent dict)
 
 -- to romanized
-romanizeLeaf :: [((String, LexCat), Word)] -> Leaf -> String
+romanizeLeaf :: [((String, LexCat), Morpheme)] -> Leaf -> String
 romanizeLeaf _ LeafNull{} = ""
-romanizeLeaf dict (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeWord <$> lookup (str, lc) dict)
+romanizeLeaf dict (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeMorpheme <$> lookup (str, lc) dict)
 romanizeLeaf _ _ = "ERROR"
 
-romanizeLeaves :: Grammar -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [[Leaf]] -> String
+romanizeLeaves :: Grammar -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [[Leaf]] -> String
 romanizeLeaves g dict systems leaves = unwords $ map (romanizeLeaves2 g dict systems) leaves
 
-romanizeLeaves2 :: Grammar -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
+romanizeLeaves2 :: Grammar -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
 romanizeLeaves2 g dict systems leaves
   | any leafIsInfl leaves = romanizeInfl g dict systems leaves
   | otherwise             = concatMap (romanizeLeaf dict) leaves
 
-romanizeInfl :: Grammar -> [((String, LexCat), Word)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
+romanizeInfl :: Grammar -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
 romanizeInfl g dict systems leaves = out where
   (others, inflLeaves) = break leafIsInfl leaves
   infls = map leafInfl inflLeaves
@@ -222,7 +222,7 @@ romanizeInfl g dict systems leaves = out where
 
   -- syllabify the output properly
   partOut = map (romanizeWord . Word . (:[])) parts
-  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe ((romanizeWord . Word) suffs ++ "<UNK>" ++ (romanizeWord . Word) prefs) ((romanizeWord . Word) <$> ((++ suffs) . (prefs ++) . getMorphemes <$> lookup (str, lc) dict))
+  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe ((romanizeWord . Word) suffs ++ "<UNK>" ++ (romanizeWord . Word) prefs) ((romanizeWord . Word) <$> ((++ suffs) . (prefs ++) . (:[]) <$> lookup (str, lc) dict))
                                    (LeafNull _) -> "") others
 
   out

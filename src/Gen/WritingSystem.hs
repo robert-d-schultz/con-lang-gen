@@ -14,14 +14,17 @@ import Data.Phoneme
 import Data.Other
 import Data.Inflection
 
-import Gen.Phoneme
+import Gen.Phonology
 
 --pick writing systems
 generateWritingSystem :: [Phoneme] -> [Syllable] -> [((String,LexCat), Morpheme)] -> RVar ([(Phoneme, Int)], [(Syllable, Int)], [(((String, LexCat), Morpheme), Int)])
+generateWritingSystem phonemes [] morphs = choice [ (generateAlphabet phonemes, [], [])
+                                                  , ([], [], generateLogography morphs 983040)
+                                                  ]
 generateWritingSystem phonemes sylls morphs = choice [ (generateAlphabet phonemes, [], [])
-                                                 , ([], generateSyllabary sylls 983040, [])
-                                                 , ([], [], generateLogography morphs 983040)
-                                                 ]
+                                                     , ([], generateSyllabary sylls 983040, [])
+                                                     , ([], [], generateLogography morphs 983040)
+                                                     ]
 
 -- generate an alphabet based on phonemes
 -- monographs/digraphs allowed (not yet)
@@ -30,13 +33,13 @@ generateAlphabet :: [Phoneme] -> [(Phoneme, Int)]
 generateAlphabet phonemes = zip phonemes [983040..]
 
 
--- generate a syllabary from... a list of (used) syllables?
--- go through the full lexicon (which would include all inflected and uninflected words) and make a list of syllables
--- actually let's see how it does when we know the valid onsets, vowels, and codas
+-- generates a "true" syllabary
+-- need "false" syllabary later
 generateSyllabary :: [Syllable] -> Int -> [(Syllable, Int)]
 generateSyllabary sylls n = zip sylls [n..]
 
--- Make all syllables
+
+-- make all syllables
 makeAllSyllables :: [[Phoneme]] -> [Phoneme] -> [[Phoneme]] -> [Syllable]
 makeAllSyllables onsets nucleuss codas = Syllable <$> onsets <*> nucleuss <*> codas
 

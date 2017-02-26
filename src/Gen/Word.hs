@@ -15,7 +15,7 @@ import Data.Phoneme
 import Data.Other
 import Data.Inflection
 import Data.Grammar
-import Gen.Phoneme
+import Gen.Phonology
 import Gen.Phonotactics
 
 -- Generates the full lexicon from the root dictionary and inflections

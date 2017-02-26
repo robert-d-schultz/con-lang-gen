@@ -21,6 +21,34 @@
   (major1) == 0 && (major2) <  5 || \
   (major1) == 0 && (major2) == 5 && (minor) <= 7)
 
+/* package directory-1.3.0.0 */
+#define VERSION_directory "1.3.0.0"
+#define MIN_VERSION_directory(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  3 || \
+  (major1) == 1 && (major2) == 3 && (minor) <= 0)
+
+/* package hashable-1.2.5.0 */
+#define VERSION_hashable "1.2.5.0"
+#define MIN_VERSION_hashable(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 5)
+
+/* package mwc-random-0.13.5.0 */
+#define VERSION_mwc_random "0.13.5.0"
+#define MIN_VERSION_mwc_random(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  13 || \
+  (major1) == 0 && (major2) == 13 && (minor) <= 5)
+
+/* package random-1.1 */
+#define VERSION_random "1.1"
+#define MIN_VERSION_random(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  1 || \
+  (major1) == 1 && (major2) == 1 && (minor) <= 0)
+
 /* package random-extras-0.19 */
 #define VERSION_random_extras "0.19"
 #define MIN_VERSION_random_extras(major1,major2,minor) (\
@@ -55,6 +83,13 @@
   (major1) <  0 || \
   (major1) == 0 && (major2) <  3 || \
   (major1) == 0 && (major2) == 3 && (minor) <= 0)
+
+/* package vector-0.11.0.0 */
+#define VERSION_vector "0.11.0.0"
+#define MIN_VERSION_vector(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  11 || \
+  (major1) == 0 && (major2) == 11 && (minor) <= 0)
 
 /* tool alex-3.1.6 */
 #define TOOL_VERSION_alex "3.1.6"
@@ -140,7 +175,7 @@
   (major1) == 2 && (major2) <  26 || \
   (major1) == 2 && (major2) == 26 && (minor) <= 0)
 
-#define CURRENT_COMPONENT_ID "con-lang-gen-0.0.0.1-9KdOev0VQXZ9aTvMmQUN98"
+#define CURRENT_COMPONENT_ID "con-lang-gen-0.0.0.1-1fM7O7MZmH036NvcEJweFm"
 
-#define CURRENT_PACKAGE_KEY "con-lang-gen-0.0.0.1-9KdOev0VQXZ9aTvMmQUN98"
+#define CURRENT_PACKAGE_KEY "con-lang-gen-0.0.0.1-1fM7O7MZmH036NvcEJweFm"
 

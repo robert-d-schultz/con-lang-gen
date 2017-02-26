@@ -11,7 +11,7 @@ import Data.List
 
 import LoadStuff
 
-import Gen.Phoneme
+import Gen.Phonology
 import Data.Phoneme
 import Gen.Phonotactics
 import Data.Other

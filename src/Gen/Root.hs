@@ -15,7 +15,7 @@ import Data.Phoneme
 import Data.Other
 import Data.Inflection
 import Data.Grammar
-import Gen.Phoneme
+import Gen.Phonology
 import Gen.Phonotactics
 
 -- Generate root dictionary - atomic meanings

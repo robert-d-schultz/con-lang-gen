@@ -30,7 +30,7 @@ version = Version [0,0,0,1] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/home/robert/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-8.2/8.0.2/bin"
-libdir     = "/home/robert/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-8.2/8.0.2/lib/x86_64-linux-ghc-8.0.2/con-lang-gen-0.0.0.1-9KdOev0VQXZ9aTvMmQUN98"
+libdir     = "/home/robert/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-8.2/8.0.2/lib/x86_64-linux-ghc-8.0.2/con-lang-gen-0.0.0.1-1fM7O7MZmH036NvcEJweFm"
 dynlibdir  = "/home/robert/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-8.2/8.0.2/lib/x86_64-linux-ghc-8.0.2"
 datadir    = "/home/robert/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-8.2/8.0.2/share/x86_64-linux-ghc-8.0.2/con-lang-gen-0.0.0.1"
 libexecdir = "/home/robert/Documents/con-lang-gen/.stack-work/install/x86_64-linux/lts-8.2/8.0.2/libexec"

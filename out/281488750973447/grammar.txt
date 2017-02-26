@@ -1,0 +1,45 @@
+Grammar
+Parameters:
+	*Specifier final
+	*Object final
+	*(Non-object) Head final
+	*Obligatory V to I movement
+	*No affix hoping
+	*No null subject
+	*Optional topic
+	*Optional null topic
+	*Obligatory topic marking
+	*No I to C movement
+	*No WH-movement
+	*Preposition stranding
+	*Obligatory question inversion
+
+rehhddobh rohder larrar bhoahhdhor relbhgbiagtodrerbhbhap dohh thoklohhdbhiapbabhhlerrorrorbdhilghriarlehghid hhetper dohh ghartiahrar thoklohhdbhiapbabhhlerrolbhgghobtghrolralriarlehghid dohh bhirthorrirhhor thoklohhdbhiapbabhhlertodrogtorriarlehghid
+/ʋ̥ø̞̂d̠ʰ.ɖdɤ̞̂bʰ/ /β̞ɤ̂.t̠d̪ǿɸ̝/ /l̪œ̞̂.ð̞̊ ɻ̊ɶ̂ð̞̊ / /b̪ʰʌ́ɑ̯́d̠ʰ.ɖd̠ʌ́ʋ/ /ɾ̪ø̞l̪b̪ʰ.ɡb̪ýœ̞̯ɡ.t̪ʌ.d̪ⱱœⱱ̟̊b.t̠b̪ʰʌ̞́p/ /d̪ɤ̞d̠ʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞.ð̞̊ ð̞̊ ɯ́.ɸ̝ɻ̊ɤ̂ⱱ̟.b̪d̪ʰʏ̟l̪̊.ɡʰⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/ /d̠ʰø̞.t̪p̪ǿ̞ʋ/ /d̪ɤ̞d̠ʰ/ /ɡʰœ̞̂ⱱ̟̊.t̪ʏ̟œ̞̯̂.d̠ɽ̊ɶ̂ⱱ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞.ð̞̊ ⱱ̟ɯ̞́l̪b̪ʰ.ɡɡʰʌb.ʈɡʰð̞ɯ̞.l̪ʋ̥ɑ̂.l̪̊ⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/ /d̪ɤ̞d̠ʰ/ /bʰʏ̟́ɾ̪̊ .ʈd̠ɤ̞́.ɾ̪̊ ⱱ̟̊ŷð̞.d̠ʰɤ̞ɻ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞ð̞̊ .t̪ɯ́.ɖɽɯ̂ɡ.t̪ɤ̞́.ɽⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/
+SG ACTIVE UEVI UTRA IND.USPE-come-THIRD UTRA UEVI.SG-UMOO.UPER-wing-UGEN-USPE at UTRA manual UEVI.SG-UMOO.UPER-wound-UGEN-USPE UTRA living UEVI.SG-UMOO.UPER-news-UGEN-USPE
+will have comeed the wing at the manual wound the living news
+"the living news will have comeed the wing at the manual wound"
+
+rehhddobh rohder larrar bhoahhdhor relbhgtdihrapbhehhrerbhbhap hhetper dohh thoklohhdbhiapbabhhlertghrotlorriarlehghid hhetper dohh thoklohhdbhiapbabhhlerbhorhherbhagriarlehghid dohh thoklohhdbhiapbabhhlerhhroadriarlehghid hhetper dohh thoklohhdbhiapbabhhlerrahdhoibhtiarriarlehghid
+/ʋ̥ø̞̂d̠ʰ.ɖdɤ̞̂bʰ/ /β̞ɤ̂.t̠d̪ǿɸ̝/ /l̪œ̞̂.ð̞̊ ɻ̊ɶ̂ð̞̊ / /b̪ʰʌ́ɑ̯́d̠ʰ.ɖd̠ʌ́ʋ/ /ɾ̪ø̞l̪b̪ʰɡ.td̪ŷ.t̠ⱱ̟̊ʌ̞̂.pb̪ʰœ́.d̠ʰⱱœⱱ̟̊b.t̠b̪ʰʌ̞́p/ /d̠ʰø̞.t̪p̪ǿ̞ʋ/ /d̪ɤ̞d̠ʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞ð̞̊ .ʈɡʰð̞ɤ̞̂.ʈɭɤ́.ʋ̥ⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/ /d̠ʰø̞.t̪p̪ǿ̞ʋ/ /d̪ɤ̞d̠ʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞ð̞̊ .bʰɯⱱ̥.d̠ʰø̞̂ð̞̊ .b̪ʰɶ́.ɡⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/ /d̪ɤ̞d̠ʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞ð̞̊ .d̠ʰð̞̊ ʌ́ɑ̯́.dⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/ /d̠ʰø̞.t̪p̪ǿ̞ʋ/ /d̪ɤ̞d̠ʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞.ð̞̊ ɸ̝ʌ̞̂.d̠d̪ʰɯ̞́ʏ̟̯̂b̪ʰ.t̪ýœ̞̯.ɽⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/
+SG ACTIVE UEVI UTRA IND.USPE-consider-THIRD at UTRA UEVI.SG-UMOO.UPER-station-UGEN-USPE at UTRA UEVI.SG-UMOO.UPER-lift-UGEN-USPE UTRA UEVI.SG-UMOO.UPER-writing-UGEN-USPE at UTRA UEVI.SG-UMOO.UPER-book-UGEN-USPE
+will have considered at the station at the lift the writing at the book
+"the writing at the book will have considered at the station at the lift"
+
+rehhddobh rohder larrar bhoahhdhor relbhgkolbhgparplibhrerbhbhap dohh thoklohhdbhiapbabhhlerghepterriarlehghid dohh rilrabtded thoklohhdbhiapbabhhlerrerriarlehghid
+/ʋ̥ø̞̂d̠ʰ.ɖdɤ̞̂bʰ/ /β̞ɤ̂.t̠d̪ǿɸ̝/ /l̪œ̞̂.ð̞̊ ɻ̊ɶ̂ð̞̊ / /b̪ʰʌ́ɑ̯́d̠ʰ.ɖd̠ʌ́ʋ/ /ɾ̪ø̞l̪b̪ʰɡ.kɯ́l̪b̪ʰɡ.pɶ̂ɾ̪.p̪l̪y.bʰⱱœⱱ̟̊b.t̠b̪ʰʌ̞́p/ /d̪ɤ̞d̠ʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞ð̞̊ .ɡʰǿ.pt̪ø.ⱱ̥ⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/ /d̪ɤ̞d̠ʰ/ /ⱱʏ̟.l̪̊ⱱ̟ʌ̞̂b̪.td̪ø̞ɖ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞.ð̞̊ ⱱ̟̊ǿ.ɻ̊ⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/
+SG ACTIVE UEVI UTRA IND.USPE-move-THIRD UTRA UEVI.SG-UMOO.UPER-collar-UGEN-USPE UTRA angry UEVI.SG-UMOO.UPER-boy-UGEN-USPE
+will have moveed the collar the angry boy
+"the angry boy will have moveed the collar"
+
+rehhddobh rohder larrar bhoahhdhor relbhgbdhobhdhorrokgobhrerbhbhap hirrodhrarphhrehh dohh rodhlarplolgh thoklohhdbhiapbabhhlerrialbhibhtobhrarriarlehghid dohh thoklohhdbhiapbabhhlerbdherbhgholghrorhhradhriarlehghid hhetper dohh bhadh thoklohhdbhiapbabhhlerrilborpatriarlehghid
+/ʋ̥ø̞̂d̠ʰ.ɖdɤ̞̂bʰ/ /β̞ɤ̂.t̠d̪ǿɸ̝/ /l̪œ̞̂.ð̞̊ ɻ̊ɶ̂ð̞̊ / /b̪ʰʌ́ɑ̯́d̠ʰ.ɖd̠ʌ́ʋ/ /ɾ̪ø̞l̪b̪ʰ.ɡb̪d̪ʰɤ.bʰdʰɯ̞́.β̞ɻɯ̞̂.kɡɯ̂.bʰⱱœⱱ̟̊b.t̠b̪ʰʌ̞́p/ /t̠ʏ̟́.ð̞̊ ⱱ̟̊ɯ̞́.ɖʰɸ̝œ̞́ɾ̪.p̪d̠ʰð̞̊ ød̠ʰ/ /d̪ɤ̞d̠ʰ/ /ʋ̥ɯ.dʰɭ̥œ̞ɾ̪.p̪ɭɯ̞l̪̊ɡʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞.ð̞̊ ⱱýœ̞̯ɭ̥.bʰýb̪ʰ.ʈɤ̂.b̪ʰʋ̥ɑ́.ⱱ̥ⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/ /d̪ɤ̞d̠ʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞ð̞̊ .b̪d̪ʰǿ̞ⱱ̟̊b.t̠ɡʰɯ̞́l̪̊.ɡʰɸ̝ɤ̂β̞.d̠ʰð̞̊ ɶ.d̪ʰⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/ /d̠ʰø̞.t̪p̪ǿ̞ʋ/ /d̪ɤ̞d̠ʰ/ /bʰʌ̞̂dʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞.ð̞̊ ⱱ̥ʏ̟l̪̊.bʌɾ̪.p̪ɑ.tⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/
+SG ACTIVE UEVI UTRA IND.USPE-continue-THIRD on UTRA violent UEVI.SG-UMOO.UPER-thumb-UGEN-USPE UTRA UEVI.SG-UMOO.UPER-bath-UGEN-USPE at UTRA full UEVI.SG-UMOO.UPER-idea-UGEN-USPE
+will have continueed on the violent thumb the bath at the full idea
+"the bath at the full idea will have continueed on the violent thumb"
+
+rehhddobh rohder larrar bhoahhdhor relbhgkolbhgparplibhrerbhbhap dohh thoklohhdbhiapbabhhlerlobriarlehghid dohh tadpoilred thoklohhdbhiapbabhhlerpotdalghpeprerpriarlehghid
+/ʋ̥ø̞̂d̠ʰ.ɖdɤ̞̂bʰ/ /β̞ɤ̂.t̠d̪ǿɸ̝/ /l̪œ̞̂.ð̞̊ ɻ̊ɶ̂ð̞̊ / /b̪ʰʌ́ɑ̯́d̠ʰ.ɖd̠ʌ́ʋ/ /ɾ̪ø̞l̪b̪ʰɡ.kɯ́l̪b̪ʰɡ.pɶ̂ɾ̪.p̪l̪y.bʰⱱœⱱ̟̊b.t̠b̪ʰʌ̞́p/ /d̪ɤ̞d̠ʰ/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞.ð̞̊ l̪̊ɯ̞̂.b̪ⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/ /d̪ɤ̞d̠ʰ/ /t̪œ̞̂ɖ.pɯ̞́ʏ̟̯̂.l̪ɾ̪œ́d/ /ʈd̠ɤ̞́.kl̪̊ɤd̠ʰ.ɖb̪ʰʏ̟œ̞̯̂.p̪bɶ̂b̪ʰ.d̠l̪̊ø̞ð̞̊ .pɤ̞̂.ʈɖɶl̪̊ɡʰ.p̪ǿ̞.p̪ⱱø̂ɾ̪.p̪ⱱýœ̞̯.ʋl̪̊ø̂.d̠ɡʰyd̪/
+SG ACTIVE UEVI UTRA IND.USPE-move-THIRD UTRA UEVI.SG-UMOO.UPER-meeting-UGEN-USPE UTRA happy UEVI.SG-UMOO.UPER-division-UGEN-USPE
+will have moveed the meeting the happy division
+"the happy division will have moveed the meeting"
