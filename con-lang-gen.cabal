@@ -35,6 +35,7 @@ library
                      , Out.Other
                      , Out.Grammar
                      , Gen.ParseTree
+                     , Gen.LanguageTree
                      , LoadStuff
   build-depends:       base >= 4.7 && < 5
                      , rvar -any

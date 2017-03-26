@@ -11,8 +11,11 @@ import Data.Phoneme
 import Out.Lexicon
 
 -- Parse the consonant inventory into html table
-parseConPhonemeInventory :: [Place] -> [Manner] -> [Phonation] -> [Phoneme] -> String
-parseConPhonemeInventory places manners phonations cons = "<br>\n<table border=1>" ++ tHeader ++ pLabels ++ clusters ++ "\n</table>\n" where
+parseConPhonemeInventory :: [Phoneme] -> String
+parseConPhonemeInventory cons = "<br>\n<table border=1>" ++ tHeader ++ pLabels ++ clusters ++ "\n</table>\n" where
+  places = sort $ nub $ map cplace cons
+  manners = sort $ nub $ map cmanner cons
+  phonations = sort $ nub $ map cvoice cons
   tHeader = "\n\t<tr>\n\t\t<th colspan=\"" ++ show (length places * length phonations + 1) ++ "\">Consonant Inventory</th>\n\t</tr>"
   pLabels = "\n\t<tr>\n\t\t<th></th>\n\t\t<th colspan=\"" ++ show (length phonations) ++ "\">" ++ intercalate ("</th>\n\t\t<th colspan=\"" ++ show (length phonations) ++ "\">") (map parsePlace places) ++ "</th>\n\t</tr>"
   clusters = concatMap (makeRow cons places phonations) manners
@@ -83,8 +86,13 @@ parsePhonation h
 
 
 -- Parse the vowel inventory into html table
-parseVowPhonemeInventory :: [Height] -> [Backness] -> [Roundedness] -> [Length] -> [Phoneme] -> String
-parseVowPhonemeInventory heights backs rounds lengths vows = "<br>\n<table border=1>" ++ tHeader ++ pLabels ++ clusters ++ "\n</table>\n" where
+parseVowPhonemeInventory :: [Phoneme] -> String
+parseVowPhonemeInventory vows = "<br>\n<table border=1>" ++ tHeader ++ pLabels ++ clusters ++ "\n</table>\n" where
+  heights = sort $ nub $ map vheight vows
+  backs = sort $ nub $ map vbackness vows
+  rounds = sort $ nub $ map vroundedness vows
+  lengths = sort $ nub $ map vlength vows
+
   tHeader = "\n\t<tr>\n\t\t<th colspan=\"" ++ show (length backs * length rounds + 1) ++ "\">Vowel Inventory</th>\n\t</tr>"
   pLabels = "\n\t<tr>\n\t\t<th></th>\n\t\t<th colspan=\"" ++ show (length rounds) ++ "\">" ++ intercalate ("</th>\n\t\t<th colspan=\"" ++ show (length rounds) ++ "\">") (map parseBackness backs) ++ "</th>\n\t</tr>"
   clusters = concatMap (makeSuperRow vows backs rounds lengths) heights
@@ -106,7 +114,8 @@ parseVowPhonemeInventory heights backs rounds lengths vows = "<br>\n<table borde
   getIPASymbol vows len height back roundness = output where
     filt = filter (\(Vowel h b r l _ s) -> h == height && b == back && r == roundness && l == len) vows
     output
-      | not.null $ filt = vsymbol $ head filt
+      | length filt > 1 = init $ vsymbol $ head filt
+      | length filt == 1 = vsymbol $ head filt
       | otherwise = ""
 
 parseHeight :: Height -> String

@@ -17,7 +17,7 @@ import Data.Inflection
 -- note: bezier curves are a problem
 
 -- simplest, make random squiggles and calls them chracters
-makeCharacters :: ([(Phoneme, Int)], [(Syllable, Int)], [(((String, LexCat), Morpheme), Int)]) -> RVar ([(Phoneme, (Int, String))], [(Syllable, (Int, String))], [(((String, LexCat), Morpheme), (Int, String))])
+makeCharacters :: ([(Phoneme, Int)], [(Syllable, Int)], [(((String, LexCat), Morpheme), Int)]) -> RVar ([(Phoneme, (Int, [(String,[(Int,Int)])]))], [(Syllable, (Int, [(String,[(Int,Int)])]))], [(((String, LexCat), Morpheme), (Int, [(String,[(Int,Int)])]))])
 makeCharacters ([], [], []) = return ([], [], [])
 makeCharacters (a, s, l) = do
   aOut <- mapM (makeCharacter 11 1 . snd) a
@@ -28,20 +28,13 @@ makeCharacters (a, s, l) = do
 help :: (a, b) -> c -> (a, (b,c))
 help (x,y) z = (x,(y,z))
 
-makeCharacter :: Int -> Int -> Int -> RVar String
-makeCharacter n w m = do
+makeCharacter :: Int -> Int ->  Int -> RVar [(String,[(Int,Int)])]
+makeCharacter n w _ = do
   startPos <- sequence [(,) <$> (uniform 0 n :: RVar Int) <*> (uniform 0 n :: RVar Int)]
-  stuff <- replicateM 5 (svgStuff n)
-  let path = ("M",startPos):stuff
+  stuff <- replicateM 3 (svgStuff n)
+  let path = ("M", startPos):stuff
   let scaledPath = scaleSVG n path
-  let textPath = pathToText n scaledPath
-  end <- choice ["Z", ""]
-  let path = "<path d=\""++ textPath ++ end ++ "\" stroke=\"black\" stroke-width=\"" ++ show w ++ "\" fill=\"none\"/>"
-  return ("<svg title=\"U" ++ show m ++ "\" x=\"0\" y=\"0\" width=\"" ++ show (n + w) ++ "\" height=\"" ++ show (n + w) ++ "\" viewBox=\"0, 0, " ++ show (n + w) ++ ", " ++ show (n + w) ++ "\">" ++ path ++ "</svg>")
-
-pathToText :: Int -> [(String,[(Int,Int)])] -> String
-pathToText n old = concat out where
-  out = map (\(str, ints) -> str ++ concatMap (\(x,y) -> (if x >= 0 then show x ++ " " else "") ++ (if y >= 0 then show y ++ " " else "")) ints) old
+  return $ scaledPath ++ [("Z",[(-1,-1)])]
 
 scaleSVG :: Int -> [(String,[(Int,Int)])] -> [(String,[(Int,Int)])]
 scaleSVG n old = new where

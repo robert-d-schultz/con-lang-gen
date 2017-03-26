@@ -1,4 +1,5 @@
-[ "account"
+[ "<!LANGUAGE!>"
+, "account"
 , "act"
 , "addition"
 , "adjustment"

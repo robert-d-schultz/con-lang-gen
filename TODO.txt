@@ -3,7 +3,7 @@ How it works so far
 
 Phoneme inventories are generated. The generation process tries to strive for natural-sounding inventories. There are separate consonant, vowel, and diphthong inventory generators.
 
-Phonotactics rules are also generated. A sonority hierarchy are the most basic and only instance of this.
+Phonotactics rules are also generated. A sonority hierarchy is created. Valid consonant clusters for the onset and coda of syllables are generated.
 
 A grammar system is generated. Parameters are selected.
 
@@ -13,7 +13,11 @@ Morphemes (including roots) are generated from the phoneme inventory as well as 
 
 Meanings (given in English) are assigned a generated root word.
 
-All of the above structures are then parsed by a output function into a text output. This output includes a consonant inventory table, vowel inventory table, list of diphthongs, sonority hierarchy description, exponent/particle tables, and a dictionary.
+Nonsense ("Colorless green ideas sleep furiously") parse trees are generated and then translated into the language using the generated grammar, inflection, and vocab.
+
+A writing system is selected and the appropriate number of characters are generated as .svg's.
+
+All of the above structures are then parsed by a output function into a text output. This output includes a consonant inventory table, vowel inventory table, list of diphthongs, sonority hierarchy description, exponent/particle tables, a (root) dictionary, a grammar description as well as example sentences, a list of characters, and a folder of character .svg's.
 
 
 What needs improving
@@ -45,15 +49,11 @@ Phonetics:
 Right now words are represented as a list of phonemes. The only output so far for a word is the "underlying" form. With a phonological rule generator the list of phonemes can be parsed into a list of phones which will allow the output to display the "surface" form of the word.
 This would involve generating a list of phonological rules and then applying those rules in a certain order to each word. This runs counter to optimality theory, but it would be so much easier to implement.
 
-Graphemics/Orthography:
-Right now words are represented as either a list of phonemes (as above) or by my terrible romanization function. With a proper grapheme generator, the word could be represented in a "native" writing system.
-This would involve picking the writing system type, then generating .svg's for each character, and then converting the set of .svgs into a .ttf file.
-
 Prosody:
 iuno.
 does poetry fit here? let's go with that.
 
-Historical/Comparative linguistics
+Historical/Comparative linguistics:
 Language changes. Given a language's components, morph those components in some way into a new language. Record the change.
 Language families. Link languages morphed by language changes. Allow multiple offshoots of a single language.
 

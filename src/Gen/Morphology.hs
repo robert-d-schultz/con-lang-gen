@@ -29,7 +29,7 @@ makePrefixSystem :: LexCat -> Int -> [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> 
 makePrefixSystem lc i vows ccs gramSys = do
   let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc Prefix i
   let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
-  morphs <- replicateM (length combos) (makeRoot vows ccs (1, 4))
+  morphs <- replicateM (length combos) (makeRoot vows ccs (1, 1))
   return $ ManifestSystem lc Prefix (zip morphs combos)
 
 -- Suffixs
@@ -41,7 +41,7 @@ makeSuffixSystem :: LexCat -> Int -> [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> 
 makeSuffixSystem lc i vows ccs gramSys = do
   let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc Suffix i
   let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
-  morphs <- replicateM (length combos) (makeRoot vows ccs (1, 2))
+  morphs <- replicateM (length combos) (makeRoot vows ccs (1, 1))
   return $ ManifestSystem lc Suffix (zip morphs combos)
 
 -- Particles

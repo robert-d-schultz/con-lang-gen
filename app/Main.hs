@@ -11,17 +11,9 @@ import System.Directory
 
 import LoadStuff
 
-import Gen.Phonology
-import Gen.Phonotactics
-import Gen.Root
-import Gen.Word
-import Gen.Inflection
-import Gen.Morphology
-import Gen.Grammar
+import Gen.Language
+import Gen.LanguageTree
 import Gen.ParseTree
-
-import Gen.Grapheme
-import Gen.WritingSystem
 
 import Out.Other
 import Out.Phonology
@@ -31,6 +23,8 @@ import Out.Sentence
 import Out.Grammar
 import Out.WritingSystem
 
+import Data.Other
+
 main :: IO ()
 main = do
   -- seed
@@ -39,98 +33,82 @@ main = do
   setStdGen $ mkStdGen seed
 
   exist <- doesPathExist $ "out/" ++ show seed
-  if exist then putStrLn "Language already generated" *> main else
-    generateLanguage seed
+  if exist then putStrLn "Language tree already generated" *> main else do
+    idata <- loadInputData
+    mData <- loadMeaningData
+    tree <- newSample $ makeLanguageTree 0 idata mData RootL
+    parseLanguageTree seed mData tree
 
--- given a seed, generate a language
-generateLanguage :: Int -> IO ()
-generateLanguage seed = do
-  -- consonants
-  places <- newSample makePlaces
-  manners <- newSample makeManners
-  phonations <- newSample makePhonations
-  inventoryC <- newSample (makeConsonants places manners phonations)
+parseLanguageTree :: Int -> MeaningData -> LanguageBranch -> IO()
+parseLanguageTree seed mData tree = do
+  let dir = "out/" ++ show seed ++ "/"
+  createDirectory dir
 
-  -- vowels
-  heights <- newSample makeHeights
-  backs <- newSample makeBacknesses
-  rounds <- newSample makeRoundedneses
-  lengths <- newSample makeLengths
-  tones <- newSample makeTones
-  inventoryV <- newSample (makeVowels heights backs rounds lengths tones)
+  let treeMap = parseLanguageTree2 tree
+  writeFile (dir ++ "tree_map.html") treeMap
+  parseLanguageBranch seed mData tree
 
-  -- diphthongs
-  inventoryD <- newSample (makeDiphInventory 4 inventoryV)
+parseLanguageBranch :: Int -> MeaningData -> LanguageBranch -> IO()
+parseLanguageBranch seed mData (LanguageBranch lang [] _) = parseLanguage lang seed mData
+parseLanguageBranch seed mData (LanguageBranch lang branches _) = parseLanguage lang seed mData <* mapM_ (parseLanguageBranch seed mData) branches
 
-  -- phonotactics / consonant clusters
-  sonHier <- newSample (makeSonHier inventoryC)
-  onsetCCs <- newSample (makeOnsets sonHier (2, 4))
-  codaCCs <- newSample (makeCodas sonHier (2, 4))
+-- outputs a bunch of stuff
+parseLanguage :: Language -> Int -> MeaningData -> IO()
+parseLanguage lang seed mData = do
+  let inventoryC = getCs lang
+  let inventoryV = getVs lang
+  let inventoryD = getDs lang
+  let onsetCCs = getOnsetCCs lang
+  let codaCCs = getCodaCCs lang
+  let sonHier = getSonHier lang
+  let grammar = getGrammar lang
+  let inflSys = getInflSys lang
+  let systems = getInflSyss lang
+  let roots = getRoots lang
+  let (alph, syll, logo) = getWriting lang
+  let name = getName lang
 
   let onsets = nub $ onsetCCs ++ map (:[]) inventoryC
   let codas = nub $ codaCCs ++ map (:[]) inventoryC
   let nucleuss = inventoryV ++ inventoryD
 
 
-  -- inflection / grammatical categories
-  idata <- loadInputData
-  (inflSys, numPerLexCat) <- newSample (makeInflectionSystem idata)
-  systems <- newSample (mapM (makeLexicalInflection nucleuss (onsets, codas) inflSys) numPerLexCat)
-
-  -- root morphemes
-  mData <- loadMeaningData
-  roots <- newSample (makeRootDictionary mData nucleuss (onsets, codas) (1, 4))
-
-  -- full Lexicon
-  -- let dict = makeDictionary systems roots
-
-  -- grammar
-  grammar <- newSample makeGrammar
+  -- writing
+  let characterSVGs = map snd alph ++ map snd syll ++ map snd logo
 
   -- parse trees
-  ptExamples <- newSample (replicateM 5 (makeParseTree mData))
-
-  -- writing systems
-  let allPhonemes = inventoryD ++ inventoryV ++ inventoryC
-  let allSyllables | 2000 < product [length onsets, length nucleuss, length codas] = []
-                   | otherwise = makeAllSyllables onsets nucleuss codas
-  let allLogograms = roots
-  (a, s, l) <- newSample (generateWritingSystem allPhonemes allSyllables allLogograms)
-
-  -- chracters
-  (aOut, sOut, lOut) <- newSample $ makeCharacters (a, s, l)
-
-  let characterSVGs = map snd aOut ++ map snd sOut ++ map snd lOut
+  ptExamples <- sampleRVar $ replicateM 5 (makeParseTree mData)
 
   -- outputs
-  createDirectory $ "out/" ++ show seed
-  writeFile ("out/" ++ show seed ++ "/phonology.txt") $ "Phonology"
-                               ++ parseConPhonemeInventory places manners phonations inventoryC
-                               ++ parseVowPhonemeInventory heights backs rounds lengths inventoryV
-                               ++ parseDiphPhonemeInventory inventoryD
+  let dir = "out/" ++ show seed ++ "/" ++ name ++ "/"
+  createDirectory dir
+  writeFile (dir ++ "phonology.html") $ "Phonology"
+                                 ++ parseConPhonemeInventory inventoryC
+                                 ++ parseVowPhonemeInventory inventoryV
+                                 ++ parseDiphPhonemeInventory inventoryD
 
-  writeFile ("out/" ++ show seed ++ "/phonotactics.txt") $ "Phonotactics"
-                                  ++ parseSonHier (inventoryV ++ inventoryD) sonHier
-                                  ++ parseCCs onsets codas
+  writeFile (dir ++ "phonotactics.html") $ "Phonotactics"
+                                 ++ parseSonHier (inventoryV ++ inventoryD) sonHier
+                                 ++ parseCCs onsets codas
 
-  writeFile ("out/" ++ show seed ++ "/inflection.txt") $ "Inflection"
-                                ++ parseLCInflection inflSys
-                                ++ concatMap (parseLexicalSystems inflSys sonHier) systems
+  writeFile (dir ++ "inflection.html") $ "Inflection"
+                                 ++ parseLCInflection inflSys
+                                 ++ concatMap (parseLexicalSystems inflSys sonHier) systems
 
-  writeFile ("out/" ++ show seed ++ "/lexicon.txt") $ "Lexicon"
-                            -- ++ parseDictionary sonHier dict
-                             ++ parseRootDictionary sonHier roots
+  writeFile (dir ++ "lexicon.html") $ "Lexicon"
+                              -- ++ parseDictionary sonHier dict
+                                 ++ parseRootDictionary sonHier roots
 
-  writeFile ("out/" ++ show seed ++ "/grammar.txt") $ "Grammar"
-                             ++ parseGrammar grammar
-                             ++ concatMap (parseParseTree sonHier roots systems grammar) ptExamples
+  writeFile (dir ++ "grammar.html") $ "Grammar"
+                                 ++ parseGrammar grammar
+                                 ++ concatMap (parseParseTree sonHier roots systems grammar) ptExamples
 
-  writeFile ("out/" ++ show seed ++ "/writing system.txt") $ "Writing System"
-                                    ++ parseWritingSystem (aOut, sOut, lOut)
+  writeFile (dir ++ "writing system.html") $ "Writing System"
+                                 ++ parseWritingSystem (alph, syll, logo)
 
-  createDirectory $ "out/" ++ show seed ++ "/characters"
-  let t = map (\(num, str) -> ("out/" ++ show seed ++ "/characters/U+" ++ show num ++ ".svg", str)) characterSVGs
-  forM_ t $ uncurry writeFile
+  -- createDirectory $ dir + "characters"
+  -- let t = map (\(num, str) -> (dir ++ "characters/U+" ++ show num ++ ".svg", str)) characterSVGs
+  -- forM_ t $ uncurry writeFile
 
 -- special sampleRVar that allows seeds and shit
 newSample :: RVar a -> IO a

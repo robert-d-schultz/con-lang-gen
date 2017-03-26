@@ -36,7 +36,7 @@ data Grammar = Grammar
             , getWHM  :: WHMovementObligatory
             , getPP   :: PiedPiping
             , getQI   :: QuestionInversion
-            } deriving (Show)
+            } deriving (Show, Read)
 
 -- Grammar parameters
 data SubjectInitial        = SubInitial  | SubFinal    deriving (Eq, Enum, Show, Read)

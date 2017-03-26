@@ -27,7 +27,6 @@ module Data.Inflection
 
 import Prelude
 import Data.Phoneme
-import Data.Other
 
 -- Used for 18-tuples
 instance (Show a, Show b, Show c, Show d, Show e, Show f, Show g, Show h, Show i, Show j, Show k, Show l, Show m, Show n, Show o, Show p, Show q) => Show (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q) where
