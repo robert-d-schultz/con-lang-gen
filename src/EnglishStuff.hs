@@ -10,8 +10,8 @@ import Data.Inflection
 englishGrammar :: Grammar
 englishGrammar = Grammar SubInitial ObjFinal CompFinal NoVtoIMove OblAffixHop NoNullSub OptTopic NoNullTop NoTopMark OblItoCMove OblWHMove PiedPipe OblQuesInv
 
-englishInflection :: InflectionSystem
-englishInflection = InflectionSystem
+englishInflection :: InflectionMap
+englishInflection = InflectionMap
                       { genSys = Manifest [(Pron, Suffix, 1)] [M, F, N]
                       , aniSys = Manifest [(Pron, Suffix, 1)] [AN, INAN]
                       , casSys = Manifest [(Pron, Suffix, 1), (Noun, Suffix, 1)] [NOM, ACC, GEN]

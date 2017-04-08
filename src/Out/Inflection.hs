@@ -13,12 +13,12 @@ import Gen.Morphology
 import Out.Lexicon
 
 -- Parse inflection system (per lex cat)
-parseLCInflection :: InflectionSystem -> String
-parseLCInflection inflSys = concatMap (parseInflectionSystem inflSys) [Noun, Adj, Adv, Adpo, Verb]
+parseLCInflection :: InflectionMap -> String
+parseLCInflection inflSys = concatMap (parseInflectionMap inflSys) [Noun, Adj, Adv, Adpo, Verb]
 
 -- Parse inflection system (gives summary)
-parseInflectionSystem :: InflectionSystem -> LexCat -> String
-parseInflectionSystem inflSys lc = output where
+parseInflectionMap :: InflectionMap -> LexCat -> String
+parseInflectionMap inflSys lc = output where
   output
     | null (particles ++ prefixes ++ suffixes) = "<br>\nNo grammatical categories manifest for " ++ parseLexCat lc ++ "s.\n"
     | otherwise = "<br>\nGrammatical categories manifest for " ++ parseLexCat lc ++ "s in the following ways:\n<ul>" ++ particles ++ prefixes ++ suffixes ++ "</ul>\n"
@@ -41,7 +41,7 @@ parseInflectionSystem inflSys lc = output where
     | null filt3      = ""
     | otherwise       = "\n\t<li>With suffixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt3 ++ "</li>\n\t\t</ul>"
 
-  fooBar :: (forall a . Manifest a -> Bool) -> InflectionSystem -> [String]
+  fooBar :: (forall a . Manifest a -> Bool) -> InflectionMap -> [String]
   fooBar b inflSys = [gen, ani, cas, num, def, spe, top, per, hon, pol, ten, asp, moo, voi, evi, tra, vol] where
     gen | b (genSys inflSys) = parseGenders $ genSys inflSys         | otherwise = ""
     ani | b (aniSys inflSys) = parseAnimacies $ aniSys inflSys       | otherwise = ""
@@ -85,18 +85,28 @@ parseInflectionSystem inflSys lc = output where
       | otherwise = True
     filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Particle) t
 
-parseLexicalSystems :: InflectionSystem -> [[Phoneme]] -> (LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem]) -> String
-parseLexicalSystems inflSys sonHier (lc, parts, prefs, suffs) = "<br>\n" ++ parseLexCat lc
+
+-- parse inflections into tables
+-- tables organized by lexical category and manifest type
+parseLexicalSystems :: InflectionMap -> [[Phoneme]] -> [ManifestSystem] -> String
+parseLexicalSystems inflSys sonHier infls = "<br>\n" ++ concatMap (parseLexicalSystems_ inflSys sonHier infls) [Noun, Adj, Verb, Adv]
+
+
+parseLexicalSystems_ :: InflectionMap -> [[Phoneme]] -> [ManifestSystem] -> LexCat -> String
+parseLexicalSystems_ inflSys sonHier infls lc = "<br>\n" ++ parseLexCat lc
                                                          ++ parseManifestSystems parts sonHier (length parts) inflSys
                                                          ++ parseManifestSystems prefs sonHier (length prefs) inflSys
-                                                         ++ parseManifestSystems suffs sonHier (length suffs) inflSys
+                                                         ++ parseManifestSystems suffs sonHier (length suffs) inflSys where
+  parts = filter (\x -> manSysType x == Particle && manSysLC x == lc) infls
+  prefs = filter (\x -> manSysType x == Prefix && manSysLC x == lc) infls
+  suffs = filter (\x -> manSysType x == Suffix && manSysLC x == lc) infls
 
-parseManifestSystems :: [ManifestSystem] -> [[Phoneme]] -> Int -> InflectionSystem -> String
+parseManifestSystems :: [ManifestSystem] -> [[Phoneme]] -> Int -> InflectionMap -> String
 parseManifestSystems _ _ 0 _ = ""
 parseManifestSystems [] _ _ _ = ""
 parseManifestSystems expSyss sonHier i gramSys = parseManifestSystems (init expSyss) sonHier (i-1) gramSys ++ parseManifestSystem (last expSyss) sonHier gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol where
   ManifestSystem lc mt xs = last expSyss
-  (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanGrammarSys gramSys lc mt i
+  (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc mt i
 
 
 -- Parse a manifestation system (particles/declensions) into an html table

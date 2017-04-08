@@ -27,24 +27,18 @@ import Out.Roman
 makeLanguage :: InputData -> MeaningData -> RVar Language
 makeLanguage idata mData = do
   -- consonants
-  places <- makePlaces
-  manners <- makeManners
-  phonations <- makePhonations
-  inventoryC <- makeConsonants places manners phonations
+  (places, manners, phonations, exceptionsC) <- makeConsonantMap
+  let inventoryC = makeConsonants places manners phonations exceptionsC
 
   -- vowels
-  heights <- makeHeights
-  backs <- makeBacknesses
-  rounds <- makeRoundedneses
-  lengths <- makeLengths
-  tones <- makeTones
-  inventoryV <- makeVowels heights backs rounds lengths tones
+  (heights, backs, rounds, lengths, tones, exceptionsV) <- makeVowelMap
+  let inventoryV = makeVowels heights backs rounds lengths tones exceptionsV
 
   -- diphthongs
   inventoryD <- makeDiphInventory 4 inventoryV
 
   -- phonotactics / consonant clusters
-  sonHier <- makeSonHier inventoryC
+  (scheme, sonHier) <- makeSonHier inventoryC
   onsetCCs <- makeOnsets sonHier (2, 4)
   codaCCs <- makeCodas sonHier (2, 4)
 
@@ -53,8 +47,8 @@ makeLanguage idata mData = do
   let nucleuss = inventoryV ++ inventoryD
 
   -- inflection / grammatical categories
-  (inflSys, numPerLexCat) <- makeInflectionSystem idata
-  systems <- mapM (makeLexicalInflection nucleuss (onsets, codas) inflSys) numPerLexCat
+  (inflSys, numPerLexCat) <- makeInflectionMap idata
+  systems <- concat <$> mapM (makeLexicalInflection nucleuss (onsets, codas) inflSys) numPerLexCat
 
   -- root morphemes
   roots <- makeRootDictionary mData nucleuss (onsets, codas) (1, 4)
@@ -77,6 +71,6 @@ makeLanguage idata mData = do
 
   let langName = romanizeMorpheme nameMorph
 
-  let lang = Language langName inventoryC inventoryV inventoryD sonHier onsetCCs codaCCs inflSys systems grammar roots (aOut, sOut, lOut)
+  let lang = Language langName (places, manners, phonations, exceptionsC) (heights, backs, rounds, lengths, tones, exceptionsV) inventoryD scheme onsetCCs codaCCs inflSys systems grammar roots (aOut, sOut, lOut)
 
   return lang

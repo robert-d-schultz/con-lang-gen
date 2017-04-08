@@ -8,6 +8,7 @@ import Data.Other
 import Data.Inflection
 
 import Out.Lexicon
+import Out.IPA
 
 parseWritingSystem :: ([(Phoneme, (Int, [(String,[(Int,Int)])]))], [(Syllable, (Int, [(String,[(Int,Int)])]))], [(((String, LexCat), Morpheme), (Int, [(String,[(Int,Int)])]))]) -> String
 parseWritingSystem (a, s, l) = "\n<br>\n" ++ aOut ++ sOut ++ lOut where
@@ -19,19 +20,19 @@ parseWritingSystem (a, s, l) = "\n<br>\n" ++ aOut ++ sOut ++ lOut where
        | otherwise = concatMap parseLChar l
 
 parseAChar :: (Phoneme, (Int, [(String,[(Int,Int)])])) -> String
-parseAChar (Consonant _ _ _ ipa, (m, path)) = "\n<br>\n" ++ parseCharacter path 11 1 m ++ ", /" ++ ipa ++ "/"
-parseAChar (Vowel _ _ _ _ _ ipa, (m, path)) = "\n<br>\n" ++ parseCharacter path 11 1 m ++ ", /" ++ ipa ++ "/"
-parseAChar (Diphthong _ _ _ _ _ _ _ _ ipa, (m, path)) = "\n<br>\n" ++ parseCharacter path 11 1 m ++ ", /" ++ ipa ++ "/"
+parseAChar (Consonant p m h, (n, path)) = "\n<br>\n" ++ parseCharacter path 11 1 n ++ ", /" ++ parsePhonemeIPA (Consonant p m h) ++ "/"
+parseAChar (Vowel h b r l t, (n, path)) = "\n<br>\n" ++ parseCharacter path 11 1 n ++ ", /" ++ parsePhonemeIPA (Vowel h b r l t) ++ "/"
+parseAChar (Diphthong h1 b1 r1 h2 b2 r2 l t, (n, path)) = "\n<br>\n" ++ parseCharacter path 11 1 n ++ ", /" ++ parsePhonemeIPA (Diphthong h1 b1 r1 h2 b2 r2 l t) ++ "/"
 
 parseSChar :: (Syllable, (Int, [(String,[(Int,Int)])])) -> String
-parseSChar (syll, (m, path)) = "\n<br>\n" ++ parseCharacter path 11 1 m ++ ", /" ++ parseSyllableIPA syll ++"/"
+parseSChar (syll, (n, path)) = "\n<br>\n" ++ parseCharacter path 11 1 n ++ ", /" ++ parseSyllableIPA syll ++"/"
 
 parseLChar :: (((String, LexCat), Morpheme), (Int, [(String,[(Int,Int)])])) -> String
-parseLChar (((str, lc), morph), (m, path)) = "\n<br>\n" ++ parseCharacter path 11 1 m ++ ", \"" ++ str ++ "\""
+parseLChar (((str, lc), morph), (n, path)) = "\n<br>\n" ++ parseCharacter path 11 1 n ++ ", \"" ++ str ++ "\""
 
 -- Grapheme
 parseCharacter :: [(String,[(Int,Int)])] -> Int -> Int -> Int -> String
-parseCharacter path n w m = "<svg title=\"U" ++ show m ++ "\" x=\"0\" y=\"0\" width=\"" ++ show (n + w) ++ "\" height=\"" ++ show (n + w) ++ "\" viewBox=\"0, 0, " ++ show (n + w) ++ ", " ++ show (n + w) ++ "\">" ++ textPath2 ++ "</svg>" where
+parseCharacter path k w n = "<svg title=\"U" ++ show n ++ "\" x=\"0\" y=\"0\" width=\"" ++ show (k + w) ++ "\" height=\"" ++ show (k + w) ++ "\" viewBox=\"0, 0, " ++ show (k + w) ++ ", " ++ show (k + w) ++ "\">" ++ textPath2 ++ "</svg>" where
   textPath = pathToText path
   textPath2 = "<path d=\""++ textPath ++ "\" stroke=\"black\" stroke-width=\"" ++ show w ++ "\" fill=\"none\"/>"
 

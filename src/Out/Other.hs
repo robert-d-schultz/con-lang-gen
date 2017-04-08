@@ -1,7 +1,7 @@
 module Out.Other
 ( parseSonHier
 , parseCCs
-, parseLanguageTree2
+, parseLanguageTreeN
 ) where
 
 import Data.List
@@ -26,10 +26,10 @@ parseCCs onsets codas = "\n\nValid onsets: " ++ "\n/" ++ intercalate "/\n/" oLis
 
 
 -- Parse language branches into Newick format
-parseLanguageTree2 :: LanguageBranch -> String
-parseLanguageTree2 tree = parseLanguageBranch2 tree ++ ";"
+parseLanguageTreeN :: LanguageBranch -> String
+parseLanguageTreeN tree = parseLanguageBranchN tree ++ ";"
 
-parseLanguageBranch2 :: LanguageBranch -> String
-parseLanguageBranch2 (LanguageBranch lang [] n) = getName lang -- ++ ":" ++ show (fromIntegral n / 10)
-parseLanguageBranch2 (LanguageBranch lang branches n) = branchStuff ++ getName lang where -- ++ ":" ++ show (fromIntegral n / 10) where
-  branchStuff = "(" ++ intercalate "," (map parseLanguageBranch2 branches) ++ ")"
+parseLanguageBranchN :: LanguageBranch -> String
+parseLanguageBranchN (LanguageBranch lang [] n) = getName lang -- ++ ":" ++ show (fromIntegral n / 10)
+parseLanguageBranchN (LanguageBranch lang branches n) = branchStuff ++ getName lang where -- ++ ":" ++ show (fromIntegral n / 10) where
+  branchStuff = "(" ++ intercalate "," (map parseLanguageBranchN branches) ++ ")"

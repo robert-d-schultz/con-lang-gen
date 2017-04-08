@@ -19,14 +19,14 @@ data LanguageBranch = LanguageBranch
 data Language = RootL
               | Language
               { getName :: String
-              , getCs :: [Phoneme]
-              , getVs :: [Phoneme]
+              , getCMap :: ([Place], [Manner], [Phonation], [Phoneme])
+              , getVMap :: ([Height], [Backness], [Roundedness], [Length], [Tone], [Phoneme])
               , getDs :: [Phoneme]
-              , getSonHier :: [[Phoneme]]
+              , getSonHier :: Int
               , getOnsetCCs :: [[Phoneme]]
               , getCodaCCs :: [[Phoneme]]
-              , getInflSys :: InflectionSystem
-              , getInflSyss :: [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])]
+              , getInflMap :: InflectionMap
+              , getManSyss :: [ManifestSystem]
               , getGrammar :: Grammar
               , getRoots :: [((String, LexCat), Morpheme)]
               , getWriting :: ([(Phoneme, (Int, [(String,[(Int,Int)])]))], [(Syllable, (Int, [(String,[(Int,Int)])]))], [(((String, LexCat), Morpheme), (Int, [(String,[(Int,Int)])]))])

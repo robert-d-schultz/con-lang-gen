@@ -1,5 +1,5 @@
 module Gen.Inflection
-( makeInflectionSystem
+( makeInflectionMap
 ) where
 
 import Prelude hiding (Word)
@@ -18,10 +18,9 @@ import Data.Other
 import Data.Inflection
 import Data.Grammar
 
--- Create "inflection system"
-
-makeInflectionSystem :: InputData -> RVar (InflectionSystem, [(LexCat, Int, Int, Int)])
-makeInflectionSystem idata = do
+-- Creates an inflection map
+makeInflectionMap :: InputData -> RVar (InflectionMap, [(LexCat, Int, Int, Int)])
+makeInflectionMap idata = do
   (genSys, genNs) <- fooGender idata
   (aniSys, aniNs) <- fooAnimacy idata genNs
   (casSys, casNs) <- fooCase idata aniNs
@@ -39,7 +38,7 @@ makeInflectionSystem idata = do
   (eviSys, eviNs) <- fooEvidentiality idata voiNs
   (traSys, traNs) <- fooTransitivity idata eviNs
   (volSys, volNs) <- fooVolition idata traNs
-  return (InflectionSystem genSys aniSys casSys numSys defSys speSys topSys perSys honSys polSys tenSys aspSys mooSys voiSys eviSys traSys volSys, volNs)
+  return (InflectionMap genSys aniSys casSys numSys defSys speSys topSys perSys honSys polSys tenSys aspSys mooSys voiSys eviSys traSys volSys, volNs)
 
 bar :: [(LexCat, Int, Int, Int)] -> [(LexCat, ManifestType, Int)] -> [LexCat] -> RVar ([(LexCat, ManifestType, Int)], [(LexCat, Int, Int, Int)])
 bar ks ts [] = return (ts,ks)

@@ -9,6 +9,7 @@ import Data.List
 
 import Data.Phoneme
 import Out.Lexicon
+import Out.IPA
 
 -- Parse the consonant inventory into html table
 parseConPhonemeInventory :: [Phoneme] -> String
@@ -31,9 +32,9 @@ parseConPhonemeInventory cons = "<br>\n<table border=1>" ++ tHeader ++ pLabels +
 
   getIPASymbol :: [Phoneme] -> Manner -> Place -> Phonation -> String
   getIPASymbol cons manner place phonation = output where
-    filt = filter (\(Consonant p m h s) -> p == place && m == manner && h == phonation) cons
+    filt = filter (\(Consonant p m h) -> p == place && m == manner && h == phonation) cons
     output
-      | not.null $ filt = csymbol $ head filt
+      | not.null $ filt = parsePhonemeIPA $ head filt
       | otherwise = ""
 
 parseManner :: Manner -> String
@@ -112,10 +113,10 @@ parseVowPhonemeInventory vows = "<br>\n<table border=1>" ++ tHeader ++ pLabels +
 
   getIPASymbol :: [Phoneme] -> Length -> Height -> Backness -> Roundedness -> String
   getIPASymbol vows len height back roundness = output where
-    filt = filter (\(Vowel h b r l _ s) -> h == height && b == back && r == roundness && l == len) vows
+    filt = filter (\(Vowel h b r l _) -> h == height && b == back && r == roundness && l == len) vows
     output
-      | length filt > 1 = init $ vsymbol $ head filt
-      | length filt == 1 = vsymbol $ head filt
+      | length filt > 1 = init $ parsePhonemeIPA $ head filt
+      | length filt == 1 = parsePhonemeIPA $ head filt
       | otherwise = ""
 
 parseHeight :: Height -> String

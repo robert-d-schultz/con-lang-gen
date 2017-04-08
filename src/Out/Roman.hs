@@ -26,12 +26,12 @@ isVowel _ = False
 
 -- these rules suck, need diacritics and a pool to pull from as needed
 romanizePhoneme :: Phoneme -> String
-romanizePhoneme (Consonant p m v s)
-  | v == ASPIRATED = romanizePhoneme (Consonant p m MODAL s) ++ "h"
-  | v == BREATHY = romanizePhoneme (Consonant p m VOICELESS s)
-  | v == SLACK = romanizePhoneme (Consonant p m VOICELESS s)
-  | v == STIFF = romanizePhoneme (Consonant p m MODAL s)
-  | v == CREAKY = romanizePhoneme (Consonant p m MODAL s)
+romanizePhoneme (Consonant p m v)
+  | v == ASPIRATED = romanizePhoneme (Consonant p m MODAL) ++ "h"
+  | v == BREATHY = romanizePhoneme (Consonant p m VOICELESS)
+  | v == SLACK = romanizePhoneme (Consonant p m VOICELESS)
+  | v == STIFF = romanizePhoneme (Consonant p m MODAL)
+  | v == CREAKY = romanizePhoneme (Consonant p m MODAL)
   | p `elem` [LABIAL, BILABIAL] && m == NASAL && v == MODAL = "m"
   | p `elem`[CORONAL, DENTIALVEOLAR, ALVEOLAR] && m == NASAL && v == MODAL = "n"
   | p `elem` [DORSAL, VELAR] && m == NASAL && v == MODAL = "ng"
@@ -62,15 +62,15 @@ romanizePhoneme (Consonant p m v s)
   | p `elem` [LARYNGEAL, PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL] = "h"
   | m == NASAL = "n"
   | p `elem` [DORSAL, VELAR] && m == STOP = "k"
-  | m == AFFRICATE = romanizePhoneme (Consonant p STOP v s) ++ romanizePhoneme (Consonant p FRICATIVE v s)
-  | m == SAFFRICATE = romanizePhoneme (Consonant p STOP v s) ++ romanizePhoneme (Consonant p SILIBANT v s)
-  | p == PALATAL = romanizePhoneme (Consonant VELAR m v s)
-  | p == VELAR = romanizePhoneme (Consonant UVULAR m v s)
-  | p == RETROFLEX = romanizePhoneme (Consonant ALVEOLAR m v s)
-  | p == DENTAL = romanizePhoneme (Consonant ALVEOLAR m v s)
+  | m == AFFRICATE = romanizePhoneme (Consonant p STOP v) ++ romanizePhoneme (Consonant p FRICATIVE v)
+  | m == SAFFRICATE = romanizePhoneme (Consonant p STOP v) ++ romanizePhoneme (Consonant p SILIBANT v)
+  | p == PALATAL = romanizePhoneme (Consonant VELAR m v)
+  | p == VELAR = romanizePhoneme (Consonant UVULAR m v)
+  | p == RETROFLEX = romanizePhoneme (Consonant ALVEOLAR m v)
+  | p == DENTAL = romanizePhoneme (Consonant ALVEOLAR m v)
   | otherwise = "h"
 
-romanizePhoneme (Vowel h b r l t s)
+romanizePhoneme (Vowel h b r l t)
   | h == NEAROPEN && b == FRONT && r == UNROUNDED = "a"
   | h == CLOSEMID && b == FRONT && r == UNROUNDED = "e"
   | h == CLOSE && b == FRONT && r == UNROUNDED = "e"
@@ -78,9 +78,9 @@ romanizePhoneme (Vowel h b r l t s)
   | h == OPEN && b == BACK && r == ROUNDED = "o"
   | h == CLOSE && b == BACK && r == ROUNDED && l == LONG = "o"
   | h == OPENMID && b == BACK && r == ROUNDED = "u"
-  | l == LONG = concat $ replicate 2 (romanizePhoneme (Vowel h b r NORMAL t s))
-  | l == SHORT = romanizePhoneme (Vowel h b r NORMAL t s)
-  | r `elem` [UNROUNDED, ROUNDED] = romanizePhoneme (Vowel h b DEFAULT l t s)
+  | l == LONG = concat $ replicate 2 (romanizePhoneme (Vowel h b r NORMAL t))
+  | l == SHORT = romanizePhoneme (Vowel h b r NORMAL t)
+  | r `elem` [UNROUNDED, ROUNDED] = romanizePhoneme (Vowel h b DEFAULT l t)
   | h `elem` [NEARCLOSE, CLOSEMID, MID, OPENMID] && b == BACK = "o"
   | h `elem` [CLOSEMID, MID, OPENMID] && b == FRONT = "e"
   | h `elem` [OPENMID, NEAROPEN, OPEN] = "a"
@@ -89,4 +89,4 @@ romanizePhoneme (Vowel h b r l t s)
   | h `elem` [CLOSEMID, MID, OPENMID] && b `elem` [CENTRAL, NEARFRONT, NEARBACK] = "u"
   | otherwise = "u"
 
-romanizePhoneme (Diphthong h b r h2 b2 r2 l t s) = romanizePhoneme (Vowel h b r l t s) ++ romanizePhoneme (Vowel h2 b2 r2 l t s)
+romanizePhoneme (Diphthong h b r h2 b2 r2 l t) = romanizePhoneme (Vowel h b r l t) ++ romanizePhoneme (Vowel h2 b2 r2 l t)

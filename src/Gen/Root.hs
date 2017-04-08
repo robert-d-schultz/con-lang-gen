@@ -26,9 +26,7 @@ makeRootDictionary mData vows ccs set = concat <$> sequence [n, v, a, p] where
   a = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adj) <*> makeRoot vows ccs set) (inputAdjs mData)
   p = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adpo) <*> makeRoot vows ccs set) (inputAdpos mData)
 
--- Generate a morpheme given vowels, the consonant sonority hierarchy, and some settings
--- So far this only does vowel-nucleus syllables
--- Maybe should have a "completely random" version
+-- Generate a morpheme given vowels, consonant clusters, and some settings
 makeRoot :: [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> (Int, Int) -> RVar Morpheme
 makeRoot vows ccs (ns,xs) = do
   -- decide how many syllables in the morpheme
@@ -57,9 +55,9 @@ makeColorSystem = do
     5 -> return ["white", "black", "red", "yellow", "green"]
     6 -> return ["white", "black", "red", "yellow", "green", "blue"]
     7 -> return ["white", "black", "red", "yellow", "green", "blue", "brown"]
-    8 -> (++) ["white", "black", "red", "yellow", "green", "blue", "brown"] <$> sample 1 ["pueple", "pink", "orange", "gray"]
-    9 -> (++) ["white", "black", "red", "yellow", "green", "blue", "brown"] <$> sample 2 ["pueple", "pink", "orange", "gray"]
-    10 -> (++) ["white", "black", "red", "yellow", "green", "blue", "brown"] <$> sample 3 ["pueple", "pink", "orange", "gray"]
+    8 -> (++) ["white", "black", "red", "yellow", "green", "blue", "brown"] <$> sample 1 ["purple", "pink", "orange", "gray"]
+    9 -> (++) ["white", "black", "red", "yellow", "green", "blue", "brown"] <$> sample 2 ["purple", "pink", "orange", "gray"]
+    10 -> (++) ["white", "black", "red", "yellow", "green", "blue", "brown"] <$> sample 3 ["purple", "pink", "orange", "gray"]
     11 -> return ["white", "black", "red", "yellow", "green", "blue", "brown", "pueple", "pink", "orange", "gray"]
 
 makeNumberSystem :: RVar [String]

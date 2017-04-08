@@ -4,7 +4,7 @@ module Data.Inflection
 , Express(..)
 , ManifestType(..)
 , LexCat(..)
-, InflectionSystem(..)
+, InflectionMap(..)
 , Gender(..)
 , Animacy(..)
 , Case(..)
@@ -53,7 +53,7 @@ data ManifestType = Particle | Prefix | Suffix deriving (Eq, Show, Read)
 data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Obj | Subj | Pron deriving (Eq, Enum, Show, Read)
 
 -- Inflection system for nouns
-data InflectionSystem = InflectionSystem
+data InflectionMap = InflectionMap
                       { genSys :: Manifest [Gender]
                       , aniSys :: Manifest [Animacy]
                       , casSys :: Manifest [Case]

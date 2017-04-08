@@ -16,8 +16,10 @@ import GHC.Exts hiding (Word)
 import Data.Phoneme
 import Data.Inflection
 import Data.Other
+
 import Out.Roman
 import Out.Syllable
+import Out.IPA
 
 -- Parse list of roots to string
 parseRootDictionary :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> String
@@ -59,12 +61,5 @@ parseMorphemeIPA sonHier morph = "/" ++ intercalate "." (map parseSyllableIPA sy
 
 -- Parse Syllable to string
 parseSyllableIPA :: Syllable -> String
-parseSyllableIPA (Syllable onset (Consonant a b c d) coda) = concatMap parsePhonemeIPA onset ++ parsePhonemeIPA (Consonant a b c d) ++ "\809" ++ concatMap parsePhonemeIPA coda
+parseSyllableIPA (Syllable onset (Consonant a b c) coda) = concatMap parsePhonemeIPA onset ++ parsePhonemeIPA (Consonant a b c) ++ "\809" ++ concatMap parsePhonemeIPA coda
 parseSyllableIPA (Syllable onset nucleus coda) = concatMap parsePhonemeIPA onset ++ parsePhonemeIPA nucleus ++ concatMap parsePhonemeIPA coda
-
--- Parse Phoneme to string
-parsePhonemeIPA :: Phoneme -> String
-parsePhonemeIPA Blank = ""
-parsePhonemeIPA (Consonant _ _ _ ipa) = ipa
-parsePhonemeIPA (Vowel _ _ _ _ _ ipa) = ipa
-parsePhonemeIPA (Diphthong _ _ _ _ _ _ _ _ ipa) = ipa

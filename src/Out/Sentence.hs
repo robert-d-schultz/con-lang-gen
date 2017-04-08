@@ -18,13 +18,13 @@ import EnglishStuff
 import Out.Lexicon
 
 -- parse parse tree into a string
-parseParseTree :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> Grammar -> Phrase -> String
-parseParseTree sonHier dict systems g pt = "\n\n" ++ roman ++ "\n" ++ native ++ "\n" ++ gloss ++ "\n" ++ literal ++ "\n\"" ++ english ++ "\"" where
+parseParseTree :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> Grammar -> Phrase -> String
+parseParseTree sonHier dict infl g pt = "\n\n" ++ roman ++ "\n" ++ native ++ "\n" ++ gloss ++ "\n" ++ literal ++ "\n\"" ++ english ++ "\"" where
   leaves   = filter (not.all leafIsNull) (filter (not.null) (parsePhrase g pt))
   eLeaves  = filter (not.all leafIsNull) (filter (not.null) (parsePhrase englishGrammar pt))
-  roman    = romanizeLeaves g dict systems leaves
-  native   = translateLeaves g sonHier dict systems leaves
-  gloss    = glossLeaves systems leaves
+  roman    = romanizeLeaves g dict infl leaves
+  native   = translateLeaves g sonHier dict infl leaves
+  gloss    = glossLeaves infl leaves
   literal  = leavesToEnglish leaves
   english  = leavesToEnglish eLeaves
 
@@ -37,21 +37,24 @@ leafIsNull LeafNull{} = True
 leafIsNull _ = False
 
 -- gloss
-glossLeaves :: [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [[Leaf]] -> String
-glossLeaves systems leaves = unwords $ map (glossLeaves2 systems) leaves
+glossLeaves :: [ManifestSystem] -> [[Leaf]] -> String
+glossLeaves infl leaves = unwords $ map (glossLeaves2 infl) leaves
 
-glossLeaves2 :: [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
-glossLeaves2 systems leaves
-  | any leafIsInfl leaves = glossInfl systems leaves
+glossLeaves2 :: [ManifestSystem] -> [Leaf] -> String
+glossLeaves2 infl leaves
+  | any leafIsInfl leaves = glossInfl infl leaves
   | otherwise             = concatMap leafToEnglish leaves
 
-glossInfl :: [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
-glossInfl systems leaves = out where
+glossInfl :: [ManifestSystem] -> [Leaf] -> String
+glossInfl infl leaves = out where
   (others, inflLeaves)   = break leafIsInfl leaves
   infls                  = map leafInfl inflLeaves
 
   -- retrieve the relevent particles/prefixes/suffixes from the manifest systems
-  (_, mparts, mprefs, msuffs) = fromMaybe (Infl, [], [], []) (find (\(lc, _, _, _) -> lc == leafLC (head inflLeaves)) systems)
+  minfl = filter (\x -> manSysLC x == leafLC (head inflLeaves)) infl
+  mparts = filter (\x -> manSysType x == Particle) minfl
+  mprefs = filter (\x -> manSysType x == Prefix) minfl
+  msuffs = filter (\x -> manSysType x == Prefix) minfl
   partCombos = map manSysCombos mparts
   prefCombos = map manSysCombos mprefs
   suffCombos = map manSysCombos msuffs
@@ -127,21 +130,24 @@ leafToEnglish2 (Leaf _ _ str) = str
 leafToEnglish2 _ = "ERROR"
 
 -- to new language
-translateLeaves :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [[Leaf]] -> String
-translateLeaves g sonHier dict systems leaves = unwords $ map (translateLeaves2 g sonHier dict systems) leaves
+translateLeaves :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> String
+translateLeaves g sonHier dict infl leaves = unwords $ map (translateLeaves2 g sonHier dict infl) leaves
 
-translateLeaves2 :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
-translateLeaves2 g sonHier dict systems leaves
-  | any leafIsInfl leaves = translateInfl g sonHier dict systems leaves
+translateLeaves2 :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> String
+translateLeaves2 g sonHier dict infl leaves
+  | any leafIsInfl leaves = translateInfl g sonHier dict infl leaves
   | otherwise             = concatMap (translateLeaf sonHier dict) leaves
 
-translateInfl :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
-translateInfl g sonHier dict systems leaves = out where
+translateInfl :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> String
+translateInfl g sonHier dict infl leaves = out where
   (others, inflLeaves) = break leafIsInfl leaves
   infls = map leafInfl inflLeaves
 
   -- retrieve the relevent particles/prefixes/suffixes from the manifest systems
-  (_, mparts, mprefs, msuffs) = fromMaybe (Infl, [], [], []) (find (\(lc, _, _, _) -> lc == leafLC (head inflLeaves)) systems)
+  minfl = filter (\x -> manSysLC x == leafLC (head inflLeaves)) infl
+  mparts = filter (\x -> manSysType x == Particle) minfl
+  mprefs = filter (\x -> manSysType x == Prefix) minfl
+  msuffs = filter (\x -> manSysType x == Prefix) minfl
   partCombos = map manSysCombos mparts
   prefCombos = map manSysCombos mprefs
   suffCombos = map manSysCombos msuffs
@@ -198,21 +204,24 @@ romanizeLeaf _ LeafNull{} = ""
 romanizeLeaf dict (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeMorpheme <$> lookup (str, lc) dict)
 romanizeLeaf _ _ = "ERROR"
 
-romanizeLeaves :: Grammar -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [[Leaf]] -> String
-romanizeLeaves g dict systems leaves = unwords $ map (romanizeLeaves2 g dict systems) leaves
+romanizeLeaves :: Grammar -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> String
+romanizeLeaves g dict infl leaves = unwords $ map (romanizeLeaves2 g dict infl) leaves
 
-romanizeLeaves2 :: Grammar -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
-romanizeLeaves2 g dict systems leaves
-  | any leafIsInfl leaves = romanizeInfl g dict systems leaves
+romanizeLeaves2 :: Grammar -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> String
+romanizeLeaves2 g dict infl leaves
+  | any leafIsInfl leaves = romanizeInfl g dict infl leaves
   | otherwise             = concatMap (romanizeLeaf dict) leaves
 
-romanizeInfl :: Grammar -> [((String, LexCat), Morpheme)] -> [(LexCat, [ManifestSystem], [ManifestSystem], [ManifestSystem])] -> [Leaf] -> String
-romanizeInfl g dict systems leaves = out where
+romanizeInfl :: Grammar -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> String
+romanizeInfl g dict infl leaves = out where
   (others, inflLeaves) = break leafIsInfl leaves
   infls = map leafInfl inflLeaves
 
   -- retrieve the relevent particles/prefixes/suffixes from the manifest systems
-  (_, mparts, mprefs, msuffs) = fromMaybe (Infl, [], [], []) (find (\(lc, _, _, _) -> lc == leafLC (head inflLeaves)) systems)
+  minfl = filter (\x -> manSysLC x == leafLC (head inflLeaves)) infl
+  mparts = filter (\x -> manSysType x == Particle) minfl
+  mprefs = filter (\x -> manSysType x == Prefix) minfl
+  msuffs = filter (\x -> manSysType x == Prefix) minfl
   partCombos = map manSysCombos mparts
   prefCombos = map manSysCombos mprefs
   suffCombos = map manSysCombos msuffs

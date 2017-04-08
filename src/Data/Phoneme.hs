@@ -22,7 +22,6 @@ data Phoneme = Consonant
            { cplace :: Place
            , cmanner :: Manner
            , cvoice :: Phonation
-           , csymbol :: String
            }
            | Vowel
            { vheight :: Height
@@ -30,7 +29,6 @@ data Phoneme = Consonant
            , vroundedness :: Roundedness
            , vlength :: Length
            , vtone :: Tone
-           , vsymbol :: String
            }
            | Diphthong
            { dheight1 :: Height
@@ -41,7 +39,6 @@ data Phoneme = Consonant
            , droundedness2 :: Roundedness
            , dlength :: Length
            , dtone :: Tone
-           , dsymbol :: String
            }
            | Blank deriving (Eq, Ord, Show, Read)
 
