@@ -1,31 +1,34 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Out.Roman
 ( romanizeWord
 , romanizeMorpheme
 , romanizePhoneme
 ) where
 
-import Prelude hiding (Word)
+import ClassyPrelude hiding (Word)
 
 import Data.Phoneme
 
-romanizeWord :: Word -> String
+romanizeWord :: Word -> Text
 romanizeWord (Word morphemes) = concatMap romanizeMorpheme morphemes
 
-romanizeMorpheme :: Morpheme -> String
+romanizeMorpheme :: Morpheme -> Text
 romanizeMorpheme (Morpheme phonemes) = romanizePhonemes phonemes
 
-romanizePhonemes :: [Phoneme] -> String
+romanizePhonemes :: [Phoneme] -> Text
 romanizePhonemes [] = ""
-romanizePhonemes phonemes
-  | length phonemes > 1 && isVowel (head phonemes) && isVowel (head $ tail phonemes) = romanizePhoneme (head phonemes) ++ "\'" ++ romanizePhonemes (tail phonemes)
-  | otherwise = romanizePhoneme (head phonemes) ++ romanizePhonemes (tail phonemes)
+romanizePhonemes [p1] = romanizePhoneme p1
+romanizePhonemes (p1:(p2:ps))
+  | isVowel p1 && isVowel p2 = romanizePhoneme p1 ++ "\'" ++ romanizePhonemes (p2:ps)
+  | otherwise = romanizePhoneme p1 ++ romanizePhonemes (p2:ps)
 
 isVowel :: Phoneme -> Bool
 isVowel Vowel{} = True
 isVowel _ = False
 
 -- these rules suck, need diacritics and a pool to pull from as needed
-romanizePhoneme :: Phoneme -> String
+romanizePhoneme :: Phoneme -> Text
 romanizePhoneme (Consonant p m v)
   | v == ASPIRATED = romanizePhoneme (Consonant p m MODAL) ++ "h"
   | v == BREATHY = romanizePhoneme (Consonant p m VOICELESS)
@@ -78,7 +81,7 @@ romanizePhoneme (Vowel h b r l t)
   | h == OPEN && b == BACK && r == ROUNDED = "o"
   | h == CLOSE && b == BACK && r == ROUNDED && l == LONG = "o"
   | h == OPENMID && b == BACK && r == ROUNDED = "u"
-  | l == LONG = concat $ replicate 2 (romanizePhoneme (Vowel h b r NORMAL t))
+  | l == LONG = romanizePhoneme (Vowel h b r NORMAL t) ++ romanizePhoneme (Vowel h b r NORMAL t)
   | l == SHORT = romanizePhoneme (Vowel h b r NORMAL t)
   | r `elem` [UNROUNDED, ROUNDED] = romanizePhoneme (Vowel h b DEFAULT l t)
   | h `elem` [NEARCLOSE, CLOSEMID, MID, OPENMID] && b == BACK = "o"

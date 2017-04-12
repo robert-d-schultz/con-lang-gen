@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Gen.WritingSystem
 ( generateWritingSystem
 , generateAlphabet
@@ -6,6 +8,7 @@ module Gen.WritingSystem
 , generateLogography
 ) where
 
+import ClassyPrelude
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
@@ -17,7 +20,7 @@ import Data.Inflection
 import Gen.Phonology
 
 --pick writing systems
-generateWritingSystem :: [Phoneme] -> [Syllable] -> [((String,LexCat), Morpheme)] -> RVar ([(Phoneme, Int)], [(Syllable, Int)], [(((String, LexCat), Morpheme), Int)])
+generateWritingSystem :: [Phoneme] -> [Syllable] -> [((Text,LexCat), Morpheme)] -> RVar ([(Phoneme, Int)], [(Syllable, Int)], [(((Text, LexCat), Morpheme), Int)])
 generateWritingSystem phonemes [] morphs = choice [ (generateAlphabet phonemes, [], [])
                                                   , ([], [], generateLogography morphs 983040)
                                                   ]
@@ -46,5 +49,5 @@ makeAllSyllables onsets nucleuss codas = Syllable <$> onsets <*> nucleuss <*> co
 
 -- generate logographs, one for each lexicon entry, inflection entry
 -- maybe two/three/four for each lexicon entry? related too much to morphology and therefore semantics
-generateLogography :: [((String, LexCat), Morpheme)] -> Int -> [(((String, LexCat), Morpheme), Int)]
+generateLogography :: [((Text, LexCat), Morpheme)] -> Int -> [(((Text, LexCat), Morpheme), Int)]
 generateLogography morphs n = zip morphs [n..]

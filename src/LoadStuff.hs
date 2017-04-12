@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module LoadStuff
 ( MeaningData(..)
 , loadMeaningData
@@ -5,15 +7,17 @@ module LoadStuff
 , loadInputData
 ) where
 
+import ClassyPrelude
+import Prelude (read)
 import Data.Inflection
 
 -- Input data for lexicon
 data MeaningData = MeaningData
   {
-      inputNouns       :: [String]
-    , inputVerbs       :: [String]
-    , inputAdjs        :: [String]
-    , inputAdpos       :: [String]
+      inputNouns       :: [Text]
+    , inputVerbs       :: [Text]
+    , inputAdjs        :: [Text]
+    , inputAdpos       :: [Text]
   }
 
 loadMeaningData :: IO MeaningData
@@ -24,7 +28,7 @@ loadMeaningData =  MeaningData
   <*> readMeaning "raw/meanings/adpositions.txt"
 
 readMeaning :: Read a => FilePath -> IO a
-readMeaning = fmap read . readFile
+readMeaning x = read <$> unpack <$> decodeUtf8 <$> readFile x
 
 
 -- Input data for inflections/morphology
@@ -71,4 +75,4 @@ loadInputData =
         <*> readFeature "raw/grammatical categories/volition.txt"
 
 readFeature :: Read a => FilePath -> IO a
-readFeature = fmap read . readFile
+readFeature x = read <$> unpack <$> decodeUtf8 <$> readFile x

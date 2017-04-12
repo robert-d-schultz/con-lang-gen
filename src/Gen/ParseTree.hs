@@ -1,11 +1,14 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Gen.ParseTree
 ( makeParseTree
 ) where
 
+import ClassyPrelude
+
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
-import Control.Monad
 
 import LoadStuff
 import Data.Grammar

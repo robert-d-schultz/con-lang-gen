@@ -1,9 +1,13 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Data.Other
 ( SyllWord(..)
 , Syllable(..)
 , Language(..)
 , LanguageBranch(..)
 ) where
+
+import ClassyPrelude
 
 import Data.Phoneme
 import Data.Grammar
@@ -18,7 +22,7 @@ data LanguageBranch = LanguageBranch
 -- Language
 data Language = RootL
               | Language
-              { getName :: String
+              { getName :: Text
               , getCMap :: ([Place], [Manner], [Phonation], [Phoneme])
               , getVMap :: ([Height], [Backness], [Roundedness], [Length], [Tone], [Phoneme])
               , getDs :: [Phoneme]
@@ -28,8 +32,8 @@ data Language = RootL
               , getInflMap :: InflectionMap
               , getManSyss :: [ManifestSystem]
               , getGrammar :: Grammar
-              , getRoots :: [((String, LexCat), Morpheme)]
-              , getWriting :: ([(Phoneme, (Int, [(String,[(Int,Int)])]))], [(Syllable, (Int, [(String,[(Int,Int)])]))], [(((String, LexCat), Morpheme), (Int, [(String,[(Int,Int)])]))])
+              , getRoots :: [((Text, LexCat), Morpheme)]
+              , getWriting :: ([(Phoneme, (Int, [(Text,[(Int,Int)])]))], [(Syllable, (Int, [(Text,[(Int,Int)])]))], [(((Text, LexCat), Morpheme), (Int, [(Text,[(Int,Int)])]))])
               } deriving (Show)
 
 -- Used to parse out syllables from a word

@@ -1,13 +1,12 @@
 {-# LANGUAGE NamedFieldPuns #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Out.Sentence
 ( parseParseTree
 , parsePhrase
 ) where
 
-import Prelude hiding (Word)
-import Data.List
-import Data.Maybe
-import Data.Tuple
+import ClassyPrelude hiding (Word)
 
 import Data.Grammar
 import Data.Inflection
@@ -18,7 +17,7 @@ import EnglishStuff
 import Out.Lexicon
 
 -- parse parse tree into a string
-parseParseTree :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> Grammar -> Phrase -> String
+parseParseTree :: [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> Grammar -> Phrase -> Text
 parseParseTree sonHier dict infl g pt = "\n\n" ++ roman ++ "\n" ++ native ++ "\n" ++ gloss ++ "\n" ++ literal ++ "\n\"" ++ english ++ "\"" where
   leaves   = filter (not.all leafIsNull) (filter (not.null) (parsePhrase g pt))
   eLeaves  = filter (not.all leafIsNull) (filter (not.null) (parsePhrase englishGrammar pt))
@@ -37,21 +36,21 @@ leafIsNull LeafNull{} = True
 leafIsNull _ = False
 
 -- gloss
-glossLeaves :: [ManifestSystem] -> [[Leaf]] -> String
+glossLeaves :: [ManifestSystem] -> [[Leaf]] -> Text
 glossLeaves infl leaves = unwords $ map (glossLeaves2 infl) leaves
 
-glossLeaves2 :: [ManifestSystem] -> [Leaf] -> String
+glossLeaves2 :: [ManifestSystem] -> [Leaf] -> Text
 glossLeaves2 infl leaves
   | any leafIsInfl leaves = glossInfl infl leaves
   | otherwise             = concatMap leafToEnglish leaves
 
-glossInfl :: [ManifestSystem] -> [Leaf] -> String
+glossInfl :: [ManifestSystem] -> [Leaf] -> Text
 glossInfl infl leaves = out where
   (others, inflLeaves)   = break leafIsInfl leaves
   infls                  = map leafInfl inflLeaves
 
   -- retrieve the relevent particles/prefixes/suffixes from the manifest systems
-  minfl = filter (\x -> manSysLC x == leafLC (head inflLeaves)) infl
+  minfl = filter (\x -> fromMaybe False ((==) (manSysLC x) . leafLC <$> listToMaybe inflLeaves)) infl
   mparts = filter (\x -> manSysType x == Particle) minfl
   mprefs = filter (\x -> manSysType x == Prefix) minfl
   msuffs = filter (\x -> manSysType x == Prefix) minfl
@@ -70,81 +69,81 @@ glossInfl infl leaves = out where
     | null others = unwords partsOut
     | otherwise   = intercalate "-" prefsOut ++ (if null prefs then "" else "-") ++ unwords (map leafToEnglish2 others) ++ (if null suffs then "" else "-") ++ intercalate "-" suffsOut
 
-glossCombo :: (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition) -> String
+glossCombo :: (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition) -> Text
 glossCombo (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = intercalate "." vol2 where
-  gen2 | gen /= NoExpress = [show $ getExp gen]      | otherwise = []
-  ani2 | ani /= NoExpress = show (getExp ani) : gen2 | otherwise = gen2
-  cas2 | cas /= NoExpress = show (getExp cas) : ani2 | otherwise = ani2
-  num2 | num /= NoExpress = show (getExp num) : cas2 | otherwise = cas2
-  def2 | def /= NoExpress = show (getExp def) : num2 | otherwise = num2
-  spe2 | spe /= NoExpress = show (getExp spe) : def2 | otherwise = def2
-  top2 | top /= NoExpress = show (getExp top) : spe2 | otherwise = spe2
-  per2 | per /= NoExpress = show (getExp per) : top2 | otherwise = top2
-  hon2 | hon /= NoExpress = show (getExp hon) : per2 | otherwise = per2
-  pol2 | pol /= NoExpress = show (getExp pol) : hon2 | otherwise = hon2
-  ten2 | ten /= NoExpress = show (getExp ten) : pol2 | otherwise = pol2
-  asp2 | asp /= NoExpress = show (getExp asp) : ten2 | otherwise = ten2
-  moo2 | moo /= NoExpress = show (getExp moo) : asp2 | otherwise = asp2
-  voi2 | voi /= NoExpress = show (getExp voi) : moo2 | otherwise = moo2
-  evi2 | evi /= NoExpress = show (getExp evi) : voi2 | otherwise = voi2
-  tra2 | tra /= NoExpress = show (getExp tra) : evi2 | otherwise = evi2
-  vol2 | vol /= NoExpress = show (getExp vol) : tra2 | otherwise = tra2
+  gen2 | gen /= NoExpress = [tshow $ getExp gen]      | otherwise = []
+  ani2 | ani /= NoExpress = tshow (getExp ani) : gen2 | otherwise = gen2
+  cas2 | cas /= NoExpress = tshow (getExp cas) : ani2 | otherwise = ani2
+  num2 | num /= NoExpress = tshow (getExp num) : cas2 | otherwise = cas2
+  def2 | def /= NoExpress = tshow (getExp def) : num2 | otherwise = num2
+  spe2 | spe /= NoExpress = tshow (getExp spe) : def2 | otherwise = def2
+  top2 | top /= NoExpress = tshow (getExp top) : spe2 | otherwise = spe2
+  per2 | per /= NoExpress = tshow (getExp per) : top2 | otherwise = top2
+  hon2 | hon /= NoExpress = tshow (getExp hon) : per2 | otherwise = per2
+  pol2 | pol /= NoExpress = tshow (getExp pol) : hon2 | otherwise = hon2
+  ten2 | ten /= NoExpress = tshow (getExp ten) : pol2 | otherwise = pol2
+  asp2 | asp /= NoExpress = tshow (getExp asp) : ten2 | otherwise = ten2
+  moo2 | moo /= NoExpress = tshow (getExp moo) : asp2 | otherwise = asp2
+  voi2 | voi /= NoExpress = tshow (getExp voi) : moo2 | otherwise = moo2
+  evi2 | evi /= NoExpress = tshow (getExp evi) : voi2 | otherwise = voi2
+  tra2 | tra /= NoExpress = tshow (getExp tra) : evi2 | otherwise = evi2
+  vol2 | vol /= NoExpress = tshow (getExp vol) : tra2 | otherwise = tra2
 
 -- to english
-leavesToEnglish :: [[Leaf]] -> String
+leavesToEnglish :: [[Leaf]] -> Text
 leavesToEnglish leaves = unwords $ map leavesToEnglish2 leaves
 
-leavesToEnglish2 :: [Leaf] -> String
+leavesToEnglish2 :: [Leaf] -> Text
 leavesToEnglish2 leaves
   | any leafIsInfl leaves = inflToEnglish leaves
   | otherwise             = concatMap leafToEnglish leaves
 
-inflToEnglish :: [Leaf] -> String
+inflToEnglish :: [Leaf] -> Text
 inflToEnglish leaves = out where
   (others, inflLeaves) = break leafIsInfl leaves
   infls = map leafInfl inflLeaves
 
-  (_, mparts, mprefs, msuffs) = fromMaybe (Infl, [], [], []) (find (\(lc, _, _, _) -> lc == leafLC (head inflLeaves)) englishManifest)
+  (_, mparts, mprefs, msuffs) = fromMaybe (Infl, [], [], []) (find (\(lc, _, _, _) -> fromMaybe False ((==) lc . leafLC <$> listToMaybe inflLeaves)) englishManifest)
 
   partCombos = map (\(_,_,x)-> x) mparts
   prefCombos = map (\(_,_,x)-> x) mprefs
   suffCombos = map (\(_,_,x)-> x) msuffs
 
-  parts = concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) partCombos
-  prefs = [""]
-  suffs = concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos
+  parts = (concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) partCombos) :: [Text]
+  prefs = [""] :: [Text]
+  suffs = (concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos) :: [Text]
 
   out
     | null others = unwords parts
     | otherwise   = concat prefs ++ unwords (map leafToEnglish2 others) ++ concat suffs
 
-leafToEnglish :: Leaf -> String
+leafToEnglish :: Leaf -> Text
 leafToEnglish LeafNull{} = ""
 leafToEnglish (Leaf _ _ str) = str
 leafToEnglish _ = "ERROR"
 
 -- do insertion
-leafToEnglish2 :: Leaf -> String
+leafToEnglish2 :: Leaf -> Text
 leafToEnglish2 LeafNull{} = "do"
 leafToEnglish2 (Leaf _ _ str) = str
 leafToEnglish2 _ = "ERROR"
 
 -- to new language
-translateLeaves :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> String
+translateLeaves :: Grammar -> [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> Text
 translateLeaves g sonHier dict infl leaves = unwords $ map (translateLeaves2 g sonHier dict infl) leaves
 
-translateLeaves2 :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> String
+translateLeaves2 :: Grammar -> [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
 translateLeaves2 g sonHier dict infl leaves
   | any leafIsInfl leaves = translateInfl g sonHier dict infl leaves
   | otherwise             = concatMap (translateLeaf sonHier dict) leaves
 
-translateInfl :: Grammar -> [[Phoneme]] -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> String
+translateInfl :: Grammar -> [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
 translateInfl g sonHier dict infl leaves = out where
   (others, inflLeaves) = break leafIsInfl leaves
   infls = map leafInfl inflLeaves
 
   -- retrieve the relevent particles/prefixes/suffixes from the manifest systems
-  minfl = filter (\x -> manSysLC x == leafLC (head inflLeaves)) infl
+  minfl = filter (\x -> fromMaybe False ((==) (manSysLC x) . leafLC <$> listToMaybe inflLeaves)) infl
   mparts = filter (\x -> manSysType x == Particle) minfl
   mprefs = filter (\x -> manSysType x == Prefix) minfl
   msuffs = filter (\x -> manSysType x == Prefix) minfl
@@ -166,7 +165,7 @@ translateInfl g sonHier dict infl leaves = out where
 
 getLast :: [a] -> [a]
 getLast [] = []
-getLast xs = [last xs]
+getLast xs = fromMaybe [] ((:[]) <$> lastMay xs)
 
 -- compares new language infl (1) to english infl (2)
 compareInfl :: (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition) -> (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition) -> Bool
@@ -190,35 +189,35 @@ compareInfl (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol
       , (vol == vol2 || vol `elem` [Express UVOL, NoExpress])
       ]
 
-translateLeaf :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> Leaf -> String
+translateLeaf :: [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> Leaf -> Text
 translateLeaf _ _ LeafNull{} = ""
 translateLeaf sonHier dict (Leaf lc _ str) = translate sonHier dict (str,lc)
 translateLeaf _ _ _ = "ERROR"
 
-translate :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> (String, LexCat) -> String
+translate :: [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> (Text, LexCat) -> Text
 translate sonHier dict ent = fromMaybe "<UNK>" (parseMorphemeIPA sonHier <$> lookup ent dict)
 
 -- to romanized
-romanizeLeaf :: [((String, LexCat), Morpheme)] -> Leaf -> String
+romanizeLeaf :: [((Text, LexCat), Morpheme)] -> Leaf -> Text
 romanizeLeaf _ LeafNull{} = ""
 romanizeLeaf dict (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeMorpheme <$> lookup (str, lc) dict)
 romanizeLeaf _ _ = "ERROR"
 
-romanizeLeaves :: Grammar -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> String
+romanizeLeaves :: Grammar -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> Text
 romanizeLeaves g dict infl leaves = unwords $ map (romanizeLeaves2 g dict infl) leaves
 
-romanizeLeaves2 :: Grammar -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> String
+romanizeLeaves2 :: Grammar -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
 romanizeLeaves2 g dict infl leaves
   | any leafIsInfl leaves = romanizeInfl g dict infl leaves
   | otherwise             = concatMap (romanizeLeaf dict) leaves
 
-romanizeInfl :: Grammar -> [((String, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> String
+romanizeInfl :: Grammar -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
 romanizeInfl g dict infl leaves = out where
   (others, inflLeaves) = break leafIsInfl leaves
   infls = map leafInfl inflLeaves
 
   -- retrieve the relevent particles/prefixes/suffixes from the manifest systems
-  minfl = filter (\x -> manSysLC x == leafLC (head inflLeaves)) infl
+  minfl = filter (\x -> fromMaybe False ((==) (manSysLC x) . leafLC <$> listToMaybe inflLeaves)) infl
   mparts = filter (\x -> manSysType x == Particle) minfl
   mprefs = filter (\x -> manSysType x == Prefix) minfl
   msuffs = filter (\x -> manSysType x == Prefix) minfl

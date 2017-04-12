@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Out.Lexicon
 ( parseDictionary
 , parseWordIPA
@@ -8,10 +10,8 @@ module Out.Lexicon
 , parseLC
 ) where
 
-import Prelude hiding (Word)
-import Data.List
-import Control.Arrow
-import GHC.Exts hiding (Word)
+import ClassyPrelude hiding (Word)
+import GHC.Exts (groupWith)
 
 import Data.Phoneme
 import Data.Inflection
@@ -22,26 +22,26 @@ import Out.Syllable
 import Out.IPA
 
 -- Parse list of roots to string
-parseRootDictionary :: [[Phoneme]] -> [((String, LexCat), Morpheme)] -> String
+parseRootDictionary :: [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> Text
 parseRootDictionary sonHier pairs = "\n" ++ intercalate "\n" (map (parseRootDictionaryEntry sonHier) (reduceHomophones2 pairs))
 
-reduceHomophones2 :: [((String, LexCat), Morpheme)] -> [([(String, LexCat)], Morpheme)]
-reduceHomophones2 pairs = map (second head . unzip) (groupWith snd (sortWith snd pairs))
+reduceHomophones2 :: [((Text, LexCat), Morpheme)] -> [([(Text, LexCat)], Morpheme)]
+reduceHomophones2 pairs = map (second (fromMaybe (Morpheme []) . listToMaybe) . unzip) (groupWith snd (sortWith snd pairs))
 
-parseRootDictionaryEntry :: [[Phoneme]] -> ([(String, LexCat)], Morpheme) -> String
+parseRootDictionaryEntry :: [[Phoneme]] -> ([(Text, LexCat)], Morpheme) -> Text
 parseRootDictionaryEntry sonHier (means, morph) = romanizeMorpheme morph ++ " (" ++ parseMorphemeIPA sonHier morph ++ ")" ++ concatMap (\(str, lc) -> "\n\t" ++ parseLC lc ++ " " ++ str) means
 
 -- Parse list of words to string
-parseDictionary :: [[Phoneme]] -> [((String, LexCat), Word)] -> String
+parseDictionary :: [[Phoneme]] -> [((Text, LexCat), Word)] -> Text
 parseDictionary sonHier pairs = "\n" ++ intercalate "\n" (map (parseDictionaryEntry sonHier) (reduceHomophones pairs))
 
-reduceHomophones :: [((String, LexCat), Word)] -> [([(String, LexCat)], Word)]
-reduceHomophones pairs = map (second head . unzip) (groupWith snd (sortWith snd pairs))
+reduceHomophones :: [((Text, LexCat), Word)] -> [([(Text, LexCat)], Word)]
+reduceHomophones pairs = map (second (fromMaybe (Word []) . listToMaybe) . unzip) (groupWith snd (sortWith snd pairs))
 
-parseDictionaryEntry :: [[Phoneme]] -> ([(String, LexCat)], Word) -> String
+parseDictionaryEntry :: [[Phoneme]] -> ([(Text, LexCat)], Word) -> Text
 parseDictionaryEntry sonHier (means, wrd) = romanizeWord wrd ++ " (" ++ parseWordIPA sonHier wrd ++ ")" ++ concatMap (\(str, lc) -> "\n\t" ++ parseLC lc ++ " " ++ str) means
 
-parseLC :: LexCat -> String
+parseLC :: LexCat -> Text
 parseLC lc
   | lc == Verb = "v."
   | lc == Noun = "n."
@@ -50,16 +50,16 @@ parseLC lc
   | lc == Adpo = "p."
 
 -- Parse Word to string
-parseWordIPA :: [[Phoneme]] -> Word -> String
+parseWordIPA :: [[Phoneme]] -> Word -> Text
 parseWordIPA sonHier word = "/" ++ intercalate "." (map parseSyllableIPA sylls) ++ "/" where
   (SyllWord sylls) = syllabifyWord sonHier word
 
 -- Parse Morpheme to string (used in exponent table too)
-parseMorphemeIPA :: [[Phoneme]] -> Morpheme -> String
+parseMorphemeIPA :: [[Phoneme]] -> Morpheme -> Text
 parseMorphemeIPA sonHier morph = "/" ++ intercalate "." (map parseSyllableIPA sylls) ++ "/" where
   (SyllWord sylls) = syllabifyMorpheme sonHier morph
 
 -- Parse Syllable to string
-parseSyllableIPA :: Syllable -> String
+parseSyllableIPA :: Syllable -> Text
 parseSyllableIPA (Syllable onset (Consonant a b c) coda) = concatMap parsePhonemeIPA onset ++ parsePhonemeIPA (Consonant a b c) ++ "\809" ++ concatMap parsePhonemeIPA coda
 parseSyllableIPA (Syllable onset nucleus coda) = concatMap parsePhonemeIPA onset ++ parsePhonemeIPA nucleus ++ concatMap parsePhonemeIPA coda

@@ -1,14 +1,15 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Gen.Root
 ( makeRootDictionary
 , makeRoot
 ) where
 
-import Prelude hiding (Word)
+import ClassyPrelude hiding (Word)
+import Control.Monad as R (replicateM)
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
-import Control.Monad
-import Data.List
 
 import LoadStuff
 import Data.Phoneme
@@ -19,7 +20,7 @@ import Gen.Phonology
 import Gen.Phonotactics
 
 -- Generate root dictionary - atomic meanings
-makeRootDictionary :: MeaningData -> [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> (Int, Int) -> RVar [((String, LexCat), Morpheme)]
+makeRootDictionary :: MeaningData -> [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> (Int, Int) -> RVar [((Text, LexCat), Morpheme)]
 makeRootDictionary mData vows ccs set = concat <$> sequence [n, v, a, p] where
   n = mapM (\i -> (,) <$> ((,) <$> return i <*> return Noun) <*> makeRoot vows ccs set) (inputNouns mData)
   v = mapM (\i -> (,) <$> ((,) <$> return i <*> return Verb) <*> makeRoot vows ccs set) (inputVerbs mData)
@@ -31,7 +32,7 @@ makeRoot :: [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> (Int, Int) -> RVar Morphe
 makeRoot vows ccs (ns,xs) = do
   -- decide how many syllables in the morpheme
   s <- uniform ns xs
-  root <- replicateM s (makeRootSyllable vows ccs)
+  root <- R.replicateM s (makeRootSyllable vows ccs)
   return $ Morpheme $ concat root
 
 makeRootSyllable :: [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> RVar [Phoneme]
@@ -43,7 +44,7 @@ makeRootSyllable vows (onsets, codas) = do
 
 -- Gen.Meaning?
 -- special generators
-makeColorSystem :: RVar [String]
+makeColorSystem :: RVar [Text]
 makeColorSystem = do
   ncolors <- uniform 0 11 :: RVar Int
   case ncolors of
@@ -60,7 +61,7 @@ makeColorSystem = do
     10 -> (++) ["white", "black", "red", "yellow", "green", "blue", "brown"] <$> sample 3 ["purple", "pink", "orange", "gray"]
     11 -> return ["white", "black", "red", "yellow", "green", "blue", "brown", "pueple", "pink", "orange", "gray"]
 
-makeNumberSystem :: RVar [String]
+makeNumberSystem :: RVar [Text]
 makeNumberSystem = do
   base <- choice [2, 4, 5, 6, 8, 10, 12, 15, 16, 20, 40, 60]
-  return $ map show ([0..base] ++ ((^) <$> [base] <*> [2..6]))
+  return $ map tshow ([0..base] ++ ((^) <$> [base] <*> [2..6]))

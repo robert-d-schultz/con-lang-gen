@@ -1,9 +1,11 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Gen.Language
 ( makeLanguage
 ) where
 
+import ClassyPrelude
 import Data.RVar
-import Data.List
 
 import LoadStuff
 
@@ -42,8 +44,8 @@ makeLanguage idata mData = do
   onsetCCs <- makeOnsets sonHier (2, 4)
   codaCCs <- makeCodas sonHier (2, 4)
 
-  let onsets = nub $ onsetCCs ++ map (:[]) inventoryC
-  let codas = nub $ codaCCs ++ map (:[]) inventoryC
+  let onsets = ordNub $ onsetCCs ++ map (:[]) inventoryC
+  let codas = ordNub $ codaCCs ++ map (:[]) inventoryC
   let nucleuss = inventoryV ++ inventoryD
 
   -- inflection / grammatical categories
@@ -63,13 +65,11 @@ makeLanguage idata mData = do
   let allLogograms = roots
   (a, s, l) <- generateWritingSystem allPhonemes allSyllables allLogograms
 
-  -- chracters
+  -- characters
   (aOut, sOut, lOut) <- makeCharacters (a, s, l)
 
-  -- find out what was assigned to "<!LANGUAGE!>"
-  let nameMorph = snd $ head (filter (\x -> fst x == ("<!LANGUAGE!>", Noun)) roots)
-
-  let langName = romanizeMorpheme nameMorph
+  -- find out what was assigned to "<!LANGUAGE!>" and romanize
+  let langName = fromMaybe "name not found" (romanizeMorpheme . snd <$> find (\x -> fst x == ("<!LANGUAGE!>", Noun)) roots)
 
   let lang = Language langName (places, manners, phonations, exceptionsC) (heights, backs, rounds, lengths, tones, exceptionsV) inventoryD scheme onsetCCs codaCCs inflSys systems grammar roots (aOut, sOut, lOut)
 

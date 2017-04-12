@@ -1,14 +1,14 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Gen.Grapheme
 ( makeCharacters
 , makeCharacter
 ) where
 
+import ClassyPrelude
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
-import Data.List
-import Control.Monad
-import Control.Arrow
 
 import Data.Phoneme
 import Data.Other
@@ -17,7 +17,7 @@ import Data.Inflection
 -- note: bezier curves are a problem
 
 -- simplest, make random squiggles and calls them chracters
-makeCharacters :: ([(Phoneme, Int)], [(Syllable, Int)], [(((String, LexCat), Morpheme), Int)]) -> RVar ([(Phoneme, (Int, [(String,[(Int,Int)])]))], [(Syllable, (Int, [(String,[(Int,Int)])]))], [(((String, LexCat), Morpheme), (Int, [(String,[(Int,Int)])]))])
+makeCharacters :: ([(Phoneme, Int)], [(Syllable, Int)], [(((Text, LexCat), Morpheme), Int)]) -> RVar ([(Phoneme, (Int, [(Text,[(Int,Int)])]))], [(Syllable, (Int, [(Text,[(Int,Int)])]))], [(((Text, LexCat), Morpheme), (Int, [(Text,[(Int,Int)])]))])
 makeCharacters ([], [], []) = return ([], [], [])
 makeCharacters (a, s, l) = do
   aOut <- mapM (makeCharacter 11 1 . snd) a
@@ -28,7 +28,7 @@ makeCharacters (a, s, l) = do
 help :: (a, b) -> c -> (a, (b,c))
 help (x,y) z = (x,(y,z))
 
-makeCharacter :: Int -> Int ->  Int -> RVar [(String,[(Int,Int)])]
+makeCharacter :: Int -> Int ->  Int -> RVar [(Text,[(Int,Int)])]
 makeCharacter n w _ = do
   startPos <- sequence [(,) <$> (uniform 0 n :: RVar Int) <*> (uniform 0 n :: RVar Int)]
   stuff <- replicateM 3 (svgStuff n)
@@ -36,17 +36,23 @@ makeCharacter n w _ = do
   let scaledPath = scaleSVG n path
   return $ scaledPath ++ [("Z",[(-1,-1)])]
 
-scaleSVG :: Int -> [(String,[(Int,Int)])] -> [(String,[(Int,Int)])]
+scaleSVG :: Int -> [(Text,[(Int,Int)])] -> [(Text,[(Int,Int)])]
 scaleSVG n old = new where
-  maxX = maximum (filter (<=n) (concatMap (map fst . snd) old))
-  minX = minimum (filter (>=0) (concatMap (map fst . snd) old))
-  maxY = maximum (filter (<=n) (concatMap (map snd . snd) old))
-  minY = minimum (filter (>=0) (concatMap (map snd . snd) old))
-  diffX = maxX - minX
-  diffY = maxY - minY
-  new = map (second (map (\(x,y) -> (round (realToFrac (x - minX) * (realToFrac n / realToFrac diffX)), round (realToFrac (y - minY) * (realToFrac n / realToFrac diffY)))))) old
+  maxX = maximumMay (filter (<=n) (concatMap (map fst . snd) old))
+  minX = maximumMay (filter (>=0) (concatMap (map fst . snd) old))
+  maxY = maximumMay (filter (<=n) (concatMap (map snd . snd) old))
+  minY = maximumMay (filter (>=0) (concatMap (map snd . snd) old))
 
-svgStuff :: Int -> RVar (String, [(Int,Int)])
+  maxX_ = fromMaybe n maxX
+  minX_ = fromMaybe 0 minX
+  maxY_ = fromMaybe n maxY
+  minY_ = fromMaybe 0 minY
+
+  diffX = maxX_- minX_
+  diffY = maxY_ - minY_
+  new = map (second (map (\(x,y) -> (round (realToFrac (x - minX_) * (realToFrac n / realToFrac diffX)), round (realToFrac (y - minY_) * (realToFrac n / realToFrac diffY)))))) old
+
+svgStuff :: Int -> RVar (Text, [(Int,Int)])
 svgStuff n = join $ choice [ (,) "L" <$> sequence [(,) <$> (uniform 0 n :: RVar Int) <*> (uniform 0 n :: RVar Int)] -- line to some point
                          , (,) "Q" <$> sequence [(,) <$> (uniform 0 n :: RVar Int) <*> (uniform 0 n :: RVar Int), (,) <$> (uniform 0 n :: RVar Int) <*> (uniform 0 n :: RVar Int)] -- bezier curve
                          , (,) "H" <$> sequence [(,) <$> (uniform 0 n :: RVar Int) <*> return (-1)] -- horizontal line

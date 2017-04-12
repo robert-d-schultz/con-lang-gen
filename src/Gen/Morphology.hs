@@ -61,7 +61,7 @@ makeParticleSystem lc i vows ccs gramSys = do
   return $ ManifestSystem lc Particle (zip morphs combos)
 
 -- Clean sys
-cleanSys :: Manifest [a] -> LexCat -> ManifestType -> Int -> [Express a]
+cleanSys :: Manifest a -> LexCat -> ManifestType -> Int -> [Express a]
 cleanSys NoManifest _ _ _ = [NoExpress]
 cleanSys (Manifest t x) lc mt i = out where
   filt = filter (== (lc, mt, i)) t

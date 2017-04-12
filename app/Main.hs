@@ -1,12 +1,15 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Main where
 
+import ClassyPrelude hiding (writeFile)
+import Data.Text.IO (getLine, writeFile)
 import Data.Random
 import Data.RVar
-import Data.List
 import Data.Hashable
-import Control.Monad
 import System.Random
 import System.Directory
+import Control.Monad as M (replicateM)
 
 import LoadStuff
 
@@ -33,7 +36,7 @@ main = do
   let seed = hashWithSalt 1 input
   setStdGen $ mkStdGen seed
 
-  exist <- doesPathExist $ "out/" ++ show seed
+  exist <- doesPathExist $ unpack $ "out/" ++ tshow seed
   if exist then putStrLn "Language family already generated" *> main else do
     idata <- loadInputData
     mData <- loadMeaningData
@@ -43,11 +46,11 @@ main = do
 -- outputs stuff for each language family
 parseLanguageTree :: Int -> MeaningData -> LanguageBranch -> IO()
 parseLanguageTree seed mData tree = do
-  let dir = "out/" ++ show seed ++ "/"
-  createDirectory dir
+  let dir = "out/" ++ tshow seed ++ "/"
+  createDirectory (unpack dir)
 
   let treeMap = parseLanguageTreeN tree
-  writeFile (dir ++ "tree_map.html") treeMap
+  writeFile (unpack (dir ++ "tree_map.html")) treeMap
   parseLanguageBranch seed mData tree
 
 parseLanguageBranch :: Int -> MeaningData -> LanguageBranch -> IO()
@@ -75,58 +78,58 @@ parseLanguage lang seed mData = do
 
   let sonHier = makeSonHier_ inventoryC scheme
 
-  let onsets = nub $ onsetCCs ++ map (:[]) inventoryC
-  let codas = nub $ codaCCs ++ map (:[]) inventoryC
+  let onsets = ordNub $ onsetCCs ++ map (:[]) inventoryC
+  let codas = ordNub $ codaCCs ++ map (:[]) inventoryC
   let nucleuss = inventoryV ++ inventoryD
 
   -- writing
   let characterSVGs = map snd alph ++ map snd syll ++ map snd logo
 
   -- parse trees
-  ptExamples <- sampleRVar $ replicateM 5 (makeParseTree mData)
+  ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree mData)
 
   -- make directory
   dir <- makeDirectory seed name 0
-  createDirectory dir
+  createDirectory (unpack dir)
 
   -- write to file a bunch of stuff
-  writeFile (dir ++ "phonology.html") $ "Phonology"
+  writeFile (unpack dir ++ "phonology.html") $ "Phonology"
                                  ++ parseConPhonemeInventory inventoryC
                                  ++ parseVowPhonemeInventory inventoryV
                                  ++ parseDiphPhonemeInventory inventoryD
 
-  writeFile (dir ++ "phonotactics.html") $ "Phonotactics"
+  writeFile (unpack dir ++ "phonotactics.html") $ "Phonotactics"
                                  ++ parseSonHier (inventoryV ++ inventoryD) sonHier
                                  ++ parseCCs onsets codas
 
-  writeFile (dir ++ "inflection.html") $ "Inflection"
+  writeFile (unpack dir ++ "inflection.html") $ "Inflection"
                                  ++ parseLCInflection inflSys
                                  ++ parseLexicalSystems inflSys sonHier systems
 
-  writeFile (dir ++ "lexicon.html") $ "Lexicon"
+  writeFile (unpack dir ++ "lexicon.html") $ "Lexicon"
                               -- ++ parseDictionary sonHier dict
                                  ++ parseRootDictionary sonHier roots
 
-  writeFile (dir ++ "grammar.html") $ "Grammar"
+  writeFile (unpack dir ++ "grammar.html") $ "Grammar"
                                  ++ parseGrammar grammar
                                  ++ concatMap (parseParseTree sonHier roots systems grammar) ptExamples
 
-  writeFile (dir ++ "writing system.html") $ "Writing System"
+  writeFile (unpack dir ++ "writing system.html") $ "Writing System"
                                  ++ parseWritingSystem (alph, syll, logo)
 
   -- createDirectory $ dir + "characters"
-  -- let t = map (\(num, str) -> (dir ++ "characters/U+" ++ show num ++ ".svg", str)) characterSVGs
+  -- let t = map (\(num, str) -> (dir ++ "characters/U+" ++ tshow num ++ ".svg", str)) characterSVGs
   -- forM_ t $ uncurry writeFile
 
 -- used when multiple languages share the same name
-makeDirectory :: Int -> String -> Int -> IO String
+makeDirectory :: Int -> Text -> Int -> IO Text
 makeDirectory seed name 0 = do
-  let dir = "out/" ++ show seed ++ "/" ++ name ++ "/"
-  exist <- doesPathExist dir
+  let dir = "out/" ++ tshow seed ++ "/" ++ name ++ "/"
+  exist <- doesPathExist (unpack dir)
   if exist then makeDirectory seed name 1 else return dir
 makeDirectory seed name count = do
-  let dir = "out/" ++ show seed ++ "/" ++ name ++ show count ++ "/"
-  exist <- doesPathExist dir
+  let dir = "out/" ++ tshow seed ++ "/" ++ name ++ tshow count ++ "/"
+  exist <- doesPathExist (unpack dir)
   if exist then makeDirectory seed name (count + 1) else return dir
 
 -- special sampleRVar that allows seeds and shit

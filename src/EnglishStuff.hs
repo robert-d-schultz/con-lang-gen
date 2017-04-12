@@ -1,8 +1,12 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module EnglishStuff
 ( englishGrammar
 , englishInflection
 , englishManifest
 ) where
+
+import ClassyPrelude
 
 import Data.Grammar
 import Data.Inflection
@@ -31,12 +35,16 @@ englishInflection = InflectionMap
                       , volSys = Manifest [(Verb, Particle, 3)] [VOL, NVOL] --"fake"
                       }
 
+englishManifest :: [(LexCat, [(LexCat, ManifestType, [(Text, AllExpress)])], [(LexCat, ManifestType, [(Text, AllExpress)])], [(LexCat, ManifestType, [(Text, AllExpress)])])]
 englishManifest = [eVerbInfl, eNounInfl, ePronInfl]
 
+eVerbInfl :: (LexCat, [(LexCat, ManifestType, [(Text, AllExpress)])], [(LexCat, ManifestType, [(Text, AllExpress)])], [(LexCat, ManifestType, [(Text, AllExpress)])])
 eVerbInfl = (Verb, [eVerbParticle1, eVerbParticle2],[],[eVerbSuffix1])
+
 eNounInfl = (Noun, [eNounParticle1],[],[eNounSuffix1])
 ePronInfl = (Pron, [ePronParticle1],[],[])
 
+ePronParticle1 :: (LexCat, ManifestType, [(Text, AllExpress)])
 ePronParticle1 = (Pron, Particle, [ ( "he", ( Express M, Express AN, Express NOM, Express SG, NoExpress, NoExpress, NoExpress, Express THIRD, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                                   , ( "him", ( Express M, Express AN, Express ACC, Express SG, NoExpress, NoExpress, NoExpress, Express THIRD, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )
                                   , ( "his", ( Express M, Express AN, Express GEN, Express SG, NoExpress, NoExpress, NoExpress, Express THIRD, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress ) )

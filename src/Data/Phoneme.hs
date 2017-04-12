@@ -1,4 +1,4 @@
--- Data types for phonemes
+{-# LANGUAGE NoImplicitPrelude #-}
 module Data.Phoneme
 ( Word(..)
 , Morpheme(..)
@@ -13,7 +13,7 @@ module Data.Phoneme
 , Tone(..)
 ) where
 
-import Prelude hiding (Word)
+import ClassyPrelude hiding (Word)
 
 newtype Word = Word { getMorphemes :: [Morpheme] } deriving (Eq, Ord, Show, Read)
 newtype Morpheme = Morpheme { getPhonemes :: [Phoneme] } deriving (Eq, Ord, Show, Read)

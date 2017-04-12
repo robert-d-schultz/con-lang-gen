@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Data.Grammar
 ( Grammar(..)
 , SubjectInitial(..)
@@ -19,6 +21,8 @@ module Data.Grammar
 , Leaf(..)
 ) where
 
+import ClassyPrelude
+
 import Data.Inflection
 
 -- Language grammar
@@ -38,20 +42,75 @@ data Grammar = Grammar
             , getQI   :: QuestionInversion
             } deriving (Show, Read)
 
+
 -- Grammar parameters
-data SubjectInitial        = SubInitial  | SubFinal    deriving (Eq, Enum, Bounded, Show, Read)
-data ObjectFinal           = ObjFinal    | ObjInitial  deriving (Eq, Enum, Bounded, Show, Read)
-data ComplementizerInitial = CompInitial | CompFinal   deriving (Eq, Enum, Bounded, Show, Read)
-data VtoIMovement          = NoVtoIMove  | OblVtoIMove deriving (Eq, Enum, Bounded, Show, Read)
-data AffixHopping          = NoAffixHop  | OblAffixHop deriving (Eq, Enum, Bounded, Show, Read)
-data NullSubject           = NoNullSub   | OptNullSub  deriving (Eq, Enum, Bounded, Show, Read)
-data ObligatoryTopic       = OblTopic    | OptTopic    deriving (Eq, Enum, Bounded, Show, Read)
-data NullTopic             = NoNullTop   | OptNullTop  deriving (Eq, Enum, Bounded, Show, Read)
-data TopicMarking          = NoTopMark   | OblTopMark  deriving (Eq, Enum, Bounded, Show, Read)
-data ItoCMovement          = NoItoCMove  | OblItoCMove deriving (Eq, Enum, Bounded, Show, Read)
-data WHMovementObligatory  = NoWHMove    | OblWHMove   deriving (Eq, Enum, Bounded, Show, Read)
-data PiedPiping            = PiedPipe    | PrepStrand  deriving (Eq, Enum, Bounded, Show, Read)
-data QuestionInversion     = NoQuesInv   | OblQuesInv  deriving (Eq, Enum, Bounded, Show, Read)
+data SubjectInitial        = SubInitial  | SubFinal    deriving (Eq, Enum, Bounded, Read)
+data ObjectFinal           = ObjFinal    | ObjInitial  deriving (Eq, Enum, Bounded, Read)
+data ComplementizerInitial = CompInitial | CompFinal   deriving (Eq, Enum, Bounded, Read)
+data VtoIMovement          = NoVtoIMove  | OblVtoIMove deriving (Eq, Enum, Bounded, Read)
+data AffixHopping          = NoAffixHop  | OblAffixHop deriving (Eq, Enum, Bounded, Read)
+data NullSubject           = NoNullSub   | OptNullSub  deriving (Eq, Enum, Bounded, Read)
+data ObligatoryTopic       = OblTopic    | OptTopic    deriving (Eq, Enum, Bounded, Read)
+data NullTopic             = NoNullTop   | OptNullTop  deriving (Eq, Enum, Bounded, Read)
+data TopicMarking          = NoTopMark   | OblTopMark  deriving (Eq, Enum, Bounded, Read)
+data ItoCMovement          = NoItoCMove  | OblItoCMove deriving (Eq, Enum, Bounded, Read)
+data WHMovementObligatory  = NoWHMove    | OblWHMove   deriving (Eq, Enum, Bounded, Read)
+data PiedPiping            = PiedPipe    | PrepStrand  deriving (Eq, Enum, Bounded, Read)
+data QuestionInversion     = NoQuesInv   | OblQuesInv  deriving (Eq, Enum, Bounded, Read)
+
+-- show instances
+instance Show SubjectInitial where
+  show si = case si of SubInitial -> "Specifier initial"
+                       SubFinal -> "Specifier final"
+
+instance Show ObjectFinal where
+  show ob = case ob of ObjFinal -> "Object final"
+                       ObjInitial -> "Object initial"
+
+instance Show ComplementizerInitial where
+  show pc = case pc of CompInitial -> "(Non-object) Head initial"
+                       CompFinal -> "(Non-object) Head final"
+
+instance Show VtoIMovement where
+  show vi = case vi of NoVtoIMove -> "No V to I movement"
+                       OblVtoIMove -> "Obligatory V to I movement"
+
+instance Show AffixHopping where
+  show ah = case ah of NoAffixHop -> "No affix hoping"
+                       OblAffixHop -> "Obligatory affix hoping"
+
+instance Show NullSubject where
+  show ns = case ns of NoNullSub -> "No null subject"
+                       OptNullSub -> "Optional null subject"
+
+instance Show ObligatoryTopic where
+  show ot = case ot of OblTopic -> "Obligatory topic"
+                       OptTopic -> "Optional topic"
+
+instance Show NullTopic where
+  show nt = case nt of NoNullTop -> "No null topic"
+                       OptNullTop -> "Optional null topic"
+
+instance Show TopicMarking where
+  show tm = case tm of NoTopMark -> "No topic marking"
+                       OblTopMark -> "Obligatory topic marking"
+
+instance Show ItoCMovement where
+  show ic = case ic of NoItoCMove -> "No I to C movement"
+                       OblItoCMove -> "Obligatory I to C movement"
+
+instance Show WHMovementObligatory where
+  show wm = case wm of NoWHMove -> "No WH-movement"
+                       OblWHMove -> "Obligatory WH-movement"
+
+instance Show PiedPiping where
+  show pp = case pp of PiedPipe -> "Piedpiping"
+                       PrepStrand -> "Preposition stranding"
+
+instance Show QuestionInversion where
+  show qi = case qi of NoQuesInv -> "No question inversion"
+                       OblQuesInv -> "Obligatory question inversion"
+
 
 -- Parse tree, keep it simple stupid
 data Illoc = Null | Ques | Decl | Imper deriving (Eq, Enum, Show)
@@ -85,5 +144,5 @@ data Leaf = LeafNull Illoc
           | Leaf
           { leafLC  :: LexCat
           , leafIl  :: Illoc
-          , leafStr :: String
+          , leafStr :: Text
           } deriving (Eq, Show)
