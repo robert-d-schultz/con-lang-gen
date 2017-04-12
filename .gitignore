@@ -1,3 +1,5 @@
 /.stack-work
 /doc
 *.pyc
+out/*
+!out/dummy.txt
