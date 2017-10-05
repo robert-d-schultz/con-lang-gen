@@ -32,7 +32,7 @@ makeLanguageTree_ iter idata mData lang = do
   -- less branching early on
   let weight | iter > 4 = [0]
              | iter < 2 = [1,1,2]
-             | otherwise = [0,0,0,1,1,1,1,2,3,4]
+             | otherwise = [1,1,2] -- [0,0,0,1,1,1,1,2,3,4]
 
   child_n <- choice weight
 

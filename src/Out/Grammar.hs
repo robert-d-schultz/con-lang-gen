@@ -2,7 +2,7 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 
 module Out.Grammar
-( parseGrammar
+( writeGrammar
 ) where
 
 import ClassyPrelude
@@ -10,8 +10,8 @@ import ClassyPrelude
 import Data.Grammar
 
 -- Parse grammar system
-parseGrammar :: Grammar -> Text
-parseGrammar (Grammar si ob ci vi ah ns ot nt tm ic wm pp qi) = "\nParameters:" ++ out where
+writeGrammar :: Grammar -> Text
+writeGrammar (Grammar si ob ci vi ah ns ot nt tm ic wm pp qi) = "\nParameters:" ++ out where
   out = "\n\t*" ++ intercalate "\n\t*" [ tshow si
                                   , tshow ob
                                   , tshow ci

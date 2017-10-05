@@ -1,7 +1,6 @@
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
+{-# LANGUAGE OverloadedStrings, NoImplicitPrelude #-}
 module Out.IPA
-( parsePhonemeIPA
+( writePhonemeIPA
 ) where
 
 import ClassyPrelude
@@ -9,11 +8,11 @@ import ClassyPrelude
 import Data.Phoneme
 
 -- parse phoneme into a string
-parsePhonemeIPA :: Phoneme -> Text
-parsePhonemeIPA Blank = ""
-parsePhonemeIPA (Consonant p m h) = retrieveCSymbol p m h
-parsePhonemeIPA (Vowel h b r l t) = retrieveVSymbol h b r l t
-parsePhonemeIPA (Diphthong h1 b1 r1 h2 b2 r2 l t) = retrieveVSymbol h1 b1 r1 l t ++ retrieveVSymbol h2 b2 r2 l t ++ "\815"
+writePhonemeIPA :: Phoneme -> Text
+writePhonemeIPA Blank = ""
+writePhonemeIPA (Consonant p m h) = retrieveCSymbol p m h
+writePhonemeIPA (Vowel h b r l t) = retrieveVSymbol h b r l t
+writePhonemeIPA (Diphthong h1 b1 r1 h2 b2 r2 l t) = retrieveVSymbol h1 b1 r1 l t ++ retrieveVSymbol h2 b2 r2 l t ++ "\815"
 
 -- Decides what IPA symbol to use, essentially
 retrieveCSymbol :: Place -> Manner -> Phonation -> Text

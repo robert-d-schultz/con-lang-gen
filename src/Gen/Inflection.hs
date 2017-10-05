@@ -18,7 +18,8 @@ import Data.Other
 import Data.Inflection
 import Data.Grammar
 
--- Creates an inflection map
+-- Outputs an inflection map as well as the number of Particles,Prefixes,Suffixes there are for each LexCat
+-- Example: [(Noun, 2, 0, 0), (Verb, 0, 2, 0)] means Nouns have two particles, Verbs have two prefixes
 makeInflectionMap :: InputData -> RVar (InflectionMap, [(LexCat, Int, Int, Int)])
 makeInflectionMap idata = do
   (genSys, genNs) <- fooGender idata
@@ -40,6 +41,8 @@ makeInflectionMap idata = do
   (volSys, volNs) <- fooVolition idata traNs
   return (InflectionMap genSys aniSys casSys numSys defSys speSys topSys perSys honSys polSys tenSys aspSys mooSys voiSys eviSys traSys volSys, volNs)
 
+-- Each new GramCat can either be expressed in a new Part/Pref/Suff or an existing one
+-- These two functions basically decide that
 bar :: [(LexCat, Int, Int, Int)] -> [(LexCat, ManifestType, Int)] -> [LexCat] -> RVar ([(LexCat, ManifestType, Int)], [(LexCat, Int, Int, Int)])
 bar ks ts [] = return (ts,ks)
 bar ks ts lcs = do
@@ -54,8 +57,9 @@ rab lcs lc2 = join out where
       | otherwise = head fu
     (lc, part, pref, suff) = shit
 
+    -- decide between Particle, Prefix, Suffix
     out = choice [ do
-                   i <- uniform 1 (part+1)
+                   i <- uniform 1 (part+1) -- decide between an existing one or a new one
                    return ((lc, Particle, i), (lc, max i part, pref, suff) : ba)
                  , do
                    j <- uniform 1 (pref+1)
@@ -67,11 +71,15 @@ rab lcs lc2 = join out where
 
 fooGender :: InputData -> RVar (Manifest Gender, [(LexCat, Int, Int, Int)])
 fooGender idata = do
+  -- pick the gender system...
   gens <- makeGenders idata
+  -- pick which lexcats gender manifests on (related to agreement)
   i <- uniform 0 2
   cats <- (++) [Noun] <$> sample i [Adj, Verb]
+  -- bar function... no idea what it does
   (ts, ks) <- bar [] [] cats
-  choice [(NoManifest, []), (Manifest ts (UGEN : gens), ks)]
+  -- decide if gender even manifests itself at all
+  choice [(NoManifest, []), (Manifest ts gens, ks)]
 
 fooAnimacy :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Animacy, [(LexCat, Int, Int, Int)])
 fooAnimacy idata genNs = do
@@ -79,7 +87,7 @@ fooAnimacy idata genNs = do
   i <- uniform 0 2
   cats <- (++) [Noun] <$> sample i [Adj, Verb]
   (ts, ns) <- bar genNs [] cats
-  choice [(NoManifest, genNs), (Manifest ts (UANI : anis), ns)]
+  choice [(NoManifest, genNs), (Manifest ts anis, ns)]
 
 fooCase :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Case, [(LexCat, Int, Int, Int)])
 fooCase idata aniNs = do
@@ -87,7 +95,7 @@ fooCase idata aniNs = do
   i <- uniform 0 2
   cats <- (++) [Noun] <$> sample i [Adj, Verb]
   (ts, ns) <- bar aniNs [] cats
-  choice [(NoManifest, aniNs), (Manifest ts (UCAS : cass), ns)]
+  choice [(NoManifest, aniNs), (Manifest ts cass, ns)]
 
 fooNumber :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Number, [(LexCat, Int, Int, Int)])
 fooNumber idata casNs = do
@@ -95,7 +103,7 @@ fooNumber idata casNs = do
   i <- uniform 0 2
   cats <- (++) [Noun] <$> sample i [Adj, Verb]
   (ts, ns) <- bar casNs [] cats
-  choice [(NoManifest, casNs), (Manifest ts (UNUM : nums), ns)]
+  choice [(NoManifest, casNs), (Manifest ts nums, ns)]
 
 fooDefiniteness :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Definiteness, [(LexCat, Int, Int, Int)])
 fooDefiniteness idata numNs = do
@@ -103,7 +111,7 @@ fooDefiniteness idata numNs = do
   i <- uniform 0 2
   cats <- (++) [Noun] <$> sample i [Adj, Verb]
   (ts, ns) <- bar numNs [] cats
-  choice [(NoManifest, numNs), (Manifest ts (UDEF : defs), ns)]
+  choice [(NoManifest, numNs), (Manifest ts defs, ns)]
 
 fooSpecificity :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Specificity, [(LexCat, Int, Int, Int)])
 fooSpecificity idata defNs = do
@@ -111,7 +119,7 @@ fooSpecificity idata defNs = do
   i <- uniform 0 2
   cats <- (++) [Noun] <$> sample i [Adj, Verb]
   (ts, ns) <- bar defNs [] cats
-  choice [(NoManifest, defNs), (Manifest ts (USPE : spes), ns)]
+  choice [(NoManifest, defNs), (Manifest ts spes, ns)]
 
 fooTopic :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Topic, [(LexCat, Int, Int, Int)])
 fooTopic idata speNs = do
@@ -119,7 +127,7 @@ fooTopic idata speNs = do
   i <- uniform 0 2
   cats <- (++) [Noun] <$> sample i [Adj, Verb]
   (ts, ns) <- bar speNs [] cats
-  choice [(NoManifest, speNs), (Manifest ts (UTOP : tops), ns)]
+  choice [(NoManifest, speNs), (Manifest ts tops, ns)]
 
 fooPerson :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Person, [(LexCat, Int, Int, Int)])
 fooPerson idata topNs = do
@@ -127,7 +135,7 @@ fooPerson idata topNs = do
   i <- uniform 0 2
   cats <- (++) [Noun] <$> sample i [Adj, Verb]
   (ts, ns) <- bar topNs [] cats
-  choice [(NoManifest, topNs), (Manifest ts (UPER : pers), ns)]
+  choice [(NoManifest, topNs), (Manifest ts pers, ns)]
 
 fooHonorific :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Honorific, [(LexCat, Int, Int, Int)])
 fooHonorific idata perNs = do
@@ -140,7 +148,7 @@ fooHonorific idata perNs = do
   norv <- sample k [cats1, cats2]
   let cats = head norv `union` last norv
   (ts, ns) <- bar perNs [] cats
-  choice [(NoManifest, perNs), (Manifest ts (UHON : hons), ns)]
+  choice [(NoManifest, perNs), (Manifest ts hons, ns)]
 
 fooPolarity :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Polarity, [(LexCat, Int, Int, Int)])
 fooPolarity idata honNs = do
@@ -153,7 +161,7 @@ fooPolarity idata honNs = do
   norv <- sample k [cats1, cats2]
   let cats = head norv `union` last norv
   (ts, ns) <- bar honNs [] cats
-  choice [(NoManifest, honNs), (Manifest ts (UPOL : pols), ns)]
+  choice [(NoManifest, honNs), (Manifest ts pols, ns)]
 
 fooTense :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Tense, [(LexCat, Int, Int, Int)])
 fooTense idata polNs = do
@@ -161,7 +169,7 @@ fooTense idata polNs = do
   i <- uniform 0 2
   cats <- (:) Verb <$> sample i [Adv, Noun]
   (ts, ns) <- bar polNs [] cats
-  choice [(NoManifest, polNs), (Manifest ts (UTEN : tens), ns)]
+  choice [(NoManifest, polNs), (Manifest ts tens, ns)]
 
 fooAspect :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Aspect, [(LexCat, Int, Int, Int)])
 fooAspect idata tenNs = do
@@ -169,7 +177,7 @@ fooAspect idata tenNs = do
   i <- uniform 0 2
   cats <- (:) Verb <$> sample i [Adv, Noun]
   (ts, ns) <- bar tenNs [] cats
-  choice [(NoManifest, tenNs), (Manifest ts (UASP : asps), ns)]
+  choice [(NoManifest, tenNs), (Manifest ts asps, ns)]
 
 fooMood :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Mood, [(LexCat, Int, Int, Int)])
 fooMood idata aspNs = do
@@ -177,7 +185,7 @@ fooMood idata aspNs = do
   i <- uniform 0 2
   cats <- (:) Verb <$> sample i [Adv, Noun]
   (ts, ns) <- bar aspNs [] cats
-  choice [(NoManifest, aspNs), (Manifest ts (UMOO : moos), ns)]
+  choice [(NoManifest, aspNs), (Manifest ts moos, ns)]
 
 fooVoice :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Voice, [(LexCat, Int, Int, Int)])
 fooVoice idata mooNs = do
@@ -185,7 +193,7 @@ fooVoice idata mooNs = do
   i <- uniform 0 2
   cats <- (:) Verb <$> sample i [Adv, Noun]
   (ts, ns) <- bar mooNs [] cats
-  choice [(NoManifest, mooNs), (Manifest ts (UVOI : vois), ns)]
+  choice [(NoManifest, mooNs), (Manifest ts vois, ns)]
 
 fooEvidentiality :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Evidentiality, [(LexCat, Int, Int, Int)])
 fooEvidentiality idata voiNs = do
@@ -193,7 +201,7 @@ fooEvidentiality idata voiNs = do
   i <- uniform 0 2
   cats <- (:) Verb <$> sample i [Adv, Noun]
   (ts, ns) <- bar voiNs [] cats
-  choice [(NoManifest, voiNs), (Manifest ts (UEVI : evis), ns)]
+  choice [(NoManifest, voiNs), (Manifest ts evis, ns)]
 
 fooTransitivity :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Transitivity, [(LexCat, Int, Int, Int)])
 fooTransitivity idata eviNs = do
@@ -201,7 +209,7 @@ fooTransitivity idata eviNs = do
   i <- uniform 0 2
   cats <- (:) Verb <$> sample i [Adv, Noun]
   (ts, ns) <- bar eviNs [] cats
-  choice [(NoManifest, eviNs), (Manifest ts (UTRA : tras), ns)]
+  choice [(NoManifest, eviNs), (Manifest ts tras, ns)]
 
 fooVolition :: InputData -> [(LexCat, Int, Int, Int)] -> RVar (Manifest Volition, [(LexCat, Int, Int, Int)])
 fooVolition idata traNs = do
@@ -209,7 +217,7 @@ fooVolition idata traNs = do
   i <- uniform 0 2
   cats <- (:) Verb <$> sample i [Adv, Noun]
   (ts, ns) <- bar traNs [] cats
-  choice [(NoManifest, traNs), (Manifest ts (UVOL : vols), ns)]
+  choice [(NoManifest, traNs), (Manifest ts vols, ns)]
 
 -- Will expand these eventually
 makeGenders :: InputData -> RVar [Gender]

@@ -2,8 +2,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 module Out.Inflection
-( parseLCInflection
-, parseLexicalSystems
+( writeLCInflection
+, writeLexicalSystems
 ) where
 
 import ClassyPrelude hiding (Word)
@@ -15,12 +15,12 @@ import Gen.Morphology
 import Out.Lexicon
 
 -- Parse inflection system (per lex cat)
-parseLCInflection :: InflectionMap -> Text
-parseLCInflection inflSys = concatMap (parseInflectionMap inflSys) [Noun, Adj, Adv, Adpo, Verb]
+writeLCInflection :: InflectionMap -> Text
+writeLCInflection inflSys = concatMap (writeInflectionMap inflSys) [Noun, Adj, Adv, Adpo, Verb]
 
 -- Parse inflection map (gives summary)
-parseInflectionMap :: InflectionMap -> LexCat -> Text
-parseInflectionMap inflSys lc = output where
+writeInflectionMap :: InflectionMap -> LexCat -> Text
+writeInflectionMap inflSys lc = output where
   output
     | null (particles ++ prefixes ++ suffixes) = "<br>\nNo grammatical categories manifest for " ++ tshow lc ++ "s.\n"
     | otherwise = "<br>\nGrammatical categories manifest for " ++ tshow lc ++ "s in the following ways:\n<ul>" ++ particles ++ prefixes ++ suffixes ++ "</ul>\n"
@@ -90,31 +90,31 @@ parseInflectionMap inflSys lc = output where
     filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Particle) t
 
 
--- parse inflections into tables
+-- write inflections to tables
 -- tables organized by lexical category and manifest type
-parseLexicalSystems :: InflectionMap -> [[Phoneme]] -> [ManifestSystem] -> Text
-parseLexicalSystems inflSys sonHier infls = "<br>\n" ++ concatMap (parseLexicalSystems_ inflSys sonHier infls) [Noun, Adj, Verb, Adv]
+writeLexicalSystems :: InflectionMap -> [[Phoneme]] -> [ManifestSystem] -> Text
+writeLexicalSystems inflSys sonHier infls = "<br>\n" ++ concatMap (writeLexicalSystems_ inflSys sonHier infls) [Noun, Adj, Verb, Adv]
 
 
-parseLexicalSystems_ :: InflectionMap -> [[Phoneme]] -> [ManifestSystem] -> LexCat -> Text
-parseLexicalSystems_ inflSys sonHier infls lc = "<br>\n" ++ tshow lc
-                                                         ++ parseManifestSystems parts sonHier (length parts) inflSys
-                                                         ++ parseManifestSystems prefs sonHier (length prefs) inflSys
-                                                         ++ parseManifestSystems suffs sonHier (length suffs) inflSys  where
+writeLexicalSystems_ :: InflectionMap -> [[Phoneme]] -> [ManifestSystem] -> LexCat -> Text
+writeLexicalSystems_ inflSys sonHier infls lc = "<br>\n" ++ tshow lc
+                                                         ++ writeManifestSystems parts sonHier (length parts) inflSys
+                                                         ++ writeManifestSystems prefs sonHier (length prefs) inflSys
+                                                         ++ writeManifestSystems suffs sonHier (length suffs) inflSys  where
   parts = filter (\x -> manSysType x == Particle && manSysLC x == lc) infls
   prefs = filter (\x -> manSysType x == Prefix && manSysLC x == lc) infls
   suffs = filter (\x -> manSysType x == Suffix && manSysLC x == lc) infls
 
-parseManifestSystems :: [ManifestSystem] -> [[Phoneme]] -> Int -> InflectionMap -> Text
-parseManifestSystems _ _ 0 _ = ""
-parseManifestSystems [] _ _ _ = ""
-parseManifestSystems expSyss sonHier i gramSys = fromMaybe "" out where
+writeManifestSystems :: [ManifestSystem] -> [[Phoneme]] -> Int -> InflectionMap -> Text
+writeManifestSystems _ _ 0 _ = ""
+writeManifestSystems [] _ _ _ = ""
+writeManifestSystems expSyss sonHier i gramSys = fromMaybe "" out where
   out = do
     lst <- lastMay expSyss
     ini <- initMay expSyss
     let ManifestSystem lc mt xs = lst
     let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc mt i
-    let txt = parseManifestSystems ini sonHier (i-1) gramSys ++ parseManifestSystem lst sonHier gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol
+    let txt = writeManifestSystems ini sonHier (i-1) gramSys ++ writeManifestSystem lst sonHier gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol
     return txt
 
 
@@ -122,18 +122,18 @@ parseManifestSystems expSyss sonHier i gramSys = fromMaybe "" out where
 -- Parse a manifestation system (particles/declensions) into an html table
 -- Horizontal: Case, Gender, Animacy, Number, Honorific, Transitivity, Evidentiality, Voice, Volition (9)
 -- Vertical:   Tense, Aspect, Mood, Person, Clusivity, Definiteness, Specificity, Polarity, Topic     (9)
-parseManifestSystem :: ManifestSystem -> [[Phoneme]] -> [Express Gender] -> [Express Animacy] -> [Express Case] -> [Express Number] -> [Express Definiteness] -> [Express Specificity] -> [Express Topic] -> [Express Person] -> [Express Honorific] -> [Express Polarity] -> [Express Tense] -> [Express Aspect] -> [Express Mood] -> [Express Voice] -> [Express Evidentiality] -> [Express Transitivity] -> [Express Volition] -> Text
-parseManifestSystem manSys sonHier gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols  = "<br>\n<table border=1>" ++ title ++ header ++ exarows ++ "\n</table>\n" where
+writeManifestSystem :: ManifestSystem -> [[Phoneme]] -> [Express Gender] -> [Express Animacy] -> [Express Case] -> [Express Number] -> [Express Definiteness] -> [Express Specificity] -> [Express Topic] -> [Express Person] -> [Express Honorific] -> [Express Polarity] -> [Express Tense] -> [Express Aspect] -> [Express Mood] -> [Express Voice] -> [Express Evidentiality] -> [Express Transitivity] -> [Express Volition] -> Text
+writeManifestSystem manSys sonHier gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols  = "<br>\n<table border=1>" ++ title ++ header ++ exarows ++ "\n</table>\n" where
 
   -- title
   hls = [length cass,length gens,length anis,length nums,length hons,length tras,length evis,length vois,length vols]
-  title = "\n\t<tr>\n\t\t<th colspan=\"" ++ tshow (product hls + 9) ++ "\">" ++ parseSystemType manSys ++ "</th>\n\t</tr>"
+  title = "\n\t<tr>\n\t\t<th colspan=\"" ++ tshow (product hls + 9) ++ "\">" ++ writeSystemType manSys ++ "</th>\n\t</tr>"
 
 
-  parseSystemType :: ManifestSystem -> Text
-  parseSystemType (ManifestSystem _ Particle _) = "Particle"
-  parseSystemType (ManifestSystem _ Prefix _)   = "Prefix"
-  parseSystemType (ManifestSystem _ Suffix _)   = "Suffix"
+  writeSystemType :: ManifestSystem -> Text
+  writeSystemType (ManifestSystem _ Particle _) = "Particle"
+  writeSystemType (ManifestSystem _ Prefix _)   = "Prefix"
+  writeSystemType (ManifestSystem _ Suffix _)   = "Suffix"
 
   -- header
   horLabels = [map tshow cass, map tshow gens, map tshow anis, map tshow nums, map tshow hons, map tshow tras, map tshow evis, map tshow vois, map tshow vols]
@@ -231,10 +231,10 @@ parseManifestSystem manSys sonHier gens anis cass nums defs spes tops pers hons 
   getMorpheme :: ManifestSystem -> [[Phoneme]] -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> Express Transitivity -> Express Evidentiality -> Express Voice -> Express Volition -> Text
   getMorpheme (ManifestSystem _ Particle combos) sonHier ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
     filt = find (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
-    output = parseMorphemeIPA sonHier <$> (fst <$> filt)
+    output = writeMorphemeIPA sonHier <$> (fst <$> filt)
   getMorpheme (ManifestSystem _ Prefix combos) sonHier ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
     filt = find (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
-    output = (++ "–") <$> (parseMorphemeIPA sonHier <$> (fst <$> filt))
+    output = (++ "–") <$> (writeMorphemeIPA sonHier <$> (fst <$> filt))
   getMorpheme (ManifestSystem _ Suffix combos) sonHier ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
     filt = find (\(morph, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
-    output = (++) "–" <$> (parseMorphemeIPA sonHier <$> (fst <$> filt))
+    output = (++) "–" <$> (writeMorphemeIPA sonHier <$> (fst <$> filt))

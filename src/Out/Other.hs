@@ -1,9 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 module Out.Other
-( parseSonHier
-, parseCCs
-, parseLanguageTreeN
+( writeSonHier
+, writeCCs
+, writeLanguageTreeN
 ) where
 
 import ClassyPrelude
@@ -13,25 +13,25 @@ import Data.Phoneme
 
 import Out.Lexicon
 
--- Parse the sonority hierarchy
-parseSonHier :: [Phoneme] -> [[Phoneme]] -> Text
-parseSonHier vows cons = "\n\nSonority hierarchy: " ++ "\n/" ++ cListv ++ "/\n/" ++ intercalate "/\n/" cListc ++ "/\n" where
-  fListv = map parsePhonemeIPA vows
+-- write the sonority hierarchy
+writeSonHier :: [Phoneme] -> [[Phoneme]] -> Text
+writeSonHier vows cons = "\n\nSonority hierarchy: " ++ "\n/" ++ cListv ++ "/\n/" ++ intercalate "/\n/" cListc ++ "/\n" where
+  fListv = map writePhonemeIPA vows
   cListv = intercalate "/, /" fListv
-  fListc = map (map parsePhonemeIPA) cons
+  fListc = map (map writePhonemeIPA) cons
   cListc = map (intercalate "/, /") fListc
 
-parseCCs :: [[Phoneme]] -> [[Phoneme]] -> Text
-parseCCs onsets codas = "\n\nValid onsets: " ++ "\n/" ++ intercalate "/\n/" oList ++ "/" ++ "\n\nValid codas: " ++ "\n/" ++ intercalate "/\n/" cList ++ "/\n" where
-  oList = map (concatMap parsePhonemeIPA) onsets
-  cList = map (concatMap parsePhonemeIPA) codas
+writeCCs :: [[Phoneme]] -> [[Phoneme]] -> Text
+writeCCs onsets codas = "\n\nValid onsets: " ++ "\n/" ++ intercalate "/\n/" oList ++ "/" ++ "\n\nValid codas: " ++ "\n/" ++ intercalate "/\n/" cList ++ "/\n" where
+  oList = map (concatMap writePhonemeIPA) onsets
+  cList = map (concatMap writePhonemeIPA) codas
 
 
--- Parse language branches into Newick format
-parseLanguageTreeN :: LanguageBranch -> Text
-parseLanguageTreeN tree = parseLanguageBranchN tree ++ ";"
+-- write language branches into Newick format
+writeLanguageTreeN :: LanguageBranch -> Text
+writeLanguageTreeN tree = writeLanguageBranchN tree ++ ";"
 
-parseLanguageBranchN :: LanguageBranch -> Text
-parseLanguageBranchN (LanguageBranch lang [] n) = getName lang -- ++ ":" ++ show (fromIntegral n / 10)
-parseLanguageBranchN (LanguageBranch lang branches n) = branchStuff ++ getName lang where -- ++ ":" ++ show (fromIntegral n / 10) where
-  branchStuff = "(" ++ intercalate "," (map parseLanguageBranchN branches) ++ ")"
+writeLanguageBranchN :: LanguageBranch -> Text
+writeLanguageBranchN (LanguageBranch lang [] n) = getName lang -- ++ ":" ++ show (fromIntegral n / 10)
+writeLanguageBranchN (LanguageBranch lang branches n) = branchStuff ++ getName lang where -- ++ ":" ++ show (fromIntegral n / 10) where
+  branchStuff = "(" ++ intercalate "," (map writeLanguageBranchN branches) ++ ")"

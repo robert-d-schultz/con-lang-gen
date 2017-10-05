@@ -44,12 +44,13 @@ showTuple ss = showChar '('
 deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, Eq k, Eq l, Eq m, Eq n, Eq o, Eq p, Eq q) => Eq (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q)
 
 -- Manifest (list of places) (list of stuff that manifests there)
-data Manifest a = NoManifest | Manifest [(LexCat, ManifestType, Int)] [a] deriving (Eq, Read)
+data Manifest a = NoManifest | Manifest { getManPlace :: [(LexCat, ManifestType, Int)], getManStuff :: [a] } deriving (Eq, Read)
 
 instance Show a => Show (Manifest a) where
   show NoManifest = ""
   show (Manifest _ []) = ""
   show (Manifest _ [x]) = show x
+  show (Manifest _ [x,y]) = show x ++ " and " ++ show y
   show (Manifest _ (x:xs)) = intercalate ", " (map show xs) ++ ", and " ++ show x
 
 data Express a  = NoExpress
@@ -61,6 +62,7 @@ instance Show a => Show (Express a) where
 
 data ManifestType = Particle | Prefix | Suffix deriving (Eq, Show, Read)
 
+-- Lexical categories
 data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Obj | Subj | Pron deriving (Eq, Enum, Read)
 instance Show LexCat where
   show lc = case lc of Subj -> "Subject"
@@ -71,7 +73,7 @@ instance Show LexCat where
                        Adpo -> "Adposition"
                        Verb -> "Verb"
 
--- Inflection system for nouns
+-- Inflection system
 data InflectionMap = InflectionMap
                       { genSys :: Manifest Gender
                       , aniSys :: Manifest Animacy
@@ -94,8 +96,8 @@ data InflectionMap = InflectionMap
 
 -- Grammatical categories
 -- For nouns
-data Gender        = UGEN | M | F | COM | N  deriving (Eq, Read)
-data Animacy       = UANI | AN | HUM | NHUM | ZO | INAN deriving (Eq, Read)
+data Gender        = UGEN | M | F | COM | N  deriving (Eq, Read, Show)
+data Animacy       = UANI | AN | HUM | NHUM | ZO | INAN deriving (Eq, Read, Show)
 data Case          = UCAS | INTR | ACC | ERG | PEG | INDIR | SEC
                    | NOM | ABS | MTR | DIR | PRIM | ERG2
                    | NOM2 | ABS2 | ABS3 | DTR | OBJ | DRT1
@@ -108,29 +110,29 @@ data Case          = UCAS | INTR | ACC | ERG | PEG | INDIR | SEC
                    | DAT | INS | COMIT | INSCOMIT | ORN | BEN
                    | CAUS | DISTR
                    | GEN | POSS | PART
-                   | VOC deriving (Eq, Read)
-data Number        = UNUM | SG | DU | TRI | PA | PL deriving (Eq, Read)
-data Definiteness  = UDEF | DEF | INDF deriving (Eq, Read)
-data Specificity   = USPE | SPEC | NSPEC deriving (Eq, Read)
-data Topic         = UTOP | TOP | NTOP deriving (Eq, Read)
-data Person        = UPER | FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THRDOBV deriving (Eq, Read)
+                   | VOC deriving (Eq, Read, Show)
+data Number        = UNUM | SG | DU | TRI | PA | PL deriving (Eq, Read, Show)
+data Definiteness  = UDEF | DEF | INDF deriving (Eq, Read, Show)
+data Specificity   = USPE | SPEC | NSPEC deriving (Eq, Read, Show)
+data Topic         = UTOP | TOP | NTOP deriving (Eq, Read, Show)
+data Person        = UPER | FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THRDOBV deriving (Eq, Read, Show)
 -- For nouns and verbs
-data Honorific     = UHON | FAM | NEU | FORM deriving (Eq, Read)
-data Polarity      = UPOL | AFF | NEG deriving (Eq, Read)
+data Honorific     = UHON | FAM | NEU | FORM deriving (Eq, Read, Show)
+data Polarity      = UPOL | AFF | NEG deriving (Eq, Read, Show)
 -- For verbs
 data Tense         = UTEN | PST | PRS | FUT
                    | APRS | APST
                    | AFUT | AFUT1 | AFUT2 | AFUT3
                    | PPRS | PFUT
                    | PPST | PPST1 | PPST2 | PPST3
-                   | PSTPER | PRSPER | FUTPER deriving (Eq, Read)
-data Aspect        = UASP | NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Eq, Read)
-data Mood          = UMOO | IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Eq, Read)
-data Voice         = UVOI | ACTIVE | MIDDLE | PASSIVE deriving (Eq, Read)
-data Evidentiality = UEVI | EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Eq, Read)
-data Transitivity  = UTRA | NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Read)
-data Volition      = UVOL | VOL | NVOL deriving (Eq, Read)
-
+                   | PSTPER | PRSPER | FUTPER deriving (Eq, Read, Show)
+data Aspect        = UASP | NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Eq, Read, Show)
+data Mood          = UMOO | IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Eq, Read, Show)
+data Voice         = UVOI | ACTIVE | MIDDLE | PASSIVE deriving (Eq, Read, Show)
+data Evidentiality = UEVI | EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Eq, Read, Show)
+data Transitivity  = UTRA | NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Read, Show)
+data Volition      = UVOL | VOL | NVOL deriving (Eq, Read, Show)
+{-
 -- show instances
 instance Show Gender where
   show gen = case gen of UGEN -> "Unknown"
@@ -297,7 +299,7 @@ instance Show Volition where
   show vol = case vol of UVOL -> "Unknown"
                          VOL  -> "Intended"
                          NVOL -> "Unintended"
-
+-}
 -- Particle/Affix system
 data ManifestSystem = ManifestSystem
                     { manSysLC :: LexCat
