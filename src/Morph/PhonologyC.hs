@@ -1,6 +1,5 @@
-module Morph.Phonology
+module Morph.PhonologyC
 ( morphPhonologyC
-, morphPhonologyV
 ) where
 
 import Data.RVar
@@ -18,8 +17,9 @@ import Gen.Phonology
 import Gen.Phonotactics
 
 morphPhonologyC :: Language -> RVar Language
-morphPhonologyC lang = join $ choice [morphPlace lang]
-
+morphPhonologyC lang = join $ choice [ morphPlace lang
+                                     , morphManner lang
+                                     ]
 
 -- morph place of articulation
 morphPlace :: Language -> RVar Language
@@ -113,13 +113,12 @@ deletePlace plc lang = do
 
   return lang{getCMap = cMapN, getRoots = rootsN, getManSyss = manSyssN}
 
--- used for deleting
+-- used for deleting places
 subPlaceOut :: Place -> [Phoneme] -> Phoneme -> RVar Phoneme
 subPlaceOut plc cons (Consonant p m h)
   | plc == p = choice cons
   | otherwise = return (Consonant p m h)
 subPlaceOut _ _ x = return x
-
 
 -- split a place of articulation
 splitPlace :: Place -> [Place] -> Language -> RVar Language
@@ -185,6 +184,96 @@ exceptUpdate fromPlcs toPlc e
   | otherwise = head e : exceptUpdate fromPlcs toPlc (tail e)
 
 
--- vowel shifts...
-morphPhonologyV :: ([Height], [Backness], [Roundedness], [Length], [Tone], [Phoneme]) -> RVar ([Height], [Backness], [Roundedness], [Length], [Tone], [Phoneme])
-morphPhonologyV (heights, backs, rounds, lengths, tones, exceptions) = return (heights, backs, rounds, lengths, tones, exceptions)
+-- morph manner of articulation
+morphManner :: Language -> RVar Language
+morphManner lang = do
+  let (_,manners,_,_) = getCMap lang
+  let opts = [ (insertManner NASAL lang, NASAL `notElem` manners)
+             , (insertManner FLAP lang, FLAP `notElem` manners)
+             , (insertManner LFLAP lang, LFLAP `notElem` manners && FLAP `elem` manners)
+             , (insertManner FRICATIVE lang, FRICATIVE `notElem` manners)
+             , (insertManner AFFRICATE lang, AFFRICATE `notElem` manners && FRICATIVE `elem` manners)
+             , (insertManner SILIBANT lang, SILIBANT `notElem` manners && FRICATIVE `elem` manners)
+             , (insertManner LFRICATIVE lang, LFRICATIVE `notElem` manners && FRICATIVE `elem` manners)
+             , (insertManner LAFFRICATE lang, LAFFRICATE `notElem` manners && AFFRICATE `elem` manners)
+             , (insertManner SAFFRICATE lang, SAFFRICATE `notElem` manners && AFFRICATE `elem` manners)
+             , (insertManner APPROXIMANT lang, APPROXIMANT `notElem` manners)
+             , (insertManner LAPPROXIMANT lang, LAPPROXIMANT `notElem` manners && APPROXIMANT `elem` manners)
+             , (insertManner TRILL lang, TRILL `notElem` manners)
+
+             , (deleteManner NASAL lang, NASAL `elem` manners)
+             , (deleteManner FLAP lang, FLAP `elem` manners && LFLAP `notElem` manners)
+             , (deleteManner LFLAP lang, LFLAP `elem` manners)
+             , (deleteManner FRICATIVE lang, FRICATIVE `elem` manners && all (`notElem` manners) [AFFRICATE, SILIBANT, LFRICATIVE])
+             , (deleteManner AFFRICATE lang, AFFRICATE `elem` manners && all (`notElem` manners) [LAFFRICATE, SAFFRICATE])
+             , (deleteManner SILIBANT lang, SILIBANT `elem` manners)
+             , (deleteManner LFRICATIVE lang, LFRICATIVE `elem` manners)
+             , (deleteManner LAFFRICATE lang, LAFFRICATE `elem` manners)
+             , (deleteManner SAFFRICATE lang, SAFFRICATE `elem` manners)
+             , (deleteManner APPROXIMANT lang, APPROXIMANT `elem` manners && LAPPROXIMANT `notElem` manners)
+             , (deleteManner LAPPROXIMANT lang, LAPPROXIMANT `elem` manners)
+             , (deleteManner TRILL lang, TRILL `elem` manners)
+             --, (splitManner , )
+             --, (mergeManner , )
+             ]
+  -- choose which change to do
+  join $ choice $ map fst (filter snd opts)
+
+
+-- insert a manner of articulation
+insertManner :: Manner -> Language -> RVar Language
+insertManner man lang = do
+  let (places, manners, phonations, exceptions) = getCMap lang
+  let roots = getRoots lang
+  let manSyss = getManSyss lang
+
+  -- insert <place> into places
+  let mannersN = man : manners
+  -- keep exeptions the same?
+  let exceptionsN = exceptions
+  -- new consonant map
+  let cMapN = (places, mannersN, phonations, exceptionsN)
+  -- make new consonants
+  let cons = makeConsonants places mannersN phonations exceptionsN
+  -- randomy sub in <place> consonants into vocab?
+  let l = length cons
+  rootsN <- mapM (\(x, Morpheme y) -> (,) x <$> (Morpheme <$> mapM (\z -> join $ choice_ z <$> subMannerIn man cons z <*> return l) y)) roots
+  -- same with inflection
+  manSyssN <- mapM (\(ManifestSystem x y z) -> ManifestSystem x y <$> mapM (\(Morpheme w, v) -> (,) <$> (Morpheme <$> mapM (\j -> join $ choice_ j <$> subMannerIn man cons j <*> return l) w) <*> return v) z) manSyss
+
+  return lang{getCMap = cMapN, getRoots = rootsN, getManSyss = manSyssN}
+
+subMannerIn :: Manner -> [Phoneme] -> Phoneme -> RVar Phoneme
+subMannerIn man cons (Consonant p m h)
+  | Consonant p m h `elem` cons = return $ Consonant p m h
+  | otherwise = choice $ filter (\x -> cmanner x == man) cons
+subMannerIn _ _ x = return x
+
+-- delete a manner of articulation
+deleteManner :: Manner -> Language -> RVar Language
+deleteManner man lang = do
+  let (places, manners, phonations, exceptions) = getCMap lang
+  let roots = getRoots lang
+  let manSyss = getManSyss lang
+
+  -- delete <place> from places
+  let mannersN = filter (/= man) manners
+  -- update exceptions
+  let exceptionsN = filter (\x -> cmanner x /= man) exceptions
+  -- new consonant map
+  let cMapN = (places, mannersN, phonations, exceptionsN)
+  -- make new consonants
+  let cons = makeConsonants places mannersN phonations exceptionsN
+  -- randomy sub in <place> consonants
+  rootsN <- mapM (\(x, Morpheme y) -> (,) x <$> (Morpheme <$> mapM (subMannerOut man cons) y)) roots
+  -- same with inflection
+  manSyssN <- mapM (\(ManifestSystem x y z) -> ManifestSystem x y <$> mapM (\(Morpheme w, v) -> (,) <$> (Morpheme <$> mapM (subMannerOut man cons) w) <*> return v) z) manSyss
+
+  return lang{getCMap = cMapN, getRoots = rootsN, getManSyss = manSyssN}
+
+-- used for deleting manners
+subMannerOut :: Manner -> [Phoneme] -> Phoneme -> RVar Phoneme
+subMannerOut man cons (Consonant p m h)
+  | man == m = choice cons
+  | otherwise = return (Consonant p m h)
+subMannerOut _ _ x = return x

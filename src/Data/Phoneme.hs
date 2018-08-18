@@ -103,8 +103,7 @@ data Backness    = BACK
                  | NEARFRONT
                  | FRONT deriving (Eq, Ord, Read, Enum, Bounded)
 
-data Roundedness = DEFAULT
-                 | ROUNDED
+data Roundedness = ROUNDED
                  | UNROUNDED deriving (Eq, Ord, Read, Enum, Bounded)
 
 data Length = SHORT
@@ -189,8 +188,7 @@ instance Show Backness where
                      FRONT     -> "Front"
 
 instance Show Roundedness where
-  show r = case r of DEFAULT   -> ""
-                     ROUNDED   -> "Rounded"
+  show r = case r of ROUNDED   -> "Rounded"
                      UNROUNDED -> "Unrounded"
 
 instance Show Length where

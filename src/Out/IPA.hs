@@ -54,8 +54,8 @@ searchCIPA p m h = snd <$> filt where
 retrieveVSymbol :: Height -> Backness -> Roundedness -> Length -> Tone -> Text
 retrieveVSymbol h b r l t
     | isJust $ searchVIPA h b r l t = fromMaybe "ERROR" (searchVIPA h b r l t)
-    | r == DEFAULT && ((b == FRONT) || (b == NEARFRONT)) = retrieveVSymbol h b ROUNDED l t
-    | r == DEFAULT = retrieveVSymbol h b UNROUNDED l t
+  --  | r == DEFAULT && ((b == FRONT) || (b == NEARFRONT)) = retrieveVSymbol h b ROUNDED l t
+  --  | r == DEFAULT = retrieveVSymbol h b UNROUNDED l t
     | t == TOPT = retrieveVSymbol h b r l NONET ++ "\779"
     | t == HIGHT = retrieveVSymbol h b r l NONET ++ "\769"
     | t == MIDT = retrieveVSymbol h b r l NONET ++ "\772"

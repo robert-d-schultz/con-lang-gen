@@ -140,7 +140,7 @@ makeVowelMap = do
   return (heights, backs, rounds, lengths, tones, exceptions)
 
 -- Make the vowel inventory from the vowel map
-makeVowels :: [Height] -> [Backness] -> [Roundedness] -> [Length] -> [Tone] -> [Phoneme]-> [Phoneme]
+makeVowels :: [Height] -> [Backness] -> [Roundedness] -> [Length] -> [Tone] -> [Phoneme] -> [Phoneme]
 makeVowels heights backs rounds lengths tones exceptions = output where
   -- Create all possible vowels from picked heights, backnesses, roundnesses, lengths, and tones
   vows = Vowel <$> heights <*> backs <*> rounds <*> lengths <*> tones
@@ -165,8 +165,7 @@ makeBacknesses = choice [ [CENTRAL]
 
 -- Decides how roundedness will be contrasted for vowels
 makeRoundedneses :: RVar [Roundedness]
-makeRoundedneses = choice [ [DEFAULT]
-                          , [UNROUNDED, ROUNDED]
+makeRoundedneses = choice [ [UNROUNDED, ROUNDED]
                           ]
 
 -- Decides how length will be contrasted for vowels

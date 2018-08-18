@@ -11,7 +11,8 @@ import Data.Random.Extras
 import Data.Other
 import Data.Inflection
 
-import Morph.Phonology
+import Morph.PhonologyC
+import Morph.PhonologyV
 import Morph.Grammar
 
 import Out.Roman
@@ -19,7 +20,9 @@ import Out.Roman
 
 morphLanguage :: Language -> RVar Language
 morphLanguage parent = do
-  langN <- morphPhonologyC parent
+  langN <- join $ choice [ morphPhonologyV parent
+                         --, morphPhonologyC parent
+                         ]
   grammarN <- morphGrammar (getGrammar parent)
 
   -- find out what was assigned to "<!LANGUAGE!>" and romanize new language name

@@ -83,7 +83,6 @@ romanizePhoneme (Vowel h b r l t)
   | h == OPENMID && b == BACK && r == ROUNDED = "u"
   | l == LONG = romanizePhoneme (Vowel h b r NORMAL t) ++ romanizePhoneme (Vowel h b r NORMAL t)
   | l == SHORT = romanizePhoneme (Vowel h b r NORMAL t)
-  | r `elem` [UNROUNDED, ROUNDED] = romanizePhoneme (Vowel h b DEFAULT l t)
   | h `elem` [NEARCLOSE, CLOSEMID, MID, OPENMID] && b == BACK = "o"
   | h `elem` [CLOSEMID, MID, OPENMID] && b == FRONT = "e"
   | h `elem` [OPENMID, NEAROPEN, OPEN] = "a"
