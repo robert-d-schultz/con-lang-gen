@@ -1,4 +1,3 @@
-{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 module Data.Other
 ( SyllWord(..)
@@ -23,9 +22,11 @@ data LanguageBranch = LanguageBranch
 data Language = RootL
               | Language
               { getName :: Text
-              , getCMap :: ([Place], [Manner], [Phonation], [Phoneme])
-              , getVMap :: ([Height], [Backness], [Roundedness], [Length], [Tone], [Phoneme])
-              , getDs :: [Phoneme]
+              , getCMap :: ([Place], [Manner], [Phonation])
+              , getCInv :: [Phoneme]
+              , getVMap :: ([Height], [Backness], [Roundedness], [Length], [Tone])
+              , getVInv :: [Phoneme]
+              , getDInv :: [Phoneme]
               , getSonHier :: Int
               , getOnsetCCs :: [[Phoneme]]
               , getCodaCCs :: [[Phoneme]]

@@ -71,6 +71,6 @@ makeLanguage idata mData = do
   -- find out what was assigned to "<!LANGUAGE!>" and romanize
   let langName = fromMaybe "name not found" (romanizeMorpheme . snd <$> find (\x -> fst x == ("<!LANGUAGE!>", Noun)) roots)
 
-  let lang = Language langName (places, manners, phonations, exceptionsC) (heights, backs, rounds, lengths, tones, exceptionsV) inventoryD scheme onsetCCs codaCCs inflSys systems grammar roots (aOut, sOut, lOut)
+  let lang = Language langName (places, manners, phonations) inventoryC (heights, backs, rounds, lengths, tones) inventoryV inventoryD scheme onsetCCs codaCCs inflSys systems grammar roots (aOut, sOut, lOut)
 
   return lang

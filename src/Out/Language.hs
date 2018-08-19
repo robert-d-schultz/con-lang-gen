@@ -43,9 +43,9 @@ writeLanguageBranch seed mData (LanguageBranch lang branches _) = writeLanguage 
 -- outputs stuff for each language
 writeLanguage :: Language -> Int -> MeaningData -> IO()
 writeLanguage lang seed mData = do
-  let (places, manners, phonations, exceptionsC) = getCMap lang
-  let (heights, backs, rounds, lengths, tones, exceptionsV) = getVMap lang
-  let inventoryD = getDs lang
+  let (places, manners, phonations) = getCMap lang
+  let (heights, backs, rounds, lengths, tones) = getVMap lang
+  let inventoryD = getDInv lang
   let onsetCCs = getOnsetCCs lang
   let codaCCs = getCodaCCs lang
   let scheme = getSonHier lang
@@ -56,8 +56,8 @@ writeLanguage lang seed mData = do
   let (alph, syll, logo) = getWriting lang
   let name = getName lang
 
-  let inventoryC = makeConsonants places manners phonations exceptionsC
-  let inventoryV = makeVowels heights backs rounds lengths tones exceptionsV
+  let inventoryC = getCInv lang
+  let inventoryV = getVInv lang
 
   let sonHier = makeSonHier_ inventoryC scheme
 

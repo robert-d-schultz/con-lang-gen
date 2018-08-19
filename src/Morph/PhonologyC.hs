@@ -16,6 +16,7 @@ import Data.Other
 import Gen.Phonology
 import Gen.Phonotactics
 
+-- "unconditioned merge"
 morphPhonologyC :: Language -> RVar Language
 morphPhonologyC lang = join $ choice [ morphPlace lang
                                      , morphManner lang
@@ -24,157 +25,46 @@ morphPhonologyC lang = join $ choice [ morphPlace lang
 -- morph place of articulation
 morphPlace :: Language -> RVar Language
 morphPlace lang = do
-  let (places,_,_,_) = getCMap lang
-  let opts = [ (insertPlace LABIAL lang, LABIAL `notElem` places && BILABIAL `notElem` places)
-             , (insertPlace LARYNGEAL lang, LARYNGEAL `notElem` places && GLOTTAL `notElem` places)
-             , (insertPlace PALATAL lang, PALATAL `notElem` places && DORSAL `notElem` places)
-             , (insertPlace VELAR lang, VELAR `notElem` places && DORSAL `notElem` places)
-             , (insertPlace UVULAR lang, UVULAR `notElem` places && DORSAL `notElem` places)
-             , (insertPlace ALVEOLOPALATAL lang, ALVEOLOPALATAL `notElem` places && PALATAL `elem` places)
-
-             , (deletePlace LABIAL lang, LABIAL `elem` places)
-             , (deletePlace LARYNGEAL lang, LARYNGEAL `elem` places)
-             , (deletePlace PALATAL lang, PALATAL `elem` places && (VELAR `elem` places || UVULAR `elem` places) && ALVEOLOPALATAL `notElem` places)
-             , (deletePlace VELAR lang, VELAR `elem` places && (PALATAL `elem` places || UVULAR `elem` places))
-             , (deletePlace UVULAR lang, UVULAR `elem` places && (PALATAL `elem` places || VELAR `elem` places))
-             , (deletePlace ALVEOLOPALATAL lang, ALVEOLOPALATAL `elem` places)
-
-             , (splitPlace LABIAL [BILABIAL, LABIODENTAL] lang, LABIAL `elem` places)
-             , (splitPlace CORONAL [DENTIALVEOLAR, RETROFLEX] lang, CORONAL `elem` places)
-             , (splitPlace DENTIALVEOLAR [DENTAL, ALVEOLAR, POSTALVEOLAR] lang, DENTIALVEOLAR `elem` places)
-             , (splitPlace DORSAL [VELAR, UVULAR] lang, DORSAL `elem` places)
-             , (splitPlace DORSAL [PALATAL, UVULAR] lang, DORSAL `elem` places)
-             , (splitPlace DORSAL [PALATAL, VELAR] lang, DORSAL `elem` places)
-             , (splitPlace DORSAL [PALATAL, VELAR, UVULAR] lang, DORSAL `elem` places)
-             , (splitPlace LARYNGEAL [EPIPHARYNGEAL, GLOTTAL] lang, LARYNGEAL `elem` places)
-             , (splitPlace EPIPHARYNGEAL [PHARYNGEAL, EPIGLOTTAL] lang, EPIPHARYNGEAL `elem` places)
-
-             , (mergePlace [BILABIAL, LABIODENTAL] LABIAL lang, BILABIAL `elem` places)
-             , (mergePlace [DENTIALVEOLAR, RETROFLEX] CORONAL lang, CORONAL `elem` places)
-             , (mergePlace [DENTAL, ALVEOLAR, POSTALVEOLAR] DENTIALVEOLAR lang, DENTAL `elem` places)
-             , (mergePlace [VELAR, UVULAR] DORSAL lang, VELAR `elem` places && UVULAR `elem` places && PALATAL `notElem` places)
-             , (mergePlace [PALATAL, UVULAR] DORSAL lang, PALATAL `elem` places && UVULAR `elem` places && VELAR `notElem` places && ALVEOLOPALATAL `notElem` places)
-             , (mergePlace [PALATAL, VELAR] DORSAL lang, PALATAL `elem` places && VELAR `elem` places && UVULAR `notElem` places && ALVEOLOPALATAL `notElem` places)
-             , (mergePlace [PALATAL, VELAR, UVULAR] DORSAL lang, PALATAL `elem` places && VELAR `elem` places && UVULAR `elem` places && ALVEOLOPALATAL `notElem` places)
-             , (mergePlace [EPIPHARYNGEAL, GLOTTAL] LARYNGEAL lang, EPIPHARYNGEAL `elem` places)
-             , (mergePlace [PHARYNGEAL, EPIGLOTTAL] EPIPHARYNGEAL lang, PHARYNGEAL `elem` places)
+  let (places,_,_) = getCMap lang
+  let opts = [ (unconMergePlace [BILABIAL, LABIODENTAL] LABIAL lang, BILABIAL `elem` places)
+             , (unconMergePlace [DENTIALVEOLAR, RETROFLEX] CORONAL lang, CORONAL `elem` places)
+             , (unconMergePlace [DENTAL, ALVEOLAR, POSTALVEOLAR] DENTIALVEOLAR lang, DENTAL `elem` places)
+             , (unconMergePlace [VELAR, UVULAR] DORSAL lang, VELAR `elem` places && UVULAR `elem` places && PALATAL `notElem` places)
+             , (unconMergePlace [PALATAL, UVULAR] DORSAL lang, PALATAL `elem` places && UVULAR `elem` places && VELAR `notElem` places && ALVEOLOPALATAL `notElem` places)
+             , (unconMergePlace [PALATAL, VELAR] DORSAL lang, PALATAL `elem` places && VELAR `elem` places && UVULAR `notElem` places && ALVEOLOPALATAL `notElem` places)
+             , (unconMergePlace [PALATAL, VELAR, UVULAR] DORSAL lang, PALATAL `elem` places && VELAR `elem` places && UVULAR `elem` places && ALVEOLOPALATAL `notElem` places)
+             , (unconMergePlace [EPIPHARYNGEAL, GLOTTAL] LARYNGEAL lang, EPIPHARYNGEAL `elem` places)
+             , (unconMergePlace [PHARYNGEAL, EPIGLOTTAL] EPIPHARYNGEAL lang, PHARYNGEAL `elem` places)
              ]
   -- choose which change to do
   join $ choice $ map fst (filter snd opts)
 
--- insert a place of articulation
-insertPlace :: Place -> Language -> RVar Language
-insertPlace plc lang = do
-  let (places, manners, phonations, exceptions) = getCMap lang
-  let roots = getRoots lang
-  let manSyss = getManSyss lang
-
-  -- insert <place> into places
-  let placesN = plc : places
-  -- keep exeptions the same?
-  let exceptionsN = exceptions
-  -- new consonant map
-  let cMapN = (placesN, manners, phonations, exceptionsN)
-  -- make new consonants
-  let cons = makeConsonants placesN manners phonations exceptionsN
-  -- randomy sub in <place> consonants into vocab?
-  let l = length cons
-  rootsN <- mapM (\(x, Morpheme y) -> (,) x <$> (Morpheme <$> mapM (\z -> join $ choice_ z <$> subPlaceIn plc cons z <*> return l) y)) roots
-  -- same with inflection
-  manSyssN <- mapM (\(ManifestSystem x y z) -> ManifestSystem x y <$> mapM (\(Morpheme w, v) -> (,) <$> (Morpheme <$> mapM (\j -> join $ choice_ j <$> subPlaceIn plc cons j <*> return l) w) <*> return v) z) manSyss
-
-  return lang{getCMap = cMapN, getRoots = rootsN, getManSyss = manSyssN}
-
-subPlaceIn :: Place -> [Phoneme] -> Phoneme -> RVar Phoneme
-subPlaceIn plc cons (Consonant p m h)
-  | Consonant p m h `elem` cons = return $ Consonant p m h
-  | otherwise = choice $ filter (\x -> cplace x == plc) cons
-subPlaceIn _ _ x = return x
-
--- delete a place of articulation
-deletePlace :: Place -> Language -> RVar Language
-deletePlace plc lang = do
-  let (places, manners, phonations, exceptions) = getCMap lang
-  let roots = getRoots lang
-  let manSyss = getManSyss lang
-
-  -- delete <place> from places
-  let placesN = filter (/= plc) places
-  -- update exceptions
-  let exceptionsN = filter (\x -> cplace x /= plc) exceptions
-  -- new consonant map
-  let cMapN = (placesN, manners, phonations, exceptionsN)
-  -- make new consonants
-  let cons = makeConsonants placesN manners phonations exceptionsN
-  -- randomy sub in <place> consonants
-  rootsN <- mapM (\(x, Morpheme y) -> (,) x <$> (Morpheme <$> mapM (subPlaceOut plc cons) y)) roots
-  -- same with inflection
-  manSyssN <- mapM (\(ManifestSystem x y z) -> ManifestSystem x y <$> mapM (\(Morpheme w, v) -> (,) <$> (Morpheme <$> mapM (subPlaceOut plc cons) w) <*> return v) z) manSyss
-
-  return lang{getCMap = cMapN, getRoots = rootsN, getManSyss = manSyssN}
-
--- used for deleting places
-subPlaceOut :: Place -> [Phoneme] -> Phoneme -> RVar Phoneme
-subPlaceOut plc cons (Consonant p m h)
-  | plc == p = choice cons
-  | otherwise = return (Consonant p m h)
-subPlaceOut _ _ x = return x
-
--- split a place of articulation
-splitPlace :: Place -> [Place] -> Language -> RVar Language
-splitPlace fromPlc toPlcs lang = do
-  let (places, manners, phonations, exceptions) = getCMap lang
-  let roots = getRoots lang
-  let manSyss = getManSyss lang
-
-  -- split a place
-  let placesN = toPlcs ++ filter (/= fromPlc) places
-  -- update exceptions
-  let exceptionsN = concatMap (\x -> if cplace x == fromPlc then map (\y -> x{cplace = y}) toPlcs else [x]) exceptions
-  -- new consonant map
-  let cMapN = (placesN, manners, phonations, exceptionsN)
-  -- randomy replace "fromPlc" consonants
-  rootsN <- mapM (\(x, Morpheme y) -> (,) x <$> (Morpheme <$> mapM (splitPlaceUp fromPlc toPlcs) y)) roots
-  -- same with inflection
-  manSyssN <- mapM (\(ManifestSystem x y z) -> ManifestSystem x y <$> mapM (\(Morpheme w, v) -> (,) <$> (Morpheme <$> mapM (splitPlaceUp fromPlc toPlcs) w) <*> return v) z) manSyss
-
-  return lang{getCMap = cMapN, getRoots = rootsN, getManSyss = manSyssN}
-
--- used for splitting
-splitPlaceUp :: Place -> [Place] -> Phoneme -> RVar Phoneme
-splitPlaceUp fromPlc toPlcs (Consonant p m h)
-  | p == fromPlc = choice (map (\x -> Consonant x m h) toPlcs)
-  | otherwise = return (Consonant p m h)
-splitPlaceUp _ _ x = return x
-
 -- merge two or more places of articulation
-mergePlace :: [Place] -> Place -> Language -> RVar Language
-mergePlace fromPlcs toPlc lang = do
-  let (places, manners, phonations, exceptions) = getCMap lang
+unconMergePlace :: [Place] -> Place -> Language -> RVar Language
+unconMergePlace fromPlcs toPlc lang = do
+  let (places, manners, phonations) = getCMap lang
   let roots = getRoots lang
   let manSyss = getManSyss lang
 
   -- merge places
   let placesN = toPlc : filter (`notElem` fromPlcs) places
-  -- update exceptions
-  let exceptionsN = exceptUpdate fromPlcs toPlc exceptions
   -- new consonant map
-  let cMapN = (placesN, manners, phonations, exceptionsN)
+  let cMapN = (placesN, manners, phonations)
   --then for any phonemes with "fromPlcs" places replace with "toPlc"
-  let rootsN = map (\(x, Morpheme y) -> (,) x (Morpheme $ map (mergePlaceDown fromPlcs toPlc) y)) roots
+  let rootsN = map (\(x, Morpheme y) -> (,) x (Morpheme $ map (unconMergePlaceDown fromPlcs toPlc) y)) roots
   -- same with inflection
-  let manSyssN = map (\(ManifestSystem x y z) -> ManifestSystem x y (map (\(Morpheme w, v) -> (,) (Morpheme $ map (mergePlaceDown fromPlcs toPlc) w) v) z)) manSyss
+  let manSyssN = map (\(ManifestSystem x y z) -> ManifestSystem x y (map (\(Morpheme w, v) -> (,) (Morpheme $ map (unconMergePlaceDown fromPlcs toPlc) w) v) z)) manSyss
 
   return lang{getCMap = cMapN, getRoots = rootsN, getManSyss = manSyssN}
 
--- used for merging
-mergePlaceDown :: [Place] -> Place -> Phoneme -> Phoneme
-mergePlaceDown fromPlcs toPlc (Consonant p m h)
+-- used for unconditioned merging places
+unconMergePlaceDown :: [Place] -> Place -> Phoneme -> Phoneme
+unconMergePlaceDown fromPlcs toPlc (Consonant p m h)
   | p `elem` fromPlcs = Consonant toPlc m h
   | otherwise = Consonant p m h
-mergePlaceDown _ _ x = x
+unconMergePlaceDown _ _ x = x
 
--- used for merging places
+-- used for unconditioned merging places
 exceptUpdate :: [Place] -> Place -> [Phoneme] -> [Phoneme]
 exceptUpdate _ _ [] = []
 exceptUpdate fromPlcs toPlc e
@@ -187,93 +77,61 @@ exceptUpdate fromPlcs toPlc e
 -- morph manner of articulation
 morphManner :: Language -> RVar Language
 morphManner lang = do
-  let (_,manners,_,_) = getCMap lang
-  let opts = [ (insertManner NASAL lang, NASAL `notElem` manners)
-             , (insertManner FLAP lang, FLAP `notElem` manners)
-             , (insertManner LFLAP lang, LFLAP `notElem` manners && FLAP `elem` manners)
-             , (insertManner FRICATIVE lang, FRICATIVE `notElem` manners)
-             , (insertManner AFFRICATE lang, AFFRICATE `notElem` manners && FRICATIVE `elem` manners)
-             , (insertManner SILIBANT lang, SILIBANT `notElem` manners && FRICATIVE `elem` manners)
-             , (insertManner LFRICATIVE lang, LFRICATIVE `notElem` manners && FRICATIVE `elem` manners)
-             , (insertManner LAFFRICATE lang, LAFFRICATE `notElem` manners && AFFRICATE `elem` manners)
-             , (insertManner SAFFRICATE lang, SAFFRICATE `notElem` manners && AFFRICATE `elem` manners)
-             , (insertManner APPROXIMANT lang, APPROXIMANT `notElem` manners)
-             , (insertManner LAPPROXIMANT lang, LAPPROXIMANT `notElem` manners && APPROXIMANT `elem` manners)
-             , (insertManner TRILL lang, TRILL `notElem` manners)
-
-             , (deleteManner NASAL lang, NASAL `elem` manners)
-             , (deleteManner FLAP lang, FLAP `elem` manners && LFLAP `notElem` manners)
-             , (deleteManner LFLAP lang, LFLAP `elem` manners)
-             , (deleteManner FRICATIVE lang, FRICATIVE `elem` manners && all (`notElem` manners) [AFFRICATE, SILIBANT, LFRICATIVE])
-             , (deleteManner AFFRICATE lang, AFFRICATE `elem` manners && all (`notElem` manners) [LAFFRICATE, SAFFRICATE])
-             , (deleteManner SILIBANT lang, SILIBANT `elem` manners)
-             , (deleteManner LFRICATIVE lang, LFRICATIVE `elem` manners)
-             , (deleteManner LAFFRICATE lang, LAFFRICATE `elem` manners)
-             , (deleteManner SAFFRICATE lang, SAFFRICATE `elem` manners)
-             , (deleteManner APPROXIMANT lang, APPROXIMANT `elem` manners && LAPPROXIMANT `notElem` manners)
-             , (deleteManner LAPPROXIMANT lang, LAPPROXIMANT `elem` manners)
-             , (deleteManner TRILL lang, TRILL `elem` manners)
-             --, (splitManner , )
-             --, (mergeManner , )
+  let (_,manners,_) = getCMap lang
+  let opts = [ (unconMergeManner [NASAL, STOP] STOP lang, all (`elem` manners) [NASAL, STOP])
+             , (unconMergeManner [FLAP, STOP] FLAP lang, all (`elem` manners) [FLAP, STOP] && LFLAP `notElem` manners)
+             , (unconMergeManner [TRILL, STOP] STOP lang, all (`elem` manners) [TRILL, STOP])
+             , (unconMergeManner [LFLAP, FLAP] FLAP lang, all (`elem` manners) [LFLAP, FLAP])
+             , (unconMergeManner [FRICATIVE, STOP] STOP lang, all (`elem` manners) [FRICATIVE, STOP] && all (`notElem` manners) [AFFRICATE, SILIBANT, LFRICATIVE])
+             , (unconMergeManner [AFFRICATE, FRICATIVE] FRICATIVE lang, all (`elem` manners) [AFFRICATE, FRICATIVE] && all (`notElem` manners) [LAFFRICATE, SAFFRICATE])
+             , (unconMergeManner [AFFRICATE, STOP] STOP lang, all (`elem` manners) [AFFRICATE, STOP] && all (`notElem` manners) [LAFFRICATE, SAFFRICATE])
+             , (unconMergeManner [SILIBANT, FRICATIVE] FRICATIVE lang, all (`elem` manners) [SILIBANT, FRICATIVE])
+             , (unconMergeManner [LFRICATIVE, FRICATIVE] FRICATIVE lang, all (`elem` manners) [LFRICATIVE, FRICATIVE])
+             , (unconMergeManner [LAFFRICATE, AFFRICATE] AFFRICATE lang, all (`elem` manners) [LAFFRICATE, AFFRICATE])
+             , (unconMergeManner [SAFFRICATE, AFFRICATE] AFFRICATE lang, all (`elem` manners) [SAFFRICATE, AFFRICATE])
+             , (unconMergeManner [LAPPROXIMANT, APPROXIMANT] APPROXIMANT lang, all (`elem` manners) [LAPPROXIMANT, APPROXIMANT])
+             -- off the rails
+             , (unconMergeManner [LAFFRICATE, LFRICATIVE] LFRICATIVE lang, all (`elem` manners) [LAFFRICATE, LFRICATIVE])
+             , (unconMergeManner [SAFFRICATE, SILIBANT] SILIBANT lang, all (`elem` manners) [SAFFRICATE, SILIBANT])
+             , (unconMergeManner [LAPPROXIMANT, LFRICATIVE] LFRICATIVE lang, all (`elem` manners) [LAPPROXIMANT, LFRICATIVE])
+             , (unconMergeManner [APPROXIMANT, FRICATIVE] FRICATIVE lang, all (`elem` manners) [APPROXIMANT, FRICATIVE] && all (`notElem` manners) [LFRICATIVE, SILIBANT])
+             , (unconMergeManner [TRILL, FLAP] FLAP lang, all (`elem` manners) [TRILL, FLAP])
+             , (unconMergeManner [TRILL, FLAP] TRILL lang, all (`elem` manners) [TRILL, FLAP] && LFLAP `notElem` manners)
              ]
+
   -- choose which change to do
   join $ choice $ map fst (filter snd opts)
 
-
--- insert a manner of articulation
-insertManner :: Manner -> Language -> RVar Language
-insertManner man lang = do
-  let (places, manners, phonations, exceptions) = getCMap lang
+-- merge two or more manners of articulation
+unconMergeManner :: [Manner] -> Manner -> Language -> RVar Language
+unconMergeManner fromMans toMan lang = do
+  let (places, manners, phonations) = getCMap lang
   let roots = getRoots lang
   let manSyss = getManSyss lang
 
-  -- insert <place> into places
-  let mannersN = man : manners
-  -- keep exeptions the same?
-  let exceptionsN = exceptions
+  -- merge manners
+  let mannersN = toMan : filter (`notElem` fromMans) manners
   -- new consonant map
-  let cMapN = (places, mannersN, phonations, exceptionsN)
-  -- make new consonants
-  let cons = makeConsonants places mannersN phonations exceptionsN
-  -- randomy sub in <place> consonants into vocab?
-  let l = length cons
-  rootsN <- mapM (\(x, Morpheme y) -> (,) x <$> (Morpheme <$> mapM (\z -> join $ choice_ z <$> subMannerIn man cons z <*> return l) y)) roots
+  let cMapN = (places, mannersN, phonations)
+  --then for any phonemes with "fromMans" places replace with "toMan"
+  let rootsN = map (\(x, Morpheme y) -> (,) x (Morpheme $ map (unconMergeMannerDown fromMans toMan) y)) roots
   -- same with inflection
-  manSyssN <- mapM (\(ManifestSystem x y z) -> ManifestSystem x y <$> mapM (\(Morpheme w, v) -> (,) <$> (Morpheme <$> mapM (\j -> join $ choice_ j <$> subMannerIn man cons j <*> return l) w) <*> return v) z) manSyss
+  let manSyssN = map (\(ManifestSystem x y z) -> ManifestSystem x y (map (\(Morpheme w, v) -> (,) (Morpheme $ map (unconMergeMannerDown fromMans toMan) w) v) z)) manSyss
 
   return lang{getCMap = cMapN, getRoots = rootsN, getManSyss = manSyssN}
 
-subMannerIn :: Manner -> [Phoneme] -> Phoneme -> RVar Phoneme
-subMannerIn man cons (Consonant p m h)
-  | Consonant p m h `elem` cons = return $ Consonant p m h
-  | otherwise = choice $ filter (\x -> cmanner x == man) cons
-subMannerIn _ _ x = return x
+-- used for unconditioned merging manners
+unconMergeMannerDown :: [Manner] -> Manner -> Phoneme -> Phoneme
+unconMergeMannerDown fromMans toMan (Consonant p m h)
+  | m `elem` fromMans = Consonant p toMan h
+  | otherwise = Consonant p m h
+unconMergeMannerDown _ _ x = x
 
--- delete a manner of articulation
-deleteManner :: Manner -> Language -> RVar Language
-deleteManner man lang = do
-  let (places, manners, phonations, exceptions) = getCMap lang
-  let roots = getRoots lang
-  let manSyss = getManSyss lang
-
-  -- delete <place> from places
-  let mannersN = filter (/= man) manners
-  -- update exceptions
-  let exceptionsN = filter (\x -> cmanner x /= man) exceptions
-  -- new consonant map
-  let cMapN = (places, mannersN, phonations, exceptionsN)
-  -- make new consonants
-  let cons = makeConsonants places mannersN phonations exceptionsN
-  -- randomy sub in <place> consonants
-  rootsN <- mapM (\(x, Morpheme y) -> (,) x <$> (Morpheme <$> mapM (subMannerOut man cons) y)) roots
-  -- same with inflection
-  manSyssN <- mapM (\(ManifestSystem x y z) -> ManifestSystem x y <$> mapM (\(Morpheme w, v) -> (,) <$> (Morpheme <$> mapM (subMannerOut man cons) w) <*> return v) z) manSyss
-
-  return lang{getCMap = cMapN, getRoots = rootsN, getManSyss = manSyssN}
-
--- used for deleting manners
-subMannerOut :: Manner -> [Phoneme] -> Phoneme -> RVar Phoneme
-subMannerOut man cons (Consonant p m h)
-  | man == m = choice cons
-  | otherwise = return (Consonant p m h)
-subMannerOut _ _ x = return x
+-- used for unconditioned merging manners
+exceptUpdate2 :: [Manner] -> Manner -> [Phoneme] -> [Phoneme]
+exceptUpdate2 _ _ [] = []
+exceptUpdate2 fromMans toMan e
+  | cmanner (head e) `elem` fromMans
+    && all (\m -> (head e){cmanner = m} `elem` tail e) (filter (/= cmanner (head e)) fromMans) =
+      (head e){cmanner = toMan} : exceptUpdate2 fromMans toMan (filter (\x -> x `notElem` map (\m -> (head e){cmanner = m}) (filter (/= cmanner (head e)) fromMans)) (tail e))
+  | otherwise = head e : exceptUpdate2 fromMans toMan (tail e)

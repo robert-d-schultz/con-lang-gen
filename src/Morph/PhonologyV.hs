@@ -18,7 +18,7 @@ import Data.Other
 import Gen.Phonology
 import Gen.Phonotactics
 
-import  Debug.Trace
+import Debug.Trace
 
 -- there should be two versions of this
 -- one for vowel shifts, where vowels are shifted in a closed loop
@@ -39,32 +39,32 @@ insertVowel land = do
 -- shifts all vowels around a "loop"
 -- Doesn't take into account vowel length or tone
 -- makes of loop of either all rounded or unrounded vowels, never any "crossover"
--- need to look up how the Great Vowel Shift worked historically, maybe just limit to manner/place
+-- limited to manner and place
 vowelShift :: Language -> RVar Language
 vowelShift lang = do
-  let (heights, backs, rounds, lengths, tones, excepts) = getVMap lang
-  let vowels = (,,) <$> heights <*> backs <*> rounds
+  let (heights, backs, _, _, _) = getVMap lang
+  let vowels = nub $ map (\(Vowel h b _ _ _) -> (h,b)) (getVInv lang) 
   startPoint <- choice vowels
   loop <- makeVowelLoop startPoint vowels []
   let langN = shiftVowels loop lang
   return $ trace (show loop) langN
 
-shiftVowels :: [(Height, Backness, Roundedness)] -> Language -> Language
+shiftVowels :: [(Height, Backness)] -> Language -> Language
 shiftVowels loop lang = lang{getRoots = rootsN, getManSyss = manSyssN} where
   roots = getRoots lang
   manSyss = getManSyss lang
   rootsN = map (\(x, Morpheme y) -> (,) x (Morpheme (map (shiftVowel loop) y))) roots
   manSyssN = map (\(ManifestSystem x y z) -> ManifestSystem x y (map (\(Morpheme w, v) -> (,) (Morpheme (map (shiftVowel loop) w)) v) z)) manSyss
 
-shiftVowel :: [(Height, Backness, Roundedness)] -> Phoneme -> Phoneme
+shiftVowel :: [(Height, Backness)] -> Phoneme -> Phoneme
 shiftVowel _ x@Consonant{} = x
 shiftVowel _ x@Diphthong{} = x
-shiftVowel loop vowel = case dropWhile (/= (vheight vowel, vbackness vowel, vroundedness vowel)) loop of
-  (_:next:_)  -> vowel{vheight = (\(x,_,_)->x) next, vbackness = (\(_,x,_)->x) next, vroundedness = (\(_,_,x) -> x) next}
-  [_]         -> vowel{vheight = (\(x,_,_)->x) (head loop), vbackness = (\(_,x,_)->x) (head loop), vroundedness = (\(_,_,x) -> x) (head loop)}
+shiftVowel loop vowel = case dropWhile (/= (vheight vowel, vbackness vowel)) loop of
+  (_:next:_)  -> vowel{vheight = fst next, vbackness = snd next}
+  [_]         -> vowel{vheight = fst (head loop), vbackness = snd (head loop)}
   []          -> vowel
 
-makeVowelLoop :: (Height, Backness, Roundedness) -> [(Height, Backness, Roundedness)] -> [(Height, Backness, Roundedness)] -> RVar [(Height, Backness, Roundedness)]
+makeVowelLoop :: (Height, Backness) -> [(Height, Backness)] -> [(Height, Backness)] -> RVar [(Height, Backness)]
 makeVowelLoop start vowels [] = do
   let noStartVowels = vowels \\ [start] --saves us from having no loop
   let next = minimumBy (comparing (vowelDistance start)) noStartVowels
@@ -77,11 +77,11 @@ makeVowelLoop start vowels loop
   makeVowelLoop start vowels (next:loop)
 
 
---manhattan distance on height and backness... + some stuff for roundedness
-vowelDistance :: (Height, Backness, Roundedness) -> (Height, Backness, Roundedness) -> Int
-vowelDistance (h1,b1,r1) (h2,b2,r2) = abs (fromEnum h1 - fromEnum h2)
+-- manhattan distance on height and backness
+vowelDistance :: (Height, Backness) -> (Height, Backness) -> Int
+vowelDistance (h1,b1) (h2,b2) = abs (fromEnum h1 - fromEnum h2)
                                     + abs (fromEnum b1 - fromEnum b2)
-                                    + 3 * abs (fromEnum r1 - fromEnum r2)
+                                  --  + 3 * abs (fromEnum r1 - fromEnum r2)
 
 
 -- calculates an approximate similarity between two phonemes
@@ -90,5 +90,27 @@ phonemeDistance (Vowel h1 b1 r1 l1 t1) (Vowel h2 b2 r2 l2 t2) = abs (fromEnum h1
                                                               + abs (fromEnum b1 - fromEnum b2)
                                                               + 3 * abs (fromEnum r1 - fromEnum r2)
 phonemeDistance Consonant{} Consonant{} = 0 -- temp
-phonemeDistance Diphthong{} Diphthong{} = 0 --this'll be cosine distance or something
+phonemeDistance Diphthong{} Diphthong{} = 0 -- this'll be cosine distance or something
 phonemeDistance _ _ = 999 --maybe something something semivowels...
+
+
+{- holding off on this, exploring sound changes...
+-- merging/splitting vowel heights
+morphHeight :: Language -> RVar Language
+morphHeight lang = do
+  let (heights,_,_,_,_) = getVMap lang
+  let opts = [ (splitHeight MID [CLOSE, OPEN] lang, [MID] == heights)
+             , (splitHeight MID [CLOSE, MID, OPEN] lang, [MID] == heights)
+             , (splitHeight MID [CLOSEMID, OPENMID] lang, [MID] == heights)
+             , (splitHeight MID [CLOSEMID, MID, OPENMID] lang, [MID] == heights)
+
+             , (mergeHeight [NASAL] MID lang, NASAL `notElem` manners)
+
+-- merging/splitting vowel backnesses
+morphBackness :: Language -> RVar Language
+morphBackness lang = do
+  let (_,backs,_,_,_) = getVMap lang
+  let opts = [ (insertManner NASAL lang, NASAL `notElem` manners)
+             ,
+             ]
+-}

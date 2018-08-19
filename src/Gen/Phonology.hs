@@ -15,6 +15,7 @@ import Data.List
 import Control.Monad
 
 import Data.Phoneme
+import Constants
 
 -- Make diphthongs
 makeDiphInventory :: Int -> [Phoneme] -> RVar [Phoneme]
@@ -23,7 +24,6 @@ makeDiphInventory n vs = sample n subseq where
 
 makeDiph :: (Phoneme, Phoneme) -> Phoneme
 makeDiph (Vowel h1 b1 r1 l1 t1, Vowel h2 b2 r2 l2 t2) = Diphthong h1 b1 r1 h2 b2 r2 NORMAL t1
-
 
 -- Returns a list of places, manners, phonations, and exceptions
 makeConsonantMap :: RVar ([Place], [Manner], [Phonation], [Phoneme])
@@ -107,18 +107,13 @@ makeManners = do
 
 -- Make the phonations (and aspiration) for consonants
 makePhonations :: RVar [Phonation]
-makePhonations = choice [[MODAL], [VOICELESS, MODAL], [BREATHY, MODAL, CREAKY], [SLACK, MODAL, STIFF], [VOICELESS, MODAL, ASPIRATED], [MODAL, ASPIRATED]]
-
--- Impossible consonants filter
-impConsonants :: Phoneme -> Bool
-impConsonants (Consonant p m h)
-  | p `notElem` [CORONAL, DENTIALVEOLAR, DENTAL, ALVEOLAR, POSTALVEOLAR, RETROFLEX] && m `elem` [SILIBANT, SAFFRICATE] = True
-  | p `elem` [LABIAL, BILABIAL, LABIODENTAL, LARYNGEAL, EPIPHARYNGEAL, PHARYNGEAL, EPIGLOTTAL, GLOTTAL] && m `elem` [LAFFRICATE, LAPPROXIMANT, LFRICATIVE, LFRICATIVE, LFLAP] = True
-  | p `elem` [DORSAL, ALVEOLOPALATAL, PALATAL, VELAR, UVULAR, GLOTTAL] && m `elem` [FLAP, TRILL] = True
-  | p == GLOTTAL && m `elem` [STOP, AFFRICATE] && h /= VOICELESS = True
-  | m /= STOP && h == ASPIRATED = True
-  | p `elem` [LARYNGEAL, EPIPHARYNGEAL, PHARYNGEAL, EPIGLOTTAL, GLOTTAL] && m == NASAL = True
-  | otherwise = False
+makePhonations = choice [ [MODAL]
+                        , [VOICELESS, MODAL]
+                        , [BREATHY, MODAL, CREAKY]
+                        , [SLACK, MODAL, STIFF]
+                        , [VOICELESS, MODAL, ASPIRATED]
+                        , [MODAL, ASPIRATED]
+                        ]
 
 -- Returns a list of heights, backnesses, roundnesss, lengths, tones, and exceptions
 makeVowelMap :: RVar ([Height], [Backness], [Roundedness], [Length], [Tone], [Phoneme])
@@ -151,7 +146,9 @@ makeVowels heights backs rounds lengths tones exceptions = output where
 makeHeights :: RVar [Height]
 makeHeights = choice [ [MID]
                      , [CLOSE, OPEN]
+                     , [CLOSE, MID, OPEN]
                      , [CLOSE, CLOSEMID, OPENMID, OPEN]
+                     , [CLOSE, CLOSEMID, MID, OPENMID, OPEN]
                      , [CLOSE, NEARCLOSE, CLOSEMID, OPENMID, NEAROPEN, OPEN]
                      , [CLOSE, NEARCLOSE, CLOSEMID, MID, OPENMID, NEAROPEN, OPEN]
                      ]

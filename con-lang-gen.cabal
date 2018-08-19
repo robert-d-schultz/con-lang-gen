@@ -51,6 +51,7 @@ library
                      , directory
                      , classy-prelude
                      , text
+                     , safe
   default-language:    Haskell2010
 
 executable con-lang-gen-exe
