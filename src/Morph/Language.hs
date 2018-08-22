@@ -11,19 +11,16 @@ import Data.Random.Extras
 import Data.Other
 import Data.Inflection
 
-import Morph.PhonologyC
+import Morph.Phonology
 import Morph.PhonologyV
 import Morph.Grammar
-import Morph.Soundchange
 
 import Out.Roman
 
 
 morphLanguage :: Language -> RVar Language
 morphLanguage parent = do
-  langN <- join $ choice [ conditionedSplit parent
-                         --, morphPhonologyV parent
-                         --, morphPhonologyC parent
+  langN <- join $ choice [ phonologicalChange 0 parent
                          ]
   grammarN <- morphGrammar (getGrammar parent)
 

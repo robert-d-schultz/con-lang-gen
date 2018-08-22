@@ -40,29 +40,33 @@ data Phoneme = Consonant
            , dlength :: Length
            , dtone :: Tone
            }
-           | Blank deriving (Eq, Ord, Show, Read)
+           | Blank deriving (Eq, Ord, Read)
 
 
 -- Place of articulation
-data Place  = LABIAL
-            | BILABIAL
+data Place  = BILABIAL
             | LABIODENTAL
-            | CORONAL
-            | DENTIALVEOLAR
+            | LINGUOLABIAL
+            | INTERDENTAL
             | DENTAL
-            | ALVEOLAR
-            | POSTALVEOLAR
+            | DENTIALVEOLAR
+            | LAMINALALVEOLAR
+            | APICOALVEOLAR
+            | PALATOALVEOLAR
+            | APICALRETROFLEX
             | RETROFLEX
-            | DORSAL
             | ALVEOLOPALATAL
             | PALATAL
             | VELAR
             | UVULAR
-            | LARYNGEAL
-            | EPIPHARYNGEAL
             | PHARYNGEAL
+            | EPIPHARYNGEAL
             | EPIGLOTTAL
-            | GLOTTAL deriving (Eq, Ord, Read, Enum, Bounded)
+            | GLOTTAL
+            | ALVEOLAR -- not really used
+            | POSTALVEOLAR -- not really used
+          --  | COARTICULATED Place Place
+            deriving (Eq, Ord, Read, Enum, Bounded)
 
 -- Manner
 data Manner = NASAL
@@ -126,26 +130,40 @@ data Tone = NONET
           | PEAKT deriving (Eq, Ord, Read, Enum, Bounded)
 
 -- show instances
+instance Show Phoneme where
+  show (Consonant p m h) = show h ++ " " ++ show p ++ " " ++ show m
+  show (Vowel h b r l t) = show t ++ " " ++ show l ++ " " ++ show h ++ " " ++ show b ++ " " ++ show r ++ " Vowel"
+  show (Diphthong h1 b1 r1 h2 b2 r2 l t) = show t ++ show l ++ h ++ b ++ r where
+    h | h1 == h2 = show h1
+      | otherwise = "(" ++ show h1 ++ " -> " ++ show h2 ++ ")"
+    b | b1 == b2 = show b1
+      | otherwise = "(" ++ show b1 ++ " -> " ++ show b2 ++ ")"
+    r | r1 == r2 = show r1
+      | otherwise = "(" ++ show r1 ++ " -> " ++ show r2 ++ ")"
+  show Blank = ""
+
 instance Show Place where
-  show p = case p of LABIAL         -> "Labial"
-                     BILABIAL       -> "Bilabial"
-                     LABIODENTAL    -> "Labiodental"
-                     CORONAL        -> "Coronal"
-                     DENTIALVEOLAR  -> "Denti-alveolar"
-                     DENTAL         -> "Dental"
-                     ALVEOLAR       -> "Alveolar"
-                     POSTALVEOLAR   -> "Post-Alveolar"
-                     RETROFLEX      -> "Retroflex"
-                     DORSAL         -> "Dorsal"
-                     ALVEOLOPALATAL -> "Alveolo-palatal"
-                     PALATAL        -> "Palatal"
-                     VELAR          -> "Velar"
-                     UVULAR         -> "Uvular"
-                     LARYNGEAL      -> "Laryngeal"
-                     EPIPHARYNGEAL  -> "Epipharyngeal"
-                     PHARYNGEAL     -> "Pharyngeal"
-                     EPIGLOTTAL     -> "Epiglottal"
-                     GLOTTAL        -> "Glottal"
+  show p = case p of BILABIAL        -> "Bilabial"
+                     LABIODENTAL     -> "Labiodental"
+                     LINGUOLABIAL    -> "Linguolabial"
+                     INTERDENTAL     -> "Interdental"
+                     DENTIALVEOLAR   -> "Denti-alveolar"
+                     LAMINALALVEOLAR -> "Laminal alveolar"
+                     PALATOALVEOLAR  -> "Palato-alveolar"
+                     DENTAL          -> "Dental"
+                     APICOALVEOLAR   -> "Apico-alveolar"
+                     APICALRETROFLEX -> "Apical retroflex"
+                     RETROFLEX       -> "Retroflex"
+                     ALVEOLOPALATAL  -> "Alveolo-palatal"
+                     PALATAL         -> "Palatal"
+                     VELAR           -> "Velar"
+                     UVULAR          -> "Uvular"
+                     PHARYNGEAL      -> "Pharyngeal"
+                     EPIPHARYNGEAL   -> "Epiglotto-pharyngeal"
+                     EPIGLOTTAL      -> "Epiglottal"
+                     GLOTTAL         -> "Glottal"
+                     ALVEOLAR        -> "Alveolar" -- not really used
+                     POSTALVEOLAR    -> "Postalveolar" -- not really used
 
 instance Show Manner where
   show m = case m of NASAL        -> "Nasal"
@@ -193,11 +211,11 @@ instance Show Roundedness where
 
 instance Show Length where
   show l = case l of SHORT  -> "Short"
-                     NORMAL -> ""
+                     NORMAL -> "'Normal'"
                      LONG   -> "Long"
 
 instance Show Tone where
-  show t = case t of NONET   -> ""
+  show t = case t of NONET   -> "'No tone'"
                      TOPT    -> "Top"
                      HIGHT   -> "High"
                      MIDT    -> "Mid"

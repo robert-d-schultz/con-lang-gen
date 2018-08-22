@@ -7,11 +7,9 @@ module Gen.Phonology
 ) where
 
 -- Import
-import Prelude
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
-import Data.List
 import Control.Monad
 
 import Data.Phoneme
@@ -59,23 +57,25 @@ makeConsonants places manners phonations exceptions = output where
 -- Make the places of articulation for consonants
 makePlaces :: RVar [Place]
 makePlaces = do
-  labial <- choice [[], [LABIAL], [BILABIAL, LABIODENTAL]]
+  n4 <- uniform 1 2
+  lab <- sample n4 [BILABIAL, LABIODENTAL]
+  labial <- choice [[], lab]
 
-  dental <- choice [[DENTIALVEOLAR], [DENTAL, ALVEOLAR, POSTALVEOLAR]]
-  let coronal2 = concat [dental, [RETROFLEX]]
-  coronal <- choice [[CORONAL], coronal2]
+  n3 <- uniform 1 7
+  alv <- sample n3 [INTERDENTAL, DENTAL, DENTIALVEOLAR, LAMINALALVEOLAR, APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX]
+  let coronal = alv ++ [RETROFLEX]
 
-  apalatal <- choice [[], [ALVEOLOPALATAL]]
-  let palatal = concat [[PALATAL], apalatal]
-  n <- uniform 2 3
-  dorsal2 <- sample n [palatal, [VELAR], [UVULAR]]
-  dorsal <- choice [[DORSAL], concat dorsal2]
+  n <- uniform 1 4
+  dorsal <- sample n [ALVEOLOPALATAL, PALATAL, VELAR, UVULAR]
 
-  epiph <- choice [[EPIPHARYNGEAL], [PHARYNGEAL, EPIGLOTTAL]]
-  let laryn2 = concat [epiph, [GLOTTAL]]
-  laryn <- choice [[], [LARYNGEAL], laryn2]
+  rad <- choice [[], [PHARYNGEAL]]
 
-  return $ concat [labial, coronal, dorsal, laryn]
+  n2 <- uniform 1 3
+  laryn2 <- sample n2 [GLOTTAL, EPIPHARYNGEAL, EPIGLOTTAL]
+  laryn <- choice [[], laryn2]
+
+  return $ concat [labial, coronal, dorsal, rad, laryn]
+
 
 -- Make the manners of articulation for consonants
 makeManners :: RVar [Manner]

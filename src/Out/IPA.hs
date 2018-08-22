@@ -19,22 +19,24 @@ retrieveCSymbol :: Place -> Manner -> Phonation -> Text
 retrieveCSymbol p m h
     | isJust $ searchCIPA p m h = fromMaybe "ERROR" (searchCIPA p m h)
     -- phonation
+    | h == ASPIRATED = retrieveCSymbol p m MODAL ++ "\688"
     | h == CREAKY = retrieveCSymbol p m MODAL ++ "\816"
     | h == STIFF = retrieveCSymbol p m MODAL ++ "\812"
     | h == SLACK = retrieveCSymbol p m MODAL ++ "\805"
     | h == BREATHY = retrieveCSymbol p m MODAL ++ "\804"
-    | h == ASPIRATED  = retrieveCSymbol p m MODAL ++ "\688"
+    | h == VOICELESS = retrieveCSymbol p m MODAL ++ "\805"
+    | h == MODAL && (not . null $ searchCIPA p m VOICELESS) = retrieveCSymbol p m VOICELESS ++ "\812"
     -- place of articulation
-    | p == LABIAL = retrieveCSymbol BILABIAL m h
-    | p == CORONAL || p == DENTIALVEOLAR = retrieveCSymbol ALVEOLAR m h
-    | (p == DORSAL) && (not . null $ searchCIPA VELAR m h) = retrieveCSymbol VELAR m h
-    | (p == DORSAL) && (not . null $ searchCIPA UVULAR m h) = retrieveCSymbol UVULAR m h
-    | (p == LARYNGEAL) && (not . null $ searchCIPA GLOTTAL m h) = retrieveCSymbol GLOTTAL m h
-    | (p == LARYNGEAL) && (not . null $ searchCIPA EPIGLOTTAL m h) = retrieveCSymbol EPIGLOTTAL m h
-    | (p == LARYNGEAL) && (not . null $ searchCIPA PHARYNGEAL m h) = retrieveCSymbol PHARYNGEAL m h
+    | p == LINGUOLABIAL = retrieveCSymbol ALVEOLAR m h ++ "\828"
+    | p == INTERDENTAL = retrieveCSymbol ALVEOLAR m h ++ "\810" ++ "\838"
+    | p == DENTIALVEOLAR = retrieveCSymbol ALVEOLAR m h ++ "\810" ++ "\827"
+    | p == LAMINALALVEOLAR = retrieveCSymbol ALVEOLAR m h ++ "\827"
+    | p == APICOALVEOLAR = retrieveCSymbol ALVEOLAR m h ++ "\826"
+    | p == PALATOALVEOLAR = retrieveCSymbol POSTALVEOLAR m h ++ "\827"
+    | p == APICALRETROFLEX = retrieveCSymbol ALVEOLAR m h ++ "\803"
     | (p == EPIPHARYNGEAL) && (not . null $ searchCIPA EPIGLOTTAL m h) = retrieveCSymbol EPIGLOTTAL m h
     | (p == EPIPHARYNGEAL) && (not . null $ searchCIPA PHARYNGEAL m h) = retrieveCSymbol PHARYNGEAL m h
-    | (p == EPIGLOTTAL) && (not . null $ searchCIPA PHARYNGEAL m h) = retrieveCSymbol PHARYNGEAL m h ++ "\799"
+    | p == EPIGLOTTAL = retrieveCSymbol PHARYNGEAL m h ++ "\799"
     | (p == PHARYNGEAL) && (not . null $ searchCIPA EPIGLOTTAL m h) = retrieveCSymbol EPIGLOTTAL m h ++ "\800"
     -- manner of articulation
     | m == FRICATIVE  = retrieveCSymbol p APPROXIMANT h ++ "\799"

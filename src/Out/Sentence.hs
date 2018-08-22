@@ -21,18 +21,33 @@ import Out.Lexicon
 -- transliterated (romanized)
 -- transcripted (IPA)
 -- interlinear gloss
+-- literal english translation
 -- english translation
 writeParseTree :: [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> Grammar -> Phrase -> Text
-writeParseTree sonHier dict infl g pt = "\n\n" ++ roman ++ "\n" ++ ipa ++ "\n" ++ gloss ++ "\n" ++ literal ++ "\n\"" ++ english ++ "\"" where
+writeParseTree sonHier dict infl g pt = "\n<br>\n" ++ table ++ "<br>\n" ++ literal ++ "\n<br>\n\"" ++ english ++ "\"" where
   leaves   = filter (not.all leafIsNull) (filter (not.null) (writePhrase g pt))
   eLeaves  = filter (not.all leafIsNull) (filter (not.null) (writePhrase englishGrammar pt))
-
-  -- native =
-  roman    = romanizeLeaves g dict infl leaves
-  ipa      = transcribeLeaves g sonHier dict infl leaves
-  gloss    = glossLeaves infl leaves
+  -- native = ...
+  table    = tableLeaves g sonHier dict infl leaves
   literal  = translateLeaves leaves
   english  = translateLeaves eLeaves
+
+-- makes a table so romanization, ipa, and gloss all line up
+tableLeaves :: Grammar -> [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> Text
+tableLeaves g sonHier dict infl leaves = "\n<table border=1>" ++ tHeader ++ romanRow ++ ipaRow ++ glossRow ++ "\n</table>\n" where
+  tHeader = "\n\t<tr>\n\t\t<th colspan=\"" ++ tshow (length leaves + 1) ++ "\">Example</th>\n\t</tr>"
+
+  romanRow = "\n\t<tr>\n\t\t<th>" ++ "Romanized" ++ "</th>" ++ romanCluster ++ "\n\t</tr>"
+  romanCluster = "\n\t\t<td>" ++ intercalate "</td>\n\t\t<td>" roman ++ "</td>"
+  roman = map (romanizeLeaves2 g dict infl) leaves
+
+  ipaRow = "\n\t<tr>\n\t\t<th>" ++ "Transcribed" ++ "</th>" ++ ipaCluster ++ "\n\t</tr>"
+  ipaCluster = "\n\t\t<td>" ++ intercalate "</td>\n\t\t<td>" ipa ++ "</td>"
+  ipa = map (transcribeLeaves2 g sonHier dict infl) leaves
+
+  glossRow = "\n\t<tr>\n\t\t<th>" ++ "Glossed" ++ "</th>" ++ glossCluster ++ "\n\t</tr>"
+  glossCluster = "\n\t\t<td>" ++ intercalate "</td>\n\t\t<td>" gloss ++ "</td>"
+  gloss = map (glossLeaves2 infl) leaves
 
 leafIsInfl :: Leaf -> Bool
 leafIsInfl LeafInfl{} = True
@@ -41,7 +56,6 @@ leafIsInfl _ = False
 leafIsNull :: Leaf -> Bool
 leafIsNull LeafNull{} = True
 leafIsNull _ = False
-
 
 -- gloss
 glossLeaves :: [ManifestSystem] -> [[Leaf]] -> Text
@@ -197,7 +211,7 @@ romanizeLeaf dict (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeMorpheme <$> look
 romanizeLeaf _ _ = "ERROR"
 
 
--- translate to english
+-- (tries to) translate to English
 translateLeaves :: [[Leaf]] -> Text
 translateLeaves leaves = unwords $ map translateLeaves2 leaves
 

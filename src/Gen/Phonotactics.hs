@@ -20,7 +20,7 @@ import Data.Phoneme
 -- Make sonority hierarchy (consonants only)
 makeSonHier :: [Phoneme] -> RVar (Int, [[Phoneme]])
 makeSonHier cons = do
-  let (glides, cons2) = partition (\x -> cmanner x == APPROXIMANT && cplace x > DORSAL) cons
+  let (glides, cons2) = partition (\x -> cmanner x == APPROXIMANT && cplace x > PALATAL) cons
   let (liquids, cons3) = partition (\x -> cmanner x `elem` [APPROXIMANT, LAPPROXIMANT, TRILL, FLAP, LFLAP]) cons2
   let (nasals, cons4) = partition (\x -> cmanner x == NASAL) cons3
   let (af, cons5) = partition (\x -> cmanner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && cvoice x == ASPIRATED) cons4
@@ -59,7 +59,7 @@ makeSonHier cons = do
 -- make sonHier from scheme number
 makeSonHier_ :: [Phoneme] -> Int -> [[Phoneme]]
 makeSonHier_ cons i = filter (not.null) scheme where
-  (glides, cons2) = partition (\x -> cmanner x == APPROXIMANT && cplace x > DORSAL) cons
+  (glides, cons2) = partition (\x -> cmanner x == APPROXIMANT && cplace x > PALATAL) cons
   (liquids, cons3) = partition (\x -> cmanner x `elem` [APPROXIMANT, LAPPROXIMANT, TRILL, FLAP, LFLAP]) cons2
   (nasals, cons4) = partition (\x -> cmanner x == NASAL) cons3
   (af, cons5) = partition (\x -> cmanner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && cvoice x == ASPIRATED) cons4

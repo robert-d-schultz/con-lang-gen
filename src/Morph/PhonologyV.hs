@@ -18,6 +18,8 @@ import Data.Other
 import Gen.Phonology
 import Gen.Phonotactics
 
+import Constants
+
 import Debug.Trace
 
 -- there should be two versions of this
@@ -43,7 +45,7 @@ insertVowel land = do
 vowelShift :: Language -> RVar Language
 vowelShift lang = do
   let (heights, backs, _, _, _) = getVMap lang
-  let vowels = nub $ map (\(Vowel h b _ _ _) -> (h,b)) (getVInv lang) 
+  let vowels = nub $ map (\(Vowel h b _ _ _) -> (h,b)) (getVInv lang)
   startPoint <- choice vowels
   loop <- makeVowelLoop startPoint vowels []
   let langN = shiftVowels loop lang
@@ -82,17 +84,6 @@ vowelDistance :: (Height, Backness) -> (Height, Backness) -> Int
 vowelDistance (h1,b1) (h2,b2) = abs (fromEnum h1 - fromEnum h2)
                                     + abs (fromEnum b1 - fromEnum b2)
                                   --  + 3 * abs (fromEnum r1 - fromEnum r2)
-
-
--- calculates an approximate similarity between two phonemes
-phonemeDistance :: Phoneme -> Phoneme -> Int
-phonemeDistance (Vowel h1 b1 r1 l1 t1) (Vowel h2 b2 r2 l2 t2) = abs (fromEnum h1 - fromEnum h2)
-                                                              + abs (fromEnum b1 - fromEnum b2)
-                                                              + 3 * abs (fromEnum r1 - fromEnum r2)
-phonemeDistance Consonant{} Consonant{} = 0 -- temp
-phonemeDistance Diphthong{} Diphthong{} = 0 -- this'll be cosine distance or something
-phonemeDistance _ _ = 999 --maybe something something semivowels...
-
 
 {- holding off on this, exploring sound changes...
 -- merging/splitting vowel heights

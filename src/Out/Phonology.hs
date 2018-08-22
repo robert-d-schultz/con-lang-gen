@@ -4,6 +4,9 @@ module Out.Phonology
 ( writeConPhonemeInventory
 , writeVowPhonemeInventory
 , writeDiphPhonemeInventory
+, writeToneInventory
+, writePhonationInventory
+, writeRoundednessInventory
 ) where
 
 import ClassyPrelude hiding (Word)
@@ -67,6 +70,26 @@ writeVowPhonemeInventory vows = "<br>\n<table border=1>" ++ tHeader ++ pLabels +
 
 -- write the diphthong inventory, should be a table in the final
 writeDiphPhonemeInventory :: [Phoneme] -> Text
-writeDiphPhonemeInventory [] = "<br>\nDiphthongs: none"
+writeDiphPhonemeInventory [] = "<br>\nDiphthongs: None"
 writeDiphPhonemeInventory [d] = "<br>\nDiphthongs: /" ++ writePhonemeIPA d ++ "/\n"
 writeDiphPhonemeInventory (d:ds) = "<br>\nDiphthongs: /" ++ intercalate "/, /" (map writePhonemeIPA ds) ++ "/, and /" ++ writePhonemeIPA d ++ "/\n"
+
+-- write out what the tones are
+writeToneInventory :: [Tone] -> Text
+writeToneInventory [] = "<br>\nTones: None"
+writeToneInventory [NONET] = "<br>\nTones: none"
+writeToneInventory [t] = "<br>\nTones: " ++ tshow t ++ "\n"
+writeToneInventory (t:ts) = "<br>\nTones: " ++ intercalate ", " (map tshow ts) ++ ", and " ++ tshow t ++ "\n"
+
+-- write out what the phonations are
+writePhonationInventory :: [Phonation] -> Text
+writePhonationInventory [] = ""
+writePhonationInventory [h1] = ""
+writePhonationInventory [h1, h2] = "<br>\nSymbols on the left in a cell are " ++ tshow h1 ++ ", to the right are " ++ tshow h2 ++ ".\n"
+writePhonationInventory (h:hs) = "<br>\nPhonations from left to right: " ++ intercalate ", " (map tshow hs) ++ ", and " ++ tshow h ++ "\n"
+
+writeRoundednessInventory :: [Roundedness] -> Text
+writeRoundednessInventory [] = ""
+writeRoundednessInventory [r1] = ""
+writeRoundednessInventory [r1, r2] = "<br>\nPaired vowels are: " ++ tshow r1 ++ ", " ++ tshow r2 ++ "\n"
+writeRoundednessInventory (r:rs) = "<br>\nRoundedness from left to right: " ++ intercalate ", " (map tshow rs) ++ ", and " ++ tshow r ++ "\n" --unlikely to use

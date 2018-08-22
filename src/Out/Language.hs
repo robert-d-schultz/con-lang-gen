@@ -78,8 +78,11 @@ writeLanguage lang seed mData = do
   -- write to file a bunch of stuff
   writeFile (unpack dir ++ "phonology.html") $ "Phonology"
                                  ++ writeConPhonemeInventory inventoryC
+                                 ++ writePhonationInventory phonations
                                  ++ writeVowPhonemeInventory inventoryV
+                                 ++ writeRoundednessInventory rounds
                                  ++ writeDiphPhonemeInventory inventoryD
+                                 ++ writeToneInventory tones
 
   writeFile (unpack dir ++ "phonotactics.html") $ "Phonotactics"
                                  ++ writeSonHier (inventoryV ++ inventoryD) sonHier
@@ -95,6 +98,7 @@ writeLanguage lang seed mData = do
 
   writeFile (unpack dir ++ "grammar.html") $ "Grammar"
                                  ++ writeGrammar grammar
+                                 ++ "Examples"
                                  ++ concatMap (writeParseTree sonHier roots systems grammar) ptExamples
 
   writeFile (unpack dir ++ "writing system.html") $ "Writing System"
