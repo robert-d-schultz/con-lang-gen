@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wall #-}
 module Morph.PhonologyV
 ( morphPhonologyV
 ) where
@@ -6,19 +7,11 @@ import Data.RVar
 import Data.Random.Extras
 import Control.Monad
 import Data.List
-import Data.Maybe
 import Data.Ord
-
-import HelperFunctions
 
 import Data.Phoneme
 import Data.Inflection
 import Data.Other
-
-import Gen.Phonology
-import Gen.Phonotactics
-
-import Constants
 
 import Debug.Trace
 
@@ -44,7 +37,7 @@ insertVowel land = do
 -- limited to manner and place
 vowelShift :: Language -> RVar Language
 vowelShift lang = do
-  let (heights, backs, _, _, _) = getVMap lang
+  --let (heights, backs, _, _, _) = getVMap lang
   let vowels = nub $ map (\(Vowel h b _ _ _) -> (h,b)) (getVInv lang)
   startPoint <- choice vowels
   loop <- makeVowelLoop startPoint vowels []

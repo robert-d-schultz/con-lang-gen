@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wall #-}
 module Morph.Grammar
 ( morphGrammar
 ) where
@@ -35,3 +36,4 @@ swap :: Eq a => Bounded a => a -> a
 swap a
  | a == maxBound = minBound
  | a == minBound = maxBound
+ | otherwise = a

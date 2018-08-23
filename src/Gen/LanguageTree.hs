@@ -1,11 +1,10 @@
+{-# OPTIONS_GHC -Wall #-}
 module Gen.LanguageTree
 ( makeLanguageTree
 ) where
 
 import Data.Random.Extras hiding (sample)
 import Data.Random
-import Data.RVar
-import Data.List
 import Control.Monad
 
 import LoadStuff

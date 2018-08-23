@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wall #-}
 module Gen.Inflection
 ( makeInflectionMap
 ) where
@@ -11,12 +12,7 @@ import Data.List
 
 import LoadStuff
 
-import Gen.Phonology
-import Data.Phoneme
-import Gen.Phonotactics
-import Data.Other
 import Data.Inflection
-import Data.Grammar
 
 -- Outputs an inflection map as well as the number of Particles,Prefixes,Suffixes there are for each LexCat
 -- Example: [(Noun, 2, 0, 0), (Verb, 0, 2, 0)] means Nouns have two particles, Verbs have two prefixes

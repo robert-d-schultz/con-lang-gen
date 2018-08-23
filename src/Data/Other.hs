@@ -29,6 +29,7 @@ data Language = RootL
               , getDInv :: [Phoneme]
               , getSonHier :: Int
               , getOnsetCCs :: [[Phoneme]]
+              , getNuclei :: [Phoneme]
               , getCodaCCs :: [[Phoneme]]
               , getInflMap :: InflectionMap
               , getManSyss :: [ManifestSystem]
@@ -39,6 +40,7 @@ data Language = RootL
 
 -- Used to parse out syllables from a word
 newtype SyllWord = SyllWord [Syllable] deriving (Eq, Show, Read)
+type ConsonantCluster = [Phoneme]
 data Syllable = Syllable
               { getOnset :: [Phoneme]
               , getNucleus :: Phoneme

@@ -1,5 +1,5 @@
-{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
+{-# OPTIONS_GHC -Wall #-}
 module Gen.ParseTree
 ( makeParseTree
 ) where
@@ -8,9 +8,7 @@ import ClassyPrelude
 
 import Data.RVar
 import Data.Random.Extras
-import Data.Random hiding (sample)
 
-import LoadStuff
 import Data.Grammar
 import Data.Inflection
 import Data.Phoneme
@@ -80,23 +78,23 @@ makeParseTree dict inflmap = do
 -- gen verb Inflection
 generateInflection :: InflectionMap -> LexCat -> RVar AllExpress
 generateInflection inflMap lc = do
-  gen <- helperFunction inflMap genSys lc
-  ani <- helperFunction inflMap aniSys lc
-  cas <- helperFunction inflMap casSys lc
-  num <- helperFunction inflMap numSys lc
-  def <- helperFunction inflMap defSys lc
-  spe <- helperFunction inflMap speSys lc
-  top <- helperFunction inflMap topSys lc
-  per <- helperFunction inflMap perSys lc
-  hon <- helperFunction inflMap honSys lc
-  pol <- helperFunction inflMap polSys lc
-  ten <- helperFunction inflMap tenSys lc
-  asp <- helperFunction inflMap aspSys lc
-  moo <- helperFunction inflMap mooSys lc
-  voi <- helperFunction inflMap voiSys lc
-  evi <- helperFunction inflMap eviSys lc
-  tra <- helperFunction inflMap traSys lc
-  vol <- helperFunction inflMap volSys lc
+  gen <- helperFunction inflMap getGenSys lc
+  ani <- helperFunction inflMap getAniSys lc
+  cas <- helperFunction inflMap getCasSys lc
+  num <- helperFunction inflMap getNumSys lc
+  def <- helperFunction inflMap getDefSys lc
+  spe <- helperFunction inflMap getSpeSys lc
+  top <- helperFunction inflMap getTopSys lc
+  per <- helperFunction inflMap getPerSys lc
+  hon <- helperFunction inflMap getHonSys lc
+  pol <- helperFunction inflMap getPolSys lc
+  ten <- helperFunction inflMap getTenSys lc
+  asp <- helperFunction inflMap getAspSys lc
+  moo <- helperFunction inflMap getMooSys lc
+  voi <- helperFunction inflMap getVoiSys lc
+  evi <- helperFunction inflMap getEviSys lc
+  tra <- helperFunction inflMap getTraSys lc
+  vol <- helperFunction inflMap getVolSys lc
 
   return (gen, ani, cas, num, def, spe, top, per, hon, pol, ten, asp, moo, voi, evi, tra, vol)
 

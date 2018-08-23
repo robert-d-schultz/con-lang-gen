@@ -1,10 +1,10 @@
+{-# OPTIONS_GHC -Wall #-}
 module Gen.Grammar
 ( makeGrammar
 ) where
 
 import Data.RVar
 import Data.Random.Extras
-import Data.Random hiding (sample)
 
 import Data.Grammar
 

@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
+{-# OPTIONS_GHC -Wall #-}
 module Out.Roman
 ( romanizeWord
 , romanizeMorpheme
@@ -93,5 +94,6 @@ romanizePhoneme (Vowel h b r l t)
   | h `elem` [CLOSE, NEARCLOSE] && b `elem` [BACK, NEARBACK, CENTRAL] = "o"
   | h `elem` [CLOSEMID, MID, OPENMID] && b `elem` [CENTRAL, NEARFRONT, NEARBACK] = "u"
   | otherwise = "u"
-
+  
 romanizePhoneme (Diphthong h b r h2 b2 r2 l t) = romanizePhoneme (Vowel h b r l t) ++ romanizePhoneme (Vowel h2 b2 r2 l t)
+romanizePhoneme Blank = ""

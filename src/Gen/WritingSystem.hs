@@ -1,5 +1,5 @@
-{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
+{-# OPTIONS_GHC -Wall #-}
 module Gen.WritingSystem
 ( generateWritingSystem
 , generateAlphabet
@@ -11,13 +11,10 @@ module Gen.WritingSystem
 import ClassyPrelude
 import Data.RVar
 import Data.Random.Extras
-import Data.Random hiding (sample)
 
 import Data.Phoneme
 import Data.Other
 import Data.Inflection
-
-import Gen.Phonology
 
 --pick writing systems
 generateWritingSystem :: [Phoneme] -> [Syllable] -> [((Text,LexCat), Morpheme)] -> RVar ([(Phoneme, Int)], [(Syllable, Int)], [(((Text, LexCat), Morpheme), Int)])

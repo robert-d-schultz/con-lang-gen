@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
+{-# OPTIONS_GHC -Wall #-}
 module Out.WritingSystem
 ( writeWritingSystem
 , writeCharacter
@@ -12,7 +13,6 @@ import Data.Other
 import Data.Inflection
 
 import Out.Lexicon
-import Out.IPA
 
 writeWritingSystem :: ([(Phoneme, (Int, [(Text,[(Int,Int)])]))], [(Syllable, (Int, [(Text,[(Int,Int)])]))], [(((Text, LexCat), Morpheme), (Int, [(Text,[(Int,Int)])]))]) -> Text
 writeWritingSystem (a, s, l) =  "\n<br>\n" ++ aOut ++ sOut ++ lOut where
@@ -27,12 +27,13 @@ writeAChar :: (Phoneme, (Int, [(Text,[(Int,Int)])])) -> Text
 writeAChar (Consonant p m h, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", /" ++ writePhonemeIPA (Consonant p m h) ++ "/"
 writeAChar (Vowel h b r l t, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", /" ++ writePhonemeIPA (Vowel h b r l t) ++ "/"
 writeAChar (Diphthong h1 b1 r1 h2 b2 r2 l t, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", /" ++ writePhonemeIPA (Diphthong h1 b1 r1 h2 b2 r2 l t) ++ "/"
+writeAChar (Blank, _) = ""
 
 writeSChar :: (Syllable, (Int, [(Text,[(Int,Int)])])) -> Text
 writeSChar (syll, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", /" ++ writeSyllableIPA syll ++"/"
 
 writeLChar :: (((Text, LexCat), Morpheme), (Int, [(Text,[(Int,Int)])])) -> Text
-writeLChar (((str, lc), morph), (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", \"" ++ str ++ "\""
+writeLChar (((str, _), _), (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", \"" ++ str ++ "\""
 
 -- Grapheme
 writeCharacter :: [(Text,[(Int,Int)])] -> Int -> Int -> Int -> Text

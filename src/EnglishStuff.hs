@@ -1,7 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 module EnglishStuff
-( englishGrammar
+( englishLanguage
+, englishGrammar
 , englishInflection
 , englishManifest
 ) where
@@ -10,29 +11,47 @@ import ClassyPrelude
 
 import Data.Grammar
 import Data.Inflection
+import Data.Other
+
+englishLanguage = Language { getName = "English"
+                           , getCMap = ([], [], [])
+                           , getCInv = []
+                           , getVMap = ([], [], [], [], [])
+                           , getVInv = []
+                           , getDInv = []
+                           , getSonHier = 0
+                           , getOnsetCCs = []
+                           , getNuclei = []
+                           , getCodaCCs = []
+                           , getInflMap = englishInflection
+                           , getManSyss = []
+                           , getGrammar = englishGrammar
+                           , getRoots = []
+                           , getWriting = ([], [], [])
+                           }
 
 englishGrammar :: Grammar
 englishGrammar = Grammar SubInitial ObjFinal CompFinal NoVtoIMove OblAffixHop NoNullSub OptTopic NoNullTop NoTopMark OblItoCMove OblWHMove PiedPipe OblQuesInv
 
 englishInflection :: InflectionMap
 englishInflection = InflectionMap
-                      { genSys = Manifest [(Pron, Suffix, 1)] [M, F, N]
-                      , aniSys = Manifest [(Pron, Suffix, 1)] [AN, INAN]
-                      , casSys = Manifest [(Pron, Suffix, 1), (Noun, Suffix, 1)] [NOM, ACC, GEN]
-                      , numSys = Manifest [(Verb, Suffix, 1), (Noun, Suffix, 1), (Noun, Particle, 1)] [SG, PL]
-                      , defSys = Manifest [(Noun, Particle, 1)] [DEF, INDF]
-                      , speSys = Manifest [(Noun, Particle, 2)] [SPEC, NSPEC] -- "fake"
-                      , topSys = Manifest [(Noun, Suffix, 2)] [TOP, NTOP] --"fake"
-                      , perSys = Manifest [(Pron, Suffix, 1), (Noun, Suffix, 1)] [FIRST, SECOND, THIRD]
-                      , honSys = NoManifest
-                      , polSys = Manifest [(Verb, Particle, 1)] [AFF, NEG]
-                      , tenSys = Manifest [(Verb, Suffix, 1)] [PST, PRS, FUT, PSTPER, PRSPER, FUTPER]
-                      , aspSys = Manifest [(Verb, Particle, 2), (Verb, Suffix, 1)] [NNPROG, PROG]
-                      , mooSys = Manifest [(Verb, Particle, 2), (Verb, Suffix, 1)] [IND, SBJV, COND, IMP]
-                      , voiSys = Manifest [(Verb, Particle, 1), (Verb, Suffix, 1)] [ACTIVE, PASSIVE]
-                      , eviSys = NoManifest
-                      , traSys = NoManifest
-                      , volSys = Manifest [(Verb, Particle, 3)] [VOL, NVOL] --"fake"
+                      { getGenSys = Manifest [(Pron, Suffix, 1)] [M, F, N]
+                      , getAniSys = Manifest [(Pron, Suffix, 1)] [AN, INAN]
+                      , getCasSys = Manifest [(Pron, Suffix, 1), (Noun, Suffix, 1)] [NOM, ACC, GEN]
+                      , getNumSys = Manifest [(Verb, Suffix, 1), (Noun, Suffix, 1), (Noun, Particle, 1)] [SG, PL]
+                      , getDefSys = Manifest [(Noun, Particle, 1)] [DEF, INDF]
+                      , getSpeSys = Manifest [(Noun, Particle, 2)] [SPEC, NSPEC] -- "fake"
+                      , getTopSys = Manifest [(Noun, Suffix, 2)] [TOP, NTOP] --"fake"
+                      , getPerSys = Manifest [(Pron, Suffix, 1), (Noun, Suffix, 1)] [FIRST, SECOND, THIRD]
+                      , getHonSys = NoManifest
+                      , getPolSys = Manifest [(Verb, Particle, 1)] [AFF, NEG]
+                      , getTenSys = Manifest [(Verb, Suffix, 1)] [PST, PRS, FUT, PSTPER, PRSPER, FUTPER]
+                      , getAspSys = Manifest [(Verb, Particle, 2), (Verb, Suffix, 1)] [NNPROG, PROG]
+                      , getMooSys = Manifest [(Verb, Particle, 2), (Verb, Suffix, 1)] [IND, SBJV, COND, IMP]
+                      , getVoiSys = Manifest [(Verb, Particle, 1), (Verb, Suffix, 1)] [ACTIVE, PASSIVE]
+                      , getEviSys = NoManifest
+                      , getTraSys = NoManifest
+                      , getVolSys = Manifest [(Verb, Particle, 3)] [VOL, NVOL] --"fake"
                       }
 
 englishManifest :: [(LexCat, [(LexCat, ManifestType, [(Text, AllExpress)])], [(LexCat, ManifestType, [(Text, AllExpress)])], [(LexCat, ManifestType, [(Text, AllExpress)])])]

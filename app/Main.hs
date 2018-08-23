@@ -1,11 +1,10 @@
 {-# LANGUAGE OverloadedStrings, NoImplicitPrelude #-}
+{-# OPTIONS_GHC -Wall #-}
 module Main where
 
 import ClassyPrelude
 import Data.Text.IO (getLine)
 import Data.Random
-import Data.RVar
-import Data.Hashable
 import System.Random
 import System.Directory
 
@@ -28,7 +27,7 @@ main = do
     idata <- loadInputData
     mData <- loadMeaningData
     tree <- newSample $ makeLanguageTree 0 idata mData RootL
-    writeLanguageTree seed mData tree
+    writeLanguageTree seed tree
 
 -- special sampleRVar that allows seeds
 newSample :: RVar a -> IO a

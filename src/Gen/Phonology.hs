@@ -1,3 +1,5 @@
+{-# LANGUAGE NoImplicitPrelude #-}
+{-# OPTIONS_GHC -Wall #-}
 module Gen.Phonology
 ( makeDiphInventory
 , makeConsonantMap
@@ -7,21 +9,23 @@ module Gen.Phonology
 ) where
 
 -- Import
+import ClassyPrelude
+
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
-import Control.Monad
 
 import Data.Phoneme
 import Constants
 
 -- Make diphthongs
 makeDiphInventory :: Int -> [Phoneme] -> RVar [Phoneme]
-makeDiphInventory n vs = sample n subseq where
-  subseq = map makeDiph $ filter (\(Vowel h1 b1 r1 l1 t1, Vowel h2 b2 r2 l2 t2) -> (h1 /= h2 || b1 /= b2) && l1 == l2) ((,) <$> vs <*> vs)
+makeDiphInventory n vs = fromMaybe (return []) (join $ safeChoices n <$> subseq) where
+  subseq = mapM makeDiph $ filter (\(Vowel h1 b1 _ l1 _, Vowel h2 b2 _ l2 _) -> (h1 /= h2 || b1 /= b2) && l1 == l2) ((,) <$> vs <*> vs)
 
-makeDiph :: (Phoneme, Phoneme) -> Phoneme
-makeDiph (Vowel h1 b1 r1 l1 t1, Vowel h2 b2 r2 l2 t2) = Diphthong h1 b1 r1 h2 b2 r2 NORMAL t1
+makeDiph :: (Phoneme, Phoneme) -> Maybe Phoneme
+makeDiph (Vowel h1 b1 r1 _ t1, Vowel h2 b2 r2 _ _) = Just $ Diphthong h1 b1 r1 h2 b2 r2 NORMAL t1
+makeDiph (_,_) = Nothing
 
 -- Returns a list of places, manners, phonations, and exceptions
 makeConsonantMap :: RVar ([Place], [Manner], [Phonation], [Phoneme])
@@ -50,9 +54,9 @@ makeConsonantMap = do
 makeConsonants :: [Place] -> [Manner] -> [Phonation] -> [Phoneme] -> [Phoneme]
 makeConsonants places manners phonations exceptions = output where
   -- Create all possible consonants from place, manner, and phonation
-  cons = Consonant <$> places <*> manners <*> phonations
+  cns = Consonant <$> places <*> manners <*> phonations
   -- Filter out exceptions
-  output = filter (`notElem` exceptions) cons
+  output = filter (`notElem` exceptions) cns
 
 -- Make the places of articulation for consonants
 makePlaces :: RVar [Place]

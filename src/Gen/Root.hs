@@ -13,34 +13,30 @@ import Data.Random hiding (sample)
 
 import LoadStuff
 import Data.Phoneme
-import Data.Other
 import Data.Inflection
-import Data.Grammar
-import Gen.Phonology
-import Gen.Phonotactics
 
 -- Generate root dictionary - atomic meanings
 makeRootDictionary :: MeaningData -> [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> (Int, Int) -> RVar [((Text, LexCat), Morpheme)]
-makeRootDictionary mData vows ccs set = concat <$> sequence [n, v, a, p] where
-  n = mapM (\i -> (,) <$> ((,) <$> return i <*> return Noun) <*> makeRoot vows ccs set) (inputNouns mData)
-  v = mapM (\i -> (,) <$> ((,) <$> return i <*> return Verb) <*> makeRoot vows ccs set) (inputVerbs mData)
-  a = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adj) <*> makeRoot vows ccs set) (inputAdjs mData)
-  p = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adpo) <*> makeRoot vows ccs set) (inputAdpos mData)
+makeRootDictionary mData nucs ccs set = concat <$> sequence [n, v, a, p] where
+  n = mapM (\i -> (,) <$> ((,) <$> return i <*> return Noun) <*> makeRoot nucs ccs set) (inputNouns mData)
+  v = mapM (\i -> (,) <$> ((,) <$> return i <*> return Verb) <*> makeRoot nucs ccs set) (inputVerbs mData)
+  a = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adj) <*> makeRoot nucs ccs set) (inputAdjs mData)
+  p = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adpo) <*> makeRoot nucs ccs set) (inputAdpos mData)
 
 -- Generate a morpheme given vowels, consonant clusters, and some settings
 makeRoot :: [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> (Int, Int) -> RVar Morpheme
-makeRoot vows ccs (ns,xs) = do
+makeRoot nucs ccs (ns,xs) = do
   -- decide how many syllables in the morpheme
   s <- uniform ns xs
-  root <- R.replicateM s (makeRootSyllable vows ccs)
+  root <- R.replicateM s (makeRootSyllable nucs ccs)
   return $ Morpheme $ concat root
 
 makeRootSyllable :: [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> RVar [Phoneme]
-makeRootSyllable vows (onsets, codas) = do
+makeRootSyllable nucs (onsets, codas) = do
   onset <- choice onsets
-  vowel <- choice vows
+  nuclei <- choice nucs
   coda <- choice codas
-  return $ onset ++ [vowel] ++ coda
+  return $ onset ++ [nuclei] ++ coda
 
 -- Gen.Meaning?
 -- special generators
@@ -60,6 +56,7 @@ makeColorSystem = do
     9 -> (++) ["white", "black", "red", "yellow", "green", "blue", "brown"] <$> sample 2 ["purple", "pink", "orange", "gray"]
     10 -> (++) ["white", "black", "red", "yellow", "green", "blue", "brown"] <$> sample 3 ["purple", "pink", "orange", "gray"]
     11 -> return ["white", "black", "red", "yellow", "green", "blue", "brown", "pueple", "pink", "orange", "gray"]
+    _ -> return []
 
 makeNumberSystem :: RVar [Text]
 makeNumberSystem = do

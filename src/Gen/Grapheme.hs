@@ -20,16 +20,16 @@ import Data.Inflection
 makeCharacters :: ([(Phoneme, Int)], [(Syllable, Int)], [(((Text, LexCat), Morpheme), Int)]) -> RVar ([(Phoneme, (Int, [(Text,[(Int,Int)])]))], [(Syllable, (Int, [(Text,[(Int,Int)])]))], [(((Text, LexCat), Morpheme), (Int, [(Text,[(Int,Int)])]))])
 makeCharacters ([], [], []) = return ([], [], [])
 makeCharacters (a, s, l) = do
-  aOut <- mapM (makeCharacter 11 1 . snd) a
-  sOut <- mapM (makeCharacter 11 1 . snd) s
-  lOut <- mapM (makeCharacter 11 1 . snd) l
+  aOut <- mapM (makeCharacter 11 . snd) a
+  sOut <- mapM (makeCharacter 11 . snd) s
+  lOut <- mapM (makeCharacter 11 . snd) l
   return (zipWith help a aOut, zipWith help s sOut, zipWith help l lOut)
 
 help :: (a, b) -> c -> (a, (b,c))
 help (x,y) z = (x,(y,z))
 
-makeCharacter :: Int -> Int ->  Int -> RVar [(Text,[(Int,Int)])]
-makeCharacter n w _ = do
+makeCharacter :: Int -> Int -> RVar [(Text,[(Int,Int)])]
+makeCharacter n _ = do
   startPos <- sequence [(,) <$> (uniform 0 n :: RVar Int) <*> (uniform 0 n :: RVar Int)]
   stuff <- replicateM 3 (svgStuff n)
   let path = ("M", startPos):stuff

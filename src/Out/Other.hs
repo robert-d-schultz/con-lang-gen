@@ -15,10 +15,10 @@ import Out.Lexicon
 
 -- write the sonority hierarchy
 writeSonHier :: [Phoneme] -> [[Phoneme]] -> Text
-writeSonHier vows cons = "\n\nSonority hierarchy: " ++ "\n/" ++ cListv ++ "/\n/" ++ intercalate "/\n/" cListc ++ "/\n" where
+writeSonHier vows cns = "\n\nSonority hierarchy: " ++ "\n/" ++ cListv ++ "/\n/" ++ intercalate "/\n/" cListc ++ "/\n" where
   fListv = map writePhonemeIPA vows
   cListv = intercalate "/, /" fListv
-  fListc = map (map writePhonemeIPA) cons
+  fListc = map (map writePhonemeIPA) (reverse cns)
   cListc = map (intercalate "/, /") fListc
 
 writeCCs :: [[Phoneme]] -> [[Phoneme]] -> Text

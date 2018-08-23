@@ -12,7 +12,6 @@ import Data.Other
 import Data.Inflection
 
 import Morph.Phonology
-import Morph.PhonologyV
 import Morph.Grammar
 
 import Out.Roman

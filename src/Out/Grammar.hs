@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
-
+{-# OPTIONS_GHC -Wall #-}
 module Out.Grammar
 ( writeGrammar
 ) where

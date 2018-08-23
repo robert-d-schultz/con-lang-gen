@@ -11,6 +11,7 @@ import ClassyPrelude hiding (Word)
 import Data.Grammar
 import Data.Inflection
 import Data.Phoneme
+import Data.Other
 import Out.Roman
 import EnglishStuff
 
@@ -23,31 +24,31 @@ import Out.Lexicon
 -- interlinear gloss
 -- literal english translation
 -- english translation
-writeParseTree :: [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> Grammar -> Phrase -> Text
-writeParseTree sonHier dict infl g pt = "\n<br>\n" ++ table ++ "<br>\n" ++ literal ++ "\n<br>\n\"" ++ english ++ "\"" where
-  leaves   = filter (not.all leafIsNull) (filter (not.null) (writePhrase g pt))
-  eLeaves  = filter (not.all leafIsNull) (filter (not.null) (writePhrase englishGrammar pt))
+writeParseTree :: Language -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> Phrase -> Text
+writeParseTree lang dict infl pt = "\n<br>\n" ++ table ++ "<br>\n" ++ literal ++ "\n<br>\n\"" ++ english ++ "\"" where
+  leaves   = filter (not.all leafIsNull) (filter (not.null) (writePhrase lang pt))
+  eLeaves  = filter (not.all leafIsNull) (filter (not.null) (writePhrase englishLanguage pt))
   -- native = ...
-  table    = tableLeaves g sonHier dict infl leaves
+  table    = tableLeaves lang dict infl leaves
   literal  = translateLeaves leaves
   english  = translateLeaves eLeaves
 
 -- makes a table so romanization, ipa, and gloss all line up
-tableLeaves :: Grammar -> [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> Text
-tableLeaves g sonHier dict infl leaves = "\n<table border=1>" ++ tHeader ++ romanRow ++ ipaRow ++ glossRow ++ "\n</table>\n" where
+tableLeaves :: Language -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> Text
+tableLeaves lang dict infl leaves = "\n<table border=1>" ++ tHeader ++ romanRow ++ ipaRow ++ glossRow ++ "\n</table>\n" where
   tHeader = "\n\t<tr>\n\t\t<th colspan=\"" ++ tshow (length leaves + 1) ++ "\">Example</th>\n\t</tr>"
 
   romanRow = "\n\t<tr>\n\t\t<th>" ++ "Romanized" ++ "</th>" ++ romanCluster ++ "\n\t</tr>"
   romanCluster = "\n\t\t<td>" ++ intercalate "</td>\n\t\t<td>" roman ++ "</td>"
-  roman = map (romanizeLeaves2 g dict infl) leaves
+  roman = map (romanizeLeaves dict infl) leaves
 
   ipaRow = "\n\t<tr>\n\t\t<th>" ++ "Transcribed" ++ "</th>" ++ ipaCluster ++ "\n\t</tr>"
   ipaCluster = "\n\t\t<td>" ++ intercalate "</td>\n\t\t<td>" ipa ++ "</td>"
-  ipa = map (transcribeLeaves2 g sonHier dict infl) leaves
+  ipa = map (transcribeLeaves lang dict infl) leaves
 
   glossRow = "\n\t<tr>\n\t\t<th>" ++ "Glossed" ++ "</th>" ++ glossCluster ++ "\n\t</tr>"
   glossCluster = "\n\t\t<td>" ++ intercalate "</td>\n\t\t<td>" gloss ++ "</td>"
-  gloss = map (glossLeaves2 infl) leaves
+  gloss = map (glossLeaves infl) leaves
 
 leafIsInfl :: Leaf -> Bool
 leafIsInfl LeafInfl{} = True
@@ -58,11 +59,8 @@ leafIsNull LeafNull{} = True
 leafIsNull _ = False
 
 -- gloss
-glossLeaves :: [ManifestSystem] -> [[Leaf]] -> Text
-glossLeaves infl leaves = unwords $ map (glossLeaves2 infl) leaves
-
-glossLeaves2 :: [ManifestSystem] -> [Leaf] -> Text
-glossLeaves2 infl leaves
+glossLeaves :: [ManifestSystem] -> [Leaf] -> Text
+glossLeaves infl leaves
   | any leafIsInfl leaves = glossInfl infl leaves
   | otherwise             = concatMap translateLeaf leaves
 
@@ -73,9 +71,9 @@ glossInfl infl leaves = out where
 
   -- retrieve the relevent particles/prefixes/suffixes from the manifest systems
   (partCombos, prefCombos, suffCombos) = newFunction2 infl inflLeaves
-  parts = concatMap (getLast . map (snd . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) partCombos
-  prefs = concatMap (getLast . map (snd . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) prefCombos
-  suffs = concatMap (getLast . map (snd . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos
+  parts = concatMap (getLast . map (snd . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) partCombos
+  prefs = concatMap (getLast . map (snd . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) prefCombos
+  suffs = concatMap (getLast . map (snd . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos
   partsOut = map glossCombo parts
   prefsOut = map glossCombo prefs
   suffsOut = map glossCombo suffs
@@ -92,9 +90,9 @@ newFunction infl leaves = (parts,prefs,suffs,others) where
 
   -- retrieve the relevent particles/prefixes/suffixes from the manifest systems
   (partCombos, prefCombos, suffCombos) = newFunction2 infl inflLeaves
-  parts = concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) partCombos
-  prefs = concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) prefCombos
-  suffs = concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos
+  parts = concatMap (getLast . map (fst . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) partCombos
+  prefs = concatMap (getLast . map (fst . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) prefCombos
+  suffs = concatMap (getLast . map (fst . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos
 
 newFunction2 :: [ManifestSystem] -> [Leaf] -> ([[(Morpheme,AllExpress)]], [[(Morpheme,AllExpress)]], [[(Morpheme,AllExpress)]])
 newFunction2 infl inflLeaves = (partCombos, prefCombos, suffCombos) where
@@ -127,22 +125,21 @@ glossCombo (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)
   vol2 | vol /= NoExpress = tshow (getExp vol) : tra2 | otherwise = tra2
 
 -- transcribe sentence into IPA
-transcribeLeaves :: Grammar -> [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> Text
-transcribeLeaves g sonHier dict infl leaves = unwords $ map (transcribeLeaves2 g sonHier dict infl) leaves
+transcribeLeaves :: Language -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
+transcribeLeaves lang dict infl leaves
+  | any leafIsInfl leaves = transcribeInfl lang dict infl leaves
+  | otherwise             = concatMap (transcribeLeaf lang dict) leaves
 
-transcribeLeaves2 :: Grammar -> [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
-transcribeLeaves2 g sonHier dict infl leaves
-  | any leafIsInfl leaves = transcribeInfl g sonHier dict infl leaves
-  | otherwise             = concatMap (transcribeLeaf sonHier dict) leaves
-
-transcribeInfl :: Grammar -> [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
-transcribeInfl g sonHier dict infl leaves = out where
+transcribeInfl :: Language -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
+transcribeInfl lang dict infl leaves = out where
   (parts,prefs,suffs,others) = newFunction infl leaves
 
   -- syllabify the output properly
-  partOut = map (writeWordIPA sonHier . Word . (:[])) parts
-  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (writeWordIPA sonHier (Word suffs) ++ "<UNK>" ++ writeWordIPA sonHier (Word prefs)) (writeWordIPA sonHier . Word <$> ((++ suffs) . (prefs ++) . (:[]) <$> lookup (str, lc) dict))
-                                   (LeafNull _) -> "") others
+  partOut = map (writeWordIPA lang . Word . (:[])) parts
+  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (writeWordIPA lang (Word suffs) ++ "<UNK>" ++ writeWordIPA lang (Word prefs)) (writeWordIPA lang . Word <$> ((++ suffs) . (prefs ++) . (:[]) <$> lookup (str, lc) dict))
+                                   (LeafNull _) -> ""
+                                   _ -> ""
+                                   ) others
 
   out
     | null others          = unwords partOut
@@ -174,32 +171,31 @@ compareInfl (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol
       , vol == vol2 || vol `elem` [Express UVOL, NoExpress]
       ]
 
-transcribeLeaf :: [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> Leaf -> Text
+transcribeLeaf :: Language -> [((Text, LexCat), Morpheme)] -> Leaf -> Text
 transcribeLeaf _ _ LeafNull{} = ""
-transcribeLeaf sonHier dict (Leaf lc _ str) = transcribe sonHier dict (str,lc)
+transcribeLeaf lang dict (Leaf lc _ str) = transcribe lang dict (str,lc)
 transcribeLeaf _ _ _ = "ERROR"
 
-transcribe :: [[Phoneme]] -> [((Text, LexCat), Morpheme)] -> (Text, LexCat) -> Text
-transcribe sonHier dict ent = fromMaybe "<UNK>" (writeMorphemeIPA sonHier <$> lookup ent dict)
+transcribe :: Language -> [((Text, LexCat), Morpheme)] -> (Text, LexCat) -> Text
+transcribe lang dict ent = fromMaybe "<UNK>" (writeMorphemeIPA lang <$> lookup ent dict)
 
 
 -- romanize
-romanizeLeaves :: Grammar -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [[Leaf]] -> Text
-romanizeLeaves g dict infl leaves = unwords $ map (romanizeLeaves2 g dict infl) leaves
-
-romanizeLeaves2 :: Grammar -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
-romanizeLeaves2 g dict infl leaves
-  | any leafIsInfl leaves = romanizeInfl g dict infl leaves
+romanizeLeaves :: [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
+romanizeLeaves dict infl leaves
+  | any leafIsInfl leaves = romanizeInfl dict infl leaves
   | otherwise             = concatMap (romanizeLeaf dict) leaves
 
-romanizeInfl :: Grammar -> [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
-romanizeInfl g dict infl leaves = out where
+romanizeInfl :: [((Text, LexCat), Morpheme)] -> [ManifestSystem] -> [Leaf] -> Text
+romanizeInfl dict infl leaves = out where
   (parts,prefs,suffs,others) = newFunction infl leaves
 
   -- syllabify the output properly
   partOut = map (romanizeWord . Word . (:[])) parts
   othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe ((romanizeWord . Word) suffs ++ "<UNK>" ++ (romanizeWord . Word) prefs) ((romanizeWord . Word) <$> ((++ suffs) . (prefs ++) . (:[]) <$> lookup (str, lc) dict))
-                                   (LeafNull _) -> "") others
+                                   (LeafNull _) -> ""
+                                   _ -> ""
+                                   ) others
 
   out
     | null others          = unwords partOut
@@ -231,9 +227,9 @@ translateInfl leaves = out where
   prefCombos = map (\(_,_,x)-> x) mprefs
   suffCombos = map (\(_,_,x)-> x) msuffs
 
-  parts = (concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) partCombos) :: [Text]
-  prefs = [""] :: [Text]
-  suffs = (concatMap (getLast . map (fst . snd) . filter (\(j,(x,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos) :: [Text]
+  parts = (concatMap (getLast . map (fst . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) partCombos) :: [Text]
+  prefs = [""] :: [Text] -- i guess english doesn't have any (inflectional) prefixes so this is alright
+  suffs = (concatMap (getLast . map (fst . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos) :: [Text]
 
   out
     | null others = unwords parts
@@ -254,8 +250,9 @@ translateLeaf2 _ = "ERROR"
 -- linearizes a parse tree using the grammar specified
 -- it outputs a list of [Leaf] where [Leaf] contains a Leaf and any relevent LeafInfl's
 -- definitely not as elegant as it should be
-writePhrase :: Grammar -> Phrase -> [[Leaf]]
-writePhrase g (XP Det Null dSpec (XBarC Det Null dHead (XP Noun Null nSpec (XBarA Noun Null nAdjun (XBarC Noun Null nHead nComp))))) = dp where
+writePhrase :: Language -> Phrase -> [[Leaf]]
+writePhrase lang (XP Det Null dSpec (XBarC Det Null dHead (XP Noun Null nSpec (XBarA Noun Null nAdjun (XBarC Noun Null nHead nComp))))) = dp where
+  g = getGrammar lang
   dp
     | getSI g == SubInitial = dSpecOut ++ dbar
     | otherwise             = dbar ++ dSpecOut
@@ -270,14 +267,15 @@ writePhrase g (XP Det Null dSpec (XBarC Det Null dHead (XP Noun Null nSpec (XBar
     | getOF g == ObjFinal = nHeadOut ++ nCompOut
     | otherwise           = nCompOut ++ nHeadOut
 
-  dSpecOut = writePhrase g dSpec
+  dSpecOut = writePhrase lang dSpec
   dHeadOut = [[dHead]]
-  nSpecOut = writePhrase g nSpec
-  nAdjunOut = writePhrase g nAdjun
+  nSpecOut = writePhrase lang nSpec
+  nAdjunOut = writePhrase lang nAdjun
   nHeadOut = [[nHead, dHead]]
-  nCompOut = writePhrase g nComp
+  nCompOut = writePhrase lang nComp
 
-writePhrase g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl _ iHead (XP Verb _ vSpec (XBarC Verb _ vHead vComp)))))) = cp where
+writePhrase lang (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl _ iHead (XP Verb _ vSpec (XBarC Verb _ vHead vComp)))))) = cp where
+  g = getGrammar lang
   cp
     | getSI g == SubInitial = cSpecOut ++ cbar
     | otherwise             = cbar ++ cSpecOut
@@ -300,13 +298,13 @@ writePhrase g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl 
   cSpecOut
     | getWHM g == OblWHMove && phraseIl vComp == Ques && phraseLC vComp == Det  = [[Leaf Noun Ques "Who/what"]]
     | getWHM g == OblWHMove && phraseIl vComp == Ques && phraseLC vComp == Adpo = [[Leaf Noun Ques "Where"]]
-    | otherwise                                                                 = writePhrase g cSpec
+    | otherwise                                                                 = writePhrase lang cSpec
   cHeadOut
     | getItoC g == OblItoCMove && cHead == LeafNull Ques = [[iHead]]
     | otherwise                                          = [[cHead]]
   iSpecOut
-    | True      = writePhrase g vSpec
-    | otherwise = writePhrase g iSpec
+    | True      = writePhrase lang vSpec
+    | otherwise = writePhrase lang iSpec
   iHeadOut
     | getVtoI g == OblVtoIMove && getItoC g == OblItoCMove && cHead == LeafNull Ques = [[vHead]]
     | getItoC g == OblItoCMove && cHead == LeafNull Ques                             = []
@@ -318,7 +316,7 @@ writePhrase g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl 
     | otherwise                                                                      = []
   vSpecOut
     | True      = []
-    | otherwise = writePhrase g vSpec
+    | otherwise = writePhrase lang vSpec
   vHeadOut
     | getVtoI g == OblVtoIMove                                = []
     | (getVtoI g == NoVtoIMove && getAH g == OblAffixHop)
@@ -326,18 +324,24 @@ writePhrase g (XP Comp _ cSpec (XBarC Comp _ cHead (XP Infl _ iSpec (XBarC Infl 
     | otherwise                                               = [[vHead]]
   vCompOut
     | getWHM g == OblWHMove && phraseIl vComp == Ques = []
-    | otherwise                                       = writePhrase g vComp
+    | otherwise                                       = writePhrase lang vComp
 
-writePhrase g (XP lc Ques spec bar)
-  | getSI g == SubInitial = writePhrase g spec ++ writeBar g bar
-  | otherwise             = writeBar g bar ++ writePhrase g spec
-writePhrase g (XP lc _ spec bar)
-  | getSI g == SubInitial = writePhrase g spec ++ writeBar g bar
-  | otherwise             = writeBar g bar ++ writePhrase g spec
-writePhrase g XPNull = []
+writePhrase lang (XP _ Ques spec bar) = out where
+  g = getGrammar lang
+  out
+    | getSI g == SubInitial = writePhrase lang spec ++ writeBar lang bar
+    | otherwise             = writeBar lang bar ++ writePhrase lang spec
+writePhrase lang (XP _ _ spec bar) = out where
+  g = getGrammar lang
+  out
+    | getSI g == SubInitial = writePhrase lang spec ++ writeBar lang bar
+    | otherwise             = writeBar lang bar ++ writePhrase lang spec
+writePhrase _ XPNull = []
 
-writeBar :: Grammar -> Bar -> [[Leaf]]
-writeBar g (XBarA lc _ adjunct bar) = writePhrase g adjunct ++ writeBar g bar
-writeBar g (XBarC lc _ leaf comp)
-  | (lc /= Verb && getCI g == CompFinal) || (lc == Verb && getOF g == ObjFinal) = [leaf] : writePhrase g comp
-  | otherwise            = writePhrase g comp ++ [[leaf]]
+writeBar :: Language -> Bar -> [[Leaf]]
+writeBar lang (XBarA _ _ adjunct bar) = writePhrase lang adjunct ++ writeBar lang bar
+writeBar lang (XBarC lc _ leaf comp) = out where
+  g = getGrammar lang
+  out
+    | (lc /= Verb && getCI g == CompFinal) || (lc == Verb && getOF g == ObjFinal) = [leaf] : writePhrase lang comp
+    | otherwise            = writePhrase lang comp ++ [[leaf]]

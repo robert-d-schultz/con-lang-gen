@@ -1,59 +1,100 @@
+{-# LANGUAGE NoImplicitPrelude #-}
+{-# OPTIONS_GHC -Wall #-}
 module Out.Syllable
 ( syllabifyWord
 , syllabifyMorpheme
 ) where
 
-import Prelude hiding (Word)
-import Data.List
-import Data.Ord
+import ClassyPrelude hiding (Word, maximumBy)
+
+import Data.List (findIndices, findIndex)
 
 import Data.Phoneme
-import Gen.Phonotactics
 import Data.Other
 
 -- Syllabification
 -- Given a word and sonority hierarchy, syllabify the word
-syllabifyWord :: [[Phoneme]] -> Word -> SyllWord
-syllabifyWord sonhier (Word morphemes) = SyllWord sylls where
+syllabifyWord :: Language -> Word -> Maybe SyllWord
+syllabifyWord lang (Word ms) = SyllWord <$> sylls where
   -- Combine morphemes into one string of phonemes
-  phonemes = concatMap getPhonemes morphemes
-  groups = breakWord phonemes [] sonhier
-  sylls = map (makeSyllable sonhier) groups
+  ps = concatMap getPhonemes ms
+  groups = breakPhonemes lang ps []
+  sylls = map (makeSyllable lang) <$> groups
 
-syllabifyMorpheme :: [[Phoneme]] -> Morpheme -> SyllWord
-syllabifyMorpheme sonhier morpheme = SyllWord sylls where
-  phonemes = getPhonemes morpheme
-  groups = breakWord phonemes [] sonhier
-  sylls = map (makeSyllable sonhier) groups
+-- Used for inflection tables, I think
+-- This should be more lenient because the morpheme would normally be attached to a root
+syllabifyMorpheme :: Language -> Morpheme -> Maybe SyllWord
+syllabifyMorpheme lang m = SyllWord <$> sylls where
+  ps = getPhonemes m
+  groups = breakPhonemes lang ps []
+  sylls = map (makeSyllable lang) <$> groups
 
--- Given a group of phones, make a proper syllable structure
-makeSyllable :: [[Phoneme]] -> [Phoneme] -> Syllable
-makeSyllable sonhier phonemes = out where
-  nucleus = maximumBy (comparing (retrieveSon sonhier)) phonemes
-  out
-    | null $ elemIndices nucleus phonemes = Syllable phonemes Blank [Blank]
-    | otherwise = function2 nucleus phonemes
+-- Given a group of phonemes, make a proper syllable structure
+makeSyllable :: Language -> [Phoneme] -> Syllable
+makeSyllable lang ps = out where
+  nuclei = getNuclei lang
+  out = maybe (Syllable ps Blank [Blank]) foo (findIndex (`elem` nuclei) ps)
+  foo i = Syllable onset nucleus coda where
+    (onset, nucleus:coda) = splitAt i ps
 
-function2 :: Phoneme -> [Phoneme] -> Syllable
-function2 nucleus phonemes = Syllable onset nucleus coda where
-  i = last $ elemIndices nucleus phonemes
-  (onset, _) = splitAt i phonemes
-  (_, coda) = splitAt (i+1) phonemes
 
--- Input the raw string of phones, output groups of phones that correspond to syllables
-breakWord :: [Phoneme] -> [Phoneme] -> [[Phoneme]] -> [[Phoneme]]
-breakWord [] syll sonhier = [syll]
-breakWord phonemes [] sonhier = breakWord (init phonemes) [last phonemes] sonhier
-breakWord phonemes syll sonhier
+{-
+-- Input the raw string of phonemes, output groups of phonemes that correspond to syllables
+breakPhonemes :: [Phoneme] -> [Phoneme] -> [[Phoneme]] -> [[Phoneme]]
+breakPhonemes [] syll sonhier = [syll]
+breakPhonemes phonemes [] sonhier = breakPhonemes (initMay phonemes) [lastMay phonemes] sonhier
+breakPhonemes phonemes syll sonhier
   -- start a new syllable for a vowel immediately after another vowel
-  | retrieveSon sonhier (last phonemes) == length sonhier + 1 &&
-    retrieveSon sonhier (head syll) == length sonhier + 1                    = breakWord phonemes [] sonhier ++ [syll]
+  | retrieveSon sonhier (lastMay phonemes) == length sonhier + 1
+    && retrieveSon sonhier (headMay syll) == length sonhier + 1                 = breakPhonemes phonemes [] sonhier ++ [syll]
   -- start new syllable when at local minimum (edge case)
   | length syll < 2 &&
-    retrieveSon sonhier (last phonemes) > retrieveSon sonhier (head syll)    = breakWord (init phonemes) (last phonemes : syll) sonhier
+    retrieveSon sonhier (lastMay phonemes) > retrieveSon sonhier (headMay syll) = breakPhonemes (initMay phonemes) (lastMay phonemes : syll) sonhier
   -- start new syllable when at local minimum
   | length syll >= 2 &&
-    retrieveSon sonhier (last phonemes) > retrieveSon sonhier (head syll) &&
-    retrieveSon sonhier (syll !! 1) >= retrieveSon sonhier (head syll)       = breakWord phonemes [] sonhier ++ [syll]
-  -- otherwise add next phone to syllable
-  | otherwise                                                                = breakWord (init phonemes) (last phonemes : syll) sonhier
+    retrieveSon sonhier (lastMay phonemes) > retrieveSon sonhier (headMay syll)
+    && retrieveSon sonhier (syll !! 1) >= retrieveSon sonhier (headMay syll)    = breakPhonemes phonemes [] sonhier ++ [syll]
+  -- otherwise add next phoneme to syllable
+  | otherwise                                                                   = breakPhonemes (initMay phonemes) (lastMay phonemes : syll) sonhier
+-}
+
+breakPhonemes :: Language -> [Phoneme] -> [Phoneme] -> Maybe [[Phoneme]]
+breakPhonemes _ [] _ = Just []
+breakPhonemes lang ps [] = do
+  let nuclei = getNuclei lang
+  let codas = getCodaCCs lang
+  i <- lastMay (findIndices (`elem` nuclei) ps)
+  let (r, n:c) = splitAt i ps
+  if c `elem` codas then breakPhonemes lang r (n:c) else Nothing
+breakPhonemes lang ps (n:c) = do
+  let onsets = getOnsetCCs lang
+  --let nuclei = getNuclei lang
+  --let codas = getCodaCCs lang
+  (r, o) <- dropUntil 0 (`elem` onsets) ps
+  f <- breakPhonemes lang r []
+  return (f ++ [o ++ n:c])
+
+-- dropUntil and takeRUntilNot do different but similar things
+-- Imagine a language where /br/ was valid but /r/ was not
+-- dropUntil would allow /br/ in intermediate onsets, takeRUntilNot wouldn't
+dropUntil :: Int -> ([a] -> Bool) -> [a] -> Maybe ([a], [a])
+dropUntil i b xs
+  | i == length xs = Nothing
+  | (b . snd) (splitAt i xs) = Just (splitAt i xs)
+  | otherwise = dropUntil (i+1) b xs
+
+{-
+takeRUntilNot :: Int -> [a] -> ([a] -> Bool) -> Maybe [a]
+takeRUntilNot 0 _ _ = Nothing
+takeRUntilNot _ [] _ = Nothing
+takeRUntilNot n xs b
+  | n < length xs = Nothing
+  | not.b $ takeR n xs = Just $ takeR (n-1) xs
+  | otherwise = takeRUntilNot (n+1) xs b
+
+takeR :: Int -> [a] -> [a]
+takeR n l = go (drop n l) l
+  where
+    go [] r = r
+    go (_:xs) (_:ys) = go xs ys
+-}

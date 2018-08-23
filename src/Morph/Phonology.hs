@@ -1,4 +1,5 @@
 {-# LANGUAGE NoImplicitPrelude #-}
+{-# OPTIONS_GHC -Wall #-}
 module Morph.Phonology
 ( phonologicalChange
 ) where
@@ -7,8 +8,6 @@ import ClassyPrelude hiding ((\\))
 
 import Data.RVar
 import Data.Random.Extras
-import Control.Monad
-import Data.Maybe
 import Data.List (nub, (\\))
 
 import Data.Phoneme
@@ -16,13 +15,8 @@ import Data.Inflection
 import Data.Other
 import Data.Soundchange
 
-import Gen.Phonology
-import Gen.Phonotactics
-
 import Constants
 import HelperFunctions
-
-import Debug.Trace
 
 -- need a way of guanrenteeing a sound change
 -- so like there needs to be a loop of generating and checking rules
@@ -157,14 +151,6 @@ comparePhonemeR (Just WordBoundary) Nothing = True --match word boundary
 comparePhonemeR Nothing Nothing = False --undefined phoneme /= word boundary
 comparePhonemeR Nothing _ = True --undefined phoneme matches everything
 comparePhonemeR _ _ = False
-
-isVowel :: Phoneme -> Bool
-isVowel Vowel{} = True
-isVowel _ = False
-
-isConsonant :: Phoneme -> Bool
-isConsonant Consonant{} = True
-isConsonant _ = False
 
 -- generate phonological rule
 generateRule :: Language -> RVar Rule

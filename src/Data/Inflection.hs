@@ -75,23 +75,23 @@ instance Show LexCat where
 
 -- Inflection system
 data InflectionMap = InflectionMap
-                      { genSys :: Manifest Gender
-                      , aniSys :: Manifest Animacy
-                      , casSys :: Manifest Case
-                      , numSys :: Manifest Number
-                      , defSys :: Manifest Definiteness
-                      , speSys :: Manifest Specificity
-                      , topSys :: Manifest Topic
-                      , perSys :: Manifest Person
-                      , honSys :: Manifest Honorific
-                      , polSys :: Manifest Polarity
-                      , tenSys :: Manifest Tense
-                      , aspSys :: Manifest Aspect
-                      , mooSys :: Manifest Mood
-                      , voiSys :: Manifest Voice
-                      , eviSys :: Manifest Evidentiality
-                      , traSys :: Manifest Transitivity
-                      , volSys :: Manifest Volition
+                      { getGenSys :: Manifest Gender
+                      , getAniSys :: Manifest Animacy
+                      , getCasSys :: Manifest Case
+                      , getNumSys :: Manifest Number
+                      , getDefSys :: Manifest Definiteness
+                      , getSpeSys :: Manifest Specificity
+                      , getTopSys :: Manifest Topic
+                      , getPerSys :: Manifest Person
+                      , getHonSys :: Manifest Honorific
+                      , getPolSys :: Manifest Polarity
+                      , getTenSys :: Manifest Tense
+                      , getAspSys :: Manifest Aspect
+                      , getMooSys :: Manifest Mood
+                      , getVoiSys :: Manifest Voice
+                      , getEviSys :: Manifest Evidentiality
+                      , getTraSys :: Manifest Transitivity
+                      , getVolSys :: Manifest Volition
                       }  deriving (Eq, Show, Read)
 
 -- Grammatical categories
