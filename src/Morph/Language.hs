@@ -1,5 +1,3 @@
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
 module Morph.Language
 ( morphLanguage
 ) where
@@ -8,7 +6,7 @@ import ClassyPrelude
 import Data.RVar
 import Data.Random.Extras
 
-import Data.Other
+import Data.Language
 import Data.Inflection
 
 import Morph.Phonology
@@ -24,7 +22,7 @@ morphLanguage parent = do
   grammarN <- morphGrammar (getGrammar parent)
 
   -- find out what was assigned to "<!LANGUAGE!>" and romanize new language name
-  let langNameN = fromMaybe "name not found" (romanizeMorpheme . snd <$> find (\x -> fst x == ("<!LANGUAGE!>", Noun)) (getRoots langN))
+  let langNameN = fromMaybe "name not found" (romanizeSyllWord . snd <$> find (\x -> fst x == ("!!!LANGUAGE!!!", Noun)) (getRoots langN))
 
   return $ langN{getName = langNameN, getGrammar=grammarN}
 

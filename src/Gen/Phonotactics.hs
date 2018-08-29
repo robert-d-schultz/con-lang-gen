@@ -1,5 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Gen.Phonotactics
 ( makeSonHier
 , retrieveSon
@@ -8,15 +6,17 @@ module Gen.Phonotactics
 , makeCodas
 ) where
 
-import ClassyPrelude
+import ClassyPrelude hiding ((\\))
 
-import Data.List (elemIndex)
+import Data.List (elemIndex, (\\))
 
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
 
 import Data.Phoneme
+
+import HelperFunctions
 
 -- Plan:
 -- Make sonority hierarchies be rule-based
@@ -56,48 +56,58 @@ makeOnsets sonHier (msd, maxOnsetC) = do
   n <- uniform 5 10
   replicateM n $ makeConsonantCluster (msd, maxOnsetC) sonHier []
 
--- Pick valid nuclei, its just vowels/diphthongs for right now
-makeNuclei :: [Phoneme] -> [[Phoneme]] -> [Phoneme]
-makeNuclei vows sonHier = vows
+-- Pick valid nuclei
+makeNuclei :: [Phoneme] -> [[Phoneme]] -> RVar [Phoneme]
+makeNuclei vows sonHier = do
+  -- testing out syllabic consonants
+  -- take the most sonorous consonants (usually glides) and picks one to be a nucleus
+  syllabicCs <- fromMaybe (return []) $ join (safeSample 0 <$> lastMay sonHier)
+  return $ vows ++ syllabicCs
 
 -- Generate valid codas
-makeCodas :: [[Phoneme]] -> (Int, Int) -> RVar [[Phoneme]]
-makeCodas sonHier (msd, maxCodaC) = do
-  n <- uniform 5 10
-  replicateM n (makeConsonantCluster (msd, maxCodaC) (reverse sonHier) [])
+makeCodas :: Int -> Int -> [ConsCluster] -> [ConsCluster] -> [Phoneme] -> [[Phoneme]] -> (Int, Int) -> RVar [[Phoneme]]
+makeCodas 0 _ codas onsets cns _ _ = do
+  let unused = cns \\ concat (codas ++ onsets)
+  return $ codas ++ map (:[]) unused -- makes sure all consonants are used somewhere
+makeCodas _ 50 codas onsets cns sonHier settings = trace "Failed to generate ALL codaCCs" $ makeCodas 0 50 codas onsets cns sonHier settings
+makeCodas i limit [] onsets cns sonHier settings = do
+  m <- uniform 0 (length cns) -- number of coda "singletons" (not counting possibly unused consonants)
+  codas <- fromMaybe (return []) $ safeSample m cns
+  makeCodas i limit ([] : map (:[]) codas) onsets cns sonHier settings
+makeCodas i limit codas onsets cns sonHier settings = do
+  newCC <- makeConsonantCluster settings (reverse sonHier) []
+  if checkCoda onsets codas newCC
+    then makeCodas (i-1) (limit+1) (newCC:codas) onsets cns sonHier settings
+    else makeCodas i (limit+1) codas onsets cns sonHier settings
 
-checkCC :: [Phoneme] -> Bool
-checkCC cc = checkCC2 cc && length cc > 1
+checkCoda :: [ConsCluster] -> [ConsCluster] -> [Phoneme] -> Bool
+checkCoda onsets codas coda = length coda > 1
+                           && coda `notElem` codas
+                           && checkCoda2 coda
+                           && checkCoda3 onsets codas coda
 
-checkCC2 :: [Phoneme] -> Bool
-checkCC2 [] = True
-checkCC2 (p:ps) = fromMaybe True ((p /=) <$> headMay ps) && checkCC2 ps
+-- checks for identical consecutive consonants
+checkCoda2 :: [Phoneme] -> Bool
+checkCoda2 [] = True
+checkCoda2 (p:ps) = fromMaybe True ((p /=) <$> headMay ps) && checkCoda2 ps
 
-
--- This is like replicateM, except it replicates until it either hits the amount
--- you want or it reaches a specified limit (so it doesn't go forever).
--- This is actually pretty useful, I'm suprised it doesn't exist already.
-replicateUntilM :: Monad m => (a -> Bool) -> Int -> Int -> m a -> m [a]
-replicateUntilM _ 0 _ _ = return []
-replicateUntilM _ _ 0 _ = return []
-replicateUntilM test i limit thing = do
-  revealThing <- thing
-  itFails <- replicateUntilM test i (limit-1) thing
-  itSucceeds <- replicateUntilM test (i-1) (limit-1) thing
-  if test revealThing then return (revealThing:itSucceeds) else return itFails
-
+-- at every splitAt of a coda, if the right side is an onset, then the left side MUST be an existing coda
+checkCoda3 :: [ConsCluster] -> [ConsCluster] -> [Phoneme] -> Bool
+checkCoda3 _ _ [] = True
+checkCoda3 onsets codas coda = all (\(c,o) -> (o `elem` onsets) <= (c `elem` codas)) everySplit where
+  everySplit = map (`splitAt` coda) [0..length coda-1]
 
 -- Generate a consonant cluster
+-- msd = Minimum Sonority Distance
 makeConsonantCluster :: (Int, Int) -> [[Phoneme]] -> [Phoneme] -> RVar [Phoneme]
 makeConsonantCluster _ [] out = return out
 makeConsonantCluster (_, 0) _ out = return out
 makeConsonantCluster (msd, maxC) sonHier out = do
   (theRest, newC) <- maybe (return ([],[])) (fmap $ second (:[])) (join $ choiceExtract <$> headMay sonHier)
-  let sonhierN = theRest : fromMaybe [] (tailMay sonHier)
-  join $ choice [ makeConsonantCluster (msd, maxC-1) (drop msd sonhierN) (out ++ newC)
-                , makeConsonantCluster (msd, maxC) (drop 1 sonhierN) out
+  let sonHierN = theRest : fromMaybe [] (tailMay sonHier)
+  join $ choice [ makeConsonantCluster (msd, maxC-1) (drop msd sonHierN) (out ++ newC)
+                , makeConsonantCluster (msd, maxC) (drop 1 sonHierN) out
                 ]
-
 
 -- Make sonority hierarchy from consonant inventory and scheme number
 -- The hierarchies get more granular as scheme number increases
@@ -105,24 +115,26 @@ makeConsonantCluster (msd, maxC) sonHier out = do
 -- That might play better with what I have in mind for phonotactics
 makeSonHier :: [Phoneme] -> Int -> [[Phoneme]]
 makeSonHier cns i = filter (not.null) scheme where
-  (glides, cons2) = partition (\x -> cmanner x == APPROXIMANT && cplace x > PALATAL) cns
-  (liquids, cons3) = partition (\x -> cmanner x `elem` [APPROXIMANT, LAPPROXIMANT, TRILL, FLAP, LFLAP]) cons2
-  (nasals, cons4) = partition (\x -> cmanner x == NASAL) cons3
-  (af, cons5) = partition (\x -> cmanner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && cvoice x == ASPIRATED) cons4
-  (mf, cons6) = partition (\x -> cmanner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && cvoice x == MODAL) cons5
-  (sf, cons7) = partition (\x -> cmanner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && cvoice x `elem` [SLACK, STIFF]) cons6
-  (bf, cons8) = partition (\x -> cmanner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && cvoice x `elem` [BREATHY, CREAKY]) cons7
-  (vf, cons9) = partition (\x -> cmanner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && cvoice x == VOICELESS) cons8
-  (aa, cons10) = partition (\x -> cmanner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && cvoice x == ASPIRATED) cons9
-  (ma, cons11) = partition (\x -> cmanner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && cvoice x == MODAL) cons10
-  (sa, cons12) = partition (\x -> cmanner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && cvoice x `elem` [SLACK, STIFF]) cons11
-  (ba, cons13) = partition (\x -> cmanner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && cvoice x `elem` [BREATHY, CREAKY]) cons12
-  (va, cons14) = partition (\x -> cmanner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && cvoice x == VOICELESS) cons13
-  (as, cons15) = partition (\x -> cmanner x == STOP && cvoice x == ASPIRATED) cons14
-  (ms, cons16) = partition (\x -> cmanner x == STOP && cvoice x == MODAL) cons15
-  (ss, cons17) = partition (\x -> cmanner x == STOP && cvoice x `elem` [SLACK, STIFF]) cons16
-  (bs, cons18) = partition (\x -> cmanner x == STOP && cvoice x `elem` [BREATHY, CREAKY]) cons17
-  (vs, other) = partition (\x -> cmanner x == STOP && cvoice x == VOICELESS) cons18
+  (glides, cons2) = partition (\x -> getPlace x > PALATAL && getManner x == APPROXIMANT) cns
+  (liquids, cons3) = partition (\x -> getManner x `elem` [APPROXIMANT, LAPPROXIMANT, TRILL, FLAP, LFLAP]) cons2
+  (nasals, cons4) = partition (\x -> getManner x == NASAL) cons3
+  (af, cons5) = partition (\x -> getManner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && getVoice x == ASPIRATED) cons4
+  (mf, cons6) = partition (\x -> getManner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && getVoice x == MODAL) cons5
+  (sf, cons7) = partition (\x -> getManner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && getVoice x `elem` [SLACK, STIFF]) cons6
+  (bf, cons8) = partition (\x -> getManner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && getVoice x `elem` [BREATHY, CREAKY]) cons7
+  (vf, cons9) = partition (\x -> getManner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && getVoice x == VOICELESS) cons8
+  (aa, cons10) = partition (\x -> getManner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && getVoice x == ASPIRATED) cons9
+  (ma, cons11) = partition (\x -> getManner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && getVoice x == MODAL) cons10
+  (sa, cons12) = partition (\x -> getManner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && getVoice x `elem` [SLACK, STIFF]) cons11
+  (ba, cons13) = partition (\x -> getManner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && getVoice x `elem` [BREATHY, CREAKY]) cons12
+  (va, cons14) = partition (\x -> getManner x `elem` [LAFFRICATE, AFFRICATE, SAFFRICATE] && getVoice x == VOICELESS) cons13
+  (as, cons15) = partition (\x -> getManner x == STOP && getVoice x == ASPIRATED) cons14
+  (ms, cons16) = partition (\x -> getManner x == STOP && getVoice x == MODAL) cons15
+  (ss, cons17) = partition (\x -> getManner x == STOP && getVoice x `elem` [SLACK, STIFF]) cons16
+  (bs, cons18) = partition (\x -> getManner x == STOP && getVoice x `elem` [BREATHY, CREAKY]) cons17
+  (vs, other) = partition (\x -> getManner x == STOP && getVoice x == VOICELESS) cons18 -- other should always be empty
+
+  sspViolatingS = filter (\x -> getPlace x `elem` [LAMINALALVEOLAR, APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX] && getManner x == SILIBANT && getVoice x == VOICELESS) cns
 
   aobstruent = concat [af, aa, as]
   mobstruent = concat [mf, ma, ms]
@@ -134,10 +146,11 @@ makeSonHier cns i = filter (not.null) scheme where
   stops = concat [as, ms, ss, bs, vs]
   obstruents = concat [fricatives, affricates, stops]
 
-  scheme | i == 1 = [other, obstruents, nasals, liquids, glides]
-         | i == 2 = [other, stops, affricates, fricatives, nasals, liquids, glides]
-         | i == 3 = [other, vobstruent, bobstruent, sobstruent, mobstruent, aobstruent, nasals, liquids, glides]
-         | i == 4 = [other, vs, bs, ss, ms, as, va, ba, sa, ma, aa, vf, bf, sf, mf, af, nasals, liquids, glides]
+  scheme | i == 1 = filter (not . null) [other, obstruents, nasals, liquids, glides] -- most general
+         | i == 2 = filter (not . null) [other, stops, affricates, fricatives, nasals, liquids, glides] -- seperate obstruents by manner
+         | i == 3 = filter (not . null) [other, vobstruent, bobstruent, sobstruent, mobstruent, aobstruent, nasals, liquids, glides] -- seperate obstruents by phonation
+         | i == 4 = filter (not . null) [other, vs, bs, ss, ms, as, va, ba, sa, ma, aa, vf, bf, sf, mf, af, nasals, liquids, glides] -- seperate by both
+         | i == 5 = filter (not . null) $ sspViolatingS : [other, vs, bs, ss, ms, as, va, ba, sa, ma, aa, vf, bf, sf, mf, af, nasals, liquids, glides] -- SSP-violating S
          | otherwise = []
 
 -- Retrieve the sonority level of a given phoneme

@@ -1,28 +1,30 @@
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Out.Roman
-( romanizeWord
+( romanizeSyllWord
+, romanizeMorphWord
 , romanizeMorpheme
 , romanizePhoneme
 ) where
 
-import ClassyPrelude hiding (Word)
+import ClassyPrelude
 
 import Data.Phoneme
 
-romanizeWord :: Word -> Text
-romanizeWord (Word morphemes) = concatMap romanizeMorpheme morphemes
+import Out.IPA
+
+romanizeSyllWord :: SyllWord -> Text
+romanizeSyllWord (SyllWord syllables) = concatMap romanizeSyllable syllables
+
+romanizeSyllable :: Syllable -> Text
+romanizeSyllable (Syllable onset nucleus coda tone) = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeToneDiacritic tone ++ romanizePhonemes coda
+
+romanizeMorphWord :: MorphWord -> Text
+romanizeMorphWord (MorphWord morphemes) = concatMap romanizeMorpheme morphemes
 
 romanizeMorpheme :: Morpheme -> Text
 romanizeMorpheme (Morpheme phonemes) = romanizePhonemes phonemes
 
 romanizePhonemes :: [Phoneme] -> Text
-romanizePhonemes [] = ""
-romanizePhonemes [p1] = romanizePhoneme p1
-romanizePhonemes (p1:(p2:ps))
-  | isVowel p1 && isVowel p2 = romanizePhoneme p1 ++ "\'" ++ romanizePhonemes (p2:ps)
-  | otherwise = romanizePhoneme p1 ++ romanizePhonemes (p2:ps)
+romanizePhonemes ps = intercalate "\'" $ map (concatMap romanizePhoneme) $ groupBy (\x y -> not (isVowel x && isVowel y)) ps
 
 isVowel :: Phoneme -> Bool
 isVowel Vowel{} = True
@@ -30,54 +32,66 @@ isVowel _ = False
 
 -- these rules suck, need diacritics and a pool to pull from as needed
 romanizePhoneme :: Phoneme -> Text
-romanizePhoneme (Consonant p m v)
-  | v == ASPIRATED = romanizePhoneme (Consonant p m MODAL) ++ "h"
-  | v == BREATHY = romanizePhoneme (Consonant p m VOICELESS)
-  | v == SLACK = romanizePhoneme (Consonant p m VOICELESS)
-  | v == STIFF = romanizePhoneme (Consonant p m MODAL)
-  | v == CREAKY = romanizePhoneme (Consonant p m MODAL)
-  | p == INTERDENTAL = romanizePhoneme (Consonant DENTAL m v)
-  | p `elem` [LAMINALALVEOLAR, APICOALVEOLAR] = romanizePhoneme (Consonant ALVEOLAR m v)
-  | p == APICALRETROFLEX = romanizePhoneme (Consonant RETROFLEX m v)
-  | p `elem` [BILABIAL] && m == NASAL && v == MODAL = "m"
-  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m == NASAL && v == MODAL = "n"
-  | p `elem` [VELAR] && m == NASAL && v == MODAL = "ng"
-  | p `elem` [BILABIAL, LABIODENTAL] && m == STOP && v == VOICELESS = "p"
-  | p `elem` [BILABIAL, LABIODENTAL] && m == STOP && v == MODAL = "b"
-  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m == STOP && v == VOICELESS = "t"
-  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m == STOP && v == MODAL = "d"
-  | p `elem` [VELAR] && m == STOP && v == VOICELESS = "k"
-  | p `elem` [VELAR] && m == STOP && v == MODAL = "g"
-  | p `elem` [LABIODENTAL] && m `elem`  [FRICATIVE, SILIBANT] && v == VOICELESS = "f"
-  | p `elem` [LABIODENTAL] && m `elem`  [FRICATIVE, SILIBANT] && v == MODAL = "v"
-  | p == DENTAL && m `elem`  [FRICATIVE, SILIBANT] && v `elem` [MODAL, VOICELESS] = "th"
-  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m `elem` [FRICATIVE, SILIBANT] && v == VOICELESS = "s"
-  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m `elem` [FRICATIVE, SILIBANT] && v == MODAL = "z"
-  | p == POSTALVEOLAR && m `elem` [FRICATIVE, SILIBANT] && v == VOICELESS = "sh"
-  | p == POSTALVEOLAR && m `elem` [FRICATIVE, SILIBANT] && v == MODAL = "zh"
-  | p `elem` [GLOTTAL] && m == FRICATIVE && v == VOICELESS = "h"
-  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m `elem` [SAFFRICATE, AFFRICATE] && v == VOICELESS = "ts"
-  | p == POSTALVEOLAR && m `elem` [SAFFRICATE, AFFRICATE] && v == VOICELESS = "ch"
-  | p == POSTALVEOLAR && m `elem` [SAFFRICATE, AFFRICATE] && v == MODAL = "j"
-  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m `elem` [APPROXIMANT, TRILL] && v == MODAL = "r"
-  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m == LAPPROXIMANT && v == MODAL = "l"
+romanizePhoneme cns@(Consonant p m h a)
+  -- Airstream
+  | m == CLICK && a == LINGUAL = writePhonemeIPA cns
+  | a == EJECTIVE = romanizePhoneme (Consonant p m h PULMONIC) ++ "'"
+  | a == IMPLOSIVE = romanizePhoneme (Consonant p m h PULMONIC)
+  -- Phonation
+  | h == ASPIRATED = romanizePhoneme (Consonant p m MODAL a) ++ "h"
+  | h == BREATHY = romanizePhoneme (Consonant p m VOICELESS a)
+  | h == SLACK = romanizePhoneme (Consonant p m VOICELESS a)
+  | h == STIFF = romanizePhoneme (Consonant p m MODAL a)
+  | h == CREAKY = romanizePhoneme (Consonant p m MODAL a)
+  -- Places
+  | p == INTERDENTAL = romanizePhoneme (Consonant DENTAL m h a)
+  | p `elem` [LAMINALALVEOLAR, APICOALVEOLAR] = romanizePhoneme (Consonant ALVEOLAR m h a)
+  | p == PALATOALVEOLAR = romanizePhoneme (Consonant POSTALVEOLAR m h a)
+  | p == APICALRETROFLEX = romanizePhoneme (Consonant RETROFLEX m h a)
+  | p == ALVEOLOPALATAL = romanizePhoneme (Consonant PALATAL m h a)
+  -- Specific stuff
+  | p == BILABIAL && m == NASAL && h == MODAL = "m"
+  | p `elem` [DENTIALVEOLAR, ALVEOLAR] && m == NASAL && h == MODAL = "n"
+  | p == VELAR && m == NASAL && h == MODAL = "ng"
+  | p `elem` [BILABIAL, LABIODENTAL] && m == STOP && h == VOICELESS = "p"
+  | p `elem` [BILABIAL, LABIODENTAL] && m == STOP && h == MODAL = "b"
+  | p `elem` [DENTIALVEOLAR, ALVEOLAR] && m == STOP && h == VOICELESS = "t"
+  | p `elem` [DENTIALVEOLAR, ALVEOLAR] && m == STOP && h == MODAL = "d"
+  | p == VELAR && m == STOP && h == VOICELESS = "k"
+  | p == VELAR && m == STOP && h == MODAL = "g"
+  | p == LABIODENTAL && m `elem`  [FRICATIVE, SILIBANT] && h == VOICELESS = "f"
+  | p == LABIODENTAL && m `elem`  [FRICATIVE, SILIBANT] && h == MODAL = "v"
+  | p == DENTAL && m `elem`  [FRICATIVE, SILIBANT] && h `elem` [MODAL, VOICELESS] = "th"
+  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m `elem` [FRICATIVE, SILIBANT] && h == VOICELESS = "s"
+  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m `elem` [FRICATIVE, SILIBANT] && h == MODAL = "z"
+  | p == POSTALVEOLAR && m `elem` [FRICATIVE, SILIBANT] && h == VOICELESS = "sh"
+  | p == POSTALVEOLAR && m `elem` [FRICATIVE, SILIBANT] && h == MODAL = "zh"
+  | p == GLOTTAL && m == FRICATIVE && h == VOICELESS = "h"
+  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m `elem` [SAFFRICATE, AFFRICATE] && h == VOICELESS = "ts"
+  | p == POSTALVEOLAR && m `elem` [SAFFRICATE, AFFRICATE] && h == VOICELESS = "ch"
+  | p == POSTALVEOLAR && m `elem` [SAFFRICATE, AFFRICATE] && h == MODAL = "j"
+  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m `elem` [APPROXIMANT, TRILL] && h == MODAL = "r"
+  | p `elem`[DENTIALVEOLAR, ALVEOLAR] && m == LAPPROXIMANT && h == MODAL = "l"
   | p `elem` [ALVEOLOPALATAL, PALATAL] && m == APPROXIMANT = "y"
   | p == VELAR && m == APPROXIMANT = "w"
   | ((p <= PALATAL || p == UVULAR) && m == APPROXIMANT) || ((p <= PALATAL || p == UVULAR) && m `elem` [APPROXIMANT, TRILL, FLAP] ) = "r"
   | m `elem` [LAPPROXIMANT, LFRICATIVE, LAFFRICATE, LFLAP] = "l"
   | p `elem` [UVULAR, PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL] && m == STOP = "g"
   | p `elem` [PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL] = "h"
+  -- Last resort
   | m == NASAL = "n"
-  | p `elem` [VELAR] && m == STOP = "k"
-  | m == AFFRICATE = romanizePhoneme (Consonant p STOP v) ++ romanizePhoneme (Consonant p FRICATIVE v)
-  | m == SAFFRICATE = romanizePhoneme (Consonant p STOP v) ++ romanizePhoneme (Consonant p SILIBANT v)
-  | p == PALATAL = romanizePhoneme (Consonant VELAR m v)
-  | p == VELAR = romanizePhoneme (Consonant UVULAR m v)
-  | p == RETROFLEX = romanizePhoneme (Consonant ALVEOLAR m v)
-  | p == DENTAL = romanizePhoneme (Consonant ALVEOLAR m v)
+  | p == VELAR && m == STOP = "k"
+  | m == AFFRICATE = romanizePhoneme (Consonant p STOP h a) ++ romanizePhoneme (Consonant p FRICATIVE h a)
+  | m == SAFFRICATE = romanizePhoneme (Consonant p STOP h a) ++ romanizePhoneme (Consonant p SILIBANT h a)
+  | p == PALATAL = romanizePhoneme (Consonant VELAR m h a)
+  | p == VELAR = romanizePhoneme (Consonant UVULAR m h a)
+  | p == RETROFLEX = romanizePhoneme (Consonant ALVEOLAR m h a)
+  | p == DENTAL = romanizePhoneme (Consonant ALVEOLAR m h a)
+  -- Otherwise "h"
   | otherwise = "h"
 
-romanizePhoneme (Vowel h b r l t)
+romanizePhoneme (Vowel h b r l)
+  -- Specific stuff
   | h == NEAROPEN && b == FRONT && r == UNROUNDED = "a"
   | h == CLOSEMID && b == FRONT && r == UNROUNDED = "e"
   | h == CLOSE && b == FRONT && r == UNROUNDED = "e"
@@ -85,15 +99,36 @@ romanizePhoneme (Vowel h b r l t)
   | h == OPEN && b == BACK && r == ROUNDED = "o"
   | h == CLOSE && b == BACK && r == ROUNDED && l == LONG = "o"
   | h == OPENMID && b == BACK && r == ROUNDED = "u"
-  | l == LONG = romanizePhoneme (Vowel h b r NORMAL t) ++ romanizePhoneme (Vowel h b r NORMAL t)
-  | l == SHORT = romanizePhoneme (Vowel h b r NORMAL t)
+  -- Length
+  | l == LONG = romanizePhoneme (Vowel h b r NORMAL) ++ romanizePhoneme (Vowel h b r NORMAL)
+  | l == SHORT = romanizePhoneme (Vowel h b r NORMAL)
+  -- Last resort
   | h `elem` [NEARCLOSE, CLOSEMID, MID, OPENMID] && b == BACK = "o"
   | h `elem` [CLOSEMID, MID, OPENMID] && b == FRONT = "e"
   | h `elem` [OPENMID, NEAROPEN, OPEN] = "a"
   | h `elem` [CLOSE, NEARCLOSE] && b `elem` [FRONT, NEARFRONT] = "i"
   | h `elem` [CLOSE, NEARCLOSE] && b `elem` [BACK, NEARBACK, CENTRAL] = "o"
   | h `elem` [CLOSEMID, MID, OPENMID] && b `elem` [CENTRAL, NEARFRONT, NEARBACK] = "u"
+  -- Otherwise "u"
   | otherwise = "u"
-  
-romanizePhoneme (Diphthong h b r h2 b2 r2 l t) = romanizePhoneme (Vowel h b r l t) ++ romanizePhoneme (Vowel h2 b2 r2 l t)
+
+romanizePhoneme (Diphthong h b r h2 b2 r2 l) = romanizePhoneme (Vowel h b r l) ++ romanizePhoneme (Vowel h2 b2 r2 l)
 romanizePhoneme Blank = ""
+
+-- Tone diacritics
+writeToneDiacritic :: Tone -> Text
+writeToneDiacritic t
+  | t == NONET = ""
+  | t == TOPT = "\779"
+  | t == HIGHT = "\769"
+  | t == MIDT = "\772"
+  | t == LOWT = "\768"
+  | t == BOTTOMT = "\783"
+  | t == FALLT = "\770"
+  | t == HFALLT = "\7623"
+  | t == LFALLT = "\7622"
+  | t == RISET = "\780"
+  | t == HRISET = "\7620"
+  | t == LRISET = "\7621"
+  | t == DIPT = "\7625"
+  | t == PEAKT = "\7624"

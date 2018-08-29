@@ -1,4 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 module Constants
 ( impConsonants
 , mannerDistance
@@ -9,53 +8,75 @@ import ClassyPrelude
 
 import Data.Phoneme
 
--- impossible consonants filter
--- true if impossible
+-- Impossible consonants filter
+-- True = impossible
 impConsonants :: Phoneme -> Bool
-impConsonants (Consonant p m h)
+impConsonants (Consonant p m h a)
+  -- Silibants are restricted to these Places
   | p `notElem` [DENTIALVEOLAR, DENTAL, LAMINALALVEOLAR, APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX, ALVEOLOPALATAL, RETROFLEX] && m `elem` [SILIBANT, SAFFRICATE] = True
+  -- Laterals are restricted from these Places
   | p `elem` [BILABIAL, LABIODENTAL, EPIPHARYNGEAL, PHARYNGEAL, EPIGLOTTAL, GLOTTAL] && m `elem` [LAFFRICATE, LAPPROXIMANT, LFRICATIVE, LFRICATIVE, LFLAP] = True
+  -- Flaps and Trills are restricted from these Places
   | p `elem` [ALVEOLOPALATAL, PALATAL, VELAR, GLOTTAL] && m `elem` [FLAP, TRILL] = True
-  | p `elem` [PHARYNGEAL, GLOTTAL] && m `elem` [STOP, AFFRICATE] && h /= VOICELESS = True
-  | m /= STOP && h == ASPIRATED = True
+  -- Only *Voiceless* Stops/Affricates are allowed in these Places
+  | p `elem` [EPIPHARYNGEAL, PHARYNGEAL, GLOTTAL] && m `elem` [STOP, AFFRICATE] && h /= VOICELESS = True
+  -- Only Stops, Affricates, and Clicks can be Aspirated
+  | m `notElem` [STOP, AFFRICATE, SAFFRICATE, LAFFRICATE, CLICK] && h == ASPIRATED = True
+  -- Nasals are restricted from these Places
   | p `elem` [EPIPHARYNGEAL, PHARYNGEAL, EPIGLOTTAL, GLOTTAL] && m == NASAL = True
+  -- Fricatives and Approximants happen Pharyngeral-ly (or Epiglotto-pharyngeal-ly)
+  | p == EPIGLOTTAL && m `elem` [FRICATIVE, APPROXIMANT, AFFRICATE] = True
+  -- Stops, Trills, and Flaps happen Epiglottal-ly (or Epiglotto-pharyngeal-ly)
+  | p == PHARYNGEAL && m `elem` [STOP, TRILL, FLAP, AFFRICATE] = True
+  -- Ejectives are basically always Voiceless
+  | h /= VOICELESS && a == EJECTIVE = True
+  -- Ejectives are always Obstruents (No Silibants though?)
+  | m `notElem` [STOP, AFFRICATE, FRICATIVE, LAFFRICATE, LFRICATIVE] && a == EJECTIVE = True
+  -- Implosives are basically always Stops
+  | m /= STOP && a == IMPLOSIVE = True
+  -- Clicks are never anything but Lingual Ingressive
+  | m == CLICK && a /= LINGUAL = True
+  -- Lingual Ingressive consonants ARE Clicks
+  | m /= CLICK && a == LINGUAL = True
+  -- Clicks are restricted from these places
+  | m == CLICK && p `elem` [VELAR, UVULAR, PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL] = True
   | otherwise = False
 impConsonants _ = False
 
 
--- calculates an approximate similarity between two phonemes
--- max of ~30
+-- Calculates an approximate similarity between two phonemes
+-- Max of ~30
 phonemeDistance :: Phoneme -> Phoneme -> Int
 --distances bewteen two vowels (somewhat manhatten distance)
-phonemeDistance (Vowel h1 b1 r1 l1 t1) (Vowel h2 b2 r2 l2 t2) = 2 * abs (fromEnum h1 - fromEnum h2)
-                                                              + 2 * abs (fromEnum b1 - fromEnum b2)
-                                                              + 4 * abs (fromEnum r1 - fromEnum r2)
-                                                              + 2 * abs (fromEnum l1 - fromEnum l2)
-                                                              + if t1 /= t2 then 2 else 0
--- distances between two consonants (somewhat manhatten distance)
-phonemeDistance (Consonant p1 m1 h1) (Consonant p2 m2 h2) = 2 * placeDistance p1 p2
-                                                          + 3 * mannerDistance m1 m2
+phonemeDistance (Vowel h1 b1 r1 l1) (Vowel h2 b2 r2 l2) = 2 * abs (fromEnum h1 - fromEnum h2)
+                                                            + 2 * abs (fromEnum b1 - fromEnum b2)
+                                                            + 5 * abs (fromEnum r1 - fromEnum r2)
+                                                            + 3 * abs (fromEnum l1 - fromEnum l2)
+-- Distances between two consonants (somewhat manhatten distance)
+phonemeDistance (Consonant p1 m1 h1 a1) (Consonant p2 m2 h2 a2) = 2 * placeDistance p1 p2
+                                                          + 2 * mannerDistance m1 m2
                                                           + 1 * phonationDistance h1 h2
--- distances a vowel and diphthong (average distance from vowel to the two end points)
-phonemeDistance (vow@Vowel{}) (Diphthong b2 r2 h2 b3 r3 h3 l2 t2) = truncate result where
-  result = realToFrac (phonemeDistance vow (Vowel b2 r2 h2 l2 t2) + phonemeDistance vow (Vowel b3 r3 h3 l2 t2)) / 2
+                                                          + 1 * airstreamDistance a1 a2
+-- Distances a vowel and diphthong (average distance from vowel to the two end points)
+phonemeDistance (vow@Vowel{}) (Diphthong b2 r2 h2 b3 r3 h3 l2) = truncate result where
+  result = realToFrac (phonemeDistance vow (Vowel b2 r2 h2 l2) + phonemeDistance vow (Vowel b3 r3 h3 l2)) / 2
 phonemeDistance (diph@Diphthong{}) (vow@Vowel{}) = phonemeDistance vow diph
--- distance between two diphthongs (cosine distance)
-phonemeDistance (Diphthong b1 r1 h1 b2 h2 r2 l1 t1) (Diphthong b3 r3 h3 b4 r4 h4 l2 t2) = round (24 * cosDist) + 2 * abs (fromEnum l1 - fromEnum l2) + if t1 /= t2 then 2 else 0 where
+-- Distance between two diphthongs (cosine distance)
+phonemeDistance (Diphthong b1 r1 h1 b2 h2 r2 l1) (Diphthong b3 r3 h3 b4 r4 h4 l2) = round (24 * cosDist) + 3 * abs (fromEnum l1 - fromEnum l2) where
   dp = ((fromEnum h1 - fromEnum h2) * (fromEnum h3 - fromEnum h4))
      + ((fromEnum b1 - fromEnum b2) * (fromEnum b3 - fromEnum b4))
      + ((fromEnum r1 - fromEnum r2) * (fromEnum r3 - fromEnum r4))
   mags = sqrt (fromIntegral ((fromEnum h1 - fromEnum h2) ^ 2 + (fromEnum b1 - fromEnum b2) ^ 2 + (fromEnum r1 - fromEnum r2) ^ 2))
        * sqrt (fromIntegral ((fromEnum h3 - fromEnum h4) ^ 2 + (fromEnum b3 - fromEnum b4) ^ 2 + (fromEnum r3 - fromEnum r4) ^ 2))
   cosDist = realToFrac dp / realToFrac mags
---semivowels...
-phonemeDistance (Consonant PALATAL APPROXIMANT MODAL) (Vowel CLOSE BACK UNROUNDED _ _) = 10
-phonemeDistance (Vowel CLOSE BACK UNROUNDED _ _) (Consonant PALATAL APPROXIMANT MODAL) = 10
-phonemeDistance (Consonant VELAR APPROXIMANT MODAL) (Vowel CLOSE BACK ROUNDED _ _) = 10
-phonemeDistance (Vowel CLOSE BACK ROUNDED _ _) (Consonant VELAR APPROXIMANT MODAL) = 10
-phonemeDistance (Consonant PHARYNGEAL APPROXIMANT MODAL) (Vowel OPEN BACK UNROUNDED _ _) = 10
-phonemeDistance (Vowel OPEN BACK UNROUNDED _ _) (Consonant PHARYNGEAL APPROXIMANT MODAL) = 10
--- everything else
+-- Semivowels...
+phonemeDistance (Consonant PALATAL APPROXIMANT MODAL PULMONIC) (Vowel CLOSE BACK UNROUNDED _ ) = 10
+phonemeDistance (Vowel CLOSE BACK UNROUNDED _) (Consonant PALATAL APPROXIMANT MODAL PULMONIC) = 10
+phonemeDistance (Consonant VELAR APPROXIMANT MODAL PULMONIC) (Vowel CLOSE BACK ROUNDED _) = 10
+phonemeDistance (Vowel CLOSE BACK ROUNDED _) (Consonant VELAR APPROXIMANT MODAL PULMONIC) = 10
+phonemeDistance (Consonant PHARYNGEAL APPROXIMANT MODAL PULMONIC) (Vowel OPEN BACK UNROUNDED _) = 10
+phonemeDistance (Vowel OPEN BACK UNROUNDED _) (Consonant PHARYNGEAL APPROXIMANT MODAL PULMONIC) = 10
+-- Everything else
 phonemeDistance _ _ = 60
 
 
@@ -199,4 +220,15 @@ phonationDistance MODAL ASPIRATED = 5
 phonationDistance STIFF ASPIRATED = 5
 phonationDistance CREAKY ASPIRATED = 5
 phonationDistance x y | x == y = 0
+                      | otherwise = 5
+
+
+airstreamDistance :: Airstream -> Airstream -> Int
+airstreamDistance PULMONIC EJECTIVE = 1
+airstreamDistance EJECTIVE PULMONIC = 1
+airstreamDistance EJECTIVE IMPLOSIVE = 1
+airstreamDistance IMPLOSIVE EJECTIVE = 1
+airstreamDistance IMPLOSIVE LINGUAL = 3
+airstreamDistance LINGUAL IMPLOSIVE = 3
+airstreamDistance x y | x == y = 0
                       | otherwise = 5

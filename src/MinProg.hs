@@ -2,7 +2,7 @@ module MinProg
 (
 ) where
 
-import Prelude
+import PClassyPrelude
 import Data.RVar
 import Data.Random.Extras
 import Data.List

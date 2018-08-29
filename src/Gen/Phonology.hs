@@ -1,11 +1,10 @@
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Gen.Phonology
 ( makeDiphInventory
 , makeConsonantMap
 , makeConsonants
 , makeVowelMap
 , makeVowels
+, makeTones
 ) where
 
 -- Import
@@ -16,45 +15,50 @@ import Data.Random.Extras
 import Data.Random hiding (sample)
 
 import Data.Phoneme
+
+import HelperFunctions
 import Constants
 
 -- Make diphthongs
 makeDiphInventory :: Int -> [Phoneme] -> RVar [Phoneme]
-makeDiphInventory n vs = fromMaybe (return []) (join $ safeChoices n <$> subseq) where
-  subseq = mapM makeDiph $ filter (\(Vowel h1 b1 _ l1 _, Vowel h2 b2 _ l2 _) -> (h1 /= h2 || b1 /= b2) && l1 == l2) ((,) <$> vs <*> vs)
+makeDiphInventory n vs = fromMaybe (return []) (join $ safeSample n <$> subseq) where
+  subseq = mapM makeDiph $ filter (\(Vowel h1 b1 _ l1, Vowel h2 b2 _ l2) -> (h1 /= h2 || b1 /= b2) && l1 == l2) ((,) <$> vs <*> vs)
 
 makeDiph :: (Phoneme, Phoneme) -> Maybe Phoneme
-makeDiph (Vowel h1 b1 r1 _ t1, Vowel h2 b2 r2 _ _) = Just $ Diphthong h1 b1 r1 h2 b2 r2 NORMAL t1
+makeDiph (Vowel h1 b1 r1 _, Vowel h2 b2 r2 _) = Just $ Diphthong h1 b1 r1 h2 b2 r2 NORMAL
 makeDiph (_,_) = Nothing
 
 -- Returns a list of places, manners, phonations, and exceptions
-makeConsonantMap :: RVar ([Place], [Manner], [Phonation], [Phoneme])
+makeConsonantMap :: RVar ([Place], [Manner], [Phonation], [Airstream], [Phoneme])
 makeConsonantMap = do
-  -- pick places, manners, and phonation
+  -- Pick places, manners, and phonation
   places <- makePlaces
   manners <- makeManners
   phonations <- makePhonations
+  airstreams <- makeAirstream
 
-  let combos = Consonant <$> places <*> manners <*> phonations
+  let combos = Consonant <$> places <*> manners <*> phonations <*> airstreams
 
-  -- make exceptions for the place and manner dimensions
+  -- Make exceptions for the place, manner, and airstream dimensions
   rPlaces <- join $ sample <$> uniform 0 (length places - 1) <*> return places
   rManners <- join $ sample <$> uniform 0 (length manners - 1) <*> return manners
+  rPhonations <- join $ sample <$> uniform 0 (length phonations - 1) <*> return phonations
+  rAirstreams <- join $ sample <$> uniform 0 (length airstreams - 1) <*> return airstreams
 
-  -- create exceptions
-  let exceptions = Consonant <$> rPlaces <*> rManners <*> phonations
+  -- Create exceptions
+  let exceptions = Consonant <$> rPlaces <*> rManners <*> rPhonations <*> rAirstreams
 
-  -- add impossible consonants to exceptions
+  -- Add impossible consonants to exceptions
   let exceptions_ = exceptions ++ filter impConsonants combos
-  -- this might result in some manners and places being unused...
+  -- This might result in some manners and places being unused...
 
-  return (places, manners, phonations, exceptions_)
+  return (places, manners, phonations, airstreams, exceptions_)
 
 -- Make the consonant inventory from the consonant map
-makeConsonants :: [Place] -> [Manner] -> [Phonation] -> [Phoneme] -> [Phoneme]
-makeConsonants places manners phonations exceptions = output where
-  -- Create all possible consonants from place, manner, and phonation
-  cns = Consonant <$> places <*> manners <*> phonations
+makeConsonants :: [Place] -> [Manner] -> [Phonation] -> [Airstream] -> [Phoneme] -> [Phoneme]
+makeConsonants places manners phonations airstreams exceptions = output where
+  -- Create all possible consonants from place, manner, phonation, and phonations
+  cns = Consonant <$> places <*> manners <*> phonations <*> airstreams
   -- Filter out exceptions
   output = filter (`notElem` exceptions) cns
 
@@ -89,7 +93,7 @@ makeManners = do
   nasal <- choice [[], [NASAL]]
 
   lflap <- choice [[], [LFLAP]]
-  let flap2 = concat [[FLAP], lflap]
+  let flap2 = FLAP:lflap
   flap <- choice [[], flap2]
 
   lat <- choice [[], [LFRICATIVE]]
@@ -102,12 +106,12 @@ makeManners = do
   fric <- choice [[], fric2]
 
   lapprox <- choice [[], [LAPPROXIMANT]]
-  let approx2 = concat [[APPROXIMANT], lapprox]
+  let approx2 = APPROXIMANT:lapprox
   approx <- choice [[], approx2]
 
   trill <- choice [[], [TRILL]]
 
-  return $ concat [stop, nasal, flap, fric, approx, trill]
+  return $ concat [stop, nasal, flap, fric, approx, trill, [CLICK]]
 
 -- Make the phonations (and aspiration) for consonants
 makePhonations :: RVar [Phonation]
@@ -119,8 +123,13 @@ makePhonations = choice [ [MODAL]
                         , [MODAL, ASPIRATED]
                         ]
 
+makeAirstream :: RVar [Airstream]
+makeAirstream = do
+  others <- randomSubset [EJECTIVE, IMPLOSIVE, LINGUAL]
+  return $ PULMONIC : others
+
 -- Returns a list of heights, backnesses, roundnesss, lengths, tones, and exceptions
-makeVowelMap :: RVar ([Height], [Backness], [Roundedness], [Length], [Tone], [Phoneme])
+makeVowelMap :: RVar ([Height], [Backness], [Roundedness], [Length], [Phoneme])
 makeVowelMap = do
   -- pick heights, backnesses, roundnesss, lengths, and tones
   heights <- makeHeights
@@ -134,15 +143,15 @@ makeVowelMap = do
   rBacks <- join $ sample <$> uniform 0 (length backs - 1) <*> return backs
 
   -- create exceptions
-  let exceptions = Vowel <$> rHeights <*> rBacks <*> rounds <*> lengths <*> tones
+  let exceptions = Vowel <$> rHeights <*> rBacks <*> rounds <*> lengths
 
-  return (heights, backs, rounds, lengths, tones, exceptions)
+  return (heights, backs, rounds, lengths, exceptions)
 
 -- Make the vowel inventory from the vowel map
-makeVowels :: [Height] -> [Backness] -> [Roundedness] -> [Length] -> [Tone] -> [Phoneme] -> [Phoneme]
-makeVowels heights backs rounds lengths tones exceptions = output where
+makeVowels :: [Height] -> [Backness] -> [Roundedness] -> [Length] -> [Phoneme] -> [Phoneme]
+makeVowels heights backs rounds lengths exceptions = output where
   -- Create all possible vowels from picked heights, backnesses, roundnesses, lengths, and tones
-  vows = Vowel <$> heights <*> backs <*> rounds <*> lengths <*> tones
+  vows = Vowel <$> heights <*> backs <*> rounds <*> lengths
   -- Filter out exceptions
   output = filter (`notElem` exceptions) vows
 

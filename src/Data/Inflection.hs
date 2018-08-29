@@ -1,5 +1,4 @@
 {-# LANGUAGE StandaloneDeriving #-}
-{-# LANGUAGE NoImplicitPrelude #-}
 module Data.Inflection
 ( Manifest(..)
 , Express(..)
@@ -31,6 +30,7 @@ import ClassyPrelude
 import Prelude (ShowS, shows, showChar, foldr1)
 
 import Data.Phoneme
+import Data.Other
 
 -- Used for 18-tuples
 instance (Show a, Show b, Show c, Show d, Show e, Show f, Show g, Show h, Show i, Show j, Show k, Show l, Show m, Show n, Show o, Show p, Show q) => Show (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q) where
@@ -304,7 +304,24 @@ instance Show Volition where
 data ManifestSystem = ManifestSystem
                     { manSysLC :: LexCat
                     , manSysType :: ManifestType
-                    , manSysCombos :: [(Morpheme, AllExpress)]
+                    , manSysCombos :: [(SyllWord, AllExpress)]
                     } deriving (Eq, Show)
 
-type AllExpress = (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition)
+type AllExpress = ( Express Gender
+                  , Express Animacy
+                  , Express Case
+                  , Express Number
+                  , Express Definiteness
+                  , Express Specificity
+                  , Express Topic
+                  , Express Person
+                  , Express Honorific
+                  , Express Polarity
+                  , Express Tense
+                  , Express Aspect
+                  , Express Mood
+                  , Express Voice
+                  , Express Evidentiality
+                  , Express Transitivity
+                  , Express Volition
+                  )

@@ -1,8 +1,7 @@
-{-# LANGUAGE OverloadedStrings, NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Main where
 
 import ClassyPrelude
+
 import Data.Text.IO (getLine)
 import Data.Random
 import System.Random
@@ -10,10 +9,12 @@ import System.Directory
 
 import LoadStuff
 
+import Data.Language
+
 import Gen.LanguageTree
 
 import Out.Language
-import Data.Other
+
 
 main :: IO ()
 main = do
@@ -26,7 +27,7 @@ main = do
   if exist then putStrLn "Language family already generated" *> main else do
     idata <- loadInputData
     mData <- loadMeaningData
-    tree <- newSample $ makeLanguageTree 0 idata mData RootL
+    tree <- newSample $ makeLanguageTree idata mData
     writeLanguageTree seed tree
 
 -- special sampleRVar that allows seeds

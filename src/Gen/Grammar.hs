@@ -1,7 +1,8 @@
-{-# OPTIONS_GHC -Wall #-}
 module Gen.Grammar
 ( makeGrammar
 ) where
+
+import ClassyPrelude
 
 import Data.RVar
 import Data.Random.Extras

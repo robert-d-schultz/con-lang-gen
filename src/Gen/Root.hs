@@ -1,42 +1,45 @@
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
 module Gen.Root
 ( makeRootDictionary
 , makeRoot
 ) where
 
 import ClassyPrelude hiding (Word)
-import Control.Monad as R (replicateM)
+
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
+import Control.Monad as R (replicateM)
 
-import LoadStuff
 import Data.Phoneme
 import Data.Inflection
+import Data.Other
+
+import LoadStuff
+import HelperFunctions
 
 -- Generate root dictionary - atomic meanings
-makeRootDictionary :: MeaningData -> [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> (Int, Int) -> RVar [((Text, LexCat), Morpheme)]
-makeRootDictionary mData nucs ccs set = concat <$> sequence [n, v, a, p] where
-  n = mapM (\i -> (,) <$> ((,) <$> return i <*> return Noun) <*> makeRoot nucs ccs set) (inputNouns mData)
-  v = mapM (\i -> (,) <$> ((,) <$> return i <*> return Verb) <*> makeRoot nucs ccs set) (inputVerbs mData)
-  a = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adj) <*> makeRoot nucs ccs set) (inputAdjs mData)
-  p = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adpo) <*> makeRoot nucs ccs set) (inputAdpos mData)
+makeRootDictionary :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [((Text, LexCat), SyllWord)]
+makeRootDictionary mData onsets nucs codas tones set = concat <$> sequence [n, v, a, p] where
+  n = mapM (\i -> (,) <$> ((,) <$> return i <*> return Noun) <*> makeRoot onsets nucs codas tones set) (inputNouns mData)
+  v = mapM (\i -> (,) <$> ((,) <$> return i <*> return Verb) <*> makeRoot onsets nucs codas tones set) (inputVerbs mData)
+  a = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adj) <*> makeRoot onsets nucs codas tones set) (inputAdjs mData)
+  p = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adpo) <*> makeRoot onsets nucs codas tones set) (inputAdpos mData)
 
 -- Generate a morpheme given vowels, consonant clusters, and some settings
-makeRoot :: [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> (Int, Int) -> RVar Morpheme
-makeRoot nucs ccs (ns,xs) = do
+makeRoot :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar SyllWord
+makeRoot onsets nucs codas tones (ns,xs) = do
   -- decide how many syllables in the morpheme
   s <- uniform ns xs
-  root <- R.replicateM s (makeRootSyllable nucs ccs)
-  return $ Morpheme $ concat root
+  syllables <- R.replicateM s (makeRootSyllable onsets nucs codas tones)
+  return $ SyllWord $ syllables
 
-makeRootSyllable :: [Phoneme] -> ([[Phoneme]], [[Phoneme]]) -> RVar [Phoneme]
-makeRootSyllable nucs (onsets, codas) = do
+makeRootSyllable :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> RVar Syllable
+makeRootSyllable onsets nucs codas tones = do
   onset <- choice onsets
   nuclei <- choice nucs
   coda <- choice codas
-  return $ onset ++ [nuclei] ++ coda
+  tone <- choice tones
+  return $ Syllable onset nuclei coda tone
 
 -- Gen.Meaning?
 -- special generators

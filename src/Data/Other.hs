@@ -1,48 +1,37 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 module Data.Other
-( SyllWord(..)
-, Syllable(..)
-, Language(..)
-, LanguageBranch(..)
+( AbsRel(..)
+, SVGMove(..)
+, RadPath
+, CharPath
 ) where
 
 import ClassyPrelude
 
 import Data.Phoneme
-import Data.Grammar
-import Data.Inflection
+import Data.Soundchange
 
--- Language trees
-data LanguageBranch = LanguageBranch
-                    { getLanguage :: Language
-                    , getChildren :: [LanguageBranch]
-                    , getN :: Int
-                    }
--- Language
-data Language = RootL
-              | Language
-              { getName :: Text
-              , getCMap :: ([Place], [Manner], [Phonation])
-              , getCInv :: [Phoneme]
-              , getVMap :: ([Height], [Backness], [Roundedness], [Length], [Tone])
-              , getVInv :: [Phoneme]
-              , getDInv :: [Phoneme]
-              , getSonHier :: Int
-              , getOnsetCCs :: [[Phoneme]]
-              , getNuclei :: [Phoneme]
-              , getCodaCCs :: [[Phoneme]]
-              , getInflMap :: InflectionMap
-              , getManSyss :: [ManifestSystem]
-              , getGrammar :: Grammar
-              , getRoots :: [((Text, LexCat), Morpheme)]
-              , getWriting :: ([(Phoneme, (Int, [(Text,[(Int,Int)])]))], [(Syllable, (Int, [(Text,[(Int,Int)])]))], [(((Text, LexCat), Morpheme), (Int, [(Text,[(Int,Int)])]))])
-              } deriving (Show)
+-- used for graphemes and writing systems
+type RadPath = [SVGMove]
+type CharPath = [SVGMove]
 
--- Used to parse out syllables from a word
-newtype SyllWord = SyllWord [Syllable] deriving (Eq, Show, Read)
-type ConsonantCluster = [Phoneme]
-data Syllable = Syllable
-              { getOnset :: [Phoneme]
-              , getNucleus :: Phoneme
-              , getCoda :: [Phoneme]
-              } deriving (Eq, Show, Read)
+data AbsRel = Abs | Rel deriving (Eq)
+
+data SVGMove = Mov {getAR :: AbsRel, getX :: Int, getY :: Int}
+             | Lin {getAR :: AbsRel, getX :: Int, getY :: Int}
+             | Qur {getAR :: AbsRel, getCPX :: Int , getCPY :: Int, getX :: Int, getY :: Int}
+             | Hor {getAR :: AbsRel, getX :: Int}
+             | Ver {getAR :: AbsRel, getY :: Int}
+             | Znd
+
+instance Show SVGMove where
+  show (Mov Abs x y) = "M" ++ show x ++ " " ++ show y
+  show (Lin Abs x y) = "L" ++ show x ++ " " ++ show y
+  show (Qur Abs cpx cpy x y) = "Q" ++ show cpx ++ " " ++ show cpy ++ " " ++ show x ++ " " ++ show y
+  show (Hor Abs x) = "H" ++ show x
+  show (Ver Abs y) = "V" ++ show y
+  show (Mov Rel x y) = "m" ++ show x ++ " " ++ show y
+  show (Lin Rel x y) = "l" ++ show x ++ " " ++ show y
+  show (Qur Rel cpx cpy x y) = "q" ++ show cpx ++ " " ++ show cpy ++ " " ++ show x ++ " " ++ show y
+  show (Hor Rel x) = "h" ++ show x
+  show (Ver Rel y) = "v" ++ show y
+  show Znd = "Z"

@@ -1,11 +1,14 @@
-{-# LANGUAGE NoImplicitPrelude #-}
 module Data.Phoneme
-( Word(..)
+( SyllWord(..)
+, ConsCluster
+, Syllable(..)
+, MorphWord(..)
 , Morpheme(..)
 , Phoneme(..)
 , Place (..)
 , Manner(..)
 , Phonation(..)
+, Airstream(..)
 , Height(..)
 , Backness(..)
 , Roundedness(..)
@@ -15,30 +18,40 @@ module Data.Phoneme
 
 import ClassyPrelude hiding (Word)
 
-newtype Word = Word { getMorphemes :: [Morpheme] } deriving (Eq, Ord, Show, Read)
-newtype Morpheme = Morpheme { getPhonemes :: [Phoneme] } deriving (Eq, Ord, Show, Read)
+-- Used to parse out syllables from a word
+newtype SyllWord = SyllWord [Syllable] deriving (Eq, Ord, Read, Show)
+type ConsCluster = [Phoneme]
+data Syllable = Syllable
+              { getOnset :: [Phoneme]
+              , getNucleus :: Phoneme
+              , getCoda :: [Phoneme]
+              , getTone :: Tone
+              } deriving (Eq, Ord, Read, Show)
+
+-- Word/Morpheme/Phoneme
+newtype MorphWord = MorphWord { getMorphemes :: [Morpheme] } deriving (Eq, Ord, Read, Show)
+newtype Morpheme = Morpheme { getPhonemes :: [Phoneme] } deriving (Eq, Ord, Read, Show)
 
 data Phoneme = Consonant
-           { cplace :: Place
-           , cmanner :: Manner
-           , cvoice :: Phonation
+           { getPlace :: Place
+           , getManner :: Manner
+           , getVoice :: Phonation
+           , getAirstream :: Airstream
            }
            | Vowel
-           { vheight :: Height
-           , vbackness :: Backness
-           , vroundedness :: Roundedness
-           , vlength :: Length
-           , vtone :: Tone
+           { getHeight :: Height
+           , getBackness :: Backness
+           , getRoundedness :: Roundedness
+           , getLength :: Length
            }
            | Diphthong
-           { dheight1 :: Height
-           , dbackness1 :: Backness
-           , droundedness1 :: Roundedness
-           , dheight2 :: Height
-           , dbackness2 :: Backness
-           , droundedness2 :: Roundedness
-           , dlength :: Length
-           , dtone :: Tone
+           { getHeight1 :: Height
+           , getBackness1 :: Backness
+           , getRoundedness1 :: Roundedness
+           , getHeight2 :: Height
+           , getBackness2 :: Backness
+           , getRoundedness2 :: Roundedness
+           , getLength :: Length
            }
            | Blank deriving (Eq, Ord, Read)
 
@@ -81,7 +94,9 @@ data Manner = NASAL
             | LAFFRICATE
             | LFRICATIVE
             | LAPPROXIMANT
-            | LFLAP deriving (Eq, Ord, Read, Enum, Bounded)
+            | LFLAP
+            | CLICK
+             deriving (Eq, Ord, Read, Enum, Bounded)
 
 -- Phonation
 data Phonation  = VOICELESS
@@ -92,6 +107,13 @@ data Phonation  = VOICELESS
                 | CREAKY
                 | ASPIRATED deriving (Eq, Ord, Read, Enum, Bounded)
 
+
+data Airstream = PULMONIC -- pulmonic egressive
+               | EJECTIVE -- glottalic egressive
+               | IMPLOSIVE -- glottalic ingressive
+               | LINGUAL -- lingual ingressive (clicks)
+               deriving (Eq, Ord, Read, Enum, Bounded)
+
 -- Vowel stuff
 data Height      = CLOSE
                  | NEARCLOSE
@@ -101,11 +123,11 @@ data Height      = CLOSE
                  | NEAROPEN
                  | OPEN deriving (Eq, Ord, Read, Enum, Bounded)
 
-data Backness    = BACK
-                 | NEARBACK
-                 | CENTRAL
+data Backness    = FRONT
                  | NEARFRONT
-                 | FRONT deriving (Eq, Ord, Read, Enum, Bounded)
+                 | CENTRAL
+                 | NEARBACK
+                 | BACK deriving (Eq, Ord, Read, Enum, Bounded)
 
 data Roundedness = ROUNDED
                  | UNROUNDED deriving (Eq, Ord, Read, Enum, Bounded)
@@ -114,6 +136,7 @@ data Length = SHORT
             | NORMAL
             | LONG deriving (Eq, Ord, Read, Enum, Bounded)
 
+-- Tone
 data Tone = NONET
           | TOPT
           | HIGHT
@@ -131,9 +154,16 @@ data Tone = NONET
 
 -- show instances
 instance Show Phoneme where
-  show (Consonant p m h) = show h ++ " " ++ show p ++ " " ++ show m
-  show (Vowel h b r l t) = show t ++ " " ++ show l ++ " " ++ show h ++ " " ++ show b ++ " " ++ show r ++ " Vowel"
-  show (Diphthong h1 b1 r1 h2 b2 r2 l t) = show t ++ show l ++ h ++ b ++ r where
+  -- Don't show phonation for ejectives
+  show (Consonant p m _ EJECTIVE) = show p ++ " " ++ show m ++ " " ++ " Ejective"
+  -- Don't show manner (always STOP) for implosives
+  show (Consonant p _ h IMPLOSIVE) = show h ++ " " ++ show p ++ " " ++ " Implosive"
+  -- Don't show manner (always CLICK) for clicks
+  show (Consonant p _ h LINGUAL) = show h ++ " " ++ show p ++ " " ++ " Click"
+  -- Don't show airstream for everything else
+  show (Consonant p m h _) = show h ++ " " ++ show p ++ " " ++ show m ++ " "
+  show (Vowel h b r l) = show l ++ " " ++ show h ++ " " ++ show b ++ " " ++ show r ++ " Vowel"
+  show (Diphthong h1 b1 r1 h2 b2 r2 l) = show l ++ h ++ b ++ r where
     h | h1 == h2 = show h1
       | otherwise = "(" ++ show h1 ++ " -> " ++ show h2 ++ ")"
     b | b1 == b2 = show b1
@@ -188,6 +218,13 @@ instance Show Phonation where
                      STIFF     -> "Stiff"
                      CREAKY    -> "Creaky"
                      ASPIRATED -> "Aspirated"
+
+instance Show Airstream where
+  show a = case a of PULMONIC  -> "Pulmonic"
+                     EJECTIVE  -> "Ejective"
+                     IMPLOSIVE -> "Implosive"
+                     LINGUAL   -> "Click"
+
 
 instance Show Height where
   show h = case h of CLOSE     -> "Close"

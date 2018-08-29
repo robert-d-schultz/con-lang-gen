@@ -1,5 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Gen.WritingSystem
 ( generateWritingSystem
 , generateAlphabet
@@ -17,13 +15,13 @@ import Data.Other
 import Data.Inflection
 
 --pick writing systems
-generateWritingSystem :: [Phoneme] -> [Syllable] -> [((Text,LexCat), Morpheme)] -> RVar ([(Phoneme, Int)], [(Syllable, Int)], [(((Text, LexCat), Morpheme), Int)])
+generateWritingSystem :: [Phoneme] -> [Syllable] -> [((Text,LexCat), SyllWord)] -> RVar ([(Phoneme, Int)], [(Syllable, Int)], [(((Text, LexCat), SyllWord), Int)])
 generateWritingSystem phonemes [] morphs = choice [ (generateAlphabet phonemes, [], [])
-                                                  , ([], [], generateLogography morphs 983040)
+                                                  --, ([], [], generateLogography morphs 983040)
                                                   ]
 generateWritingSystem phonemes sylls morphs = choice [ (generateAlphabet phonemes, [], [])
-                                                     , ([], generateSyllabary sylls 983040, [])
-                                                     , ([], [], generateLogography morphs 983040)
+                                                     --, ([], generateSyllabary sylls 983040, [])
+                                                     --, ([], [], generateLogography morphs 983040)
                                                      ]
 
 -- generate an alphabet based on phonemes
@@ -40,11 +38,11 @@ generateSyllabary sylls n = zip sylls [n..]
 
 
 -- make all syllables
-makeAllSyllables :: [[Phoneme]] -> [Phoneme] -> [[Phoneme]] -> [Syllable]
-makeAllSyllables onsets nucleuss codas = Syllable <$> onsets <*> nucleuss <*> codas
+makeAllSyllables :: [[Phoneme]] -> [Phoneme] -> [[Phoneme]] -> [Tone] -> [Syllable]
+makeAllSyllables onsets nucleuss codas tones = Syllable <$> onsets <*> nucleuss <*> codas <*> tones
 
 
 -- generate logographs, one for each lexicon entry, inflection entry
 -- maybe two/three/four for each lexicon entry? related too much to morphology and therefore semantics
-generateLogography :: [((Text, LexCat), Morpheme)] -> Int -> [(((Text, LexCat), Morpheme), Int)]
+generateLogography :: [((Text, LexCat), SyllWord)] -> Int -> [(((Text, LexCat), SyllWord), Int)]
 generateLogography morphs n = zip morphs [n..]

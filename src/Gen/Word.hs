@@ -4,7 +4,7 @@ module Gen.Word
 , someFunction
 ) where
 
-import Prelude hiding (Word)
+import PClassyPrelude hiding (Word)
 
 import Data.Phoneme
 import Data.Inflection

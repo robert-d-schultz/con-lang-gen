@@ -1,5 +1,3 @@
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
 module EnglishStuff
 ( englishLanguage
 , englishGrammar
@@ -9,25 +7,29 @@ module EnglishStuff
 
 import ClassyPrelude
 
+import Data.Phoneme
 import Data.Grammar
 import Data.Inflection
-import Data.Other
+import Data.Language
 
 englishLanguage = Language { getName = "English"
-                           , getCMap = ([], [], [])
-                           , getCInv = []
-                           , getVMap = ([], [], [], [], [])
-                           , getVInv = []
-                           , getDInv = []
+                           , getNameMod = ("","")
+                           , getCInv = mempty
+                           , getVInv = mempty
+                           , getDInv = mempty
+                           , getCMap = ([], [], [], [])
+                           , getVMap = ([], [], [], [])
+                           , getTones = []
                            , getSonHier = 0
-                           , getOnsetCCs = []
-                           , getNuclei = []
-                           , getCodaCCs = []
+                           , getOnsetCCs = mempty
+                           , getNuclei = mempty
+                           , getCodaCCs = mempty
                            , getInflMap = englishInflection
                            , getManSyss = []
                            , getGrammar = englishGrammar
                            , getRoots = []
                            , getWriting = ([], [], [])
+                           , getRules = []
                            }
 
 englishGrammar :: Grammar

@@ -1,6 +1,3 @@
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Gen.Language
 ( makeLanguage
 ) where
@@ -21,8 +18,9 @@ import Gen.Grammar
 import Gen.Grapheme
 import Gen.WritingSystem
 
-import Data.Other
+import Data.Language
 import Data.Inflection
+import Data.Soundchange
 
 import Out.Roman
 
@@ -30,18 +28,21 @@ import Out.Roman
 makeLanguage :: InputData -> MeaningData -> RVar Language
 makeLanguage idata mData = do
   -- consonants
-  (places, manners, phonations, exceptionsC) <- makeConsonantMap
-  let inventoryC = makeConsonants places manners phonations exceptionsC
+  (places, manners, phonations, airstreams, exceptionsC) <- makeConsonantMap
+  let inventoryC = makeConsonants places manners phonations airstreams exceptionsC
 
   -- vowels
-  (heights, backs, rounds, lengths, tones, exceptionsV) <- makeVowelMap
-  let inventoryV = makeVowels heights backs rounds lengths tones exceptionsV
+  (heights, backs, rounds, lengths, exceptionsV) <- makeVowelMap
+  let inventoryV = makeVowels heights backs rounds lengths exceptionsV
 
   -- diphthongs
   inventoryD <- makeDiphInventory 4 inventoryV
 
+  -- tones
+  tones <- makeTones
+
   -- phonotactics / consonant clusters
-  scheme <- uniform 1 4
+  scheme <- uniform 5 5 -- fixed to be the ssp-violating scheme
   let sonHier = makeSonHier inventoryC scheme
   msd <- uniform 0 3
 
@@ -49,21 +50,19 @@ makeLanguage idata mData = do
   onsetCCs <- makeOnsets sonHier (msd, maxOnset)
   let onsets = ordNub $ onsetCCs ++ map (:[]) inventoryC
 
-  let nuclei = makeNuclei (inventoryV ++ inventoryD) sonHier
+  nuclei <- makeNuclei (inventoryV ++ inventoryD) sonHier
 
   maxCoda <- uniform 0 6
-  codaCCs <- makeCodas sonHier (msd, maxCoda)
+  numCodaCCs <- uniform 0 5
+  codaCCs <- makeCodas numCodaCCs 0 [] onsets inventoryC sonHier (msd, maxCoda)
   let codas = ordNub $ [] : codaCCs ++ map (:[]) inventoryC  -- makes sure "no coda" is always allowed
-
-
-
 
   -- inflection / grammatical categories
   (inflSys, numPerLexCat) <- makeInflectionMap idata
-  systems <- concat <$> mapM (makeLexicalInflection nuclei (onsets, codas) inflSys) numPerLexCat
+  systems <- concat <$> mapM (makeLexicalInflection onsets nuclei codas tones inflSys) numPerLexCat
 
   -- root morphemes
-  roots <- makeRootDictionary mData nuclei (onsets, codas) (1, 4)
+  roots <- makeRootDictionary mData onsets nuclei codas tones (1, 4)
 
   -- grammar
   grammar <- makeGrammar
@@ -71,16 +70,16 @@ makeLanguage idata mData = do
   -- writing systems
   let allPhonemes = inventoryD ++ inventoryV ++ inventoryC
   let allSyllables | 2000 < product [length onsets, length nuclei, length codas] = []
-                   | otherwise = makeAllSyllables onsets nuclei codas
+                   | otherwise = makeAllSyllables onsets nuclei codas tones
   let allLogograms = roots
   (a, s, l) <- generateWritingSystem allPhonemes allSyllables allLogograms
 
   -- characters
   (aOut, sOut, lOut) <- makeCharacters (a, s, l)
 
-  -- find out what was assigned to "<!LANGUAGE!>" and romanize
-  let langName = fromMaybe "name not found" (romanizeMorpheme . snd <$> find (\x -> fst x == ("<!LANGUAGE!>", Noun)) roots)
+  -- find out what was assigned to "!!!LANGUAGE!!!" and romanize
+  let langName = fromMaybe "name not found" (romanizeSyllWord . snd <$> find (\x -> fst x == ("!!!LANGUAGE!!!", Noun)) roots)
 
-  let lang = Language langName (places, manners, phonations) inventoryC (heights, backs, rounds, lengths, tones) inventoryV inventoryD scheme onsets nuclei codas inflSys systems grammar roots (aOut, sOut, lOut)
+  let lang = Language langName ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys systems grammar roots (aOut, sOut, lOut) [NoChange]
 
   return lang

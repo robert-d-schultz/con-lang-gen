@@ -1,13 +1,15 @@
-{-# OPTIONS_GHC -Wall #-}
 module Morph.Grammar
 ( morphGrammar
 ) where
 
+import ClassyPrelude hiding (swap)
+
 import Data.RVar
+
+import Data.Grammar
 
 import HelperFunctions
 
-import Data.Grammar
 
 -- change grammatical parameter
 morphGrammar :: Grammar -> RVar Grammar

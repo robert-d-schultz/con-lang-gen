@@ -1,5 +1,3 @@
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Out.Syllable
 ( syllabifyWord
 , syllabifyMorpheme
@@ -10,12 +8,12 @@ import ClassyPrelude hiding (Word, maximumBy)
 import Data.List (findIndices, findIndex)
 
 import Data.Phoneme
-import Data.Other
+import Data.Language
 
 -- Syllabification
 -- Given a word and sonority hierarchy, syllabify the word
-syllabifyWord :: Language -> Word -> Maybe SyllWord
-syllabifyWord lang (Word ms) = SyllWord <$> sylls where
+syllabifyWord :: Language -> MorphWord -> Maybe SyllWord
+syllabifyWord lang (MorphWord ms) = SyllWord <$> sylls where
   -- Combine morphemes into one string of phonemes
   ps = concatMap getPhonemes ms
   groups = breakPhonemes lang ps []
@@ -29,12 +27,12 @@ syllabifyMorpheme lang m = SyllWord <$> sylls where
   groups = breakPhonemes lang ps []
   sylls = map (makeSyllable lang) <$> groups
 
--- Given a group of phonemes, make a proper syllable structure
+-- Given a group of phonemes (and a tone), make a proper syllable structure
 makeSyllable :: Language -> [Phoneme] -> Syllable
 makeSyllable lang ps = out where
   nuclei = getNuclei lang
-  out = maybe (Syllable ps Blank [Blank]) foo (findIndex (`elem` nuclei) ps)
-  foo i = Syllable onset nucleus coda where
+  out = maybe (Syllable ps Blank [Blank] NONET) foo (findIndex (`elem` nuclei) ps)
+  foo i = Syllable onset nucleus coda NONET where
     (onset, nucleus:coda) = splitAt i ps
 
 

@@ -14,7 +14,7 @@ import Data.Inflection
 import Data.Phoneme
 
 -- make parse tree using new language's root dictionary and inflection/conjugation systems
-makeParseTree :: [((Text, LexCat), Morpheme)] -> InflectionMap -> RVar Phrase
+makeParseTree :: [((Text, LexCat), SyllWord)] -> InflectionMap -> RVar Phrase
 makeParseTree dict inflmap = do
 
   let noun = fst.fst <$> choice (filter (\x -> snd (fst x) == Noun) dict)

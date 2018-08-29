@@ -1,15 +1,15 @@
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
 module Out.Other
 ( writeSonHier
 , writeCCs
 , writeLanguageTreeN
+, writeSoundChange
 ) where
 
 import ClassyPrelude
 
-import Data.Other
+import Data.Language
 import Data.Phoneme
+import Data.Soundchange
 
 import Out.Lexicon
 
@@ -32,6 +32,10 @@ writeLanguageTreeN :: LanguageBranch -> Text
 writeLanguageTreeN tree = writeLanguageBranchN tree ++ ";"
 
 writeLanguageBranchN :: LanguageBranch -> Text
-writeLanguageBranchN (LanguageBranch lang [] n) = getName lang -- ++ ":" ++ show (fromIntegral n / 10)
-writeLanguageBranchN (LanguageBranch lang branches n) = branchStuff ++ getName lang where -- ++ ":" ++ show (fromIntegral n / 10) where
+writeLanguageBranchN (LanguageBranch lang [] n) = fst (getNameMod lang) ++ snd (getNameMod lang) ++ getName lang -- ++ ":" ++ toString (fromIntegral n / 10)
+writeLanguageBranchN (LanguageBranch lang branches n) = branchStuff ++ fst (getNameMod lang) ++ snd (getNameMod lang) ++ getName lang where -- ++ ":" ++ toString (fromIntegral n / 10) where
   branchStuff = "(" ++ intercalate "," (map writeLanguageBranchN branches) ++ ")"
+
+-- Write sound changes
+writeSoundChange :: [Rule] -> Text
+writeSoundChange rs = "\n\nPhonological changes: " ++ "\n" ++ intercalate "\n" (map tshow rs) ++ "\n"

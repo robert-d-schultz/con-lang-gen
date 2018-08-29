@@ -1,46 +1,48 @@
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Out.Lexicon
 ( writeDictionary
 , writeWordIPA
 , writeMorphemeIPA
 , writePhonemeIPA
 , writeRootDictionary
+, writeSyllWordIPA
 , writeSyllableIPA
 , writeLC
 ) where
 
-import ClassyPrelude hiding (Word)
+import ClassyPrelude
 import GHC.Exts (groupWith)
 
 import Data.Phoneme
 import Data.Inflection
-import Data.Other
+import Data.Language
 
 import Out.Roman
 import Out.Syllable
 import Out.IPA
+import Out.Grapheme
 
 -- write list of roots to string
-writeRootDictionary :: Language -> [((Text, LexCat), Morpheme)] -> Text
-writeRootDictionary lang pairs = "\n" ++ intercalate "\n" (map (writeRootDictionaryEntry lang) (reduceHomophones2 pairs))
+writeRootDictionary :: Language -> [(Phoneme, Text)] -> [((Text, LexCat), SyllWord)] -> Text
+writeRootDictionary lang ndict pairs = "\n" ++ intercalate "\n" (map (writeRootDictionaryEntry lang ndict) (reduceHomophones2 pairs))
 
-reduceHomophones2 :: [((Text, LexCat), Morpheme)] -> [([(Text, LexCat)], Morpheme)]
-reduceHomophones2 pairs = map (second (fromMaybe (Morpheme []) . listToMaybe) . unzip) (groupWith snd (sortWith snd pairs))
+reduceHomophones2 :: [((Text, LexCat), SyllWord)] -> [([(Text, LexCat)], SyllWord)]
+reduceHomophones2 pairs = map (second (fromMaybe (SyllWord []) . listToMaybe) . unzip) (groupWith snd (sortWith snd pairs))
 
-writeRootDictionaryEntry :: Language -> ([(Text, LexCat)], Morpheme) -> Text
-writeRootDictionaryEntry lang (means, morph) = romanizeMorpheme morph ++ " (" ++ writeMorphemeIPA lang morph ++ ")" ++ concatMap (\(str, lc) -> "\n\t" ++ writeLC lc ++ " " ++ str) means
-
+writeRootDictionaryEntry :: Language -> [(Phoneme, Text)] -> ([(Text, LexCat)], SyllWord) -> Text
+writeRootDictionaryEntry lang ndict (means, syllword) = "<br>\n"
+                                          --  ++ writeMorphemeNative morph ndict
+                                            ++ " <i>" ++ romanizeSyllWord syllword ++ "</i>"
+                                            ++ " (" ++ writeSyllWordIPA syllword ++ ")"
+                                            ++ concatMap (\(str, lc) -> "\n<br>\t" ++ writeLC lc ++ " " ++ str) means
 -- write list of words to string
-writeDictionary :: Language -> [((Text, LexCat), Word)] -> Text
+writeDictionary :: Language -> [((Text, LexCat), SyllWord)] -> Text
 writeDictionary lang pairs = "\n" ++ intercalate "\n" (map (writeDictionaryEntry lang) (reduceHomophones pairs))
 
-reduceHomophones :: [((Text, LexCat), Word)] -> [([(Text, LexCat)], Word)]
-reduceHomophones pairs = map (second (fromMaybe (Word []) . listToMaybe) . unzip) (groupWith snd (sortWith snd pairs))
+reduceHomophones :: [((Text, LexCat), SyllWord)] -> [([(Text, LexCat)], SyllWord)]
+reduceHomophones pairs = map (second (fromMaybe (SyllWord []) . listToMaybe) . unzip) (groupWith snd (sortWith snd pairs))
 
-writeDictionaryEntry :: Language -> ([(Text, LexCat)], Word) -> Text
-writeDictionaryEntry lang (means, wrd) = romanizeWord wrd ++ " (" ++ writeWordIPA lang wrd ++ ")" ++ concatMap (\(str, lc) -> "\n\t" ++ writeLC lc ++ " " ++ str) means
+writeDictionaryEntry :: Language -> ([(Text, LexCat)], SyllWord) -> Text
+writeDictionaryEntry lang (means, wrd) = romanizeSyllWord wrd ++ " (" ++ writeSyllWordIPA wrd ++ ")" ++ concatMap (\(str, lc) -> "\n\t" ++ writeLC lc ++ " " ++ str) means
 
 writeLC :: LexCat -> Text
 writeLC lc
@@ -52,7 +54,7 @@ writeLC lc
   | otherwise = ""
 
 -- write Word to string
-writeWordIPA :: Language -> Word -> Text
+writeWordIPA :: Language -> MorphWord -> Text
 writeWordIPA lang word = fromMaybe "!!Word doesn't syllabize!!" out where
   out = do
     (SyllWord sylls) <- syllabifyWord lang word
@@ -65,8 +67,11 @@ writeMorphemeIPA lang m = fromMaybe ("!!Morpheme doesn't syllabize!! /" ++ conca
     (SyllWord sylls) <- syllabifyMorpheme lang m
     return $ "/" ++ intercalate "." (map writeSyllableIPA sylls) ++ "/"
 
+-- write Syllable-Word to string
+writeSyllWordIPA :: SyllWord -> Text
+writeSyllWordIPA (SyllWord sylls) = intercalate "." (map writeSyllableIPA sylls)
 
 -- write Syllable to string
 writeSyllableIPA :: Syllable -> Text
-writeSyllableIPA (Syllable onset (Consonant a b c) coda) = concatMap writePhonemeIPA onset ++ writePhonemeIPA (Consonant a b c) ++ "\809" ++ concatMap writePhonemeIPA coda
-writeSyllableIPA (Syllable onset nucleus coda) = concatMap writePhonemeIPA onset ++ writePhonemeIPA nucleus ++ concatMap writePhonemeIPA coda
+writeSyllableIPA (Syllable onset nuc@Consonant{} coda tone) = concatMap writePhonemeIPA onset ++ writePhonemeIPA nuc ++ "\809" ++ concatMap writePhonemeIPA coda ++ writeToneLetterIPA tone
+writeSyllableIPA (Syllable onset nucleus coda tone) = concatMap writePhonemeIPA onset ++ writePhonemeIPA nucleus ++ concatMap writePhonemeIPA coda ++ writeToneLetterIPA tone
