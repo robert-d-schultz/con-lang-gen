@@ -41,9 +41,9 @@ choice_ wei fir sec = choice (sec : replicate wei fir)
 choiceWeight :: [Int] -> [a] -> Maybe (RVar a)
 choiceWeight [] _ = Nothing
 choiceWeight _ [] = Nothing
-choiceWeight ns xs
-  | length ns /= length xs = Nothing
-  | otherwise = Just $ choice $ concat $ zipWith replicate ns xs
+choiceWeight ws xs
+  | length ws /= length xs = Nothing
+  | otherwise = Just $ choice $ concat $ zipWith replicate ws xs
 
 -- sample but without worrying about empty list exception
 safeSample :: Int -> [a] -> Maybe (RVar [a])
@@ -80,6 +80,16 @@ safeSampleSet :: Ord a => Int -> Set a -> Maybe (RVar (Set a))
 safeSampleSet n xs = do
     foo <- safeSample n (setToList xs)
     return $ setFromList <$> foo
+
+choiceExtract2 :: [a] -> RVar (Maybe ([a], a))
+choiceExtract2 [] = return Nothing
+choiceExtract2 xs = extract xs <$> uniform 0 (length xs - 1)
+
+extract :: [a] -> Int -> Maybe ([a], a)
+extract s i | null r    = Nothing
+            | otherwise = Just (a ++ c, b)
+    where (a, r) = splitAt i s
+          (b : c) = r
 
 
 -- Doesn't work?

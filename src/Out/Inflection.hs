@@ -92,8 +92,8 @@ isParticle lc (Manifest t _) = out where
 -- write inflections to tables
 -- tables organized by lexical category and manifest type
 writeLexicalSystems :: InflectionMap -> Language -> [ManifestSystem] -> Text
-writeLexicalSystems inflSys lang infls = "<br>\n" ++ concatMap (writeLexicalSystems_ inflSys lang infls) [Noun, Adj, Verb, Adv]
-
+writeLexicalSystems inflSys lang infls = "<br>\n" ++ style ++ concatMap (writeLexicalSystems_ inflSys lang infls) [Noun, Adj, Verb, Adv] where
+  style = "<style>table{border-collapse:collapse;}th,td{empty-cells:hide;border:solid 1px black;padding:4px 4px;}th:empty,td:empty,tr:empty{border:0px;padding:0px 0px;}</style>\n"
 
 writeLexicalSystems_ :: InflectionMap -> Language -> [ManifestSystem] -> LexCat -> Text
 writeLexicalSystems_ inflSys lang infls lc = "<br>\n" ++ tshow lc
@@ -122,7 +122,7 @@ writeManifestSystems expSyss lang i gramSys = fromMaybe "" out where
 -- Horizontal: Case, Gender, Animacy, Number, Honorific, Transitivity, Evidentiality, Voice, Volition (9)
 -- Vertical:   Tense, Aspect, Mood, Person, Clusivity, Definiteness, Specificity, Polarity, Topic     (9)
 writeManifestSystem :: ManifestSystem -> Language -> [Express Gender] -> [Express Animacy] -> [Express Case] -> [Express Number] -> [Express Definiteness] -> [Express Specificity] -> [Express Topic] -> [Express Person] -> [Express Honorific] -> [Express Polarity] -> [Express Tense] -> [Express Aspect] -> [Express Mood] -> [Express Voice] -> [Express Evidentiality] -> [Express Transitivity] -> [Express Volition] -> Text
-writeManifestSystem manSys lang gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols  = "<br>\n<table border=1>" ++ title ++ header ++ exarows ++ "\n</table>\n" where
+writeManifestSystem manSys lang gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols  = "<br>\n<table>" ++ title ++ header ++ exarows ++ "\n</table>\n" where
 
   -- title
   hls = [length cass,length gens,length anis,length nums,length hons,length tras,length evis,length vois,length vols]

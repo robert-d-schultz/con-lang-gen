@@ -1,44 +1,26 @@
-{-# OPTIONS_GHC -Wall #-}
-module Morph.PhonologyV
-( morphPhonologyV
+module Morph.VowelShift
+( vowelShift
 ) where
+
+import ClassyPrelude
 
 import Data.RVar
 import Data.Random.Extras
-import Control.Monad
-import Data.List
-import Data.Ord
+--import Data.List ((\\))
 
+import Data.Language
 import Data.Phoneme
 import Data.Inflection
-import Data.Other
 
-import Debug.Trace
-
--- there should be two versions of this
--- one for vowel shifts, where vowels are shifted in a closed loop
--- and another where vowels are inserted and deleted
-morphPhonologyV :: Language -> RVar Language
-morphPhonologyV lang = join $ choice [ vowelShift lang
-                                     --, insertVowel lang
-                                     --, deleteVowel lang
-                                     ]
-
--- this needs to do something.
-{-
-insertVowel :: Language -> RVar Language
-insertVowel land = do
--}
-
-
--- shifts all vowels around a "loop"
+-- Vowel shifts
+-- Shifts all vowels around a "loop"
 -- Doesn't take into account vowel length or tone
--- makes of loop of either all rounded or unrounded vowels, never any "crossover"
--- limited to manner and place
+-- Makes a loop of either all rounded or unrounded vowels, never any "crossover"
+-- Limited to manner and place
 vowelShift :: Language -> RVar Language
 vowelShift lang = do
   --let (heights, backs, _, _, _) = getVMap lang
-  let vowels = nub $ map (\(Vowel h b _ _ _) -> (h,b)) (getVInv lang)
+  let vowels = ordNub $ map (\(Vowel h b _ _) -> (h,b)) (getVInv lang)
   startPoint <- choice vowels
   loop <- makeVowelLoop startPoint vowels []
   let langN = shiftVowels loop lang
@@ -48,28 +30,34 @@ shiftVowels :: [(Height, Backness)] -> Language -> Language
 shiftVowels loop lang = lang{getRoots = rootsN, getManSyss = manSyssN} where
   roots = getRoots lang
   manSyss = getManSyss lang
-  rootsN = map (\(x, Morpheme y) -> (,) x (Morpheme (map (shiftVowel loop) y))) roots
-  manSyssN = map (\(ManifestSystem x y z) -> ManifestSystem x y (map (\(Morpheme w, v) -> (,) (Morpheme (map (shiftVowel loop) w)) v) z)) manSyss
+  rootsN = map (\(x, SyllWord y) -> (,) x (SyllWord (map (shiftSyll loop) y))) roots
+  manSyssN = map (\(ManifestSystem x y z) -> ManifestSystem x y (map (\(SyllWord w, v) -> (,) (SyllWord (map (shiftSyll loop) w)) v) z)) manSyss
+
+shiftSyll :: [(Height, Backness)] -> Syllable -> Syllable
+shiftSyll loop (Syllable onset nuc coda t) = Syllable onsetN nucN codaN t where
+  onsetN = map (shiftVowel loop) onset
+  nucN = shiftVowel loop nuc
+  codaN = map (shiftVowel loop) coda
 
 shiftVowel :: [(Height, Backness)] -> Phoneme -> Phoneme
 shiftVowel _ x@Consonant{} = x
 shiftVowel _ x@Diphthong{} = x
-shiftVowel loop vowel = case dropWhile (/= (vheight vowel, vbackness vowel)) loop of
-  (_:next:_)  -> vowel{vheight = fst next, vbackness = snd next}
-  [_]         -> vowel{vheight = fst (head loop), vbackness = snd (head loop)}
+shiftVowel loop vowel = case dropWhile (/= (getHeight vowel, getBackness vowel)) loop of
+  (_:next:_)  -> vowel{getHeight = fst next, getBackness = snd next}
+  [_]         -> vowel{getHeight = fst (unsafeHead loop), getBackness = snd (unsafeHead loop)}
   []          -> vowel
 
 makeVowelLoop :: (Height, Backness) -> [(Height, Backness)] -> [(Height, Backness)] -> RVar [(Height, Backness)]
 makeVowelLoop start vowels [] = do
   let noStartVowels = vowels \\ [start] --saves us from having no loop
-  let next = minimumBy (comparing (vowelDistance start)) noStartVowels
-  makeVowelLoop start vowels [next]
+  let next = minimumByMay (comparing (vowelDistance start)) noStartVowels
+  makeVowelLoop start vowels $ fromMaybe [] ((:[]) <$> next)
 makeVowelLoop start vowels loop
-  | start == head loop = return loop
+  | start == unsafeHead loop = return loop
   | otherwise = do
   let uniqueVowels = vowels \\ loop
-  let next = minimumBy (comparing (vowelDistance (head loop))) uniqueVowels --it's this part that prevents unround-round crossover in the loop
-  makeVowelLoop start vowels (next:loop)
+  let next = minimumByMay (comparing (vowelDistance (unsafeHead loop))) uniqueVowels --it's this part that prevents unround-round crossover in the loop
+  makeVowelLoop start vowels $ fromMaybe [] ((:loop) <$> next)
 
 
 -- manhattan distance on height and backness

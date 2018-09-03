@@ -19,6 +19,7 @@ import Gen.Grapheme
 import Gen.WritingSystem
 
 import Data.Language
+import Data.Phoneme
 import Data.Inflection
 import Data.Soundchange
 
@@ -70,7 +71,7 @@ makeLanguage idata mData = do
   -- writing systems
   let allPhonemes = inventoryD ++ inventoryV ++ inventoryC
   let allSyllables | 2000 < product [length onsets, length nuclei, length codas] = []
-                   | otherwise = makeAllSyllables onsets nuclei codas tones
+                   | otherwise = makeAllSyllables onsets nuclei codas tones [NONES, PRIMARYS, SECONDARYS]
   let allLogograms = roots
   (a, s, l) <- generateWritingSystem allPhonemes allSyllables allLogograms
 

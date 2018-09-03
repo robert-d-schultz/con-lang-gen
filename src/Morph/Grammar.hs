@@ -11,7 +11,7 @@ import Data.Grammar
 import HelperFunctions
 
 
--- change grammatical parameter
+-- Change grammatical parameter
 morphGrammar :: Grammar -> RVar Grammar
 morphGrammar (Grammar subI objF comI vtoI affH nulS oblT nulT topM itoC whM pieP queI) = do
   let n = 5

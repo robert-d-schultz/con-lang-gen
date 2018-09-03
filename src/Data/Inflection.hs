@@ -63,15 +63,21 @@ instance Show a => Show (Express a) where
 data ManifestType = Particle | Prefix | Suffix deriving (Eq, Show, Read)
 
 -- Lexical categories
-data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Obj | Subj | Pron deriving (Eq, Enum, Read)
+data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Pron
+            | Agen | Obj | Subj | Don | Them | Rec -- arguments for verbs
+              deriving (Eq, Enum, Read)
 instance Show LexCat where
-  show lc = case lc of Subj -> "Subject"
-                       Obj  -> "Object"
-                       Noun -> "Noun"
+  show lc = case lc of Noun -> "Noun"
                        Adj  -> "Adjective"
                        Adv  -> "Adverb"
                        Adpo -> "Adposition"
                        Verb -> "Verb"
+                       Agen -> "Agent"
+                       Obj -> "Object"
+                       Subj -> "Subject"
+                       Don -> "Donor"
+                       Them -> "Theme"
+                       Rec -> "Recipient"
 
 -- Inflection system
 data InflectionMap = InflectionMap
@@ -98,19 +104,115 @@ data InflectionMap = InflectionMap
 -- For nouns
 data Gender        = UGEN | M | F | COM | N  deriving (Eq, Read, Show)
 data Animacy       = UANI | AN | HUM | NHUM | ZO | INAN deriving (Eq, Read, Show)
-data Case          = UCAS | INTR | ACC | ERG | PEG | INDIR | SEC
-                   | NOM | ABS | MTR | DIR | PRIM | ERG2
-                   | NOM2 | ABS2 | ABS3 | DTR | OBJ | DRT1
-                   | TR
-                   | DRT2
-                   | OBL1 | OBL2 | OBL3 | OBL4 | OBL5 | OBL6
-                   | ADP | PREP | POST
-                   | LAT | LOC | ABL
+data Case          = UCAS
+                   | DIR | DIR2
+                   | INTR | MTR | DTR | TR
+                   | NOM | NOM2
+                   | ACC | ACC2 | ACC3
+                   | OBJ | OBJ2
+                   | ERG | ERG2
+                   | ABS | ABS2 | ABS3 | ABS4
+                   | PEG | SEC | DAT
+
+                   | PREP
+                   | LAT | ELA | DEL | ABL | EXESS
+                   | LOC
+                   | SEP
+
                    | COMP | EQU | IDEN | ABE
-                   | DAT | INS | COMIT | INSCOMIT | ORN | BEN
+                   | INS | COMIT | INSCOMIT | ORN | BEN
                    | CAUS | DISTR
                    | GEN | POSS | PART
-                   | VOC deriving (Eq, Read, Show)
+                   | VOC deriving (Eq, Read)
+
+-- "Case" signals what the attached word's function is in the phrase
+-- The morpho-syntactic cases signal which verb argument they are
+-- Genitive cases signal that a noun is modifying another noun
+--   * Inalienable Possessive, Alienable Possessive, Possesed, Partitive
+-- Prepositional case signals a relationship between a adposition and noun
+--   * English's Oblique case is a merger Accusative and Prepositional, I think
+--   * I suppose you would have either Prepostional case + actual prepositions OR a bunch of Location/Motion-related cases
+--   * Although maybe both could work, and you would know which prepositions go with which NPs
+-- Locative (at), Seperative (away), and Lative (to) cases
+--   * These type of cases are really granular
+--   * Do these represent VP-NP or VP-NP-NP relations?
+--   * I suppose you'd have pairs of these working (Like Seperative and Lative) to show motion away from something to something else
+
+-- General cases:
+-- Morphosyntactic cases (NP-VP) showing theta roles
+-- Genitive (NP-NP cases) showing relations
+-- Seperative, Locative, Lative (VP-NP cases) showing a motion relative to a thing
+-- Prepositional (PP-NP cases) showing that the noun is what the preposition is talking about
+-- Partitive? (DP-NP case?)
+{-
+data Case = CaseGroup Text [Case]
+          | Case Text
+
+cases = [ Case "ELA"
+        , Case "DEL"
+        , Case "ABL"
+        , Case "EXESS"
+        , CaseGroup "LAT" [Case "ELA", Case "DEL", Case "ABL", Case "EXESS"]
+        ]
+
+
+-- Returns the arguments that each Morphosyntactic Case applies to
+getCases c = case c of INTR  -> [Subj]
+                       ERG2  -> [Agen]
+                       ACC2  -> [Obj]
+                       PEG   -> [Don]
+                       SEC   -> [Them]
+                       DAT   -> [Rec]
+
+                       NOM2  -> [Subj, Agen]
+                       ABS2  -> [Subj, Obj]
+                       ERG   -> [Agen, Don]
+                       ACC3  -> [Obj, Rec]
+                       ACC   -> [Obj, Them]
+
+                       MTR   -> [Agen, Obj]
+                       OBJ2  -> [Them, Rec]
+
+                       NOM   -> [Subj, Agen, Don]
+                       ABS3  -> [Subj, Obj, Rec]
+
+                       ABS4  -> [Subj, Obj, Them]
+
+                       DTR   -> [Don, Them, Rec]
+
+                       DIR2  -> [Subj, Agen, Obj]
+                       OBJ   -> [Obj, Them, Rec]
+
+                       ABS   -> [Subj, Obj, Them, Rec]
+
+                       TR    -> [Agen, Obj, Don, Them, Rec]
+
+                       DIR   -> [Subj, Agen, Obj, Don, Them, Rec]
+
+
+                       --          Subj
+                       --     Agent   Object
+                       -- Donor   Theme   Recipient
+
+-- Just a bunch of likely alignments
+data Alignment = Alignment Text [Case]
+alignment = [ Alignment "Nominative-objective" [NOM, OBJ]
+            , Alignment "Nominative-accusative (Secundative)" [NOM, SEC, ACC3]
+            , Alignment "Nominative-accusative (Indirective)" [NOM, ACC, DAT]
+            , Alignment "Ergative-absolutive" [ERG, ABS]
+            , Alignment "Ergative-absolutive (Secundative)" [ERG, SEC, ABS3]
+            , Alignment "Ergative-absolutive (Indirective)" [ERG, SEC, ABS4, DAT]
+            , Alignment "Transitive" [INTR, TR]
+            , Alignment "Mono-Ditransitive" [INTR, MTR, DTR]
+            , Alignment "Tripartite" [INTR, ERG, OBJ]
+            , Alignment "Quadpartite (Secundative)" [INTR, ERG, SEC, ACC3]
+            , Alignment "Quadpartite (Indirective)" [INTR, ERG, ACC, DAT]
+            , Alignment "Hexpartite" [INTR, ERG2, OBJ, PEG, SEC, DAT]
+            , Alignment "Direct" [DIR]
+            , Alignment "Ditransitive" [DIR2, DTR]
+            ]
+-}
+
 data Number        = UNUM | SG | DU | TRI | PA | PL deriving (Eq, Read, Show)
 data Definiteness  = UDEF | DEF | INDF deriving (Eq, Read, Show)
 data Specificity   = USPE | SPEC | NSPEC deriving (Eq, Read, Show)
@@ -148,39 +250,32 @@ instance Show Animacy where
                          NHUM -> "Non-Human"
                          ZO   -> "Animal"
                          INAN -> "Inanimate"
+-}
 
 instance Show Case where
-  show cas = case cas of UCAS -> "Unknown"
-                         INTR -> "Intransitive"
-                         ACC -> "Accusative"
+  show cas = case cas of ACC -> "Accusative"
+                         ACC2 -> "Accusative"
+                         ACC3 -> "Accusative"
                          ERG -> "Ergative"
                          ERG2 -> "Ergative"
                          PEG -> "Pegative"
-                         INDIR -> "Indirective"
+                         DAT -> "Dative"
                          SEC -> "Secundative"
                          NOM -> "Nominative"
                          NOM2 -> "Nominative"
                          ABS -> "Absolutive"
                          ABS2 -> "Absolutive"
                          ABS3 -> "Absolutive"
+                         ABS4 -> "Absolutive"
+                         INTR -> "Intransitive"
                          MTR -> "Monotransitive"
-                         DIR -> "Directive"
-                         PRIM -> "Primative"
                          DTR -> "Ditransitive"
-                         OBJ -> "Objective"
-                         DRT1 -> "Direct"
-                         DRT2 -> "Direct"
                          TR -> "Transitive"
-                         ADP -> "Adpositional"
+                         DIR -> "Directive"
+                         DIR2 -> "Directive"
+                         OBJ -> "Objective"
                          PREP -> "Prepositional"
-                         POST -> "Postpositional"
-                         OBL1 -> "Oblique"
-                         OBL2 -> "Oblique"
-                         OBL3 -> "Oblique"
-                         OBL4 -> "Oblique"
-                         OBL5 -> "Oblique"
-                         OBL6 -> "Oblique"
-
+{-
 instance Show Number where
   show num = case num of UNUM -> "Unknown"
                          SG  -> "Singular"

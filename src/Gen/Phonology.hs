@@ -65,25 +65,35 @@ makeConsonants places manners phonations airstreams exceptions = output where
 -- Make the places of articulation for consonants
 makePlaces :: RVar [Place]
 makePlaces = do
-  n4 <- uniform 1 2
-  lab <- sample n4 [BILABIAL, LABIODENTAL]
-  labial <- choice [[], lab]
+  n1 <- uniform 0 2
+  labial <- sample n1 [BILABIAL, LABIODENTAL]
 
-  n3 <- uniform 1 7
-  alv <- sample n3 [INTERDENTAL, DENTAL, DENTIALVEOLAR, LAMINALALVEOLAR, APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX]
-  let coronal = alv ++ [RETROFLEX]
+  n2 <- uniform 1 3
+  coronal <- sample n2 [INTERDENTAL, DENTAL, DENTIALVEOLAR, LAMINALALVEOLAR, APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX, RETROFLEX]
 
-  n <- uniform 1 4
-  dorsal <- sample n [ALVEOLOPALATAL, PALATAL, VELAR, UVULAR]
+  n3 <- uniform 1 3
+  dorsal <- sample n3 [ALVEOLOPALATAL, PALATAL, VELAR, UVULAR]
 
   rad <- choice [[], [PHARYNGEAL]]
 
-  n2 <- uniform 1 3
-  laryn2 <- sample n2 [GLOTTAL, EPIPHARYNGEAL, EPIGLOTTAL]
-  laryn <- choice [[], laryn2]
+  n4 <- uniform 0 2
+  laryn <- sample n4 [GLOTTAL, EPIPHARYNGEAL, EPIGLOTTAL]
 
-  return $ concat [labial, coronal, dorsal, rad, laryn]
+  let monoPlaces = concat [labial, coronal, dorsal, rad, laryn]
 
+  n5 <- uniform 0 2
+  coartPlaces <- replicateM n5 (makeCoart monoPlaces)
+
+  return $ monoPlaces ++ coartPlaces
+
+-- Make a Coarticulated Place
+makeCoart :: [Place] -> RVar Place
+makeCoart places = do
+  n <- uniform 1 (length places - 1)
+  let (p1s, p2s) = splitAt n places
+  p1 <- choice p1s
+  p2 <- choice p2s
+  return $ COARTICULATED p1 p2
 
 -- Make the manners of articulation for consonants
 makeManners :: RVar [Manner]
@@ -136,7 +146,6 @@ makeVowelMap = do
   backs <- makeBacknesses
   rounds <- makeRoundedneses
   lengths <- makeLengths
-  tones <- makeTones
 
   -- make exceptions for the height and backness dimensions
   rHeights <- join $ sample <$> uniform 0 (length heights - 1) <*> return heights
@@ -186,7 +195,7 @@ makeLengths = choice [ [NORMAL]
                      , [SHORT, NORMAL, LONG]
                      ]
 
--- Decides how tone will be contrasted for vowels
+-- Tones for syllables
 makeTones :: RVar [Tone]
 makeTones = choice [ [NONET]
                    , [HIGHT, FALLT, NONET]

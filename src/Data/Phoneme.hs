@@ -14,9 +14,11 @@ module Data.Phoneme
 , Roundedness(..)
 , Length(..)
 , Tone(..)
+, Stress(..)
 ) where
 
 import ClassyPrelude hiding (Word)
+import Data.List (elemIndex)
 
 -- Used to parse out syllables from a word
 newtype SyllWord = SyllWord [Syllable] deriving (Eq, Ord, Read, Show)
@@ -26,6 +28,7 @@ data Syllable = Syllable
               , getNucleus :: Phoneme
               , getCoda :: [Phoneme]
               , getTone :: Tone
+              , getStress :: Stress
               } deriving (Eq, Ord, Read, Show)
 
 -- Word/Morpheme/Phoneme
@@ -76,10 +79,22 @@ data Place  = BILABIAL
             | EPIPHARYNGEAL
             | EPIGLOTTAL
             | GLOTTAL
-            | ALVEOLAR -- not really used
+            | ALVEOLAR     -- not really used
             | POSTALVEOLAR -- not really used
-          --  | COARTICULATED Place Place
-            deriving (Eq, Ord, Read, Enum, Bounded)
+            | COARTICULATED { getPlaceA :: Place, getPlaceB :: Place}
+            deriving (Eq, Ord, Read)
+
+-- Enum for Place (because Coarticulated fucked it all up)
+instance Enum Place where
+  toEnum n | n < 20 = unsafeIndex [ BILABIAL, LABIODENTAL, LINGUOLABIAL, INTERDENTAL, DENTAL, DENTIALVEOLAR, LAMINALALVEOLAR
+                                  , APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX, RETROFLEX, ALVEOLOPALATAL, PALATAL, VELAR
+                                  , UVULAR, PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL ] n
+           | otherwise = error "Prelude.Enum.Place.toEnum: bad argument"
+
+  fromEnum (COARTICULATED a b) = 19 + 19 * fromEnum a + fromEnum b
+  fromEnum x = fromMaybe (error "Prelude.Enum.Place.toEnum: bad argument") (elemIndex x [ BILABIAL, LABIODENTAL, LINGUOLABIAL, INTERDENTAL, DENTAL, DENTIALVEOLAR, LAMINALALVEOLAR
+                                                                                        , APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX, RETROFLEX, ALVEOLOPALATAL, PALATAL, VELAR
+                                                                                        , UVULAR, PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL ])
 
 -- Manner
 data Manner = NASAL
@@ -108,10 +123,10 @@ data Phonation  = VOICELESS
                 | ASPIRATED deriving (Eq, Ord, Read, Enum, Bounded)
 
 
-data Airstream = PULMONIC -- pulmonic egressive
-               | EJECTIVE -- glottalic egressive
+data Airstream = PULMONIC  -- pulmonic egressive
+               | EJECTIVE  -- glottalic egressive
                | IMPLOSIVE -- glottalic ingressive
-               | LINGUAL -- lingual ingressive (clicks)
+               | LINGUAL   -- lingual ingressive (clicks)
                deriving (Eq, Ord, Read, Enum, Bounded)
 
 -- Vowel stuff
@@ -151,6 +166,11 @@ data Tone = NONET
           | LRISET
           | DIPT
           | PEAKT deriving (Eq, Ord, Read, Enum, Bounded)
+
+
+data Stress = NONES
+            | PRIMARYS
+            | SECONDARYS deriving (Eq, Ord, Read, Enum, Bounded)
 
 -- show instances
 instance Show Phoneme where
@@ -194,6 +214,7 @@ instance Show Place where
                      GLOTTAL         -> "Glottal"
                      ALVEOLAR        -> "Alveolar" -- not really used
                      POSTALVEOLAR    -> "Postalveolar" -- not really used
+                     COARTICULATED a b -> show a ++ "–" ++ show b
 
 instance Show Manner where
   show m = case m of NASAL        -> "Nasal"
@@ -209,6 +230,8 @@ instance Show Manner where
                      LFRICATIVE   -> "Lateral fricative"
                      LAPPROXIMANT -> "Lateral approximant"
                      LFLAP        -> "Lateral flap"
+                     CLICK        -> "Click"
+
 
 instance Show Phonation where
   show h = case h of VOICELESS -> "Voiceless"
@@ -266,3 +289,8 @@ instance Show Tone where
                      LRISET  -> "Low rising"
                      DIPT    -> "Dipping"
                      PEAKT   -> "Peaking"
+
+instance Show Stress where
+ show s = case s of NONES      -> "No stress"
+                    PRIMARYS   -> "Primary stress"
+                    SECONDARYS -> "Secondary stress"

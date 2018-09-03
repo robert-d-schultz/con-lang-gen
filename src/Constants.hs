@@ -11,7 +11,7 @@ import Data.Phoneme
 -- Impossible consonants filter
 -- True = impossible
 impConsonants :: Phoneme -> Bool
-impConsonants (Consonant p m h a)
+impConsonants c@(Consonant p m h a)
   -- Silibants are restricted to these Places
   | p `notElem` [DENTIALVEOLAR, DENTAL, LAMINALALVEOLAR, APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX, ALVEOLOPALATAL, RETROFLEX] && m `elem` [SILIBANT, SAFFRICATE] = True
   -- Laterals are restricted from these Places
@@ -34,14 +34,53 @@ impConsonants (Consonant p m h a)
   | m `notElem` [STOP, AFFRICATE, FRICATIVE, LAFFRICATE, LFRICATIVE] && a == EJECTIVE = True
   -- Implosives are basically always Stops
   | m /= STOP && a == IMPLOSIVE = True
-  -- Clicks are never anything but Lingual Ingressive
-  | m == CLICK && a /= LINGUAL = True
-  -- Lingual Ingressive consonants ARE Clicks
-  | m /= CLICK && a == LINGUAL = True
-  -- Clicks are restricted from these places
+  -- Implosives are basically never anything past Uvular
+  | a == IMPLOSIVE && p `elem` [PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL] = True
+  -- Clicks are never anything but Lingual Ingressive and vice versa
+  | m == CLICK && a /= LINGUAL || m /= CLICK && a == LINGUAL = True
+  -- Clicks are restricted from these Places
   | m == CLICK && p `elem` [VELAR, UVULAR, PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL] = True
+  -- Clicks are restricted to these Phonations
+  | m == CLICK && h `notElem` [MODAL, VOICELESS, BREATHY, ASPIRATED] = True
+  -- Check coarticulated
+  | (\case COARTICULATED{} -> True; _ -> False) p = impCoarticulated c
+  -- Otherwise, false
   | otherwise = False
 impConsonants _ = False
+
+
+impCoarticulated :: Phoneme -> Bool
+impCoarticulated (Consonant (COARTICULATED p1 p2) m h a)
+  -- Let's not do triple/quadruple articulation...
+  | (\case COARTICULATED{} -> True; _ -> False) p1 || (\case COARTICULATED{} -> True; _ -> False) p2 = True
+  -- Coarticulated constants can't have the same POA, that'd be dumb
+  | p1 == p2 = True
+  -- Keep places in order (front to back)
+  | p1 > p2 = True
+  -- If either Place is impossible, the whole thing is
+  | impConsonants (Consonant p1 m h a) || impConsonants (Consonant p2 m h a) = True
+  -- Coarticulated constants are restricted to these Manners
+  | m `notElem` [NASAL, STOP, APPROXIMANT, LAPPROXIMANT] = True
+  -- Glottis is not considered an articulator in this case
+  | p1 == GLOTTAL || p2 == GLOTTAL = True
+  -- Restrictions on Coart Stops: Too close together
+  | m `elem` [STOP, NASAL] && p1 == BILABIAL && p2 == INTERDENTAL = True
+  -- (Bi)Labial-Dorsal Stops are fine
+  | m `elem` [STOP, NASAL] && p1 == BILABIAL && p2 `elem` [ALVEOLOPALATAL, PALATAL, VELAR, UVULAR] = False
+  -- Other Labial-Dorsal's are too rare
+  | m `elem` [STOP, NASAL] && p1 `elem` [LABIODENTAL, LINGUOLABIAL] && p2 `elem` [ALVEOLOPALATAL, PALATAL, VELAR, UVULAR] = True
+  -- Labial-Coronal is too rare
+  | m `elem` [STOP, NASAL] && p1 `elem` [BILABIAL, LABIODENTAL, LINGUOLABIAL] && p2 `elem` [INTERDENTAL, DENTAL, DENTIALVEOLAR, LAMINALALVEOLAR, APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX, RETROFLEX] = True
+  -- Labial-Pharyngeal is unheard of
+  | m `elem` [STOP, NASAL] && p1 `elem` [BILABIAL, LABIODENTAL, LINGUOLABIAL] && p2 `elem` [PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL] = True
+  -- Coronal-Dorsal is too rare
+  | m `elem` [STOP, NASAL] && p1 `elem` [INTERDENTAL, DENTAL, DENTIALVEOLAR, LAMINALALVEOLAR, APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX, RETROFLEX] && p2 `elem` [ALVEOLOPALATAL, PALATAL, VELAR, UVULAR] = True
+  -- Coronal-Pharyngeal is unheard of
+  | m `elem` [STOP, NASAL] && p1 `elem` [INTERDENTAL, DENTAL, DENTIALVEOLAR, LAMINALALVEOLAR, APICOALVEOLAR, PALATOALVEOLAR, APICALRETROFLEX, RETROFLEX] && p2 `elem` [PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL] = True
+  -- Dorsal-Pharyngeal is too rare
+  | m `elem` [STOP, NASAL] && p1 `elem` [ALVEOLOPALATAL, PALATAL, VELAR, UVULAR] && p2 `elem` [PHARYNGEAL, EPIPHARYNGEAL, EPIGLOTTAL, GLOTTAL] = True
+  -- Otherwise, False
+  | otherwise = False
 
 
 -- Calculates an approximate similarity between two phonemes
@@ -173,6 +212,7 @@ placeDistance PHARYNGEAL UVULAR = 3
 placeDistance EPIPHARYNGEAL PHARYNGEAL = 1
 placeDistance EPIGLOTTAL EPIPHARYNGEAL = 1
 placeDistance GLOTTAL EPIGLOTTAL = 2
+placeDistance (COARTICULATED p1 p2) (COARTICULATED p3 p4) = round (realToFrac (placeDistance p1 p3 + placeDistance p2 p4)/2)
 placeDistance x y | x == y = 0
                   | otherwise = 5
 

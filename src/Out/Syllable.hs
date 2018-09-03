@@ -27,12 +27,12 @@ syllabifyMorpheme lang m = SyllWord <$> sylls where
   groups = breakPhonemes lang ps []
   sylls = map (makeSyllable lang) <$> groups
 
--- Given a group of phonemes (and a tone), make a proper syllable structure
+-- Given a group of phonemes (and a tone?), make a proper syllable structure
 makeSyllable :: Language -> [Phoneme] -> Syllable
 makeSyllable lang ps = out where
   nuclei = getNuclei lang
-  out = maybe (Syllable ps Blank [Blank] NONET) foo (findIndex (`elem` nuclei) ps)
-  foo i = Syllable onset nucleus coda NONET where
+  out = maybe (Syllable ps Blank [Blank] NONET NONES) foo (findIndex (`elem` nuclei) ps)
+  foo i = Syllable onset nucleus coda NONET NONES where
     (onset, nucleus:coda) = splitAt i ps
 
 

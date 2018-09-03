@@ -25,13 +25,16 @@ makeRootDictionary mData onsets nucs codas tones set = concat <$> sequence [n, v
   a = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adj) <*> makeRoot onsets nucs codas tones set) (inputAdjs mData)
   p = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adpo) <*> makeRoot onsets nucs codas tones set) (inputAdpos mData)
 
--- Generate a morpheme given vowels, consonant clusters, and some settings
+-- Generate a word given vowels, consonant clusters, and some settings
 makeRoot :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar SyllWord
 makeRoot onsets nucs codas tones (ns,xs) = do
   -- decide how many syllables in the morpheme
   s <- uniform ns xs
   syllables <- R.replicateM s (makeRootSyllable onsets nucs codas tones)
-  return $ SyllWord $ syllables
+
+  -- assign stress
+  syllables_ <- assignStress syllables
+  return $ SyllWord syllables_
 
 makeRootSyllable :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> RVar Syllable
 makeRootSyllable onsets nucs codas tones = do
@@ -39,7 +42,32 @@ makeRootSyllable onsets nucs codas tones = do
   nuclei <- choice nucs
   coda <- choice codas
   tone <- choice tones
-  return $ Syllable onset nuclei coda tone
+  return $ Syllable onset nuclei coda tone NONES
+
+assignStress :: [Syllable] -> RVar [Syllable]
+assignStress [] = return []
+assignStress [syll] = return [syll] -- no stress on single syllable words
+assignStress sylls@[_, _] = do
+    i <- uniform 0 1
+    return $ foobar i sylls (\x -> x{getStress = PRIMARYS})
+assignStress sylls = do
+  let inds = [0..(length sylls - 1)]
+  (inds_, prim) <- fromMaybe (return ([], 0)) (choiceExtract inds)
+  (_, secon) <- fromMaybe (return ([], 0)) (choiceExtract inds_)
+  let sylls_ = foobar prim sylls (\x -> x{getStress = PRIMARYS})
+  let syllsN = foobar secon sylls_ (\x -> x{getStress = SECONDARYS})
+  return syllsN
+
+-- Applies a function to the n-th element of a list, and then returns the list
+-- It's hard to believe this doesn't exist already
+foobar :: Int -> [a] -> (a -> a) -> [a]
+foobar n xs f
+  | n >= length xs = xs
+  | otherwise =  a ++ [f b] ++ bs where
+  (a,b:bs) = splitAt n xs
+
+
+
 
 -- Gen.Meaning?
 -- special generators

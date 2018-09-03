@@ -74,7 +74,7 @@ executeRuleOnSyllWord i rule@Rule{} ys (x:xs) = executeRuleOnSyllWord (i+j) rule
 -- Applying the rule can result in new phonemes (though not impossible ones)
 executeRuleOnSyllable :: Rule -> Syllable -> (Maybe Syllable, Maybe Syllable) -> (Syllable, Int)
 executeRuleOnSyllable NoChange syll _ = (syll, 0)
-executeRuleOnSyllable rule@Rule{} (Syllable onset nuc coda tone) (prev, next) = (Syllable onsetN nucN codaN tone, i+j+k) where
+executeRuleOnSyllable rule@Rule{} (Syllable onset nuc coda tone stress) (prev, next) = (Syllable onsetN nucN codaN tone stress, i+j+k) where
   (onsetN, i) = executeRuleOnOnset 0 rule [] onset (prevP, nuc)
   (nucN, j) = executeRuleOnNucleus rule nuc (prevP, onset, coda, nextP)
   (codaN, k) = executeRuleOnCoda 0 rule [] coda (nuc, nextP)
@@ -82,7 +82,7 @@ executeRuleOnSyllable rule@Rule{} (Syllable onset nuc coda tone) (prev, next) = 
   nextP = syllToPhonemes <$> next
 
 syllToPhonemes :: Syllable -> [Phoneme]
-syllToPhonemes (Syllable o n c _) = o ++ [n] ++ c
+syllToPhonemes (Syllable o n c _ _) = o ++ [n] ++ c
 
 executeRuleOnOnset :: Int -> Rule -> [Phoneme] -> [Phoneme] -> (Maybe [Phoneme], Phoneme) -> ([Phoneme], Int)
 executeRuleOnOnset _ NoChange _ xs _ = (xs, 0)

@@ -18,7 +18,7 @@ library
   exposed-modules:     Out.Language
                      , Gen.LanguageTree
   -- ghc-options:         -Wall
-  default-extensions:  NoImplicitPrelude, OverloadedStrings
+  default-extensions:  NoImplicitPrelude, OverloadedStrings, LambdaCase
   build-depends:       classy-prelude
                      , base
                      , rvar
@@ -40,6 +40,7 @@ executable con-lang-gen-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-extensions:  NoImplicitPrelude, OverloadedStrings, LambdaCase
   build-depends:       classy-prelude
                      , base
                      , con-lang-gen

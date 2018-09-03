@@ -74,7 +74,8 @@ writeLanguage dir lang = do
   -- Writing
   -- let characterSVGs = map snd alph ++ map snd syll ++ map snd logo
 
-  let ndict = makeNativeDict alph
+  let ndict = []
+  -- let ndict = makeNativeDict alph
 
   -- Parse trees
   ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree roots inflSys)

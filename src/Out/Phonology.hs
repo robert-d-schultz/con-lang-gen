@@ -14,9 +14,10 @@ import Out.Lexicon
 
 -- Write the consonant inventory into html tables (one for each airstream mechanism)
 writeConPhonemeInventory :: [Phoneme] -> Text
-writeConPhonemeInventory cns = "\n<br>\n" ++ intercalate "\n<br>\n" out where
+writeConPhonemeInventory cns = "\n<br>\n" ++ style ++ intercalate "\n<br>\n" out where
   airstreams = sort $ ordNub $ map getAirstream cns
   out = map (writeConPhonemeInventory_ cns) airstreams
+  style = "<style>table{border-collapse:collapse;}th,td{empty-cells:hide;border:solid 1px black;padding:4px 4px;}th:empty,td:empty,tr:empty{border:0px;padding:0px 0px;}</style>\n"
 
 
 writeConPhonemeInventory_ :: [Phoneme] -> Airstream -> Text

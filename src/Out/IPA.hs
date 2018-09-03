@@ -1,6 +1,7 @@
 module Out.IPA
 ( writePhonemeIPA
 , writeToneLetterIPA
+, writeStressMarkIPA
 ) where
 
 import ClassyPrelude
@@ -22,6 +23,8 @@ retrieveCSymbol p m h a
     | h == ASPIRATED = retrieveCSymbol p m MODAL a ++ "ʰ"
     -- Ejective
     | a == EJECTIVE = retrieveCSymbol p m h PULMONIC ++ "ʼ"
+    -- Cooarticulated
+    | (\case COARTICULATED{} -> True; _ -> False) p = retrieveCSymbol (getPlaceA p) m h a ++ "\865" ++ retrieveCSymbol (getPlaceB p) m h a
     -- Affricates are Stop+("\865")+Fricative
     | m == SAFFRICATE = retrieveCSymbol p STOP h a ++ "\865" ++ retrieveCSymbol p SILIBANT h a
     | m == AFFRICATE = retrieveCSymbol p STOP h a ++ "\865" ++ retrieveCSymbol p FRICATIVE h a
@@ -31,7 +34,7 @@ retrieveCSymbol p m h a
     | h == STIFF = retrieveCSymbol p m MODAL a ++ "\812"
     | h == SLACK = retrieveCSymbol p m MODAL a ++ "\805"
     | h == BREATHY = retrieveCSymbol p m MODAL a ++ "\804"
-    | h == VOICELESS && isJust (searchCIPA p m MODAL a) = retrieveCSymbol p m MODAL a ++ "\805"
+    | h == VOICELESS = retrieveCSymbol p m MODAL a ++ "\805"
     | h == MODAL && isJust (searchCIPA p m VOICELESS a) = retrieveCSymbol p m VOICELESS a ++ "\812"
     -- Place of articulation
     | p == LABIODENTAL = retrieveCSymbol BILABIAL m h a ++ "\810"
@@ -55,11 +58,12 @@ retrieveCSymbol p m h a
     | (p == EPIPHARYNGEAL) && isJust (searchCIPA PHARYNGEAL m h a) = retrieveCSymbol PHARYNGEAL m h a ++ "\799"
     | p == EPIGLOTTAL = retrieveCSymbol PHARYNGEAL m h a ++ "\800"
     | (p == PHARYNGEAL) && isJust (searchCIPA EPIGLOTTAL m h a) = retrieveCSymbol EPIGLOTTAL m h a ++ "\799"
+    | (p == UVULAR) && isJust (searchCIPA VELAR m h a) = retrieveCSymbol VELAR m h a ++ "\800"
     -- Manner raising ("\797") and lowering ("\798")
-    | m == FRICATIVE && isJust (searchCIPA p APPROXIMANT h a) = retrieveCSymbol p APPROXIMANT h a ++ "\798"
-    | m == APPROXIMANT && isJust (searchCIPA p FRICATIVE h a) = retrieveCSymbol p FRICATIVE h a ++ "\797"
-    | m == LFRICATIVE && isJust (searchCIPA p LAPPROXIMANT h a) = retrieveCSymbol p LAPPROXIMANT h a ++ "\798"
-    | m == LAPPROXIMANT && isJust (searchCIPA p LFRICATIVE h a) = retrieveCSymbol p LFRICATIVE h a ++ "\797"
+    | m == FRICATIVE = retrieveCSymbol p APPROXIMANT h a ++ "\797"
+    | m == APPROXIMANT && isJust (searchCIPA p FRICATIVE h a) = retrieveCSymbol p FRICATIVE h a ++ "\798"
+    | m == LFRICATIVE = retrieveCSymbol p LAPPROXIMANT h a ++ "\797"
+    | m == LAPPROXIMANT && isJust (searchCIPA p LFRICATIVE h a) = retrieveCSymbol p LFRICATIVE h a ++ "\798"
     -- Flaps are Short("\774") stops or approximants
     | m == FLAP = retrieveCSymbol p STOP h a ++ "\774"
     | m == LFLAP = retrieveCSymbol p LAPPROXIMANT h a ++ "\774"
@@ -123,6 +127,12 @@ writeToneLetterIPA t
   | t == LRISET =  "˩˨"
   | t == DIPT =    "˥˧˥"
   | t == PEAKT =   "˩˧˩"
+
+writeStressMarkIPA :: Stress -> Text
+writeStressMarkIPA s
+  | s == NONES = "."
+  | s == PRIMARYS = "\712"
+  | s == SECONDARYS = "\716"
 
 -- Phoneme data
 c :: [(Phoneme, Text)]
@@ -195,7 +205,7 @@ c = [-- Nasal Stops
     -- Trills
     , (Consonant BILABIAL TRILL MODAL PULMONIC, "ʙ")
     , (Consonant ALVEOLAR TRILL MODAL PULMONIC, "r")
-    , (Consonant RETROFLEX TRILL VOICELESS PULMONIC,"ɽ̥͡r̥")
+    , (Consonant RETROFLEX TRILL VOICELESS PULMONIC,"ɽ̥͡r̥") --special
     , (Consonant RETROFLEX TRILL MODAL PULMONIC, "ɽ͡r")
     , (Consonant UVULAR TRILL MODAL PULMONIC, "ʀ")
     , (Consonant EPIGLOTTAL TRILL VOICELESS PULMONIC, "ʜ")
@@ -217,17 +227,28 @@ c = [-- Nasal Stops
 
     -- Implosives
     , (Consonant BILABIAL STOP MODAL IMPLOSIVE, "ɓ")
+    , (Consonant BILABIAL STOP VOICELESS IMPLOSIVE, "ƥ")
     , (Consonant ALVEOLAR STOP MODAL IMPLOSIVE, "ɗ")
+    , (Consonant ALVEOLAR STOP VOICELESS IMPLOSIVE, "ƭ")
     , (Consonant RETROFLEX STOP MODAL IMPLOSIVE, "ᶑ")
     , (Consonant PALATAL STOP MODAL IMPLOSIVE, "ʄ")
+    , (Consonant PALATAL STOP VOICELESS IMPLOSIVE, "ƈ")
     , (Consonant VELAR STOP MODAL IMPLOSIVE, "ɠ")
+    , (Consonant VELAR STOP VOICELESS IMPLOSIVE, "ƙ")
     , (Consonant UVULAR STOP MODAL IMPLOSIVE, "ʛ")
+    , (Consonant UVULAR STOP VOICELESS IMPLOSIVE, "ʠ")
     -- Clicks
     , (Consonant BILABIAL CLICK VOICELESS LINGUAL, "ʘ")
     , (Consonant DENTAL CLICK VOICELESS LINGUAL, "ǀ")
     , (Consonant ALVEOLAR CLICK VOICELESS LINGUAL, "ǃ")
     , (Consonant RETROFLEX CLICK VOICELESS LINGUAL, "‼")
     , (Consonant PALATAL CLICK VOICELESS LINGUAL, "ǂ")
+    -- Coarticulated
+    , (Consonant (COARTICULATED PALATOALVEOLAR VELAR) FRICATIVE VOICELESS PULMONIC, "ɧ") --this is not used
+    , (Consonant (COARTICULATED BILABIAL VELAR) APPROXIMANT VOICELESS PULMONIC, "ʍ")
+    , (Consonant (COARTICULATED BILABIAL VELAR) APPROXIMANT MODAL PULMONIC, "w")
+    , (Consonant (COARTICULATED ALVEOLAR VELAR) LAPPROXIMANT MODAL PULMONIC, "ɫ")
+    , (Consonant (COARTICULATED BILABIAL PALATAL) APPROXIMANT MODAL PULMONIC, "ɥ")
     ]
 
 v :: [(Phoneme, Text)]

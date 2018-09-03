@@ -109,13 +109,24 @@ makeConsonantCluster (msd, maxC) sonHier out = do
                 , makeConsonantCluster (msd, maxC) (drop 1 sonHierN) out
                 ]
 
+-- Working definition of Semivowel
+isSemiVowel :: Phoneme -> Bool
+isSemiVowel (Consonant (COARTICULATED p1 p2) m h a)
+  | p1 /= BILABIAL = False
+  | p2 < PALATAL = False
+  | m /= APPROXIMANT = False
+  | otherwise = True
+isSemiVowel (Consonant p m h a)
+  | p < PALATAL = False
+  | m /= APPROXIMANT = False
+  | otherwise = True
+isSemiVowel _ = False
+
 -- Make sonority hierarchy from consonant inventory and scheme number
 -- The hierarchies get more granular as scheme number increases
--- Hierarchies should be based on procedurally generated rules
--- That might play better with what I have in mind for phonotactics
 makeSonHier :: [Phoneme] -> Int -> [[Phoneme]]
 makeSonHier cns i = filter (not.null) scheme where
-  (glides, cons2) = partition (\x -> getPlace x > PALATAL && getManner x == APPROXIMANT) cns
+  (glides, cons2) = partition isSemiVowel cns
   (liquids, cons3) = partition (\x -> getManner x `elem` [APPROXIMANT, LAPPROXIMANT, TRILL, FLAP, LFLAP]) cons2
   (nasals, cons4) = partition (\x -> getManner x == NASAL) cons3
   (af, cons5) = partition (\x -> getManner x `elem` [LFRICATIVE, FRICATIVE, SILIBANT] && getVoice x == ASPIRATED) cons4

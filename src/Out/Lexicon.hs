@@ -69,9 +69,22 @@ writeMorphemeIPA lang m = fromMaybe ("!!Morpheme doesn't syllabize!! /" ++ conca
 
 -- write Syllable-Word to string
 writeSyllWordIPA :: SyllWord -> Text
-writeSyllWordIPA (SyllWord sylls) = intercalate "." (map writeSyllableIPA sylls)
+writeSyllWordIPA (SyllWord sylls) = out where
+  ipa = concatMap writeSyllableIPA sylls
+  out
+    | singleton (unsafeLast ipa) == ("." :: Text) = unsafeInit ipa
+    | otherwise = ipa
 
 -- write Syllable to string
 writeSyllableIPA :: Syllable -> Text
-writeSyllableIPA (Syllable onset nuc@Consonant{} coda tone) = concatMap writePhonemeIPA onset ++ writePhonemeIPA nuc ++ "\809" ++ concatMap writePhonemeIPA coda ++ writeToneLetterIPA tone
-writeSyllableIPA (Syllable onset nucleus coda tone) = concatMap writePhonemeIPA onset ++ writePhonemeIPA nucleus ++ concatMap writePhonemeIPA coda ++ writeToneLetterIPA tone
+writeSyllableIPA (Syllable onset nuc@Consonant{} coda tone stress) = concatMap writePhonemeIPA onset
+                                                                  ++ writePhonemeIPA nuc
+                                                                  ++ "\809"
+                                                                  ++ concatMap writePhonemeIPA coda
+                                                                  ++ writeToneLetterIPA tone
+                                                                  ++ writeStressMarkIPA stress
+writeSyllableIPA (Syllable onset nucleus coda tone stress) = concatMap writePhonemeIPA onset
+                                                          ++ writePhonemeIPA nucleus
+                                                          ++ concatMap writePhonemeIPA coda
+                                                          ++ writeToneLetterIPA tone
+                                                          ++ writeStressMarkIPA stress

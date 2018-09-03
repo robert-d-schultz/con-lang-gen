@@ -38,8 +38,8 @@ generateSyllabary sylls n = zip sylls [n..]
 
 
 -- make all syllables
-makeAllSyllables :: [[Phoneme]] -> [Phoneme] -> [[Phoneme]] -> [Tone] -> [Syllable]
-makeAllSyllables onsets nucleuss codas tones = Syllable <$> onsets <*> nucleuss <*> codas <*> tones
+makeAllSyllables :: [[Phoneme]] -> [Phoneme] -> [[Phoneme]] -> [Tone] -> [Stress] -> [Syllable]
+makeAllSyllables onsets nucleuss codas tones stresses = Syllable <$> onsets <*> nucleuss <*> codas <*> tones <*> stresses
 
 
 -- generate logographs, one for each lexicon entry, inflection entry

@@ -15,7 +15,7 @@ romanizeSyllWord :: SyllWord -> Text
 romanizeSyllWord (SyllWord syllables) = concatMap romanizeSyllable syllables
 
 romanizeSyllable :: Syllable -> Text
-romanizeSyllable (Syllable onset nucleus coda tone) = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeToneDiacritic tone ++ romanizePhonemes coda
+romanizeSyllable (Syllable onset nucleus coda tone _) = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeToneDiacritic tone ++ romanizePhonemes coda
 
 romanizeMorphWord :: MorphWord -> Text
 romanizeMorphWord (MorphWord morphemes) = concatMap romanizeMorpheme morphemes
@@ -33,6 +33,9 @@ isVowel _ = False
 -- these rules suck, need diacritics and a pool to pull from as needed
 romanizePhoneme :: Phoneme -> Text
 romanizePhoneme cns@(Consonant p m h a)
+  -- Coarticulated
+  | p == COARTICULATED BILABIAL VELAR && m == APPROXIMANT = "w"
+  | (\case COARTICULATED{} -> True; _ -> False) p = romanizePhoneme (Consonant (getPlaceA p) m h a) ++ romanizePhoneme (Consonant (getPlaceB p) m h a)
   -- Airstream
   | m == CLICK && a == LINGUAL = writePhonemeIPA cns
   | a == EJECTIVE = romanizePhoneme (Consonant p m h PULMONIC) ++ "'"
