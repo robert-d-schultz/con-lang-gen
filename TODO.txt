@@ -7,7 +7,7 @@ Phonotactics rules are also generated. A sonority hierarchy is created. Valid co
 
 A grammar system is generated. Parameters are selected.
 
-An inflection scheme is selected. Grammatical categories are decided on as well as how they are expressed. Exponents and articles are some of the ways grammatical categories are expressed.
+An inflection scheme is selected. Grammatical categories are decided, as well as how they are expressed. Exponents and articles are some of the ways grammatical categories are expressed.
 
 Morphemes (including roots) are generated from the phoneme inventory as well as the sonority hierarchy. The inflection scheme is filled in using this generator.
 
@@ -19,28 +19,47 @@ A writing system is selected and the appropriate number of characters are genera
 
 All of the above structures are then parsed by a output function into a text output. This output includes a consonant inventory table, vowel inventory table, list of diphthongs, sonority hierarchy description, exponent/particle tables, a (root) dictionary, a grammar description as well as example sentences, a list of characters, and a folder of character .svg's.
 
+The above describes the language generator, there is also a "morpher" which applies language changes to a parent to get a child language. This is the cornerstone of the language family generator.
+
+Phonological rules are generated and then applied to every morpheme in the parent language to get a new child language.
 
 What needs improving
 --------------------
+
 Phonology:
-Everything.
+Generated phoneme (especially vowel) inventories are usually much much larger than real life ones.
+Some types of sounds should be much rarer. I haven't worked on this because it makes it easier to debug.
 
 Syntax:
-.
+The parse tree generator needs a complete overhaul, it's a mess.
+It'd be nice if the parameters were more granular, applying one way in certain contexts and another way in others. This would also make syntax changes a little more believable.
+I'd like to work in my Minimalist Program parse tree generator, but that has it's own problems.
 
 Inflection:
-A more-dynamic grammatical category generator
+A more-dynamic grammatical category generator.
+Especially grammatical case.
+Lemma forms should be decided on for each category.
 
-Morphology:
-Various morphological systems.
-Domesticated animal terminology.
+Derivation:
+Right now the only morphology we have what we have for inflection.
+Need to shoot for polysynthetic languages, parse tree rework permitting.
 
 Lexis:
+The dictionary should use the lemma form of the word.
 Number system generator.
 Color system generator.
+Domesticated animal terminology, very important.
 
 Semantics:
-Meanings should take from WordNet ideally.
+Meanings should ideally be taken from WordNet.
+Each generated language would use a random subset, and instead use hypernyms or whatever to fill in the gaps.
+
+Language changes:
+Phonological rules don't allow assimilation. It never references the phoneme's environment in the actual sound change.
+Neologisms (regenerate a few words)
+Loan words from other branches of the language tree.
+A pidgin/creole system that merges two languages.
+
 
 What needs starting
 -------------------
@@ -48,13 +67,15 @@ What needs starting
 Phonetics:
 Right now words are represented as a list of phonemes. The only output so far for a word is the "underlying" form. With a phonological rule generator the list of phonemes can be parsed into a list of phones which will allow the output to display the "surface" form of the word.
 This would involve generating a list of phonological rules and then applying those rules in a certain order to each word. This runs counter to optimality theory, but it would be so much easier to implement.
+Actually the above could be implemented relatively easily now that we have phonological rules (used for phonological change, though).
 
 Prosody:
-iuno.
-does poetry fit here? let's go with that.
+I don't know much, might not get this far.
+Maybe describe the function of certain intonations.
+Describe what filled pauses sound like.
 
-Historical/Comparative linguistics:
-Language changes. Given a language's components, morph those components in some way into a new language. Record the change.
-Language families. Link languages morphed by language changes. Allow multiple offshoots of a single language.
+Crazier stuff:
+Poetry generator, with like simple AB rhyming
+
 
 See /doc for more (probably wrong) reading material.
