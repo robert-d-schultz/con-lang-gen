@@ -9,18 +9,18 @@ import ClassyPrelude
 import Data.RVar
 import Data.Random.Extras
 
+import Data.Word
 import Data.Grammar
 import Data.Inflection
-import Data.Phoneme
 
 -- make parse tree using new language's root dictionary and inflection/conjugation systems
-makeParseTree :: [((Text, LexCat), SyllWord)] -> InflectionMap -> RVar Phrase
+makeParseTree :: [Morpheme] -> InflectionMap -> RVar Phrase
 makeParseTree dict inflmap = do
 
-  let noun = fst.fst <$> choice (filter (\x -> snd (fst x) == Noun) dict)
-  let prep = fst.fst <$> choice (filter (\x -> snd (fst x) == Adpo) dict)
-  let verb = fst.fst <$> choice (filter (\x -> snd (fst x) == Verb) dict)
-  let adj = fst.fst <$> choice (filter (\x -> snd (fst x) == Adj) dict)
+  let noun = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Noun) dict)
+  let prep = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adpo) dict)
+  let verb = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Verb) dict)
+  let adj  = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adj) dict)
 
 
   let objDet = generateInflection inflmap Noun

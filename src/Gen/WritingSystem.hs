@@ -11,11 +11,12 @@ import Data.RVar
 import Data.Random.Extras
 
 import Data.Phoneme
+import Data.Word
 import Data.Other
 import Data.Inflection
 
 --pick writing systems
-generateWritingSystem :: [Phoneme] -> [Syllable] -> [((Text,LexCat), SyllWord)] -> RVar ([(Phoneme, Int)], [(Syllable, Int)], [(((Text, LexCat), SyllWord), Int)])
+generateWritingSystem :: [Phoneme] -> [Syllable] -> [Morpheme] -> RVar ([(Phoneme, Int)], [(Syllable, Int)], [(Morpheme, Int)])
 generateWritingSystem phonemes [] morphs = choice [ (generateAlphabet phonemes, [], [])
                                                   --, ([], [], generateLogography morphs 983040)
                                                   ]
@@ -44,5 +45,5 @@ makeAllSyllables onsets nucleuss codas tones stresses = Syllable <$> onsets <*> 
 
 -- generate logographs, one for each lexicon entry, inflection entry
 -- maybe two/three/four for each lexicon entry? related too much to morphology and therefore semantics
-generateLogography :: [((Text, LexCat), SyllWord)] -> Int -> [(((Text, LexCat), SyllWord), Int)]
+generateLogography :: [Morpheme] -> Int -> [(Morpheme, Int)]
 generateLogography morphs n = zip morphs [n..]

@@ -38,4 +38,4 @@ writeLanguageBranchN (LanguageBranch lang branches n) = branchStuff ++ fst (getN
 
 -- Write sound changes
 writeSoundChange :: [Rule] -> Text
-writeSoundChange rs = "\n\nPhonological changes: " ++ "\n" ++ intercalate "\n" (map tshow rs) ++ "\n"
+writeSoundChange rs = "\n<br>\nPhonological changes: " ++ "\n" ++ intercalate "\n" (map tshow rs) ++ "\n"

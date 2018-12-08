@@ -11,6 +11,7 @@ import Data.Random hiding (sample)
 import Control.Monad as R (replicateM)
 
 import Data.Phoneme
+import Data.Word
 import Data.Inflection
 import Data.Other
 
@@ -18,23 +19,22 @@ import LoadStuff
 import HelperFunctions
 
 -- Generate root dictionary - atomic meanings
-makeRootDictionary :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [((Text, LexCat), SyllWord)]
+makeRootDictionary :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Morpheme]
 makeRootDictionary mData onsets nucs codas tones set = concat <$> sequence [n, v, a, p] where
-  n = mapM (\i -> (,) <$> ((,) <$> return i <*> return Noun) <*> makeRoot onsets nucs codas tones set) (inputNouns mData)
-  v = mapM (\i -> (,) <$> ((,) <$> return i <*> return Verb) <*> makeRoot onsets nucs codas tones set) (inputVerbs mData)
-  a = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adj) <*> makeRoot onsets nucs codas tones set) (inputAdjs mData)
-  p = mapM (\i -> (,) <$> ((,) <$> return i <*> return Adpo) <*> makeRoot onsets nucs codas tones set) (inputAdpos mData)
+  n = mapM (\i -> MorphemeS (Meaning Noun i) <$> makeRoot onsets nucs codas tones set) (inputNouns mData)
+  v = mapM (\i -> MorphemeS (Meaning Verb i) <$> makeRoot onsets nucs codas tones set) (inputVerbs mData)
+  a = mapM (\i -> MorphemeS (Meaning Adj i) <$> makeRoot onsets nucs codas tones set) (inputAdjs mData)
+  p = mapM (\i -> MorphemeS (Meaning Adv i) <$> makeRoot onsets nucs codas tones set) (inputAdpos mData)
 
--- Generate a word given vowels, consonant clusters, and some settings
-makeRoot :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar SyllWord
+-- Generate a root morphemes given vowels, consonant clusters, and some settings
+makeRoot :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Syllable]
 makeRoot onsets nucs codas tones (ns,xs) = do
   -- decide how many syllables in the morpheme
   s <- uniform ns xs
   syllables <- R.replicateM s (makeRootSyllable onsets nucs codas tones)
 
   -- assign stress
-  syllables_ <- assignStress syllables
-  return $ SyllWord syllables_
+  assignStress syllables
 
 makeRootSyllable :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> RVar Syllable
 makeRootSyllable onsets nucs codas tones = do

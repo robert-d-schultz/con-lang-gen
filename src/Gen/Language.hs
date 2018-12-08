@@ -5,6 +5,7 @@ module Gen.Language
 import ClassyPrelude
 
 import Data.Random hiding (sample)
+import Data.Random.Extras
 
 import LoadStuff
 
@@ -20,6 +21,7 @@ import Gen.WritingSystem
 
 import Data.Language
 import Data.Phoneme
+import Data.Word
 import Data.Inflection
 import Data.Soundchange
 
@@ -62,6 +64,9 @@ makeLanguage idata mData = do
   (inflSys, numPerLexCat) <- makeInflectionMap idata
   systems <- concat <$> mapM (makeLexicalInflection onsets nuclei codas tones inflSys) numPerLexCat
 
+  -- pick lemma morphemes to be used in dictionary
+  lemmaMorphemes <- mapM (choice . manSysCombos) systems
+
   -- root morphemes
   roots <- makeRootDictionary mData onsets nuclei codas tones (1, 4)
 
@@ -79,8 +84,8 @@ makeLanguage idata mData = do
   (aOut, sOut, lOut) <- makeCharacters (a, s, l)
 
   -- find out what was assigned to "!!!LANGUAGE!!!" and romanize
-  let langName = fromMaybe "name not found" (romanizeSyllWord . snd <$> find (\x -> fst x == ("!!!LANGUAGE!!!", Noun)) roots)
+  let langName = fromMaybe "name not found" (romanizeMorpheme <$> find (\x -> getMeaning x == Meaning Noun "!!!LANGUAGE!!!") roots)
 
-  let lang = Language langName ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys systems grammar roots (aOut, sOut, lOut) [NoChange]
+  let lang = Language langName ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys systems lemmaMorphemes grammar roots (aOut, sOut, lOut) [NoChange]
 
   return lang

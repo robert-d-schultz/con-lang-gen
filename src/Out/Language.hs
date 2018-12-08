@@ -17,7 +17,7 @@ import Out.Other
 import Out.Phonology
 import Out.Inflection
 import Out.Lexicon
-import Out.Sentence
+--import Out.Sentence
 import Out.Grammar
 import Out.WritingSystem
 import Out.Grapheme
@@ -60,6 +60,7 @@ writeLanguage dir lang = do
   let grammar = getGrammar lang
   let inflSys = getInflMap lang
   let systems = getManSyss lang
+  let lemmas = getLemmaMorphemes lang
   let roots = getRoots lang
   let (alph, syll, logo) = getWriting lang
   let name = fst (getNameMod lang) ++ snd (getNameMod lang) ++ getName lang
@@ -78,7 +79,7 @@ writeLanguage dir lang = do
   -- let ndict = makeNativeDict alph
 
   -- Parse trees
-  ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree roots inflSys)
+  --ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree roots inflSys)
 
   -- Make directory
 
@@ -102,12 +103,12 @@ writeLanguage dir lang = do
 
   writeFile (unpack dir ++ "/lexicon.html") $ "Lexicon"
                               -- ++ writeDictionary sonHier dict
-                                 ++ writeRootDictionary lang ndict roots
+                                 ++ writeDictionary lang ndict roots lemmas
 
   writeFile (unpack dir ++ "/grammar.html") $ "Grammar"
                                  ++ writeGrammar grammar
-                                 ++ "Examples"
-                                 ++ concatMap (writeParseTree lang roots systems) ptExamples
+                                 -- ++ "Examples"
+                                 -- ++ concatMap (writeParseTree lang roots systems) ptExamples
 
   writeFile (unpack dir ++ "/writing system.html") $ "Writing System"
                                  ++ writeWritingSystem (alph, syll, logo)

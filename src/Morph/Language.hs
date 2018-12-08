@@ -7,6 +7,7 @@ import Data.RVar
 import Data.Random.Extras
 
 import Data.Language
+import Data.Word
 import Data.Inflection
 
 import Morph.Phonology
@@ -22,7 +23,7 @@ morphLanguage parent = do
   grammarN <- morphGrammar (getGrammar parent)
 
   -- find out what was assigned to "!!!LANGUAGE!!!" and romanize new language name
-  let langNameN = fromMaybe "!!!NAME NOT FOUND!!!" (romanizeSyllWord . snd <$> find (\x -> fst x == ("!!!LANGUAGE!!!", Noun)) (getRoots langN))
+  let langNameN = fromMaybe "!!!NAME NOT FOUND!!!" (romanizeMorpheme <$> find (\x -> (getStr.getMeaning) x == "!!!LANGUAGE!!!") (getRoots langN))
 
   return $ langN{getName = langNameN, getGrammar=grammarN}
 

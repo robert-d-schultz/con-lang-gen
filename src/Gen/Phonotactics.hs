@@ -15,6 +15,7 @@ import Data.Random.Extras
 import Data.Random hiding (sample)
 
 import Data.Phoneme
+import Data.Word
 
 import HelperFunctions
 

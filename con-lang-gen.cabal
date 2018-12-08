@@ -17,6 +17,40 @@ library
   hs-source-dirs:      src
   exposed-modules:     Out.Language
                      , Gen.LanguageTree
+  other-modules:       Constants
+                     , Data.Grammar
+                     , Data.Inflection
+                     , Data.Language
+                     , Data.Other
+                     , Data.Phoneme
+                     , Data.Soundchange
+                     , Data.Word
+                     , Gen.Grammar
+                     , Gen.Grapheme
+                     , Gen.Inflection
+                     , Gen.Language
+                     , Gen.Morphology
+                     , Gen.ParseTree
+                     , Gen.Phonology
+                     , Gen.Phonotactics
+                     , Gen.Root
+                     , Gen.WritingSystem
+                     , LoadStuff
+                     , HelperFunctions
+                     , Morph.Grammar
+                     , Morph.Language
+                     , Morph.Phonology
+                     , Out.Grammar
+                     , Out.Grapheme
+                     , Out.IPA
+                     , Out.Inflection
+                     , Out.Lexicon
+                     , Out.Other
+                     , Out.Phonology
+                     , Out.Roman
+                     , Out.Syllable
+                     , Out.WritingSystem
+
   -- ghc-options:         -Wall
   default-extensions:  NoImplicitPrelude, OverloadedStrings, LambdaCase
   build-depends:       classy-prelude

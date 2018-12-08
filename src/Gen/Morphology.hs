@@ -7,6 +7,7 @@ import ClassyPrelude hiding (Word)
 import Data.RVar
 
 import Data.Phoneme
+import Data.Word
 import Data.Inflection
 import Data.Other
 
@@ -29,8 +30,9 @@ makePrefixSystem :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster]
 makePrefixSystem lc i onsets nucs codas tones gramSys = do
   let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc Prefix i
   let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
-  morphs <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 1))
-  return $ ManifestSystem lc Prefix (zip morphs combos)
+  roots <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 1))
+  let morphs = zipWith MorphemeS (InflMeaning lc Prefix <$> combos) roots
+  return $ ManifestSystem lc Prefix morphs
 
 -- Suffixs
 makeSuffixSystems :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar [ManifestSystem]
@@ -41,8 +43,9 @@ makeSuffixSystem :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster]
 makeSuffixSystem lc i onsets nucs codas tones gramSys = do
   let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc Suffix i
   let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
-  morphs <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 1))
-  return $ ManifestSystem lc Suffix (zip morphs combos)
+  roots <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 1))
+  let morphs = zipWith MorphemeS (InflMeaning lc Suffix <$> combos) roots
+  return $ ManifestSystem lc Suffix morphs
 
 -- Particles
 makeParticleSystems :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar [ManifestSystem]
@@ -53,11 +56,12 @@ makeParticleSystem :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluste
 makeParticleSystem lc i onsets nucs codas tones gramSys = do
   let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc Particle i
   let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
-  morphs <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 2))
-  return $ ManifestSystem lc Particle (zip morphs combos)
+  roots <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 2))
+  let morphs = zipWith MorphemeS (InflMeaning lc Particle <$> combos) roots
+  return $ ManifestSystem lc Particle morphs
 
 -- Clean sys
-cleanSys :: Manifest a -> LexCat -> ManifestType -> Int -> [Express a]
+cleanSys :: Manifest a -> LexCat -> InflType -> Int -> [Express a]
 cleanSys NoManifest _ _ _ = [NoExpress]
 cleanSys (Manifest t x) lc mt i = out where
   filt = filter (== (lc, mt, i)) t
@@ -65,7 +69,7 @@ cleanSys (Manifest t x) lc mt i = out where
     | null filt = [NoExpress]
     | otherwise = map Express x
 
-cleanInflectionSys :: InflectionMap -> LexCat -> ManifestType -> Int -> ([Express Gender], [Express Animacy], [Express Case], [Express Number], [Express Definiteness], [Express Specificity], [Express Topic], [Express Person], [Express Honorific], [Express Polarity], [Express Tense], [Express Aspect], [Express Mood], [Express Voice], [Express Evidentiality], [Express Transitivity], [Express Volition])
+cleanInflectionSys :: InflectionMap -> LexCat -> InflType -> Int -> ([Express Gender], [Express Animacy], [Express Case], [Express Number], [Express Definiteness], [Express Specificity], [Express Topic], [Express Person], [Express Honorific], [Express Polarity], [Express Tense], [Express Aspect], [Express Mood], [Express Voice], [Express Evidentiality], [Express Transitivity], [Express Volition])
 cleanInflectionSys inflMap lc mt i = (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) where
   gen = cleanSys (getGenSys inflMap) lc mt i
   ani = cleanSys (getAniSys inflMap) lc mt i

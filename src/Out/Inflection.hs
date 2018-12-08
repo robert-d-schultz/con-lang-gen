@@ -7,6 +7,7 @@ module Out.Inflection
 import ClassyPrelude
 import Data.List as R (replicate)
 
+import Data.Word
 import Data.Inflection
 import Data.Language
 
@@ -229,11 +230,11 @@ makeAttoRow manSys lang vols ten asp moo per def spe pol top cas gen ani num hon
 
 getMorpheme :: ManifestSystem -> Language -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> Express Transitivity -> Express Evidentiality -> Express Voice -> Express Volition -> Text
 getMorpheme (ManifestSystem _ Particle combos) lang ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
-  filt = find (\(_, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
-  output = writeSyllWordIPA <$> (fst <$> filt)
+  filt = find (\morph -> getAllExpress (getMeaning morph) == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
+  output = writeMorphemeIPA lang <$> filt
 getMorpheme (ManifestSystem _ Prefix combos) lang ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
-  filt = find (\(_, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
-  output = (++ "–") <$> (writeSyllWordIPA <$> (fst <$> filt))
+  filt = find (\morph -> getAllExpress (getMeaning morph) == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
+  output = (++ "–") <$> (writeMorphemeIPA lang <$> filt)
 getMorpheme (ManifestSystem _ Suffix combos) lang ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
-  filt = find (\(_, sys) -> sys == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
-  output = (++) "–" <$> (writeSyllWordIPA <$> (fst <$> filt))
+  filt = find (\morph -> getAllExpress (getMeaning morph) == (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) combos
+  output = (++) "–" <$> (writeMorphemeIPA lang <$> filt)

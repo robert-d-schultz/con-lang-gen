@@ -1,10 +1,5 @@
 module Data.Phoneme
-( SyllWord(..)
-, ConsCluster
-, Syllable(..)
-, MorphWord(..)
-, Morpheme(..)
-, Phoneme(..)
+( Phoneme(..)
 , Place (..)
 , Manner(..)
 , Phonation(..)
@@ -17,23 +12,8 @@ module Data.Phoneme
 , Stress(..)
 ) where
 
-import ClassyPrelude hiding (Word)
+import ClassyPrelude
 import Data.List (elemIndex)
-
--- Used to parse out syllables from a word
-newtype SyllWord = SyllWord [Syllable] deriving (Eq, Ord, Read, Show)
-type ConsCluster = [Phoneme]
-data Syllable = Syllable
-              { getOnset :: [Phoneme]
-              , getNucleus :: Phoneme
-              , getCoda :: [Phoneme]
-              , getTone :: Tone
-              , getStress :: Stress
-              } deriving (Eq, Ord, Read, Show)
-
--- Word/Morpheme/Phoneme
-newtype MorphWord = MorphWord { getMorphemes :: [Morpheme] } deriving (Eq, Ord, Read, Show)
-newtype Morpheme = Morpheme { getPhonemes :: [Phoneme] } deriving (Eq, Ord, Read, Show)
 
 data Phoneme = Consonant
            { getPlace :: Place

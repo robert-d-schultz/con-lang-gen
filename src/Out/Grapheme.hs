@@ -6,12 +6,13 @@ module Out.Grapheme
 import ClassyPrelude
 
 import Data.Phoneme
+import Data.Word
 import Data.Other
 import Data.Inflection
 
 --
 writeMorphemeNative :: Morpheme -> [(Phoneme, Text)] -> Text
-writeMorphemeNative (Morpheme ps) dict = concatMap (\x -> fromMaybe "<!!MissingChar!!>" (lookup x dict)) ps
+writeMorphemeNative (MorphemeP _ ps) dict = concatMap (\x -> fromMaybe "<!!MissingChar!!>" (lookup x dict)) ps
 
 
 -- Grapheme

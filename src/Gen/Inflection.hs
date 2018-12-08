@@ -40,13 +40,13 @@ makeInflectionMap idata = do
 
 -- Each new GramCat can either be expressed in a new Part/Pref/Suff or an existing one
 -- These two functions basically decide that
-bar :: [(LexCat, Int, Int, Int)] -> [(LexCat, ManifestType, Int)] -> [LexCat] -> RVar ([(LexCat, ManifestType, Int)], [(LexCat, Int, Int, Int)])
+bar :: [(LexCat, Int, Int, Int)] -> [(LexCat, InflType, Int)] -> [LexCat] -> RVar ([(LexCat, InflType, Int)], [(LexCat, Int, Int, Int)])
 bar ks ts [] = return (ts,ks)
 bar ks ts lcs = do
   (newt, newks) <- rab ks (unsafeHead lcs)
   bar newks (newt : ts) (unsafeTail lcs)
 
-rab :: [(LexCat, Int, Int, Int)] -> LexCat -> RVar ((LexCat, ManifestType, Int), [(LexCat, Int, Int, Int)])
+rab :: [(LexCat, Int, Int, Int)] -> LexCat -> RVar ((LexCat, InflType, Int), [(LexCat, Int, Int, Int)])
 rab lcs lc2 = join out where
     (fu, ba) = partition (\(c, _, _, _) -> c == lc2) lcs
     shit

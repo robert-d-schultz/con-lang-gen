@@ -2,9 +2,10 @@
 module Data.Inflection
 ( Manifest(..)
 , Express(..)
-, ManifestType(..)
+, InflType(..)
 , LexCat(..)
 , InflectionMap(..)
+, AllExpress(..)
 , Gender(..)
 , Animacy(..)
 , Case(..)
@@ -22,8 +23,6 @@ module Data.Inflection
 , Evidentiality(..)
 , Transitivity(..)
 , Volition(..)
-, ManifestSystem(..)
-, AllExpress(..)
 ) where
 
 import ClassyPrelude
@@ -44,7 +43,7 @@ showTuple ss = showChar '('
 deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, Eq k, Eq l, Eq m, Eq n, Eq o, Eq p, Eq q) => Eq (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q)
 
 -- Manifest (list of places) (list of stuff that manifests there)
-data Manifest a = NoManifest | Manifest { getManPlace :: [(LexCat, ManifestType, Int)], getManStuff :: [a] } deriving (Eq, Read)
+data Manifest a = NoManifest | Manifest { getManPlace :: [(LexCat, InflType, Int)], getManStuff :: [a] } deriving (Eq)
 
 instance Show a => Show (Manifest a) where
   show NoManifest = ""
@@ -60,7 +59,8 @@ instance Show a => Show (Express a) where
   show NoExpress = ""
   show (Express x) = show x
 
-data ManifestType = Particle | Prefix | Suffix deriving (Eq, Show, Read)
+-- How the inflection manifests
+data InflType = Particle | Prefix | Suffix deriving (Eq, Read, Show)
 
 -- Lexical categories
 data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Pron
@@ -79,7 +79,13 @@ instance Show LexCat where
                        Them -> "Theme"
                        Rec -> "Recipient"
 
--- Inflection system
+-- Inflection system map
+-- This a map of how inflection works for the language
+-- It records:
+-- * which grammatical categories are expressed
+-- * how they are expressed (particle/affix)
+-- * how they are combined (like in fusional languages)
+-- * on which parts of speech they show up (agreement possible)
 data InflectionMap = InflectionMap
                       { getGenSys :: Manifest Gender
                       , getAniSys :: Manifest Animacy
@@ -98,7 +104,26 @@ data InflectionMap = InflectionMap
                       , getEviSys :: Manifest Evidentiality
                       , getTraSys :: Manifest Transitivity
                       , getVolSys :: Manifest Volition
-                      }  deriving (Eq, Show, Read)
+                      }  deriving (Eq, Show)
+
+type AllExpress = ( Express Gender
+                  , Express Animacy
+                  , Express Case
+                  , Express Number
+                  , Express Definiteness
+                  , Express Specificity
+                  , Express Topic
+                  , Express Person
+                  , Express Honorific
+                  , Express Polarity
+                  , Express Tense
+                  , Express Aspect
+                  , Express Mood
+                  , Express Voice
+                  , Express Evidentiality
+                  , Express Transitivity
+                  , Express Volition
+                  )
 
 -- Grammatical categories
 -- For nouns
@@ -395,28 +420,3 @@ instance Show Volition where
                          VOL  -> "Intended"
                          NVOL -> "Unintended"
 -}
--- Particle/Affix system
-data ManifestSystem = ManifestSystem
-                    { manSysLC :: LexCat
-                    , manSysType :: ManifestType
-                    , manSysCombos :: [(SyllWord, AllExpress)]
-                    } deriving (Eq, Show)
-
-type AllExpress = ( Express Gender
-                  , Express Animacy
-                  , Express Case
-                  , Express Number
-                  , Express Definiteness
-                  , Express Specificity
-                  , Express Topic
-                  , Express Person
-                  , Express Honorific
-                  , Express Polarity
-                  , Express Tense
-                  , Express Aspect
-                  , Express Mood
-                  , Express Voice
-                  , Express Evidentiality
-                  , Express Transitivity
-                  , Express Volition
-                  )

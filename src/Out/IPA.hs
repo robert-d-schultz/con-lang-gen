@@ -130,7 +130,7 @@ writeToneLetterIPA t
 
 writeStressMarkIPA :: Stress -> Text
 writeStressMarkIPA s
-  | s == NONES = "."
+  | s == NONES = ""
   | s == PRIMARYS = "\712"
   | s == SECONDARYS = "\716"
 

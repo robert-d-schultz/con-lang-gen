@@ -15,7 +15,6 @@ import Gen.LanguageTree
 
 import Out.Language
 
-
 main :: IO ()
 main = do
   -- seed

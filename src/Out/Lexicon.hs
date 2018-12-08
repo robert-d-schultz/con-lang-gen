@@ -3,16 +3,16 @@ module Out.Lexicon
 , writeWordIPA
 , writeMorphemeIPA
 , writePhonemeIPA
-, writeRootDictionary
-, writeSyllWordIPA
+, writeSyllablesIPA
 , writeSyllableIPA
 , writeLC
 ) where
 
-import ClassyPrelude
+import ClassyPrelude hiding (Word)
 import GHC.Exts (groupWith)
 
 import Data.Phoneme
+import Data.Word
 import Data.Inflection
 import Data.Language
 
@@ -21,28 +21,32 @@ import Out.Syllable
 import Out.IPA
 import Out.Grapheme
 
--- write list of roots to string
-writeRootDictionary :: Language -> [(Phoneme, Text)] -> [((Text, LexCat), SyllWord)] -> Text
-writeRootDictionary lang ndict pairs = "\n" ++ intercalate "\n" (map (writeRootDictionaryEntry lang ndict) (reduceHomophones2 pairs))
+-- Write list of roots to string using a lemma
+writeDictionary :: Language -> [(Phoneme, Text)] -> [Morpheme] -> LemmaMorphemes -> Text
+writeDictionary lang ndict roots lemmas = out where
+  ws = map (applyLemma lemmas) roots
+  sylleds = map (\x -> fromMaybe [] . join $ syllabifyWord lang <$> x) ws
+  meanings = map getMeaning roots
+  out = "\n" ++ intercalate "\n" (map (writeDictionaryEntry lang ndict) (reduceHomophones (zip sylleds meanings)))
 
-reduceHomophones2 :: [((Text, LexCat), SyllWord)] -> [([(Text, LexCat)], SyllWord)]
-reduceHomophones2 pairs = map (second (fromMaybe (SyllWord []) . listToMaybe) . unzip) (groupWith snd (sortWith snd pairs))
+applyLemma :: LemmaMorphemes -> Morpheme -> Maybe Word
+applyLemma lemmaMorphs root = do
+  let lemmaMorphs_ = filter (\x -> (getLC.getMeaning) root == (getLC.getMeaning) x) lemmaMorphs
+  let prefixes = filter ((\case InflMeaning _ Prefix _ -> True; _ -> False) . getMeaning) lemmaMorphs_
+  let suffixes = filter ((\case InflMeaning _ Suffix _ -> True; _ -> False) . getMeaning) lemmaMorphs_
+  let rest = filter ((\case InflMeaning _ Prefix _ -> False; InflMeaning _ Suffix _-> False; _ -> True) . getMeaning) lemmaMorphs
+  if (not.null) rest then return $ Word (prefixes ++ [root] ++ suffixes) else Nothing
 
-writeRootDictionaryEntry :: Language -> [(Phoneme, Text)] -> ([(Text, LexCat)], SyllWord) -> Text
-writeRootDictionaryEntry lang ndict (means, syllword) = "<br>\n"
+reduceHomophones :: [([Syllable], Meaning)] -> [([Syllable], [Meaning])]
+reduceHomophones roots = map (first (fromMaybe [] . listToMaybe) . unzip) (groupWith fst (sortWith fst roots))
+
+
+writeDictionaryEntry :: Language -> [(Phoneme, Text)] -> ([Syllable], [Meaning]) -> Text
+writeDictionaryEntry lang ndict (sylls, meanings) = "<br>\n"
                                           --  ++ writeMorphemeNative morph ndict
-                                            ++ " <i>" ++ romanizeSyllWord syllword ++ "</i>"
-                                            ++ " (" ++ writeSyllWordIPA syllword ++ ")"
-                                            ++ concatMap (\(str, lc) -> "\n<br>\t" ++ writeLC lc ++ " " ++ str) means
--- write list of words to string
-writeDictionary :: Language -> [((Text, LexCat), SyllWord)] -> Text
-writeDictionary lang pairs = "\n" ++ intercalate "\n" (map (writeDictionaryEntry lang) (reduceHomophones pairs))
-
-reduceHomophones :: [((Text, LexCat), SyllWord)] -> [([(Text, LexCat)], SyllWord)]
-reduceHomophones pairs = map (second (fromMaybe (SyllWord []) . listToMaybe) . unzip) (groupWith snd (sortWith snd pairs))
-
-writeDictionaryEntry :: Language -> ([(Text, LexCat)], SyllWord) -> Text
-writeDictionaryEntry lang (means, wrd) = romanizeSyllWord wrd ++ " (" ++ writeSyllWordIPA wrd ++ ")" ++ concatMap (\(str, lc) -> "\n\t" ++ writeLC lc ++ " " ++ str) means
+                                            ++ " <i>" ++ concatMap romanizeSyllable sylls ++ "</i>"
+                                            ++ " (" ++ writeSyllablesIPA sylls ++ ")"
+                                            ++ concatMap (\(Meaning lc str) -> "\n<br>\t" ++ writeLC lc ++ " " ++ str) meanings
 
 writeLC :: LexCat -> Text
 writeLC lc
@@ -54,26 +58,26 @@ writeLC lc
   | otherwise = ""
 
 -- write Word to string
-writeWordIPA :: Language -> MorphWord -> Text
+writeWordIPA :: Language -> Word -> Text
 writeWordIPA lang word = fromMaybe "!!Word doesn't syllabize!!" out where
   out = do
-    (SyllWord sylls) <- syllabifyWord lang word
+    sylls <- syllabifyWord lang word
     return $ "/" ++ intercalate "." (map writeSyllableIPA sylls) ++ "/"
 
 -- write Morpheme to string (used in exponent table too)
 writeMorphemeIPA :: Language -> Morpheme -> Text
-writeMorphemeIPA lang m = fromMaybe ("!!Morpheme doesn't syllabize!! /" ++ concatMap writePhonemeIPA (getPhonemes m) ++"/") out where
+writeMorphemeIPA lang (MorphemeS _ sylls) = "/" ++ writeSyllablesIPA sylls ++ "/"
+writeMorphemeIPA lang m@(MorphemeP _ ps) = fromMaybe ("!!Morpheme doesn't syllabize!! /" ++ concatMap writePhonemeIPA ps ++"/") out where
   out = do
-    (SyllWord sylls) <- syllabifyMorpheme lang m
-    return $ "/" ++ intercalate "." (map writeSyllableIPA sylls) ++ "/"
+    sylls <- syllabifyMorpheme lang m
+    return $ "/" ++ writeSyllablesIPA sylls ++ "/"
 
--- write Syllable-Word to string
-writeSyllWordIPA :: SyllWord -> Text
-writeSyllWordIPA (SyllWord sylls) = out where
-  ipa = concatMap writeSyllableIPA sylls
-  out
-    | singleton (unsafeLast ipa) == ("." :: Text) = unsafeInit ipa
-    | otherwise = ipa
+-- write Syllables to string
+writeSyllablesIPA :: [Syllable] -> Text
+writeSyllablesIPA [] = ""
+writeSyllablesIPA [syll] = writeSyllableIPA syll
+writeSyllablesIPA (syll@(Syllable _ _ _ _ NONES):sylls) = writeSyllableIPA syll ++ "." ++ writeSyllablesIPA sylls
+writeSyllablesIPA (syll:sylls) = writeSyllableIPA syll ++ writeSyllablesIPA sylls
 
 -- write Syllable to string
 writeSyllableIPA :: Syllable -> Text

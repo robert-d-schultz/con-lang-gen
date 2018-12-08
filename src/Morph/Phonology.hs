@@ -9,6 +9,7 @@ import Data.Random.Extras
 import Data.List (nub, (\\))
 
 import Data.Language
+import Data.Word
 import Data.Phoneme
 import Data.Inflection
 import Data.Soundchange
@@ -31,18 +32,22 @@ executeRuleOnLanguage rule lang = (langN, rootChanges + inflChanges) where
   roots = getRoots lang
   manSyss = getManSyss lang
 
-  (rootsN, rootChanges) = second sum $ unzip $ map (\(x, SyllWord y) -> first ((,) x . SyllWord) (executeRuleOnSyllWord 0 rule [] y)) roots :: ([((Text, LexCat), SyllWord)], Int)
-  (manSyssN, inflChanges) = second sum $ unzip $ map (\(ManifestSystem x y z) -> first (ManifestSystem x y) (second sum $ unzip $ map (\(SyllWord w, v) -> first (swap . (,) v . SyllWord) (executeRuleOnSyllWord 0 rule [] w)) z)) manSyss :: ([ManifestSystem], Int)
+  (rootsN, rootChanges) = second sum $ unzip $ map (\(MorphemeS m y) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] y)) roots :: ([Morpheme], Int)
+  (manSyssN, inflChanges) = second sum $ unzip $ map (\(ManifestSystem x y z) -> first (ManifestSystem x y) (second sum $ unzip $ map (\(MorphemeS m w) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] w)) z)) manSyss :: ([ManifestSystem], Int)
 
   -- Take a new survey of which phonemes exist in the lexicon
   -- Update inventories and maps
-  lexPhonemes = concatMap syllToPhonemes (concatMap (\(_, SyllWord y) -> y) rootsN)
-  declPhonemes = concatMap syllToPhonemes (concatMap (\(ManifestSystem _ _ z) -> (concatMap (\(SyllWord w, _) -> w) z)) manSyssN)
+  lexPhonemes = concatMap syllToPhonemes (concatMap (\(MorphemeS _ y) -> y) rootsN)
+  declPhonemes = concatMap syllToPhonemes (concatMap (\(ManifestSystem _ _ z) -> (concatMap (\(MorphemeS _ w) -> w) z)) manSyssN)
   allPhonemes = nub $ lexPhonemes ++ declPhonemes
   cInvN = filter isConsonant allPhonemes
   vInvN = filter isVowel allPhonemes
   cMapN = updateCMap cInvN
   vMapN = updateVMap vInvN
+
+  -- Need to update valid CC lists
+
+  -- Need to use rescueSyllables
 
   langN = lang{getCMap = cMapN, getCInv = cInvN, getVMap = vMapN, getVInv = vInvN, getRoots = rootsN, getManSyss = manSyssN, getRules = rule : getRules lang}
 

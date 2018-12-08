@@ -6,6 +6,7 @@ module Data.Language
 import ClassyPrelude
 
 import Data.Phoneme
+import Data.Word
 import Data.Grammar
 import Data.Inflection
 import Data.Soundchange
@@ -33,8 +34,9 @@ data Language = Language
               , getCodaCCs :: [ConsCluster]
               , getInflMap :: InflectionMap
               , getManSyss :: [ManifestSystem]
+              , getLemmaMorphemes :: [Morpheme]
               , getGrammar :: Grammar
-              , getRoots :: [((Text, LexCat), SyllWord)]
-              , getWriting :: ([(Phoneme, (Int, CharPath))], [(Syllable, (Int, CharPath))], [(((Text, LexCat), SyllWord), (Int, CharPath))])
+              , getRoots :: [Morpheme]
+              , getWriting :: ([(Phoneme, (Int, CharPath))], [(Syllable, (Int, CharPath))], [(Morpheme, (Int, CharPath))])
               , getRules :: [Rule]
               } deriving (Show)

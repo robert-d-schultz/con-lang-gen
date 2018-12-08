@@ -6,13 +6,16 @@ module Out.WritingSystem
 import ClassyPrelude
 
 import Data.Phoneme
+import Data.Word
 import Data.Other
 import Data.Inflection
 
 import Out.Lexicon
 import Out.Grapheme
 
-writeWritingSystem :: ([(Phoneme, (Int, CharPath))], [(Syllable, (Int, CharPath))], [(((Text, LexCat), SyllWord), (Int, CharPath))]) -> Text
+
+-- Alphabetic, syllabic, and logographic
+writeWritingSystem :: ([(Phoneme, (Int, CharPath))], [(Syllable, (Int, CharPath))], [(Morpheme, (Int, CharPath))]) -> Text
 writeWritingSystem (a, s, l) =  "\n<br>\n" ++ aOut ++ sOut ++ lOut where
   aOut | null a = ""
        | otherwise = concatMap writeAChar a
@@ -30,8 +33,10 @@ writeAChar (Blank, _) = ""
 writeSChar :: (Syllable, (Int, CharPath)) -> Text
 writeSChar (syll, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", /" ++ writeSyllableIPA syll ++"/"
 
-writeLChar :: (((Text, LexCat), SyllWord), (Int, CharPath)) -> Text
-writeLChar (((str, _), _), (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", \"" ++ str ++ "\""
+writeLChar :: (Morpheme, (Int, CharPath)) -> Text
+writeLChar (morph, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", \"" ++ out ++ "\"" where
+  out = case getMeaning morph of (Meaning _ str) -> str
+                                 (InflMeaning _ _ ae) -> tshow ae
 
 makeNativeDict :: [(Phoneme, (Int, CharPath))] -> [(Phoneme, Text)]
 makeNativeDict = map (fst &&& (\(_, (n,path))-> writeCharacter path 11 1 n))

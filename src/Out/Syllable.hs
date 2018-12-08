@@ -8,22 +8,25 @@ import ClassyPrelude hiding (Word, maximumBy)
 import Data.List (findIndices, findIndex)
 
 import Data.Phoneme
+import Data.Word
 import Data.Language
+
+-- Word's can be made up of both MorphemeS and MorphemeP's
+-- The syllabifyWord function needs to deal with the MorphemeP's
+-- They need to be added to previous/next syllable if possible
+-- Otherwise a central/mid vowel needs to be inserted to save it
 
 -- Syllabification
 -- Given a word and sonority hierarchy, syllabify the word
-syllabifyWord :: Language -> MorphWord -> Maybe SyllWord
-syllabifyWord lang (MorphWord ms) = SyllWord <$> sylls where
-  -- Combine morphemes into one string of phonemes
-  ps = concatMap getPhonemes ms
-  groups = breakPhonemes lang ps []
-  sylls = map (makeSyllable lang) <$> groups
+syllabifyWord :: Language -> Word -> Maybe [Syllable]
+syllabifyWord lang (Word ms) = sylls where
+  sylls = concatMap (syllabifyMorpheme lang) ms
 
 -- Used for inflection tables, I think
 -- This should be more lenient because the morpheme would normally be attached to a root
-syllabifyMorpheme :: Language -> Morpheme -> Maybe SyllWord
-syllabifyMorpheme lang m = SyllWord <$> sylls where
-  ps = getPhonemes m
+syllabifyMorpheme :: Language -> Morpheme -> Maybe [Syllable]
+syllabifyMorpheme lang (MorphemeS _ sylls) = Just sylls
+syllabifyMorpheme lang (MorphemeP _ ps) = sylls where
   groups = breakPhonemes lang ps []
   sylls = map (makeSyllable lang) <$> groups
 
@@ -36,8 +39,7 @@ makeSyllable lang ps = out where
     (onset, nucleus:coda) = splitAt i ps
 
 
-{-
--- Input the raw string of phonemes, output groups of phonemes that correspond to syllables
+{- This one is based on Sonority Hierarchy, and not valid CC/Nuclei...
 breakPhonemes :: [Phoneme] -> [Phoneme] -> [[Phoneme]] -> [[Phoneme]]
 breakPhonemes [] syll sonhier = [syll]
 breakPhonemes phonemes [] sonhier = breakPhonemes (initMay phonemes) [lastMay phonemes] sonhier
@@ -56,6 +58,7 @@ breakPhonemes phonemes syll sonhier
   | otherwise                                                                   = breakPhonemes (initMay phonemes) (lastMay phonemes : syll) sonhier
 -}
 
+-- Input the raw string of phonemes, output groups of phonemes that correspond to syllables
 breakPhonemes :: Language -> [Phoneme] -> [Phoneme] -> Maybe [[Phoneme]]
 breakPhonemes _ [] _ = Just []
 breakPhonemes lang ps [] = do

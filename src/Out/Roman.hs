@@ -1,27 +1,26 @@
 module Out.Roman
-( romanizeSyllWord
-, romanizeMorphWord
+( romanizeWord
 , romanizeMorpheme
+, romanizeSyllable
 , romanizePhoneme
 ) where
 
-import ClassyPrelude
+import ClassyPrelude hiding (Word)
 
 import Data.Phoneme
+import Data.Word
 
 import Out.IPA
 
-romanizeSyllWord :: SyllWord -> Text
-romanizeSyllWord (SyllWord syllables) = concatMap romanizeSyllable syllables
+romanizeWord :: Word -> Text
+romanizeWord (Word morphemes) = concatMap romanizeMorpheme morphemes
+
+romanizeMorpheme :: Morpheme -> Text
+romanizeMorpheme (MorphemeS _ syllables) = concatMap romanizeSyllable syllables
+romanizeMorpheme (MorphemeP _ phonemes) = romanizePhonemes phonemes
 
 romanizeSyllable :: Syllable -> Text
 romanizeSyllable (Syllable onset nucleus coda tone _) = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeToneDiacritic tone ++ romanizePhonemes coda
-
-romanizeMorphWord :: MorphWord -> Text
-romanizeMorphWord (MorphWord morphemes) = concatMap romanizeMorpheme morphemes
-
-romanizeMorpheme :: Morpheme -> Text
-romanizeMorpheme (Morpheme phonemes) = romanizePhonemes phonemes
 
 romanizePhonemes :: [Phoneme] -> Text
 romanizePhonemes ps = intercalate "\'" $ map (concatMap romanizePhoneme) $ groupBy (\x y -> not (isVowel x && isVowel y)) ps

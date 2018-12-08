@@ -41,7 +41,7 @@ Especially grammatical case.
 Lemma forms should be decided on for each category.
 
 Derivation:
-Right now the only morphology we have what we have for inflection.
+Right now the only morphology we have is what we have for inflection.
 Need to shoot for polysynthetic languages, parse tree rework permitting.
 
 Lexis:

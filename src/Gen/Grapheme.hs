@@ -8,6 +8,7 @@ import Data.Random.Extras
 import Data.Random hiding (sample)
 
 import Data.Phoneme
+import Data.Word
 import Data.Other
 import Data.Inflection
 
@@ -16,7 +17,7 @@ import HelperFunctions
 -- note: bezier curves are a problem
 
 -- simplest, make random squiggles and call them chracters
-makeCharacters :: ([(Phoneme, Int)], [(Syllable, Int)], [(((Text, LexCat), SyllWord), Int)]) -> RVar ([(Phoneme, (Int, CharPath))], [(Syllable, (Int, CharPath))], [(((Text, LexCat), SyllWord), (Int, CharPath))])
+makeCharacters :: ([(Phoneme, Int)], [(Syllable, Int)], [(Morpheme, Int)]) -> RVar ([(Phoneme, (Int, CharPath))], [(Syllable, (Int, CharPath))], [(Morpheme, (Int, CharPath))])
 makeCharacters ([], [], []) = return ([], [], [])
 makeCharacters (a, s, l) = do
   let n = 11 -- arbitrary character "size"

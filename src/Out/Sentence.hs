@@ -12,6 +12,7 @@ import Data.Language
 import Data.Grammar
 import Data.Inflection
 import Data.Phoneme
+import Data.Word
 import Out.Roman
 import EnglishStuff
 
@@ -24,7 +25,7 @@ import Out.Lexicon
 -- interlinear gloss
 -- literal english translation
 -- english translation
-writeParseTree :: Language -> [((Text, LexCat), SyllWord)] -> [ManifestSystem] -> Phrase -> Text
+writeParseTree :: Language -> [Morpheme] -> [ManifestSystem] -> Phrase -> Text
 writeParseTree lang dict infl pt = "\n<br>\n" ++ table ++ "<br>\n" ++ literal ++ "\n<br>\n\"" ++ english ++ "\"" where
   leaves   = filter (not.all leafIsNull) (filter (not.null) (writePhrase lang pt))
   eLeaves  = filter (not.all leafIsNull) (filter (not.null) (writePhrase englishLanguage pt))
@@ -34,7 +35,7 @@ writeParseTree lang dict infl pt = "\n<br>\n" ++ table ++ "<br>\n" ++ literal ++
   english  = translateLeaves eLeaves
 
 -- makes a table so romanization, ipa, and gloss all line up
-tableLeaves :: Language -> [((Text, LexCat), SyllWord)] -> [ManifestSystem] -> [[Leaf]] -> Text
+tableLeaves :: Language -> [Morpheme] -> [ManifestSystem] -> [[Leaf]] -> Text
 tableLeaves lang dict infl leaves = "\n<table border=1>" ++ tHeader ++ romanRow ++ ipaRow ++ glossRow ++ "\n</table>\n" where
   tHeader = "\n\t<tr>\n\t\t<th colspan=\"" ++ tshow (length leaves + 1) ++ "\">Example</th>\n\t</tr>"
 
@@ -83,7 +84,7 @@ glossInfl infl leaves = out where
     | otherwise   = intercalate "-" prefsOut ++ (if null prefs then "" else "-") ++ unwords (map translateLeaf2 others) ++ (if null suffs then "" else "-") ++ intercalate "-" suffsOut
 
 
-newFunction :: [ManifestSystem] -> [Leaf] -> ([SyllWord], [SyllWord], [SyllWord], [Leaf])
+newFunction :: [ManifestSystem] -> [Leaf] -> ([Morpheme], [Morpheme], [Morpheme], [Leaf])
 newFunction infl leaves = (parts, prefs, suffs, others) where
   (others, inflLeaves)  = break leafIsInfl leaves
   infls                 = map leafInfl inflLeaves
@@ -94,7 +95,7 @@ newFunction infl leaves = (parts, prefs, suffs, others) where
   prefs = concatMap (getLast . map (fst . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) prefCombos
   suffs = concatMap (getLast . map (fst . snd) . filter (\(j,(_,i)) ->  (compareInfl i j)) . ((,) <$> infls <*>)) suffCombos
 
-newFunction2 :: [ManifestSystem] -> [Leaf] -> ([[(SyllWord, AllExpress)]], [[(SyllWord, AllExpress)]], [[(SyllWord, AllExpress)]])
+newFunction2 :: [ManifestSystem] -> [Leaf] -> ([[Morpheme]], [[Morpheme]], [[Morpheme]])
 newFunction2 infl inflLeaves = (partCombos, prefCombos, suffCombos) where
   minfl = filter (\x -> fromMaybe False ((==) (manSysLC x) . leafLC <$> listToMaybe inflLeaves)) infl
   mparts = filter (\x -> manSysType x == Particle) minfl
@@ -125,18 +126,18 @@ glossCombo (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)
   vol2 | vol /= NoExpress = tshow (getExp vol) : tra2 | otherwise = tra2
 
 -- transcribe sentence into IPA
-transcribeLeaves :: Language -> [((Text, LexCat), SyllWord)] -> [ManifestSystem] -> [Leaf] -> Text
+transcribeLeaves :: Language -> [Morpheme] -> [ManifestSystem] -> [Leaf] -> Text
 transcribeLeaves lang dict infl leaves
   | any leafIsInfl leaves = transcribeInfl lang dict infl leaves
   | otherwise             = concatMap (transcribeLeaf lang dict) leaves
 
-transcribeInfl :: Language -> [((Text, LexCat), SyllWord)] -> [ManifestSystem] -> [Leaf] -> Text
+transcribeInfl :: Language -> [Morpheme] -> [ManifestSystem] -> [Leaf] -> Text
 transcribeInfl lang dict infl leaves = out where
   (parts, prefs, suffs, others) = newFunction infl leaves
 
   -- syllabify the output properly
   partOut = map writeSyllWordIPA parts
-  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap writeSyllWordIPA suffs ++ "<UNK>" ++ concatMap writeSyllWordIPA prefs) (concatMap writeSyllWordIPA <$> ((++ suffs) . (prefs ++) . (:[]) <$> lookup (str, lc) dict))
+  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap writeMorphemeIPA suffs ++ "<UNK>" ++ concatMap writeMorphemeIPA prefs) (concatMap writeMorphemeIPA <$> ((++ suffs) . (prefs ++) . (:[]) <$> lookup (str, lc) dict))
                                    (LeafNull _) -> ""
                                    _ -> ""
                                    ) others
@@ -171,22 +172,22 @@ compareInfl (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol
       , vol == vol2 || vol `elem` [Express UVOL, NoExpress]
       ]
 
-transcribeLeaf :: Language -> [((Text, LexCat), SyllWord)] -> Leaf -> Text
+transcribeLeaf :: Language -> [Morpheme] -> Leaf -> Text
 transcribeLeaf _ _ LeafNull{} = ""
 transcribeLeaf lang dict (Leaf lc _ str) = transcribe lang dict (str,lc)
 transcribeLeaf _ _ _ = "ERROR"
 
-transcribe :: Language -> [((Text, LexCat), SyllWord)] -> (Text, LexCat) -> Text
+transcribe :: Language -> [Morpheme] -> (Text, LexCat) -> Text
 transcribe lang dict ent = fromMaybe "<UNK>" (writeSyllWordIPA <$> lookup ent dict)
 
 
 -- romanize
-romanizeLeaves :: [((Text, LexCat), SyllWord)] -> [ManifestSystem] -> [Leaf] -> Text
+romanizeLeaves :: [Morpheme] -> [ManifestSystem] -> [Leaf] -> Text
 romanizeLeaves dict infl leaves
   | any leafIsInfl leaves = romanizeInfl dict infl leaves
   | otherwise             = concatMap (romanizeLeaf dict) leaves
 
-romanizeInfl :: [((Text, LexCat), SyllWord)] -> [ManifestSystem] -> [Leaf] -> Text
+romanizeInfl :: [Morpheme] -> [ManifestSystem] -> [Leaf] -> Text
 romanizeInfl dict infl leaves = out where
   (parts, prefs, suffs, others) = newFunction infl leaves
 
@@ -201,7 +202,7 @@ romanizeInfl dict infl leaves = out where
     | null others          = unwords partOut
     | otherwise            = unwords othersOut
 
-romanizeLeaf :: [((Text, LexCat), SyllWord)] -> Leaf -> Text
+romanizeLeaf :: [Morpheme] -> Leaf -> Text
 romanizeLeaf _ LeafNull{} = ""
 romanizeLeaf dict (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeSyllWord <$> lookup (str, lc) dict)
 romanizeLeaf _ _ = "ERROR"

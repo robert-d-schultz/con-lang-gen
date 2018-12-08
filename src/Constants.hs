@@ -1,7 +1,6 @@
 module Constants
 ( impConsonants
-, mannerDistance
-, placeDistance
+, phonemeDistance
 ) where
 
 import ClassyPrelude
