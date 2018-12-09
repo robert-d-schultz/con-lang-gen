@@ -36,7 +36,7 @@ data Phoneme = Consonant
            , getRoundedness2 :: Roundedness
            , getLength :: Length
            }
-           | Blank deriving (Eq, Ord, Read)
+           | Blank deriving (Eq, Ord)
 
 
 -- Place of articulation
@@ -62,7 +62,7 @@ data Place  = BILABIAL
             | ALVEOLAR     -- not really used
             | POSTALVEOLAR -- not really used
             | COARTICULATED { getPlaceA :: Place, getPlaceB :: Place}
-            deriving (Eq, Ord, Read)
+            deriving (Eq, Ord)
 
 -- Enum for Place (because Coarticulated fucked it all up)
 instance Enum Place where
@@ -91,7 +91,7 @@ data Manner = NASAL
             | LAPPROXIMANT
             | LFLAP
             | CLICK
-             deriving (Eq, Ord, Read, Enum, Bounded)
+             deriving (Eq, Ord, Enum, Bounded)
 
 -- Phonation
 data Phonation  = VOICELESS
@@ -100,14 +100,14 @@ data Phonation  = VOICELESS
                 | MODAL
                 | STIFF
                 | CREAKY
-                | ASPIRATED deriving (Eq, Ord, Read, Enum, Bounded)
+                | ASPIRATED deriving (Eq, Ord, Enum, Bounded)
 
 
 data Airstream = PULMONIC  -- pulmonic egressive
                | EJECTIVE  -- glottalic egressive
                | IMPLOSIVE -- glottalic ingressive
                | LINGUAL   -- lingual ingressive (clicks)
-               deriving (Eq, Ord, Read, Enum, Bounded)
+               deriving (Eq, Ord, Enum, Bounded)
 
 -- Vowel stuff
 data Height      = CLOSE
@@ -116,20 +116,20 @@ data Height      = CLOSE
                  | MID
                  | OPENMID
                  | NEAROPEN
-                 | OPEN deriving (Eq, Ord, Read, Enum, Bounded)
+                 | OPEN deriving (Eq, Ord, Enum, Bounded)
 
 data Backness    = FRONT
                  | NEARFRONT
                  | CENTRAL
                  | NEARBACK
-                 | BACK deriving (Eq, Ord, Read, Enum, Bounded)
+                 | BACK deriving (Eq, Ord, Enum, Bounded)
 
 data Roundedness = ROUNDED
-                 | UNROUNDED deriving (Eq, Ord, Read, Enum, Bounded)
+                 | UNROUNDED deriving (Eq, Ord, Enum, Bounded)
 
 data Length = SHORT
             | NORMAL
-            | LONG deriving (Eq, Ord, Read, Enum, Bounded)
+            | LONG deriving (Eq, Ord, Enum, Bounded)
 
 -- Tone
 data Tone = NONET
@@ -145,12 +145,12 @@ data Tone = NONET
           | HRISET
           | LRISET
           | DIPT
-          | PEAKT deriving (Eq, Ord, Read, Enum, Bounded)
+          | PEAKT deriving (Eq, Ord, Enum, Bounded)
 
 
 data Stress = NONES
             | PRIMARYS
-            | SECONDARYS deriving (Eq, Ord, Read, Enum, Bounded)
+            | SECONDARYS deriving (Eq, Ord, Enum, Bounded)
 
 -- show instances
 instance Show Phoneme where

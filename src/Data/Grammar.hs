@@ -40,23 +40,23 @@ data Grammar = Grammar
             , getWHM  :: WHMovementObligatory
             , getPP   :: PiedPiping
             , getQI   :: QuestionInversion
-            } deriving (Show, Read)
+            } deriving (Show)
 
 
 -- Grammar parameters
-data SubjectInitial        = SubInitial  | SubFinal    deriving (Eq, Enum, Bounded, Read)
-data ObjectFinal           = ObjFinal    | ObjInitial  deriving (Eq, Enum, Bounded, Read)
-data ComplementizerInitial = CompInitial | CompFinal   deriving (Eq, Enum, Bounded, Read)
-data VtoIMovement          = NoVtoIMove  | OblVtoIMove deriving (Eq, Enum, Bounded, Read)
-data AffixHopping          = NoAffixHop  | OblAffixHop deriving (Eq, Enum, Bounded, Read)
-data NullSubject           = NoNullSub   | OptNullSub  deriving (Eq, Enum, Bounded, Read)
-data ObligatoryTopic       = OblTopic    | OptTopic    deriving (Eq, Enum, Bounded, Read)
-data NullTopic             = NoNullTop   | OptNullTop  deriving (Eq, Enum, Bounded, Read)
-data TopicMarking          = NoTopMark   | OblTopMark  deriving (Eq, Enum, Bounded, Read)
-data ItoCMovement          = NoItoCMove  | OblItoCMove deriving (Eq, Enum, Bounded, Read)
-data WHMovementObligatory  = NoWHMove    | OblWHMove   deriving (Eq, Enum, Bounded, Read)
-data PiedPiping            = PiedPipe    | PrepStrand  deriving (Eq, Enum, Bounded, Read)
-data QuestionInversion     = NoQuesInv   | OblQuesInv  deriving (Eq, Enum, Bounded, Read)
+data SubjectInitial        = SubInitial  | SubFinal    deriving (Eq, Enum, Bounded)
+data ObjectFinal           = ObjFinal    | ObjInitial  deriving (Eq, Enum, Bounded)
+data ComplementizerInitial = CompInitial | CompFinal   deriving (Eq, Enum, Bounded)
+data VtoIMovement          = NoVtoIMove  | OblVtoIMove deriving (Eq, Enum, Bounded)
+data AffixHopping          = NoAffixHop  | OblAffixHop deriving (Eq, Enum, Bounded)
+data NullSubject           = NoNullSub   | OptNullSub  deriving (Eq, Enum, Bounded)
+data ObligatoryTopic       = OblTopic    | OptTopic    deriving (Eq, Enum, Bounded)
+data NullTopic             = NoNullTop   | OptNullTop  deriving (Eq, Enum, Bounded)
+data TopicMarking          = NoTopMark   | OblTopMark  deriving (Eq, Enum, Bounded)
+data ItoCMovement          = NoItoCMove  | OblItoCMove deriving (Eq, Enum, Bounded)
+data WHMovementObligatory  = NoWHMove    | OblWHMove   deriving (Eq, Enum, Bounded)
+data PiedPiping            = PiedPipe    | PrepStrand  deriving (Eq, Enum, Bounded)
+data QuestionInversion     = NoQuesInv   | OblQuesInv  deriving (Eq, Enum, Bounded)
 
 -- show instances
 instance Show SubjectInitial where

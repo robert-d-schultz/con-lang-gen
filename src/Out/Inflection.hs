@@ -14,11 +14,11 @@ import Data.Language
 import Gen.Morphology
 import Out.Lexicon
 
--- Parse inflection system (per lex cat)
+-- Write inflection system (per lex cat)
 writeLCInflection :: InflectionMap -> Text
 writeLCInflection inflSys = concatMap (writeInflectionMap inflSys) [Noun, Adj, Adv, Adpo, Verb]
 
--- Parse inflection map (gives summary)
+-- Write inflection map (gives summary)
 writeInflectionMap :: InflectionMap -> LexCat -> Text
 writeInflectionMap inflSys lc = output where
   output
@@ -90,7 +90,7 @@ isParticle lc (Manifest t _) = out where
   filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Particle) t
 
 
--- write inflections to tables
+-- Write inflections to tables
 -- tables organized by lexical category and manifest type
 writeLexicalSystems :: InflectionMap -> Language -> [ManifestSystem] -> Text
 writeLexicalSystems inflSys lang infls = "<br>\n" ++ style ++ concatMap (writeLexicalSystems_ inflSys lang infls) [Noun, Adj, Verb, Adv] where
@@ -119,7 +119,7 @@ writeManifestSystems expSyss lang i gramSys = fromMaybe "" out where
 
 
 
--- Parse a manifestation system (particles/declensions) into an html table
+--Write a manifestation system (particles/declensions) into an html table
 -- Horizontal: Case, Gender, Animacy, Number, Honorific, Transitivity, Evidentiality, Voice, Volition (9)
 -- Vertical:   Tense, Aspect, Mood, Person, Clusivity, Definiteness, Specificity, Polarity, Topic     (9)
 writeManifestSystem :: ManifestSystem -> Language -> [Express Gender] -> [Express Animacy] -> [Express Case] -> [Express Number] -> [Express Definiteness] -> [Express Specificity] -> [Express Topic] -> [Express Person] -> [Express Honorific] -> [Express Polarity] -> [Express Tense] -> [Express Aspect] -> [Express Mood] -> [Express Voice] -> [Express Evidentiality] -> [Express Transitivity] -> [Express Volition] -> Text

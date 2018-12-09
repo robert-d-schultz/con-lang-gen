@@ -16,49 +16,22 @@ import Gen.Root
 -- Inflections for each lexical category
 makeLexicalInflection :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (LexCat, Int, Int, Int) -> RVar [ManifestSystem]
 makeLexicalInflection onsets nucs codas tones inflMap (lc, i, j, k) = do
-  part <- makeParticleSystems lc i onsets nucs codas tones inflMap
-  pref <- makePrefixSystems lc j onsets nucs codas tones inflMap
-  suff <- makeSuffixSystems lc k onsets nucs codas tones inflMap
+  part <- makeExponentSystems lc Particle i onsets nucs codas tones inflMap
+  pref <- makeExponentSystems lc Prefix j onsets nucs codas tones inflMap
+  suff <- makeExponentSystems lc Suffix k onsets nucs codas tones inflMap
   return (part ++ pref ++ suff)
 
--- Prefixs
-makePrefixSystems :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar [ManifestSystem]
-makePrefixSystems _ 0 _ _ _ _ _ = return []
-makePrefixSystems lc i onsets nucs codas tones gramSys = (++) <$> makePrefixSystems lc (i-1) onsets nucs codas tones gramSys <*> ((:[]) <$> makePrefixSystem lc i onsets nucs codas tones gramSys)
+makeExponentSystems :: LexCat -> InflType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar [ManifestSystem]
+makeExponentSystems _ _ 0 _ _ _ _ _ = return []
+makeExponentSystems lc inflType i onsets nucs codas tones gramSys = (++) <$> makeExponentSystems lc inflType (i-1) onsets nucs codas tones gramSys <*> ((:[]) <$> makeExponentSystem lc inflType i onsets nucs codas tones gramSys)
 
-makePrefixSystem :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar ManifestSystem
-makePrefixSystem lc i onsets nucs codas tones gramSys = do
-  let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc Prefix i
+makeExponentSystem :: LexCat -> InflType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar ManifestSystem
+makeExponentSystem lc inflType i onsets nucs codas tones gramSys = do
+  let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc inflType i
   let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
   roots <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 1))
-  let morphs = zipWith MorphemeS (InflMeaning lc Prefix <$> combos) roots
-  return $ ManifestSystem lc Prefix morphs
-
--- Suffixs
-makeSuffixSystems :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar [ManifestSystem]
-makeSuffixSystems _ 0 _ _ _ _ _ = return []
-makeSuffixSystems lc i onsets nucs codas tones gramSys = (++) <$> makeSuffixSystems lc (i-1) onsets nucs codas tones gramSys <*> ((:[]) <$> makeSuffixSystem lc i onsets nucs codas tones gramSys)
-
-makeSuffixSystem :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar ManifestSystem
-makeSuffixSystem lc i onsets nucs codas tones gramSys = do
-  let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc Suffix i
-  let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
-  roots <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 1))
-  let morphs = zipWith MorphemeS (InflMeaning lc Suffix <$> combos) roots
-  return $ ManifestSystem lc Suffix morphs
-
--- Particles
-makeParticleSystems :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar [ManifestSystem]
-makeParticleSystems _ 0 _ _ _ _ _ = return []
-makeParticleSystems lc i onsets nucs codas tones gramSys = (++) <$> makeParticleSystems lc (i-1) onsets nucs codas tones gramSys <*> ((:[]) <$> makeParticleSystem lc i onsets nucs codas tones gramSys)
-
-makeParticleSystem :: LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar ManifestSystem
-makeParticleSystem lc i onsets nucs codas tones gramSys = do
-  let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc Particle i
-  let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
-  roots <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 2))
-  let morphs = zipWith MorphemeS (InflMeaning lc Particle <$> combos) roots
-  return $ ManifestSystem lc Particle morphs
+  let morphs = zipWith MorphemeS (InflMeaning lc inflType <$> combos) roots
+  return $ ManifestSystem lc inflType morphs
 
 -- Clean sys
 cleanSys :: Manifest a -> LexCat -> InflType -> Int -> [Express a]

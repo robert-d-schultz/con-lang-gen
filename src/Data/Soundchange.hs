@@ -30,7 +30,7 @@ data PhonemeR = ConsonantR
            , dlengthR :: Maybe Length
            }
            | SyllableBoundary
-           | WordBoundary deriving (Eq, Ord, Read)
+           | WordBoundary deriving (Eq, Ord)
 
 
 instance Show PhonemeR where
@@ -38,7 +38,7 @@ instance Show PhonemeR where
                             ++ fromMaybe "" ((\x -> "[+" ++ show x ++ "]") <$> p)
                             ++ fromMaybe "" ((\x -> "[+" ++ show x ++ "]") <$> m)
                             ++ fromMaybe "" ((\x -> "[+" ++ show x ++ "]") <$> v)
-                            ++ fromMaybe "" ((\x -> "[+" ++ show x ++ "]") <$> a)                            
+                            ++ fromMaybe "" ((\x -> "[+" ++ show x ++ "]") <$> a)
   show (VowelR h b r l) = "[+Vowel]"
                             ++ fromMaybe "" ((\x -> "[+" ++ show x ++ "]") <$> h)
                             ++ fromMaybe "" ((\x -> "[+" ++ show x ++ "]") <$> b)

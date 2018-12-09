@@ -65,7 +65,7 @@ data InflType = Particle | Prefix | Suffix deriving (Eq, Read, Show)
 -- Lexical categories
 data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Pron
             | Agen | Obj | Subj | Don | Them | Rec -- arguments for verbs
-              deriving (Eq, Enum, Read)
+              deriving (Eq, Enum, Ord, Read)
 instance Show LexCat where
   show lc = case lc of Noun -> "Noun"
                        Adj  -> "Adjective"
@@ -259,6 +259,7 @@ data Voice         = UVOI | ACTIVE | MIDDLE | PASSIVE deriving (Eq, Read, Show)
 data Evidentiality = UEVI | EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Eq, Read, Show)
 data Transitivity  = UTRA | NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Read, Show)
 data Volition      = UVOL | VOL | NVOL deriving (Eq, Read, Show)
+
 {-
 -- show instances
 instance Show Gender where
