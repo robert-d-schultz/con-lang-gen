@@ -15,6 +15,7 @@ import Gen.Root
 import Gen.Inflection
 import Gen.Morphology
 import Gen.Grammar
+import Gen.ParseTree
 
 import Gen.Grapheme
 import Gen.WritingSystem
@@ -26,6 +27,7 @@ import Data.Inflection
 import Data.Soundchange
 
 import Out.Roman
+import Out.Sentence
 
 -- generates a language
 makeLanguage :: InputData -> MeaningData -> RVar Language
@@ -62,30 +64,41 @@ makeLanguage idata mData = do
 
   -- inflection / grammatical categories
   (inflSys, numPerLexCat) <- makeInflectionMap idata
-  systems <- concat <$> mapM (makeLexicalInflection onsets nuclei codas tones inflSys) numPerLexCat
+  inflMorphs <- concat <$> mapM (makeLexicalInflection onsets nuclei codas tones inflSys) numPerLexCat
 
-  -- pick lemma morphemes to be used in dictionary
-  lemmaMorphemes <- mapM (choice . manSysCombos) systems
+  -- Pick lemma morphemes to be used in dictionary
+  lemmaMorphs <- concat <$> mapM (pickLemmaMorphemes inflSys inflMorphs) [Verb .. Pron]
 
-  -- root morphemes
-  roots <- makeRootDictionary mData onsets nuclei codas tones (1, 4)
+  -- Root morphemes
+  rootMorphs <- makeRootDictionary mData onsets nuclei codas tones (1, 4)
 
-  -- grammar
+  -- Grammar
   grammar <- makeGrammar
 
-  -- writing systems
+  -- Writing systems
   let allPhonemes = inventoryD ++ inventoryV ++ inventoryC
   let allSyllables | 2000 < product [length onsets, length nuclei, length codas] = []
                    | otherwise = makeAllSyllables onsets nuclei codas tones [NONES, PRIMARYS, SECONDARYS]
-  let allLogograms = roots
+  let allLogograms = rootMorphs ++ inflMorphs
   (a, s, l) <- generateWritingSystem allPhonemes allSyllables allLogograms
 
-  -- characters
+  -- Characters
   (aOut, sOut, lOut) <- makeCharacters (a, s, l)
 
-  -- find out what was assigned to "!!!LANGUAGE!!!" and romanize
-  let langName = fromMaybe "name not found" (romanizeMorpheme <$> find (\x -> getMeaning x == Meaning Noun "!!!LANGUAGE!!!") roots)
+  -- Find out what was assigned to "!!!LANGUAGE!!!" and romanize
+  let langName = fromMaybe "name not found" (romanizeMorpheme <$> find (\x -> getMeaning x == Meaning Noun "!!!LANGUAGE!!!") rootMorphs)
 
-  let lang = Language langName ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys systems lemmaMorphemes grammar roots (aOut, sOut, lOut) [NoChange]
+  let lang = Language langName ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys inflMorphs lemmaMorphs rootMorphs grammar (aOut, sOut, lOut) [NoChange]
 
   return lang
+
+-- This picks the lemma morphemes
+pickLemmaMorphemes :: InflectionMap -> [Morpheme] -> LexCat -> RVar [Morpheme]
+pickLemmaMorphemes inflSys inflMorphs lc = do
+  -- Generate a random AllExpress for this LexCat
+  lemmaExpress <- generateInflection inflSys lc
+  -- Filter the master list of inflection Morpheme's, this LexCat only
+  let relMorphs = filter (\x -> lc == getLC (getMeaning x)) inflMorphs
+  -- Filter down to the ones that help satisfy the lemmaExpress
+  let lemmaMorphs = filter (\x -> compareInfl (getAllExpress $ getMeaning x) lemmaExpress) relMorphs
+  return lemmaMorphs

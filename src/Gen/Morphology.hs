@@ -14,34 +14,27 @@ import Data.Other
 import Gen.Root
 
 -- Inflections for each lexical category
-makeLexicalInflection :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (LexCat, Int, Int, Int) -> RVar [ManifestSystem]
+makeLexicalInflection :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (LexCat, Int, Int, Int) -> RVar [Morpheme]
 makeLexicalInflection onsets nucs codas tones inflMap (lc, i, j, k) = do
   part <- makeExponentSystems lc Particle i onsets nucs codas tones inflMap
   pref <- makeExponentSystems lc Prefix j onsets nucs codas tones inflMap
   suff <- makeExponentSystems lc Suffix k onsets nucs codas tones inflMap
   return (part ++ pref ++ suff)
 
-makeExponentSystems :: LexCat -> InflType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar [ManifestSystem]
+makeExponentSystems :: LexCat -> InflType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar [Morpheme]
 makeExponentSystems _ _ 0 _ _ _ _ _ = return []
-makeExponentSystems lc inflType i onsets nucs codas tones gramSys = (++) <$> makeExponentSystems lc inflType (i-1) onsets nucs codas tones gramSys <*> ((:[]) <$> makeExponentSystem lc inflType i onsets nucs codas tones gramSys)
+makeExponentSystems lc inflType i onsets nucs codas tones gramSys = (++) <$> makeExponentSystems lc inflType (i-1) onsets nucs codas tones gramSys <*> makeExponentSystem lc inflType i onsets nucs codas tones gramSys
 
-makeExponentSystem :: LexCat -> InflType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar ManifestSystem
+makeExponentSystem :: LexCat -> InflType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> RVar [Morpheme]
 makeExponentSystem lc inflType i onsets nucs codas tones gramSys = do
   let (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = cleanInflectionSys gramSys lc inflType i
   let combos = (,,,,,,,,,,,,,,,,) <$> gen <*> ani <*> cas <*> num <*> def <*> spe <*> top <*> per <*> hon <*> pol <*> ten <*> asp <*> moo <*> voi <*> evi <*> tra <*> vol
   roots <- replicateM (length combos) (makeRoot onsets nucs codas tones (1, 1))
   let morphs = zipWith MorphemeS (InflMeaning lc inflType <$> combos) roots
-  return $ ManifestSystem lc inflType morphs
+  return morphs
 
--- Clean sys
-cleanSys :: Manifest a -> LexCat -> InflType -> Int -> [Express a]
-cleanSys NoManifest _ _ _ = [NoExpress]
-cleanSys (Manifest t x) lc mt i = out where
-  filt = filter (== (lc, mt, i)) t
-  out
-    | null filt = [NoExpress]
-    | otherwise = map Express x
-
+-- For a given LexCat, InflType, and Int, return the grammatical categories expressed there
+-- Based on the InflectionMap
 cleanInflectionSys :: InflectionMap -> LexCat -> InflType -> Int -> ([Express Gender], [Express Animacy], [Express Case], [Express Number], [Express Definiteness], [Express Specificity], [Express Topic], [Express Person], [Express Honorific], [Express Polarity], [Express Tense], [Express Aspect], [Express Mood], [Express Voice], [Express Evidentiality], [Express Transitivity], [Express Volition])
 cleanInflectionSys inflMap lc mt i = (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) where
   gen = cleanSys (getGenSys inflMap) lc mt i
@@ -61,3 +54,11 @@ cleanInflectionSys inflMap lc mt i = (gen,ani,cas,num,def,spe,top,per,hon,pol,te
   evi = cleanSys (getEviSys inflMap) lc mt i
   tra = cleanSys (getTraSys inflMap) lc mt i
   vol = cleanSys (getVolSys inflMap) lc mt i
+
+  cleanSys :: GramCat a => Manifest a -> LexCat -> InflType -> Int -> [Express a]
+  cleanSys NoManifest _ _ _ = [NoExpress]
+  cleanSys (Manifest t x) lc mt i = out where
+    filt = filter (== (lc, mt, i)) t
+    out
+      | null filt = [NoExpress]
+      | otherwise = map Express x

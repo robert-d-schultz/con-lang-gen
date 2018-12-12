@@ -29,17 +29,21 @@ executeRuleOnLanguage :: Rule -> Language -> (Language, Int)
 executeRuleOnLanguage rule lang = (langN, rootChanges + inflChanges) where
 
   -- Execute rule on each (valid) phoneme in the lexicon and inflection system
-  roots = getRoots lang
-  manSyss = getManSyss lang
+  inflMorphs = getInflMorphemes lang
+  lemmaMorphs = getLemmaMorphemes lang
+  rootMorphs = getRootMorphemes lang
 
-  (rootsN, rootChanges) = second sum $ unzip $ map (\(MorphemeS m y) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] y)) roots :: ([Morpheme], Int)
-  (manSyssN, inflChanges) = second sum $ unzip $ map (\(ManifestSystem x y z) -> first (ManifestSystem x y) (second sum $ unzip $ map (\(MorphemeS m w) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] w)) z)) manSyss :: ([ManifestSystem], Int)
+  (inflMorphsN, inflChanges) = second sum $ unzip $ map (\(MorphemeS m y) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] y)) inflMorphs :: ([Morpheme], Int)
+  (lemmaMorphsN, lemmaChanges) = second sum $ unzip $ map (\(MorphemeS m y) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] y)) lemmaMorphs :: ([Morpheme], Int)
+  (rootMorphsN, rootChanges) = second sum $ unzip $ map (\(MorphemeS m y) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] y)) rootMorphs :: ([Morpheme], Int)
+
 
   -- Take a new survey of which phonemes exist in the lexicon
   -- Update inventories and maps
-  lexPhonemes = concatMap syllToPhonemes (concatMap (\(MorphemeS _ y) -> y) rootsN)
-  declPhonemes = concatMap syllToPhonemes (concatMap (\(ManifestSystem _ _ z) -> (concatMap (\(MorphemeS _ w) -> w) z)) manSyssN)
-  allPhonemes = nub $ lexPhonemes ++ declPhonemes
+  inflPhonemes = concatMap syllToPhonemes (concatMap (\(MorphemeS _ y) -> y) inflMorphsN)
+  lemmaPhonemes = concatMap syllToPhonemes (concatMap (\(MorphemeS _ y) -> y) lemmaMorphsN)
+  rootPhonemes = concatMap syllToPhonemes (concatMap (\(MorphemeS _ y) -> y) rootMorphsN)
+  allPhonemes = nub $ inflPhonemes ++ lemmaPhonemes ++ rootPhonemes
   cInvN = filter isConsonant allPhonemes
   vInvN = filter isVowel allPhonemes
   cMapN = updateCMap cInvN
@@ -49,7 +53,7 @@ executeRuleOnLanguage rule lang = (langN, rootChanges + inflChanges) where
 
   -- Need to use rescueSyllables
 
-  langN = lang{getCMap = cMapN, getCInv = cInvN, getVMap = vMapN, getVInv = vInvN, getRoots = rootsN, getManSyss = manSyssN, getRules = rule : getRules lang}
+  langN = lang{getCMap = cMapN, getCInv = cInvN, getVMap = vMapN, getVInv = vInvN, getInflMorphemes = inflMorphsN, getLemmaMorphemes = lemmaMorphsN, getRootMorphemes = rootMorphsN, getRules = rule : getRules lang}
 
 -- Creates a new vMap from a given vowel inventory
 updateVMap :: [Phoneme] -> ([Height], [Backness], [Roundedness], [Length])

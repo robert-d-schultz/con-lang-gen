@@ -33,10 +33,10 @@ data Language = Language
               , getNuclei :: [Phoneme]
               , getCodaCCs :: [ConsCluster]
               , getInflMap :: InflectionMap
-              , getManSyss :: [ManifestSystem]
+              , getInflMorphemes :: [Morpheme]
               , getLemmaMorphemes :: [Morpheme]
+              , getRootMorphemes :: [Morpheme]
               , getGrammar :: Grammar
-              , getRoots :: [Morpheme]
               , getWriting :: ([(Phoneme, (Int, CharPath))], [(Syllable, (Int, CharPath))], [(Morpheme, (Int, CharPath))])
               , getRules :: [Rule]
               } deriving (Show)

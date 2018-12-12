@@ -5,7 +5,6 @@ module Data.Word
 , InflType(..)
 , Syllable(..)
 , ConsCluster
-, ManifestSystem(..)
 , LemmaMorphemes(..)
 ) where
 
@@ -14,13 +13,6 @@ import Data.List (elemIndex)
 
 import Data.Phoneme
 import Data.Inflection
-
--- Old stuff
---newtype SyllWord = SyllWord [Syllable] deriving (Eq, Ord, Read, Show)
-
--- Word/Morpheme/Phoneme
---newtype MorphWord = MorphWord { getMorphemes :: [Morpheme] } deriving (Eq, Ord, Read, Show)
---newtype Morpheme = Morpheme { getPhonemes :: [Phoneme] } deriving (Eq, Ord, Read, Show)
 
 -- A Word is one or more Morphemes
 -- Words stand alone
@@ -54,10 +46,10 @@ type ConsCluster = [Phoneme]
 
 -- This holds the morphemes for a specific POS/type
 -- A language would have a list of these, [ManifestSystem]
-data ManifestSystem = ManifestSystem
+{-data ManifestSystem = ManifestSystem
                     { manSysLC :: LexCat
                     , manSysType :: InflType
                     , manSysCombos :: [Morpheme]
-                    } deriving (Eq, Show)
+                    } deriving (Eq, Show)-}
 
 type LemmaMorphemes = [Morpheme]

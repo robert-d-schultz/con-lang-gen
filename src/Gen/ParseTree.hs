@@ -1,7 +1,6 @@
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Gen.ParseTree
 ( makeParseTree
+, generateInflection
 ) where
 
 import ClassyPrelude
@@ -13,14 +12,14 @@ import Data.Word
 import Data.Grammar
 import Data.Inflection
 
--- make parse tree using new language's root dictionary and inflection/conjugation systems
+-- Make parse tree using new language's root dict and inflection/conjugation systems
 makeParseTree :: [Morpheme] -> InflectionMap -> RVar Phrase
-makeParseTree dict inflmap = do
+makeParseTree rootMorphs inflmap = do
 
-  let noun = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Noun) dict)
-  let prep = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adpo) dict)
-  let verb = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Verb) dict)
-  let adj  = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adj) dict)
+  let noun = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Noun) rootMorphs)
+  let prep = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adpo) rootMorphs)
+  let verb = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Verb) rootMorphs)
+  let adj  = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adj) rootMorphs)
 
 
   let objDet = generateInflection inflmap Noun
@@ -98,7 +97,7 @@ generateInflection inflMap lc = do
 
   return (gen, ani, cas, num, def, spe, top, per, hon, pol, ten, asp, moo, voi, evi, tra, vol)
 
-helperFunction :: Eq a => InflectionMap -> (InflectionMap -> Manifest a) -> LexCat -> RVar (Express a)
+helperFunction :: GramCat a => Eq a => InflectionMap -> (InflectionMap -> Manifest a) -> LexCat -> RVar (Express a)
 helperFunction inflMap f lc = out where
   fMan = f inflMap
   out

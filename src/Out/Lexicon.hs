@@ -25,17 +25,16 @@ import Out.Grapheme
 writeDictionary :: Language -> [(Phoneme, Text)] -> [Morpheme] -> LemmaMorphemes -> Text
 writeDictionary lang ndict roots lemmas = out where
   ws = map (applyLemma lemmas) roots
-  sylleds = map (\x -> fromMaybe [] . join $ syllabifyWord lang <$> x) ws
+  sylleds = map (fromMaybe [] . syllabifyWord lang) ws
   meanings = map getMeaning roots
   out = "\n" ++ intercalate "\n" (map (writeDictionaryEntry lang ndict) (reduceHomophones (zip sylleds meanings)))
 
-applyLemma :: LemmaMorphemes -> Morpheme -> Maybe Word
-applyLemma lemmaMorphs root = do
-  let lemmaMorphs_ = filter (\x -> (getLC.getMeaning) root == (getLC.getMeaning) x) lemmaMorphs
-  let prefixes = filter ((\case InflMeaning _ Prefix _ -> True; _ -> False) . getMeaning) lemmaMorphs_
-  let suffixes = filter ((\case InflMeaning _ Suffix _ -> True; _ -> False) . getMeaning) lemmaMorphs_
-  let rest = filter ((\case InflMeaning _ Prefix _ -> False; InflMeaning _ Suffix _-> False; _ -> True) . getMeaning) lemmaMorphs
-  if (not.null) rest then return $ Word (prefixes ++ [root] ++ suffixes) else Nothing
+applyLemma :: LemmaMorphemes -> Morpheme -> Word
+applyLemma lemmaMorphs root = Word (prefixes ++ [root] ++ suffixes) where
+  lemmaMorphs_ = filter (\x -> (getLC.getMeaning) root == (getLC.getMeaning) x) lemmaMorphs
+  prefixes = filter ((\case InflMeaning _ Prefix _ -> True; _ -> False) . getMeaning) lemmaMorphs_
+  suffixes = filter ((\case InflMeaning _ Suffix _ -> True; _ -> False) . getMeaning) lemmaMorphs_
+  rest = filter ((\case InflMeaning _ Prefix _ -> False; InflMeaning _ Suffix _-> False; _ -> True) . getMeaning) lemmaMorphs
 
 reduceHomophones :: [([Syllable], Meaning)] -> [([Syllable], [Meaning])]
 reduceHomophones roots = map (first (fromMaybe [] . listToMaybe) . unzip) (groupWith fst (sortWith fst roots))

@@ -23,6 +23,7 @@ module Data.Inflection
 , Evidentiality(..)
 , Transitivity(..)
 , Volition(..)
+, GramCat(..)
 ) where
 
 import ClassyPrelude
@@ -45,19 +46,19 @@ deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, E
 -- Manifest (list of places) (list of stuff that manifests there)
 data Manifest a = NoManifest | Manifest { getManPlace :: [(LexCat, InflType, Int)], getManStuff :: [a] } deriving (Eq)
 
-instance Show a => Show (Manifest a) where
+instance GramCat a => Show (Manifest a) where
   show NoManifest = ""
   show (Manifest _ []) = ""
-  show (Manifest _ [x]) = show x
-  show (Manifest _ [x,y]) = show x ++ " and " ++ show y
-  show (Manifest _ (x:xs)) = intercalate ", " (map show xs) ++ ", and " ++ show x
+  show (Manifest _ [x]) = show (name x)
+  show (Manifest _ [x,y]) = show (name x ++ " and " ++ name y)
+  show (Manifest _ (x:xs)) = show (intercalate ", " (map name xs) ++ ", and " ++ name x)
 
 data Express a  = NoExpress
                 | Express { getExp :: a } deriving (Eq, Read)
 
-instance Show a => Show (Express a) where
+instance GramCat a => Show (Express a) where
   show NoExpress = ""
-  show (Express x) = show x
+  show (Express x) = show $ name x
 
 -- How the inflection manifests
 data InflType = Particle | Prefix | Suffix deriving (Eq, Read, Show)
@@ -67,11 +68,13 @@ data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Pron
             | Agen | Obj | Subj | Don | Them | Rec -- arguments for verbs
               deriving (Eq, Enum, Ord, Read)
 instance Show LexCat where
-  show lc = case lc of Noun -> "Noun"
+  show lc = case lc of Verb -> "Verb"
+                       Det  -> "Determiner"
+                       Noun -> "Noun"
+                       Adpo -> "Adposition"
                        Adj  -> "Adjective"
                        Adv  -> "Adverb"
-                       Adpo -> "Adposition"
-                       Verb -> "Verb"
+                       Pron -> "Pronoun"
                        Agen -> "Agent"
                        Obj -> "Object"
                        Subj -> "Subject"
@@ -148,7 +151,7 @@ data Case          = UCAS
                    | INS | COMIT | INSCOMIT | ORN | BEN
                    | CAUS | DISTR
                    | GEN | POSS | PART
-                   | VOC deriving (Eq, Read)
+                   | VOC deriving (Eq, Read, Show)
 
 -- "Case" signals what the attached word's function is in the phrase
 -- The morpho-syntactic cases signal which verb argument they are
@@ -260,26 +263,29 @@ data Evidentiality = UEVI | EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | A
 data Transitivity  = UTRA | NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Read, Show)
 data Volition      = UVOL | VOL | NVOL deriving (Eq, Read, Show)
 
-{-
--- show instances
-instance Show Gender where
-  show gen = case gen of UGEN -> "Unknown"
-                         M   -> "Masculine"
-                         F   -> "Feminine"
-                         COM -> "Common"
-                         N   -> "Neuter"
 
-instance Show Animacy where
-  show ani = case ani of UANI -> "Unknown"
+-- GramCat
+class (Show a) => GramCat a where
+  gloss, name :: a -> Text
+  gloss = tshow
+
+instance GramCat Gender where
+  name gen = case gen of UGEN -> "Unknown"
+                         M    -> "Masculine"
+                         F    -> "Feminine"
+                         COM  -> "Common"
+                         N    -> "Neuter"
+
+instance GramCat Animacy where
+  name ani = case ani of UANI -> "Unknown"
                          AN   -> "Animate"
                          HUM  -> "Human"
                          NHUM -> "Non-Human"
                          ZO   -> "Animal"
                          INAN -> "Inanimate"
--}
 
-instance Show Case where
-  show cas = case cas of ACC -> "Accusative"
+instance GramCat Case where
+  name cas = case cas of ACC -> "Accusative"
                          ACC2 -> "Accusative"
                          ACC3 -> "Accusative"
                          ERG -> "Ergative"
@@ -301,32 +307,32 @@ instance Show Case where
                          DIR2 -> "Directive"
                          OBJ -> "Objective"
                          PREP -> "Prepositional"
-{-
-instance Show Number where
-  show num = case num of UNUM -> "Unknown"
+
+instance GramCat Number where
+  name num = case num of UNUM -> "Unknown"
                          SG  -> "Singular"
                          DU  -> "Dual"
                          TRI -> "Trial"
                          PA  -> "Paucal"
                          PL  -> "Plural"
 
-instance Show Definiteness where
-  show def = case def of UDEF -> "Unknown"
+instance GramCat Definiteness where
+  name def = case def of UDEF -> "Unknown"
                          DEF  -> "Definite"
                          INDF -> "Indefinite"
 
-instance Show Specificity where
-  show spe = case spe of USPE -> "Unknown"
+instance GramCat Specificity where
+  name spe = case spe of USPE -> "Unknown"
                          SPEC  -> "Specific"
                          NSPEC -> "Nonspecific"
 
-instance Show Topic where
-  show top = case top of UTOP -> "Unknown"
+instance GramCat Topic where
+  name top = case top of UTOP -> "Unknown"
                          TOP  -> "Topic"
                          NTOP -> "Not topic"
 
-instance Show Person where
-  show per = case per of UPER -> "Unknown"
+instance GramCat Person where
+  name per = case per of UPER -> "Unknown"
                          FIRST  -> "First"
                          FSTINCL -> "First inclusive"
                          FSTEXCL -> "First exclusive"
@@ -335,19 +341,19 @@ instance Show Person where
                          THRDPROX  -> "Proximate"
                          THRDOBV  -> "Obviative"
 
-instance Show Honorific where
-  show hon = case hon of UHON  -> "Unknown"
+instance GramCat Honorific where
+  name hon = case hon of UHON  -> "Unknown"
                          FAM   -> "Informal"
                          NEU   -> "Neutral"
                          FORM  -> "Formal"
 
-instance Show Polarity where
-  show pol = case pol of UPOL -> "Unknown"
+instance GramCat Polarity where
+  name pol = case pol of UPOL -> "Unknown"
                          AFF -> "Affirmative"
                          NEG -> "Negative"
 
-instance Show Tense where
-  show ten = case ten of UTEN -> "Unknown"
+instance GramCat Tense where
+  name ten = case ten of UTEN -> "Unknown"
                          PST  -> "Simple past"
                          PRS  -> "Simple present"
                          FUT  -> "Simple future"
@@ -367,8 +373,8 @@ instance Show Tense where
                          PRSPER  -> "Present perfect"
                          FUTPER  -> "Future perfect"
 
-instance Show Aspect where
-  show asp = case asp of UASP -> "Unknown"
+instance GramCat Aspect where
+  name asp = case asp of UASP -> "Unknown"
                          NNPROG -> "Not progressive"
                          PFV  -> "Perfective"
                          IPFV -> "Imperfective"
@@ -378,8 +384,8 @@ instance Show Aspect where
                          PROG -> "Progressive"
 
 
-instance Show Mood where
-  show moo = case moo of UMOO -> "Unknown"
+instance GramCat Mood where
+  name moo = case moo of UMOO -> "Unknown"
                          IND  -> "Indicative"
                          IRR  -> "Irrealis"
                          DEO  -> "Deontic"
@@ -391,14 +397,14 @@ instance Show Mood where
                          POT  -> "Potential"
                          COND -> "Conditional"
 
-instance Show Voice where
-  show voi = case voi of UVOI -> "Unknown"
+instance GramCat Voice where
+  name voi = case voi of UVOI -> "Unknown"
                          ACTIVE  -> "Active"
                          MIDDLE  -> "Middle"
                          PASSIVE -> "Passive"
 
-instance Show Evidentiality where
-  show evi = case evi of UEVI  -> "Unknown"
+instance GramCat Evidentiality where
+  name evi = case evi of UEVI  -> "Unknown"
                          EXP   -> "Witness"
                          VIS   -> "Visual"
                          NVIS  -> "Non-visual"
@@ -409,15 +415,14 @@ instance Show Evidentiality where
                          QUO   -> "Quotative"
                          ASS   -> "Assumed"
 
-instance Show Transitivity where
-  show tra = case tra of UTRA    -> "Unknown"
+instance GramCat Transitivity where
+  name tra = case tra of UTRA    -> "Unknown"
                          NTRANS  -> "Intransitive"
                          TRANS   -> "Transitive"
                          MTRANS  -> "Monotransitive"
                          DITRANS -> "Ditransitive"
 
-instance Show Volition where
-  show vol = case vol of UVOL -> "Unknown"
+instance GramCat Volition where
+  name vol = case vol of UVOL -> "Unknown"
                          VOL  -> "Intended"
                          NVOL -> "Unintended"
--}

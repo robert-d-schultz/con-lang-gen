@@ -17,7 +17,7 @@ import Out.Other
 import Out.Phonology
 import Out.Inflection
 import Out.Lexicon
---import Out.Sentence
+import Out.Sentence
 import Out.Grammar
 import Out.WritingSystem
 import Out.Grapheme
@@ -59,9 +59,9 @@ writeLanguage dir lang = do
   let scheme = getSonHier lang
   let grammar = getGrammar lang
   let inflSys = getInflMap lang
-  let systems = getManSyss lang
-  let lemmas = getLemmaMorphemes lang
-  let roots = getRoots lang
+  let inflMorphs = getInflMorphemes lang
+  let lemmaMorphs = getLemmaMorphemes lang
+  let rootMorphs = getRootMorphemes lang
   let (alph, syll, logo) = getWriting lang
   let name = fst (getNameMod lang) ++ snd (getNameMod lang) ++ getName lang
 
@@ -79,7 +79,7 @@ writeLanguage dir lang = do
   -- let ndict = makeNativeDict alph
 
   -- Parse trees
-  --ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree roots inflSys)
+  ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree rootMorphs inflSys)
 
   -- Make directory
 
@@ -98,17 +98,16 @@ writeLanguage dir lang = do
                                  ++ writeCCs onsetCCs codaCCs
 
   writeFile (unpack dir ++ "/inflection.html") $ "Inflection"
-                                 ++ writeLCInflection inflSys
-                                 ++ writeLexicalSystems inflSys lang systems
+                                 ++ writeInflectionOverview inflSys
+                                 ++ writeInflectionTables lang inflSys inflMorphs
 
   writeFile (unpack dir ++ "/lexicon.html") $ "Lexicon"
-                              -- ++ writeDictionary sonHier dict
-                                 ++ writeDictionary lang ndict roots lemmas
+                                 ++ writeDictionary lang ndict rootMorphs lemmaMorphs
 
   writeFile (unpack dir ++ "/grammar.html") $ "Grammar"
                                  ++ writeGrammar grammar
-                                 -- ++ "Examples"
-                                 -- ++ concatMap (writeParseTree lang roots systems) ptExamples
+                                 ++ "Examples"
+                                 ++ concatMap (writeParseTree lang rootMorphs inflMorphs) ptExamples
 
   writeFile (unpack dir ++ "/writing system.html") $ "Writing System"
                                  ++ writeWritingSystem (alph, syll, logo)

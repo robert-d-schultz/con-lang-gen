@@ -17,7 +17,7 @@ import Out.Language
 
 main :: IO ()
 main = do
-  -- seed
+  -- Seed
   input <- putStr "Enter seed: " *> getLine
   let seed = hashWithSalt 1 input
   setStdGen $ mkStdGen seed
@@ -29,7 +29,7 @@ main = do
     tree <- newSample $ makeLanguageTree idata mData
     writeLanguageTree seed tree
 
--- special sampleRVar that allows seeds
+-- Special sampleRVar that allows seeds
 newSample :: RVar a -> IO a
 newSample i = do
   g1 <- getStdGen

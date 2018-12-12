@@ -1,6 +1,3 @@
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# OPTIONS_GHC -Wall #-}
 module Out.Grammar
 ( writeGrammar
 ) where
@@ -9,7 +6,7 @@ import ClassyPrelude
 
 import Data.Grammar
 
--- Parse grammar system
+-- Write out grammar system
 writeGrammar :: Grammar -> Text
 writeGrammar (Grammar si ob ci vi ah ns ot nt tm ic wm pp qi) = "\n<br>\nParameters:" ++ out where
   out = "\n<ul>\n\t<li>" ++ intercalate "</li>\n\t<li>" [ tshow si

@@ -139,7 +139,7 @@ data Bar = XBarA
 data Leaf = LeafNull Illoc
           | LeafInfl
           { leafLC :: LexCat
-          , leafInfl :: (Express Gender, Express Animacy, Express Case, Express Number, Express Definiteness, Express Specificity, Express Topic, Express Person, Express Honorific, Express Polarity, Express Tense, Express Aspect, Express Mood, Express Voice, Express Evidentiality, Express Transitivity, Express Volition)
+          , leafInfl :: AllExpress
           }
           | Leaf
           { leafLC  :: LexCat

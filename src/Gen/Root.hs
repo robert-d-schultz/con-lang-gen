@@ -24,7 +24,7 @@ makeRootDictionary mData onsets nucs codas tones set = concat <$> sequence [n, v
   n = mapM (\i -> MorphemeS (Meaning Noun i) <$> makeRoot onsets nucs codas tones set) (inputNouns mData)
   v = mapM (\i -> MorphemeS (Meaning Verb i) <$> makeRoot onsets nucs codas tones set) (inputVerbs mData)
   a = mapM (\i -> MorphemeS (Meaning Adj i) <$> makeRoot onsets nucs codas tones set) (inputAdjs mData)
-  p = mapM (\i -> MorphemeS (Meaning Adv i) <$> makeRoot onsets nucs codas tones set) (inputAdpos mData)
+  p = mapM (\i -> MorphemeS (Meaning Adpo i) <$> makeRoot onsets nucs codas tones set) (inputAdpos mData)
 
 -- Generate a root morphemes given vowels, consonant clusters, and some settings
 makeRoot :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Syllable]

@@ -13,6 +13,8 @@ import Data.Grammar
 import Data.Inflection
 import Data.Language
 
+-- this needs a rework to work with the new word/morpheme system
+
 englishLanguage = Language { getName = "English"
                            , getNameMod = ("","")
                            , getCInv = mempty
@@ -26,9 +28,10 @@ englishLanguage = Language { getName = "English"
                            , getNuclei = mempty
                            , getCodaCCs = mempty
                            , getInflMap = englishInflection
-                           , getManSyss = []
+                           , getInflMorphemes = [] -- shouldn't be empty
+                           , getLemmaMorphemes = [] -- shouldn't be empty
+                           , getRootMorphemes = []
                            , getGrammar = englishGrammar
-                           , getRoots = []
                            , getWriting = ([], [], [])
                            , getRules = []
                            }
