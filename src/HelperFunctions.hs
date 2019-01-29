@@ -2,6 +2,7 @@ module HelperFunctions
 ( choice_
 , isVowel
 , isConsonant
+, shuffleLists
 , replicateUntilM
 , safeSample
 , safeSample2
@@ -29,6 +30,10 @@ isVowel _ = False
 isConsonant :: Phoneme -> Bool
 isConsonant Consonant{} = True
 isConsonant _ = False
+
+shuffleLists :: [a] -> [a] -> [a]
+shuffleLists [] ys = ys
+shuffleLists (x:xs) ys = x : shuffleLists ys xs
 
 -- RVar stuff
 -- Weighs the first argument by N

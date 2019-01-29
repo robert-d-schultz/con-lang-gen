@@ -1,6 +1,8 @@
 module Gen.Root
 ( makeRootDictionary
 , makeRoot
+, makeSemiticRoot
+, makeTransfix
 ) where
 
 import ClassyPrelude hiding (Word)
@@ -19,12 +21,21 @@ import LoadStuff
 import HelperFunctions
 
 -- Generate root dictionary - atomic meanings
-makeRootDictionary :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Morpheme]
-makeRootDictionary mData onsets nucs codas tones set = concat <$> sequence [n, v, a, p] where
-  n = mapM (\i -> MorphemeS (Meaning Noun i) <$> makeRoot onsets nucs codas tones set) (inputNouns mData)
-  v = mapM (\i -> MorphemeS (Meaning Verb i) <$> makeRoot onsets nucs codas tones set) (inputVerbs mData)
-  a = mapM (\i -> MorphemeS (Meaning Adj i) <$> makeRoot onsets nucs codas tones set) (inputAdjs mData)
-  p = mapM (\i -> MorphemeS (Meaning Adpo i) <$> makeRoot onsets nucs codas tones set) (inputAdpos mData)
+makeRootDictionary :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> [(LexCat, Int, Int, Int, Int)] -> RVar [Morpheme]
+makeRootDictionary mData onsets nucs codas tones set numPerLC = do
+  foo <- mapM (\(lc,_,_,_,sr) -> makeRootDictionary_ mData lc sr onsets nucs codas tones set) numPerLC
+  return $ concat foo
+
+makeRootDictionary_ :: MeaningData -> LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Morpheme]
+makeRootDictionary_ mData Noun sr onsets nucs codas tones set = makeRootDictionary__ Noun (inputNouns mData) sr onsets nucs codas tones set
+makeRootDictionary_ mData Verb sr onsets nucs codas tones set = makeRootDictionary__ Verb (inputVerbs mData) sr onsets nucs codas tones set
+makeRootDictionary_ mData Adj sr onsets nucs codas tones set = makeRootDictionary__ Adj (inputAdjs mData) sr onsets nucs codas tones set
+makeRootDictionary_ mData Adpo sr onsets nucs codas tones set = makeRootDictionary__ Adpo (inputAdpos mData) sr onsets nucs codas tones set
+makeRootDictionary_ _ _ _ _ _ _ _ _ = return []
+
+makeRootDictionary__ :: LexCat -> [Text] -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Morpheme]
+makeRootDictionary__ lc foo 0 onsets nucs codas tones set = mapM (\i -> MorphemeS (Meaning lc i) Root <$> makeRoot onsets nucs codas tones set) foo
+makeRootDictionary__ lc foo _ onsets _ _ _ (_, nr) = mapM (\i -> SemiticRoot (Meaning lc i) Root <$> makeSemiticRoot onsets nr) foo
 
 -- Generate a root morphemes given vowels, consonant clusters, and some settings
 makeRoot :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Syllable]
@@ -67,6 +78,22 @@ foobar n xs f
   (a,b:bs) = splitAt n xs
 
 
+makeSemiticRoot :: [ConsCluster] -> Int -> RVar [[Phoneme]]
+makeSemiticRoot conclusts nr = do
+  foo <- R.replicateM nr (choice conclusts)
+  return foo
+
+makeTransfix :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> Int -> RVar [[Phoneme]]
+makeTransfix onsets nucs codas nr = do
+  let t = nr + 1
+  R.replicateM t (makeTransfix_ onsets nucs codas)
+
+makeTransfix_ :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> RVar [Phoneme]
+makeTransfix_ onsets nucs codas = do
+  onset <- choice onsets
+  nuclei <- choice nucs
+  coda <- choice codas
+  return $ [nuclei]
 
 
 -- Gen.Meaning?

@@ -38,14 +38,12 @@ I'd like to work in my Minimalist Program parse tree generator, but that has it'
 Inflection:
 A more-dynamic grammatical category generator.
 Especially grammatical case.
-Lemma forms should be decided on for each category.
 
 Derivation:
 Right now the only morphology we have is what we have for inflection.
 Need to shoot for polysynthetic languages, parse tree rework permitting.
 
 Lexis:
-The dictionary should use the lemma form of the word.
 Number system generator.
 Color system generator.
 Domesticated animal terminology, very important.

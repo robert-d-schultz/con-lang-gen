@@ -26,9 +26,10 @@ makeLanguageBranch iter idata mData lang = do
 
   -- End branching after threshold
   -- Less branching early on
-  let weight | iter > 4 = [0]
-             | iter < 2 = [1,1,2]
-             | otherwise = [0,0,0,1,1,1,1,2,3,4]
+  let weight | iter > 2 = [0]
+             | otherwise = [1]
+             -- | iter < 2 = [1,1,2]
+             -- | otherwise = [0,0,0,1,1,1,1,2,3,4]
 
   childN <- choice weight
 

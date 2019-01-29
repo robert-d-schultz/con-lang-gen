@@ -79,7 +79,7 @@ writeLanguage dir lang = do
   -- let ndict = makeNativeDict alph
 
   -- Parse trees
-  ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree rootMorphs inflSys)
+  --ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree rootMorphs inflSys)
 
   -- Make directory
 
@@ -102,12 +102,12 @@ writeLanguage dir lang = do
                                  ++ writeInflectionTables lang inflSys inflMorphs
 
   writeFile (unpack dir ++ "/lexicon.html") $ "Lexicon"
-                                 ++ writeDictionary lang ndict rootMorphs lemmaMorphs
+                                 ++ writeDictionary lang ndict rootMorphs lemmaMorphs inflMorphs
 
   writeFile (unpack dir ++ "/grammar.html") $ "Grammar"
                                  ++ writeGrammar grammar
                                  ++ "Examples"
-                                 ++ concatMap (writeParseTree lang rootMorphs inflMorphs) ptExamples
+                                 -- ++ concatMap (writeParseTree lang rootMorphs inflMorphs) ptExamples
 
   writeFile (unpack dir ++ "/writing system.html") $ "Writing System"
                                  ++ writeWritingSystem (alph, syll, logo)

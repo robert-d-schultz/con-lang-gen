@@ -2,7 +2,7 @@
 module Data.Inflection
 ( Manifest(..)
 , Express(..)
-, InflType(..)
+, MorphType(..)
 , LexCat(..)
 , InflectionMap(..)
 , AllExpress(..)
@@ -44,43 +44,50 @@ showTuple ss = showChar '('
 deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, Eq k, Eq l, Eq m, Eq n, Eq o, Eq p, Eq q) => Eq (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q)
 
 -- Manifest (list of places) (list of stuff that manifests there)
-data Manifest a = NoManifest | Manifest { getManPlace :: [(LexCat, InflType, Int)], getManStuff :: [a] } deriving (Eq)
+data Manifest a = NoManifest | Manifest { getManPlace :: [(LexCat, MorphType, Int)], getManStuff :: [a] } deriving (Eq)
 
 instance GramCat a => Show (Manifest a) where
   show NoManifest = ""
   show (Manifest _ []) = ""
-  show (Manifest _ [x]) = show (name x)
-  show (Manifest _ [x,y]) = show (name x ++ " and " ++ name y)
-  show (Manifest _ (x:xs)) = show (intercalate ", " (map name xs) ++ ", and " ++ name x)
+  show (Manifest _ [x]) = unpack (name x)
+  show (Manifest _ [x,y]) = unpack (name x ++ " and " ++ name y)
+  show (Manifest _ (x:xs)) = unpack (intercalate ", " (map name xs) ++ ", and " ++ name x)
 
 data Express a  = NoExpress
                 | Express { getExp :: a } deriving (Eq, Read)
 
 instance GramCat a => Show (Express a) where
   show NoExpress = ""
-  show (Express x) = show $ name x
+  show (Express x) = unpack $ name x
 
 -- How the inflection manifests
-data InflType = Particle | Prefix | Suffix deriving (Eq, Read, Show)
+data MorphType = Root | Particle | Prefix | Suffix | Transfix deriving (Eq, Read)
+
+instance Show MorphType where
+  show inflType = case inflType of Root -> "Root"
+                                   Particle -> "particle"
+                                   Prefix   -> "prefix"
+                                   Suffix   -> "suffix"
+                                   Transfix -> "transfix"
 
 -- Lexical categories
 data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Pron
             | Agen | Obj | Subj | Don | Them | Rec -- arguments for verbs
               deriving (Eq, Enum, Ord, Read)
 instance Show LexCat where
-  show lc = case lc of Verb -> "Verb"
-                       Det  -> "Determiner"
-                       Noun -> "Noun"
-                       Adpo -> "Adposition"
-                       Adj  -> "Adjective"
-                       Adv  -> "Adverb"
-                       Pron -> "Pronoun"
-                       Agen -> "Agent"
-                       Obj -> "Object"
-                       Subj -> "Subject"
-                       Don -> "Donor"
-                       Them -> "Theme"
-                       Rec -> "Recipient"
+  show lc = case lc of Verb -> "verb"
+                       Det  -> "determiner"
+                       Noun -> "noun"
+                       Adpo -> "adposition"
+                       Adj  -> "adjective"
+                       Adv  -> "adverb"
+                       Pron -> "pronoun"
+                       Agen -> "agent"
+                       Obj  -> "object"
+                       Subj -> "subject"
+                       Don  -> "donor"
+                       Them -> "theme"
+                       Rec  -> "recipient"
 
 -- Inflection system map
 -- This a map of how inflection works for the language
@@ -270,159 +277,160 @@ class (Show a) => GramCat a where
   gloss = tshow
 
 instance GramCat Gender where
-  name gen = case gen of UGEN -> "Unknown"
-                         M    -> "Masculine"
-                         F    -> "Feminine"
-                         COM  -> "Common"
-                         N    -> "Neuter"
+  name gen = case gen of UGEN -> "unknown gender"
+                         M    -> "masculine"
+                         F    -> "feminine"
+                         COM  -> "common"
+                         N    -> "neuter"
 
 instance GramCat Animacy where
-  name ani = case ani of UANI -> "Unknown"
-                         AN   -> "Animate"
-                         HUM  -> "Human"
-                         NHUM -> "Non-Human"
-                         ZO   -> "Animal"
-                         INAN -> "Inanimate"
+  name ani = case ani of UANI -> "unknown animacy"
+                         AN   -> "animate"
+                         HUM  -> "human"
+                         NHUM -> "non-Human"
+                         ZO   -> "animal"
+                         INAN -> "inanimate"
 
 instance GramCat Case where
-  name cas = case cas of ACC -> "Accusative"
-                         ACC2 -> "Accusative"
-                         ACC3 -> "Accusative"
-                         ERG -> "Ergative"
-                         ERG2 -> "Ergative"
-                         PEG -> "Pegative"
-                         DAT -> "Dative"
-                         SEC -> "Secundative"
-                         NOM -> "Nominative"
-                         NOM2 -> "Nominative"
-                         ABS -> "Absolutive"
-                         ABS2 -> "Absolutive"
-                         ABS3 -> "Absolutive"
-                         ABS4 -> "Absolutive"
-                         INTR -> "Intransitive"
-                         MTR -> "Monotransitive"
-                         DTR -> "Ditransitive"
-                         TR -> "Transitive"
-                         DIR -> "Directive"
-                         DIR2 -> "Directive"
-                         OBJ -> "Objective"
-                         PREP -> "Prepositional"
+  name cas = case cas of UCAS -> "unknown case"
+                         ACC  -> "accusative"
+                         ACC2 -> "accusative"
+                         ACC3 -> "accusative"
+                         ERG  -> "ergative"
+                         ERG2 -> "ergative"
+                         PEG  -> "pegative"
+                         DAT  -> "dative"
+                         SEC  -> "secundative"
+                         NOM  -> "nominative"
+                         NOM2 -> "nominative"
+                         ABS  -> "absolutive"
+                         ABS2 -> "absolutive"
+                         ABS3 -> "absolutive"
+                         ABS4 -> "absolutive"
+                         INTR -> "intransitive"
+                         MTR  -> "monotransitive"
+                         DTR  -> "ditransitive"
+                         TR   -> "transitive"
+                         DIR  -> "directive"
+                         DIR2 -> "directive"
+                         OBJ  -> "objective"
+                         PREP -> "prepositional"
 
 instance GramCat Number where
-  name num = case num of UNUM -> "Unknown"
-                         SG  -> "Singular"
-                         DU  -> "Dual"
-                         TRI -> "Trial"
-                         PA  -> "Paucal"
-                         PL  -> "Plural"
+  name num = case num of UNUM -> "unknown number"
+                         SG   -> "singular"
+                         DU   -> "dual"
+                         TRI  -> "trial"
+                         PA   -> "paucal"
+                         PL   -> "plural"
 
 instance GramCat Definiteness where
-  name def = case def of UDEF -> "Unknown"
-                         DEF  -> "Definite"
-                         INDF -> "Indefinite"
+  name def = case def of UDEF -> "unknown definiteness"
+                         DEF  -> "definite"
+                         INDF -> "indefinite"
 
 instance GramCat Specificity where
-  name spe = case spe of USPE -> "Unknown"
-                         SPEC  -> "Specific"
-                         NSPEC -> "Nonspecific"
+  name spe = case spe of USPE  -> "unknown specificity"
+                         SPEC  -> "specific"
+                         NSPEC -> "nonspecific"
 
 instance GramCat Topic where
-  name top = case top of UTOP -> "Unknown"
-                         TOP  -> "Topic"
-                         NTOP -> "Not topic"
+  name top = case top of UTOP -> "unknown topic"
+                         TOP  -> "topic"
+                         NTOP -> "not topic"
 
 instance GramCat Person where
-  name per = case per of UPER -> "Unknown"
-                         FIRST  -> "First"
-                         FSTINCL -> "First inclusive"
-                         FSTEXCL -> "First exclusive"
-                         SECOND -> "Second"
-                         THIRD  -> "Third"
-                         THRDPROX  -> "Proximate"
-                         THRDOBV  -> "Obviative"
+  name per = case per of UPER     -> "unknown person"
+                         FIRST    -> "first"
+                         FSTINCL  -> "first inclusive"
+                         FSTEXCL  -> "first exclusive"
+                         SECOND   -> "second"
+                         THIRD    -> "third"
+                         THRDPROX -> "proximate"
+                         THRDOBV  -> "obviative"
 
 instance GramCat Honorific where
-  name hon = case hon of UHON  -> "Unknown"
-                         FAM   -> "Informal"
-                         NEU   -> "Neutral"
-                         FORM  -> "Formal"
+  name hon = case hon of UHON  -> "unknown honorific"
+                         FAM   -> "informal"
+                         NEU   -> "neutral"
+                         FORM  -> "formal"
 
 instance GramCat Polarity where
-  name pol = case pol of UPOL -> "Unknown"
-                         AFF -> "Affirmative"
-                         NEG -> "Negative"
+  name pol = case pol of UPOL -> "unknown polarity"
+                         AFF  -> "affirmative"
+                         NEG  -> "negative"
 
 instance GramCat Tense where
-  name ten = case ten of UTEN -> "Unknown"
-                         PST  -> "Simple past"
-                         PRS  -> "Simple present"
-                         FUT  -> "Simple future"
-                         APRS -> "Anterior present"
-                         APST -> "Anterior past"
-                         AFUT -> "Anterior future"
-                         AFUT1 -> "Anterior future"
-                         AFUT2 -> "Anterior future"
-                         AFUT3 -> "Anterior future"
-                         PPRS -> "Posterior present"
-                         PFUT -> "Posterior future"
-                         PPST -> "Posterior past"
-                         PPST1 -> "Posterior past"
-                         PPST2 -> "Posterior past"
-                         PPST3 -> "Posterior past"
-                         PSTPER  -> "Past perfect"
-                         PRSPER  -> "Present perfect"
-                         FUTPER  -> "Future perfect"
+  name ten = case ten of UTEN   -> "unknown tense"
+                         PST    -> "simple past"
+                         PRS    -> "simple present"
+                         FUT    -> "simple future"
+                         APRS   -> "anterior present"
+                         APST   -> "anterior past"
+                         AFUT   -> "anterior future"
+                         AFUT1  -> "anterior future"
+                         AFUT2  -> "anterior future"
+                         AFUT3  -> "anterior future"
+                         PPRS   -> "posterior present"
+                         PFUT   -> "posterior future"
+                         PPST   -> "posterior past"
+                         PPST1  -> "posterior past"
+                         PPST2  -> "posterior past"
+                         PPST3  -> "posterior past"
+                         PSTPER -> "past perfect"
+                         PRSPER -> "present perfect"
+                         FUTPER -> "future perfect"
 
 instance GramCat Aspect where
-  name asp = case asp of UASP -> "Unknown"
-                         NNPROG -> "Not progressive"
-                         PFV  -> "Perfective"
-                         IPFV -> "Imperfective"
-                         HAB -> "Habitual"
-                         CONT -> "Continuous"
-                         NPROG -> "Non-progressive"
-                         PROG -> "Progressive"
+  name asp = case asp of UASP   -> "unknown aspect"
+                         NNPROG -> "not progressive"
+                         PFV    -> "perfective"
+                         IPFV   -> "imperfective"
+                         HAB    -> "habitual"
+                         CONT   -> "continuous"
+                         NPROG  -> "non-progressive"
+                         PROG   -> "progressive"
 
 
 instance GramCat Mood where
-  name moo = case moo of UMOO -> "Unknown"
-                         IND  -> "Indicative"
-                         IRR  -> "Irrealis"
-                         DEO  -> "Deontic"
-                         IMP  -> "Imperative"
-                         JUS  -> "Jussive"
-                         OPT  -> "Optative"
-                         EPIS -> "Epistemic"
-                         SBJV -> "Subjunctive"
-                         POT  -> "Potential"
-                         COND -> "Conditional"
+  name moo = case moo of UMOO -> "unknown mood"
+                         IND  -> "indicative"
+                         IRR  -> "irrealis"
+                         DEO  -> "deontic"
+                         IMP  -> "imperative"
+                         JUS  -> "jussive"
+                         OPT  -> "optative"
+                         EPIS -> "epistemic"
+                         SBJV -> "subjunctive"
+                         POT  -> "potential"
+                         COND -> "conditional"
 
 instance GramCat Voice where
-  name voi = case voi of UVOI -> "Unknown"
-                         ACTIVE  -> "Active"
-                         MIDDLE  -> "Middle"
-                         PASSIVE -> "Passive"
+  name voi = case voi of UVOI    -> "unknown voice"
+                         ACTIVE  -> "active"
+                         MIDDLE  -> "middle"
+                         PASSIVE -> "passive"
 
 instance GramCat Evidentiality where
-  name evi = case evi of UEVI  -> "Unknown"
-                         EXP   -> "Witness"
-                         VIS   -> "Visual"
-                         NVIS  -> "Non-visual"
-                         AUD   -> "Auditory"
-                         INFER -> "Inferential"
-                         REP   -> "Reportative"
-                         HSY   -> "Hearsay"
-                         QUO   -> "Quotative"
-                         ASS   -> "Assumed"
+  name evi = case evi of UEVI  -> "unknown evidentiality"
+                         EXP   -> "witness"
+                         VIS   -> "visual"
+                         NVIS  -> "non-visual"
+                         AUD   -> "auditory"
+                         INFER -> "inferential"
+                         REP   -> "reportative"
+                         HSY   -> "hearsay"
+                         QUO   -> "quotative"
+                         ASS   -> "assumed"
 
 instance GramCat Transitivity where
-  name tra = case tra of UTRA    -> "Unknown"
-                         NTRANS  -> "Intransitive"
-                         TRANS   -> "Transitive"
-                         MTRANS  -> "Monotransitive"
-                         DITRANS -> "Ditransitive"
+  name tra = case tra of UTRA    -> "unknown transitivity"
+                         NTRANS  -> "intransitive"
+                         TRANS   -> "transitive"
+                         MTRANS  -> "monotransitive"
+                         DITRANS -> "ditransitive"
 
 instance GramCat Volition where
-  name vol = case vol of UVOL -> "Unknown"
-                         VOL  -> "Intended"
-                         NVOL -> "Unintended"
+  name vol = case vol of UVOL -> "unknown volition"
+                         VOL  -> "intended"
+                         NVOL -> "unintended"

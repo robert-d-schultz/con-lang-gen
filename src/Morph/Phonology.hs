@@ -33,16 +33,15 @@ executeRuleOnLanguage rule lang = (langN, rootChanges + inflChanges) where
   lemmaMorphs = getLemmaMorphemes lang
   rootMorphs = getRootMorphemes lang
 
-  (inflMorphsN, inflChanges) = second sum $ unzip $ map (\(MorphemeS m y) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] y)) inflMorphs :: ([Morpheme], Int)
-  (lemmaMorphsN, lemmaChanges) = second sum $ unzip $ map (\(MorphemeS m y) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] y)) lemmaMorphs :: ([Morpheme], Int)
-  (rootMorphsN, rootChanges) = second sum $ unzip $ map (\(MorphemeS m y) -> first (MorphemeS m) (executeRuleOnSyllWord 0 rule [] y)) rootMorphs :: ([Morpheme], Int)
-
+  (inflMorphsN, inflChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) inflMorphs :: ([Morpheme], Int)
+  (lemmaMorphsN, lemmaChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) lemmaMorphs :: ([Morpheme], Int)
+  (rootMorphsN, rootChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) rootMorphs :: ([Morpheme], Int)
 
   -- Take a new survey of which phonemes exist in the lexicon
   -- Update inventories and maps
-  inflPhonemes = concatMap syllToPhonemes (concatMap (\(MorphemeS _ y) -> y) inflMorphsN)
-  lemmaPhonemes = concatMap syllToPhonemes (concatMap (\(MorphemeS _ y) -> y) lemmaMorphsN)
-  rootPhonemes = concatMap syllToPhonemes (concatMap (\(MorphemeS _ y) -> y) rootMorphsN)
+  inflPhonemes = concatMap morphToPhonemes inflMorphsN
+  lemmaPhonemes = concatMap morphToPhonemes lemmaMorphsN
+  rootPhonemes = concatMap morphToPhonemes rootMorphsN
   allPhonemes = nub $ inflPhonemes ++ lemmaPhonemes ++ rootPhonemes
   cInvN = filter isConsonant allPhonemes
   vInvN = filter isVowel allPhonemes
@@ -50,9 +49,7 @@ executeRuleOnLanguage rule lang = (langN, rootChanges + inflChanges) where
   vMapN = updateVMap vInvN
 
   -- Need to update valid CC lists
-
   -- Need to use rescueSyllables
-
   langN = lang{getCMap = cMapN, getCInv = cInvN, getVMap = vMapN, getVInv = vInvN, getInflMorphemes = inflMorphsN, getLemmaMorphemes = lemmaMorphsN, getRootMorphemes = rootMorphsN, getRules = rule : getRules lang}
 
 -- Creates a new vMap from a given vowel inventory
@@ -70,6 +67,11 @@ updateCMap cInv = (ps, ms, hs, as) where
   ms = nub (map getManner cInv)
   hs = nub (map getVoice cInv)
   as = nub (map getAirstream cInv)
+
+-- Applies rule to a morpheme
+executeRuleOnMorpheme :: Rule -> Morpheme -> (Morpheme, Int)
+executeRuleOnMorpheme rule (MorphemeS m t y) = first (MorphemeS m t) (executeRuleOnSyllWord 0 rule [] y)
+executeRuleOnMorpheme rule (SemiticRoot m t y) = (SemiticRoot m t y, 0) --simple rules should probably execute
 
 -- Applies a rule to each phoneme in multiple syllables
 executeRuleOnSyllWord :: Int -> Rule -> [Syllable] -> [Syllable] -> ([Syllable], Int)
@@ -90,8 +92,14 @@ executeRuleOnSyllable rule@Rule{} (Syllable onset nuc coda tone stress) (prev, n
   prevP = syllToPhonemes <$> prev
   nextP = syllToPhonemes <$> next
 
+
+morphToPhonemes :: Morpheme -> [Phoneme]
+morphToPhonemes (MorphemeS _ _ y) = nub $ concatMap syllToPhonemes y
+morphToPhonemes (MorphemeP _ _ y) = nub y
+morphToPhonemes (SemiticRoot _ _ y) = nub $ concat y
+
 syllToPhonemes :: Syllable -> [Phoneme]
-syllToPhonemes (Syllable o n c _ _) = o ++ [n] ++ c
+syllToPhonemes (Syllable o n c _ _) = nub $ o ++ [n] ++ c
 
 executeRuleOnOnset :: Int -> Rule -> [Phoneme] -> [Phoneme] -> (Maybe [Phoneme], Phoneme) -> ([Phoneme], Int)
 executeRuleOnOnset _ NoChange _ xs _ = (xs, 0)

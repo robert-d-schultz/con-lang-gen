@@ -85,12 +85,12 @@ impCoarticulated (Consonant (COARTICULATED p1 p2) m h a)
 -- Calculates an approximate similarity between two phonemes
 -- Max of ~30
 phonemeDistance :: Phoneme -> Phoneme -> Int
---distances bewteen two vowels (somewhat manhatten distance)
+--distances bewteen two vowels (manhattan distance, sorta)
 phonemeDistance (Vowel h1 b1 r1 l1) (Vowel h2 b2 r2 l2) = 2 * abs (fromEnum h1 - fromEnum h2)
                                                             + 2 * abs (fromEnum b1 - fromEnum b2)
                                                             + 5 * abs (fromEnum r1 - fromEnum r2)
                                                             + 3 * abs (fromEnum l1 - fromEnum l2)
--- Distances between two consonants (somewhat manhatten distance)
+-- Distances between two consonants (manhattan distance, sorta)
 phonemeDistance (Consonant p1 m1 h1 a1) (Consonant p2 m2 h2 a2) = 2 * placeDistance p1 p2
                                                           + 2 * mannerDistance m1 m2
                                                           + 1 * phonationDistance h1 h2

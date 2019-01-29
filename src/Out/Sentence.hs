@@ -64,28 +64,31 @@ glossLeaves inflMorphs leaves = out where
   (others, inflLeaves)  = break leafIsInfl leaves
   infls                 = map leafInfl inflLeaves
 
-  (partMorphs, prefMorphs, suffMorphs) = getReleventInflMorphs inflMorphs inflLeaves
+  (partMorphs, prefMorphs, suffMorphs, transMorphs) = getReleventInflMorphs inflMorphs inflLeaves
   parts = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) partMorphs
   prefs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) prefMorphs
   suffs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) suffMorphs
+  transs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) transMorphs
   partsOut = map (glossCombo . getAllExpress . getMeaning) parts
   prefsOut = map (glossCombo . getAllExpress . getMeaning) prefs
   suffsOut = map (glossCombo . getAllExpress . getMeaning) suffs
+  transsOut = map (glossCombo . getAllExpress . getMeaning) transs
 
   out
     | null others = unwords partsOut -- not sure why it does this
     | null inflLeaves = concatMap translateLeaf leaves
-    | otherwise   = intercalate "-" prefsOut ++ (if null prefs then "" else "-") ++ unwords (map translateLeafWithDo others) ++ (if null suffs then "" else "-") ++ intercalate "-" suffsOut
+    | otherwise   = intercalate "-" prefsOut ++ (if null prefs then "" else "-") ++ unwords (map translateLeafWithDo others) ++ (if null transs then "" else "\\") ++ intercalate "-" transsOut ++ (if null suffs then "" else "-") ++ intercalate "-" suffsOut
 
 -- Get the relevent inflection morphemes from the "master" list
 -- Also sorts them by type, particle, prefix, suffix
-getReleventInflMorphs :: [Morpheme] -> [Leaf] -> ([Morpheme], [Morpheme], [Morpheme])
-getReleventInflMorphs _ []  = ([],[],[])
-getReleventInflMorphs inflMorphs inflLeaves = (partMorphs, prefMorphs, suffMorphs) where
+getReleventInflMorphs :: [Morpheme] -> [Leaf] -> ([Morpheme], [Morpheme], [Morpheme], [Morpheme])
+getReleventInflMorphs _ []  = ([],[],[],[])
+getReleventInflMorphs inflMorphs inflLeaves = (partMorphs, prefMorphs, suffMorphs, transMorphs) where
   lc = leafLC $ unsafeHead inflLeaves
-  partMorphs = filter ((\case InflMeaning{getLC = lc, getInflType = Particle} -> True; _ -> False) . getMeaning) inflMorphs
-  prefMorphs  = filter ((\case InflMeaning{getLC = lc, getInflType = Prefix} -> True; _ -> False) . getMeaning) inflMorphs
-  suffMorphs = filter ((\case InflMeaning{getLC = lc, getInflType = Suffix} -> True; _ -> False) . getMeaning) inflMorphs
+  partMorphs = filter (\m -> getMorphType m == Particle && getLC (getMeaning m) == lc) inflMorphs
+  prefMorphs  = filter (\m -> getMorphType m == Prefix && getLC (getMeaning m) == lc) inflMorphs
+  suffMorphs = filter (\m -> getMorphType m == Suffix && getLC (getMeaning m) == lc) inflMorphs
+  transMorphs = filter (\m -> getMorphType m == Transfix && getLC (getMeaning m) == lc) inflMorphs
 
 glossCombo :: AllExpress -> Text
 glossCombo (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = intercalate "." (vol2 :: [Text]) where
@@ -113,14 +116,15 @@ transcribeLeaves lang rootMorphs inflMorphs leaves = out where
   (others, inflLeaves)  = break leafIsInfl leaves
   infls                 = map leafInfl inflLeaves
 
-  (partMorphs, prefMorphs, suffMorphs) = getReleventInflMorphs inflMorphs inflLeaves
+  (partMorphs, prefMorphs, suffMorphs, transMorphs) = getReleventInflMorphs inflMorphs inflLeaves
   parts = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) partMorphs
   prefs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) prefMorphs
   suffs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) suffMorphs
+  transs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) transMorphs
 
-  partOut = map (writeWordIPA lang . Word . (:[])) parts
+  partOut = map (writeWordIPA lang) parts
 
-  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap (writeMorphemeIPA lang) suffs ++ "<UNK>" ++ concatMap (writeMorphemeIPA lang) prefs) (writeWordIPA lang <$> (Word . (++ suffs) . (prefs ++) . (:[]) <$> find (\y -> Meaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
+  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap (writeMorphemeIPA lang) suffs ++ "<UNK>" ++ concatMap (writeMorphemeIPA lang) prefs) (writeWordIPA lang <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
                                    (LeafNull _) -> ""
                                    _ -> ""
                                    ) others
@@ -173,14 +177,15 @@ romanizeInfl rootMorphs inflMorphs leaves = out where
   (others, inflLeaves)  = break leafIsInfl leaves
   infls                 = map leafInfl inflLeaves
 
-  (partMorphs, prefMorphs, suffMorphs) = getReleventInflMorphs inflMorphs inflLeaves
+  (partMorphs, prefMorphs, suffMorphs, transMorphs) = getReleventInflMorphs inflMorphs inflLeaves
   parts = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) partMorphs
   prefs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) prefMorphs
   suffs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) suffMorphs
+  transs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) transMorphs
 
-  partOut = map (romanizeWord . Word . (:[])) parts
+  partOut = map romanizeWord parts
 
-  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap romanizeMorpheme suffs ++ "<UNK>" ++ concatMap romanizeMorpheme prefs) (romanizeWord <$> (Word . (++ suffs) . (prefs ++) . (:[]) <$> find (\y -> Meaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
+  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap romanizeWord suffs ++ "<UNK>" ++ concatMap romanizeWord prefs) (romanizeWord <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
                                    (LeafNull _) -> ""
                                    _ -> ""
                                    ) others
@@ -193,7 +198,7 @@ romanizeInfl rootMorphs inflMorphs leaves = out where
 
 romanizeLeaf :: [Morpheme] -> Leaf -> Text
 romanizeLeaf _ LeafNull{} = ""
-romanizeLeaf rootMorphs (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeMorpheme <$> find (\x -> Meaning lc str == getMeaning x) rootMorphs)
+romanizeLeaf rootMorphs (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeWord <$> find (\x -> Meaning lc str == getMeaning x) rootMorphs)
 romanizeLeaf _ _ = "ERROR"
 
 

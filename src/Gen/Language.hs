@@ -60,7 +60,7 @@ makeLanguage idata mData = do
   maxCoda <- uniform 0 6
   numCodaCCs <- uniform 0 5
   codaCCs <- makeCodas numCodaCCs 0 [] onsets inventoryC sonHier (msd, maxCoda)
-  let codas = ordNub $ [] : codaCCs ++ map (:[]) inventoryC  -- makes sure "no coda" is always allowed
+  let codas = ordNub $ [] : codaCCs  -- makes sure "no coda" is always allowed
 
   -- inflection / grammatical categories
   (inflSys, numPerLexCat) <- makeInflectionMap idata
@@ -70,7 +70,7 @@ makeLanguage idata mData = do
   lemmaMorphs <- concat <$> mapM (pickLemmaMorphemes inflSys inflMorphs) [Verb .. Pron]
 
   -- Root morphemes
-  rootMorphs <- makeRootDictionary mData onsets nuclei codas tones (1, 4)
+  rootMorphs <- makeRootDictionary mData onsets nuclei codas tones (1, 4) numPerLexCat
 
   -- Grammar
   grammar <- makeGrammar
@@ -86,7 +86,7 @@ makeLanguage idata mData = do
   (aOut, sOut, lOut) <- makeCharacters (a, s, l)
 
   -- Find out what was assigned to "!!!LANGUAGE!!!" and romanize
-  let langName = fromMaybe "name not found" (romanizeMorpheme <$> find (\x -> getMeaning x == Meaning Noun "!!!LANGUAGE!!!") rootMorphs)
+  let langName = fromMaybe "name not found" (romanizeWord <$> find (\x -> getMeaning x == Meaning Noun "!!!LANGUAGE!!!") rootMorphs)
 
   let lang = Language langName ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys inflMorphs lemmaMorphs rootMorphs grammar (aOut, sOut, lOut) [NoChange]
 

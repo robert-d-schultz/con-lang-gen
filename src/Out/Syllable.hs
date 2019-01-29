@@ -1,14 +1,16 @@
 module Out.Syllable
 ( syllabifyWord
-, syllabifyMorpheme
 ) where
 
 import ClassyPrelude hiding (Word, maximumBy)
 
 import Data.List (findIndices, findIndex)
 
+import HelperFunctions
+
 import Data.Phoneme
 import Data.Word
+import Data.Inflection
 import Data.Language
 
 -- Word's can be made up of both MorphemeS and MorphemeP's
@@ -19,16 +21,15 @@ import Data.Language
 -- Syllabification
 -- Given a word and sonority hierarchy, syllabify the word
 syllabifyWord :: Language -> Word -> Maybe [Syllable]
-syllabifyWord lang (Word ms) = sylls where
-  sylls = concatMap (syllabifyMorpheme lang) ms
-
--- Used for inflection tables, I think
--- This should be more lenient because the morpheme would normally be attached to a root
-syllabifyMorpheme :: Language -> Morpheme -> Maybe [Syllable]
-syllabifyMorpheme lang (MorphemeS _ sylls) = Just sylls
-syllabifyMorpheme lang (MorphemeP _ ps) = sylls where
+syllabifyWord lang (Word m (SemiticRoot _ Root ps1) (SemiticRoot _ Transfix ps2)) = syllabifyWord lang (MorphemeP m Root (concat $ shuffleLists ps1 ps2))
+syllabifyWord lang (Word _ (SemiticRoot _ Root _) _) = Nothing
+syllabifyWord lang (Word _ _ (SemiticRoot _ Transfix _)) = Nothing
+syllabifyWord lang (Word _ leftM rightM) = syllabifyWord lang leftM ++ syllabifyWord lang rightM
+syllabifyWord lang (MorphemeS _ _ sylls) = Just sylls
+syllabifyWord lang (MorphemeP _ _ ps) = sylls where
   groups = breakPhonemes lang ps []
   sylls = map (makeSyllable lang) <$> groups
+syllabifyWord lang SemiticRoot{} = Nothing
 
 -- Given a group of phonemes (and a tone?), make a proper syllable structure
 makeSyllable :: Language -> [Phoneme] -> Syllable

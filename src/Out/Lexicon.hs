@@ -6,6 +6,7 @@ module Out.Lexicon
 , writeSyllablesIPA
 , writeSyllableIPA
 , writeLC
+, applyMorpheme
 ) where
 
 import ClassyPrelude hiding (Word)
@@ -22,30 +23,72 @@ import Out.IPA
 import Out.Grapheme
 
 -- Write list of roots to string using a lemma
-writeDictionary :: Language -> [(Phoneme, Text)] -> [Morpheme] -> LemmaMorphemes -> Text
-writeDictionary lang ndict roots lemmas = out where
-  ws = map (applyLemma lemmas) roots
-  sylleds = map (fromMaybe [] . syllabifyWord lang) ws
-  meanings = map getMeaning roots
+writeDictionary :: Language -> [(Phoneme, Text)] -> [Morpheme] -> [Morpheme] -> [Morpheme] -> Text
+writeDictionary lang ndict rootMorphs lemmaMorphs inflMorphs = out where
+  ws = map (applyLemma lemmaMorphs) rootMorphs
+  particles = filter (\x -> Particle == getMorphType x) inflMorphs
+  wsp = particles
+  ws_ = ws ++ wsp
+  sylleds = map (fromMaybe [] . syllabifyWord lang) ws_
+  meanings = trace (show sylleds) (map getMeaning (rootMorphs ++ particles))
   out = "\n" ++ intercalate "\n" (map (writeDictionaryEntry lang ndict) (reduceHomophones (zip sylleds meanings)))
 
-applyLemma :: LemmaMorphemes -> Morpheme -> Word
-applyLemma lemmaMorphs root = Word (prefixes ++ [root] ++ suffixes) where
+applyLemma :: [Morpheme] -> Morpheme -> Word
+applyLemma lemmaMorphs root = foldl' applyMorpheme root (transfixes ++ suffixes ++ prefixes) where
   lemmaMorphs_ = filter (\x -> (getLC.getMeaning) root == (getLC.getMeaning) x) lemmaMorphs
-  prefixes = filter ((\case InflMeaning _ Prefix _ -> True; _ -> False) . getMeaning) lemmaMorphs_
-  suffixes = filter ((\case InflMeaning _ Suffix _ -> True; _ -> False) . getMeaning) lemmaMorphs_
-  rest = filter ((\case InflMeaning _ Prefix _ -> False; InflMeaning _ Suffix _-> False; _ -> True) . getMeaning) lemmaMorphs
+  prefixes = filter ((\case Prefix -> True; _ -> False) . getMorphType) lemmaMorphs_
+  suffixes = filter ((\case Suffix -> True; _ -> False) . getMorphType) lemmaMorphs_
+  transfixes = filter ((\case Transfix -> True; _ -> False) . getMorphType) lemmaMorphs_
+
+applyMorpheme :: Word -> Morpheme -> Word
+applyMorpheme word morpheme
+  | getMorphType morpheme == Prefix = Word (getMeaning word) morpheme word
+  | getMorphType morpheme == Suffix = Word (getMeaning word) word morpheme
+  | otherwise = Word (getMeaning word) word morpheme
 
 reduceHomophones :: [([Syllable], Meaning)] -> [([Syllable], [Meaning])]
 reduceHomophones roots = map (first (fromMaybe [] . listToMaybe) . unzip) (groupWith fst (sortWith fst roots))
 
 
 writeDictionaryEntry :: Language -> [(Phoneme, Text)] -> ([Syllable], [Meaning]) -> Text
-writeDictionaryEntry lang ndict (sylls, meanings) = "<br>\n"
-                                          --  ++ writeMorphemeNative morph ndict
-                                            ++ " <i>" ++ concatMap romanizeSyllable sylls ++ "</i>"
+writeDictionaryEntry lang ndict (sylls, meanings) = "<br>\n<br>\n"
+                                            -- ++ writeMorphemeNative morph ndict ++ " "
+                                            ++ "<i>" ++ concatMap romanizeSyllable sylls ++ "</i>"
                                             ++ " (" ++ writeSyllablesIPA sylls ++ ")"
-                                            ++ concatMap (\(Meaning lc str) -> "\n<br>\t" ++ writeLC lc ++ " " ++ str) meanings
+                                            ++ concatMap (\x -> "\n<br>\n\t&emsp;" ++ writeMeaning x) meanings
+writeMeaning :: Meaning -> Text
+writeMeaning (Meaning lc str) = writeLC lc ++ " " ++ str
+writeMeaning (InflMeaning lc allExpress) = writeAllExpress allExpress ++ " particle that inflects " ++ tshow lc ++ "s"
+
+writeAllExpress :: AllExpress -> Text
+writeAllExpress (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = out where
+  filt = filter (not.null) a
+  out = case filt of [x]   -> x
+                     [x,y] -> x ++ ", " ++ y
+                     _     -> fromMaybe "" (do
+                                              i <- initMay filt
+                                              l <- lastMay filt
+                                              return $ intercalate ", " i ++ ", " ++ l
+                                           )
+  a = [ tshow gen
+      , tshow ani
+      , tshow cas
+      , tshow num
+      , tshow def
+      , tshow spe
+      , tshow top
+      , tshow per
+      , tshow hon
+      , tshow pol
+      , tshow ten
+      , tshow asp
+      , tshow moo
+      , tshow voi
+      , tshow evi
+      , tshow tra
+      , tshow vol
+      ]
+
 
 writeLC :: LexCat -> Text
 writeLC lc
@@ -65,11 +108,12 @@ writeWordIPA lang word = fromMaybe "!!Word doesn't syllabize!!" out where
 
 -- write Morpheme to string (used in exponent table too)
 writeMorphemeIPA :: Language -> Morpheme -> Text
-writeMorphemeIPA lang (MorphemeS _ sylls) = "/" ++ writeSyllablesIPA sylls ++ "/"
-writeMorphemeIPA lang m@(MorphemeP _ ps) = fromMaybe ("!!Morpheme doesn't syllabize!! /" ++ concatMap writePhonemeIPA ps ++"/") out where
+writeMorphemeIPA lang (MorphemeS _ _ sylls) = "/" ++ writeSyllablesIPA sylls ++ "/"
+writeMorphemeIPA lang m@(MorphemeP _ _ ps) = fromMaybe ("!!Morpheme doesn't syllabize!! /" ++ concatMap writePhonemeIPA ps ++"/") out where
   out = do
-    sylls <- syllabifyMorpheme lang m
+    sylls <- syllabifyWord lang m
     return $ "/" ++ writeSyllablesIPA sylls ++ "/"
+writeMorphemeIPA lang m@(SemiticRoot _ _ pss) = "/" ++ intercalate "-" (map (concatMap writePhonemeIPA) pss) ++ "/"
 
 -- write Syllables to string
 writeSyllablesIPA :: [Syllable] -> Text

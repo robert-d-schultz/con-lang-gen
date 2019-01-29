@@ -12,7 +12,7 @@ import Data.Inflection
 
 --
 writeMorphemeNative :: Morpheme -> [(Phoneme, Text)] -> Text
-writeMorphemeNative (MorphemeP _ ps) dict = concatMap (\x -> fromMaybe "<!!MissingChar!!>" (lookup x dict)) ps
+writeMorphemeNative (MorphemeP _ _ ps) dict = concatMap (\x -> fromMaybe "<!!MissingChar!!>" (lookup x dict)) ps
 
 
 -- Grapheme

@@ -1,33 +1,31 @@
 module Out.Roman
 ( romanizeWord
-, romanizeMorpheme
 , romanizeSyllable
 , romanizePhoneme
 ) where
 
 import ClassyPrelude hiding (Word)
 
+import HelperFunctions
+
 import Data.Phoneme
 import Data.Word
+import Data.Inflection
 
 import Out.IPA
 
 romanizeWord :: Word -> Text
-romanizeWord (Word morphemes) = concatMap romanizeMorpheme morphemes
-
-romanizeMorpheme :: Morpheme -> Text
-romanizeMorpheme (MorphemeS _ syllables) = concatMap romanizeSyllable syllables
-romanizeMorpheme (MorphemeP _ phonemes) = romanizePhonemes phonemes
+romanizeWord (Word _ leftM@(SemiticRoot _ Root ps1) rightM@(SemiticRoot _ Transfix ps2)) = romanizePhonemes (concat $ shuffleLists ps1 ps2)
+romanizeWord (Word _ leftM rightM) = romanizeWord leftM ++ romanizeWord rightM
+romanizeWord (MorphemeS _ _ syllables) = concatMap romanizeSyllable syllables
+romanizeWord (MorphemeP _ _ phonemes) = romanizePhonemes phonemes
+romanizeWord (SemiticRoot _ _ phonemess) = intercalate "-" (map romanizePhonemes phonemess)
 
 romanizeSyllable :: Syllable -> Text
 romanizeSyllable (Syllable onset nucleus coda tone _) = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeToneDiacritic tone ++ romanizePhonemes coda
 
 romanizePhonemes :: [Phoneme] -> Text
 romanizePhonemes ps = intercalate "\'" $ map (concatMap romanizePhoneme) $ groupBy (\x y -> not (isVowel x && isVowel y)) ps
-
-isVowel :: Phoneme -> Bool
-isVowel Vowel{} = True
-isVowel _ = False
 
 -- these rules suck, need diacritics and a pool to pull from as needed
 romanizePhoneme :: Phoneme -> Text
