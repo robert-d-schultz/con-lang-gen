@@ -23,7 +23,7 @@ morphLanguage parent = do
   grammarN <- morphGrammar (getGrammar parent)
 
   -- Find out what was assigned to "!!!LANGUAGE!!!" and romanize new language name
-  let langNameN = fromMaybe "!!!NAME NOT FOUND!!!" (romanizeWord <$> find (\x -> (getStr.getMeaning) x == "!!!LANGUAGE!!!") (getRootMorphemes langN))
+  let langNameN = fromMaybe "!!!NAME NOT FOUND!!!" (romanizeWord langN <$> find (\x -> (getStr.getMeaning) x == "!!!LANGUAGE!!!") (getRootMorphemes langN))
 
   return $ langN{getName = langNameN, getGrammar=grammarN}
 

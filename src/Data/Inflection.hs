@@ -49,7 +49,7 @@ instance GramCat a => Show (Express a) where
   show (Express x) = unpack $ name x
 
 -- How the inflection manifests
-data MorphType = Root | Particle | Prefix | Suffix | Transfix deriving (Eq, Read)
+data MorphType = Root | Particle | Prefix | Suffix | Transfix | CTransfix deriving (Eq, Read)
 
 instance Show MorphType where
   show inflType = case inflType of Root     -> "root"
@@ -57,6 +57,7 @@ instance Show MorphType where
                                    Prefix   -> "prefix"
                                    Suffix   -> "suffix"
                                    Transfix -> "transfix"
+                                   CTransfix-> "c transfix"
 
 -- Lexical categories
 data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Pron

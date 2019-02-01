@@ -1,101 +1,101 @@
-[ "agree"
-, "appear"
-, "ask"
-, "be"
-, "become"
-, "begin"
-, "believe"
-, "break"
-, "bring"
-, "build"
-, "buy"
-, "call"
-, "carry"
-, "catch"
-, "change"
-, "choose"
-, "come"
-, "consider"
-, "continue"
-, "cover"
-, "create"
-, "cut"
-, "decide"
-, "develop"
-, "die"
-, "do"
-, "draw"
-, "eat"
-, "explain"
-, "fall"
-, "feel"
-, "find"
-, "follow"
-, "get"
-, "give"
-, "go"
-, "grow"
-, "happen"
-, "have"
-, "hear"
-, "help"
-, "hit"
-, "hope"
-, "include"
-, "keep"
-, "kill"
-, "know"
-, "lead"
-, "learn"
-, "leave"
-, "let"
-, "live"
-, "lose"
-, "make"
-, "mean"
-, "meet"
-, "move"
-, "need"
-, "offer"
-, "open"
-, "pass"
-, "pay"
-, "play"
-, "produce"
-, "put"
-, "raise"
-, "reach"
-, "read"
-, "receive"
-, "remember"
-, "return"
-, "run"
-, "say"
-, "see"
-, "seem"
-, "sell"
-, "send"
-, "serve"
-, "set"
-, "show"
-, "sit"
-, "speak"
-, "spend"
-, "stand"
-, "stay"
-, "stop"
-, "support"
-, "take"
-, "teach"
-, "tell"
-, "think"
-, "try"
-, "understand"
-, "use"
-, "walk"
-, "want"
-, "watch"
-, "win"
-, "work"
-, "write"
+[ Meaning { getLC = Verb, getStr = "agree" }
+, Meaning { getLC = Verb, getStr = "appear" }
+, Meaning { getLC = Verb, getStr = "ask" }
+, Meaning { getLC = Verb, getStr = "be" }
+, Meaning { getLC = Verb, getStr = "become" }
+, Meaning { getLC = Verb, getStr = "begin" }
+, Meaning { getLC = Verb, getStr = "believe" }
+, Meaning { getLC = Verb, getStr = "break" }
+, Meaning { getLC = Verb, getStr = "bring" }
+, Meaning { getLC = Verb, getStr = "build" }
+, Meaning { getLC = Verb, getStr = "buy" }
+, Meaning { getLC = Verb, getStr = "call" }
+, Meaning { getLC = Verb, getStr = "carry" }
+, Meaning { getLC = Verb, getStr = "catch" }
+, Meaning { getLC = Verb, getStr = "change" }
+, Meaning { getLC = Verb, getStr = "choose" }
+, Meaning { getLC = Verb, getStr = "come" }
+, Meaning { getLC = Verb, getStr = "consider" }
+, Meaning { getLC = Verb, getStr = "continue" }
+, Meaning { getLC = Verb, getStr = "cover" }
+, Meaning { getLC = Verb, getStr = "create" }
+, Meaning { getLC = Verb, getStr = "cut" }
+, Meaning { getLC = Verb, getStr = "decide" }
+, Meaning { getLC = Verb, getStr = "develop" }
+, Meaning { getLC = Verb, getStr = "die" }
+, Meaning { getLC = Verb, getStr = "do" }
+, Meaning { getLC = Verb, getStr = "draw" }
+, Meaning { getLC = Verb, getStr = "eat" }
+, Meaning { getLC = Verb, getStr = "explain" }
+, Meaning { getLC = Verb, getStr = "fall" }
+, Meaning { getLC = Verb, getStr = "feel" }
+, Meaning { getLC = Verb, getStr = "find" }
+, Meaning { getLC = Verb, getStr = "follow" }
+, Meaning { getLC = Verb, getStr = "get" }
+, Meaning { getLC = Verb, getStr = "give" }
+, Meaning { getLC = Verb, getStr = "go" }
+, Meaning { getLC = Verb, getStr = "grow" }
+, Meaning { getLC = Verb, getStr = "happen" }
+, Meaning { getLC = Verb, getStr = "have" }
+, Meaning { getLC = Verb, getStr = "hear" }
+, Meaning { getLC = Verb, getStr = "help" }
+, Meaning { getLC = Verb, getStr = "hit" }
+, Meaning { getLC = Verb, getStr = "hope" }
+, Meaning { getLC = Verb, getStr = "include" }
+, Meaning { getLC = Verb, getStr = "keep" }
+, Meaning { getLC = Verb, getStr = "kill" }
+, Meaning { getLC = Verb, getStr = "know" }
+, Meaning { getLC = Verb, getStr = "lead" }
+, Meaning { getLC = Verb, getStr = "learn" }
+, Meaning { getLC = Verb, getStr = "leave" }
+, Meaning { getLC = Verb, getStr = "let" }
+, Meaning { getLC = Verb, getStr = "live" }
+, Meaning { getLC = Verb, getStr = "lose" }
+, Meaning { getLC = Verb, getStr = "make" }
+, Meaning { getLC = Verb, getStr = "mean" }
+, Meaning { getLC = Verb, getStr = "meet" }
+, Meaning { getLC = Verb, getStr = "move" }
+, Meaning { getLC = Verb, getStr = "need" }
+, Meaning { getLC = Verb, getStr = "offer" }
+, Meaning { getLC = Verb, getStr = "open" }
+, Meaning { getLC = Verb, getStr = "pass" }
+, Meaning { getLC = Verb, getStr = "pay" }
+, Meaning { getLC = Verb, getStr = "play" }
+, Meaning { getLC = Verb, getStr = "produce" }
+, Meaning { getLC = Verb, getStr = "put" }
+, Meaning { getLC = Verb, getStr = "raise" }
+, Meaning { getLC = Verb, getStr = "reach" }
+, Meaning { getLC = Verb, getStr = "read" }
+, Meaning { getLC = Verb, getStr = "receive" }
+, Meaning { getLC = Verb, getStr = "remember" }
+, Meaning { getLC = Verb, getStr = "return" }
+, Meaning { getLC = Verb, getStr = "run" }
+, Meaning { getLC = Verb, getStr = "say" }
+, Meaning { getLC = Verb, getStr = "see" }
+, Meaning { getLC = Verb, getStr = "seem" }
+, Meaning { getLC = Verb, getStr = "sell" }
+, Meaning { getLC = Verb, getStr = "send" }
+, Meaning { getLC = Verb, getStr = "serve" }
+, Meaning { getLC = Verb, getStr = "set" }
+, Meaning { getLC = Verb, getStr = "show" }
+, Meaning { getLC = Verb, getStr = "sit" }
+, Meaning { getLC = Verb, getStr = "speak" }
+, Meaning { getLC = Verb, getStr = "spend" }
+, Meaning { getLC = Verb, getStr = "stand" }
+, Meaning { getLC = Verb, getStr = "stay" }
+, Meaning { getLC = Verb, getStr = "stop" }
+, Meaning { getLC = Verb, getStr = "support" }
+, Meaning { getLC = Verb, getStr = "take" }
+, Meaning { getLC = Verb, getStr = "teach" }
+, Meaning { getLC = Verb, getStr = "tell" }
+, Meaning { getLC = Verb, getStr = "think" }
+, Meaning { getLC = Verb, getStr = "try" }
+, Meaning { getLC = Verb, getStr = "understand" }
+, Meaning { getLC = Verb, getStr = "use" }
+, Meaning { getLC = Verb, getStr = "walk" }
+, Meaning { getLC = Verb, getStr = "want" }
+, Meaning { getLC = Verb, getStr = "watch" }
+, Meaning { getLC = Verb, getStr = "win" }
+, Meaning { getLC = Verb, getStr = "work" }
+, Meaning { getLC = Verb, getStr = "write" }
 ]

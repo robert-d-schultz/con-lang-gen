@@ -12,17 +12,20 @@ import Data.List (elemIndex)
 import Data.Phoneme
 import Data.Inflection
 
--- A Word is one or more Morphemes
--- Words stand alone
--- Clitics attach themselves to previous/next Words
+-- Words have a tree-like structure where leaves are morphemes
 data Word = Word { getMeaning :: Meaning, getLeft :: Morpheme, getRight :: Morpheme }
+          -- Syllabic morpheme (Sequence of syllables)
           | MorphemeS { getMeaning :: Meaning, getMorphType :: MorphType, getSylls :: [Syllable] }
+          -- Phonemic morpheme (Unstructured sequence of phonemes)
           | MorphemeP { getMeaning :: Meaning, getMorphType :: MorphType, getPhonemes :: [Phoneme] }
-          | ConsonantalRoot { getMeaning :: Meaning, getMorphType :: MorphType, getRadicals :: [[Phoneme]] }
-          | PatternMorph { getMeaning :: Meaning, getMorphType :: MorphType, getPatterns :: [Syllable] } deriving (Eq, Show)
-
-          -- | Proclitic AllExpress [Morpheme]
-          -- | Enclitic AllExpress [Morpheme] deriving (Eq, Show)
+          -- Consonantal morpheme (Disconnected sequences of consonants, ie. Semitic root)
+          | MorphemeC { getMeaning :: Meaning, getMorphType :: MorphType, getRadicals :: [[Phoneme]] }
+          -- Vocallic morpheme (Disconnected sequences of (typically) vowels, ie. Patterns/transfixes)
+          | MorphemeV { getMeaning :: Meaning, getMorphType :: MorphType, getPatterns :: [Syllable] } deriving (Eq, Show)
+-- Clitics attach themselves to previous/next Words
+-- They should probably be represented as a MorphType
+       -- | Proclitic Meaning [Syllable]
+       -- | Enclitic Meaning [Syllable] deriving (Eq, Show)
 
 -- Morphemes can be either syllabized or unsyllablized
 -- Need syllabized Morphemes to carry tone and stress

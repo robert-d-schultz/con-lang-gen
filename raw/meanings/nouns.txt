@@ -1,602 +1,602 @@
-[ "!!!LANGUAGE!!!"
-, "account"
-, "act"
-, "addition"
-, "adjustment"
-, "advertisement"
-, "agreement"
-, "air"
-, "amount"
-, "amusement"
-, "angle"
-, "animal"
-, "answer"
-, "ant"
-, "apparatus"
-, "apple"
-, "approval"
-, "arch"
-, "argument"
-, "arm"
-, "army"
-, "art"
-, "attack"
-, "attempt"
-, "attention"
-, "attraction"
-, "authority"
-, "baby"
-, "back"
-, "bag"
-, "balance"
-, "ball"
-, "band"
-, "base"
-, "basin"
-, "basket"
-, "bath"
-, "bed"
-, "bee"
-, "behavior"
-, "belief"
-, "bell"
-, "berry"
-, "bird"
-, "birth"
-, "bit"
-, "bite"
-, "blade"
-, "blood"
-, "blow"
-, "board"
-, "boat"
-, "body"
-, "bone"
-, "book"
-, "boot"
-, "bottle"
-, "box"
-, "boy"
-, "brain"
-, "brake"
-, "branch"
-, "brass"
-, "bread"
-, "breath"
-, "brick"
-, "bridge"
-, "brother"
-, "brush"
-, "bucket"
-, "building"
-, "bulb"
-, "burn"
-, "burst"
-, "business"
-, "butter"
-, "button"
-, "cake"
-, "camera"
-, "canvas"
-, "card"
-, "care"
-, "carriage"
-, "cart"
-, "cat"
-, "cause"
-, "chain"
-, "chalk"
-, "chance"
-, "change"
-, "cheese"
-, "chest"
-, "chin"
-, "church"
-, "circle"
-, "clock"
-, "cloth"
-, "cloud"
-, "coal"
-, "coat"
-, "collar"
-, "color"
-, "comb"
-, "comfort"
-, "committee"
-, "company"
-, "comparison"
-, "competition"
-, "condition"
-, "connection"
-, "control"
-, "cook"
-, "copper"
-, "copy"
-, "cord"
-, "cork"
-, "cotton"
-, "cough"
-, "country"
-, "cover"
-, "cow"
-, "crack"
-, "credit"
-, "crime"
-, "crush"
-, "cry"
-, "cup"
-, "current"
-, "curtain"
-, "curve"
-, "cushion"
-, "damage"
-, "danger"
-, "daughter"
-, "day"
-, "death"
-, "debt"
-, "decision"
-, "degree"
-, "design"
-, "desire"
-, "destruction"
-, "detail"
-, "development"
-, "digestion"
-, "direction"
-, "discovery"
-, "discussion"
-, "disease"
-, "disgust"
-, "distance"
-, "distribution"
-, "division"
-, "dog"
-, "door"
-, "doubt"
-, "drain"
-, "drawer"
-, "dress"
-, "drink"
-, "driving"
-, "drop"
-, "dust"
-, "ear"
-, "earth"
-, "edge"
-, "education"
-, "effect"
-, "egg"
-, "end"
-, "engine"
-, "error"
-, "event"
-, "example"
-, "exchange"
-, "existence"
-, "expansion"
-, "experience"
-, "expert"
-, "eye"
-, "face"
-, "fact"
-, "fall"
-, "family"
-, "farm"
-, "father"
-, "fear"
-, "feather"
-, "feeling"
-, "fiction"
-, "field"
-, "fight"
-, "finger"
-, "fire"
-, "fish"
-, "flag"
-, "flame"
-, "flight"
-, "floor"
-, "flower"
-, "fly"
-, "fold"
-, "food"
-, "foot"
-, "force"
-, "fork"
-, "form"
-, "fowl"
-, "frame"
-, "friend"
-, "front"
-, "fruit"
-, "garden"
-, "girl"
-, "glass"
-, "glove"
-, "goat"
-, "gold"
-, "government"
-, "grain"
-, "grass"
-, "grip"
-, "group"
-, "growth"
-, "guide"
-, "gun"
-, "hair"
-, "hammer"
-, "hand"
-, "harbor"
-, "harmony"
-, "hat"
-, "hate"
-, "head"
-, "hearing"
-, "heart"
-, "heat"
-, "help"
-, "history"
-, "hole"
-, "hook"
-, "hope"
-, "horn"
-, "horse"
-, "hospital"
-, "hour"
-, "house"
-, "humor"
-, "ice"
-, "idea"
-, "impulse"
-, "increase"
-, "industry"
-, "ink"
-, "insect"
-, "instrument"
-, "insurance"
-, "interest"
-, "invention"
-, "iron"
-, "island"
-, "jelly"
-, "jewel"
-, "join"
-, "journey"
-, "judge"
-, "jump"
-, "kettle"
-, "key"
-, "kick"
-, "kiss"
-, "knee"
-, "knife"
-, "knot"
-, "knowledge"
-, "land"
-, "language"
-, "laugh"
-, "law"
-, "lead"
-, "leaf"
-, "learning"
-, "leather"
-, "leg"
-, "letter"
-, "level"
-, "library"
-, "lift"
-, "light"
-, "limit"
-, "line"
-, "linen"
-, "lip"
-, "liquid"
-, "list"
-, "lock"
-, "look"
-, "loss"
-, "love"
-, "machine"
-, "man"
-, "manager"
-, "map"
-, "mark"
-, "market"
-, "mass"
-, "match"
-, "meal"
-, "measure"
-, "meat"
-, "meeting"
-, "memory"
-, "metal"
-, "middle"
-, "milk"
-, "mind"
-, "mine"
-, "minute"
-, "mist"
-, "money"
-, "monkey"
-, "month"
-, "moon"
-, "morning"
-, "mother"
-, "motion"
-, "mountain"
-, "mouth"
-, "move"
-, "muscle"
-, "music"
-, "nail"
-, "name"
-, "nation"
-, "neck"
-, "need"
-, "needle"
-, "nerve"
-, "net"
-, "news"
-, "night"
-, "noise"
-, "nose"
-, "note"
-, "number"
-, "nut"
-, "observation"
-, "offer"
-, "office"
-, "oil"
-, "operation"
-, "opinion"
-, "orange"
-, "order"
-, "organization"
-, "ornament"
-, "oven"
-, "owner"
-, "page"
-, "pain"
-, "paint"
-, "paper"
-, "parcel"
-, "part"
-, "paste"
-, "payment"
-, "peace"
-, "pen"
-, "pencil"
-, "person"
-, "picture"
-, "pig"
-, "pin"
-, "pipe"
-, "place"
-, "plane"
-, "plant"
-, "plate"
-, "play"
-, "pleasure"
-, "plow"
-, "pocket"
-, "point"
-, "poison"
-, "polish"
-, "porter"
-, "position"
-, "pot"
-, "potato"
-, "powder"
-, "power"
-, "price"
-, "print"
-, "prison"
-, "process"
-, "produce"
-, "profit"
-, "property"
-, "prose"
-, "protest"
-, "pull"
-, "pump"
-, "punishment"
-, "purpose"
-, "push"
-, "quality"
-, "question"
-, "rail"
-, "rain"
-, "range"
-, "rat"
-, "rate"
-, "ray"
-, "reaction"
-, "reading"
-, "reason"
-, "receipt"
-, "record"
-, "regret"
-, "relation"
-, "religion"
-, "representative"
-, "request"
-, "respect"
-, "rest"
-, "reward"
-, "rhythm"
-, "rice"
-, "ring"
-, "river"
-, "road"
-, "rod"
-, "roll"
-, "roof"
-, "room"
-, "root"
-, "rub"
-, "rule"
-, "run"
-, "sail"
-, "salt"
-, "sand"
-, "scale"
-, "school"
-, "science"
-, "scissors"
-, "screw"
-, "sea"
-, "seat"
-, "secretary"
-, "seed"
-, "selection"
-, "self"
-, "sense"
-, "servant"
-, "sex"
-, "shade"
-, "shake"
-, "shame"
-, "sheep"
-, "shelf"
-, "ship"
-, "shirt"
-, "shock"
-, "shoe"
-, "side"
-, "sign"
-, "silk"
-, "silver"
-, "sister"
-, "size"
-, "skin"
-, "skirt"
-, "sky"
-, "sleep"
-, "slip"
-, "slope"
-, "smash"
-, "smell"
-, "smile"
-, "smoke"
-, "snake"
-, "sneeze"
-, "snow"
-, "soap"
-, "society"
-, "sock"
-, "son"
-, "song"
-, "sort"
-, "sound"
-, "soup"
-, "space"
-, "spade"
-, "sponge"
-, "spoon"
-, "spring"
-, "square"
-, "stage"
-, "stamp"
-, "star"
-, "start"
-, "statement"
-, "station"
-, "steam"
-, "steel"
-, "stem"
-, "step"
-, "stick"
-, "stitch"
-, "stocking"
-, "stomach"
-, "stone"
-, "stop"
-, "store"
-, "story"
-, "street"
-, "stretch"
-, "structure"
-, "substance"
-, "sugar"
-, "suggestion"
-, "summer"
-, "sun"
-, "support"
-, "surprise"
-, "swim"
-, "system"
-, "table"
-, "tail"
-, "talk"
-, "taste"
-, "tax"
-, "teaching"
-, "tendency"
-, "test"
-, "theory"
-, "thing"
-, "thought"
-, "thread"
-, "throat"
-, "thumb"
-, "thunder"
-, "ticket"
-, "time"
-, "tin"
-, "toe"
-, "tongue"
-, "tooth"
-, "top"
-, "touch"
-, "town"
-, "trade"
-, "train"
-, "transport"
-, "tray"
-, "tree"
-, "trick"
-, "trouble"
-, "trousers"
-, "turn"
-, "twist"
-, "umbrella"
-, "unit"
-, "use"
-, "value"
-, "verse"
-, "vessel"
-, "view"
-, "voice"
-, "walk"
-, "wall"
-, "war"
-, "wash"
-, "waste"
-, "watch"
-, "water"
-, "wave"
-, "wax"
-, "way"
-, "weather"
-, "week"
-, "weight"
-, "wheel"
-, "whip"
-, "whistle"
-, "wind"
-, "window"
-, "wine"
-, "wing"
-, "winter"
-, "wire"
-, "woman"
-, "wood"
-, "wool"
-, "word"
-, "work"
-, "worm"
-, "wound"
-, "writing"
-, "year"
+[ Meaning { getLC = Noun, getStr = "!!!LANGUAGE!!!" }
+, Meaning { getLC = Noun, getStr = "account" }
+, Meaning { getLC = Noun, getStr = "act" }
+, Meaning { getLC = Noun, getStr = "addition" }
+, Meaning { getLC = Noun, getStr = "adjustment" }
+, Meaning { getLC = Noun, getStr = "advertisement" }
+, Meaning { getLC = Noun, getStr = "agreement" }
+, Meaning { getLC = Noun, getStr = "air" }
+, Meaning { getLC = Noun, getStr = "amount" }
+, Meaning { getLC = Noun, getStr = "amusement" }
+, Meaning { getLC = Noun, getStr = "angle" }
+, Meaning { getLC = Noun, getStr = "animal" }
+, Meaning { getLC = Noun, getStr = "answer" }
+, Meaning { getLC = Noun, getStr = "ant" }
+, Meaning { getLC = Noun, getStr = "apparatus" }
+, Meaning { getLC = Noun, getStr = "apple" }
+, Meaning { getLC = Noun, getStr = "approval" }
+, Meaning { getLC = Noun, getStr = "arch" }
+, Meaning { getLC = Noun, getStr = "argument" }
+, Meaning { getLC = Noun, getStr = "arm" }
+, Meaning { getLC = Noun, getStr = "army" }
+, Meaning { getLC = Noun, getStr = "art" }
+, Meaning { getLC = Noun, getStr = "attack" }
+, Meaning { getLC = Noun, getStr = "attempt" }
+, Meaning { getLC = Noun, getStr = "attention" }
+, Meaning { getLC = Noun, getStr = "attraction" }
+, Meaning { getLC = Noun, getStr = "authority" }
+, Meaning { getLC = Noun, getStr = "baby" }
+, Meaning { getLC = Noun, getStr = "back" }
+, Meaning { getLC = Noun, getStr = "bag" }
+, Meaning { getLC = Noun, getStr = "balance" }
+, Meaning { getLC = Noun, getStr = "ball" }
+, Meaning { getLC = Noun, getStr = "band" }
+, Meaning { getLC = Noun, getStr = "base" }
+, Meaning { getLC = Noun, getStr = "basin" }
+, Meaning { getLC = Noun, getStr = "basket" }
+, Meaning { getLC = Noun, getStr = "bath" }
+, Meaning { getLC = Noun, getStr = "bed" }
+, Meaning { getLC = Noun, getStr = "bee" }
+, Meaning { getLC = Noun, getStr = "behavior" }
+, Meaning { getLC = Noun, getStr = "belief" }
+, Meaning { getLC = Noun, getStr = "bell" }
+, Meaning { getLC = Noun, getStr = "berry" }
+, Meaning { getLC = Noun, getStr = "bird" }
+, Meaning { getLC = Noun, getStr = "birth" }
+, Meaning { getLC = Noun, getStr = "bit" }
+, Meaning { getLC = Noun, getStr = "bite" }
+, Meaning { getLC = Noun, getStr = "blade" }
+, Meaning { getLC = Noun, getStr = "blood" }
+, Meaning { getLC = Noun, getStr = "blow" }
+, Meaning { getLC = Noun, getStr = "board" }
+, Meaning { getLC = Noun, getStr = "boat" }
+, Meaning { getLC = Noun, getStr = "body" }
+, Meaning { getLC = Noun, getStr = "bone" }
+, Meaning { getLC = Noun, getStr = "book" }
+, Meaning { getLC = Noun, getStr = "boot" }
+, Meaning { getLC = Noun, getStr = "bottle" }
+, Meaning { getLC = Noun, getStr = "box" }
+, Meaning { getLC = Noun, getStr = "boy" }
+, Meaning { getLC = Noun, getStr = "brain" }
+, Meaning { getLC = Noun, getStr = "brake" }
+, Meaning { getLC = Noun, getStr = "branch" }
+, Meaning { getLC = Noun, getStr = "brass" }
+, Meaning { getLC = Noun, getStr = "bread" }
+, Meaning { getLC = Noun, getStr = "breath" }
+, Meaning { getLC = Noun, getStr = "brick" }
+, Meaning { getLC = Noun, getStr = "bridge" }
+, Meaning { getLC = Noun, getStr = "brother" }
+, Meaning { getLC = Noun, getStr = "brush" }
+, Meaning { getLC = Noun, getStr = "bucket" }
+, Meaning { getLC = Noun, getStr = "building" }
+, Meaning { getLC = Noun, getStr = "bulb" }
+, Meaning { getLC = Noun, getStr = "burn" }
+, Meaning { getLC = Noun, getStr = "burst" }
+, Meaning { getLC = Noun, getStr = "business" }
+, Meaning { getLC = Noun, getStr = "butter" }
+, Meaning { getLC = Noun, getStr = "button" }
+, Meaning { getLC = Noun, getStr = "cake" }
+, Meaning { getLC = Noun, getStr = "camera" }
+, Meaning { getLC = Noun, getStr = "canvas" }
+, Meaning { getLC = Noun, getStr = "card" }
+, Meaning { getLC = Noun, getStr = "care" }
+, Meaning { getLC = Noun, getStr = "carriage" }
+, Meaning { getLC = Noun, getStr = "cart" }
+, Meaning { getLC = Noun, getStr = "cat" }
+, Meaning { getLC = Noun, getStr = "cause" }
+, Meaning { getLC = Noun, getStr = "chain" }
+, Meaning { getLC = Noun, getStr = "chalk" }
+, Meaning { getLC = Noun, getStr = "chance" }
+, Meaning { getLC = Noun, getStr = "change" }
+, Meaning { getLC = Noun, getStr = "cheese" }
+, Meaning { getLC = Noun, getStr = "chest" }
+, Meaning { getLC = Noun, getStr = "chin" }
+, Meaning { getLC = Noun, getStr = "church" }
+, Meaning { getLC = Noun, getStr = "circle" }
+, Meaning { getLC = Noun, getStr = "clock" }
+, Meaning { getLC = Noun, getStr = "cloth" }
+, Meaning { getLC = Noun, getStr = "cloud" }
+, Meaning { getLC = Noun, getStr = "coal" }
+, Meaning { getLC = Noun, getStr = "coat" }
+, Meaning { getLC = Noun, getStr = "collar" }
+, Meaning { getLC = Noun, getStr = "color" }
+, Meaning { getLC = Noun, getStr = "comb" }
+, Meaning { getLC = Noun, getStr = "comfort" }
+, Meaning { getLC = Noun, getStr = "committee" }
+, Meaning { getLC = Noun, getStr = "company" }
+, Meaning { getLC = Noun, getStr = "comparison" }
+, Meaning { getLC = Noun, getStr = "competition" }
+, Meaning { getLC = Noun, getStr = "condition" }
+, Meaning { getLC = Noun, getStr = "connection" }
+, Meaning { getLC = Noun, getStr = "control" }
+, Meaning { getLC = Noun, getStr = "cook" }
+, Meaning { getLC = Noun, getStr = "copper" }
+, Meaning { getLC = Noun, getStr = "copy" }
+, Meaning { getLC = Noun, getStr = "cord" }
+, Meaning { getLC = Noun, getStr = "cork" }
+, Meaning { getLC = Noun, getStr = "cotton" }
+, Meaning { getLC = Noun, getStr = "cough" }
+, Meaning { getLC = Noun, getStr = "country" }
+, Meaning { getLC = Noun, getStr = "cover" }
+, Meaning { getLC = Noun, getStr = "cow" }
+, Meaning { getLC = Noun, getStr = "crack" }
+, Meaning { getLC = Noun, getStr = "credit" }
+, Meaning { getLC = Noun, getStr = "crime" }
+, Meaning { getLC = Noun, getStr = "crush" }
+, Meaning { getLC = Noun, getStr = "cry" }
+, Meaning { getLC = Noun, getStr = "cup" }
+, Meaning { getLC = Noun, getStr = "current" }
+, Meaning { getLC = Noun, getStr = "curtain" }
+, Meaning { getLC = Noun, getStr = "curve" }
+, Meaning { getLC = Noun, getStr = "cushion" }
+, Meaning { getLC = Noun, getStr = "damage" }
+, Meaning { getLC = Noun, getStr = "danger" }
+, Meaning { getLC = Noun, getStr = "daughter" }
+, Meaning { getLC = Noun, getStr = "day" }
+, Meaning { getLC = Noun, getStr = "death" }
+, Meaning { getLC = Noun, getStr = "debt" }
+, Meaning { getLC = Noun, getStr = "decision" }
+, Meaning { getLC = Noun, getStr = "degree" }
+, Meaning { getLC = Noun, getStr = "design" }
+, Meaning { getLC = Noun, getStr = "desire" }
+, Meaning { getLC = Noun, getStr = "destruction" }
+, Meaning { getLC = Noun, getStr = "detail" }
+, Meaning { getLC = Noun, getStr = "development" }
+, Meaning { getLC = Noun, getStr = "digestion" }
+, Meaning { getLC = Noun, getStr = "direction" }
+, Meaning { getLC = Noun, getStr = "discovery" }
+, Meaning { getLC = Noun, getStr = "discussion" }
+, Meaning { getLC = Noun, getStr = "disease" }
+, Meaning { getLC = Noun, getStr = "disgust" }
+, Meaning { getLC = Noun, getStr = "distance" }
+, Meaning { getLC = Noun, getStr = "distribution" }
+, Meaning { getLC = Noun, getStr = "division" }
+, Meaning { getLC = Noun, getStr = "dog" }
+, Meaning { getLC = Noun, getStr = "door" }
+, Meaning { getLC = Noun, getStr = "doubt" }
+, Meaning { getLC = Noun, getStr = "drain" }
+, Meaning { getLC = Noun, getStr = "drawer" }
+, Meaning { getLC = Noun, getStr = "dress" }
+, Meaning { getLC = Noun, getStr = "drink" }
+, Meaning { getLC = Noun, getStr = "driving" }
+, Meaning { getLC = Noun, getStr = "drop" }
+, Meaning { getLC = Noun, getStr = "dust" }
+, Meaning { getLC = Noun, getStr = "ear" }
+, Meaning { getLC = Noun, getStr = "earth" }
+, Meaning { getLC = Noun, getStr = "edge" }
+, Meaning { getLC = Noun, getStr = "education" }
+, Meaning { getLC = Noun, getStr = "effect" }
+, Meaning { getLC = Noun, getStr = "egg" }
+, Meaning { getLC = Noun, getStr = "end" }
+, Meaning { getLC = Noun, getStr = "engine" }
+, Meaning { getLC = Noun, getStr = "error" }
+, Meaning { getLC = Noun, getStr = "event" }
+, Meaning { getLC = Noun, getStr = "example" }
+, Meaning { getLC = Noun, getStr = "exchange" }
+, Meaning { getLC = Noun, getStr = "existence" }
+, Meaning { getLC = Noun, getStr = "expansion" }
+, Meaning { getLC = Noun, getStr = "experience" }
+, Meaning { getLC = Noun, getStr = "expert" }
+, Meaning { getLC = Noun, getStr = "eye" }
+, Meaning { getLC = Noun, getStr = "face" }
+, Meaning { getLC = Noun, getStr = "fact" }
+, Meaning { getLC = Noun, getStr = "fall" }
+, Meaning { getLC = Noun, getStr = "family" }
+, Meaning { getLC = Noun, getStr = "farm" }
+, Meaning { getLC = Noun, getStr = "father" }
+, Meaning { getLC = Noun, getStr = "fear" }
+, Meaning { getLC = Noun, getStr = "feather" }
+, Meaning { getLC = Noun, getStr = "feeling" }
+, Meaning { getLC = Noun, getStr = "fiction" }
+, Meaning { getLC = Noun, getStr = "field" }
+, Meaning { getLC = Noun, getStr = "fight" }
+, Meaning { getLC = Noun, getStr = "finger" }
+, Meaning { getLC = Noun, getStr = "fire" }
+, Meaning { getLC = Noun, getStr = "fish" }
+, Meaning { getLC = Noun, getStr = "flag" }
+, Meaning { getLC = Noun, getStr = "flame" }
+, Meaning { getLC = Noun, getStr = "flight" }
+, Meaning { getLC = Noun, getStr = "floor" }
+, Meaning { getLC = Noun, getStr = "flower" }
+, Meaning { getLC = Noun, getStr = "fly" }
+, Meaning { getLC = Noun, getStr = "fold" }
+, Meaning { getLC = Noun, getStr = "food" }
+, Meaning { getLC = Noun, getStr = "foot" }
+, Meaning { getLC = Noun, getStr = "force" }
+, Meaning { getLC = Noun, getStr = "fork" }
+, Meaning { getLC = Noun, getStr = "form" }
+, Meaning { getLC = Noun, getStr = "fowl" }
+, Meaning { getLC = Noun, getStr = "frame" }
+, Meaning { getLC = Noun, getStr = "friend" }
+, Meaning { getLC = Noun, getStr = "front" }
+, Meaning { getLC = Noun, getStr = "fruit" }
+, Meaning { getLC = Noun, getStr = "garden" }
+, Meaning { getLC = Noun, getStr = "girl" }
+, Meaning { getLC = Noun, getStr = "glass" }
+, Meaning { getLC = Noun, getStr = "glove" }
+, Meaning { getLC = Noun, getStr = "goat" }
+, Meaning { getLC = Noun, getStr = "gold" }
+, Meaning { getLC = Noun, getStr = "government" }
+, Meaning { getLC = Noun, getStr = "grain" }
+, Meaning { getLC = Noun, getStr = "grass" }
+, Meaning { getLC = Noun, getStr = "grip" }
+, Meaning { getLC = Noun, getStr = "group" }
+, Meaning { getLC = Noun, getStr = "growth" }
+, Meaning { getLC = Noun, getStr = "guide" }
+, Meaning { getLC = Noun, getStr = "gun" }
+, Meaning { getLC = Noun, getStr = "hair" }
+, Meaning { getLC = Noun, getStr = "hammer" }
+, Meaning { getLC = Noun, getStr = "hand" }
+, Meaning { getLC = Noun, getStr = "harbor" }
+, Meaning { getLC = Noun, getStr = "harmony" }
+, Meaning { getLC = Noun, getStr = "hat" }
+, Meaning { getLC = Noun, getStr = "hate" }
+, Meaning { getLC = Noun, getStr = "head" }
+, Meaning { getLC = Noun, getStr = "hearing" }
+, Meaning { getLC = Noun, getStr = "heart" }
+, Meaning { getLC = Noun, getStr = "heat" }
+, Meaning { getLC = Noun, getStr = "help" }
+, Meaning { getLC = Noun, getStr = "history" }
+, Meaning { getLC = Noun, getStr = "hole" }
+, Meaning { getLC = Noun, getStr = "hook" }
+, Meaning { getLC = Noun, getStr = "hope" }
+, Meaning { getLC = Noun, getStr = "horn" }
+, Meaning { getLC = Noun, getStr = "horse" }
+, Meaning { getLC = Noun, getStr = "hospital" }
+, Meaning { getLC = Noun, getStr = "hour" }
+, Meaning { getLC = Noun, getStr = "house" }
+, Meaning { getLC = Noun, getStr = "humor" }
+, Meaning { getLC = Noun, getStr = "ice" }
+, Meaning { getLC = Noun, getStr = "idea" }
+, Meaning { getLC = Noun, getStr = "impulse" }
+, Meaning { getLC = Noun, getStr = "increase" }
+, Meaning { getLC = Noun, getStr = "industry" }
+, Meaning { getLC = Noun, getStr = "ink" }
+, Meaning { getLC = Noun, getStr = "insect" }
+, Meaning { getLC = Noun, getStr = "instrument" }
+, Meaning { getLC = Noun, getStr = "insurance" }
+, Meaning { getLC = Noun, getStr = "interest" }
+, Meaning { getLC = Noun, getStr = "invention" }
+, Meaning { getLC = Noun, getStr = "iron" }
+, Meaning { getLC = Noun, getStr = "island" }
+, Meaning { getLC = Noun, getStr = "jelly" }
+, Meaning { getLC = Noun, getStr = "jewel" }
+, Meaning { getLC = Noun, getStr = "join" }
+, Meaning { getLC = Noun, getStr = "journey" }
+, Meaning { getLC = Noun, getStr = "judge" }
+, Meaning { getLC = Noun, getStr = "jump" }
+, Meaning { getLC = Noun, getStr = "kettle" }
+, Meaning { getLC = Noun, getStr = "key" }
+, Meaning { getLC = Noun, getStr = "kick" }
+, Meaning { getLC = Noun, getStr = "kiss" }
+, Meaning { getLC = Noun, getStr = "knee" }
+, Meaning { getLC = Noun, getStr = "knife" }
+, Meaning { getLC = Noun, getStr = "knot" }
+, Meaning { getLC = Noun, getStr = "knowledge" }
+, Meaning { getLC = Noun, getStr = "land" }
+, Meaning { getLC = Noun, getStr = "language" }
+, Meaning { getLC = Noun, getStr = "laugh" }
+, Meaning { getLC = Noun, getStr = "law" }
+, Meaning { getLC = Noun, getStr = "lead" }
+, Meaning { getLC = Noun, getStr = "leaf" }
+, Meaning { getLC = Noun, getStr = "learning" }
+, Meaning { getLC = Noun, getStr = "leather" }
+, Meaning { getLC = Noun, getStr = "leg" }
+, Meaning { getLC = Noun, getStr = "letter" }
+, Meaning { getLC = Noun, getStr = "level" }
+, Meaning { getLC = Noun, getStr = "library" }
+, Meaning { getLC = Noun, getStr = "lift" }
+, Meaning { getLC = Noun, getStr = "light" }
+, Meaning { getLC = Noun, getStr = "limit" }
+, Meaning { getLC = Noun, getStr = "line" }
+, Meaning { getLC = Noun, getStr = "linen" }
+, Meaning { getLC = Noun, getStr = "lip" }
+, Meaning { getLC = Noun, getStr = "liquid" }
+, Meaning { getLC = Noun, getStr = "list" }
+, Meaning { getLC = Noun, getStr = "lock" }
+, Meaning { getLC = Noun, getStr = "look" }
+, Meaning { getLC = Noun, getStr = "loss" }
+, Meaning { getLC = Noun, getStr = "love" }
+, Meaning { getLC = Noun, getStr = "machine" }
+, Meaning { getLC = Noun, getStr = "man" }
+, Meaning { getLC = Noun, getStr = "manager" }
+, Meaning { getLC = Noun, getStr = "map" }
+, Meaning { getLC = Noun, getStr = "mark" }
+, Meaning { getLC = Noun, getStr = "market" }
+, Meaning { getLC = Noun, getStr = "mass" }
+, Meaning { getLC = Noun, getStr = "match" }
+, Meaning { getLC = Noun, getStr = "meal" }
+, Meaning { getLC = Noun, getStr = "measure" }
+, Meaning { getLC = Noun, getStr = "meat" }
+, Meaning { getLC = Noun, getStr = "meeting" }
+, Meaning { getLC = Noun, getStr = "memory" }
+, Meaning { getLC = Noun, getStr = "metal" }
+, Meaning { getLC = Noun, getStr = "middle" }
+, Meaning { getLC = Noun, getStr = "milk" }
+, Meaning { getLC = Noun, getStr = "mind" }
+, Meaning { getLC = Noun, getStr = "mine" }
+, Meaning { getLC = Noun, getStr = "minute" }
+, Meaning { getLC = Noun, getStr = "mist" }
+, Meaning { getLC = Noun, getStr = "money" }
+, Meaning { getLC = Noun, getStr = "monkey" }
+, Meaning { getLC = Noun, getStr = "month" }
+, Meaning { getLC = Noun, getStr = "moon" }
+, Meaning { getLC = Noun, getStr = "morning" }
+, Meaning { getLC = Noun, getStr = "mother" }
+, Meaning { getLC = Noun, getStr = "motion" }
+, Meaning { getLC = Noun, getStr = "mountain" }
+, Meaning { getLC = Noun, getStr = "mouth" }
+, Meaning { getLC = Noun, getStr = "move" }
+, Meaning { getLC = Noun, getStr = "muscle" }
+, Meaning { getLC = Noun, getStr = "music" }
+, Meaning { getLC = Noun, getStr = "nail" }
+, Meaning { getLC = Noun, getStr = "name" }
+, Meaning { getLC = Noun, getStr = "nation" }
+, Meaning { getLC = Noun, getStr = "neck" }
+, Meaning { getLC = Noun, getStr = "need" }
+, Meaning { getLC = Noun, getStr = "needle" }
+, Meaning { getLC = Noun, getStr = "nerve" }
+, Meaning { getLC = Noun, getStr = "net" }
+, Meaning { getLC = Noun, getStr = "news" }
+, Meaning { getLC = Noun, getStr = "night" }
+, Meaning { getLC = Noun, getStr = "noise" }
+, Meaning { getLC = Noun, getStr = "nose" }
+, Meaning { getLC = Noun, getStr = "note" }
+, Meaning { getLC = Noun, getStr = "number" }
+, Meaning { getLC = Noun, getStr = "nut" }
+, Meaning { getLC = Noun, getStr = "observation" }
+, Meaning { getLC = Noun, getStr = "offer" }
+, Meaning { getLC = Noun, getStr = "office" }
+, Meaning { getLC = Noun, getStr = "oil" }
+, Meaning { getLC = Noun, getStr = "operation" }
+, Meaning { getLC = Noun, getStr = "opinion" }
+, Meaning { getLC = Noun, getStr = "orange" }
+, Meaning { getLC = Noun, getStr = "order" }
+, Meaning { getLC = Noun, getStr = "organization" }
+, Meaning { getLC = Noun, getStr = "ornament" }
+, Meaning { getLC = Noun, getStr = "oven" }
+, Meaning { getLC = Noun, getStr = "owner" }
+, Meaning { getLC = Noun, getStr = "page" }
+, Meaning { getLC = Noun, getStr = "pain" }
+, Meaning { getLC = Noun, getStr = "paint" }
+, Meaning { getLC = Noun, getStr = "paper" }
+, Meaning { getLC = Noun, getStr = "parcel" }
+, Meaning { getLC = Noun, getStr = "part" }
+, Meaning { getLC = Noun, getStr = "paste" }
+, Meaning { getLC = Noun, getStr = "payment" }
+, Meaning { getLC = Noun, getStr = "peace" }
+, Meaning { getLC = Noun, getStr = "pen" }
+, Meaning { getLC = Noun, getStr = "pencil" }
+, Meaning { getLC = Noun, getStr = "person" }
+, Meaning { getLC = Noun, getStr = "picture" }
+, Meaning { getLC = Noun, getStr = "pig" }
+, Meaning { getLC = Noun, getStr = "pin" }
+, Meaning { getLC = Noun, getStr = "pipe" }
+, Meaning { getLC = Noun, getStr = "place" }
+, Meaning { getLC = Noun, getStr = "plane" }
+, Meaning { getLC = Noun, getStr = "plant" }
+, Meaning { getLC = Noun, getStr = "plate" }
+, Meaning { getLC = Noun, getStr = "play" }
+, Meaning { getLC = Noun, getStr = "pleasure" }
+, Meaning { getLC = Noun, getStr = "plow" }
+, Meaning { getLC = Noun, getStr = "pocket" }
+, Meaning { getLC = Noun, getStr = "point" }
+, Meaning { getLC = Noun, getStr = "poison" }
+, Meaning { getLC = Noun, getStr = "polish" }
+, Meaning { getLC = Noun, getStr = "porter" }
+, Meaning { getLC = Noun, getStr = "position" }
+, Meaning { getLC = Noun, getStr = "pot" }
+, Meaning { getLC = Noun, getStr = "potato" }
+, Meaning { getLC = Noun, getStr = "powder" }
+, Meaning { getLC = Noun, getStr = "power" }
+, Meaning { getLC = Noun, getStr = "price" }
+, Meaning { getLC = Noun, getStr = "print" }
+, Meaning { getLC = Noun, getStr = "prison" }
+, Meaning { getLC = Noun, getStr = "process" }
+, Meaning { getLC = Noun, getStr = "produce" }
+, Meaning { getLC = Noun, getStr = "profit" }
+, Meaning { getLC = Noun, getStr = "property" }
+, Meaning { getLC = Noun, getStr = "prose" }
+, Meaning { getLC = Noun, getStr = "protest" }
+, Meaning { getLC = Noun, getStr = "pull" }
+, Meaning { getLC = Noun, getStr = "pump" }
+, Meaning { getLC = Noun, getStr = "punishment" }
+, Meaning { getLC = Noun, getStr = "purpose" }
+, Meaning { getLC = Noun, getStr = "push" }
+, Meaning { getLC = Noun, getStr = "quality" }
+, Meaning { getLC = Noun, getStr = "question" }
+, Meaning { getLC = Noun, getStr = "rail" }
+, Meaning { getLC = Noun, getStr = "rain" }
+, Meaning { getLC = Noun, getStr = "range" }
+, Meaning { getLC = Noun, getStr = "rat" }
+, Meaning { getLC = Noun, getStr = "rate" }
+, Meaning { getLC = Noun, getStr = "ray" }
+, Meaning { getLC = Noun, getStr = "reaction" }
+, Meaning { getLC = Noun, getStr = "reading" }
+, Meaning { getLC = Noun, getStr = "reason" }
+, Meaning { getLC = Noun, getStr = "receipt" }
+, Meaning { getLC = Noun, getStr = "record" }
+, Meaning { getLC = Noun, getStr = "regret" }
+, Meaning { getLC = Noun, getStr = "relation" }
+, Meaning { getLC = Noun, getStr = "religion" }
+, Meaning { getLC = Noun, getStr = "representative" }
+, Meaning { getLC = Noun, getStr = "request" }
+, Meaning { getLC = Noun, getStr = "respect" }
+, Meaning { getLC = Noun, getStr = "rest" }
+, Meaning { getLC = Noun, getStr = "reward" }
+, Meaning { getLC = Noun, getStr = "rhythm" }
+, Meaning { getLC = Noun, getStr = "rice" }
+, Meaning { getLC = Noun, getStr = "ring" }
+, Meaning { getLC = Noun, getStr = "river" }
+, Meaning { getLC = Noun, getStr = "road" }
+, Meaning { getLC = Noun, getStr = "rod" }
+, Meaning { getLC = Noun, getStr = "roll" }
+, Meaning { getLC = Noun, getStr = "roof" }
+, Meaning { getLC = Noun, getStr = "room" }
+, Meaning { getLC = Noun, getStr = "root" }
+, Meaning { getLC = Noun, getStr = "rub" }
+, Meaning { getLC = Noun, getStr = "rule" }
+, Meaning { getLC = Noun, getStr = "run" }
+, Meaning { getLC = Noun, getStr = "sail" }
+, Meaning { getLC = Noun, getStr = "salt" }
+, Meaning { getLC = Noun, getStr = "sand" }
+, Meaning { getLC = Noun, getStr = "scale" }
+, Meaning { getLC = Noun, getStr = "school" }
+, Meaning { getLC = Noun, getStr = "science" }
+, Meaning { getLC = Noun, getStr = "scissors" }
+, Meaning { getLC = Noun, getStr = "screw" }
+, Meaning { getLC = Noun, getStr = "sea" }
+, Meaning { getLC = Noun, getStr = "seat" }
+, Meaning { getLC = Noun, getStr = "secretary" }
+, Meaning { getLC = Noun, getStr = "seed" }
+, Meaning { getLC = Noun, getStr = "selection" }
+, Meaning { getLC = Noun, getStr = "self" }
+, Meaning { getLC = Noun, getStr = "sense" }
+, Meaning { getLC = Noun, getStr = "servant" }
+, Meaning { getLC = Noun, getStr = "sex" }
+, Meaning { getLC = Noun, getStr = "shade" }
+, Meaning { getLC = Noun, getStr = "shake" }
+, Meaning { getLC = Noun, getStr = "shame" }
+, Meaning { getLC = Noun, getStr = "sheep" }
+, Meaning { getLC = Noun, getStr = "shelf" }
+, Meaning { getLC = Noun, getStr = "ship" }
+, Meaning { getLC = Noun, getStr = "shirt" }
+, Meaning { getLC = Noun, getStr = "shock" }
+, Meaning { getLC = Noun, getStr = "shoe" }
+, Meaning { getLC = Noun, getStr = "side" }
+, Meaning { getLC = Noun, getStr = "sign" }
+, Meaning { getLC = Noun, getStr = "silk" }
+, Meaning { getLC = Noun, getStr = "silver" }
+, Meaning { getLC = Noun, getStr = "sister" }
+, Meaning { getLC = Noun, getStr = "size" }
+, Meaning { getLC = Noun, getStr = "skin" }
+, Meaning { getLC = Noun, getStr = "skirt" }
+, Meaning { getLC = Noun, getStr = "sky" }
+, Meaning { getLC = Noun, getStr = "sleep" }
+, Meaning { getLC = Noun, getStr = "slip" }
+, Meaning { getLC = Noun, getStr = "slope" }
+, Meaning { getLC = Noun, getStr = "smash" }
+, Meaning { getLC = Noun, getStr = "smell" }
+, Meaning { getLC = Noun, getStr = "smile" }
+, Meaning { getLC = Noun, getStr = "smoke" }
+, Meaning { getLC = Noun, getStr = "snake" }
+, Meaning { getLC = Noun, getStr = "sneeze" }
+, Meaning { getLC = Noun, getStr = "snow" }
+, Meaning { getLC = Noun, getStr = "soap" }
+, Meaning { getLC = Noun, getStr = "society" }
+, Meaning { getLC = Noun, getStr = "sock" }
+, Meaning { getLC = Noun, getStr = "son" }
+, Meaning { getLC = Noun, getStr = "song" }
+, Meaning { getLC = Noun, getStr = "sort" }
+, Meaning { getLC = Noun, getStr = "sound" }
+, Meaning { getLC = Noun, getStr = "soup" }
+, Meaning { getLC = Noun, getStr = "space" }
+, Meaning { getLC = Noun, getStr = "spade" }
+, Meaning { getLC = Noun, getStr = "sponge" }
+, Meaning { getLC = Noun, getStr = "spoon" }
+, Meaning { getLC = Noun, getStr = "spring" }
+, Meaning { getLC = Noun, getStr = "square" }
+, Meaning { getLC = Noun, getStr = "stage" }
+, Meaning { getLC = Noun, getStr = "stamp" }
+, Meaning { getLC = Noun, getStr = "star" }
+, Meaning { getLC = Noun, getStr = "start" }
+, Meaning { getLC = Noun, getStr = "statement" }
+, Meaning { getLC = Noun, getStr = "station" }
+, Meaning { getLC = Noun, getStr = "steam" }
+, Meaning { getLC = Noun, getStr = "steel" }
+, Meaning { getLC = Noun, getStr = "stem" }
+, Meaning { getLC = Noun, getStr = "step" }
+, Meaning { getLC = Noun, getStr = "stick" }
+, Meaning { getLC = Noun, getStr = "stitch" }
+, Meaning { getLC = Noun, getStr = "stocking" }
+, Meaning { getLC = Noun, getStr = "stomach" }
+, Meaning { getLC = Noun, getStr = "stone" }
+, Meaning { getLC = Noun, getStr = "stop" }
+, Meaning { getLC = Noun, getStr = "store" }
+, Meaning { getLC = Noun, getStr = "story" }
+, Meaning { getLC = Noun, getStr = "street" }
+, Meaning { getLC = Noun, getStr = "stretch" }
+, Meaning { getLC = Noun, getStr = "structure" }
+, Meaning { getLC = Noun, getStr = "substance" }
+, Meaning { getLC = Noun, getStr = "sugar" }
+, Meaning { getLC = Noun, getStr = "suggestion" }
+, Meaning { getLC = Noun, getStr = "summer" }
+, Meaning { getLC = Noun, getStr = "sun" }
+, Meaning { getLC = Noun, getStr = "support" }
+, Meaning { getLC = Noun, getStr = "surprise" }
+, Meaning { getLC = Noun, getStr = "swim" }
+, Meaning { getLC = Noun, getStr = "system" }
+, Meaning { getLC = Noun, getStr = "table" }
+, Meaning { getLC = Noun, getStr = "tail" }
+, Meaning { getLC = Noun, getStr = "talk" }
+, Meaning { getLC = Noun, getStr = "taste" }
+, Meaning { getLC = Noun, getStr = "tax" }
+, Meaning { getLC = Noun, getStr = "teaching" }
+, Meaning { getLC = Noun, getStr = "tendency" }
+, Meaning { getLC = Noun, getStr = "test" }
+, Meaning { getLC = Noun, getStr = "theory" }
+, Meaning { getLC = Noun, getStr = "thing" }
+, Meaning { getLC = Noun, getStr = "thought" }
+, Meaning { getLC = Noun, getStr = "thread" }
+, Meaning { getLC = Noun, getStr = "throat" }
+, Meaning { getLC = Noun, getStr = "thumb" }
+, Meaning { getLC = Noun, getStr = "thunder" }
+, Meaning { getLC = Noun, getStr = "ticket" }
+, Meaning { getLC = Noun, getStr = "time" }
+, Meaning { getLC = Noun, getStr = "tin" }
+, Meaning { getLC = Noun, getStr = "toe" }
+, Meaning { getLC = Noun, getStr = "tongue" }
+, Meaning { getLC = Noun, getStr = "tooth" }
+, Meaning { getLC = Noun, getStr = "top" }
+, Meaning { getLC = Noun, getStr = "touch" }
+, Meaning { getLC = Noun, getStr = "town" }
+, Meaning { getLC = Noun, getStr = "trade" }
+, Meaning { getLC = Noun, getStr = "train" }
+, Meaning { getLC = Noun, getStr = "transport" }
+, Meaning { getLC = Noun, getStr = "tray" }
+, Meaning { getLC = Noun, getStr = "tree" }
+, Meaning { getLC = Noun, getStr = "trick" }
+, Meaning { getLC = Noun, getStr = "trouble" }
+, Meaning { getLC = Noun, getStr = "trousers" }
+, Meaning { getLC = Noun, getStr = "turn" }
+, Meaning { getLC = Noun, getStr = "twist" }
+, Meaning { getLC = Noun, getStr = "umbrella" }
+, Meaning { getLC = Noun, getStr = "unit" }
+, Meaning { getLC = Noun, getStr = "use" }
+, Meaning { getLC = Noun, getStr = "value" }
+, Meaning { getLC = Noun, getStr = "verse" }
+, Meaning { getLC = Noun, getStr = "vessel" }
+, Meaning { getLC = Noun, getStr = "view" }
+, Meaning { getLC = Noun, getStr = "voice" }
+, Meaning { getLC = Noun, getStr = "walk" }
+, Meaning { getLC = Noun, getStr = "wall" }
+, Meaning { getLC = Noun, getStr = "war" }
+, Meaning { getLC = Noun, getStr = "wash" }
+, Meaning { getLC = Noun, getStr = "waste" }
+, Meaning { getLC = Noun, getStr = "watch" }
+, Meaning { getLC = Noun, getStr = "water" }
+, Meaning { getLC = Noun, getStr = "wave" }
+, Meaning { getLC = Noun, getStr = "wax" }
+, Meaning { getLC = Noun, getStr = "way" }
+, Meaning { getLC = Noun, getStr = "weather" }
+, Meaning { getLC = Noun, getStr = "week" }
+, Meaning { getLC = Noun, getStr = "weight" }
+, Meaning { getLC = Noun, getStr = "wheel" }
+, Meaning { getLC = Noun, getStr = "whip" }
+, Meaning { getLC = Noun, getStr = "whistle" }
+, Meaning { getLC = Noun, getStr = "wind" }
+, Meaning { getLC = Noun, getStr = "window" }
+, Meaning { getLC = Noun, getStr = "wine" }
+, Meaning { getLC = Noun, getStr = "wing" }
+, Meaning { getLC = Noun, getStr = "winter" }
+, Meaning { getLC = Noun, getStr = "wire" }
+, Meaning { getLC = Noun, getStr = "woman" }
+, Meaning { getLC = Noun, getStr = "wood" }
+, Meaning { getLC = Noun, getStr = "wool" }
+, Meaning { getLC = Noun, getStr = "word" }
+, Meaning { getLC = Noun, getStr = "work" }
+, Meaning { getLC = Noun, getStr = "worm" }
+, Meaning { getLC = Noun, getStr = "wound" }
+, Meaning { getLC = Noun, getStr = "writing" }
+, Meaning { getLC = Noun, getStr = "year" }
 ]

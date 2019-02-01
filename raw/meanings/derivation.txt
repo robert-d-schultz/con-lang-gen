@@ -1,28 +1,28 @@
-[ (DeriMeaning Verb Verb "To ask to ")
-, (DeriMeaning Verb Verb "The reverse action of ")
-, (DeriMeaning Noun Noun "A place with lots of ")
-, (DeriMeaning Noun Noun "A large ")
-, (DeriMeaning Noun Noun "A small or cute ")
-, (DeriMeaning Noun Noun "An undesirable ")
-, (DeriMeaning Noun Noun "Thing made from ")
-, (DeriMeaning Adj Adj "The opposite of ")
-, (DeriMeaning Verb Noun "A person who habitually ")
-, (DeriMeaning Verb Noun "A person who professionally ")
-, (DeriMeaning Verb Noun "The typical place to ")
-, (DeriMeaning Verb Noun "The typical time to ")
-, (DeriMeaning Verb Noun "A tool used to ")
-, (DeriMeaning Verb Noun "A substance used to ")
-, (DeriMeaning Verb Noun "A thing or substance to ")
-, (DeriMeaning Verb Noun "A thing or substance resulting from ")
-, (DeriMeaning Verb Noun "A style or method of doing ")
-, (DeriMeaning Verb Adj "Tending to often ")
-, (DeriMeaning Noun Verb "The way to typically use ")
-, (DeriMeaning Noun Verb "To seek ")
-, (DeriMeaning Noun Adj "Pertaining to ")
-, (DeriMeaning Noun Adj "Made of ")
-, (DeriMeaning Noun Adj "Resembling ")
-, (DeriMeaning Noun Adj "Supplied with ")
-, (DeriMeaning Noun Adj "Lacking ")
-, (DeriMeaning Adj Verb "Cause to become ")
-, (DeriMeaning Adj Noun "Something that is ")
+[ DeriMeaning { getLC1 = Verb, getLC2 = Verb, getStr = "To ask to " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Verb, getStr = "The reverse action of " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Noun, getStr = "A place with lots of " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Noun, getStr = "A large " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Noun, getStr = "A small or cute " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Noun, getStr = "An undesirable " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Noun, getStr = "Thing made from " }
+, DeriMeaning { getLC1 = Adj,  getLC2 = Adj,  getStr = "The opposite of " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Noun, getStr = "A person who habitually " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Noun, getStr = "A person who professionally " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Noun, getStr = "The typical place to " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Noun, getStr = "The typical time to " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Noun, getStr = "A tool used to " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Noun, getStr = "A substance used to " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Noun, getStr = "A thing or substance to " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Noun, getStr = "A thing or substance resulting from " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Noun, getStr = "A style or method of doing " }
+, DeriMeaning { getLC1 = Verb, getLC2 = Adj,  getStr = "Tending to often " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Verb, getStr = "The way to typically use " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Verb, getStr = "To seek " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Adj,  getStr = "Pertaining to " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Adj,  getStr = "Made of " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Adj,  getStr = "Resembling " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Adj,  getStr = "Supplied with " }
+, DeriMeaning { getLC1 = Noun, getLC2 = Adj,  getStr = "Lacking " }
+, DeriMeaning { getLC1 = Adj,  getLC2 = Verb, getStr = "Cause to become " }
+, DeriMeaning { getLC1 = Adj,  getLC2 = Noun, getStr = "Something that is " }
 ]

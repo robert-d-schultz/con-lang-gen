@@ -8,19 +8,20 @@ import ClassyPrelude hiding (Word)
 
 import HelperFunctions
 
+import Data.Language
 import Data.Phoneme
 import Data.Word
 import Data.Inflection
 
 import Out.IPA
+import Out.Syllable
 
-romanizeWord :: Word -> Text
-romanizeWord (Word _ leftM@(ConsonantalRoot _ Root ps1) rightM@(ConsonantalRoot _ Transfix ps2)) = romanizePhonemes (concat $ shuffleLists ps1 ps2)
-romanizeWord (Word _ leftM rightM) = romanizeWord leftM ++ romanizeWord rightM
-romanizeWord (MorphemeS _ _ syllables) = concatMap romanizeSyllable syllables
-romanizeWord (MorphemeP _ _ phonemes) = romanizePhonemes phonemes
-romanizeWord (ConsonantalRoot _ _ phonemess) = intercalate "-" (map romanizePhonemes phonemess)
-romanizeWord (PatternMorph _ _ patts) = intercalate "-" (map romanizeSyllable patts)
+romanizeWord :: Language -> Word -> Text
+romanizeWord lang (MorphemeS _ _ syllables) = concatMap romanizeSyllable syllables
+romanizeWord lang (MorphemeP _ _ phonemes) = romanizePhonemes phonemes
+romanizeWord lang (MorphemeC _ _ phonemess) = intercalate "-" (map romanizePhonemes phonemess)
+romanizeWord lang (MorphemeV _ _ patts) = intercalate "-" (map romanizeSyllable patts)
+romanizeWord lang word = fromMaybe "!!ERROR!!" $ concatMap romanizeSyllable <$> syllabifyWord lang word
 
 romanizeSyllable :: Syllable -> Text
 romanizeSyllable (Syllable onset nucleus coda tone _) = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeToneDiacritic tone ++ romanizePhonemes coda

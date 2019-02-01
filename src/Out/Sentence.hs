@@ -40,7 +40,7 @@ tableLeaves lang rootMorphs inflMorphs leaves = "\n<table border=1>" ++ tHeader 
 
   romanRow = "\n\t<tr>\n\t\t<th>" ++ "Romanized" ++ "</th>" ++ romanCluster ++ "\n\t</tr>"
   romanCluster = "\n\t\t<td>" ++ intercalate "</td>\n\t\t<td>" roman ++ "</td>"
-  roman = map (romanizeLeaves rootMorphs inflMorphs) leaves
+  roman = map (romanizeLeaves lang rootMorphs inflMorphs) leaves
 
   ipaRow = "\n\t<tr>\n\t\t<th>" ++ "Transcribed" ++ "</th>" ++ ipaCluster ++ "\n\t</tr>"
   ipaCluster = "\n\t\t<td>" ++ intercalate "</td>\n\t\t<td>" ipa ++ "</td>"
@@ -167,13 +167,13 @@ transcribeLeaf lang rootMorphs (Leaf lc _ str) = fromMaybe "<UNK>" (writeMorphem
 transcribeLeaf _ _ _ = "ERROR"
 
 -- romanize
-romanizeLeaves :: [Morpheme] -> [Morpheme] -> [Leaf] -> Text
-romanizeLeaves rootMorphs inflMorphs leaves
-  | any leafIsInfl leaves = romanizeInfl rootMorphs inflMorphs leaves
-  | otherwise             = concatMap (romanizeLeaf rootMorphs) leaves
+romanizeLeaves :: Language -> [Morpheme] -> [Morpheme] -> [Leaf] -> Text
+romanizeLeaves lang rootMorphs inflMorphs leaves
+  | any leafIsInfl leaves = romanizeInfl lang rootMorphs inflMorphs leaves
+  | otherwise             = concatMap (romanizeLeaf lang rootMorphs) leaves
 
-romanizeInfl :: [Morpheme] -> [Morpheme] -> [Leaf] -> Text
-romanizeInfl rootMorphs inflMorphs leaves = out where
+romanizeInfl :: Language -> [Morpheme] -> [Morpheme] -> [Leaf] -> Text
+romanizeInfl lang rootMorphs inflMorphs leaves = out where
   (others, inflLeaves)  = break leafIsInfl leaves
   infls                 = map leafInfl inflLeaves
 
@@ -183,23 +183,23 @@ romanizeInfl rootMorphs inflMorphs leaves = out where
   suffs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) suffMorphs
   transs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) transMorphs
 
-  partOut = map romanizeWord parts
+  partOut = map (romanizeWord lang) parts
 
-  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap romanizeWord suffs ++ "<UNK>" ++ concatMap romanizeWord prefs) (romanizeWord <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
+  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap (romanizeWord lang) suffs ++ "<UNK>" ++ concatMap (romanizeWord lang) prefs) (romanizeWord lang <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
                                    (LeafNull _) -> ""
                                    _ -> ""
                                    ) others
 
   out
     | null others          = unwords partOut -- again, not sure why this
-    | null inflLeaves      = concatMap (romanizeLeaf rootMorphs) leaves
+    | null inflLeaves      = concatMap (romanizeLeaf lang rootMorphs) leaves
     | otherwise            = unwords othersOut
 
 
-romanizeLeaf :: [Morpheme] -> Leaf -> Text
-romanizeLeaf _ LeafNull{} = ""
-romanizeLeaf rootMorphs (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeWord <$> find (\x -> Meaning lc str == getMeaning x) rootMorphs)
-romanizeLeaf _ _ = "ERROR"
+romanizeLeaf :: Language -> [Morpheme] -> Leaf -> Text
+romanizeLeaf _ _ LeafNull{} = ""
+romanizeLeaf lang rootMorphs (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeWord lang <$> find (\x -> Meaning lc str == getMeaning x) rootMorphs)
+romanizeLeaf _ _ _ = "!!ERROR!!"
 
 
 -- (Tries to) translate to English

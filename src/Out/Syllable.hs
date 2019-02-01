@@ -21,18 +21,19 @@ import Data.Language
 -- Syllabification
 -- Given a word and sonority hierarchy, syllabify the word
 syllabifyWord :: Language -> Word -> Maybe [Syllable]
-syllabifyWord lang (Word m (ConsonantalRoot _ Root rads) (PatternMorph _ Transfix patts)) = syllabifyConsRoot lang rads patts
-syllabifyWord _ (Word _ ConsonantalRoot{} _) = Nothing
-syllabifyWord _ (Word _ _ ConsonantalRoot{}) = Nothing
-syllabifyWord _ (Word _ PatternMorph{} _) = Nothing
-syllabifyWord _ (Word _ _ PatternMorph{}) = Nothing
+syllabifyWord lang (Word m (MorphemeC _ Root rads) (MorphemeV _ Transfix patts)) = syllabifyConsRoot lang rads patts
+syllabifyWord lang (Word m (MorphemeV _ Root patts) (MorphemeC _ CTransfix rads)) = syllabifyConsRoot lang rads patts
+syllabifyWord _ (Word _ MorphemeC{} _) = Nothing
+syllabifyWord _ (Word _ _ MorphemeC{}) = Nothing
+syllabifyWord _ (Word _ MorphemeV{} _) = Nothing
+syllabifyWord _ (Word _ _ MorphemeV{}) = Nothing
 syllabifyWord lang (Word _ leftM rightM) = syllabifyWord lang leftM ++ syllabifyWord lang rightM
 syllabifyWord _ (MorphemeS _ _ sylls) = Just sylls
 syllabifyWord lang (MorphemeP _ _ ps) = sylls where
   groups = breakPhonemes lang ps []
   sylls = map (makeSyllable lang) <$> groups
-syllabifyWord _ ConsonantalRoot{} = Nothing
-syllabifyWord _ PatternMorph{} = Nothing
+syllabifyWord _ MorphemeC{} = Nothing
+syllabifyWord _ MorphemeV{} = Nothing
 
 -- Given a group of phonemes (and a tone?), make a proper syllable structure
 makeSyllable :: Language -> [Phoneme] -> Syllable

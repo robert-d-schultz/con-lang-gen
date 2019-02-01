@@ -26,24 +26,24 @@ import Data.Soundchange
 
 import Out.Roman
 
--- generates a language
+-- Generates a Language
 makeLanguage :: InputData -> MeaningData -> RVar Language
 makeLanguage idata mData = do
-  -- consonants
+  -- Consonants
   (places, manners, phonations, airstreams, exceptionsC) <- makeConsonantMap
   let inventoryC = makeConsonants places manners phonations airstreams exceptionsC
 
-  -- vowels
+  -- Vowels
   (heights, backs, rounds, lengths, exceptionsV) <- makeVowelMap
   let inventoryV = makeVowels heights backs rounds lengths exceptionsV
 
-  -- diphthongs
+  -- Diphthongs
   inventoryD <- makeDiphInventory 4 inventoryV
 
-  -- tones
+  -- Tones
   tones <- makeTones
 
-  -- phonotactics / consonant clusters
+  -- Phonotactics / Consonant clusters
   scheme <- uniform 5 5 -- fixed to be the ssp-violating scheme
   let sonHier = makeSonHier inventoryC scheme
   msd <- uniform 0 3
@@ -51,30 +51,32 @@ makeLanguage idata mData = do
   maxOnset <- uniform 0 6
   onsetCCs <- makeOnsets sonHier (msd, maxOnset)
   let onsets_ = ordNub $ onsetCCs ++ map (:[]) inventoryC
-  onsets <- shuffle onsets_ -- shuffle to allow triangular distribution
+  onsets <- shuffle onsets_ -- shuffle to allow zipf distribution
 
   nuclei_ <- makeNuclei (inventoryV ++ inventoryD) sonHier
-  nuclei <- shuffle nuclei_ -- shuffle to allow triangular distribution
+  nuclei <- shuffle nuclei_ -- shuffle to allow zipf distribution
 
   maxCoda <- uniform 0 6
   numCodaCCs <- uniform 0 5
   codaCCs <- makeCodas numCodaCCs 0 [] onsets inventoryC sonHier (msd, maxCoda)
-  codas_ <- shuffle codaCCs -- shuffle to allow triangular distribution
+  codas_ <- shuffle codaCCs -- shuffle to allow zipf distribution
   let codas = [] : codas_  -- makes sure "no coda" is always allowed
 
-
-  -- inflection / grammatical categories
+  -- Morphemes
+  zipfParameter <- uniform 0.8 1.3
+  -- Inflection / Grammatical categories
   (inflSys, numPerLexCat) <- makeInflectionMap idata
-  inflMorphs <- concat <$> mapM (\x -> makeInflectionMorphemes onsets nuclei codas tones inflSys x (1, 4)) numPerLexCat
+  inflMorphs <- concat <$> mapM (\x -> makeInflectionMorphemes onsets nuclei codas tones inflSys x (1, 4) zipfParameter) numPerLexCat
 
   -- Pick lemma morphemes to be used in dictionary
   lemmaMorphs <- concat <$> mapM (pickLemmaMorphemes inflSys inflMorphs) [Verb .. Pron]
 
   -- Derivational morphemes
-  derivMorphs <- makeDerivationMorphemes mData onsets nuclei codas tones (1, 4)
+  derivMorphs <- makeDerivationMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter
 
   -- Root morphemes
-  rootMorphs <- makeRootMorphemes mData onsets nuclei codas tones (1, 4) numPerLexCat
+  let numPerLexCat_ = map (\(lc,_,_,_,t,ct) -> (lc,t,ct)) numPerLexCat
+  rootMorphs <- makeRootMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter numPerLexCat_
 
   -- Grammar
   grammar <- makeGrammar
@@ -90,8 +92,8 @@ makeLanguage idata mData = do
   (aOut, sOut, lOut) <- makeCharacters (a, s, l)
 
   -- Find out what was assigned to "!!!LANGUAGE!!!" and romanize
-  let langName = fromMaybe "name not found" (romanizeWord <$> find (\x -> getMeaning x == Meaning Noun "!!!LANGUAGE!!!") rootMorphs)
+  let lang = Language "" ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys inflMorphs lemmaMorphs derivMorphs rootMorphs grammar (aOut, sOut, lOut) [NoChange]
 
-  let lang = Language langName ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys inflMorphs lemmaMorphs derivMorphs rootMorphs grammar (aOut, sOut, lOut) [NoChange]
+  let langName = fromMaybe "name not found" (romanizeWord lang <$> find (\x -> getMeaning x == Meaning Noun "!!!LANGUAGE!!!") rootMorphs)
 
-  return lang
+  return $ lang{getName = langName}

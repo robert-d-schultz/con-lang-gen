@@ -13,12 +13,11 @@ module HelperFunctions
 , safeSampleSet
 , triangle
 , triangleChoice
-, yuleSimon
-, yuleSimonChoice
+, zipf
+, zipfChoice
 ) where
 
 import ClassyPrelude
-import Math.Gamma
 
 import Data.RVar
 import Data.Random hiding (sample, gamma)
@@ -116,20 +115,27 @@ triangleChoice xs = do
   n <- triangle 0 (length xs)
   return $ index xs n
 
+-- Zipf Distribution stuff
+{-zipfPMF :: Float -> Int -> Int -> Float
+zipfPMF s n k = (1 / (fromIntegral k ** s)) / harm n s
 
--- Only allows integer rho
-yuleSimonPMF :: Double -> Int -> Double
-yuleSimonPMF rho k = (rho * gamma (rho + 1)) / ((k_ + rho) ** (rho + 1)) where
-  k_ = fromIntegral k
+harm :: Int -> Float -> Float
+harm n m = sum $ map (\k -> 1 / (fromIntegral k ** m)) [1..n]-}
 
-yuleSimon :: Double -> Int -> RVar Int
-yuleSimon rho l = categorical $ map (\x -> (yuleSimonPMF rho x, x)) [1..l]
+zipfPMF :: Float -> Int -> Int -> Float
+zipfPMF 1 n r = zipfPMF 1.001 n r -- 1.0 isn't defined
+zipfPMF a n r = (r_ ** (-a)) / (((n_ ** (-a)) * (0.5 + (n_/(1 - a)))) + ((2 ** (-a)) * (0.5 - (2/(1 - a)))) + 1) where
+  n_ = fromIntegral n
+  r_ = fromIntegral r
 
-yuleSimonChoice :: Double -> [a] -> RVar (Maybe a)
-yuleSimonChoice rho xs
-  | rho <= 0 = return Nothing
+zipf :: Float -> Int -> RVar Int
+zipf s n = categorical $ map (\k -> (zipfPMF s n k, k)) [1..n]
+
+zipfChoice :: Float -> [a] -> RVar (Maybe a)
+zipfChoice s xs
+  | s <= 0 = return Nothing
   | otherwise = do
-  n <- yuleSimon rho (length xs)
+  n <- zipf s (length xs)
   return $ index xs (n-1)
 
 -- Doesn't work?

@@ -68,7 +68,6 @@ library
                      , directory
                      , text
                      , safe
-                     , gamma
   default-language:    Haskell2010
 
 executable con-lang-gen-exe
@@ -92,7 +91,6 @@ executable con-lang-gen-exe
                      , directory
                      , text
                      , safe
-                     , gamma
   default-language:    Haskell2010
 
 source-repository head

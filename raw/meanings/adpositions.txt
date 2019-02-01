@@ -1,3 +1,3 @@
-[ "on"
-, "at"
+[ Meaning { getLC = Adpo, getStr = "on" }
+, Meaning { getLC = Adpo, getStr = "at" }
 ]

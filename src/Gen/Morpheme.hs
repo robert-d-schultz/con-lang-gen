@@ -1,10 +1,10 @@
 module Gen.Morpheme
 ( makeRootMorphemes
-, makeMorpheme
-, makeConsonantalRoot
+, makeMorphemeSyllables
+, makeMorphemeConsonants
 , makeInflectionMorphemes
 , cleanInflectionSys
-, makeTransfix
+, makeMorphemeVowels
 , pickLemmaMorphemes
 , makeDerivationMorphemes
 ) where
@@ -27,37 +27,35 @@ import LoadStuff
 import HelperFunctions
 
 -- Generate Root Morphemes
-makeRootMorphemes :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> [(LexCat, Int, Int, Int, Int)] -> RVar [Morpheme]
-makeRootMorphemes mData onsets nucs codas tones set numPerLC = do
-  foo <- mapM (\(lc,_,_,_,sr) -> makeRootMorphemes_ mData lc sr onsets nucs codas tones set) ((Adpo,0,0,0,0) : numPerLC)
-  return $ concat foo
+makeRootMorphemes :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> Float -> [(LexCat, Int, Int)] -> RVar [Morpheme]
+makeRootMorphemes mData onsets nucs codas tones set zipfParameter numPerLC =
+  mapM (\x -> makeRootMorphemes_ x onsets nucs codas tones set zipfParameter numPerLC) (inputRoots mData)
 
-makeRootMorphemes_ :: MeaningData -> LexCat -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Morpheme]
-makeRootMorphemes_ mData Noun sr onsets nucs codas tones set = makeRootMorphemes__ Noun (inputNouns mData) sr onsets nucs codas tones set
-makeRootMorphemes_ mData Verb sr onsets nucs codas tones set = makeRootMorphemes__ Verb (inputVerbs mData) sr onsets nucs codas tones set
-makeRootMorphemes_ mData Adj sr onsets nucs codas tones set = makeRootMorphemes__ Adj (inputAdjs mData) sr onsets nucs codas tones set
-makeRootMorphemes_ mData Adpo sr onsets nucs codas tones set = makeRootMorphemes__ Adpo (inputAdpos mData) sr onsets nucs codas tones set
-makeRootMorphemes_ _ _ _ _ _ _ _ _ = return []
-
-makeRootMorphemes__ :: LexCat -> [Text] -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Morpheme]
-makeRootMorphemes__ lc foo 0 onsets nucs codas tones set = mapM (\i -> MorphemeS (Meaning lc i) Root <$> makeMorpheme onsets nucs codas tones set) foo
-makeRootMorphemes__ lc foo _ onsets _ _ _ set = mapM (\i -> ConsonantalRoot (Meaning lc i) Root <$> makeConsonantalRoot onsets set) foo
+makeRootMorphemes_ :: Meaning -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> Float -> [(LexCat, Int, Int)] -> RVar Morpheme
+makeRootMorphemes_ mean onsets nucs codas tones set zipfParameter numPerLC = out where
+  f = fromMaybe (getLC mean, 0, 0) $ find (\(lc,_,_) -> getLC mean == lc) numPerLC
+  i = (\(_,x,_) -> x) f
+  j = (\(_,_,x) -> x) f
+  out
+    | i > 0 = MorphemeC mean Root <$> makeMorphemeConsonants onsets set zipfParameter
+    | j > 0 = MorphemeV mean Root <$> makeMorphemeVowels onsets nucs codas tones set zipfParameter
+    | otherwise = MorphemeS mean Root <$> makeMorphemeSyllables onsets nucs codas tones set zipfParameter
 
 -- Generate a root morpheme given vowels, consonant clusters, and some settings
-makeMorpheme :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Syllable]
-makeMorpheme onsets nucs codas tones (ns,xs) = do
+makeMorphemeSyllables :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> Float -> RVar [Syllable]
+makeMorphemeSyllables onsets nucs codas tones (ns,xs) zipfParameter = do
   -- decide how many syllables in the morpheme
   s <- triangle ns xs
-  syllables <- replicateM s (makeRootSyllable onsets nucs codas tones)
+  syllables <- replicateM s (makeMorphemeSyllable onsets nucs codas tones zipfParameter)
 
   -- assign stress
   assignStress syllables
 
-makeRootSyllable :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> RVar Syllable
-makeRootSyllable onsets nucs codas tones = do
-  onset  <- fromMaybe [] <$> yuleSimonChoice 1 onsets
-  nuclei <- fromMaybe Blank <$> yuleSimonChoice 1 nucs
-  coda   <- fromMaybe [] <$> yuleSimonChoice 1 codas
+makeMorphemeSyllable :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> Float -> RVar Syllable
+makeMorphemeSyllable onsets nucs codas tones zipfParameter = do
+  onset  <- fromMaybe [] <$> zipfChoice zipfParameter onsets
+  nuclei <- fromMaybe Blank <$> zipfChoice zipfParameter nucs
+  coda   <- fromMaybe [] <$> zipfChoice zipfParameter codas
   tone   <- choice tones
   return $ Syllable onset nuclei coda tone NONES
 
@@ -84,33 +82,34 @@ foobar n xs f
   (a,b:bs) = splitAt n xs
 
 -- Generate Semitic Root
-makeConsonantalRoot :: [ConsCluster] -> (Int, Int) -> RVar [[Phoneme]]
-makeConsonantalRoot conclusts (ns, xs) = do
+makeMorphemeConsonants :: [ConsCluster] -> (Int, Int) ->Float ->  RVar [[Phoneme]]
+makeMorphemeConsonants conclusts (ns, xs) zipfParameter = do
   r <- triangle (max 1 (ns-1)) (xs-1)
-  replicateM r (fromMaybe [] <$> yuleSimonChoice 1 conclusts) -- should be hyperparameter
+  replicateM r (fromMaybe [] <$> zipfChoice zipfParameter conclusts) -- should be hyperparameter
 
 -- Generate Inflectional Morphemes
-makeInflectionMorphemes :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (LexCat, Int, Int, Int, Int) -> (Int, Int) -> RVar [Morpheme]
-makeInflectionMorphemes onsets nucs codas tones inflMap (lc, i, j, k, l) set = do
-  part <- makeExponentSystems lc Particle i onsets nucs codas tones inflMap set
-  pref <- makeExponentSystems lc Prefix j onsets nucs codas tones inflMap set
-  suff <- makeExponentSystems lc Suffix k onsets nucs codas tones inflMap set
-  trans <- makeExponentSystems lc Transfix l onsets nucs codas tones inflMap set
-  return (part ++ pref ++ suff ++ trans)
+makeInflectionMorphemes :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (LexCat, Int, Int, Int, Int, Int) -> (Int, Int) -> Float -> RVar [Morpheme]
+makeInflectionMorphemes onsets nucs codas tones inflMap (lc, i, j, k, l, m) set zipfParameter =
+  concat <$> mapM (\(mt,x) -> makeExponentSystems lc mt x onsets nucs codas tones inflMap set zipfParameter) [(Particle, i), (Prefix,j), (Suffix,k), (Transfix,l), (CTransfix,m)]
 
-makeExponentSystems :: LexCat -> MorphType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (Int, Int) -> RVar [Morpheme]
-makeExponentSystems _ _ 0 _ _ _ _ _ _ = return []
-makeExponentSystems lc morphType i onsets nucs codas tones inflMap set = (++) <$> makeExponentSystems lc morphType (i-1) onsets nucs codas tones inflMap set <*> makeExponentSystem lc morphType i onsets nucs codas tones inflMap set
+makeExponentSystems :: LexCat -> MorphType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (Int, Int) -> Float -> RVar [Morpheme]
+makeExponentSystems _ _ 0 _ _ _ _ _ _ _ = return []
+makeExponentSystems lc morphType i onsets nucs codas tones inflMap set zipfParameter = (++) <$> makeExponentSystems lc morphType (i-1) onsets nucs codas tones inflMap set zipfParameter <*> makeExponentSystem lc morphType i onsets nucs codas tones inflMap set zipfParameter
 
-makeExponentSystem :: LexCat -> MorphType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (Int, Int) -> RVar [Morpheme]
-makeExponentSystem lc Transfix i onsets nucs codas tones inflMap set = do
+makeExponentSystem :: LexCat -> MorphType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (Int, Int) -> Float -> RVar [Morpheme]
+makeExponentSystem lc Transfix i onsets nucs codas tones inflMap set zipfParameter = do
   let combos = makeCombos $ cleanInflectionSys inflMap lc Transfix i
-  roots <- replicateM (length combos) (makeTransfix onsets nucs codas tones set)
-  let morphs = zipWith (\x y -> PatternMorph x Transfix y) (InflMeaning lc <$> combos) roots
+  roots <- replicateM (length combos) (makeMorphemeVowels onsets nucs codas tones set zipfParameter)
+  let morphs = zipWith (\x y -> MorphemeV x Transfix y) (InflMeaning lc <$> combos) roots
   return morphs
-makeExponentSystem lc morphType i onsets nucs codas tones inflMap (ns,xs) = do
+makeExponentSystem lc CTransfix i onsets nucs codas tones inflMap set zipfParameter = do
+  let combos = makeCombos $ cleanInflectionSys inflMap lc CTransfix i
+  roots <- replicateM (length combos) (makeMorphemeConsonants onsets set zipfParameter)
+  let morphs = zipWith (\x y -> MorphemeC x CTransfix y) (InflMeaning lc <$> combos) roots
+  return morphs
+makeExponentSystem lc morphType i onsets nucs codas tones inflMap (ns,xs) zipfParameter = do
   let combos = makeCombos $ cleanInflectionSys inflMap lc morphType i
-  roots <- replicateM (length combos) (makeMorpheme onsets nucs codas tones (ns,ns)) -- pick minimum
+  roots <- replicateM (length combos) (makeMorphemeSyllables onsets nucs codas tones (ns,ns) zipfParameter) -- pick minimum
   let morphs = zipWith (\x y -> MorphemeS x morphType y) (InflMeaning lc <$> combos) roots
   return morphs
 
@@ -149,17 +148,17 @@ makeCombos :: GramCatExpresses -> [GramCatExpress]
 makeCombos (GramCatExpresses gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols) = GramCatExpress <$> gens <*> anis <*> cass <*> nums <*> defs <*> spes <*> tops <*> pers <*> hons <*> pols <*> tens <*> asps <*> moos <*> vois <*> evis <*> tras <*> vols
 
 -- Generate Transfix, which go between the consonants of a Consonantal Root
-makeTransfix :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Syllable]
-makeTransfix onsets nucs codas tones (ns,xs) = do
+makeMorphemeVowels :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> Float ->RVar [Syllable]
+makeMorphemeVowels onsets nucs codas tones (ns,xs) zipfParameter = do
   p <- triangle (max ns 2) xs
-  patterns <- replicateM p (makeTransfix_ onsets nucs codas tones)
+  patterns <- replicateM p (makeMorphemeVowels_ onsets nucs codas tones zipfParameter)
   assignStress patterns
 
-makeTransfix_ :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> RVar Syllable
-makeTransfix_ onsets nucs codas tones = do
-  --onset <- fromMaybe [] <$> yuleSimonChoice 1 onsets
-  nuclei <- fromMaybe Blank <$> yuleSimonChoice 1 nucs
-  --coda <- fromMaybe [] <$> yuleSimonChoice 1 codas
+makeMorphemeVowels_ :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> Float -> RVar Syllable
+makeMorphemeVowels_ onsets nucs codas tones zipfParameter = do
+  --onset <- fromMaybe [] <$> zipfChoice zipfParameter onsets
+  nuclei <- fromMaybe Blank <$> zipfChoice zipfParameter nucs
+  --coda <- fromMaybe [] <$> zipfChoice zipfParameter codas
   tone   <- choice tones
   return $ Syllable [] nuclei [] tone NONES
 
@@ -176,5 +175,5 @@ pickLemmaMorphemes inflSys inflMorphs lc = do
 
 
 -- Derivational Morphology
-makeDerivationMorphemes :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> RVar [Morpheme]
-makeDerivationMorphemes mData onsets nucs codas tones set = mapM (\d -> MorphemeS d Suffix <$> makeMorpheme onsets nucs codas tones set) (inputDerivs mData)
+makeDerivationMorphemes :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> Float -> RVar [Morpheme]
+makeDerivationMorphemes mData onsets nucs codas tones set zipfParameter = mapM (\d -> MorphemeS d Suffix <$> makeMorphemeSyllables onsets nucs codas tones set zipfParameter) (inputDerivs mData)

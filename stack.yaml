@@ -3,8 +3,5 @@ extra-package-dbs: []
 packages:
 - .
 extra-deps:
-- continued-fractions-0.9.1.1
-- converge-0.1.0.1
-- gamma-0.9.0.2
 - random-extras-0.19
 resolver: lts-9.0

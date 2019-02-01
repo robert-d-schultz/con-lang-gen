@@ -74,8 +74,8 @@ updateCMap cInv = (ps, ms, hs, as) where
 -- Applies rule to a morpheme
 executeRuleOnMorpheme :: Rule -> Morpheme -> (Morpheme, Int)
 executeRuleOnMorpheme rule (MorphemeS m t y) = first (MorphemeS m t) (executeRuleOnSyllWord 0 rule [] y)
-executeRuleOnMorpheme rule (ConsonantalRoot m t y) = (ConsonantalRoot m t y, 0) --simple rules should probably execute
-executeRuleOnMorpheme rule (PatternMorph m t y) = (PatternMorph m t y, 0) --simple rules should probably execute
+executeRuleOnMorpheme rule (MorphemeC m t y) = (MorphemeC m t y, 0) --simple rules should probably execute
+executeRuleOnMorpheme rule (MorphemeV m t y) = (MorphemeV m t y, 0) --simple rules should probably execute
 
 -- Applies a rule to each phoneme in multiple syllables
 executeRuleOnSyllWord :: Int -> Rule -> [Syllable] -> [Syllable] -> ([Syllable], Int)
@@ -100,8 +100,8 @@ executeRuleOnSyllable rule@Rule{} (Syllable onset nuc coda tone stress) (prev, n
 morphToPhonemes :: Morpheme -> [Phoneme]
 morphToPhonemes (MorphemeS _ _ y) = nub $ concatMap syllToPhonemes y
 morphToPhonemes (MorphemeP _ _ y) = nub y
-morphToPhonemes (ConsonantalRoot _ _ y) = nub $ concat y
-morphToPhonemes (PatternMorph _ _ y) = nub $ concatMap syllToPhonemes y
+morphToPhonemes (MorphemeC _ _ y) = nub $ concat y
+morphToPhonemes (MorphemeV _ _ y) = nub $ concatMap syllToPhonemes y
 
 syllToPhonemes :: Syllable -> [Phoneme]
 syllToPhonemes (Syllable o n c _ _) = nub $ o ++ [n] ++ c

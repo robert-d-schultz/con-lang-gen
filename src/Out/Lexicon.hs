@@ -34,11 +34,12 @@ writeDictionary lang ndict rootMorphs lemmaMorphs inflMorphs = out where
   out = "\n" ++ intercalate "\n" (map (writeDictionaryEntry lang ndict) (reduceHomophones (zip sylleds meanings)))
 
 applyLemma :: [Morpheme] -> Morpheme -> Word
-applyLemma lemmaMorphs root = foldl' applyMorpheme root (transfixes ++ suffixes ++ prefixes) where
+applyLemma lemmaMorphs root = foldl' applyMorpheme root (transfixes ++ ctransfixes ++suffixes ++ prefixes) where
   lemmaMorphs_ = filter (\x -> (getLC.getMeaning) root == (getLC.getMeaning) x) lemmaMorphs
   prefixes = filter ((\case Prefix -> True; _ -> False) . getMorphType) lemmaMorphs_
   suffixes = filter ((\case Suffix -> True; _ -> False) . getMorphType) lemmaMorphs_
   transfixes = filter ((\case Transfix -> True; _ -> False) . getMorphType) lemmaMorphs_
+  ctransfixes = filter ((\case CTransfix -> True; _ -> False) . getMorphType) lemmaMorphs_
 
 applyMorpheme :: Word -> Morpheme -> Word
 applyMorpheme word morpheme
@@ -113,8 +114,8 @@ writeMorphemeIPA lang m@(MorphemeP _ _ ps) = fromMaybe ("!!Morpheme doesn't syll
   out = do
     sylls <- syllabifyWord lang m
     return $ "/" ++ writeSyllablesIPA sylls ++ "/"
-writeMorphemeIPA lang m@(ConsonantalRoot _ _ pss) = "/" ++ intercalate "-" (map (concatMap writePhonemeIPA) pss) ++ "/"
-writeMorphemeIPA lang m@(PatternMorph _ _ patts) = "/" ++ intercalate "-" (map writeSyllableIPA patts) ++ "/"
+writeMorphemeIPA lang m@(MorphemeC _ _ pss) = "/" ++ intercalate "-" (map (concatMap writePhonemeIPA) pss) ++ "/"
+writeMorphemeIPA lang m@(MorphemeV _ _ patts) = "/" ++ intercalate "-" (map writeSyllableIPA patts) ++ "/"
 
 -- write Syllables to string
 writeSyllablesIPA :: [Syllable] -> Text
