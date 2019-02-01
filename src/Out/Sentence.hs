@@ -90,8 +90,8 @@ getReleventInflMorphs inflMorphs inflLeaves = (partMorphs, prefMorphs, suffMorph
   suffMorphs = filter (\m -> getMorphType m == Suffix && getLC (getMeaning m) == lc) inflMorphs
   transMorphs = filter (\m -> getMorphType m == Transfix && getLC (getMeaning m) == lc) inflMorphs
 
-glossCombo :: AllExpress -> Text
-glossCombo (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = intercalate "." (vol2 :: [Text]) where
+glossCombo :: GramCatExpress -> Text
+glossCombo (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) = intercalate "." (vol2 :: [Text]) where
   gen2 | gen /= NoExpress = [gloss $ getExp gen]      | otherwise = []
   ani2 | ani /= NoExpress = gloss (getExp ani) : gen2 | otherwise = gen2
   cas2 | cas /= NoExpress = gloss (getExp cas) : ani2 | otherwise = ani2
@@ -139,9 +139,9 @@ getLast [] = []
 getLast xs = fromMaybe [] ((:[]) <$> lastMay xs)
 
 -- Compares new language infl (1) to English infl (2)
--- Actually this checks if the left AllExpress helps satisfy the right AllExpress
-compareInfl :: AllExpress -> AllExpress -> Bool
-compareInfl (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) (gen2,ani2,cas2,num2,def2,spe2,top2,per2,hon2,pol2,ten2,asp2,moo2,voi2,evi2,tra2,vol2) =
+-- Actually this checks if the left GramCatExpress helps satisfy the right GramCatExpress
+compareInfl :: GramCatExpress -> GramCatExpress -> Bool
+compareInfl (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) (GramCatExpress gen2 ani2 cas2 num2 def2 spe2 top2 per2 hon2 pol2 ten2 asp2 moo2 voi2 evi2 tra2 vol2) =
   and [ gen == gen2 || gen `elem` [Express UGEN, NoExpress]
       , ani == ani2 || ani `elem` [Express UANI, NoExpress]
       , cas == cas2 || cas `elem` [Express UCAS, NoExpress]

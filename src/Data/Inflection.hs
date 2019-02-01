@@ -1,11 +1,11 @@
-{-# LANGUAGE StandaloneDeriving #-}
 module Data.Inflection
 ( Manifest(..)
 , Express(..)
 , MorphType(..)
 , LexCat(..)
 , InflectionMap(..)
-, AllExpress(..)
+, GramCatExpress(..)
+, GramCatExpresses(..)
 , Gender(..)
 , Animacy(..)
 , Case(..)
@@ -27,21 +27,9 @@ module Data.Inflection
 ) where
 
 import ClassyPrelude
-import Prelude (ShowS, shows, showChar, foldr1)
 
 import Data.Phoneme
 import Data.Other
-
--- Used for 18-tuples
-instance (Show a, Show b, Show c, Show d, Show e, Show f, Show g, Show h, Show i, Show j, Show k, Show l, Show m, Show n, Show o, Show p, Show q) => Show (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q) where
-  showsPrec _ (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q) = showTuple [shows a, shows b, shows c, shows d, shows e, shows f, shows g, shows h, shows i, shows j, shows k, shows l, shows m, shows n, shows o, shows p, shows q]
-
-showTuple :: [ShowS] -> ShowS
-showTuple ss = showChar '('
-              . foldr1 (\s r -> s . showChar ',' . r) ss
-              . showChar ')'
-
-deriving instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i, Eq j, Eq k, Eq l, Eq m, Eq n, Eq o, Eq p, Eq q) => Eq (a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q)
 
 -- Manifest (list of places) (list of stuff that manifests there)
 data Manifest a = NoManifest | Manifest { getManPlace :: [(LexCat, MorphType, Int)], getManStuff :: [a] } deriving (Eq)
@@ -64,7 +52,7 @@ instance GramCat a => Show (Express a) where
 data MorphType = Root | Particle | Prefix | Suffix | Transfix deriving (Eq, Read)
 
 instance Show MorphType where
-  show inflType = case inflType of Root -> "Root"
+  show inflType = case inflType of Root     -> "root"
                                    Particle -> "particle"
                                    Prefix   -> "prefix"
                                    Suffix   -> "suffix"
@@ -116,24 +104,46 @@ data InflectionMap = InflectionMap
                       , getVolSys :: Manifest Volition
                       }  deriving (Eq, Show)
 
-type AllExpress = ( Express Gender
-                  , Express Animacy
-                  , Express Case
-                  , Express Number
-                  , Express Definiteness
-                  , Express Specificity
-                  , Express Topic
-                  , Express Person
-                  , Express Honorific
-                  , Express Polarity
-                  , Express Tense
-                  , Express Aspect
-                  , Express Mood
-                  , Express Voice
-                  , Express Evidentiality
-                  , Express Transitivity
-                  , Express Volition
-                  )
+data GramCatExpress = GramCatExpress
+                      { getGen :: Express Gender
+                      , getAni :: Express Animacy
+                      , getCas :: Express Case
+                      , getNum :: Express Number
+                      , getDef :: Express Definiteness
+                      , getSpe :: Express Specificity
+                      , getTop :: Express Topic
+                      , getPer :: Express Person
+                      , getHon :: Express Honorific
+                      , getPol :: Express Polarity
+                      , getTen :: Express Tense
+                      , getAsp :: Express Aspect
+                      , getMoo :: Express Mood
+                      , getVoi :: Express Voice
+                      , getEvi :: Express Evidentiality
+                      , getTra :: Express Transitivity
+                      , getVol :: Express Volition
+                      }  deriving (Eq, Show, Read)
+data GramCatExpresses = GramCatExpresses
+                      { getGens :: [Express Gender]
+                      , getAnis :: [Express Animacy]
+                      , getCass :: [Express Case]
+                      , getNums :: [Express Number]
+                      , getDefs :: [Express Definiteness]
+                      , getSpes :: [Express Specificity]
+                      , getTops :: [Express Topic]
+                      , getPers :: [Express Person]
+                      , getHons :: [Express Honorific]
+                      , getPols :: [Express Polarity]
+                      , getTens :: [Express Tense]
+                      , getAsps :: [Express Aspect]
+                      , getMoos :: [Express Mood]
+                      , getVois :: [Express Voice]
+                      , getEvis :: [Express Evidentiality]
+                      , getTras :: [Express Transitivity]
+                      , getVols :: [Express Volition]
+                      }  deriving (Eq, Show)
+
+
 
 -- Grammatical categories
 -- For nouns

@@ -9,15 +9,18 @@ module LoadStuff
 
 import ClassyPrelude
 import Prelude (read)
+
 import Data.Inflection
+import Data.Word
 
 -- Input data for lexicon
 data MeaningData = MeaningData
   {
-      inputNouns       :: [Text]
-    , inputVerbs       :: [Text]
-    , inputAdjs        :: [Text]
-    , inputAdpos       :: [Text]
+      inputNouns  :: [Text]
+    , inputVerbs  :: [Text]
+    , inputAdjs   :: [Text]
+    , inputAdpos  :: [Text]
+    , inputDerivs :: [Meaning]
   }
 
 loadMeaningData :: IO MeaningData
@@ -26,10 +29,41 @@ loadMeaningData =  MeaningData
   <*> readMeaning "raw/meanings/verbs.txt"
   <*> readMeaning "raw/meanings/adjectives.txt"
   <*> readMeaning "raw/meanings/adpositions.txt"
+  <*> return deriv
+
+
+deriv = [ (DeriMeaning Verb Verb "To ask to ")
+      , (DeriMeaning Verb Verb "The reverse action of ")
+      , (DeriMeaning Noun Noun "A place with lots of ")
+      , (DeriMeaning Noun Noun "A large ")
+      , (DeriMeaning Noun Noun "A small or cute ")
+      , (DeriMeaning Noun Noun "An undesirable ")
+      , (DeriMeaning Noun Noun "Thing made from ")
+      , (DeriMeaning Adj Adj "The opposite of ")
+      , (DeriMeaning Verb Noun "A person who habitually ")
+      , (DeriMeaning Verb Noun "A person who professionally ")
+      , (DeriMeaning Verb Noun "The typical place to ")
+      , (DeriMeaning Verb Noun "The typical time to ")
+      , (DeriMeaning Verb Noun "A tool used to ")
+      , (DeriMeaning Verb Noun "A substance used to ")
+      , (DeriMeaning Verb Noun "A thing or substance to ")
+      , (DeriMeaning Verb Noun "A thing or substance resulting from ")
+      , (DeriMeaning Verb Noun "A style or method of doing ")
+      , (DeriMeaning Verb Adj "Tending to often ")
+      , (DeriMeaning Noun Verb "The way to typically use ")
+      , (DeriMeaning Noun Verb "To seek ")
+      , (DeriMeaning Noun Adj "Pertaining to ")
+      , (DeriMeaning Noun Adj "Made of ")
+      , (DeriMeaning Noun Adj "Resembling ")
+      , (DeriMeaning Noun Adj "Supplied with ")
+      , (DeriMeaning Noun Adj "Lacking ")
+      , (DeriMeaning Adj Verb "Cause to become ")
+      , (DeriMeaning Adj Noun "Something that is ")
+      ]
+
 
 readMeaning :: Read a => FilePath -> IO a
-readMeaning x = read <$> unpack <$> decodeUtf8 <$> readFile x
-
+readMeaning x = read <$> unpack <$> readFileUtf8 x
 
 -- Input data for inflections/morphology
 data InputData = InputData

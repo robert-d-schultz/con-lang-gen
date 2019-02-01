@@ -74,8 +74,8 @@ makeParseTree rootMorphs inflmap = do
                verb) <*>
              prepp)))))
 
--- gen verb Inflection
-generateInflection :: InflectionMap -> LexCat -> RVar AllExpress
+-- Generate a random Inflection
+generateInflection :: InflectionMap -> LexCat -> RVar GramCatExpress
 generateInflection inflMap lc = do
   gen <- helperFunction inflMap getGenSys lc
   ani <- helperFunction inflMap getAniSys lc
@@ -95,7 +95,7 @@ generateInflection inflMap lc = do
   tra <- helperFunction inflMap getTraSys lc
   vol <- helperFunction inflMap getVolSys lc
 
-  return (gen, ani, cas, num, def, spe, top, per, hon, pol, ten, asp, moo, voi, evi, tra, vol)
+  return $ GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol
 
 helperFunction :: GramCat a => Eq a => InflectionMap -> (InflectionMap -> Manifest a) -> LexCat -> RVar (Express a)
 helperFunction inflMap f lc = out where

@@ -30,7 +30,7 @@ writeDictionary lang ndict rootMorphs lemmaMorphs inflMorphs = out where
   wsp = particles
   ws_ = ws ++ wsp
   sylleds = map (fromMaybe [] . syllabifyWord lang) ws_
-  meanings = trace (show sylleds) (map getMeaning (rootMorphs ++ particles))
+  meanings = map getMeaning (rootMorphs ++ particles)
   out = "\n" ++ intercalate "\n" (map (writeDictionaryEntry lang ndict) (reduceHomophones (zip sylleds meanings)))
 
 applyLemma :: [Morpheme] -> Morpheme -> Word
@@ -60,8 +60,8 @@ writeMeaning :: Meaning -> Text
 writeMeaning (Meaning lc str) = writeLC lc ++ " " ++ str
 writeMeaning (InflMeaning lc allExpress) = writeAllExpress allExpress ++ " particle that inflects " ++ tshow lc ++ "s"
 
-writeAllExpress :: AllExpress -> Text
-writeAllExpress (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol) = out where
+writeAllExpress :: GramCatExpress-> Text
+writeAllExpress gce = out where
   filt = filter (not.null) a
   out = case filt of [x]   -> x
                      [x,y] -> x ++ ", " ++ y
@@ -70,23 +70,23 @@ writeAllExpress (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra
                                               l <- lastMay filt
                                               return $ intercalate ", " i ++ ", " ++ l
                                            )
-  a = [ tshow gen
-      , tshow ani
-      , tshow cas
-      , tshow num
-      , tshow def
-      , tshow spe
-      , tshow top
-      , tshow per
-      , tshow hon
-      , tshow pol
-      , tshow ten
-      , tshow asp
-      , tshow moo
-      , tshow voi
-      , tshow evi
-      , tshow tra
-      , tshow vol
+  a = [ tshow $ getGen gce
+      , tshow $ getAni gce
+      , tshow $ getCas gce
+      , tshow $ getNum gce
+      , tshow $ getDef gce
+      , tshow $ getSpe gce
+      , tshow $ getTop gce
+      , tshow $ getPer gce
+      , tshow $ getHon gce
+      , tshow $ getPol gce
+      , tshow $ getTen gce
+      , tshow $ getAsp gce
+      , tshow $ getMoo gce
+      , tshow $ getVoi gce
+      , tshow $ getEvi gce
+      , tshow $ getTra gce
+      , tshow $ getVol gce
       ]
 
 
@@ -113,7 +113,8 @@ writeMorphemeIPA lang m@(MorphemeP _ _ ps) = fromMaybe ("!!Morpheme doesn't syll
   out = do
     sylls <- syllabifyWord lang m
     return $ "/" ++ writeSyllablesIPA sylls ++ "/"
-writeMorphemeIPA lang m@(SemiticRoot _ _ pss) = "/" ++ intercalate "-" (map (concatMap writePhonemeIPA) pss) ++ "/"
+writeMorphemeIPA lang m@(ConsonantalRoot _ _ pss) = "/" ++ intercalate "-" (map (concatMap writePhonemeIPA) pss) ++ "/"
+writeMorphemeIPA lang m@(PatternMorph _ _ patts) = "/" ++ intercalate "-" (map writeSyllableIPA patts) ++ "/"
 
 -- write Syllables to string
 writeSyllablesIPA :: [Syllable] -> Text

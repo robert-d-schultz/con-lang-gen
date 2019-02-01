@@ -21,15 +21,18 @@ import Data.Language
 -- Syllabification
 -- Given a word and sonority hierarchy, syllabify the word
 syllabifyWord :: Language -> Word -> Maybe [Syllable]
-syllabifyWord lang (Word m (SemiticRoot _ Root ps1) (SemiticRoot _ Transfix ps2)) = syllabifyWord lang (MorphemeP m Root (concat $ shuffleLists ps1 ps2))
-syllabifyWord lang (Word _ (SemiticRoot _ Root _) _) = Nothing
-syllabifyWord lang (Word _ _ (SemiticRoot _ Transfix _)) = Nothing
+syllabifyWord lang (Word m (ConsonantalRoot _ Root rads) (PatternMorph _ Transfix patts)) = syllabifyConsRoot lang rads patts
+syllabifyWord _ (Word _ ConsonantalRoot{} _) = Nothing
+syllabifyWord _ (Word _ _ ConsonantalRoot{}) = Nothing
+syllabifyWord _ (Word _ PatternMorph{} _) = Nothing
+syllabifyWord _ (Word _ _ PatternMorph{}) = Nothing
 syllabifyWord lang (Word _ leftM rightM) = syllabifyWord lang leftM ++ syllabifyWord lang rightM
-syllabifyWord lang (MorphemeS _ _ sylls) = Just sylls
+syllabifyWord _ (MorphemeS _ _ sylls) = Just sylls
 syllabifyWord lang (MorphemeP _ _ ps) = sylls where
   groups = breakPhonemes lang ps []
   sylls = map (makeSyllable lang) <$> groups
-syllabifyWord lang SemiticRoot{} = Nothing
+syllabifyWord _ ConsonantalRoot{} = Nothing
+syllabifyWord _ PatternMorph{} = Nothing
 
 -- Given a group of phonemes (and a tone?), make a proper syllable structure
 makeSyllable :: Language -> [Phoneme] -> Syllable
@@ -39,6 +42,21 @@ makeSyllable lang ps = out where
   foo i = Syllable onset nucleus coda NONET NONES where
     (onset, nucleus:coda) = splitAt i ps
 
+-- Interweave Consonantal (Semitic) roots and vowel Patterns
+-- Doesn't check if it results in proper syllables
+syllabifyConsRoot :: Language -> [ConsCluster] -> [Syllable] -> Maybe [Syllable]
+syllabifyConsRoot _ [] patts = Just (filter (Syllable [] Blank [] NONET NONES /=) patts)
+syllabifyConsRoot lang rads [] = Nothing
+syllabifyConsRoot lang (r1:r2:rads) (p1:p2:patts)
+    | p2 == Syllable [] Blank [] NONET NONES = (:) p1 <$> syllabifyConsRoot lang ((r1 ++ r2):rads) patts
+    | isNothing (syllabifyConsRoot lang (r2:rads) patts) = (:) p1 <$> Just [p2{getOnset = r1, getCoda = concat (r2:rads)}]
+    | otherwise = (:) p1 <$> syllabifyConsRoot lang (r2:rads) (p2{getOnset = r1}:patts)
+syllabifyConsRoot lang [r] (p1:p2:patts)
+    | p2 == Syllable [] Blank [] NONET NONES = (:) p1 <$> syllabifyConsRoot lang [r] patts
+    | otherwise = (:) p1 <$> syllabifyConsRoot lang [] (p2{getOnset = r}:patts)
+syllabifyConsRoot lang (r:rads) [p]
+    | p == Syllable [] Blank [] NONET NONES = Nothing
+    | otherwise = Just [p{getCoda = concat (r:rads)}]
 
 {- This one is based on Sonority Hierarchy, and not valid CC/Nuclei...
 breakPhonemes :: [Phoneme] -> [Phoneme] -> [[Phoneme]] -> [[Phoneme]]

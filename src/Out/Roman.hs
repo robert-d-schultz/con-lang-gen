@@ -15,11 +15,12 @@ import Data.Inflection
 import Out.IPA
 
 romanizeWord :: Word -> Text
-romanizeWord (Word _ leftM@(SemiticRoot _ Root ps1) rightM@(SemiticRoot _ Transfix ps2)) = romanizePhonemes (concat $ shuffleLists ps1 ps2)
+romanizeWord (Word _ leftM@(ConsonantalRoot _ Root ps1) rightM@(ConsonantalRoot _ Transfix ps2)) = romanizePhonemes (concat $ shuffleLists ps1 ps2)
 romanizeWord (Word _ leftM rightM) = romanizeWord leftM ++ romanizeWord rightM
 romanizeWord (MorphemeS _ _ syllables) = concatMap romanizeSyllable syllables
 romanizeWord (MorphemeP _ _ phonemes) = romanizePhonemes phonemes
-romanizeWord (SemiticRoot _ _ phonemess) = intercalate "-" (map romanizePhonemes phonemess)
+romanizeWord (ConsonantalRoot _ _ phonemess) = intercalate "-" (map romanizePhonemes phonemess)
+romanizeWord (PatternMorph _ _ patts) = intercalate "-" (map romanizeSyllable patts)
 
 romanizeSyllable :: Syllable -> Text
 romanizeSyllable (Syllable onset nucleus coda tone _) = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeToneDiacritic tone ++ romanizePhonemes coda

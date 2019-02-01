@@ -11,7 +11,7 @@ import Data.Word
 import Data.Inflection
 import Data.Language
 
-import Gen.Morphology
+import Gen.Morpheme
 import Out.Lexicon
 
 -- Write inflection overview (per lex cat)
@@ -111,11 +111,11 @@ writeInflectionTables lang inflSys inflMorphs  = "<br>\n" ++ style ++ concat ((\
 writeInflectionTableSet :: Language -> InflectionMap -> [Morpheme] -> LexCat -> MorphType -> Int -> Text
 writeInflectionTableSet _ _ [] _ _ _ = "No Inflection"
 writeInflectionTableSet lang inflSys inflMorphs lc morphType i = out where
-  out | cleanInflectionSys inflSys lc morphType i == ([NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress],[NoExpress]) = ""
+  out | cleanInflectionSys inflSys lc morphType i == GramCatExpresses [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] [NoExpress] = ""
       | otherwise = "<br>\n" ++ tshow lc ++ " "++ tshow morphType ++ " " ++ tshow i
                     ++ writeInflectionTable lang inflMorphs lc morphType gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols
                     ++ writeInflectionTableSet lang inflSys inflMorphs lc morphType (i+1)
-  (gens,anis,cass,nums,defs,spes,tops,pers,hons,pols,tens,asps,moos,vois,evis,tras,vols) = cleanInflectionSys inflSys lc morphType i
+  GramCatExpresses gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols = cleanInflectionSys inflSys lc morphType i
 
 
 -- Write an inflection system (conjugations/declensions) into an html table
@@ -223,14 +223,14 @@ makeAttoRow lang inflMorphs lc morphType vols ten asp moo per def spe pol top ca
 
 getMorpheme :: Language -> [Morpheme] -> LexCat -> MorphType -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> Express Transitivity -> Express Evidentiality -> Express Voice -> Express Volition -> Text
 getMorpheme lang inflMorphs lc morphType@Particle ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
-  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) inflMorphs
+  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
   output = writeMorphemeIPA lang <$> filt
 getMorpheme lang inflMorphs lc morphType@Prefix ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
-  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) inflMorphs
+  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
   output = (++ "–") <$> (writeMorphemeIPA lang <$> filt)
 getMorpheme lang inflMorphs lc morphType@Suffix ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
-  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) inflMorphs
+  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
   output = (++) "–" <$> (writeMorphemeIPA lang <$> filt)
 getMorpheme lang inflMorphs lc morphType@Transfix ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
-  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (gen,ani,cas,num,def,spe,top,per,hon,pol,ten,asp,moo,voi,evi,tra,vol)) inflMorphs
+  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
   output = writeMorphemeIPA lang <$> filt

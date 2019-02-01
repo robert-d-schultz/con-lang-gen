@@ -139,7 +139,7 @@ data Bar = XBarA
 data Leaf = LeafNull Illoc
           | LeafInfl
           { leafLC :: LexCat
-          , leafInfl :: AllExpress
+          , leafInfl :: GramCatExpress
           }
           | Leaf
           { leafLC  :: LexCat

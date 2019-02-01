@@ -11,13 +11,20 @@ module HelperFunctions
 , choices2
 , randomSubset
 , safeSampleSet
+, triangle
+, triangleChoice
+, yuleSimon
+, yuleSimonChoice
 ) where
 
 import ClassyPrelude
+import Math.Gamma
 
 import Data.RVar
-import Data.Random hiding (sample)
+import Data.Random hiding (sample, gamma)
 import Data.Random.Extras
+import Data.Random.Distribution.Triangular
+import Data.Random.Distribution.Categorical
 
 import Data.Random.Lift as R (lift)
 
@@ -96,6 +103,34 @@ extract s i | null r    = Nothing
     where (a, r) = splitAt i s
           (b : c) = r
 
+triangle :: Int -> Int -> RVar Int
+triangle n x
+  | n == x = return n
+  | otherwise = do
+    y <- rvar (Triangular (fromIntegral n :: Double) (fromIntegral n :: Double) (fromIntegral x :: Double))
+    return $ round y
+
+-- Should use this for phoneme selection
+triangleChoice :: [a] -> RVar (Maybe a)
+triangleChoice xs = do
+  n <- triangle 0 (length xs)
+  return $ index xs n
+
+
+-- Only allows integer rho
+yuleSimonPMF :: Double -> Int -> Double
+yuleSimonPMF rho k = (rho * gamma (rho + 1)) / ((k_ + rho) ** (rho + 1)) where
+  k_ = fromIntegral k
+
+yuleSimon :: Double -> Int -> RVar Int
+yuleSimon rho l = categorical $ map (\x -> (yuleSimonPMF rho x, x)) [1..l]
+
+yuleSimonChoice :: Double -> [a] -> RVar (Maybe a)
+yuleSimonChoice rho xs
+  | rho <= 0 = return Nothing
+  | otherwise = do
+  n <- yuleSimon rho (length xs)
+  return $ index xs (n-1)
 
 -- Doesn't work?
 -- This is like replicateM, except it replicates until it either hits the amount

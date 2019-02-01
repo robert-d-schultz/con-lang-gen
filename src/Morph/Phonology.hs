@@ -26,23 +26,26 @@ phonologicalChange i lang = do
   if changes < 2 then phonologicalChange (i+1) lang else return langN
 
 executeRuleOnLanguage :: Rule -> Language -> (Language, Int)
-executeRuleOnLanguage rule lang = (langN, rootChanges + inflChanges) where
+executeRuleOnLanguage rule lang = (langN, rootChanges + derivChanges + inflChanges) where
 
   -- Execute rule on each (valid) phoneme in the lexicon and inflection system
   inflMorphs = getInflMorphemes lang
   lemmaMorphs = getLemmaMorphemes lang
+  derivMorphs = getDerivMorphemes lang
   rootMorphs = getRootMorphemes lang
 
   (inflMorphsN, inflChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) inflMorphs :: ([Morpheme], Int)
   (lemmaMorphsN, lemmaChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) lemmaMorphs :: ([Morpheme], Int)
+  (derivMorphsN, derivChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) derivMorphs :: ([Morpheme], Int)
   (rootMorphsN, rootChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) rootMorphs :: ([Morpheme], Int)
 
   -- Take a new survey of which phonemes exist in the lexicon
   -- Update inventories and maps
   inflPhonemes = concatMap morphToPhonemes inflMorphsN
   lemmaPhonemes = concatMap morphToPhonemes lemmaMorphsN
+  derivPhonemes = concatMap morphToPhonemes derivMorphsN
   rootPhonemes = concatMap morphToPhonemes rootMorphsN
-  allPhonemes = nub $ inflPhonemes ++ lemmaPhonemes ++ rootPhonemes
+  allPhonemes = nub $ inflPhonemes ++ lemmaPhonemes ++ derivPhonemes ++ rootPhonemes
   cInvN = filter isConsonant allPhonemes
   vInvN = filter isVowel allPhonemes
   cMapN = updateCMap cInvN
@@ -50,7 +53,7 @@ executeRuleOnLanguage rule lang = (langN, rootChanges + inflChanges) where
 
   -- Need to update valid CC lists
   -- Need to use rescueSyllables
-  langN = lang{getCMap = cMapN, getCInv = cInvN, getVMap = vMapN, getVInv = vInvN, getInflMorphemes = inflMorphsN, getLemmaMorphemes = lemmaMorphsN, getRootMorphemes = rootMorphsN, getRules = rule : getRules lang}
+  langN = lang{getCMap = cMapN, getCInv = cInvN, getVMap = vMapN, getVInv = vInvN, getInflMorphemes = inflMorphsN, getLemmaMorphemes = lemmaMorphsN, getDerivMorphemes = derivMorphsN, getRootMorphemes = rootMorphsN, getRules = rule : getRules lang}
 
 -- Creates a new vMap from a given vowel inventory
 updateVMap :: [Phoneme] -> ([Height], [Backness], [Roundedness], [Length])
@@ -71,7 +74,8 @@ updateCMap cInv = (ps, ms, hs, as) where
 -- Applies rule to a morpheme
 executeRuleOnMorpheme :: Rule -> Morpheme -> (Morpheme, Int)
 executeRuleOnMorpheme rule (MorphemeS m t y) = first (MorphemeS m t) (executeRuleOnSyllWord 0 rule [] y)
-executeRuleOnMorpheme rule (SemiticRoot m t y) = (SemiticRoot m t y, 0) --simple rules should probably execute
+executeRuleOnMorpheme rule (ConsonantalRoot m t y) = (ConsonantalRoot m t y, 0) --simple rules should probably execute
+executeRuleOnMorpheme rule (PatternMorph m t y) = (PatternMorph m t y, 0) --simple rules should probably execute
 
 -- Applies a rule to each phoneme in multiple syllables
 executeRuleOnSyllWord :: Int -> Rule -> [Syllable] -> [Syllable] -> ([Syllable], Int)
@@ -96,7 +100,8 @@ executeRuleOnSyllable rule@Rule{} (Syllable onset nuc coda tone stress) (prev, n
 morphToPhonemes :: Morpheme -> [Phoneme]
 morphToPhonemes (MorphemeS _ _ y) = nub $ concatMap syllToPhonemes y
 morphToPhonemes (MorphemeP _ _ y) = nub y
-morphToPhonemes (SemiticRoot _ _ y) = nub $ concat y
+morphToPhonemes (ConsonantalRoot _ _ y) = nub $ concat y
+morphToPhonemes (PatternMorph _ _ y) = nub $ concatMap syllToPhonemes y
 
 syllToPhonemes :: Syllable -> [Phoneme]
 syllToPhonemes (Syllable o n c _ _) = nub $ o ++ [n] ++ c
@@ -289,8 +294,8 @@ createCChangePattern lang = do
   prb <- join $ choice_ 1 Nothing <$> choice (Nothing : delete pra (map Just places))
   mrb <- join $ choice_ 1 Nothing <$> choice (Nothing : delete mra (map Just manners))
   hrb <- join $ choice_ 1 Nothing <$> choice (Nothing : delete hra (map Just phonations))
-  arb <- join $ choice_ 1 Nothing <$> choice (map Just airstreams)
-  return (ConsonantR pra mra hra ara, ConsonantR prb mrb hrb arb)
+  arb <- join $ choice_ 1 Nothing <$> choice (Nothing : delete ara (map Just airstreams))
+  if ConsonantR prb mrb hrb arb == ConsonantR Nothing Nothing Nothing Nothing then createCChangePattern lang else return (ConsonantR pra mra hra ara, ConsonantR prb mrb hrb arb)
 
 -- [+consonant] -> [+consonant] change (only uses unused p/m/h/a's)
 createCChangePattern2 :: Language -> RVar (PhonemeR, PhonemeR)
@@ -325,7 +330,7 @@ createCChangePattern2 lang = do
 
   arb <- join $ choice_ 1 Nothing <$> airstream
 
-  return (ConsonantR pra mra hra ara, ConsonantR prb mrb hrb arb)
+  if ConsonantR prb mrb hrb arb == ConsonantR Nothing Nothing Nothing Nothing then createCChangePattern2 lang else return (ConsonantR pra mra hra ara, ConsonantR prb mrb hrb arb)
 
 
 -- [+vowel]__[+vowel] environment (only existing phonemes, of course)
@@ -359,7 +364,7 @@ createVChangePattern lang = do
   brb <- join $ choice_ 2 Nothing <$> choice (Nothing : delete bra (map Just backs))
   rrb <- join $ choice_ 2 Nothing <$> choice (Nothing : delete rra (map Just rounds))
   lrb <- join $ choice_ 2 Nothing <$> choice (Nothing : delete lra (map Just lengths))
-  return (VowelR hra bra rra lra, VowelR hrb brb rrb lrb)
+  if VowelR hrb brb rrb lrb == ConsonantR Nothing Nothing Nothing Nothing then createVChangePattern lang else return (VowelR hra bra rra lra, VowelR hrb brb rrb lrb)
 
 -- [+vowel] -> [+vowel] change (only uses unused h/b/r/l/t's)
 createVChangePattern2 :: Language -> RVar (PhonemeR, PhonemeR)
@@ -394,7 +399,7 @@ createVChangePattern2 lang = do
 
   lrb <- join $ choice_ 2 Nothing <$> lngth
 
-  return (VowelR hra bra rra lra, VowelR hrb brb rrb lrb)
+  if VowelR hrb brb rrb lrb == ConsonantR Nothing Nothing Nothing Nothing then createVChangePattern2 lang else return (VowelR hra bra rra lra, VowelR hrb brb rrb lrb)
 
 
 -- Shelved

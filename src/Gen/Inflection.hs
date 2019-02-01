@@ -55,7 +55,7 @@ rab lcs lc2 = join out where
       | otherwise = unsafeHead fu
     (lc, part, pref, suff, trans) = shit
 
-    -- decide between Particle, Prefix, Suffix
+    -- decide between Particle, Prefix, Suffix, Transfix
     out = choice [ do
                    i <- uniform 1 (part+1) -- decide between an existing one or a new one
                    return ((lc, Particle, i), (lc, max i part, pref, suff, trans) : ba)
@@ -63,11 +63,9 @@ rab lcs lc2 = join out where
                    j <- uniform 1 (pref+1)
                    return ((lc, Prefix, j), (lc, part, max j pref, suff, trans) : ba)
                  , do
-                   j <- uniform 1 (suff+1)
-                   return ((lc, Suffix, j), (lc, part, pref, max j suff, trans) : ba)
-                 , do
-                   j <- uniform 1 trans
-                   return ((lc, Transfix, j), (lc, part, pref, suff, max j trans) : ba)
+                   k <- uniform 1 (suff+1)
+                   return ((lc, Suffix, k), (lc, part, pref, max k suff, trans) : ba)
+                 , return ((lc, Transfix, 1), (lc, part, pref, suff, 1) : ba)
                  ]
 
 

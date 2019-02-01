@@ -18,7 +18,8 @@ import Data.Inflection
 data Word = Word { getMeaning :: Meaning, getLeft :: Morpheme, getRight :: Morpheme }
           | MorphemeS { getMeaning :: Meaning, getMorphType :: MorphType, getSylls :: [Syllable] }
           | MorphemeP { getMeaning :: Meaning, getMorphType :: MorphType, getPhonemes :: [Phoneme] }
-          | SemiticRoot { getMeaning :: Meaning, getMorphType :: MorphType, getRadicals :: [[Phoneme]] } deriving (Eq, Show)
+          | ConsonantalRoot { getMeaning :: Meaning, getMorphType :: MorphType, getRadicals :: [[Phoneme]] }
+          | PatternMorph { getMeaning :: Meaning, getMorphType :: MorphType, getPatterns :: [Syllable] } deriving (Eq, Show)
 
           -- | Proclitic AllExpress [Morpheme]
           -- | Enclitic AllExpress [Morpheme] deriving (Eq, Show)
@@ -31,7 +32,8 @@ type Morpheme = Word
 -- Meanings are basically just English-language "senses"
 -- Eventually Verbs will need to carry their Theta roles
 data Meaning = Meaning { getLC :: LexCat, getStr :: Text }
-             | InflMeaning { getLC :: LexCat, getAllExpress :: AllExpress } deriving (Eq, Show)
+             | InflMeaning { getLC :: LexCat, getAllExpress :: GramCatExpress }
+             | DeriMeaning { getLC1 :: LexCat, getLC2 :: LexCat, getStr :: Text } deriving (Eq, Show, Read)
              --[ThetaRole]
 --data ThetaRole = Agent | Experiencer | Theme | Patient deriving (Eq, Enum, Read, Show)
 

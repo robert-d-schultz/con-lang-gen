@@ -48,7 +48,11 @@ instance Show PhonemeR where
   show SyllableBoundary = "σ"
   show WordBoundary = "#"
 
-data Rule = Rule PhonemeR PhonemeR (Maybe PhonemeR) (Maybe PhonemeR) | NoChange
+data Rule = Rule { getA :: PhonemeR
+                 , getB :: PhonemeR
+                 , getX :: Maybe PhonemeR
+                 , getY :: Maybe PhonemeR }
+            | NoChange
 
 -- A > B / X__Y
 instance Show Rule where
