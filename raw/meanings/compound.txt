@@ -1,0 +1,10 @@
+[ CompMeaning { getLC = Noun, getLC1 = Noun, getLC2 = Adj, getStr = "A {0} that is {1}" }
+, CompMeaning { getLC = Noun, getLC1 = Noun, getLC2 = Adj, getStr = "Someone whose {0} is {1}" }
+, CompMeaning { getLC = Noun, getLC1 = Noun, getLC2 = Verb, getStr = "Something that {1}s {0}" }
+, CompMeaning { getLC = Noun, getLC1 = Noun, getLC2 = Verb, getStr = "Someone that {1}s {0}" }
+, CompMeaning { getLC = Verb, getLC1 = Verb, getLC2 = Noun, getStr = "To {1} using a {0}" }
+, CompMeaning { getLC = Adj, getLC1 = Adj, getLC2 = Adj, getStr = "Both {0} and {1}" }
+, CompMeaning { getLC = Verb, getLC1 = Verb, getLC2 = Verb, getStr = "To {0} and {1} at the same time" }
+, CompMeaning { getLC = Verb, getLC1 = Verb, getLC2 = Verb, getStr = "To {0} and then {1}" }
+, CompMeaning { getLC = Noun, getLC1 = Noun, getLC2 = Noun, getStr = "A {0} that is also a {1}" }
+]

@@ -36,6 +36,7 @@ data Language = Language
               , getInflMorphemes :: [Morpheme]
               , getLemmaMorphemes :: [Morpheme]
               , getDerivMorphemes :: [Morpheme]
+              , getCompoundMorphemes :: [Morpheme]
               , getRootMorphemes :: [Morpheme]
               , getGrammar :: Grammar
               , getWriting :: ([(Phoneme, (Int, CharPath))], [(Syllable, (Int, CharPath))], [(Morpheme, (Int, CharPath))])

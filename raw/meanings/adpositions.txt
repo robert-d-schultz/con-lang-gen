@@ -1,3 +1,3 @@
-[ Meaning { getLC = Adpo, getStr = "on" }
-, Meaning { getLC = Adpo, getStr = "at" }
+[ RootMeaning { getLC = Adpo, getStr = "on" }
+, RootMeaning { getLC = Adpo, getStr = "at" }
 ]

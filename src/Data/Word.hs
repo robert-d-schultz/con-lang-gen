@@ -34,11 +34,12 @@ type Morpheme = Word
 
 -- Meanings are basically just English-language "senses"
 -- Eventually Verbs will need to carry their Theta roles
-data Meaning = Meaning { getLC :: LexCat, getStr :: Text }
+data Meaning = Meaning { getLC :: LexCat, getStr :: Text, getAllExpress :: GramCatExpress }
+             | RootMeaning { getLC :: LexCat, getStr :: Text }
              | InflMeaning { getLC :: LexCat, getAllExpress :: GramCatExpress }
-             | DeriMeaning { getLC1 :: LexCat, getLC2 :: LexCat, getStr :: Text } deriving (Eq, Show, Read)
-             --[ThetaRole]
---data ThetaRole = Agent | Experiencer | Theme | Patient deriving (Eq, Enum, Read, Show)
+             | DeriMeaning { getLC1 :: LexCat, getLC2 :: LexCat, getStr :: Text }
+             | CompMeaning { getLC :: LexCat, getLC1 :: LexCat, getLC2 :: LexCat, getStr :: Text }
+             deriving (Eq, Show, Read)
 
 data Syllable = Syllable
               { getOnset :: [Phoneme]

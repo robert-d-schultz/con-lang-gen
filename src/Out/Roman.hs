@@ -19,8 +19,8 @@ import Out.Syllable
 romanizeWord :: Language -> Word -> Text
 romanizeWord lang (MorphemeS _ _ syllables) = concatMap romanizeSyllable syllables
 romanizeWord lang (MorphemeP _ _ phonemes) = romanizePhonemes phonemes
-romanizeWord lang (MorphemeC _ _ phonemess) = intercalate "-" (map romanizePhonemes phonemess)
-romanizeWord lang (MorphemeV _ _ patts) = intercalate "-" (map romanizeSyllable patts)
+romanizeWord lang (MorphemeC _ _ phonemess) = intercalate "–" (map romanizePhonemes phonemess)
+romanizeWord lang (MorphemeV _ _ patts) = intercalate "–" (map romanizeSyllable patts)
 romanizeWord lang word = fromMaybe "!!ERROR!!" $ concatMap romanizeSyllable <$> syllabifyWord lang word
 
 romanizeSyllable :: Syllable -> Text

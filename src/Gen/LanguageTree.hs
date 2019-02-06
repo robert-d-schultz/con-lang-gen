@@ -47,7 +47,7 @@ makeLanguageBranch iter idata mData lang = do
 assignModifiers :: LanguageBranch -> RVar LanguageBranch
 assignModifiers lb = do
   let depth = treeDepth lb
-  trace (show depth) assignModifiers2 0 depth lb
+  assignModifiers2 0 depth lb
 
 -- Traverse the Tree, disambiguating languages with disambiguation modifiers
 -- i = current depth in tree

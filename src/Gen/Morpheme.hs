@@ -7,6 +7,7 @@ module Gen.Morpheme
 , makeMorphemeVowels
 , pickLemmaMorphemes
 , makeDerivationMorphemes
+, makeCompoundMorphemes
 ) where
 
 import ClassyPrelude hiding (Word)
@@ -56,7 +57,7 @@ makeMorphemeSyllable onsets nucs codas tones zipfParameter = do
   onset  <- fromMaybe [] <$> zipfChoice zipfParameter onsets
   nuclei <- fromMaybe Blank <$> zipfChoice zipfParameter nucs
   coda   <- fromMaybe [] <$> zipfChoice zipfParameter codas
-  tone   <- choice tones
+  tone   <- fromMaybe NONET <$> safeChoice2 tones
   return $ Syllable onset nuclei coda tone NONES
 
 assignStress :: [Syllable] -> RVar [Syllable]
@@ -136,7 +137,7 @@ cleanInflectionSys inflMap lc mt i = GramCatExpresses gens anis cass nums defs s
   tras = cleanSys (getTraSys inflMap) lc mt i
   vols = cleanSys (getVolSys inflMap) lc mt i
 
-  cleanSys :: GramCat a => Manifest a -> LexCat -> MorphType -> Int -> [Express a]
+  cleanSys :: Manifest a -> LexCat -> MorphType -> Int -> [Express a]
   cleanSys NoManifest _ _ _ = [NoExpress]
   cleanSys (Manifest t x) lc mt i = out where
     filt = filter (== (lc, mt, i)) t
@@ -177,3 +178,7 @@ pickLemmaMorphemes inflSys inflMorphs lc = do
 -- Derivational Morphology
 makeDerivationMorphemes :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> Float -> RVar [Morpheme]
 makeDerivationMorphemes mData onsets nucs codas tones set zipfParameter = mapM (\d -> MorphemeS d Suffix <$> makeMorphemeSyllables onsets nucs codas tones set zipfParameter) (inputDerivs mData)
+
+-- Compound Morphology
+makeCompoundMorphemes :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> Float -> RVar [Morpheme]
+makeCompoundMorphemes mData onsets nucs codas tones set zipfParameter = mapM (\d -> MorphemeS d Suffix <$> makeMorphemeSyllables onsets nucs codas tones set zipfParameter) (inputCompounds mData)

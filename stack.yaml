@@ -3,5 +3,11 @@ extra-package-dbs: []
 packages:
 - .
 extra-deps:
+- basic-prelude-0.7.0
+- classy-prelude-1.5.0
+- primitive-0.6.4.0
 - random-extras-0.19
+- text-format-simple-1.1.0
+- unliftio-0.2.10
+- unliftio-core-0.1.2.0
 resolver: lts-9.0

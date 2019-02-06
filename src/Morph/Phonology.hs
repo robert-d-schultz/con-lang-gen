@@ -19,7 +19,7 @@ import HelperFunctions
 
 -- Given a phonological rule, change some phonemes into previously-not-existing ones
 phonologicalChange :: Int -> Language -> RVar Language
-phonologicalChange 50 lang = trace "Gave up on sound change" return lang --give up after 50 attempts
+phonologicalChange 50 lang = return lang --give up after 50 attempts --trace "Gave up on sound change"
 phonologicalChange i lang = do
   rule <- generateRule lang
   let (langN, changes) = executeRuleOnLanguage rule lang
@@ -32,11 +32,13 @@ executeRuleOnLanguage rule lang = (langN, rootChanges + derivChanges + inflChang
   inflMorphs = getInflMorphemes lang
   lemmaMorphs = getLemmaMorphemes lang
   derivMorphs = getDerivMorphemes lang
+  compoundMorphs = getCompoundMorphemes lang
   rootMorphs = getRootMorphemes lang
 
   (inflMorphsN, inflChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) inflMorphs :: ([Morpheme], Int)
   (lemmaMorphsN, lemmaChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) lemmaMorphs :: ([Morpheme], Int)
   (derivMorphsN, derivChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) derivMorphs :: ([Morpheme], Int)
+  (compoundMorphsN, compoundChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) compoundMorphs :: ([Morpheme], Int)
   (rootMorphsN, rootChanges) = second sum $ unzip $ map (executeRuleOnMorpheme rule) rootMorphs :: ([Morpheme], Int)
 
   -- Take a new survey of which phonemes exist in the lexicon
@@ -44,8 +46,9 @@ executeRuleOnLanguage rule lang = (langN, rootChanges + derivChanges + inflChang
   inflPhonemes = concatMap morphToPhonemes inflMorphsN
   lemmaPhonemes = concatMap morphToPhonemes lemmaMorphsN
   derivPhonemes = concatMap morphToPhonemes derivMorphsN
+  compoundPhonemes = concatMap morphToPhonemes compoundMorphsN
   rootPhonemes = concatMap morphToPhonemes rootMorphsN
-  allPhonemes = nub $ inflPhonemes ++ lemmaPhonemes ++ derivPhonemes ++ rootPhonemes
+  allPhonemes = nub $ inflPhonemes ++ lemmaPhonemes ++ derivPhonemes ++ compoundPhonemes ++ rootPhonemes
   cInvN = filter isConsonant allPhonemes
   vInvN = filter isVowel allPhonemes
   cMapN = updateCMap cInvN
@@ -53,7 +56,7 @@ executeRuleOnLanguage rule lang = (langN, rootChanges + derivChanges + inflChang
 
   -- Need to update valid CC lists
   -- Need to use rescueSyllables
-  langN = lang{getCMap = cMapN, getCInv = cInvN, getVMap = vMapN, getVInv = vInvN, getInflMorphemes = inflMorphsN, getLemmaMorphemes = lemmaMorphsN, getDerivMorphemes = derivMorphsN, getRootMorphemes = rootMorphsN, getRules = rule : getRules lang}
+  langN = lang{getCMap = cMapN, getCInv = cInvN, getVMap = vMapN, getVInv = vInvN, getInflMorphemes = inflMorphsN, getLemmaMorphemes = lemmaMorphsN, getDerivMorphemes = derivMorphsN, getCompoundMorphemes = compoundMorphsN, getRootMorphemes = rootMorphsN, getRules = rule : getRules lang}
 
 -- Creates a new vMap from a given vowel inventory
 updateVMap :: [Phoneme] -> ([Height], [Backness], [Roundedness], [Length])

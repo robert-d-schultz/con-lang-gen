@@ -70,7 +70,7 @@ makeCodas :: Int -> Int -> [ConsCluster] -> [ConsCluster] -> [Phoneme] -> [[Phon
 makeCodas 0 _ codas onsets cns _ _ = do
   let unused = cns \\ concat (codas ++ onsets)
   return $ codas ++ map (:[]) unused -- makes sure all consonants are used somewhere
-makeCodas _ 50 codas onsets cns sonHier settings = trace "Failed to generate ALL codaCCs" $ makeCodas 0 50 codas onsets cns sonHier settings
+makeCodas _ 50 codas onsets cns sonHier settings = makeCodas 0 50 codas onsets cns sonHier settings -- trace "Failed to generate ALL codaCCs" $
 makeCodas i limit [] onsets cns sonHier settings = do
   m <- uniform 0 (length cns) -- number of coda "singletons" (not counting possibly unused consonants)
   codas <- fromMaybe (return []) $ safeSample m cns

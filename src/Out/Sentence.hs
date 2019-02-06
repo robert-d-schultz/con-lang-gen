@@ -91,24 +91,30 @@ getReleventInflMorphs inflMorphs inflLeaves = (partMorphs, prefMorphs, suffMorph
   transMorphs = filter (\m -> getMorphType m == Transfix && getLC (getMeaning m) == lc) inflMorphs
 
 glossCombo :: GramCatExpress -> Text
-glossCombo (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) = intercalate "." (vol2 :: [Text]) where
-  gen2 | gen /= NoExpress = [gloss $ getExp gen]      | otherwise = []
-  ani2 | ani /= NoExpress = gloss (getExp ani) : gen2 | otherwise = gen2
-  cas2 | cas /= NoExpress = gloss (getExp cas) : ani2 | otherwise = ani2
-  num2 | num /= NoExpress = gloss (getExp num) : cas2 | otherwise = cas2
-  def2 | def /= NoExpress = gloss (getExp def) : num2 | otherwise = num2
-  spe2 | spe /= NoExpress = gloss (getExp spe) : def2 | otherwise = def2
-  top2 | top /= NoExpress = gloss (getExp top) : spe2 | otherwise = spe2
-  per2 | per /= NoExpress = gloss (getExp per) : top2 | otherwise = top2
-  hon2 | hon /= NoExpress = gloss (getExp hon) : per2 | otherwise = per2
-  pol2 | pol /= NoExpress = gloss (getExp pol) : hon2 | otherwise = hon2
-  ten2 | ten /= NoExpress = gloss (getExp ten) : pol2 | otherwise = pol2
-  asp2 | asp /= NoExpress = gloss (getExp asp) : ten2 | otherwise = ten2
-  moo2 | moo /= NoExpress = gloss (getExp moo) : asp2 | otherwise = asp2
-  voi2 | voi /= NoExpress = gloss (getExp voi) : moo2 | otherwise = moo2
-  evi2 | evi /= NoExpress = gloss (getExp evi) : voi2 | otherwise = voi2
-  tra2 | tra /= NoExpress = gloss (getExp tra) : evi2 | otherwise = evi2
-  vol2 | vol /= NoExpress = gloss (getExp vol) : tra2 | otherwise = tra2
+glossCombo (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) = intercalate "." (filter (not.null) l) where
+  l = [ glossCombo_ gen
+      , glossCombo_ ani
+      , glossCombo_ cas
+      , glossCombo_ num
+      , glossCombo_ def
+      , glossCombo_ spe
+      , glossCombo_ top
+      , glossCombo_ per
+      , glossCombo_ hon
+      , glossCombo_ pol
+      , glossCombo_ ten
+      , glossCombo_ asp
+      , glossCombo_ moo
+      , glossCombo_ voi
+      , glossCombo_ evi
+      , glossCombo_ tra
+      , glossCombo_ vol
+      ]
+
+glossCombo_ :: Eq a => GramCat a => Express a -> Text
+glossCombo_ x
+  | x /= NoExpress = gloss (getExp x)
+  | otherwise = ""
 
 -- Transcribe sentence into IPA
 transcribeLeaves :: Language -> [Morpheme] -> [Morpheme] -> [Leaf] -> Text
@@ -124,8 +130,8 @@ transcribeLeaves lang rootMorphs inflMorphs leaves = out where
 
   partOut = map (writeWordIPA lang) parts
 
-  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap (writeMorphemeIPA lang) suffs ++ "<UNK>" ++ concatMap (writeMorphemeIPA lang) prefs) (writeWordIPA lang <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
-                                   (LeafNull _) -> ""
+  othersOut = map (\x -> case x of Leaf{} -> fromMaybe (concatMap (writeMorphemeIPA lang) suffs ++ "<UNK>" ++ concatMap (writeMorphemeIPA lang) prefs) (writeWordIPA lang <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> RootMeaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
+                                   LeafNull{} -> ""
                                    _ -> ""
                                    ) others
 
@@ -142,28 +148,32 @@ getLast xs = fromMaybe [] ((:[]) <$> lastMay xs)
 -- Actually this checks if the left GramCatExpress helps satisfy the right GramCatExpress
 compareInfl :: GramCatExpress -> GramCatExpress -> Bool
 compareInfl (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) (GramCatExpress gen2 ani2 cas2 num2 def2 spe2 top2 per2 hon2 pol2 ten2 asp2 moo2 voi2 evi2 tra2 vol2) =
-  and [ gen == gen2 || gen `elem` [Express UGEN, NoExpress]
-      , ani == ani2 || ani `elem` [Express UANI, NoExpress]
-      , cas == cas2 || cas `elem` [Express UCAS, NoExpress]
-      , num == num2 || num `elem` [Express UNUM, NoExpress]
-      , def == def2 || def `elem` [Express UDEF, NoExpress]
-      , spe == spe2 || spe `elem` [Express USPE, NoExpress]
-      , top == top2 || top `elem` [Express UTOP, NoExpress]
-      , per == per2 || per `elem` [Express UPER, NoExpress]
-      , hon == hon2 || hon `elem` [Express UHON, NoExpress]
-      , pol == pol2 || pol `elem` [Express UPOL, NoExpress]
-      , ten == ten2 || ten `elem` [Express UTEN, NoExpress]
-      , asp == asp2 || asp `elem` [Express UASP, NoExpress]
-      , moo == moo2 || moo `elem` [Express UMOO, NoExpress]
-      , voi == voi2 || voi `elem` [Express UVOI, NoExpress]
-      , evi == evi2 || evi `elem` [Express UEVI, NoExpress]
-      , tra == tra2 || tra `elem` [Express UTRA, NoExpress]
-      , vol == vol2 || vol `elem` [Express UVOL, NoExpress]
+  and [ compareInfl_ gen gen2
+      , compareInfl_ ani ani2
+      , compareInfl_ cas cas2
+      , compareInfl_ num num2
+      , compareInfl_ def def2
+      , compareInfl_ spe spe2
+      , compareInfl_ top top2
+      , compareInfl_ per per2
+      , compareInfl_ hon hon2
+      , compareInfl_ pol pol2
+      , compareInfl_ ten ten2
+      , compareInfl_ asp asp2
+      , compareInfl_ moo moo2
+      , compareInfl_ voi voi2
+      , compareInfl_ evi evi2
+      , compareInfl_ tra tra2
+      , compareInfl_ vol vol2
       ]
+
+-- minBound should be UGEN, UANI, UCAS, etc.
+compareInfl_ :: Eq a => Bounded a => Express a -> Express a -> Bool
+compareInfl_ x y = x == y || x `elem` [Express minBound, NoExpress]
 
 transcribeLeaf :: Language -> [Morpheme] -> Leaf -> Text
 transcribeLeaf _ _ LeafNull{} = ""
-transcribeLeaf lang rootMorphs (Leaf lc _ str) = fromMaybe "<UNK>" (writeMorphemeIPA lang <$> find (\x -> Meaning lc str == getMeaning x) rootMorphs)
+transcribeLeaf lang rootMorphs (Leaf lc _ str) = fromMaybe "<UNK>" (writeMorphemeIPA lang <$> find (\x -> RootMeaning lc str == getMeaning x) rootMorphs)
 transcribeLeaf _ _ _ = "ERROR"
 
 -- romanize
@@ -185,8 +195,8 @@ romanizeInfl lang rootMorphs inflMorphs leaves = out where
 
   partOut = map (romanizeWord lang) parts
 
-  othersOut = map (\x -> case x of (Leaf lc _ str) -> fromMaybe (concatMap (romanizeWord lang) suffs ++ "<UNK>" ++ concatMap (romanizeWord lang) prefs) (romanizeWord lang <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
-                                   (LeafNull _) -> ""
+  othersOut = map (\x -> case x of Leaf{} -> fromMaybe (concatMap (romanizeWord lang) suffs ++ "<UNK>" ++ concatMap (romanizeWord lang) prefs) (romanizeWord lang <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) (leafInfl x) == getMeaning y) rootMorphs))
+                                   LeafNull{} -> ""
                                    _ -> ""
                                    ) others
 
@@ -198,7 +208,7 @@ romanizeInfl lang rootMorphs inflMorphs leaves = out where
 
 romanizeLeaf :: Language -> [Morpheme] -> Leaf -> Text
 romanizeLeaf _ _ LeafNull{} = ""
-romanizeLeaf lang rootMorphs (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeWord lang <$> find (\x -> Meaning lc str == getMeaning x) rootMorphs)
+romanizeLeaf lang rootMorphs (Leaf lc _ str) = fromMaybe "<UNK>" (romanizeWord lang <$> find (\x -> RootMeaning lc str == getMeaning x) rootMorphs)
 romanizeLeaf _ _ _ = "!!ERROR!!"
 
 

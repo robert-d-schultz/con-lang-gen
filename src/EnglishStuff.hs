@@ -31,6 +31,7 @@ englishLanguage = Language { getName = "English"
                            , getInflMorphemes = [] -- shouldn't be empty
                            , getLemmaMorphemes = [] -- shouldn't be empty
                            , getDerivMorphemes = [] -- shouldn't be empty
+                           , getCompoundMorphemes = [] -- shouldn't be empty
                            , getRootMorphemes = []
                            , getGrammar = englishGrammar
                            , getWriting = ([], [], [])

@@ -17,7 +17,6 @@ library
   hs-source-dirs:      src
   exposed-modules:     Out.Language
                      , Gen.LanguageTree
-  other-modules:       Constants
                      , Data.Grammar
                      , Data.Inflection
                      , Data.Language
@@ -29,14 +28,11 @@ library
                      , Gen.Grapheme
                      , Gen.Inflection
                      , Gen.Language
-                     , Gen.Morphology
                      , Gen.ParseTree
                      , Gen.Phonology
                      , Gen.Phonotactics
-                     , Gen.Root
+                     , Gen.Morpheme
                      , Gen.WritingSystem
-                     , LoadStuff
-                     , HelperFunctions
                      , Morph.Grammar
                      , Morph.Language
                      , Morph.Phonology
@@ -47,13 +43,18 @@ library
                      , Out.Lexicon
                      , Out.Other
                      , Out.Phonology
+                     , Out.Sentence
                      , Out.Roman
                      , Out.Syllable
                      , Out.WritingSystem
+                     , LoadStuff
+                     , HelperFunctions
+                     , EnglishStuff
+                     , Constants
 
   -- ghc-options:         -Wall
   default-extensions:  NoImplicitPrelude, OverloadedStrings, LambdaCase
-  build-depends:       classy-prelude
+  build-depends:       classy-prelude >= 1.3.1
                      , base
                      , rvar
                      , random-fu
@@ -68,6 +69,7 @@ library
                      , directory
                      , text
                      , safe
+                     , text-format-simple
   default-language:    Haskell2010
 
 executable con-lang-gen-exe
@@ -91,6 +93,7 @@ executable con-lang-gen-exe
                      , directory
                      , text
                      , safe
+                     , text-format-simple
   default-language:    Haskell2010
 
 source-repository head

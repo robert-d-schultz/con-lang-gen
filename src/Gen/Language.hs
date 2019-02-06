@@ -74,6 +74,9 @@ makeLanguage idata mData = do
   -- Derivational morphemes
   derivMorphs <- makeDerivationMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter
 
+  -- Compound morphemes
+  compoundMorphs <- makeCompoundMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter
+
   -- Root morphemes
   let numPerLexCat_ = map (\(lc,_,_,_,t,ct) -> (lc,t,ct)) numPerLexCat
   rootMorphs <- makeRootMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter numPerLexCat_
@@ -85,15 +88,15 @@ makeLanguage idata mData = do
   let allPhonemes = inventoryD ++ inventoryV ++ inventoryC
   let allSyllables | 2000 < product [length onsets, length nuclei, length codas, 3] = []
                    | otherwise = makeAllSyllables onsets nuclei codas tones [NONES, PRIMARYS, SECONDARYS]
-  let allLogograms = rootMorphs ++ derivMorphs ++ inflMorphs
+  let allLogograms = rootMorphs ++ derivMorphs ++ compoundMorphs ++ inflMorphs
   (a, s, l) <- generateWritingSystem allPhonemes allSyllables allLogograms
 
   -- Characters
   (aOut, sOut, lOut) <- makeCharacters (a, s, l)
 
   -- Find out what was assigned to "!!!LANGUAGE!!!" and romanize
-  let lang = Language "" ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys inflMorphs lemmaMorphs derivMorphs rootMorphs grammar (aOut, sOut, lOut) [NoChange]
+  let lang = Language "" ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys inflMorphs lemmaMorphs derivMorphs compoundMorphs rootMorphs grammar (aOut, sOut, lOut) [NoChange]
 
-  let langName = fromMaybe "name not found" (romanizeWord lang <$> find (\x -> getMeaning x == Meaning Noun "!!!LANGUAGE!!!") rootMorphs)
+  let langName = fromMaybe "name not found" (romanizeWord lang <$> find (\x -> getMeaning x == RootMeaning Noun "!!!LANGUAGE!!!") rootMorphs)
 
   return $ lang{getName = langName}

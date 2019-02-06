@@ -19,6 +19,7 @@ data MeaningData = MeaningData
   {
       inputRoots  :: [Meaning]
     , inputDerivs :: [Meaning]
+    , inputCompounds :: [Meaning]
   }
 
 loadMeaningData :: IO MeaningData
@@ -29,6 +30,7 @@ loadMeaningData =  MeaningData
                           , readMeaning "raw/meanings/adpositions.txt"
                           ]
   <*> readMeaning "raw/meanings/derivation.txt"
+  <*> readMeaning "raw/meanings/compound.txt"
 
 readMeaning :: Read a => FilePath -> IO a
 readMeaning x = read <$> unpack <$> readFileUtf8 x

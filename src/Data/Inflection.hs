@@ -6,6 +6,7 @@ module Data.Inflection
 , InflectionMap(..)
 , GramCatExpress(..)
 , GramCatExpresses(..)
+, gramCatExpressNull
 , Gender(..)
 , Animacy(..)
 , Case(..)
@@ -123,7 +124,8 @@ data GramCatExpress = GramCatExpress
                       , getEvi :: Express Evidentiality
                       , getTra :: Express Transitivity
                       , getVol :: Express Volition
-                      }  deriving (Eq, Show, Read)
+                      } deriving (Eq, Show, Read)
+gramCatExpressNull = GramCatExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress
 data GramCatExpresses = GramCatExpresses
                       { getGens :: [Express Gender]
                       , getAnis :: [Express Animacy]
@@ -148,8 +150,8 @@ data GramCatExpresses = GramCatExpresses
 
 -- Grammatical categories
 -- For nouns
-data Gender        = UGEN | M | F | COM | N  deriving (Eq, Read, Show)
-data Animacy       = UANI | AN | HUM | NHUM | ZO | INAN deriving (Eq, Read, Show)
+data Gender        = UGEN | M | F | COM | N  deriving (Eq, Bounded, Read, Show)
+data Animacy       = UANI | AN | HUM | NHUM | ZO | INAN deriving (Eq, Bounded, Read, Show)
 data Case          = UCAS
                    | DIR | DIR2
                    | INTR | MTR | DTR | TR
@@ -169,7 +171,7 @@ data Case          = UCAS
                    | INS | COMIT | INSCOMIT | ORN | BEN
                    | CAUS | DISTR
                    | GEN | POSS | PART
-                   | VOC deriving (Eq, Read, Show)
+                   | VOC deriving (Eq, Bounded, Read, Show)
 
 -- "Case" signals what the attached word's function is in the phrase
 -- The morpho-syntactic cases signal which verb argument they are
@@ -259,27 +261,27 @@ alignment = [ Alignment "Nominative-objective" [NOM, OBJ]
             ]
 -}
 
-data Number        = UNUM | SG | DU | TRI | PA | PL deriving (Eq, Read, Show)
-data Definiteness  = UDEF | DEF | INDF deriving (Eq, Read, Show)
-data Specificity   = USPE | SPEC | NSPEC deriving (Eq, Read, Show)
-data Topic         = UTOP | TOP | NTOP deriving (Eq, Read, Show)
-data Person        = UPER | FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THRDOBV deriving (Eq, Read, Show)
+data Number        = UNUM | SG | DU | TRI | PA | PL deriving (Eq, Bounded, Read, Show)
+data Definiteness  = UDEF | DEF | INDF deriving (Eq, Bounded, Read, Show)
+data Specificity   = USPE | SPEC | NSPEC deriving (Eq, Bounded, Read, Show)
+data Topic         = UTOP | TOP | NTOP deriving (Eq, Bounded, Read, Show)
+data Person        = UPER | FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THRDOBV deriving (Eq, Bounded, Read, Show)
 -- For nouns and verbs
-data Honorific     = UHON | FAM | NEU | FORM deriving (Eq, Read, Show)
-data Polarity      = UPOL | AFF | NEG deriving (Eq, Read, Show)
+data Honorific     = UHON | FAM | NEU | FORM deriving (Eq, Bounded, Read, Show)
+data Polarity      = UPOL | AFF | NEG deriving (Eq, Bounded, Read, Show)
 -- For verbs
 data Tense         = UTEN | PST | PRS | FUT
                    | APRS | APST
                    | AFUT | AFUT1 | AFUT2 | AFUT3
                    | PPRS | PFUT
                    | PPST | PPST1 | PPST2 | PPST3
-                   | PSTPER | PRSPER | FUTPER deriving (Eq, Read, Show)
-data Aspect        = UASP | NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Eq, Read, Show)
-data Mood          = UMOO | IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Eq, Read, Show)
-data Voice         = UVOI | ACTIVE | MIDDLE | PASSIVE deriving (Eq, Read, Show)
-data Evidentiality = UEVI | EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Eq, Read, Show)
-data Transitivity  = UTRA | NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Read, Show)
-data Volition      = UVOL | VOL | NVOL deriving (Eq, Read, Show)
+                   | PSTPER | PRSPER | FUTPER deriving (Eq, Bounded, Read, Show)
+data Aspect        = UASP | NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Eq, Bounded, Read, Show)
+data Mood          = UMOO | IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Eq, Bounded, Read, Show)
+data Voice         = UVOI | ACTIVE | MIDDLE | PASSIVE deriving (Eq, Bounded, Read, Show)
+data Evidentiality = UEVI | EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Eq, Bounded, Read, Show)
+data Transitivity  = UTRA | NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Bounded, Read, Show)
+data Volition      = UVOL | VOL | NVOL deriving (Eq, Bounded, Read, Show)
 
 
 -- GramCat
@@ -298,7 +300,7 @@ instance GramCat Animacy where
   name ani = case ani of UANI -> "unknown animacy"
                          AN   -> "animate"
                          HUM  -> "human"
-                         NHUM -> "non-Human"
+                         NHUM -> "non-human"
                          ZO   -> "animal"
                          INAN -> "inanimate"
 

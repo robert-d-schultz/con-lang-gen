@@ -25,18 +25,18 @@ writeWritingSystem (a, s, l) =  "\n<br>\n" ++ aOut ++ sOut ++ lOut where
        | otherwise = concatMap writeLChar l
 
 writeAChar :: (Phoneme, (Int, CharPath)) -> Text
-writeAChar (cns@Consonant{}, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", /" ++ writePhonemeIPA cns ++ "/"
-writeAChar (vow@Vowel{}, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", /" ++ writePhonemeIPA vow ++ "/"
-writeAChar (diph@Diphthong{}, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", /" ++ writePhonemeIPA diph ++ "/"
+writeAChar (cns@Consonant{}, (n, path)) = "\n<br>\n" ++ writeCharacter path 51 1 n ++ ", /" ++ writePhonemeIPA cns ++ "/"
+writeAChar (vow@Vowel{}, (n, path)) = "\n<br>\n" ++ writeCharacter path 51 1 n ++ ", /" ++ writePhonemeIPA vow ++ "/"
+writeAChar (diph@Diphthong{}, (n, path)) = "\n<br>\n" ++ writeCharacter path 51 1 n ++ ", /" ++ writePhonemeIPA diph ++ "/"
 writeAChar (Blank, _) = ""
 
 writeSChar :: (Syllable, (Int, CharPath)) -> Text
-writeSChar (syll, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", /" ++ writeSyllableIPA syll ++"/"
+writeSChar (syll, (n, path)) = "\n<br>\n" ++ writeCharacter path 51 1 n ++ ", /" ++ writeSyllableIPA syll ++"/"
 
 writeLChar :: (Morpheme, (Int, CharPath)) -> Text
-writeLChar (morph, (n, path)) = "\n<br>\n" ++ writeCharacter path 11 1 n ++ ", \"" ++ out ++ "\"" where
-  out = case getMeaning morph of (Meaning _ str) -> str
+writeLChar (morph, (n, path)) = "\n<br>\n" ++ writeCharacter path 51 1 n ++ ", \"" ++ out ++ "\"" where
+  out = case getMeaning morph of (Meaning _ str _) -> str
                                  (InflMeaning _ ae) -> tshow ae
 
 makeNativeDict :: [(Phoneme, (Int, CharPath))] -> [(Phoneme, Text)]
-makeNativeDict = map (fst &&& (\(_, (n,path))-> writeCharacter path 11 1 n))
+makeNativeDict = map (fst &&& (\(_, (n,path))-> writeCharacter path 51 1 n))

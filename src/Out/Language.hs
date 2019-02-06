@@ -28,12 +28,13 @@ import Data.Language
 -- outputs stuff for each language family
 writeLanguageTree :: Int -> LanguageBranch -> IO()
 writeLanguageTree seed tree = do
-  -- Create language family main folder (named afer the seed)
-  let dir = "out/" ++ tshow seed
+  -- Create language family main folder (named afer the root language)
+  let dir = "out/" ++ getName (getLanguage tree) ++ " language family"
   createDirectory (unpack dir)
 
   let treeMap = writeLanguageTreeN tree
   writeFile (unpack (dir ++ "/tree_map.html")) treeMap
+  writeFile (unpack (dir ++ "/seed.txt")) (tshow seed)
   writeLanguageBranch dir tree
 
 writeLanguageBranch :: Text -> LanguageBranch -> IO()
