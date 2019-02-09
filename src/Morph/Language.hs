@@ -14,6 +14,7 @@ import Morph.Phonology
 import Morph.Grammar
 
 import Out.Roman
+import Out.Lexicon (applyLemma)
 
 
 morphLanguage :: Language -> RVar Language
@@ -22,8 +23,11 @@ morphLanguage parent = do
                          ]
   grammarN <- morphGrammar (getGrammar parent)
 
+  let lemmaMorphsN = getLemmaMorphemes langN
+
   -- Find out what was assigned to "!!!LANGUAGE!!!" and romanize new language name
-  let langNameN = fromMaybe "!!!NAME NOT FOUND!!!" (romanizeWord langN <$> find (\x -> (getStr.getMeaning) x == "!!!LANGUAGE!!!") (getRootMorphemes langN))
+  let nameRootN = find (\x -> getMeaning x == RootMeaning Noun "!!!LANGUAGE!!!") (getRootMorphemes langN)
+  let langNameN = fromMaybe "!!!name not found!!!" (romanizeWord langN <$> join (applyLemma lemmaMorphsN <$> nameRootN))
 
   return $ langN{getName = langNameN, getGrammar=grammarN}
 

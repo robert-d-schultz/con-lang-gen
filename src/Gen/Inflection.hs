@@ -41,37 +41,34 @@ makeInflectionMap idata = do
 -- There can only be one Transfix per LexCat
 -- These two functions basically decide that
 -- This decides the degree of fusional/agglutinativeness
-bar :: [(LexCat, Int, Int, Int, Int, Int)] -> [(LexCat, MorphType, Int)] -> [LexCat] -> RVar ([(LexCat, MorphType, Int)], [(LexCat, Int, Int, Int, Int, Int)])
-bar ks ts [] = return (ts,ks)
-bar ks ts lcs = do
-  (newt, newks) <- rab ks (unsafeHead lcs)
-  bar newks (newt : ts) (unsafeTail lcs)
+bar2 :: [(LexCat, Int, Int, Int, Int, Int)] -> [(LexCat, MorphType, Int)] -> [LexCat] -> RVar ([(LexCat, MorphType, Int)], [(LexCat, Int, Int, Int, Int, Int)])
+bar2 ks ts [] = return (ts,ks)
+bar2 ks ts lcs = do
+  (newt, newks) <- rab2 ks (unsafeHead lcs)
+  bar2 newks (newt : ts) (unsafeTail lcs)
 
-rab :: [(LexCat, Int, Int, Int, Int, Int)] -> LexCat -> RVar ((LexCat, MorphType, Int), [(LexCat, Int, Int, Int, Int, Int)])
-rab lcs lc2 = join out where
-    (fu, ba) = partition (\(c, _, _, _, _, _) -> c == lc2) lcs
+rab2 :: [(LexCat, Int, Int, Int, Int, Int)] -> LexCat -> RVar ((LexCat, MorphType, Int), [(LexCat, Int, Int, Int, Int, Int)])
+rab2 lcs lc = join out where
+    (fu, ba) = partition (\(c, _, _, _, _, _) -> c == lc) lcs
     shit
-      | null fu = (lc2, 0, 0, 0, 0, 0)
+      | null fu = (lc, 0, 0, 0, 0, 0)
       | otherwise = unsafeHead fu
-    (lc, part, pref, suff, trans, ctrans) = shit
+    (_, part, pref, suff, trans, ctrans) = shit
 
     -- decide between Particle, Prefix, Suffix, Transfix
-    out = choice [ do
-                   i <- uniform 1 (part+1) -- decide between an existing one or a new one
-                   return ((lc, Particle, i), (lc, max i part, pref, suff, trans, ctrans) : ba)
-                 , do
-                   j <- uniform 1 (pref+1)
-                   return ((lc, Prefix, j), (lc, part, max j pref, suff, trans, ctrans) : ba)
-                 , do
-                   k <- uniform 1 (suff+1)
-                   return ((lc, Suffix, k), (lc, part, pref, max k suff, trans, ctrans) : ba)
-                 , do
-                   let l = if ctrans > 0 then 0 else 1
-                   return ((lc, Transfix, l), (lc, part, pref, suff, l, ctrans) : ba)
-                 , do
-                   let m = if trans > 0 then 0 else 1
-                   return ((lc, CTransfix, m), (lc, part, pref, suff, trans, m) : ba)
-                 ]
+    out = choice ( [ do
+                     i <- uniform 1 (part+1) -- decide between an existing one or a new one
+                     return ((lc, Particle, i), (lc, max i part, pref, suff, trans, ctrans) : ba)
+                   , do
+                     j <- uniform 1 (pref+1)
+                     return ((lc, Prefix, j), (lc, part, max j pref, suff, trans, ctrans) : ba)
+                   , do
+                     k <- uniform 1 (suff+1)
+                     return ((lc, Suffix, k), (lc, part, pref, max k suff, trans, ctrans) : ba)
+                   ] ++ transOut ++ ctransOut
+                 )
+    transOut = if ctrans > 0 then [] else [ return ((lc, Transfix, 1), (lc, part, pref, suff, 1, ctrans) : ba) ]
+    ctransOut = if trans > 0 then [] else [ return ((lc, CTransfix, 1), (lc, part, pref, suff, trans, 1) : ba) ]
 
 
 fooDeclension :: [[a]] -> [(LexCat, Int, Int, Int, Int, Int)] -> RVar (Manifest a, [(LexCat, Int, Int, Int, Int, Int)])
@@ -81,22 +78,22 @@ fooDeclension catdata prevNs = do
   -- pick which lexcats <gram category> manifests on (related to agreement)
   cats <- (:) Noun <$> randomSubset [Adj, Verb]
   -- bar function... no idea what it does
-  (ts, ns) <- bar prevNs [] cats
+  (ts, ns) <- bar2 prevNs [] cats
   -- decide if <gram category> even manifests itself at all
   choice [(NoManifest, prevNs), (Manifest ts gcatsys, ns)]
 
 fooConjugation :: [[a]] -> [(LexCat, Int, Int, Int, Int, Int)] -> RVar (Manifest a, [(LexCat, Int, Int, Int, Int, Int)])
 fooConjugation catdata prevNs = do
   gcatsys <- choice catdata
-  cats <- (:) Verb <$> randomSubset [Adv, Noun]
-  (ts, ns) <- bar prevNs [] cats
+  cats <- (:) Verb . concat <$> randomSubset [[Adv], [Noun, Pron]]
+  (ts, ns) <- bar2 prevNs [] cats
   choice [(NoManifest, prevNs), (Manifest ts gcatsys, ns)]
 
 fooBoth :: [[a]] -> [(LexCat, Int, Int, Int, Int, Int)] -> RVar (Manifest a, [(LexCat, Int, Int, Int, Int, Int)])
 fooBoth catdata prevNs = do
   gcatsys <- choice catdata
-  cats1 <- (:) Noun <$> randomSubset [Adj, Verb]
-  cats2 <- (:) Verb <$> randomSubset [Adv, Noun]
+  cats1 <- (++) [Noun, Pron] <$> randomSubset [Adj, Verb]
+  cats2 <- (:) Verb . concat <$> randomSubset [[Adv], [Noun, Pron]]
   cats <- choice [cats1, cats2, ordNub $ cats1 ++ cats2]
-  (ts, ns) <- bar prevNs [] cats
+  (ts, ns) <- bar2 prevNs [] cats
   choice [(NoManifest, prevNs), (Manifest ts gcatsys, ns)]

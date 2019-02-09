@@ -1,2 +1,2 @@
-[
-[SPEC,NSPEC]]
+[ [SPEC,NSPEC]
+]

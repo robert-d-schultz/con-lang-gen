@@ -2,6 +2,7 @@ module HelperFunctions
 ( choice_
 , isVowel
 , isConsonant
+, format
 , shuffleLists
 , replicateUntilM
 , safeSample
@@ -24,6 +25,7 @@ import Data.Random hiding (sample, gamma)
 import Data.Random.Extras
 import Data.Random.Distribution.Triangular
 import Data.Random.Distribution.Categorical
+import Data.Text (replace)
 
 import Data.Random.Lift as R (lift)
 
@@ -37,6 +39,29 @@ isConsonant :: Phoneme -> Bool
 isConsonant Consonant{} = True
 isConsonant _ = False
 
+-- HashMap stuff
+-- Avoids (hash hash value, value) (hash value, value) duplicates
+-- Doesn't avoid (key1, value) (key2, value) duplicates
+insertMap_ :: Hashable a => HashMap Int a -> a -> (HashMap Int a, Int)
+insertMap_ hm value = (insertMap key value hm, key) where
+   key = foobar hm (hash value) value
+   foobar :: HashMap Int a -> Int -> a -> Int
+   foobar hm k v
+      | (\case Just v -> True; _ -> False) v_ = k -- this mean the value is already in the hashtable under that key
+      | isNothing v_ = k
+      | otherwise = foobar hm (hash k) v where
+        v_ = lookup k hm
+
+
+-- Used for text formatting
+format :: Text -> [Text] -> Text
+format a b = doFormat a (0::Int,b)
+    where
+    doFormat a (_,[]) = a
+    doFormat a (n,b:bs) = replace (old n) b a `doFormat` (n+1,bs)
+    old n = "{" ++ tshow n ++ "}"
+
+-- Shuffles two lists together
 shuffleLists :: [a] -> [a] -> [a]
 shuffleLists [] ys = ys
 shuffleLists (x:xs) ys = x : shuffleLists ys xs
@@ -110,10 +135,10 @@ triangle n x
     return $ round y
 
 -- Should use this for phoneme selection
-triangleChoice :: [a] -> RVar (Maybe a)
+triangleChoice :: [a] -> RVar a
 triangleChoice xs = do
   n <- triangle 0 (length xs)
-  return $ index xs n
+  return $ unsafeIndex xs n
 
 -- Zipf Distribution stuff
 {-zipfPMF :: Float -> Int -> Int -> Float

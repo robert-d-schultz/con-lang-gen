@@ -5,6 +5,7 @@ module Gen.Phonology
 , makeVowelMap
 , makeVowels
 , makeTones
+, makeStresses
 ) where
 
 -- Import
@@ -125,18 +126,24 @@ makeManners = do
 
 -- Make the phonations (and aspiration) for consonants
 makePhonations :: RVar [Phonation]
-makePhonations = choice [ [MODAL]
-                        , [VOICELESS, MODAL]
-                        , [BREATHY, MODAL, CREAKY]
-                        , [SLACK, MODAL, STIFF]
-                        , [VOICELESS, MODAL, ASPIRATED]
-                        , [MODAL, ASPIRATED]
-                        ]
+makePhonations = triangleChoice [ [MODAL]
+                                , [VOICELESS, MODAL]
+                                , [MODAL, ASPIRATED]
+                                , [VOICELESS, MODAL, ASPIRATED]
+                                , [BREATHY, MODAL, CREAKY]
+                                , [SLACK, MODAL, STIFF]
+                                ]
 
 makeAirstream :: RVar [Airstream]
-makeAirstream = do
-  others <- randomSubset [EJECTIVE, IMPLOSIVE, LINGUAL]
-  return $ PULMONIC : others
+makeAirstream = triangleChoice [ [PULMONIC]
+                               , [PULMONIC, EJECTIVE]
+                               , [PULMONIC, IMPLOSIVE]
+                               , [PULMONIC, LINGUAL]
+                               , [PULMONIC, EJECTIVE, IMPLOSIVE]
+                               , [PULMONIC, EJECTIVE, LINGUAL]
+                               , [PULMONIC, IMPLOSIVE, LINGUAL]
+                               , [PULMONIC, EJECTIVE, IMPLOSIVE, LINGUAL]
+                               ]
 
 -- Returns a list of heights, backnesses, roundnesss, lengths, tones, and exceptions
 makeVowelMap :: RVar ([Height], [Backness], [Roundedness], [Length], [Phoneme])
@@ -166,21 +173,21 @@ makeVowels heights backs rounds lengths exceptions = output where
 
 -- Decides how height will be contrasted for vowels
 makeHeights :: RVar [Height]
-makeHeights = choice [ [MID]
-                     , [CLOSE, OPEN]
-                     , [CLOSE, MID, OPEN]
-                     , [CLOSE, CLOSEMID, OPENMID, OPEN]
-                     , [CLOSE, CLOSEMID, MID, OPENMID, OPEN]
-                     , [CLOSE, NEARCLOSE, CLOSEMID, OPENMID, NEAROPEN, OPEN]
-                     , [CLOSE, NEARCLOSE, CLOSEMID, MID, OPENMID, NEAROPEN, OPEN]
-                     ]
+makeHeights = triangleChoice [ [MID]
+                             , [CLOSE, OPEN]
+                             , [CLOSE, MID, OPEN]
+                             , [CLOSE, CLOSEMID, OPENMID, OPEN]
+                             , [CLOSE, CLOSEMID, MID, OPENMID, OPEN]
+                             , [CLOSE, NEARCLOSE, CLOSEMID, OPENMID, NEAROPEN, OPEN]
+                             , [CLOSE, NEARCLOSE, CLOSEMID, MID, OPENMID, NEAROPEN, OPEN]
+                             ]
 -- Decides how backness will be contrasted for vowels
 makeBacknesses :: RVar [Backness]
-makeBacknesses = choice [ [CENTRAL]
-                        , [FRONT, BACK]
-                        , [FRONT, CENTRAL, BACK]
-                        , [FRONT, NEARFRONT, CENTRAL, NEARBACK, BACK]
-                        ]
+makeBacknesses = triangleChoice [ [CENTRAL]
+                                , [FRONT, BACK]
+                                , [FRONT, CENTRAL, BACK]
+                                , [FRONT, NEARFRONT, CENTRAL, NEARBACK, BACK]
+                                ]
 
 -- Decides how roundedness will be contrasted for vowels
 makeRoundedneses :: RVar [Roundedness]
@@ -189,27 +196,34 @@ makeRoundedneses = choice [ [UNROUNDED, ROUNDED]
 
 -- Decides how length will be contrasted for vowels
 makeLengths :: RVar [Length]
-makeLengths = choice [ [NORMAL]
-                     , [NORMAL, LONG]
-                     , [SHORT, NORMAL]
-                     , [SHORT, NORMAL, LONG]
-                     ]
+makeLengths = triangleChoice [ [NORMAL]
+                             , [NORMAL, LONG]
+                             , [SHORT, NORMAL]
+                             , [SHORT, NORMAL, LONG]
+                             ]
 
 -- Tones for syllables
 makeTones :: RVar [Tone]
-makeTones = choice [ [NONET]
-                   , [HIGHT, FALLT, NONET]
-                   , [FALLT, PEAKT, NONET]
-                   , [LOWT, FALLT, NONET]
-                   , [HIGHT, LOWT, NONET]
-                   , [HIGHT, MIDT, LOWT]
-                   , [HIGHT, MIDT, LOWT, NONET]
-                   , [HIGHT, RISET, DIPT, FALLT]
-                   , [HIGHT, RISET, DIPT, FALLT, NONET]
-                   , [MIDT, LFALLT, HRISET, DIPT]
-                   , [MIDT, LFALLT, HRISET, DIPT, NONET]
-                   , [MIDT, LOWT, FALLT, HIGHT, RISET]
-                   , [MIDT, LOWT, FALLT, HIGHT, RISET, NONET]
-                   , [LOWT, MIDT, HIGHT, TOPT, RISET, FALLT]
-                   , [LOWT, MIDT, HIGHT, TOPT, RISET, FALLT, NONET]
-                   ]
+makeTones = triangleChoice [ [NONET]
+                           , [HIGHT, FALLT, NONET]
+                           , [FALLT, PEAKT, NONET]
+                           , [LOWT, FALLT, NONET]
+                           , [HIGHT, LOWT, NONET]
+                           , [HIGHT, MIDT, LOWT]
+                           , [HIGHT, MIDT, LOWT, NONET]
+                           , [HIGHT, RISET, DIPT, FALLT]
+                           , [HIGHT, RISET, DIPT, FALLT, NONET]
+                           , [MIDT, LFALLT, HRISET, DIPT]
+                           , [MIDT, LFALLT, HRISET, DIPT, NONET]
+                           , [MIDT, LOWT, FALLT, HIGHT, RISET]
+                           , [MIDT, LOWT, FALLT, HIGHT, RISET, NONET]
+                           , [LOWT, MIDT, HIGHT, TOPT, RISET, FALLT]
+                           , [LOWT, MIDT, HIGHT, TOPT, RISET, FALLT, NONET]
+                           ]
+
+-- Stress for syllables
+makeStresses :: RVar [Stress]
+makeStresses = triangleChoice [ [NONES]
+                              , [NONES, PRIMARYS]
+                              , [NONES, PRIMARYS, SECONDARYS]
+                              ]

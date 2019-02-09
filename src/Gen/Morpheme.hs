@@ -8,13 +8,15 @@ module Gen.Morpheme
 , pickLemmaMorphemes
 , makeDerivationMorphemes
 , makeCompoundMorphemes
+, makePronouns
 ) where
 
-import ClassyPrelude hiding (Word)
+import ClassyPrelude hiding (Word, (\\))
 
 import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
+import Data.List ((\\))
 
 import Data.Phoneme
 import Data.Word
@@ -91,7 +93,8 @@ makeMorphemeConsonants conclusts (ns, xs) zipfParameter = do
 -- Generate Inflectional Morphemes
 makeInflectionMorphemes :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (LexCat, Int, Int, Int, Int, Int) -> (Int, Int) -> Float -> RVar [Morpheme]
 makeInflectionMorphemes onsets nucs codas tones inflMap (lc, i, j, k, l, m) set zipfParameter =
-  concat <$> mapM (\(mt,x) -> makeExponentSystems lc mt x onsets nucs codas tones inflMap set zipfParameter) [(Particle, i), (Prefix,j), (Suffix,k), (Transfix,l), (CTransfix,m)]
+  concat <$> mapM (\(mt,x) -> makeExponentSystems lc mt x onsets nucs codas tones inflMap set zipfParameter) [(Particle,i), (Prefix,j), (Suffix,k), (Transfix,l), (CTransfix,m)]
+
 
 makeExponentSystems :: LexCat -> MorphType -> Int -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (Int, Int) -> Float -> RVar [Morpheme]
 makeExponentSystems _ _ 0 _ _ _ _ _ _ _ = return []
@@ -145,6 +148,35 @@ cleanInflectionSys inflMap lc mt i = GramCatExpresses gens anis cass nums defs s
       | null filt = [NoExpress]
       | otherwise = map Express x
 
+cleanInflectionSys2 :: InflectionMap -> LexCat -> GramCatExpresses
+-- ([Express Gender], [Express Animacy], [Express Case], [Express Number], [Express Definiteness], [Express Specificity], [Express Topic], [Express Person], [Express Honorific], [Express Polarity], [Express Tense], [Express Aspect], [Express Mood], [Express Voice], [Express Evidentiality], [Express Transitivity], [Express Volition])
+cleanInflectionSys2 inflMap lc  = GramCatExpresses gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols where
+  gens = cleanSys2 (getGenSys inflMap) lc
+  anis = cleanSys2 (getAniSys inflMap) lc
+  cass = cleanSys2 (getCasSys inflMap) lc
+  nums = cleanSys2 (getNumSys inflMap) lc
+  defs = cleanSys2 (getDefSys inflMap) lc
+  spes = cleanSys2 (getSpeSys inflMap) lc
+  tops = cleanSys2 (getTopSys inflMap) lc
+  pers = cleanSys2 (getPerSys inflMap) lc
+  hons = cleanSys2 (getHonSys inflMap) lc
+  pols = cleanSys2 (getPolSys inflMap) lc
+  tens = cleanSys2 (getTenSys inflMap) lc
+  asps = cleanSys2 (getAspSys inflMap) lc
+  moos = cleanSys2 (getMooSys inflMap) lc
+  vois = cleanSys2 (getVoiSys inflMap) lc
+  evis = cleanSys2 (getEviSys inflMap) lc
+  tras = cleanSys2 (getTraSys inflMap) lc
+  vols = cleanSys2 (getVolSys inflMap) lc
+
+  cleanSys2 :: Manifest a -> LexCat -> [Express a]
+  cleanSys2 NoManifest _  = [NoExpress]
+  cleanSys2 (Manifest t x) lc = out where
+    filt = filter (\(x,_,_) -> x == lc) t
+    out
+      | null filt = [NoExpress]
+      | otherwise = map Express x
+
 makeCombos :: GramCatExpresses -> [GramCatExpress]
 makeCombos (GramCatExpresses gens anis cass nums defs spes tops pers hons pols tens asps moos vois evis tras vols) = GramCatExpress <$> gens <*> anis <*> cass <*> nums <*> defs <*> spes <*> tops <*> pers <*> hons <*> pols <*> tens <*> asps <*> moos <*> vois <*> evis <*> tras <*> vols
 
@@ -169,7 +201,7 @@ pickLemmaMorphemes inflSys inflMorphs lc = do
   -- Generate a random AllExpress for this LexCat
   lemmaExpress <- generateInflection inflSys lc
   -- Filter the master list of inflection Morpheme's, this LexCat only
-  let relMorphs = filter (\x -> lc == getLC (getMeaning x)) inflMorphs
+  let relMorphs = filter (\x -> lc == getLC (getMeaning x) && (\case InflMeaning{} -> True; _ -> False) (getMeaning x)) inflMorphs
   -- Filter down to the ones that help satisfy the lemmaExpress
   let lemmaMorphs = filter (\x -> compareInfl (getAllExpress $ getMeaning x) lemmaExpress) relMorphs
   return lemmaMorphs
@@ -182,3 +214,50 @@ makeDerivationMorphemes mData onsets nucs codas tones set zipfParameter = mapM (
 -- Compound Morphology
 makeCompoundMorphemes :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> Float -> RVar [Morpheme]
 makeCompoundMorphemes mData onsets nucs codas tones set zipfParameter = mapM (\d -> MorphemeS d Suffix <$> makeMorphemeSyllables onsets nucs codas tones set zipfParameter) (inputCompounds mData)
+
+-- Pronouns
+-- Need to make Pronoun Roots with GCE's that compliment the already-generated Pron inflections
+-- "Fill in" the gaps that were skipped in Gen.Inflection
+-- so cleanInflectionSys on Noun
+-- then cleanInflectionSys on Pron
+-- see where Pron is lacking, create the combos
+-- CTransfix if at least 1 Transfix inflection
+-- Transfix if at least 1 CTransfix
+-- Root otherwise
+makePronouns :: [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> InflectionMap -> (Int, Int) -> Float -> (Int, Int) -> RVar [Morpheme]
+makePronouns onsets nucs codas tones inflMap set zipfParameter (i,j) = do
+  let combos = makeCombos $ subtractGCEs (cleanInflectionSys2 inflMap Noun) (cleanInflectionSys2 inflMap Pron)
+  roots1 <- replicateM (length combos) (makeMorphemeVowels onsets nucs codas tones set zipfParameter)
+  roots2 <- replicateM (length combos) (makeMorphemeConsonants onsets set zipfParameter)
+  roots3 <- replicateM (length combos) (makeMorphemeSyllables onsets nucs codas tones set zipfParameter)
+  let morphs | i == 1 = zipWith (\x y -> MorphemeC x Root y) (Meaning Pron "Pron" <$> combos) roots2
+             | j == 1 = zipWith (\x y -> MorphemeV x Root y) (Meaning Pron "Pron" <$> combos) roots1
+             | otherwise = zipWith (\x y -> MorphemeS x Root y) (Meaning Pron "Pron" <$> combos) roots3
+  return morphs
+
+
+subtractGCEs :: GramCatExpresses -> GramCatExpresses -> GramCatExpresses
+subtractGCEs (GramCatExpresses gens1 anis1 cass1 nums1 defs1 spes1 tops1 pers1 hons1 pols1 tens1 asps1 moos1 vois1 evis1 tras1 vols1)
+  (GramCatExpresses gens2 anis2 cass2 nums2 defs2 spes2 tops2 pers2 hons2 pols2 tens2 asps2 moos2 vois2 evis2 tras2 vols2) =
+    GramCatExpresses (subtactGC gens1 gens2)
+                     (subtactGC anis1 anis2)
+                     (subtactGC cass1 cass2)
+                     (subtactGC nums1 nums2)
+                     (subtactGC defs1 defs2)
+                     (subtactGC spes1 spes2)
+                     (subtactGC tops1 tops2)
+                     (subtactGC pers1 pers2)
+                     (subtactGC hons1 hons2)
+                     (subtactGC pols1 pols2)
+                     (subtactGC tens1 tens2)
+                     (subtactGC asps1 asps2)
+                     (subtactGC moos1 moos2)
+                     (subtactGC vois1 vois2)
+                     (subtactGC evis1 evis2)
+                     (subtactGC tras1 tras2)
+                     (subtactGC vols1 vols2)
+
+subtactGC :: Eq a => [Express a] -> [Express a] -> [Express a]
+subtactGC gc1 gc2
+  | null (gc1 \\ gc2)= [NoExpress]
+  | otherwise = gc1 \\ gc2

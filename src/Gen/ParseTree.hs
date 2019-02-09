@@ -17,14 +17,17 @@ makeParseTree :: [Morpheme] -> InflectionMap -> RVar Phrase
 makeParseTree rootMorphs inflmap = do
 
   let noun = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Noun) rootMorphs)
+  let det = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Det) rootMorphs)
   let prep = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adpo) rootMorphs)
   let verb = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Verb) rootMorphs)
   let adj  = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adj) rootMorphs)
 
 
   let objDet = generateInflection inflmap Noun
+  let prepInfl = generateInflection inflmap Adpo
   let subjDet = generateInflection inflmap Noun
   let vInfl = generateInflection inflmap Verb
+  let adjInfl = generateInflection inflmap Adj
 
   let adjp = XP Adj Null XPNull <$> (XBarC Adj Null <$> (Leaf Adj Null <$> adj) <*> return XPNull)
 

@@ -23,6 +23,7 @@ englishLanguage = Language { getName = "English"
                            , getCMap = ([], [], [], [])
                            , getVMap = ([], [], [], [])
                            , getTones = []
+                           , getStresses = []
                            , getSonHier = 0
                            , getOnsetCCs = mempty
                            , getNuclei = mempty
@@ -32,6 +33,7 @@ englishLanguage = Language { getName = "English"
                            , getLemmaMorphemes = [] -- shouldn't be empty
                            , getDerivMorphemes = [] -- shouldn't be empty
                            , getCompoundMorphemes = [] -- shouldn't be empty
+                           , getPronouns = []
                            , getRootMorphemes = []
                            , getGrammar = englishGrammar
                            , getWriting = ([], [], [])

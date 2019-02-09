@@ -23,7 +23,7 @@ writeInflectionMap :: InflectionMap -> LexCat -> Text
 writeInflectionMap inflSys lc = output where
   output
     | null (particles ++ prefixes ++ suffixes ++ transfixes) = "<br>\nNo grammatical categories manifest for " ++ tshow lc ++ "s.\n"
-    | otherwise = "<br>\nGrammatical categories manifest for " ++ tshow lc ++ "s in the following ways:\n<ul>" ++ particles ++ prefixes ++ suffixes ++ transfixes ++ "</ul>\n"
+    | otherwise = "<br>\nGrammatical categories manifest for " ++ tshow lc ++ "s in the following ways:\n<ul>" ++ particles ++ prefixes ++ suffixes ++ transfixes ++ ctransfixes ++ "</ul>\n"
 
 -- parse particles
   filt1 = filter (not.null) (fooBar (isParticle lc) inflSys)
@@ -47,7 +47,13 @@ writeInflectionMap inflSys lc = output where
   filt4 = filter (not.null) (fooBar (isTransfix lc) inflSys)
   transfixes
     | null filt4      = ""
-    | otherwise       = "\n\t<li>With transfixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt4 ++ "</li>\n\t\t</ul>"
+    | otherwise       = "\n\t<li>With vowel transfixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt4 ++ "</li>\n\t\t</ul>"
+
+  -- parse transfixes
+  filt5 = filter (not.null) (fooBar (isCTransfix lc) inflSys)
+  ctransfixes
+    | null filt5      = ""
+    | otherwise       = "\n\t<li>With consonant transfixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt5 ++ "</li>\n\t\t</ul>"
 
 fooBar :: (forall a . Manifest a -> Bool) -> InflectionMap -> [Text]
 fooBar b inflSys = [gen, ani, cas, num, def, spe, top, per, hon, pol, ten, asp, moo, voi, evi, tra, vol] where
@@ -101,6 +107,13 @@ isTransfix lc (Manifest t _) = out where
     | otherwise = True
   filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Transfix) t
 
+isCTransfix :: LexCat -> Manifest a -> Bool
+isCTransfix _ NoManifest = False
+isCTransfix lc (Manifest t _) = out where
+  out
+    | null filt = False
+    | otherwise = True
+  filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == CTransfix) t
 
 -- Write Inflections to tables
 -- Tables organized by lexical category and inflection type
@@ -229,5 +242,5 @@ getMorpheme lang inflMorphs lc morphType@Suffix ten asp moo per def spe pol top 
   filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
   output = (++) "–" <$> (writeMorphemeIPA lang <$> filt)
 getMorpheme lang inflMorphs lc morphType ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
-  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
+  filt = find (\morph -> getMorphType morph == morphType && getLC (getMeaning morph) == lc && getAllExpress (getMeaning morph) == GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) inflMorphs
   output = writeMorphemeIPA lang <$> filt

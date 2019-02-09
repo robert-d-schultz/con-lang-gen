@@ -25,6 +25,7 @@ import Data.Inflection
 import Data.Soundchange
 
 import Out.Roman
+import Out.Lexicon (applyLemma)
 
 -- Generates a Language
 makeLanguage :: InputData -> MeaningData -> RVar Language
@@ -42,6 +43,8 @@ makeLanguage idata mData = do
 
   -- Tones
   tones <- makeTones
+  --Stress
+  stresses <- makeStresses
 
   -- Phonotactics / Consonant clusters
   scheme <- uniform 5 5 -- fixed to be the ssp-violating scheme
@@ -72,13 +75,16 @@ makeLanguage idata mData = do
   lemmaMorphs <- concat <$> mapM (pickLemmaMorphemes inflSys inflMorphs) [Verb .. Pron]
 
   -- Derivational morphemes
-  derivMorphs <- makeDerivationMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter
+  derivMorphs <- trace (show lemmaMorphs) makeDerivationMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter
 
   -- Compound morphemes
   compoundMorphs <- makeCompoundMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter
 
-  -- Root morphemes
+  -- Pronouns
   let numPerLexCat_ = map (\(lc,_,_,_,t,ct) -> (lc,t,ct)) numPerLexCat
+  prons <- makePronouns onsets nuclei codas tones inflSys (1, 2) zipfParameter (fromMaybe (0,0) $ (\(x,y,z)-> (y,z)) <$> find (\(x,_,_) -> x == Pron) numPerLexCat_)
+
+  -- Root morphemes
   rootMorphs <- makeRootMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter numPerLexCat_
 
   -- Grammar
@@ -86,8 +92,8 @@ makeLanguage idata mData = do
 
   -- Writing systems
   let allPhonemes = inventoryD ++ inventoryV ++ inventoryC
-  let allSyllables | 2000 < product [length onsets, length nuclei, length codas, 3] = []
-                   | otherwise = makeAllSyllables onsets nuclei codas tones [NONES, PRIMARYS, SECONDARYS]
+  let allSyllables | 2000 < product [length onsets, length nuclei, length codas, length tones, length stresses] = []
+                   | otherwise = makeAllSyllables onsets nuclei codas tones stresses
   let allLogograms = rootMorphs ++ derivMorphs ++ compoundMorphs ++ inflMorphs
   (a, s, l) <- generateWritingSystem allPhonemes allSyllables allLogograms
 
@@ -95,8 +101,9 @@ makeLanguage idata mData = do
   (aOut, sOut, lOut) <- makeCharacters (a, s, l)
 
   -- Find out what was assigned to "!!!LANGUAGE!!!" and romanize
-  let lang = Language "" ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones scheme onsets nuclei codas inflSys inflMorphs lemmaMorphs derivMorphs compoundMorphs rootMorphs grammar (aOut, sOut, lOut) [NoChange]
+  let lang = Language "" ("", "") inventoryC inventoryV inventoryD (places, manners, phonations, airstreams) (heights, backs, rounds, lengths) tones stresses scheme onsets nuclei codas inflSys inflMorphs lemmaMorphs derivMorphs compoundMorphs prons rootMorphs grammar (aOut, sOut, lOut) [NoChange]
 
-  let langName = fromMaybe "name not found" (romanizeWord lang <$> find (\x -> getMeaning x == RootMeaning Noun "!!!LANGUAGE!!!") rootMorphs)
+  let nameRoot = find (\x -> getMeaning x == RootMeaning Noun "!!!LANGUAGE!!!") rootMorphs
+  let langName = fromMaybe "name not found" (romanizeWord lang <$> join (applyLemma lemmaMorphs <$> nameRoot))
 
   return $ lang{getName = langName}

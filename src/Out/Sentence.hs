@@ -25,7 +25,7 @@ import EnglishStuff
 -- Literal English translation
 -- English translation
 writeParseTree :: Language -> [Morpheme] -> [Morpheme] -> Phrase -> Text
-writeParseTree lang rootMorphs inflMorphs pt = "\n<br>\n" ++ table ++ "<br>\n" ++ literal ++ "\n<br>\n\"" ++ english ++ "\"" where
+writeParseTree lang rootMorphs inflMorphs pt = "\n<br>\n<br>\n" ++ table ++ "<br>\n" ++ literal ++ "\n<br>\n\"" ++ english ++ "\"" where
   leaves   = filter (not.all leafIsNull) (filter (not.null) (writePhrase lang pt))
   eLeaves  = filter (not.all leafIsNull) (filter (not.null) (writePhrase englishLanguage pt))
   -- native = ...
@@ -130,7 +130,7 @@ transcribeLeaves lang rootMorphs inflMorphs leaves = out where
 
   partOut = map (writeWordIPA lang) parts
 
-  othersOut = map (\x -> case x of Leaf{} -> fromMaybe (concatMap (writeMorphemeIPA lang) suffs ++ "<UNK>" ++ concatMap (writeMorphemeIPA lang) prefs) (writeWordIPA lang <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> RootMeaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
+  othersOut = map (\x -> case x of Leaf{} -> fromMaybe (concatMap (writeMorphemeIPA lang) suffs ++ "<UNK>" ++ concatMap (writeMorphemeIPA lang) prefs) (writeWordIPA lang <$> join ((\z -> foldlM applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> RootMeaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
                                    LeafNull{} -> ""
                                    _ -> ""
                                    ) others
@@ -195,7 +195,7 @@ romanizeInfl lang rootMorphs inflMorphs leaves = out where
 
   partOut = map (romanizeWord lang) parts
 
-  othersOut = map (\x -> case x of Leaf{} -> fromMaybe (concatMap (romanizeWord lang) suffs ++ "<UNK>" ++ concatMap (romanizeWord lang) prefs) (romanizeWord lang <$> ((\z -> foldl' applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) (leafInfl x) == getMeaning y) rootMorphs))
+  othersOut = map (\x -> case x of Leaf{} -> fromMaybe (concatMap (romanizeWord lang) suffs ++ "<UNK>" ++ concatMap (romanizeWord lang) prefs) (romanizeWord lang <$> join ((\z -> foldlM applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) (leafInfl x) == getMeaning y) rootMorphs))
                                    LeafNull{} -> ""
                                    _ -> ""
                                    ) others

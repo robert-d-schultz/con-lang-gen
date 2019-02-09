@@ -28,6 +28,7 @@ data Language = Language
               , getCMap :: ([Place], [Manner], [Phonation], [Airstream])
               , getVMap :: ([Height], [Backness], [Roundedness], [Length])
               , getTones :: [Tone]
+              , getStresses :: [Stress]
               , getSonHier :: Int
               , getOnsetCCs :: [ConsCluster]
               , getNuclei :: [Phoneme]
@@ -37,6 +38,7 @@ data Language = Language
               , getLemmaMorphemes :: [Morpheme]
               , getDerivMorphemes :: [Morpheme]
               , getCompoundMorphemes :: [Morpheme]
+              , getPronouns :: [Morpheme]
               , getRootMorphemes :: [Morpheme]
               , getGrammar :: Grammar
               , getWriting :: ([(Phoneme, (Int, CharPath))], [(Syllable, (Int, CharPath))], [(Morpheme, (Int, CharPath))])

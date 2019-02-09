@@ -1,5 +1,5 @@
-[
-[SG,PL],
-[SG,DU,PL],
-[SG,DU,TRI,PL],
-[SG,PA,PL]]
+[ [SG,PL]
+, [SG,DU,PL]
+, [SG,DU,TRI,PL]
+, [SG,PA,PL]
+]

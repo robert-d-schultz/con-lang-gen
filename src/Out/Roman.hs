@@ -1,6 +1,6 @@
 module Out.Roman
 ( romanizeWord
-, romanizeSyllable
+, romanizeSyllables
 , romanizePhoneme
 ) where
 
@@ -17,14 +17,38 @@ import Out.IPA
 import Out.Syllable
 
 romanizeWord :: Language -> Word -> Text
-romanizeWord lang (MorphemeS _ _ syllables) = concatMap romanizeSyllable syllables
-romanizeWord lang (MorphemeP _ _ phonemes) = romanizePhonemes phonemes
+romanizeWord lang (MorphemeS _ _ syllables) = romanizeSyllables lang syllables []
+romanizeWord lang (MorphemeP _ _ phonemes)  = romanizePhonemes phonemes
 romanizeWord lang (MorphemeC _ _ phonemess) = intercalate "–" (map romanizePhonemes phonemess)
-romanizeWord lang (MorphemeV _ _ patts) = intercalate "–" (map romanizeSyllable patts)
-romanizeWord lang word = fromMaybe "!!ERROR!!" $ concatMap romanizeSyllable <$> syllabifyWord lang word
+romanizeWord lang (MorphemeV _ _ patts)     = intercalate "–" (map (romanizeSyllable lang) patts)
+romanizeWord lang word = fromMaybe "!!ERROR!!" (romanizeSyllables lang <$> syllabifyWord lang word <*> return [])
 
-romanizeSyllable :: Syllable -> Text
-romanizeSyllable (Syllable onset nucleus coda tone _) = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeToneDiacritic tone ++ romanizePhonemes coda
+romanizeSyllables :: Language -> [Syllable] -> [Phoneme] -> Text
+romanizeSyllables lang [] [] = ""
+romanizeSyllables lang [] [Vowel{}] = ""
+romanizeSyllables lang [] [Diphthong{}] = ""
+romanizeSyllables lang [] ps = romanizePhonemes ps
+romanizeSyllables lang (s@(Syllable onset nucleus coda tone stress):ss) ps = f ++ n ++ l where
+  f | (\case [Vowel{}] -> True; [Diphthong{}] -> True; _ -> False) ps && null onset = "\'"
+    | (\case [Vowel{}] -> True; [Diphthong{}] -> True; _ -> False) ps = romanizePhonemes onset
+    | otherwise = romanizePhonemes (ps ++ onset)
+
+  n_ | length (getTones    lang) > 1 = romanizePhoneme nucleus ++ writeToneDiacritic tone
+     | length (getStresses lang) > 1 = romanizePhoneme nucleus ++ writeStressDiacritic stress
+     | otherwise = romanizePhoneme nucleus
+
+  n | (\case Just 'e' -> True; _ -> False) (lastMay n_) = n_ ++ "\776"
+    | otherwise = n_
+
+  l | null coda = romanizeSyllables lang ss [nucleus]
+    | otherwise = romanizeSyllables lang ss coda
+
+romanizeSyllable :: Language -> Syllable -> Text
+romanizeSyllable lang (Syllable onset nucleus coda tone stress) = out where
+  out
+    | length (getTones    lang) > 1 = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeToneDiacritic tone ++ romanizePhonemes coda
+    | length (getStresses lang) > 1 = romanizePhonemes onset ++ romanizePhoneme nucleus ++ writeStressDiacritic stress ++ romanizePhonemes coda
+    | otherwise = romanizePhonemes onset ++ romanizePhoneme nucleus ++ romanizePhonemes coda
 
 romanizePhonemes :: [Phoneme] -> Text
 romanizePhonemes ps = intercalate "\'" $ map (concatMap romanizePhoneme) $ groupBy (\x y -> not (isVowel x && isVowel y)) ps
@@ -134,3 +158,10 @@ writeToneDiacritic t
   | t == LRISET = "\7621"
   | t == DIPT = "\7625"
   | t == PEAKT = "\7624"
+
+-- Stress diacritics
+writeStressDiacritic :: Stress -> Text
+writeStressDiacritic s
+  | s == NONES = ""
+  | s == PRIMARYS = "\769"
+  | s == SECONDARYS = "\779"

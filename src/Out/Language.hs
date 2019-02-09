@@ -62,6 +62,7 @@ writeLanguage dir lang = do
   let inflSys = getInflMap lang
   let inflMorphs = getInflMorphemes lang
   let lemmaMorphs = getLemmaMorphemes lang
+  let prons = getPronouns lang
   let rootMorphs = getRootMorphemes lang
   let (alph, syll, logo) = getWriting lang
   let name = fst (getNameMod lang) ++ snd (getNameMod lang) ++ getName lang
@@ -103,7 +104,7 @@ writeLanguage dir lang = do
                                  ++ writeInflectionTables lang inflSys inflMorphs
 
   writeFile (unpack dir ++ "/lexicon.html") $ "Lexicon"
-                                 ++ writeDictionary lang ndict rootMorphs lemmaMorphs inflMorphs
+                                 ++ writeDictionary lang ndict rootMorphs lemmaMorphs prons inflMorphs
 
   writeFile (unpack dir ++ "/grammar.html") $ "Grammar"
                                  ++ writeGrammar grammar

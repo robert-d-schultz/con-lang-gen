@@ -210,6 +210,7 @@ bounding (x,y) b@(xMin, xMax, yMin, yMax) ((m@Ver{}):ms) = bounding (x,getY m) (
 bounding (x,y) b@(xMin, xMax, yMin, yMax) (m:ms) = bounding (getX m, getY m) (min xMin (getX m), max xMax (getX m), min yMin (getY m), max yMax (getY m)) ms
 
 -- sorta, does box around entire ellipse
+-- something is wrong with this
 boundingEllipse :: Float -> Float -> Float -> Float -> Float -> Int -> Int -> Float -> Float -> (Float, Float, Float, Float)
 boundingEllipse x1 y1 0 0 _ _ _ x2 y2 = (min x1 x2, max x1 x2, min y1 y2, max y1 y2)
 boundingEllipse x1 y1 rx__ ry__ rot larc sweep x2 y2 = out where
