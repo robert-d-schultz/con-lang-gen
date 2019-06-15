@@ -143,9 +143,11 @@ cleanInflectionSys inflMap lc mt i = GramCatExpresses gens anis cass nums defs s
   cleanSys :: Manifest a -> LexCat -> MorphType -> Int -> [Express a]
   cleanSys NoManifest _ _ _ = [NoExpress]
   cleanSys (Manifest t x) lc mt i = out where
-    filt = filter (== (lc, mt, i)) t
+    found = find (\(ManifestPlace a b _) ->  a == lc && any (\(c,d) -> c == mt && d == i) b) t
+    agr = join $ getAgr <$> found
     out
-      | null filt = [NoExpress]
+      | isNothing found = [NoExpress]
+      -- | isJust agr = [fromMaybe NoExpress (Agree <$> agr)]
       | otherwise = map Express x
 
 cleanInflectionSys2 :: InflectionMap -> LexCat -> GramCatExpresses
@@ -172,9 +174,9 @@ cleanInflectionSys2 inflMap lc  = GramCatExpresses gens anis cass nums defs spes
   cleanSys2 :: Manifest a -> LexCat -> [Express a]
   cleanSys2 NoManifest _  = [NoExpress]
   cleanSys2 (Manifest t x) lc = out where
-    filt = filter (\(x,_,_) -> x == lc) t
+    found = find (\(ManifestPlace a _ _) ->  a == lc) t
     out
-      | null filt = [NoExpress]
+      | isNothing found = [NoExpress]
       | otherwise = map Express x
 
 makeCombos :: GramCatExpresses -> [GramCatExpress]

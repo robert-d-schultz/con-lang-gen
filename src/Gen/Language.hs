@@ -75,7 +75,7 @@ makeLanguage idata mData = do
   lemmaMorphs <- concat <$> mapM (pickLemmaMorphemes inflSys inflMorphs) [Verb .. Pron]
 
   -- Derivational morphemes
-  derivMorphs <- trace (show lemmaMorphs) makeDerivationMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter
+  derivMorphs <- makeDerivationMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter
 
   -- Compound morphemes
   compoundMorphs <- makeCompoundMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter
@@ -91,10 +91,14 @@ makeLanguage idata mData = do
   grammar <- makeGrammar
 
   -- Writing systems
+  -- Always do alphabet
   let allPhonemes = inventoryD ++ inventoryV ++ inventoryC
+  -- Don't do syllabary if their are way too many syllables
   let allSyllables | 2000 < product [length onsets, length nuclei, length codas, length tones, length stresses] = []
                    | otherwise = makeAllSyllables onsets nuclei codas tones stresses
-  let allLogograms = rootMorphs ++ derivMorphs ++ compoundMorphs ++ inflMorphs
+  -- Don't do logograms if their are any transfixes
+  let allLogograms | any (\(_,t,ct) -> t > 0 || ct > 0) numPerLexCat_ = []
+                   | otherwise = rootMorphs ++ prons ++ derivMorphs ++ compoundMorphs ++ inflMorphs
   (a, s, l) <- generateWritingSystem allPhonemes allSyllables allLogograms
 
   -- Characters

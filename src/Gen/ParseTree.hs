@@ -12,17 +12,17 @@ import Data.Word
 import Data.Grammar
 import Data.Inflection
 
--- Make parse tree using new language's root dict and inflection/conjugation systems
+-- Make parse tree using language's root dict and inflection/conjugation systems
 makeParseTree :: [Morpheme] -> InflectionMap -> RVar Phrase
 makeParseTree rootMorphs inflmap = do
 
   let noun = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Noun) rootMorphs)
-  let det = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Det) rootMorphs)
+  let det  = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Det) rootMorphs)
   let prep = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adpo) rootMorphs)
   let verb = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Verb) rootMorphs)
   let adj  = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adj) rootMorphs)
 
-
+  -- inflection phrases on Adj/Noun phrases?
   let objDet = generateInflection inflmap Noun
   let prepInfl = generateInflection inflmap Adpo
   let subjDet = generateInflection inflmap Noun
@@ -103,34 +103,17 @@ generateInflection inflMap lc = do
 helperFunction :: GramCat a => Eq a => InflectionMap -> (InflectionMap -> Manifest a) -> LexCat -> RVar (Express a)
 helperFunction inflMap f lc = out where
   fMan = f inflMap
+  lcFind = find (\(ManifestPlace x _ _) -> x == lc) (getManPlaces fMan)
+  agreeWith = join $ getAgr <$> lcFind
   out
     | fMan == NoManifest = return NoExpress
-    | any (\(x,_,_) -> x == lc) (getManPlace fMan) = Express <$> choice (getManStuff fMan)
+    | isJust agreeWith = return $ fromMaybe NoExpress (Agree <$> agreeWith)
+    | isJust lcFind = Express <$> choice (getManStuff fMan)
     | otherwise = return NoExpress
 
-
--- old version of makeParseTree
+-- Fill in agreement
 {-
-makeParseTree2 :: MeaningData -> RVar Phrase
-makeParseTree2 mData = out where
+agree :: Phrase -> Phrase
 
-  noun = choice $ inputNouns mData
-  prep = choice $ inputAdpos mData
-  verb = choice $ inputVerbs mData
-  adj  = choice $ inputAdjs mData
 
-  vInfl = (NoExpress, NoExpress, NoExpress, Express SG, NoExpress, NoExpress, NoExpress, Express THIRD, NoExpress, NoExpress, Express FUTPER, Express NNPROG, Express IND, Express ACTIVE, NoExpress, NoExpress, NoExpress)
-  subjDet = (NoExpress, NoExpress, Express NOM, Express SG, Express DEF, NoExpress, Express TOP, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress)
-  objDet = (NoExpress, NoExpress, Express ACC, Express SG, Express DEF, NoExpress, Express NTOP, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress, NoExpress)
-
-  adjp = join $ choice [return XPNull, XP Adj Null XPNull <$> (XBarC Adj Null <$> (Leaf Adj Null <$> adj) <*> return XPNull)]
-  prepp = join $ choice [return XPNull, return XPNull, return XPNull, XP Adpo Null XPNull <$> (XBarC Adpo Null <$> (Leaf Adpo Null <$> prep) <*> objp)]
-  prepp2 = XP Adpo Null XPNull <$> (XBarC Adpo Null <$> (Leaf Adpo Null <$> prep) <*> objp)
-
-  objp = XP Det Null XPNull <$> (XBarC Det Null (LeafInfl Noun objDet) <$> (XP Noun Null XPNull <$> (XBarA Noun Null <$> adjp <*> (XBarC Noun Null <$> (Leaf Noun Null <$> noun) <*> prepp))))
-  subjp = XP Det Null XPNull <$> (XBarC Det Null (LeafInfl Noun subjDet) <$> (XP Noun Null XPNull <$> (XBarA Noun Null <$> adjp <*> (XBarC Noun Null <$> (Leaf Noun Null <$> noun) <*> prepp))))
-
-  obj = join $ choice [objp, prepp2]
-
-  out = XP Comp Null XPNull <$> (XBarC Comp Null (LeafNull Null) <$> (XP Infl Null XPNull <$> (XBarC Infl Null (LeafInfl Verb vInfl) <$> (XP Verb Null <$> subjp <*> (XBarC Verb Null <$> (Leaf Verb Null <$> verb) <*> obj)))))
--}
+combineGramCatExpress :: GramCatExpress -> GramCatExpress -> GramCatExpress-}

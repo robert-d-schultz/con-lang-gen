@@ -14,6 +14,8 @@ import Gen.LanguageTree
 
 import Out.Language
 
+import Latex.Language
+
 main :: IO ()
 main = do
   -- Seed
@@ -25,10 +27,10 @@ main = do
   mData <- loadMeaningData
   tree <- newSample $ makeLanguageTree idata mData
   let name = getName $ getLanguage tree
-  exist <- doesPathExist $ "out/" ++ unpack name ++ " language family"
+  exist <- doesDirectoryExist $ "out/" ++ unpack name ++ " language family"
 
   if exist then putStrLn "Language family already generated" *> main else
-    writeLanguageTree seed tree
+    writeLanguageTree seed tree *> writeLatex tree
 
 -- Special sampleRVar that allows seeds
 newSample :: RVar a -> IO a

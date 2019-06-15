@@ -1,6 +1,6 @@
 {-# LANGUAGE Rank2Types #-}
 module Out.Inflection
-( writeInflectionOverview
+( writeInflectionMap
 , writeInflectionTables
 ) where
 
@@ -14,106 +14,52 @@ import Data.Language
 import Gen.Morpheme
 import Out.Lexicon
 
--- Write inflection overview (per lex cat)
-writeInflectionOverview :: InflectionMap -> Text
-writeInflectionOverview inflSys = concatMap (writeInflectionMap inflSys) [Verb .. Pron]
-
 -- Write inflection map (gives summary)
-writeInflectionMap :: InflectionMap -> LexCat -> Text
-writeInflectionMap inflSys lc = output where
+writeInflectionMap :: InflectionMap -> Text
+writeInflectionMap inflSys = concatMap (writeInflectionMap_ inflSys) [Verb .. Pron]
+
+-- Write inflection overview (per lex cat)
+writeInflectionMap_ :: InflectionMap -> LexCat -> Text
+writeInflectionMap_ inflSys lc = output where
+  t = concatMap (someFunct inflSys lc) [Particle, Prefix, Suffix, Transfix, CTransfix]
   output
-    | null (particles ++ prefixes ++ suffixes ++ transfixes) = "<br>\nNo grammatical categories manifest for " ++ tshow lc ++ "s.\n"
-    | otherwise = "<br>\nGrammatical categories manifest for " ++ tshow lc ++ "s in the following ways:\n<ul>" ++ particles ++ prefixes ++ suffixes ++ transfixes ++ ctransfixes ++ "</ul>\n"
+    | null t = "<br>\n" ++ tshow lc ++ "s are not inflected for any grammatical categories.\n"
+    | otherwise = "<br>\n" ++ tshow lc ++ "s are inflected in the following ways:\n<ul>" ++ t ++ "</ul>\n"
 
--- parse particles
-  filt1 = filter (not.null) (fooBar (isParticle lc) inflSys)
-  particles
-    | null filt1       = ""
-    | otherwise        = "\n\t<li>With particles:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt1 ++ "</li>\n\t\t</ul>"
+  someFunct :: InflectionMap -> LexCat -> MorphType -> Text
+  someFunct inflSys lc mt = out where
+    filt = filter (not.null) (fooBar (isMorphType lc mt) inflSys)
+    out
+      | null filt       = ""
+      | otherwise        = "\n\t<li>With " ++ tshow mt ++ "s:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt ++ "</li>\n\t\t</ul>"
 
-  -- parse prefixes
-  filt2 = filter (not.null) (fooBar (isPrefix lc) inflSys)
-  prefixes
-    | null filt2      = ""
-    | otherwise       = "\n\t<li>With prefixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt2 ++ "</li>\n\t\t</ul>"
+    fooBar :: (forall a . Manifest a -> Bool) -> InflectionMap -> [Text]
+    fooBar b inflSys = [gen, ani, cas, num, def, spe, top, per, hon, pol, ten, asp, moo, voi, evi, tra, vol] where
+      gen | b (getGenSys inflSys) = "Gender: " ++ tshow (getGenSys inflSys)          | otherwise = ""
+      ani | b (getAniSys inflSys) = "Animacy: " ++ tshow (getAniSys inflSys)         | otherwise = ""
+      cas | b (getCasSys inflSys) = "Case: " ++ tshow (getCasSys inflSys)            | otherwise = ""
+      num | b (getNumSys inflSys) = "Number: " ++ tshow (getNumSys inflSys)          | otherwise = ""
+      def | b (getDefSys inflSys) = "Definitenesses: " ++ tshow (getDefSys inflSys)  | otherwise = ""
+      spe | b (getSpeSys inflSys) = "Specificities: " ++ tshow (getSpeSys inflSys)   | otherwise = ""
+      top | b (getTopSys inflSys) = "Topics: " ++ tshow (getTopSys inflSys)          | otherwise = ""
+      per | b (getPerSys inflSys) = "Persons: " ++ tshow (getPerSys inflSys)         | otherwise = ""
+      hon | b (getHonSys inflSys) = "Honorifics: " ++ tshow (getHonSys inflSys)      | otherwise = ""
+      pol | b (getPolSys inflSys) = "Polarities: " ++ tshow (getPolSys inflSys)      | otherwise = ""
+      ten | b (getTenSys inflSys) = "Tenses: " ++ tshow (getTenSys inflSys)          | otherwise = ""
+      asp | b (getAspSys inflSys) = "Aspects: " ++ tshow (getAspSys inflSys)         | otherwise = ""
+      moo | b (getMooSys inflSys) = "Moods: " ++ tshow (getMooSys inflSys)           | otherwise = ""
+      voi | b (getVoiSys inflSys) = "Voices: " ++ tshow (getVoiSys inflSys)          | otherwise = ""
+      evi | b (getEviSys inflSys) = "Evidentialities: " ++ tshow (getEviSys inflSys) | otherwise = ""
+      tra | b (getTraSys inflSys) = "Transitivities: " ++ tshow (getTraSys inflSys)  | otherwise = ""
+      vol | b (getVolSys inflSys) = "Volitions: " ++ tshow (getVolSys inflSys)       | otherwise = ""
 
-  -- parse suffixes
-  filt3 = filter (not.null) (fooBar (isSuffix lc) inflSys)
-  suffixes
-    | null filt3      = ""
-    | otherwise       = "\n\t<li>With suffixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt3 ++ "</li>\n\t\t</ul>"
-
-  -- parse transfixes
-  filt4 = filter (not.null) (fooBar (isTransfix lc) inflSys)
-  transfixes
-    | null filt4      = ""
-    | otherwise       = "\n\t<li>With vowel transfixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt4 ++ "</li>\n\t\t</ul>"
-
-  -- parse transfixes
-  filt5 = filter (not.null) (fooBar (isCTransfix lc) inflSys)
-  ctransfixes
-    | null filt5      = ""
-    | otherwise       = "\n\t<li>With consonant transfixes:</li>\n\t\t<ul>\n\t\t\t<li>" ++ intercalate "</li>\n\t\t\t<li>" filt5 ++ "</li>\n\t\t</ul>"
-
-fooBar :: (forall a . Manifest a -> Bool) -> InflectionMap -> [Text]
-fooBar b inflSys = [gen, ani, cas, num, def, spe, top, per, hon, pol, ten, asp, moo, voi, evi, tra, vol] where
-  gen | b (getGenSys inflSys) = "Gender: " ++ tshow (getGenSys inflSys)          | otherwise = ""
-  ani | b (getAniSys inflSys) = "Animacy: " ++ tshow (getAniSys inflSys)         | otherwise = ""
-  cas | b (getCasSys inflSys) = "Case: " ++ tshow (getCasSys inflSys)            | otherwise = ""
-  num | b (getNumSys inflSys) = "Number: " ++ tshow (getNumSys inflSys)          | otherwise = ""
-  def | b (getDefSys inflSys) = "Definitenesses: " ++ tshow (getDefSys inflSys)  | otherwise = ""
-  spe | b (getSpeSys inflSys) = "Specificities: " ++ tshow (getSpeSys inflSys)   | otherwise = ""
-  top | b (getTopSys inflSys) = "Topics: " ++ tshow (getTopSys inflSys)          | otherwise = ""
-  per | b (getPerSys inflSys) = "Persons: " ++ tshow (getPerSys inflSys)         | otherwise = ""
-  hon | b (getHonSys inflSys) = "Honorifics: " ++ tshow (getHonSys inflSys)      | otherwise = ""
-  pol | b (getPolSys inflSys) = "Polarities: " ++ tshow (getPolSys inflSys)      | otherwise = ""
-  ten | b (getTenSys inflSys) = "Tenses: " ++ tshow (getTenSys inflSys)          | otherwise = ""
-  asp | b (getAspSys inflSys) = "Aspects: " ++ tshow (getAspSys inflSys)         | otherwise = ""
-  moo | b (getMooSys inflSys) = "Moods: " ++ tshow (getMooSys inflSys)           | otherwise = ""
-  voi | b (getVoiSys inflSys) = "Voices: " ++ tshow (getVoiSys inflSys)          | otherwise = ""
-  evi | b (getEviSys inflSys) = "Evidentialities: " ++ tshow (getEviSys inflSys) | otherwise = ""
-  tra | b (getTraSys inflSys) = "Transitivities: " ++ tshow (getTraSys inflSys)  | otherwise = ""
-  vol | b (getVolSys inflSys) = "Volitions: " ++ tshow (getVolSys inflSys)       | otherwise = ""
-
-isPrefix :: LexCat -> Manifest a -> Bool
-isPrefix _ NoManifest = False
-isPrefix lc (Manifest t _) = out where
-  out
-    | null filt = False
-    | otherwise = True
-  filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Prefix) t
-
-isSuffix :: LexCat -> Manifest a -> Bool
-isSuffix _ NoManifest = False
-isSuffix lc (Manifest t _) = out where
-  out
-    | null filt = False
-    | otherwise = True
-  filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Suffix) t
-
-isParticle :: LexCat -> Manifest a -> Bool
-isParticle _ NoManifest = False
-isParticle lc (Manifest t _) = out where
-  out
-    | null filt = False
-    | otherwise = True
-  filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Particle) t
-
-isTransfix :: LexCat -> Manifest a -> Bool
-isTransfix _ NoManifest = False
-isTransfix lc (Manifest t _) = out where
-  out
-    | null filt = False
-    | otherwise = True
-  filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == Transfix) t
-
-isCTransfix :: LexCat -> Manifest a -> Bool
-isCTransfix _ NoManifest = False
-isCTransfix lc (Manifest t _) = out where
-  out
-    | null filt = False
-    | otherwise = True
-  filt = filter (\(tlc, tmt, _) -> tlc == lc && tmt == CTransfix) t
+    isMorphType :: LexCat -> MorphType -> Manifest a -> Bool
+    isMorphType _ _ NoManifest = False
+    isMorphType lc mt (Manifest t _) = out where
+      out
+        | isNothing found = False
+        | otherwise = True
+      found = find (\(ManifestPlace tlc mti _) -> tlc == lc && any (\(a,_) -> a == mt) mti ) t
 
 -- Write Inflections to tables
 -- Tables organized by lexical category and inflection type
@@ -235,12 +181,12 @@ makeAttoRow lang inflMorphs lc morphType vols ten asp moo per def spe pol top ca
   cluster = "\n\t\t\t\t\t\t\t\t\t\t<td>" ++ intercalate "</td>\n\t\t\t\t\t\t\t\t\t\t<td>" (map (getMorpheme lang inflMorphs lc morphType ten asp moo per def spe pol top cas gen ani num hon tra evi voi) vols) ++ "</td>"
 
 getMorpheme :: Language -> [Morpheme] -> LexCat -> MorphType -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> Express Transitivity -> Express Evidentiality -> Express Voice -> Express Volition -> Text
-getMorpheme lang inflMorphs lc morphType@Prefix ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
+getMorpheme lang inflMorphs lc morphType@Prefix ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR!" output where
   filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
   output = (++ "–") <$> (writeMorphemeIPA lang <$> filt)
-getMorpheme lang inflMorphs lc morphType@Suffix ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
+getMorpheme lang inflMorphs lc morphType@Suffix ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR!" output where
   filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
   output = (++) "–" <$> (writeMorphemeIPA lang <$> filt)
-getMorpheme lang inflMorphs lc morphType ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR" output where
+getMorpheme lang inflMorphs lc morphType ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR!" output where
   filt = find (\morph -> getMorphType morph == morphType && getLC (getMeaning morph) == lc && getAllExpress (getMeaning morph) == GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) inflMorphs
   output = writeMorphemeIPA lang <$> filt

@@ -64,31 +64,42 @@ glossLeaves inflMorphs leaves = out where
   (others, inflLeaves)  = break leafIsInfl leaves
   infls                 = map leafInfl inflLeaves
 
-  (partMorphs, prefMorphs, suffMorphs, transMorphs) = getReleventInflMorphs inflMorphs inflLeaves
+  (partMorphs, prefMorphs, suffMorphs, transMorphs, ctransMorphs) = getReleventInflMorphs inflMorphs inflLeaves
   parts = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) partMorphs
   prefs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) prefMorphs
   suffs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) suffMorphs
   transs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) transMorphs
+  ctranss = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) ctransMorphs
   partsOut = map (glossCombo . getAllExpress . getMeaning) parts
   prefsOut = map (glossCombo . getAllExpress . getMeaning) prefs
   suffsOut = map (glossCombo . getAllExpress . getMeaning) suffs
   transsOut = map (glossCombo . getAllExpress . getMeaning) transs
+  ctranssOut = map (glossCombo . getAllExpress . getMeaning) ctranss
 
   out
     | null others = unwords partsOut -- not sure why it does this
     | null inflLeaves = concatMap translateLeaf leaves
-    | otherwise   = intercalate "-" prefsOut ++ (if null prefs then "" else "-") ++ unwords (map translateLeafWithDo others) ++ (if null transs then "" else "\\") ++ intercalate "-" transsOut ++ (if null suffs then "" else "-") ++ intercalate "-" suffsOut
+    | otherwise   = intercalate "-" prefsOut
+                    ++ (if null prefs then "" else "-")
+                    ++ unwords (map translateLeafWithDo others)
+                    ++ (if null ctranss then "" else "\\")
+                    ++ intercalate "-" ctranssOut
+                    ++ (if null transs then "" else "\\")
+                    ++ intercalate "-" transsOut
+                    ++ (if null suffs then "" else "-")
+                    ++ intercalate "-" suffsOut
 
 -- Get the relevent inflection morphemes from the "master" list
 -- Also sorts them by type, particle, prefix, suffix
-getReleventInflMorphs :: [Morpheme] -> [Leaf] -> ([Morpheme], [Morpheme], [Morpheme], [Morpheme])
-getReleventInflMorphs _ []  = ([],[],[],[])
-getReleventInflMorphs inflMorphs inflLeaves = (partMorphs, prefMorphs, suffMorphs, transMorphs) where
+getReleventInflMorphs :: [Morpheme] -> [Leaf] -> ([Morpheme], [Morpheme], [Morpheme], [Morpheme], [Morpheme])
+getReleventInflMorphs _ []  = ([],[],[],[],[])
+getReleventInflMorphs inflMorphs inflLeaves = (partMorphs, prefMorphs, suffMorphs, transMorphs, ctransMorphs) where
   lc = leafLC $ unsafeHead inflLeaves
   partMorphs = filter (\m -> getMorphType m == Particle && getLC (getMeaning m) == lc) inflMorphs
   prefMorphs  = filter (\m -> getMorphType m == Prefix && getLC (getMeaning m) == lc) inflMorphs
   suffMorphs = filter (\m -> getMorphType m == Suffix && getLC (getMeaning m) == lc) inflMorphs
   transMorphs = filter (\m -> getMorphType m == Transfix && getLC (getMeaning m) == lc) inflMorphs
+  ctransMorphs = filter (\m -> getMorphType m == CTransfix && getLC (getMeaning m) == lc) inflMorphs
 
 glossCombo :: GramCatExpress -> Text
 glossCombo (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) = intercalate "." (filter (not.null) l) where
@@ -112,9 +123,9 @@ glossCombo (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo v
       ]
 
 glossCombo_ :: Eq a => GramCat a => Express a -> Text
-glossCombo_ x
-  | x /= NoExpress = gloss (getExp x)
-  | otherwise = ""
+glossCombo_ NoExpress = ""
+glossCombo_ (Agree lc) = "!!!Missing AGR!!!"
+glossCombo_ (Express x) = gloss x
 
 -- Transcribe sentence into IPA
 transcribeLeaves :: Language -> [Morpheme] -> [Morpheme] -> [Leaf] -> Text
@@ -122,15 +133,16 @@ transcribeLeaves lang rootMorphs inflMorphs leaves = out where
   (others, inflLeaves)  = break leafIsInfl leaves
   infls                 = map leafInfl inflLeaves
 
-  (partMorphs, prefMorphs, suffMorphs, transMorphs) = getReleventInflMorphs inflMorphs inflLeaves
+  (partMorphs, prefMorphs, suffMorphs, transMorphs, ctransMorphs) = getReleventInflMorphs inflMorphs inflLeaves
   parts = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) partMorphs
   prefs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) prefMorphs
   suffs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) suffMorphs
   transs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) transMorphs
+  ctranss = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) ctransMorphs
 
   partOut = map (writeWordIPA lang) parts
 
-  othersOut = map (\x -> case x of Leaf{} -> fromMaybe (concatMap (writeMorphemeIPA lang) suffs ++ "<UNK>" ++ concatMap (writeMorphemeIPA lang) prefs) (writeWordIPA lang <$> join ((\z -> foldlM applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> RootMeaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
+  othersOut = map (\x -> case x of Leaf{} -> fromMaybe "<UNK>" (writeWordIPA lang <$> join ((\z -> foldlM applyMorpheme z (ctranss ++ transs ++ suffs ++ prefs)) <$> find (\y -> RootMeaning (leafLC x) (leafStr x) == getMeaning y) rootMorphs))
                                    LeafNull{} -> ""
                                    _ -> ""
                                    ) others
@@ -144,8 +156,7 @@ getLast :: [a] -> [a]
 getLast [] = []
 getLast xs = fromMaybe [] ((:[]) <$> lastMay xs)
 
--- Compares new language infl (1) to English infl (2)
--- Actually this checks if the left GramCatExpress helps satisfy the right GramCatExpress
+-- This checks if the left GramCatExpress helps satisfy the right GramCatExpress
 compareInfl :: GramCatExpress -> GramCatExpress -> Bool
 compareInfl (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) (GramCatExpress gen2 ani2 cas2 num2 def2 spe2 top2 per2 hon2 pol2 ten2 asp2 moo2 voi2 evi2 tra2 vol2) =
   and [ compareInfl_ gen gen2
@@ -166,10 +177,9 @@ compareInfl (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo 
       , compareInfl_ tra tra2
       , compareInfl_ vol vol2
       ]
-
 -- minBound should be UGEN, UANI, UCAS, etc.
 compareInfl_ :: Eq a => Bounded a => Express a -> Express a -> Bool
-compareInfl_ x y = x == y || x `elem` [Express minBound, NoExpress]
+compareInfl_ x y = x == y || x `elem` [Express minBound, NoExpress] -- || (\case Agree{} -> True; _ -> False) x
 
 transcribeLeaf :: Language -> [Morpheme] -> Leaf -> Text
 transcribeLeaf _ _ LeafNull{} = ""
@@ -187,15 +197,16 @@ romanizeInfl lang rootMorphs inflMorphs leaves = out where
   (others, inflLeaves)  = break leafIsInfl leaves
   infls                 = map leafInfl inflLeaves
 
-  (partMorphs, prefMorphs, suffMorphs, transMorphs) = getReleventInflMorphs inflMorphs inflLeaves
+  (partMorphs, prefMorphs, suffMorphs, transMorphs, ctransMorphs) = getReleventInflMorphs inflMorphs inflLeaves
   parts = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) partMorphs
   prefs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) prefMorphs
   suffs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) suffMorphs
   transs = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) transMorphs
+  ctranss = filter (\x -> any (compareInfl (getAllExpress $ getMeaning x)) infls) ctransMorphs
 
   partOut = map (romanizeWord lang) parts
 
-  othersOut = map (\x -> case x of Leaf{} -> fromMaybe (concatMap (romanizeWord lang) suffs ++ "<UNK>" ++ concatMap (romanizeWord lang) prefs) (romanizeWord lang <$> join ((\z -> foldlM applyMorpheme z (transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) (leafInfl x) == getMeaning y) rootMorphs))
+  othersOut = map (\x -> case x of Leaf{} -> fromMaybe "<UNK>" (romanizeWord lang <$> join ((\z -> foldlM applyMorpheme z (ctranss ++ transs ++ suffs ++ prefs)) <$> find (\y -> Meaning (leafLC x) (leafStr x) (leafInfl x) == getMeaning y) rootMorphs))
                                    LeafNull{} -> ""
                                    _ -> ""
                                    ) others

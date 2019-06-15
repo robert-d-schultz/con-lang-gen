@@ -1,5 +1,6 @@
 module Data.Inflection
 ( Manifest(..)
+, ManifestPlace(..)
 , Express(..)
 , MorphType(..)
 , LexCat(..)
@@ -33,7 +34,7 @@ import Data.Phoneme
 import Data.Other
 
 -- Manifest (list of places) (list of stuff that manifests there)
-data Manifest a = NoManifest | Manifest { getManPlace :: [(LexCat, MorphType, Int)], getManStuff :: [a] } deriving (Eq)
+data Manifest a = NoManifest | Manifest { getManPlaces :: [ManifestPlace], getManStuff :: [a] } deriving (Eq)
 
 instance GramCat a => Show (Manifest a) where
   show NoManifest = ""
@@ -42,11 +43,15 @@ instance GramCat a => Show (Manifest a) where
   show (Manifest _ [x,y]) = unpack (name x ++ " and " ++ name y)
   show (Manifest _ (x:xs)) = unpack (intercalate ", " (map name xs) ++ ", and " ++ name x)
 
+data ManifestPlace = ManifestPlace { getMPLC :: LexCat, getMTI :: [(MorphType, Int)], getAgr :: Maybe LexCat } deriving (Eq, Show)
+
 data Express a  = NoExpress
+                | Agree LexCat
                 | Express { getExp :: a } deriving (Eq, Read)
 
 instance GramCat a => Show (Express a) where
   show NoExpress = ""
+  show (Agree lc) = "agree/w " ++ show lc
   show (Express x) = unpack $ name x
 
 -- How the inflection manifests
@@ -57,27 +62,25 @@ instance Show MorphType where
                                    Particle -> "particle"
                                    Prefix   -> "prefix"
                                    Suffix   -> "suffix"
-                                   Transfix -> "transfix"
-                                   CTransfix-> "c transfix"
+                                   Transfix -> "vowel transfix"
+                                   CTransfix-> "consonant transfix"
 
 -- Lexical categories
 data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Pron
-            | Agen | Obj | Subj | Don | Them | Rec -- arguments for verbs
+            | Obj | Subj -- arguments for verbs
               deriving (Eq, Enum, Ord, Read)
 instance Show LexCat where
-  show lc = case lc of Verb -> "verb"
+  show lc = case lc of Comp -> "complementizer"
+                       Infl -> "inflection"
+                       Verb -> "verb"
                        Det  -> "determiner"
                        Noun -> "noun"
                        Adpo -> "adposition"
                        Adj  -> "adjective"
                        Adv  -> "adverb"
                        Pron -> "pronoun"
-                       Agen -> "agent"
                        Obj  -> "object"
                        Subj -> "subject"
-                       Don  -> "donor"
-                       Them -> "theme"
-                       Rec  -> "recipient"
 
 -- Inflection system map
 -- This a map of how inflection works for the language
@@ -124,7 +127,13 @@ data GramCatExpress = GramCatExpress
                       , getEvi :: Express Evidentiality
                       , getTra :: Express Transitivity
                       , getVol :: Express Volition
-                      } deriving (Eq, Show, Read)
+                      } deriving (Eq, Read)
+
+instance Show GramCatExpress where
+  show (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) = "[" ++ intercalate ", " out ++ "]" where
+    out = filter (not.null) [show gen, show ani, show cas, show num, show def, show spe, show top, show per, show hon, show pol, show ten, show asp, show moo, show voi, show evi, show tra, show vol]
+
+
 gramCatExpressNull = GramCatExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress NoExpress
 data GramCatExpresses = GramCatExpresses
                       { getGens :: [Express Gender]

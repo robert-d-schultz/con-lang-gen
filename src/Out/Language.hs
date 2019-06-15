@@ -23,10 +23,11 @@ import Out.WritingSystem
 import Out.Grapheme
 
 import Data.Language
+import Data.Grammar
 
 
 -- outputs stuff for each language family
-writeLanguageTree :: Int -> LanguageBranch -> IO()
+writeLanguageTree :: Int -> LanguageBranch -> IO ()
 writeLanguageTree seed tree = do
   -- Create language family main folder (named afer the root language)
   let dir = "out/" ++ getName (getLanguage tree) ++ " language family"
@@ -37,7 +38,7 @@ writeLanguageTree seed tree = do
   writeFile (unpack (dir ++ "/seed.txt")) (tshow seed)
   writeLanguageBranch dir tree
 
-writeLanguageBranch :: Text -> LanguageBranch -> IO()
+writeLanguageBranch :: Text -> LanguageBranch -> IO ()
 -- writeLanguageBranch dir (LanguageBranch lang [] _) = writeLanguage dir lang
 writeLanguageBranch dir (LanguageBranch lang branches _) = do
   let name = fst (getNameMod lang) ++ snd (getNameMod lang) ++ getName lang
@@ -49,7 +50,7 @@ writeLanguageBranch dir (LanguageBranch lang branches _) = do
   mapM_ (writeLanguageBranch dir__) branches
 
 -- outputs stuff for each language
-writeLanguage :: Text -> Language -> IO()
+writeLanguage :: Text -> Language -> IO ()
 writeLanguage dir lang = do
   let (_, _, phonations, _) = getCMap lang
   let (_, _, rounds, _) = getVMap lang
@@ -83,9 +84,6 @@ writeLanguage dir lang = do
   -- Parse trees
   ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree rootMorphs inflSys)
 
-  -- Make directory
-
-
   -- Write to file a bunch of stuff
   writeFile (unpack dir ++ "/phonology.html") $ "Phonology"
                                  ++ writeConPhonemeInventory inventoryC
@@ -100,7 +98,7 @@ writeLanguage dir lang = do
                                  ++ writeCCs onsetCCs codaCCs
 
   writeFile (unpack dir ++ "/inflection.html") $ "Inflection"
-                                 ++ writeInflectionOverview inflSys
+                                 ++ writeInflectionMap inflSys
                                  ++ writeInflectionTables lang inflSys inflMorphs
 
   writeFile (unpack dir ++ "/lexicon.html") $ "Lexicon"
@@ -109,7 +107,7 @@ writeLanguage dir lang = do
   writeFile (unpack dir ++ "/grammar.html") $ "Grammar"
                                  ++ writeGrammar grammar
                                  ++ "Examples"
-                                 ++ concatMap (writeParseTree lang rootMorphs inflMorphs) ptExamples
+                                 ++ concatMap (\x -> showtree x ++ "\n" ++ writeParseTree lang rootMorphs inflMorphs x) ptExamples
 
   writeFile (unpack dir ++ "/writing system.html") $ "Writing System"
                                  ++ writeWritingSystem (alph, syll, logo)

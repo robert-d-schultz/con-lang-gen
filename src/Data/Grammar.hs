@@ -19,9 +19,11 @@ module Data.Grammar
 , Phrase(..)
 , Bar(..)
 , Leaf(..)
+, showtree
 ) where
 
 import ClassyPrelude
+import Data.Text
 
 import Data.Inflection
 
@@ -146,3 +148,25 @@ data Leaf = LeafNull Illoc
           , leafIl  :: Illoc
           , leafStr :: Text
           } deriving (Eq, Show)
+
+class ShowTree a where
+  showtree :: a -> Text
+  showtree_ :: Text -> Text -> a -> Text
+
+instance ShowTree Phrase where
+  showtree x = replace " " "&nbsp;" (showtree_ " " " " x)
+  showtree_ pad char XPNull = ""
+  showtree_ pad char (XP lc il XPNull bar) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "P" ++ showtree_ (pad++" ") "└" bar
+  showtree_ pad char (XP lc il spec bar) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "P" ++ showtree_ (pad++"|") "├" spec ++ showtree_ (pad++" ") "└" bar
+
+instance ShowTree Bar where
+  showtree = showtree_ " " " "
+  showtree_ pad char (XBarA lc il adj bar) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "Bar" ++ showtree_ (pad++"|") "├" adj ++ showtree_ (pad++" ") "└" bar
+  showtree_ pad char (XBarC lc il leaf XPNull) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "Bar" ++ showtree_ (pad++" ") "└" leaf
+  showtree_ pad char (XBarC lc il leaf phrase) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "Bar" ++ showtree_ (pad++"|") "├" leaf ++ showtree_ (pad++" ") "└" phrase
+
+instance ShowTree Leaf where
+  showtree = showtree_ " " " "
+  showtree_ pad char (LeafNull il) = "\n<br>\n" ++ unsafeInit pad ++ char ++ "null"
+  showtree_ pad char (LeafInfl lc infl) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "\n<br>\n" ++ pad ++ "└" ++ tshow infl
+  showtree_ pad char (Leaf lc il str) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "\n<br>\n" ++ pad ++ "└\"" ++ str ++ "\""

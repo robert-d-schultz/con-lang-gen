@@ -12,6 +12,7 @@ module Out.Lexicon
 
 import ClassyPrelude hiding (Word)
 import GHC.Exts (groupWith)
+import Data.Text (toTitle)
 
 import Data.Phoneme
 import Data.Word
@@ -125,7 +126,7 @@ reduceHomophones lang ws = out where
 writeDictionaryEntry :: Language -> [(Phoneme, Text)] -> (Maybe [Syllable], [Maybe Word]) -> Text
 writeDictionaryEntry lang ndict (sylls, ws) = "<br>\n<br>\n"
                                             -- ++ writeMorphemeNative morph ndict ++ " "
-                                            ++ "<i>" ++ fromMaybe "!!ERROR!!" (romanizeSyllables lang <$> sylls <*> return []) ++ "</i>"
+                                            ++ "<i>" ++ fromMaybe "!!ERROR!!" (toTitle <$> (romanizeSyllables lang <$> sylls <*> return [])) ++ "</i>"
                                             ++ " (" ++ fromMaybe "!!ERROR!!" (writeSyllablesIPA <$> sylls) ++ ")"
                                             ++ concatMap (\x -> "\n<br>\n\t&emsp;" ++ fromMaybe "!!ERROR!!" ( do
                                                                                                                 y <- x

@@ -6,6 +6,8 @@ module Out.Roman
 
 import ClassyPrelude hiding (Word)
 
+import Data.Text (toTitle)
+
 import HelperFunctions
 
 import Data.Language
@@ -17,11 +19,11 @@ import Out.IPA
 import Out.Syllable
 
 romanizeWord :: Language -> Word -> Text
-romanizeWord lang (MorphemeS _ _ syllables) = romanizeSyllables lang syllables []
-romanizeWord lang (MorphemeP _ _ phonemes)  = romanizePhonemes phonemes
-romanizeWord lang (MorphemeC _ _ phonemess) = intercalate "–" (map romanizePhonemes phonemess)
-romanizeWord lang (MorphemeV _ _ patts)     = intercalate "–" (map (romanizeSyllable lang) patts)
-romanizeWord lang word = fromMaybe "!!ERROR!!" (romanizeSyllables lang <$> syllabifyWord lang word <*> return [])
+romanizeWord lang (MorphemeS _ _ syllables) = toTitle $ romanizeSyllables lang syllables []
+romanizeWord lang (MorphemeP _ _ phonemes)  = toTitle $ romanizePhonemes phonemes
+romanizeWord lang (MorphemeC _ _ phonemess) = toTitle $ intercalate "–" (map romanizePhonemes phonemess)
+romanizeWord lang (MorphemeV _ _ patts)     = toTitle $ intercalate "–" (map (romanizeSyllable lang) patts)
+romanizeWord lang word = fromMaybe "!!ERROR!!" (toTitle <$> (romanizeSyllables lang <$> syllabifyWord lang word <*> return []))
 
 romanizeSyllables :: Language -> [Syllable] -> [Phoneme] -> Text
 romanizeSyllables lang [] [] = ""

@@ -10,4 +10,5 @@ extra-deps:
 - text-format-simple-1.1.0
 - unliftio-0.2.10
 - unliftio-core-0.1.2.0
+- HaTeX-3.20.0.0
 resolver: lts-9.0
