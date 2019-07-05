@@ -36,7 +36,7 @@ writeSChar (syll, (n, path)) = "\n<br>\n" ++ writeCharacter path 51 1 n ++ ", /"
 writeLChar :: (Morpheme, (Int, CharPath)) -> Text
 writeLChar (morph, (n, path)) = "\n<br>\n" ++ writeCharacter path 51 1 n ++ ", \"" ++ out ++ "\"" where
   out = case getMeaning morph of (Meaning _ str _) -> str
-                                 (InflMeaning _ ae) -> tshow ae
+                                 (InflMeaning _ _ ae) -> tshow ae
 
 makeNativeDict :: [(Phoneme, (Int, CharPath))] -> [(Phoneme, Text)]
 makeNativeDict = map (fst &&& (\(_, (n,path))-> writeCharacter path 51 1 n))

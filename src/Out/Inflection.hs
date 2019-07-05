@@ -21,7 +21,7 @@ writeInflectionMap inflSys = concatMap (writeInflectionMap_ inflSys) [Verb .. Pr
 -- Write inflection overview (per lex cat)
 writeInflectionMap_ :: InflectionMap -> LexCat -> Text
 writeInflectionMap_ inflSys lc = output where
-  t = concatMap (someFunct inflSys lc) [Particle, Prefix, Suffix, Transfix, CTransfix]
+  t = concatMap (someFunct inflSys lc) [Particle .. CTransfix]
   output
     | null t = "<br>\n" ++ tshow lc ++ "s are not inflected for any grammatical categories.\n"
     | otherwise = "<br>\n" ++ tshow lc ++ "s are inflected in the following ways:\n<ul>" ++ t ++ "</ul>\n"
@@ -182,10 +182,10 @@ makeAttoRow lang inflMorphs lc morphType vols ten asp moo per def spe pol top ca
 
 getMorpheme :: Language -> [Morpheme] -> LexCat -> MorphType -> Express Tense -> Express Aspect -> Express Mood -> Express Person -> Express Definiteness -> Express Specificity -> Express Polarity -> Express Topic -> Express Case -> Express Gender -> Express Animacy -> Express Number -> Express Honorific -> Express Transitivity -> Express Evidentiality -> Express Voice -> Express Volition -> Text
 getMorpheme lang inflMorphs lc morphType@Prefix ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR!" output where
-  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
+  filt = find (\morph -> getMorphType morph == morphType && getLC (getMeaning morph) == lc && getAllExpress (getMeaning morph) == GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) inflMorphs
   output = (++ "–") <$> (writeMorphemeIPA lang <$> filt)
 getMorpheme lang inflMorphs lc morphType@Suffix ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR!" output where
-  filt = find (\morph -> getMorphType morph == morphType && getMeaning morph == InflMeaning lc (GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol)) inflMorphs
+  filt = find (\morph -> getMorphType morph == morphType && getLC (getMeaning morph) == lc && getAllExpress (getMeaning morph) == GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) inflMorphs
   output = (++) "–" <$> (writeMorphemeIPA lang <$> filt)
 getMorpheme lang inflMorphs lc morphType ten asp moo per def spe pol top cas gen ani num hon tra evi voi vol = fromMaybe "ERROR!" output where
   filt = find (\morph -> getMorphType morph == morphType && getLC (getMeaning morph) == lc && getAllExpress (getMeaning morph) == GramCatExpress gen ani cas num def spe top per hon pol ten asp moo voi evi tra vol) inflMorphs

@@ -285,7 +285,7 @@ createCEnvironmentPattern lang = do
   f <- choice_ 4 (Just $ ConsonantR prf mrf hrf arf) (Just WordBoundary)
   return (p, f)
 
--- [+consonant] -> [+consonant] change (only uses existing p/m/h's)
+-- [+consonant] -> [+consonant] change (only uses existing p/m/h/a's)
 createCChangePattern :: Language -> RVar (PhonemeR, PhonemeR)
 createCChangePattern lang = do
   let (places, manners, phonations, airstreams) = getCMap lang
@@ -367,7 +367,7 @@ createVChangePattern lang = do
   brb <- join $ choice_ 2 Nothing <$> choice (Nothing : delete bra (map Just backs))
   rrb <- join $ choice_ 2 Nothing <$> choice (Nothing : delete rra (map Just rounds))
   lrb <- join $ choice_ 2 Nothing <$> choice (Nothing : delete lra (map Just lengths))
-  if VowelR hrb brb rrb lrb == ConsonantR Nothing Nothing Nothing Nothing then createVChangePattern lang else return (VowelR hra bra rra lra, VowelR hrb brb rrb lrb)
+  if VowelR hrb brb rrb lrb == VowelR Nothing Nothing Nothing Nothing then createVChangePattern lang else return (VowelR hra bra rra lra, VowelR hrb brb rrb lrb)
 
 -- [+vowel] -> [+vowel] change (only uses unused h/b/r/l/t's)
 createVChangePattern2 :: Language -> RVar (PhonemeR, PhonemeR)
@@ -402,7 +402,7 @@ createVChangePattern2 lang = do
 
   lrb <- join $ choice_ 2 Nothing <$> lngth
 
-  if VowelR hrb brb rrb lrb == ConsonantR Nothing Nothing Nothing Nothing then createVChangePattern2 lang else return (VowelR hra bra rra lra, VowelR hrb brb rrb lrb)
+  if VowelR hrb brb rrb lrb == VowelR Nothing Nothing Nothing Nothing then createVChangePattern2 lang else return (VowelR hra bra rra lra, VowelR hrb brb rrb lrb)
 
 
 -- Shelved

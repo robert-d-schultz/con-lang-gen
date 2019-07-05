@@ -104,17 +104,17 @@ makeExponentSystem :: LexCat -> MorphType -> Int -> [ConsCluster] -> [Phoneme] -
 makeExponentSystem lc Transfix i onsets nucs codas tones inflMap set zipfParameter = do
   let combos = makeCombos $ cleanInflectionSys inflMap lc Transfix i
   roots <- replicateM (length combos) (makeMorphemeVowels onsets nucs codas tones set zipfParameter)
-  let morphs = zipWith (\x y -> MorphemeV x Transfix y) (InflMeaning lc <$> combos) roots
+  let morphs = zipWith (\x y -> MorphemeV x Transfix y) (InflMeaning lc i <$> combos) roots
   return morphs
 makeExponentSystem lc CTransfix i onsets nucs codas tones inflMap set zipfParameter = do
   let combos = makeCombos $ cleanInflectionSys inflMap lc CTransfix i
   roots <- replicateM (length combos) (makeMorphemeConsonants onsets set zipfParameter)
-  let morphs = zipWith (\x y -> MorphemeC x CTransfix y) (InflMeaning lc <$> combos) roots
+  let morphs = zipWith (\x y -> MorphemeC x CTransfix y) (InflMeaning lc i <$> combos) roots
   return morphs
 makeExponentSystem lc morphType i onsets nucs codas tones inflMap (ns,xs) zipfParameter = do
   let combos = makeCombos $ cleanInflectionSys inflMap lc morphType i
   roots <- replicateM (length combos) (makeMorphemeSyllables onsets nucs codas tones (ns,ns) zipfParameter) -- pick minimum
-  let morphs = zipWith (\x y -> MorphemeS x morphType y) (InflMeaning lc <$> combos) roots
+  let morphs = zipWith (\x y -> MorphemeS x morphType y) (InflMeaning lc i <$> combos) roots
   return morphs
 
 -- For a given LexCat, MorphType, and Int, return the grammatical categories expressed there

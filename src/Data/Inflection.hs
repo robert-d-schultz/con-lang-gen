@@ -47,7 +47,7 @@ data ManifestPlace = ManifestPlace { getMPLC :: LexCat, getMTI :: [(MorphType, I
 
 data Express a  = NoExpress
                 | Agree LexCat
-                | Express { getExp :: a } deriving (Eq, Read)
+                | Express { getExp :: a } deriving (Eq, Ord, Read)
 
 instance GramCat a => Show (Express a) where
   show NoExpress = ""
@@ -55,7 +55,7 @@ instance GramCat a => Show (Express a) where
   show (Express x) = unpack $ name x
 
 -- How the inflection manifests
-data MorphType = Root | Particle | Prefix | Suffix | Transfix | CTransfix deriving (Eq, Read)
+data MorphType = Root | Particle | Prefix | Suffix | Transfix | CTransfix deriving (Eq, Enum, Ord, Read)
 
 instance Show MorphType where
   show inflType = case inflType of Root     -> "root"
@@ -159,8 +159,8 @@ data GramCatExpresses = GramCatExpresses
 
 -- Grammatical categories
 -- For nouns
-data Gender        = UGEN | M | F | COM | N  deriving (Eq, Bounded, Read, Show)
-data Animacy       = UANI | AN | HUM | NHUM | ZO | INAN deriving (Eq, Bounded, Read, Show)
+data Gender        = UGEN | M | F | COM | N  deriving (Ord, Eq, Bounded, Read, Show)
+data Animacy       = UANI | AN | HUM | NHUM | ZO | INAN deriving (Ord, Eq, Bounded, Read, Show)
 data Case          = UCAS
                    | DIR | DIR2
                    | INTR | MTR | DTR | TR
@@ -180,7 +180,7 @@ data Case          = UCAS
                    | INS | COMIT | INSCOMIT | ORN | BEN
                    | CAUS | DISTR
                    | GEN | POSS | PART
-                   | VOC deriving (Eq, Bounded, Read, Show)
+                   | VOC deriving (Ord, Eq, Bounded, Read, Show)
 
 -- "Case" signals what the attached word's function is in the phrase
 -- The morpho-syntactic cases signal which verb argument they are
@@ -270,27 +270,27 @@ alignment = [ Alignment "Nominative-objective" [NOM, OBJ]
             ]
 -}
 
-data Number        = UNUM | SG | DU | TRI | PA | PL deriving (Eq, Bounded, Read, Show)
-data Definiteness  = UDEF | DEF | INDF deriving (Eq, Bounded, Read, Show)
-data Specificity   = USPE | SPEC | NSPEC deriving (Eq, Bounded, Read, Show)
-data Topic         = UTOP | TOP | NTOP deriving (Eq, Bounded, Read, Show)
-data Person        = UPER | FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THRDOBV deriving (Eq, Bounded, Read, Show)
+data Number        = UNUM | SG | DU | TRI | PA | PL deriving (Ord, Eq, Bounded, Read, Show)
+data Definiteness  = UDEF | DEF | INDF deriving (Ord, Eq, Bounded, Read, Show)
+data Specificity   = USPE | SPEC | NSPEC deriving (Ord, Eq, Bounded, Read, Show)
+data Topic         = UTOP | TOP | NTOP deriving (Ord, Eq, Bounded, Read, Show)
+data Person        = UPER | FIRST | FSTINCL | FSTEXCL | SECOND | THIRD | THRDPROX | THRDOBV deriving (Ord, Eq, Bounded, Read, Show)
 -- For nouns and verbs
-data Honorific     = UHON | FAM | NEU | FORM deriving (Eq, Bounded, Read, Show)
-data Polarity      = UPOL | AFF | NEG deriving (Eq, Bounded, Read, Show)
+data Honorific     = UHON | FAM | NEU | FORM deriving (Ord, Eq, Bounded, Read, Show)
+data Polarity      = UPOL | AFF | NEG deriving (Ord, Eq, Bounded, Read, Show)
 -- For verbs
 data Tense         = UTEN | PST | PRS | FUT
                    | APRS | APST
                    | AFUT | AFUT1 | AFUT2 | AFUT3
                    | PPRS | PFUT
                    | PPST | PPST1 | PPST2 | PPST3
-                   | PSTPER | PRSPER | FUTPER deriving (Eq, Bounded, Read, Show)
-data Aspect        = UASP | NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Eq, Bounded, Read, Show)
-data Mood          = UMOO | IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Eq, Bounded, Read, Show)
-data Voice         = UVOI | ACTIVE | MIDDLE | PASSIVE deriving (Eq, Bounded, Read, Show)
-data Evidentiality = UEVI | EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Eq, Bounded, Read, Show)
-data Transitivity  = UTRA | NTRANS | TRANS | MTRANS | DITRANS deriving (Eq, Bounded, Read, Show)
-data Volition      = UVOL | VOL | NVOL deriving (Eq, Bounded, Read, Show)
+                   | PSTPER | PRSPER | FUTPER deriving (Ord, Eq, Bounded, Read, Show)
+data Aspect        = UASP | NNPROG | PFV | IPFV | HAB | CONT | NPROG | PROG deriving (Ord, Eq, Bounded, Read, Show)
+data Mood          = UMOO | IND | IRR | DEO | IMP | JUS | OPT | EPIS | SBJV | POT | COND deriving (Ord, Eq, Bounded, Read, Show)
+data Voice         = UVOI | ACTIVE | MIDDLE | PASSIVE deriving (Ord, Eq, Bounded, Read, Show)
+data Evidentiality = UEVI | EXP | VIS | NVIS | AUD | INFER | REP | HSY | QUO | ASS deriving (Ord, Eq, Bounded, Read, Show)
+data Transitivity  = UTRA | NTRANS | TRANS | MTRANS | DITRANS deriving (Ord, Eq, Bounded, Read, Show)
+data Volition      = UVOL | VOL | NVOL deriving (Ord, Eq, Bounded, Read, Show)
 
 
 -- GramCat

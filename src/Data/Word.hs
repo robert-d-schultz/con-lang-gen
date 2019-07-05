@@ -36,7 +36,7 @@ type Morpheme = Word
 -- Eventually Verbs will need to carry their Theta roles
 data Meaning = Meaning { getLC :: LexCat, getStr :: Text, getAllExpress :: GramCatExpress }
              | RootMeaning { getLC :: LexCat, getStr :: Text }
-             | InflMeaning { getLC :: LexCat, getAllExpress :: GramCatExpress }
+             | InflMeaning { getLC :: LexCat, getOrder :: Int, getAllExpress :: GramCatExpress }
              | DeriMeaning { getLC1 :: LexCat, getLC2 :: LexCat, getStr :: Text }
              | CompMeaning { getLC :: LexCat, getLC1 :: LexCat, getLC2 :: LexCat, getStr :: Text }
              deriving (Eq, Show, Read)

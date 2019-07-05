@@ -74,12 +74,12 @@ composeMeaning (Meaning lc1 str1 infl1) (DeriMeaning lc21 lc22 str2) = out where
     | lc1 /= lc21 = Nothing
     | otherwise = Just $ Meaning lc22 (str2 ++ str1) infl1
 -- Root meaning + inflection meaning = meaning
-composeMeaning (RootMeaning lc1 str) (InflMeaning lc2 infl) = out where
+composeMeaning (RootMeaning lc1 str) (InflMeaning lc2 _ infl) = out where
   out
     | lc1 /= lc2 = Nothing
     | otherwise = Just $ Meaning lc1 str infl
 -- Meaning + inflection meaning = meaning
-composeMeaning (Meaning lc1 str infl1) (InflMeaning lc2 infl2) = out where
+composeMeaning (Meaning lc1 str infl1) (InflMeaning lc2 _ infl2) = out where
   out
     | lc1 /= lc2 = Nothing
     | otherwise = Meaning lc1 str <$> inflN
@@ -137,7 +137,7 @@ writeMeaning :: MorphType -> Meaning -> Text
 writeMeaning _ (Meaning Pron _ gce) = writeAllExpress gce ++ " pronoun."
 writeMeaning _ (Meaning lc str _) = writeLC lc ++ " " ++ str ++ "." -- ++ ", inflected for " ++ writeAllExpress gce ++ "."
 writeMeaning _ (RootMeaning lc str) = writeLC lc ++ " " ++ str ++ "."
-writeMeaning mt (InflMeaning lc gce) = writeAllExpress gce ++ " " ++ tshow mt ++ " that inflects " ++ tshow lc ++ "s."
+writeMeaning mt (InflMeaning lc _ gce) = writeAllExpress gce ++ " " ++ tshow mt ++ " that inflects " ++ tshow lc ++ "s."
 writeMeaning mt (DeriMeaning lc1 lc2 str) = "derivational " ++ tshow mt ++ " that changes a " ++ tshow lc1 ++ " into " ++ tshow lc2 ++ " using \"" ++ str ++ " <" ++ tshow lc1 ++ ">\"."
 writeMeaning mt (CompMeaning lc lc1 lc2 str) = "compound " ++ tshow mt ++ " that combines a " ++ tshow lc1 ++ " and " ++ tshow lc2 ++ "into a " ++ tshow lc ++ " using \"" ++ format str ["<" ++ tshow lc1 ++ ">", "<" ++ tshow lc2 ++ ">"] ++ "\"."
 
