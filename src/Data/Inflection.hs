@@ -55,7 +55,7 @@ instance GramCat a => Show (Express a) where
   show (Express x) = unpack $ name x
 
 -- How the inflection manifests
-data MorphType = Root | Particle | Prefix | Suffix | Transfix | CTransfix deriving (Eq, Enum, Ord, Read)
+data MorphType = Root | Transfix | CTransfix | Prefix | Suffix | Particle deriving (Eq, Enum, Ord, Read)
 
 instance Show MorphType where
   show inflType = case inflType of Root     -> "root"
@@ -68,6 +68,7 @@ instance Show MorphType where
 -- Lexical categories
 data LexCat = Comp | Infl | Verb | Det | Noun | Adpo | Adj | Adv | Pron
             | Obj | Subj -- arguments for verbs
+            | Inter -- temp?
               deriving (Eq, Enum, Ord, Read)
 instance Show LexCat where
   show lc = case lc of Comp -> "complementizer"
@@ -81,6 +82,7 @@ instance Show LexCat where
                        Pron -> "pronoun"
                        Obj  -> "object"
                        Subj -> "subject"
+                       Inter -> "interogative"
 
 -- Inflection system map
 -- This a map of how inflection works for the language

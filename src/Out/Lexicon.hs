@@ -2,7 +2,6 @@ module Out.Lexicon
 ( writeDictionary
 , applyLemma
 , applyMorpheme
-, writeWordIPA
 , writeMorphemeIPA
 , writePhonemeIPA
 , writeSyllablesIPA
@@ -180,15 +179,12 @@ writeLC lc
   | lc == Adpo = "p."
   | otherwise = ""
 
--- write Word to string
-writeWordIPA :: Language -> Word -> Text
-writeWordIPA lang word = fromMaybe "!!Word doesn't syllabize!!" out where
-  out = do
-    sylls <- syllabifyWord lang word
-    return $ "/" ++ intercalate "." (map writeSyllableIPA sylls) ++ "/"
-
--- write Morpheme to string (used in exponent table too)
+-- write Word/Morpheme to string (used in exponent table too)
 writeMorphemeIPA :: Language -> Morpheme -> Text
+writeMorphemeIPA lang w@Word{} = fromMaybe "!!Word doesn't syllabize!!" out where
+  out = do
+    sylls <- syllabifyWord lang w
+    return $ "/" ++ intercalate "." (map writeSyllableIPA sylls) ++ "/"
 writeMorphemeIPA lang (MorphemeS _ _ sylls) = "/" ++ writeSyllablesIPA sylls ++ "/"
 writeMorphemeIPA lang m@(MorphemeP _ _ ps) = fromMaybe ("!!Morpheme doesn't syllabize!! /" ++ concatMap writePhonemeIPA ps ++"/") out where
   out = do

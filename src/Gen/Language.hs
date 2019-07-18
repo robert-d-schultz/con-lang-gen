@@ -72,7 +72,7 @@ makeLanguage idata mData = do
   inflMorphs <- concat <$> mapM (\x -> makeInflectionMorphemes onsets nuclei codas tones inflSys x (1, 4) zipfParameter) numPerLexCat
 
   -- Pick lemma morphemes to be used in dictionary
-  lemmaMorphs <- concat <$> mapM (pickLemmaMorphemes inflSys inflMorphs) [Verb .. Pron]
+  lemmaMorphs <- concat <$> mapM (pickLemmaMorphemes inflMorphs) [Verb .. Pron]
 
   -- Derivational morphemes
   derivMorphs <- makeDerivationMorphemes mData onsets nuclei codas tones (1, 4) zipfParameter

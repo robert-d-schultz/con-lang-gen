@@ -7,79 +7,83 @@ import ClassyPrelude
 
 import Data.RVar
 import Data.Random.Extras
+import GHC.Exts
 
+import Data.Language
 import Data.Word
 import Data.Grammar
 import Data.Inflection
 
 -- Make parse tree using language's root dict and inflection/conjugation systems
-makeParseTree :: [Morpheme] -> InflectionMap -> RVar Phrase
-makeParseTree rootMorphs inflmap = do
+makeParseTree :: Language -> RVar Phrase
+makeParseTree lang = do
 
-  let noun = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Noun) rootMorphs)
-  let det  = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Det) rootMorphs)
-  let prep = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adpo) rootMorphs)
-  let verb = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Verb) rootMorphs)
-  let adj  = getStr.getMeaning <$> choice (filter (\x -> getLC (getMeaning x) == Adj) rootMorphs)
+  let rootMorphs = getRootMorphemes lang
+
+  noun <- choice (filter (\x -> getLC (getMeaning x) == Noun) rootMorphs)
+  -- det  <- choice (filter (\x -> getLC (getMeaning x) == Det) rootMorphs)
+  prep <- choice (filter (\x -> getLC (getMeaning x) == Adpo) rootMorphs)
+  verb <- choice (filter (\x -> getLC (getMeaning x) == Verb) rootMorphs)
+  adj  <- choice (filter (\x -> getLC (getMeaning x) == Adj) rootMorphs)
 
   -- inflection phrases on Adj/Noun phrases?
-  let objDet = generateInflection inflmap Noun
-  let prepInfl = generateInflection inflmap Adpo
-  let subjDet = generateInflection inflmap Noun
-  let vInfl = generateInflection inflmap Verb
-  let adjInfl = generateInflection inflmap Adj
+  objDet <- generateInflection lang Noun
+  prepInfl <- generateInflection lang Adpo
+  subjDet <- generateInflection lang Noun
+  vInfl <- generateInflection lang Verb
+  adjInfl <- generateInflection lang Adj
 
-  let adjp = XP Adj Null XPNull <$> (XBarC Adj Null <$> (Leaf Adj Null <$> adj) <*> return XPNull)
+  let adjp = XP Adj Null XPNull (XBarC Adj Null (Leaf Adj Null adj) XPNull)
 
   let subjp = XP Det Null
-                XPNull <$>
-                (XBarC Det Null <$>
-                  (LeafInfl Noun <$>
-                    subjDet) <*>
+                XPNull
+                (XBarC Det Null
+                  (LeafInfl Noun
+                    subjDet)
                   (XP Noun Null
-                    XPNull <$>
-                    (XBarA Noun Null <$>
-                      adjp <*>
-                      (XBarC Noun Null <$>
-                       (Leaf Noun Null <$>
-                          noun) <*>
-                        return XPNull))))
+                    XPNull
+                    (XBarA Noun Null
+                      adjp
+                      (XBarC Noun Null
+                       (Leaf Noun Null
+                          noun)
+                        XPNull))))
 
   let objp = XP Det Null
-               XPNull <$>
-               (XBarC Det Null <$>
-                 (LeafInfl Noun <$>
-                   objDet) <*>
+               XPNull
+               (XBarC Det Null
+                 (LeafInfl Noun
+                   objDet)
                  (XP Noun Null
-                   XPNull <$>
-                   (XBarA Noun Null <$>
-                     adjp <*>
-                     (XBarC Noun Null <$>
-                       (Leaf Noun Null <$>
-                         noun) <*>
-                       return XPNull))))
+                   XPNull
+                   (XBarA Noun Null
+                     adjp
+                     (XBarC Noun Null
+                       (Leaf Noun Null
+                         noun)
+                         XPNull))))
 
-  let prepp = XP Adpo Null XPNull <$> (XBarC Adpo Null <$> (Leaf Adpo Null <$> prep) <*> objp)
+  let prepp = XP Adpo Null XPNull (XBarC Adpo Null (Leaf Adpo Null prep) objp)
 
   -- output
-  XP Comp Null
-    XPNull <$>
-    (XBarC Comp Null
-     (LeafNull Null) <$>
-     (XP Infl Null
-       XPNull <$>
-       (XBarC Infl Null <$>
-         (LeafInfl Verb <$> vInfl) <*>
-         (XP Verb Null <$>
-           subjp <*>
-           (XBarC Verb Null <$>
-             (Leaf Verb Null <$>
-               verb) <*>
-             prepp)))))
+  return (XP Comp Null
+          XPNull
+          (XBarC Comp Null
+           (LeafNull Null)
+           (XP Infl Null
+             XPNull
+             (XBarC Infl Null
+               (LeafInfl Verb vInfl)
+               (XP Verb Null
+                 subjp
+                 (XBarC Verb Null
+                   (Leaf Verb Null
+                     verb)
+                   prepp))))))
 
 -- Generate a random Inflection
-generateInflection :: InflectionMap -> LexCat -> RVar GramCatExpress
-generateInflection inflMap lc = do
+generateInflection2 :: InflectionMap -> LexCat -> RVar GramCatExpress
+generateInflection2 inflMap lc = do
   gen <- helperFunction inflMap getGenSys lc
   ani <- helperFunction inflMap getAniSys lc
   cas <- helperFunction inflMap getCasSys lc
@@ -111,9 +115,10 @@ helperFunction inflMap f lc = out where
     | isJust lcFind = Express <$> choice (getManStuff fMan)
     | otherwise = return NoExpress
 
--- Fill in agreement
-{-
-agree :: Phrase -> Phrase
-
-
-combineGramCatExpress :: GramCatExpress -> GramCatExpress -> GramCatExpress-}
+generateInflection :: Language -> LexCat -> RVar [Morpheme]
+generateInflection lang lc = out where
+  inflMorphs = getInflMorphemes lang
+  inflMorphs_ = filter (\m -> getLC (getMeaning m) == lc) inflMorphs
+  inflGroups = groupWith (\m -> (getMorphType m,getOrder $ getMeaning m)) inflMorphs_
+  out | null inflGroups = return []
+      | otherwise = mapM choice inflGroups

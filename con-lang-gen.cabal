@@ -43,7 +43,6 @@ library
                      , Out.Lexicon
                      , Out.Other
                      , Out.Phonology
-                     , Out.Sentence
                      , Out.Roman
                      , Out.Syllable
                      , Out.WritingSystem
@@ -52,6 +51,9 @@ library
                      , EnglishStuff
                      , Constants
                      , Latex.Language
+                     , Latex.Phonology
+                     , Latex.Inflection
+                     , Latex.Sentence
 
   ghc-options:
   default-extensions:  NoImplicitPrelude, OverloadedStrings, LambdaCase, MultiWayIf

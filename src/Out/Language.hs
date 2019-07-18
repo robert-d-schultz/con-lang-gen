@@ -17,7 +17,6 @@ import Out.Other
 import Out.Phonology
 import Out.Inflection
 import Out.Lexicon
-import Out.Sentence
 import Out.Grammar
 import Out.WritingSystem
 import Out.Grapheme
@@ -82,7 +81,7 @@ writeLanguage dir lang = do
   -- let ndict = makeNativeDict alph
 
   -- Parse trees
-  ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree rootMorphs inflSys)
+  ptExamples <- sampleRVar $ M.replicateM 5 (makeParseTree lang)
 
   -- Write to file a bunch of stuff
   writeFile (unpack dir ++ "/phonology.html") $ "Phonology"
@@ -107,7 +106,7 @@ writeLanguage dir lang = do
   writeFile (unpack dir ++ "/grammar.html") $ "Grammar"
                                  ++ writeGrammar grammar
                                  ++ "Examples"
-                                 ++ concatMap (\x -> showtree x ++ "\n" ++ writeParseTree lang rootMorphs inflMorphs x) ptExamples
+                              --   ++ concatMap (\x -> showtree x ++ "\n" ++ writeParseTree lang x) ptExamples
 
   writeFile (unpack dir ++ "/writing system.html") $ "Writing System"
                                  ++ writeWritingSystem (alph, syll, logo)

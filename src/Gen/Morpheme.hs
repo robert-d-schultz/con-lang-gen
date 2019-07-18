@@ -17,14 +17,16 @@ import Data.RVar
 import Data.Random.Extras
 import Data.Random hiding (sample)
 import Data.List ((\\))
+import GHC.Exts (groupWith)
 
+import Data.Language
 import Data.Phoneme
 import Data.Word
 import Data.Inflection
 import Data.Other
 
 import Gen.ParseTree (generateInflection)
-import Out.Sentence (compareInfl)
+import Latex.Sentence (compareInfl)
 
 import LoadStuff
 import HelperFunctions
@@ -198,16 +200,12 @@ makeMorphemeVowels_ onsets nucs codas tones zipfParameter = do
   return $ Syllable [] nuclei [] tone NONES
 
 -- This picks the inflectional morphemes for the dictionary form of words
-pickLemmaMorphemes :: InflectionMap -> [Morpheme] -> LexCat -> RVar [Morpheme]
-pickLemmaMorphemes inflSys inflMorphs lc = do
-  -- Generate a random AllExpress for this LexCat
-  lemmaExpress <- generateInflection inflSys lc
-  -- Filter the master list of inflection Morpheme's, this LexCat only
-  let relMorphs = filter (\x -> lc == getLC (getMeaning x) && (\case InflMeaning{} -> True; _ -> False) (getMeaning x)) inflMorphs
-  -- Filter down to the ones that help satisfy the lemmaExpress
-  let lemmaMorphs = filter (\x -> compareInfl (getAllExpress $ getMeaning x) lemmaExpress) relMorphs
-  return lemmaMorphs
-
+pickLemmaMorphemes :: [Morpheme] -> LexCat -> RVar [Morpheme]
+pickLemmaMorphemes inflMorphs lc = out where
+  inflMorphs_ = filter (\m -> getLC (getMeaning m) == lc) inflMorphs
+  inflGroups = groupWith (\m -> (getMorphType m,getOrder $ getMeaning m)) inflMorphs_
+  out | null inflGroups = return []
+      | otherwise = mapM choice inflGroups
 
 -- Derivational Morphology
 makeDerivationMorphemes :: MeaningData -> [ConsCluster] -> [Phoneme] -> [ConsCluster] -> [Tone] -> (Int, Int) -> Float -> RVar [Morpheme]

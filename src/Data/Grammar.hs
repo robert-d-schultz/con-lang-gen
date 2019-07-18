@@ -26,6 +26,7 @@ import ClassyPrelude
 import Data.Text
 
 import Data.Inflection
+import Data.Word
 
 -- Language grammar
 data Grammar = Grammar
@@ -126,13 +127,13 @@ data Phrase = XPNull
             } deriving (Eq, Show)
 
 data Bar = XBarA
-         { barLC  :: LexCat
+         { barLC  :: LexCat -- ?
          , barIl :: Illoc
          , adjunct :: Phrase
          , barBar :: Bar
          }
          | XBarC
-         { barLC :: LexCat
+         { barLC :: LexCat -- ?
          , barIl :: Illoc
          , leaf :: Leaf
          , compliment :: Phrase
@@ -140,13 +141,13 @@ data Bar = XBarA
 
 data Leaf = LeafNull Illoc
           | LeafInfl
-          { leafLC :: LexCat
-          , leafInfl :: GramCatExpress
+          { leafLC :: LexCat -- ?
+          , leafMorphs :: [Morpheme]
           }
           | Leaf
-          { leafLC  :: LexCat
-          , leafIl  :: Illoc
-          , leafStr :: Text
+          { leafLC  :: LexCat -- ?
+          , leafIl  :: Illoc -- fine
+          , leafMorph:: Morpheme -- ?
           } deriving (Eq, Show)
 
 class ShowTree a where
@@ -168,5 +169,5 @@ instance ShowTree Bar where
 instance ShowTree Leaf where
   showtree = showtree_ " " " "
   showtree_ pad char (LeafNull il) = "\n<br>\n" ++ unsafeInit pad ++ char ++ "null"
-  showtree_ pad char (LeafInfl lc infl) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "\n<br>\n" ++ pad ++ "└" ++ tshow infl
-  showtree_ pad char (Leaf lc il str) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "\n<br>\n" ++ pad ++ "└\"" ++ str ++ "\""
+  showtree_ pad char (LeafInfl lc morphs) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "\n<br>\n" ++ pad ++ "└" ++ tshow morphs
+  showtree_ pad char (Leaf lc il morph) = "\n<br>\n" ++ unsafeInit pad ++ char ++ tshow lc ++ "\n<br>\n" ++ pad ++ "└\"" ++ tshow morph ++ "\""
