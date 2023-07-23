@@ -35,5 +35,4 @@ See LICENSE.md.
 Credits / Contact
 -----------------
 Robert D. Schultz Jr.
-    257 Malcolm X Blvd, Brooklyn, New York 11233
     Contact at chaosrobie@gmail.com.
